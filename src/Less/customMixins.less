@@ -1,0 +1,583 @@
+// no-compile
+@import (reference) './customVariables.less';
+
+//tooltip
+
+/* Tooltip container */
+.tooltip () {
+    position: relative;
+    display: inline-block;
+    // border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+    /* Tooltip text */
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: @white;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+       
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+    }
+
+    
+    /* Show the tooltip text when you mouse over the tooltip container */
+    &:hover {
+
+        &.tooltiptext {
+            visibility: visible;
+        }
+    }
+}
+  
+.placeholder() {
+    width: fit-content;
+    border-radius: @borderRadiusMd;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: placeholderSkeleton;
+    // background-image: -webkit-gradient(linear, left center, right center, from(@accentColor), color-stop(.4, @primaryColor), color-stop(.7, @secondaryColor), to(@accentColor));
+    // background-image: -webkit-linear-gradient(left, @accentColor 0%, @primaryColor 40%, @secondaryColor 70%, @accentColor 100%)";
+    //gray shades
+    background-image: -webkit-gradient(linear, left center, right center, from(@grayLighter), color-stop(.4, @grayLight), color-stop(.7, @grayLight), to(@grayLighter));
+    background-image: -webkit-linear-gradient(left, @grayLighter 0%, @grayLight 40%, @grayLight 70%, @grayLighter 100%);
+    background-size: 800px 104px;
+
+    &,
+    div,
+    * {
+        @value: transparent!important;
+
+        &, &::placeholder {
+            color: @value;
+            border-color:  @value;
+            background-color: @value;
+        }
+    }
+    
+    @-webkit-keyframes placeholderSkeleton {
+        0% {
+            background-position: -468px 0;
+        }
+        100% {
+            background-position: 468px 0;
+        }
+    }
+    @keyframes placeholderSkeleton {
+        0% {
+            background-position: -468px 0;
+        }
+        100% {
+            background-position: 468px 0;
+        }
+      }
+    
+    @-webkit-keyframes skeletonAnimate {
+        from {
+            background-position: top left;
+        }
+        to {
+            background-position: top right;
+        }
+    }
+    @keyframes skeletonAnimate {
+        from {
+            background-position: top left;
+        }
+        to {
+            background-position: top right;
+        }
+      }
+}
+
+.fa-rotate(@degree) {
+    -ms-transform:rotate(@degree);     /* Internet Explorer 9 */
+    -webkit-transform:rotate(@degree); /* Chrome, Safari, Opera */
+    transform:rotate(@degree);         /* Standard syntax */
+}
+
+.boxShadow(@val) {
+    box-shadow: @val;
+    -webkit-box-shadow: @val;
+    -moz-box-shadow: @val;
+}
+
+
+// Box sizing
+.boxSizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+       -moz-box-sizing: @boxmodel;
+            box-sizing: @boxmodel;
+  }
+
+.textShadow(@val) {
+    text-shadow: @val;
+    -webkit-text-shadow: @val;
+    -moz-text-shadow: @val;
+
+    .boxShadow(none);
+}
+
+
+//inputFormatting
+
+.checkboxSize {
+    &[type= "checkbox"],
+    &[type= "radio"]  {
+        transform: scale(1.5);
+        margin-right: 8px;
+    }
+}
+
+.inputError () {
+    border-color: @dangerText;
+    background-color: @dangerBackground;
+
+    &:focus-within {
+        border-color: @secondaryColor;
+
+        & > span {
+            color: @secondaryColor;
+        }
+    }
+
+    & > span {
+        color: @dangerText;
+    }
+}
+
+.inputWarning () {
+    border-color: @warningText;
+    background-color: @warningBackground;
+
+    &:focus-within {
+        border-color: @secondaryColor;
+
+        & > span {
+            color: @secondaryColor;
+        }
+    }
+
+    & > span {
+        color: @warningText;
+    }
+}
+
+.inputLabel () {
+    & > label {
+        margin: auto 0px;
+        font-weight: 400;
+        margin-bottom: 4px;
+        color: @cometText;
+        
+        & > abbr {
+            color: @dangerText;
+            font-weight: bold;
+            text-decoration: none;    
+        }
+        
+        //for optional text
+        & > span {
+            font-size: calc(@fontSizeSm - 4px);
+            color: @infoText;
+            .opacity(0.64); 
+            
+            & > abbr {
+                color: inherit;
+            }
+        }
+
+        input {
+            .checkboxSize();
+        }
+    }
+}
+// Opacity
+
+.opacity(@opacity) {
+    opacity: @opacity;
+    // IE8 filter
+    @opacity-ie: (@opacity * 100);
+    filter: ~"alpha(opacity=@{opacity-ie})";
+  }
+
+.displayCode () {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    margin: 16px auto;
+    border-radius: @borderRadiusMd;
+    width: 80%;
+    min-width: 640px;
+    color: @cometText;
+
+    & > div {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        background-color: @navBackground;
+        color: @cometText;
+        
+        & > .syntaxCode {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        & > .contentImport {
+            position: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            font-size: 16px;
+        }
+        
+        &:first-child {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            background-color: @black;
+
+            & > div {
+                flex-grow: 0;
+
+                &.title {
+                    color: @cometText;
+                    font-weight: bold;
+
+                    span.fas {
+                        color: @secondaryColor;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        & > div {
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            flex-grow: 1;
+            padding: @spaceMd @spaceLg;
+            font-size: 16px;
+            flex-grow: 2;
+
+            &.interactiveCode {
+                flex-grow: 1;
+
+                & > div {
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 64px;
+                    justify-content: space-between;
+
+                    &:first-child,
+                    &:last-child {
+                        margin-left: 16px;
+                    }
+
+                    & > div {
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        font-weight: bold;
+
+                        &:last-child {
+                            font-weight: normal;
+
+                            input {
+
+                                .checkboxSize();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navComponent () {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-width: 480px;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+
+    .FormElementsTitle {
+
+        > div {
+
+            &.value {
+                color: @cometText;
+            }
+
+            &.error {
+                color: @dangerText
+            }
+
+            &.warning{
+                color: @warningText;
+            }
+        }
+    }
+}
+
+.inputcss () {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &.inline {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > label {
+            margin-right: 16px;
+        }
+
+        & > .inputResponse {
+            margin-left: 16px;
+        }
+    }
+
+    .inputLabel();
+
+    & > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border: ~"1px solid darken(@backgroundColor, 10%)";
+        border-radius: @borderRadiusMd;
+        min-width: 160px;
+        max-width: 240px;
+        max-height: 40px;
+        background-color: @white;
+        border: 1px solid @secondaryColor;
+
+        &:focus-within {
+            border-color: @accentColor;
+
+            &.iconPadding {
+                span {
+                    color: @accentColor;
+                }
+            }
+        }
+
+        &.inputResponse {
+            width: 100%;
+            border: none;
+        }
+    
+        &.warningContainer {
+            .inputWarning();
+        }
+
+        &.errorContainer {
+            .inputError();
+        }
+
+        &.iconPadding {
+
+            & > datalist, 
+            & > select, 
+            & > input,
+            & > textarea {
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-left-width: 0px;
+            }
+        }
+    
+        & > datalist, 
+        & > select, 
+        & > input,
+        & > textarea {
+            background-color: grey;
+            padding: @spaceMd @spaceLg;
+            border-radius: @borderRadiusMd;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            -webkit-appearance: none;
+            outline: none;
+
+            option:first {
+                color: ~"darken(@backgroundColor, 25%)"
+            }
+            & + span {
+                padding: 12px 8px 12px 4px;
+                color: @grayLighter;
+            }
+        }
+        & > input[type= 'file'] {
+            padding-left: 18px;
+        }
+
+        & > span {
+            padding: 12px 0 12px 16px;
+            color: @secondaryColor;
+            border-right-width: 0px;
+        }
+    
+        & > select {
+            
+            & + span {
+                left: 40px;
+            }
+        }
+
+        &.files {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            color: @cometText;
+
+            & > div {
+                display: flex;
+                border: 1px solid @secondaryColor;
+                padding: @spaceMd @spaceLg;
+                border-radius: @borderRadiusMd;
+                margin-top: 4px;
+                min-width: 240px;
+                background-color: @white;
+                justify-content: space-between;
+
+                & > div {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                    & > span {
+                        display: flex;
+                        font-size: 16px;
+                        font-weight: bold;
+    
+                        &.fas {
+                            padding: auto;
+                            padding-right: 16px;
+                            padding-left: 16px;
+                        }
+                    }
+
+                    &:last-child {
+
+                        & > span {
+                            font-size: 16px;
+
+                            &:last-child {
+                                margin: auto 16px auto 32px;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+
+    .maskField {
+        
+        .placeholder();
+    }
+}
+
+.scroll (@height, @width: 8px) {
+    display: block;
+    max-height: @height;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: @width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: @backgroundColor;
+    }
+        
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: @accentColor; 
+        border-radius: @width/2
+    }
+}
+
+.checkboxCss () {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &.inline {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .inputLabel();
+
+    & + div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 128px;
+
+        &.inline {
+            flex-direction: row;
+            margin-left: 16px;
+        }
+
+        & + div {
+            display: flex;
+        }
+
+        &.singleCheckbox {
+            width: fit-content; // 100% !important;
+        }
+    
+        &.errorContainer {
+            .inputError();
+        }
+
+        & > label {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            > input[type= 'checkbox'],
+            > input[type='radio'] {
+                margin: auto 16px auto 18px;
+                
+                .checkboxSize();
+            }
+
+            &.errorLabel {
+                color: @dangerText;
+            }
+        }
+    }
+}
+
+.divide4 {
+    margin: 2px !important;
+    display: inline;
+}
+
+.divide8 {
+    margin: 4px !important;
+    display: inline;
+}
+
+.divide16 {
+    margin: 8px !important;
+    display: inline;
+}
+
+.divide32 {
+    margin: 16px !important;
+    display: inline;
+}
+
+//https://codepen.io/origine/pen/KVzpYm

@@ -1,0 +1,98 @@
+// no-compile
+
+//== Colors
+//
+
+    @white:                 var(--white);
+    @black:                 var(--black);
+    @primaryColor:          var(--primaryColor);
+    @secondaryColor:        var(--secondaryColor);
+    @accentColor:           var(--accentColor);
+    @cometLogo:             var(--cometLogo);
+    @cometText:             var(--cometText);
+    @backgroundColor:       var(--backgroundColor);
+    @navBackground:         var(--navBackground);
+    @navText:               var(--navText);
+    @navType:               var(--navType);
+    @shadowColor:           var(--shadowColor);
+
+    //success
+    @successText:           #3c763d;
+    @successBackground:     #dff0d8;
+    @successBorder:         ~"darken(@successBackground, 5%)"; //#d6e9c6
+
+    //info
+    @infoText:              #31708f;
+    @infoBackground:        #d9edf7;
+    @infoBorder:            ~"darken(@infoBackground, 7%)"; //#bce8f1
+
+    //warning
+    @warningText:           #8a6d3b;
+    @warningBackground:     #fcf8e3;
+    @warningBorder:         ~"darken(@warningBackground, 5%)"; //#faebcc
+
+    //danger
+    @dangerText:            #a94442;
+    @dangerBackground:      #f2dede;
+    @dangerBorder:          ~"darken(@dangerBackground, 5%)"; //#ebccd1
+
+    @hr-border:             @secondaryColor;
+    @headings-color:        @secondaryColor;
+    @link-color:            @accentColor;
+
+    //## Gray and brand colors for use across
+    @grayBase:              @black;
+    @grayDarker:            ~"lighten(@grayBase, 13.5%)"; // #222
+    @grayDark:              ~"lighten(@grayBase, 20%)";   // #333
+    @gray:                   ~"lighten(@grayBase, 33.5%)"; // #555
+    @grayLight:             ~"lighten(@grayBase, 46.7%)"; // #777
+    @grayLighter:           ~"lighten(@grayBase, 93.5%)"; // #eee
+
+//font
+@fontSizeMd:                16px;
+@fontSize:                  ceil((@fontSizeMd * 1.25));
+@fontSizeSm:                ceil((@fontSizeMd * 0.85));
+@fontFamily:                'Roboto', Arial, sans-serif;
+
+//spacing or sizing
+@spaceXs:                    2px;
+@spaceSm:                    4px;
+@spaceMd:                    8px;
+@spaceLg:                    16px;
+@spaceXl:                    32px;    
+    //border-radius custom
+    @borderRadiusSm:        @spaceXs;
+    @borderRadiusMd:        @spaceSm;
+    @borderRadiusLg:        @spaceMd;
+    //checkbox size
+    @checkboxSize:              1.5;
+
+//boxShadows
+//opacitycodes: 100% — FF
+// 95% — F2 90% — E6 85% — D9 80% — CC 75% — BF 70% — B3 65% — A6 60% — 99 55% — 8C 50% — 80 45% — 73 40% — 66 35% — 59 30% — 4D 25% — 40 20% — 33 15% — 26 10% — 1A 5% — 0D 0% — 00
+@base: inset 0 0 4px;
+@one:  0 1px 2px @shadowColor;
+@two: 0 2px 4px @shadowColor;
+@three: 0 4px 8px @shadowColor;
+@four: 0 8px 16px @shadowColor;
+@five: 0 16px 32px @shadowColor;
+//textShadows (text-shadow: topOffset leftOffset blurRadius color;)
+@baseText: @base;
+@oneText:  @one;
+@twoText: @two;
+@threeText: @three;
+@fourText: @four;
+@fiveText: @five;
+//transitions
+@transition: all 0.8s cubic-bezier(0.25,0.8,0.25,1);
+
+
+//border radius bootstrap
+@border-radius-base:        @borderRadiusMd;
+@border-radius-large:       @borderRadiusLg;
+@border-radius-small:       @borderRadiusSm;
+
+/*
+    codepen website shadows values were used for material design
+    link: https://codepen.io/sdthornton/pen/wBZdXq
+*/

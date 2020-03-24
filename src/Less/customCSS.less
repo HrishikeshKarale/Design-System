@@ -1,0 +1,42 @@
+
+.subSection {
+    margin-left: @spaceLg;
+}
+
+abbr[title] {
+    border: none;
+}
+
+//buttons
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+    // line-height: ensure even-numbered height of button next to large input
+    .button-size(@spaceLg; @spaceXl; @font-size-large; @line-height-large; @borderRadiusLg);
+  }
+  .btn-sm {
+    // line-height: ensure proper height of button next to small input
+    .button-size(@spaceSm; @spaceMd; @font-size-small; @line-height-small; @borderRadiusSm);
+  }
+  .btn-xs {
+    .button-size(@spaceXs; @spaceSm; @font-size-small; @line-height-small; @borderRadiusSm);
+  }
+// Block button
+// --------------------------------------------------
+.btn-block {
+  display: block;
+  width: 100%;
+}
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+// Specificity overrides
+input[type= "submit"],
+input[type= "reset"],
+input[type= "button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
