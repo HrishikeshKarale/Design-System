@@ -1,9 +1,5 @@
 <template>
-    <div class= "navNumber">
-        <content-nav
-            :attributes= 'd_number.attributes'
-            :title= 'd_number.title'
-        >  
+    <div class= "navNumber"> 
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_numberValue'
@@ -49,14 +45,14 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import numberInput from "@/components/FormElements/numberInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -68,8 +64,7 @@
         components: {
 
             componentDetails,
-            numberInput,
-            contentNav
+            numberInput
         }, //components
 
         methods: {

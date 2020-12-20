@@ -1,9 +1,5 @@
 <template>
     <div class= "navModal">
-        <content-nav
-            :attributes= 'd_modal.attributes'
-            :title= 'd_modal.title'
-        >  
             <component-details
                 :compData= 'd_modal'
             >
@@ -23,14 +19,14 @@
                     </h3>
                 </vue-modal>
             </component-details>
-        </content-nav>
+        
     </div><!--uiComponents-->
 </template>
 
 <script>
     import vueModal from '@/components/UIComponents/Modal/vueModal';
     import componentDetails from '@/Views/componentDetails';
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: 'uiComponents',
@@ -129,7 +125,7 @@
             
             vueModal,
             componentDetails,
-            contentNav,
+            
         }, //components
     } //default
 </script>

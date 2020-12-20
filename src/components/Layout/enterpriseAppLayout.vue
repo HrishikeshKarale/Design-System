@@ -93,7 +93,7 @@
                     padding: @spaceLg @spaceXl;
                     color: @textColor;
                     
-                    .scroll(100%);
+                    .scroll(100vh);
                 }
             }
         }

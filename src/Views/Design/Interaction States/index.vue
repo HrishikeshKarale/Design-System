@@ -1,6 +1,5 @@
 <template>
-    <div class= "interactionStates">
-        <content-subnav-layout>   
+    <div class= "interactionStates">   
             <template slot= 'left'>
                 <article id= 'interactionStates'>
                     <h1>Interaction states</h1>
@@ -154,7 +153,6 @@
                     </ul>
                 </li>
             </template>
-        </content-subnav-layout>
     </div>
 </template>
 
@@ -163,7 +161,6 @@
     import vueButton from '@/components/UIComponents/Buttons'
     import vueCard from "@/components/UIComponents/Cards/vueCard"
     import vueClipboard from "@/components/Code/vueClipboard";
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
     
     // import { store } from '@/store/store'
 
@@ -210,8 +207,7 @@
 
             vueButton,
             vueCard,
-            vueClipboard,
-            contentSubnavLayout
+            vueClipboard
         }, //componnets
 
         methods: {

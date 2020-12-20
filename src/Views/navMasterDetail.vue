@@ -1,9 +1,5 @@
 <template>
     <div class= "navMasterDetail">
-        <content-nav
-            :attributes= 'd_masterDetail.attributes'
-            :title= 'd_masterDetail.title'
-        >  
             <component-details
                 :compData= 'd_masterDetail'
             >
@@ -47,7 +43,7 @@
                     </template>
                 </master-detail>
             </component-details>
-        </content-nav>
+        
     </div><!--uiComponents-->
 </template>
 
@@ -58,7 +54,7 @@
     import masterDetail from '@/components/UIComponents/MasterDetail/masterDetail'
     import componentDetails from '@/Views/componentDetails'
     import textInput from "@/components/FormElements/textInput";
-    import contentNav from '@/Views/components/contentNav';
+    
     
     // import { store } from '@/store/store'
     import { mapGetters, mapState } from 'vuex';
@@ -185,8 +181,7 @@
             componentDetails,
             vueCard,
             vueTable,
-            textInput,
-            contentNav
+            textInput
         }, //components
 
         watch: {

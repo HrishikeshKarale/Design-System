@@ -1,6 +1,5 @@
 ﻿// http://codeforamerica.clearleft.com/?url=/elements/forms/fieldset.select-checkboxes.html
 <template>
-    <div id= "app">
         <enterprise-app-layout>
             <template slot= 'header'>
                 <vue-header
@@ -28,10 +27,11 @@
                 />
             </template>
             <template slot= 'content'>
-                <router-view/>
+                <scroll-indicator>
+                    <router-view/>
+                </scroll-indicator>
             </template>
         </enterprise-app-layout>
-    </div>
 </template>
 
 <script>
@@ -41,6 +41,7 @@
     import sideBySideLayout from '@/components/Layout/sideBySideLayout'
     import enterpriseAppLayout from '@/components/Layout/enterpriseAppLayout'
     import vueButton from '@/components/UIComponents/Buttons'
+    import scrollIndicator from '@/components/Layout/scrollIndicator.vue'
 
     import { mapState, mapActions } from 'vuex';
     import { toggle, show } from '@/typeScript/toggle'
@@ -149,66 +150,8 @@
             sideBySideLayout,
             enterpriseAppLayout,
             vueHeader,
+            scrollIndicator,
             vueButton
         }, //components
     }
 </script>
-
-<style lang= "less">
-
-    @import (reference) "./Less/customMixins.less";
-    @import (reference) "./Less/customVariables.less";
-
-    html.transition,
-    html.transition *,
-    html.transition *:before,
-    html.transition *:after {
-        transition: all 600ms !important;
-        transition-delay: 0 !important;
-    }
-
-    #app {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: left;
-        display: flex;
-        height: 100%;
-        width: 100%;
-        .scroll(100vh);
-        overflow-y: auto;
-        overflow-x: hidden;
-        display: block;
-        position: relative;
-
-        .toggle {
-            padding: 8px 16px;
-        }
-        
-        &::after {
-            content: "";
-            // background: url(https://www.edx.org/sites/default/files/designthining_mm_thumbnail.jpg) @backgroundColor;
-            //https://svgsilh.com/svg/2099184.svg
-            //https://cdn.pixabay.com/photo/2017/10/08/13/54/abstract-2829962_960_720.jpg
-            //https://www.edx.org/sites/default/files/designthining_mm_thumbnail.jpg
-            //http://printuniversal.com/files/Subscribers/5f61fe56-64ff-443e-95ae-397061120307/webfiles/colours_small.png
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            z-index: -1;   
-            
-            .opacity(0.15);
-        }
-
-        .navigationContent {
-            margin-top: 32px;
-        }
-    }
-
-    body {
-        margin: 0;
-        color: @textColor;
-        background-color: @backgroundColor;
-    }
-</style>

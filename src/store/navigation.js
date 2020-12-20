@@ -262,7 +262,7 @@ var data= [
                     {
                         id: 3,
                         text: 'Content Sub Navigation',
-                        component: 'navContentSubnavLayout',
+                        component: 'nav',
                         icon: '<i class= "fas fa-vector-square"></i>',
                     },
                     {

@@ -1,9 +1,5 @@
 <template>
     <div class="navDate">
-        <content-nav
-            :attributes= 'd_date.attributes'
-            :title= 'd_date.title'
-        >
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_dateValue'
@@ -49,14 +45,14 @@
                     </component-details>  
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import vueDate from "@/components/FormElements/vueDate";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navDate",
@@ -64,8 +60,7 @@
         components: {
 
             componentDetails,
-            vueDate,
-            contentNav
+            vueDate
         }, //components
 
         methods: {

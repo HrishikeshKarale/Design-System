@@ -1,6 +1,5 @@
 <template>
-    <div class= "sound">
-        <content-subnav-layout>   
+    <div class= "sound">   
             <template slot= 'left'>
                 <article id= 'sound'>
                     <h1>Sounds</h1>
@@ -125,7 +124,6 @@
                     </ul>
                 </li>
             </template>
-        </content-subnav-layout>
     </div>
 </template>
 
@@ -134,7 +132,6 @@
     import vueButton from '@/components/UIComponents/Buttons'
     import vueCard from "@/components/UIComponents/Cards/vueCard"
     import vueClipboard from "@/components/Code/vueClipboard";
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
     
     // import { store } from '@/store/store'
 
@@ -181,8 +178,7 @@
 
             vueButton,
             vueCard,
-            vueClipboard,
-            contentSubnavLayout
+            vueClipboard
         }, //componnets
 
         methods: {

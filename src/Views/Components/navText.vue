@@ -12,10 +12,6 @@
             :mask= '!d_booleanTrue'
             @alerts= 'd_alerts'
         />
-        <content-nav
-            :attributes= 'd_text.attributes'
-            :title= 'd_text.title'
-        >
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_textBoxValue'
@@ -61,7 +57,7 @@
                     </component-details>                
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -70,7 +66,7 @@
     import componentDetails from "@/Views/componentDetails";
     import textInput from "@/components/FormElements/textInput";
     import phoneInput from "@/components/FormElements/phoneInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -84,7 +80,7 @@
             componentDetails,
             textInput,
             phoneInput,
-            contentNav,
+            
         }, //components
 
         methods: {

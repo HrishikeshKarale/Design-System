@@ -1,61 +1,51 @@
-
-// onerror= "this.onerror=null; this.src='image.png'"     
 <template>
-    <img 
-        class= 'vueImg'
-        :src= "src? src:d_temp" 
-        :alt= "alt"
-        :title= 'alt'
-    >
+  <img
+    v-once
+    class="vueImg"
+    :src="src ? src : dImageSource"
+    :alt="alt"
+    :title="alt"
+  />
 </template>
 
 <script>
+export default {
+  name: "VueImg", //data
 
-    export default {
-        name: 'vueImg',
-        
-         data () {
-            
-            const d_temp= require('@/assets/SVG/SVG/default.svg')
-            return {
+  props: {
+    src: {
+      required: true,
+      type: String,
+      default: null
+    },
 
-                d_temp: d_temp,
-            } //return
-        }, //data
-        
-        props: {
+    alt: {
+      required: false,
+      type: [String, null],
+      default: function(value) {
+        if (value) {
+          return value;
+        }
+        return "An image goes here";
+      }
+    }
+  },
 
-            src: {
-                required: false,
-                type: String,
-                default: function (value) {
-                    if(value) {
-                        return value
-                    }
-                    return null
-                }
-            },
-
-            alt: {
-                required: false,
-                type: String,
-                default: function (value) {
-                    if(value) {
-                        return value
-                    }
-                    return 'An image goes here'
-                }
-            },
-        }, //props
-    } //default
+  data() {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const dImageSource = require("@/assets/SVG/SVG/default.svg");
+    return {
+      dImageSource: dImageSource
+    }; //return
+  } //props
+}; //default
 </script>
 
-<style lang= "less" scoped>
+<style lang="less" scoped>
+@import (reference) "../../../Less/customVariables.less";
 
-    @import (reference) "../../../Less/customVariables.less";
-
-    .vueImg {
-        display: inline-flex;
-    }
-       
+.vueImg {
+  display: inline-flex;
+  background-color: transparent;
+}
 </style>

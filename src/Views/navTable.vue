@@ -1,10 +1,6 @@
 <template>
     <div class= "navTable"> 
         https://uxdesign.cc/designing-tables-for-reusability-490a3760533<br/>
-        <content-nav
-            :attributes= 'd_table.attributes'
-            :title= 'd_table.title'
-        >
             <component-details
                 v-if= "paginatedData"
                 :compData= 'd_table'
@@ -22,7 +18,7 @@
                     @setRowElements= 'setRowElements'
                 />
             </component-details>
-        </content-nav>
+        
     </div><!--uiComponents-->
 </template>
 
@@ -30,7 +26,7 @@
 
     import vueTable from '@/components/UIComponents/Table/vueTable'
     import componentDetails from '@/Views/componentDetails'
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
     import { mapState, mapActions } from 'vuex';
@@ -165,7 +161,7 @@
 
             vueTable,
             componentDetails,
-            contentNav,
+            
         }, //components
     } //default
 </script>

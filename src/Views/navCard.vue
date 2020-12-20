@@ -1,9 +1,5 @@
 <template>
     <div class= 'navCard'>
-        <content-nav
-            :attributes= 'd_vueCard.attributes'
-            :title= 'd_vueCard.title'
-        >  
             <component-details
                 :compData= 'd_vueCard'
                 :d_attr= 'd_attr'
@@ -123,14 +119,14 @@
                     </vue-card>
                 </div>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
 
     import productTag from '@/components/UIComponents/Cards/Tag/productTag'
-    import contentNav from '@/Views/components/contentNav';
+    
     
     import componentDetails from "@/Views/componentDetails";    
     import vueCard from '@/components/UIComponents/Cards/vueCard';
@@ -309,8 +305,7 @@
             vueButton,
             textInput,
             numberInput,
-            vueInfo,
-            contentNav
+            vueInfo
         }, //components
 
         methods: {

@@ -14,7 +14,6 @@
             :class= '{
                         warningContainer: d_warning,
                         errorContainer: d_danger,
-                        iconPadding: inputIcon,
                         maskField: mask 
                     }'
             role= "checkbox" 
@@ -50,8 +49,15 @@
         name: 'multiToggle',
 
         data () {
+            const d_danger = null;
+            const d_info = null;
+            const d_success = null;
+            const d_warning = null;
             return {
-                
+                d_danger,
+                d_info,
+                d_success,
+                d_warning,
                 //stores toggle state
                 d_toggled: null,
             } //return

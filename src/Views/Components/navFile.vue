@@ -1,9 +1,5 @@
 <template>
     <div class= "navFile">
-        <content-nav
-            :attributes= 'd_file.attributes'
-            :title= 'd_file.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_fileUploadValue'
@@ -45,14 +41,14 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import fileInput from "@/components/FormElements/fileInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navFile",
@@ -60,8 +56,7 @@
         components: {
 
             componentDetails,
-            fileInput,
-            contentNav
+            fileInput
         }, //components
 
         methods: {

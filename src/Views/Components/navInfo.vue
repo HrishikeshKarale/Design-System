@@ -1,9 +1,5 @@
 <template>
     <div class= "navInfo">
-        <content-nav
-            :attributes= 'd_info.attributes'
-            :title= 'd_info.title'
-        >  
             <div class= "FormElementsContent">
                 <form>         
                     <component-details
@@ -17,14 +13,14 @@
                     </component-details>  
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import vueInfo from "@/components/FormElements/vueInfo";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navInfo",
@@ -33,7 +29,7 @@
 
             componentDetails,
             vueInfo,
-            contentNav,
+            
         }, //components
 
 

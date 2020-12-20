@@ -945,10 +945,19 @@ article {
   justify-content: center;
   align-content: center;
 
-  &>header {
-    visibility: hidden;
-    height: 0;
+  &>*,
+  &>section>* {
+    padding: @spaceMd 0;
+
+    &:not(header) {
+      padding: @spaceMd @spaceLg;
+    }
   }
+
+  // &>header {
+  //   visibility: hidden;
+  //   height: 0;
+  // }
 
   &>section {
     display: flex;
@@ -1079,6 +1088,7 @@ h6 {
   font-weight: 500;
   line-height: 1.1;
   color: @secondaryColor;
+  width: fit-content;
 
   small,
   .small {
@@ -1172,25 +1182,6 @@ ol {
   ol {
     margin-bottom: 0;
   }
-}
-
-// Description Lists
-dl {
-  margin-top: 0; // Remove browser default
-  margin-bottom: @lineHeight;
-}
-
-dt,
-dd {
-  line-height: @lineHeight;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-left: 0; // Undo browser default
 }
 
 // Misc

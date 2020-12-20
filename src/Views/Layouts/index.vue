@@ -213,7 +213,6 @@
                             height: fit-content;
                             width: 800px;'
                 >
-                    <content-subnav-layout>
                                 
                         <template slot= 'left'>
                             <div style= ' width: 400px;
@@ -251,7 +250,6 @@
                                 </ul>
                             </div>
                         </template>
-                    </content-subnav-layout>
                 </div>
                 <h2 id= 'goldenRatio'>Golden Ratio Layout</h2>
                 <p>This Layout defines the basic structure of our vue application with a golden ratio</p>
@@ -397,7 +395,6 @@
 
     import sideBySideLayout from '@/components/Layout/sideBySideLayout'
     import enterpriseAppLayout from '@/components/Layout/enterpriseAppLayout'
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
     import packStationLayout from '@/components/Layout/packStationLayout'
     import vueTable from '@/components/UIComponents/Table/vueTable'
     // import { store } from '@/store/store'
@@ -446,7 +443,6 @@
 
             sideBySideLayout,
             enterpriseAppLayout,
-            contentSubnavLayout,
             packStationLayout,
             vueTable
         }, //componnets

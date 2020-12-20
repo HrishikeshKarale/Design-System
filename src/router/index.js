@@ -329,12 +329,12 @@ export default new Router({
             component: navAlert,
         },
         {
-            path: 'navAlertProactive',
+            path: '/navAlertProactive',
             name: 'navAlertProactive',
             component: navAlertProactive
         },
         {
-            path: 'navAlertReactive',
+            path: '/navAlertReactive',
             name: 'navAlertReactive',
             component: navAlertReactive
         },     

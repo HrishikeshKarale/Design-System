@@ -1,9 +1,5 @@
 <template>
     <div class= "navCheckbox">
-        <content-nav
-            :attributes= 'd_checkbox.attributes'
-            :title= 'd_checkbox.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_checkboxValue'
@@ -49,7 +45,7 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -57,7 +53,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import checkboxInput from "@/components/FormElements/checkboxInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navCheckbox",
@@ -66,7 +62,7 @@
 
             componentDetails,
             checkboxInput,
-            contentNav,
+            
         }, //components
 
         methods: {

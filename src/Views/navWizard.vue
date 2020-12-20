@@ -1,9 +1,5 @@
 <template>
     <div class= "navWizard">
-        <content-nav
-            :attributes= 'd_wizard.attributes'
-            :title= 'd_wizard.title'
-        >  
             <component-details
                 :compData= 'd_wizard'
             >
@@ -146,7 +142,7 @@
                     </template>
                 </vue-wizard>
             </component-details>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -158,7 +154,7 @@
     import textInput from "@/components/FormElements/textInput";
     import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueTextarea from "@/components/FormElements/vueTextarea";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
     import { mapState, mapActions } from 'vuex';
@@ -313,8 +309,7 @@
             searchableDropdownList,
             textInput,
             checkboxInput,
-            vueTextarea,
-            contentNav
+            vueTextarea
         }, //components
     } //default
 </script>

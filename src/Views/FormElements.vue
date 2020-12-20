@@ -1,6 +1,5 @@
 <template>
-    <div class= "forms">
-        <content-subnav-layout>   
+    <div class= "forms">   
             <template slot= 'left'>
                 <article id= 'forms'>
                     <h1>Forms</h1>
@@ -1944,7 +1943,6 @@
                     </ul>
                 </li>
             </template>
-        </content-subnav-layout>
     </div>
 </template>
 
@@ -1953,7 +1951,6 @@
     import goodVsBad from "@/Views/goodVsBad"
     import vueButton from "@/components/UIComponents/Buttons"
     import vueAlert from "@/components/Alerts/vueAlert"
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
 
     import textInput from "@/components/FormElements/textInput";
     import passwordInput from "@/components/FormElements/passwordInput";
@@ -1977,7 +1974,6 @@
             goodVsBad,
             vueButton,
             vueAlert,
-            contentSubnavLayout,
 
             textInput,
             passwordInput,

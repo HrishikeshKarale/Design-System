@@ -1,11 +1,7 @@
 //https://proto.io/freebies/onoff/
 
 <template>
-    <div class= "navToggle">
-        <content-nav
-            :attributes= 'd_multiToggle.attributes'
-            :title= 'd_multiToggle.title'
-        >  
+    <div class= "navToggle"> 
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_toggle'
@@ -34,7 +30,7 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -42,7 +38,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import multiToggle from "@/components/FormElements/multiToggle";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navToggle",
@@ -52,8 +48,7 @@
         components: {
 
             componentDetails,
-            multiToggle,
-            contentNav
+            multiToggle
         }, //components
 
         data() {

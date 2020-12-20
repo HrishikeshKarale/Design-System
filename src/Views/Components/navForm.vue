@@ -1,9 +1,5 @@
 <template>
     <div class= "navForm">
-        <content-nav
-            :attributes= 'd_form.attributes'
-            :title= 'd_form.title'
-        >  
             <component-details
                 :compData= 'd_form'
             >
@@ -116,7 +112,7 @@
                     />
                 </vue-form>
             </component-details>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -128,7 +124,7 @@
     import textInput from "@/components/FormElements/textInput";
     import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueTextarea from "@/components/FormElements/vueTextarea";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     import { mapState, mapActions } from 'vuex';
 
@@ -240,8 +236,7 @@
             searchableDropdownList,
             textInput,
             checkboxInput,
-            vueTextarea,
-            contentNav
+            vueTextarea
         }, //components
     } //default
 </script>

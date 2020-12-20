@@ -1,9 +1,5 @@
 <template>
     <div class= "navAlertsProactive">
-        <content-nav
-            :attributes= 'd_inputResponse.attributes'
-            :title= 'd_inputResponse.title'
-        >  
             <component-details
                 :compData= 'd_inputResponse'
                 :d_attr= 'd_attr'
@@ -15,7 +11,7 @@
                     :maxlength= 'd_maxlength'
                 />
             </component-details>
-        </content-nav>
+        
         <div>
             <h2>Email Input</h2>
             <email-input 
@@ -99,7 +95,7 @@
     import inputResponse from '@/components/Alerts/inputResponse'
     import vueButton from '@/components/UIComponents/Buttons'
     import componentDetails from '@/Views/componentDetails'
-    import contentNav from '@/Views/components/contentNav';
+    
     
     import emailInput from "@/components/FormElements/emailInput";
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
@@ -286,7 +282,7 @@
             inputResponse,
             vueButton,
             componentDetails,
-            contentNav,
+            
             
             emailInput,
             searchableDropdownList,

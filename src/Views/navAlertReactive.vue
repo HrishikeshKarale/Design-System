@@ -1,9 +1,5 @@
 <template>
     <div class= "navAlertsReactive">
-        <content-nav
-            :attributes= 'd_alert.attributes'
-            :title= 'd_alert.title'
-        >  
             <component-details
                 :compData= 'd_alert'
                 :d_attr= 'd_attr'
@@ -15,7 +11,7 @@
                     :description= 'd_message'
                 />
             </component-details>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -24,7 +20,7 @@
     import vueAlert from '@/components/Alerts/vueAlert'
     import vueButton from '@/components/UIComponents/Buttons'
     import componentDetails from '@/Views/componentDetails'
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: 'navAlertsReactive',
@@ -152,7 +148,7 @@
             vueAlert,
             vueButton,
             componentDetails,
-            contentNav,
+            
         }, //components
     } //default
 </script>

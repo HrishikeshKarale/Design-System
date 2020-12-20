@@ -105,7 +105,7 @@
     props: {
 
       message: {
-        required: true,
+        required: false,
         type: String,
       }
     }, //props

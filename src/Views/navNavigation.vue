@@ -1,9 +1,5 @@
 <template>
     <div class= 'navNavigation'>
-        <content-nav
-            :attributes= 'd_navigation.attributes'
-            :title= 'd_navigation.title'
-        >  
             <component-details
                 :compData= 'd_navigation'
             >
@@ -14,7 +10,7 @@
                     @nav= 'd_nav'
                 />
             </component-details>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -22,7 +18,7 @@
 
     import vueNavigation from '@/components/UIComponents/Navigation/vueNavigation'
     import componentDetails from '@/Views/componentDetails'
-    import contentNav from '@/Views/components/contentNav';
+    
 
     import { mapState, mapActions } from 'vuex';
 
@@ -117,7 +113,7 @@
             
             vueNavigation,
             componentDetails,
-            contentNav,
+            
         }, //components
     } //default
 </script>

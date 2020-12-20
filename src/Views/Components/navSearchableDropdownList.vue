@@ -1,9 +1,5 @@
 <template>
     <div class= "navSearchableDropdownList">
-        <content-nav
-            :attributes= 'd_searchableDropdownList.attributes'
-            :title= 'd_searchableDropdownList.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_searchDropboxValue'
@@ -50,7 +46,7 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -58,7 +54,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -70,8 +66,7 @@
         components: {
 
             componentDetails,
-            searchableDropdownList,
-            contentNav
+            searchableDropdownList
         }, //components
 
         methods: {

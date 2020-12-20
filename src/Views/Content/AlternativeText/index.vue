@@ -1,7 +1,6 @@
 <template>
     <div class= "alternativeText">
-        https://polaris.shopify.com/content/alternative-text#navigation
-        <content-subnav-layout>   
+        https://polaris.shopify.com/content/alternative-text#navigation   
             <template slot= 'left'>
                 <article id= 'alternativeText'>
                     <h1 id= "title">Alternative text</h1>
@@ -128,7 +127,6 @@
                     </ul>
                 </li>
             </template>
-        </content-subnav-layout>
     </div>
 </template>
 
@@ -137,7 +135,6 @@
     import vueButton from '@/components/UIComponents/Buttons'
     import vueCard from "@/components/UIComponents/Cards/vueCard"
     import vueClipboard from "@/components/Code/vueClipboard";
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
     
     // import { store } from '@/store/store'
 
@@ -184,8 +181,7 @@
 
             vueButton,
             vueCard,
-            vueClipboard,
-            contentSubnavLayout
+            vueClipboard
         }, //componnets
 
         methods: {

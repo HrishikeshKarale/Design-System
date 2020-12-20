@@ -1,9 +1,5 @@
 <template>
     <div class= "navButton">
-        <content-nav
-            :attributes= 'd_vueButton.attributes'
-            :title= 'd_vueButton.title'
-        >  
             <component-details
                 :compData= 'd_vueButton'
                 :d_attr= 'd_attr'
@@ -20,7 +16,7 @@
                     :onClickAction= 'd_onClickAction'
                 />
             </component-details>
-        </content-nav>
+        
     </div><!--buttons-->
 </template>
 
@@ -28,7 +24,7 @@
 
     import componentDetails from '@/Views/componentDetails'
     import vueButton from '@/components/UIComponents/Buttons'
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: 'navButton',
@@ -147,7 +143,7 @@
 
             componentDetails,
             vueButton,
-            contentNav,
+            
         }, //components
 
         methods: {

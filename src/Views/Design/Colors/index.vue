@@ -1,9 +1,9 @@
 <template>
   <div class="colors">
-    <content-subnav-layout> 
-      <template slot="left">
       <article id="colors">
-        <h1 id="colors">Colors</h1>
+        <header>
+          <h1>Colors</h1>
+        </header>
         <p>
           We uses colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.
         </p>
@@ -12,7 +12,7 @@
             <h3>
               Guidlines
             </h3>
-          </header>              
+          </header>
           <p>
             These guidelines are the framework upon which we build our system for how color is used.
           </p>
@@ -21,21 +21,23 @@
             <p>
               Although we value an aesthetically pleasing use of color, we place a higher value on clear communication. Our use of color should be purposeful, rational, and should serve to support the purpose of the content.
             </p>
-            <img src="https://polaris.shopify.com/assets/bf0ca0d72f41bb6b6313d0020bb364d5-colors-content-communication@2x.png">
+            <div>
+            <vue-img :src="communicationOverDecoration" />
+            </div>
           </div>
           <div class="subSection">
             <h4>Colors should be accessible</h4>
             <p>
               When choosing colors, consider users who are color blind or who have low vision. Never use color alone to convey information.
             </p>
-            <img src="https://polaris.shopify.com/assets/fa5bded4b7a78e3a68c788395826eb5a-colors-content-accessible@2x.png">
+            <vue-img :src="colorsShouldBeAccessible" />
           </div>
           <div class="subSection">
             <h4>Colors should focus attention</h4>
             <p>
               The use of color should help bring attention to what matters most. Color should support the hierarchy of the page. Use restraint.
             </p>
-            <img src="https://polaris.shopify.com/assets/ab393324eb30e5fc2b09554ae3a77691-colors-content-focusattention@2x.png">
+            <vue-img :src="colorsShouldFocusAttention" />
           </div>
         </section>
         <section id="colorPalette">
@@ -624,8 +626,6 @@
             </ul>
           </section>
         </article>
-      </template>
-      <template slot="right">
         <li
           v-for="col in colors"
           :key="col.id"
@@ -647,8 +647,6 @@
             </li>
           </ul>
         </li>
-      </template>
-    </content-subnav-layout>
   </div>
 </template>
 
@@ -658,8 +656,9 @@
   import multiToggle from "@/components/FormElements/multiToggle";
   import goodVsBad from "@/Views/goodVsBad"
   import vueCard from "@/components/UIComponents/Cards/vueCard"
+  import vueImg from "@/components/UIComponents/Image/vueImg"
   import vueClipboard from "@/components/Code/vueClipboard";
-  import contentSubnavLayout from "@/components/Layout/contentSubnavLayout"
+  
 
   export default {
     name: "colors",
@@ -677,8 +676,16 @@
       var d_buttonStyle= this.$store.state.buttonStyle
       
       var d_form=""
+
+      
+    const communicationOverDecoration = require("@/assets/design/color/6de009ff5c705bb127c26ee805ed9579.png");
+    const colorsShouldBeAccessible = require("@/assets/design/color/b9de27c544ab6b6cbaea59f9db8e634e.png");
+    const colorsShouldFocusAttention = require("@/assets/design/color/8f9062860d7a21c1222172b4a485f218.png");
       
       return {
+        communicationOverDecoration,
+    colorsShouldBeAccessible,
+    colorsShouldFocusAttention, 
 
         d_buttonType: d_buttonType,
 
@@ -704,8 +711,8 @@
       multiToggle,
       goodVsBad,
       vueCard,
-      vueClipboard,
-      contentSubnavLayout
+      vueImg,
+      vueClipboard
     }, //componnets
 
     methods: {
@@ -737,41 +744,79 @@
   .colors {
     display: flex;
     flex-direction: column;
-    
-    #colorPalette {
-      display: flex;
-      flex-direction: column;
 
-      & > div {
+    article {
+      section {
 
-        &#Primary,
-        &#Other {
-          display: flex;
-          flex-direction: column;
-          
-          &.subSection {
-            
-            .section {
-              .section();
+        &#guidlines {
+          & > .subSection {
+            img {
+              align-self: flex-end;
+            }
+            &:nth-child(odd) {
+              img {
+                align-self: flex-start;
+              }
             }
           }
         }
 
-        &#Alerts {
+        &#usage {
+
+          & > div {
+
+            &.colorSamples {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: space-evenly;
+
+              & > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+              }
+            }
+          }
+        }
+        
+        &#colorPalette {
           display: flex;
           flex-direction: column;
-          
-          &.subSection {
 
-            .section {
+          & > div {
+
+            &#Primary,
+            &#Other {
+              display: flex;
+              flex-direction: column;
               
-              & > #Information, 
-              & > #Success,
-              & > #Warning,
-              & > #Danger {
-
-                & > .section {
+              &.subSection {
+                
+                .section {
                   .section();
+                }
+              }
+            }
+
+            &#Alerts {
+              display: flex;
+              flex-direction: column;
+              
+              &.subSection {
+
+                .section {
+                  
+                  & > #Information, 
+                  & > #Success,
+                  & > #Warning,
+                  & > #Danger {
+
+                    & > .section {
+                      .section();
+                    }
+                  }
                 }
               }
             }
@@ -779,6 +824,8 @@
         }
       }
     }
+
+    
 
     .palette {
       width: fit-content;
@@ -808,24 +855,6 @@
       }
     }
 
-    #usage {
-
-      & > div {
-
-        &.colorSamples {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-evenly;
-
-          & > div {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-          }
-        }
-      }
-    }
+    
   }
 </style>

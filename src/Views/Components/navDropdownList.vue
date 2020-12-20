@@ -1,9 +1,5 @@
 <template>
     <div class= "navDropdownList">
-        <content-nav
-            :attributes= 'd_dropdownList.attributes'
-            :title= 'd_dropdownList.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_dropdownValue'
@@ -47,14 +43,14 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import dropdownList from "@/components/FormElements/dropdownList";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -66,8 +62,7 @@
         components: {
 
             componentDetails,
-            dropdownList,
-            contentNav
+            dropdownList
         }, //components
 
         methods: {

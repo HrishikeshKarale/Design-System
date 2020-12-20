@@ -1,9 +1,5 @@
 <template>
     <div class= "navTextarea">
-        <content-nav
-            :attributes= 'd_textarea.attributes'
-            :title= 'd_textarea.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_textareaValue'
@@ -49,7 +45,7 @@
                     </component-details>     
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -57,7 +53,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import vueTextarea from "@/components/FormElements/vueTextarea";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -69,8 +65,7 @@
         components: {
             
             componentDetails,
-            vueTextarea,
-            contentNav
+            vueTextarea
         }, //components
 
         methods: {

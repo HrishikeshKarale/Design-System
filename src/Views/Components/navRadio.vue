@@ -1,9 +1,5 @@
 <template>
     <div class= "navRadio">
-        <content-nav
-            :attributes= 'd_radio.attributes'
-            :title= 'd_radio.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_radioValue'
@@ -45,7 +41,7 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
@@ -53,7 +49,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import radioInputTest from "@/components/FormElements/radioInputTest";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     export default {
         name: "navRadio",
@@ -61,8 +57,7 @@
         components: {
             
             componentDetails,
-            radioInputTest,
-            contentNav
+            radioInputTest
         }, //components
 
         methods: {

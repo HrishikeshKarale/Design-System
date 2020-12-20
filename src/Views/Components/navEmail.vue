@@ -1,9 +1,5 @@
 <template>
     <div class= "navEmail">
-        <content-nav
-            :attributes= 'd_email.attributes'
-            :title= 'd_email.title'
-        >  
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_emailValue'
@@ -49,14 +45,14 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import emailInput from "@/components/FormElements/emailInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -66,8 +62,7 @@
         components: {
 
             componentDetails,
-            emailInput,
-            contentNav
+            emailInput
         }, //components
         
         methods: {

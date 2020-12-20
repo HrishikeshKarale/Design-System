@@ -1,9 +1,5 @@
 <template>
-    <div class= "navPassword">
-        <content-nav
-            :attributes= 'd_password.attributes'
-            :title= 'd_password.title'
-        >  
+    <div class= "navPassword"> 
             <div class= 'FormElementsTitle'>
                 <div 
                     v-if= 'd_passwordValue'
@@ -49,14 +45,14 @@
                     </component-details>
                 </form>
             </div>
-        </content-nav>
+        
     </div>
 </template>
 
 <script>
     import componentDetails from "@/Views/componentDetails";
     import passwordInput from "@/components/FormElements/passwordInput";
-    import contentNav from '@/Views/components/contentNav';
+    
 
     // import { store } from '@/store/store'
 
@@ -68,8 +64,7 @@
         components: {
 
             componentDetails,
-            passwordInput,
-            contentNav
+            passwordInput
         }, //components
 
         methods: {

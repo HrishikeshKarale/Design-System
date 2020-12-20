@@ -1,7 +1,6 @@
 <template>
     <div class= "naming">
-        https://polaris.shopify.com/content/naming#navigation
-        <content-subnav-layout>   
+        https://polaris.shopify.com/content/naming#navigation   
             <template slot= 'left'>
                 <article id= 'naming'>
                     <h1>Naming</h1>
@@ -457,7 +456,6 @@
                     </ul>
                 </li>
             </template>
-        </content-subnav-layout>
     </div>
 </template>
 
@@ -466,7 +464,6 @@
     import vueButton from '@/components/UIComponents/Buttons'
     import vueCard from "@/components/UIComponents/Cards/vueCard"
     import vueClipboard from "@/components/Code/vueClipboard";
-    import contentSubnavLayout from '@/components/Layout/contentSubnavLayout'
     
     // import { store } from '@/store/store'
 
@@ -513,8 +510,7 @@
 
             vueButton,
             vueCard,
-            vueClipboard,
-            contentSubnavLayout
+            vueClipboard
         }, //componnets
 
         methods: {
