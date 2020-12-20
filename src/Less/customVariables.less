@@ -3,94 +3,123 @@
 //== Colors
 //
 
-    @white:                 var(--white);
-    @black:                 var(--black);
-    @primaryColor:          var(--primaryColor);
-    @secondaryColor:        var(--secondaryColor);
-    @accentColor:           var(--accentColor);
-    @cometLogo:             var(--cometLogo);
-    @cometText:             var(--cometText);
-    @backgroundColor:       var(--backgroundColor);
-    @navBackground:         var(--navBackground);
-    @navText:               var(--navText);
-    @navType:               var(--navType);
-    @shadowColor:           var(--shadowColor);
+@white: var(--white);
+@black: var(--black);
+@primaryColor: var(--primaryColor);
+@secondaryColor: var(--secondaryColor);
+@textColor: var(--textColor);
+@backgroundColor: var(--backgroundColor);
+@navBackground: var(--navBackground);
+@navText: var(--navText);
+@shadowColor: var(--shadowColor);
 
-    //success
-    @successText:           #3c763d;
-    @successBackground:     #dff0d8;
-    @successBorder:         ~"darken(@successBackground, 5%)"; //#d6e9c6
+//success
+@successText: #3c763d;
+@successBackground: #dff0d8;
+@successBorder: ~"darken(@successBackground, 5%)"; //#d6e9c6
 
-    //info
-    @infoText:              #31708f;
-    @infoBackground:        #d9edf7;
-    @infoBorder:            ~"darken(@infoBackground, 7%)"; //#bce8f1
+//info
+@infoText: #31708f;
+@infoBackground: #d9edf7;
+@infoBorder: ~"darken(@infoBackground, 7%)"; //#bce8f1
 
-    //warning
-    @warningText:           #8a6d3b;
-    @warningBackground:     #fcf8e3;
-    @warningBorder:         ~"darken(@warningBackground, 5%)"; //#faebcc
+//warning
+@warningText: #8a6d3b;
+@warningBackground: #fcf8e3;
+@warningBorder: ~"darken(@warningBackground, 5%)"; //#faebcc
 
-    //danger
-    @dangerText:            #a94442;
-    @dangerBackground:      #f2dede;
-    @dangerBorder:          ~"darken(@dangerBackground, 5%)"; //#ebccd1
+//danger
+@dangerText: #a94442;
+@dangerBackground: #f2dede;
+@dangerBorder: ~"darken(@dangerBackground, 5%)"; //#ebccd1
 
-    @hr-border:             @secondaryColor;
-    @headings-color:        @secondaryColor;
-    @link-color:            @accentColor;
-
-    //## Gray and brand colors for use across
-    @grayBase:              @black;
-    @grayDarker:            ~"lighten(@grayBase, 13.5%)"; // #222
-    @grayDark:              ~"lighten(@grayBase, 20%)";   // #333
-    @gray:                   ~"lighten(@grayBase, 33.5%)"; // #555
-    @grayLight:             ~"lighten(@grayBase, 46.7%)"; // #777
-    @grayLighter:           ~"lighten(@grayBase, 93.5%)"; // #eee
+//## Gray and brand colors for use across
+@grayBase: @black;
+@grayDarker: ~"lighten(@grayBase, 13.5%)"; // #222
+@grayDark: ~"lighten(@grayBase, 20%)"; // #333
+@gray: ~"lighten(@grayBase, 33.5%)"; // #555
+@grayLight: ~"lighten(@grayBase, 46.7%)"; // #777
+@grayLighter: ~"lighten(@grayBase, 93.5%)"; // #eee
 
 //font
-@fontSizeMd:                16px;
-@fontSize:                  ceil((@fontSizeMd * 1.25));
-@fontSizeSm:                ceil((@fontSizeMd * 0.85));
-@fontFamily:                'Roboto', Arial, sans-serif;
+@fontSizeMd: 16px;
+@fontSize: ceil((@fontSizeMd * 1.25));
+@fontSizeSm: ceil((@fontSizeMd * 0.75));
+@fontSizeH1: floor((@fontSizeMd * 2.6)); // ~36px
+@fontSizeH2: floor((@fontSizeMd * 2.15)); // ~30px
+@fontSizeH3: ceil((@fontSizeMd * 1.7)); // ~24px
+@fontSizeH4: ceil((@fontSizeMd * 1.25)); // ~18px
+@fontSizeH5: @fontSizeMd;
+@fontSizeH6: ceil((@fontSizeMd * 0.85)); // ~12px
+
+@font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+@fontFamily: 'Roboto', Arial, sans-serif;
+
+@lineHeightBase: 1.428571429;
+@lineHeight: floor((@fontSize * @lineHeightBase));
 
 //spacing or sizing
-@spaceXs:                    2px;
-@spaceSm:                    4px;
-@spaceMd:                    8px;
-@spaceLg:                    16px;
-@spaceXl:                    32px;    
-    //border-radius custom
-    @borderRadiusSm:        @spaceXs;
-    @borderRadiusMd:        @spaceSm;
-    @borderRadiusLg:        @spaceMd;
-    //checkbox size
-    @checkboxSize:              1.5;
+@spaceXs: 2px;
+@spaceSm: 4px;
+@spaceMd: 8px;
+@spaceLg: 16px;
+@spaceXl: 32px;
+
+//height content
+@header: 120px;
+@footer: 80px;
+@body: calc(100vh - @header - @footer);
+
+//border-radius
+@borderRadiusSm: @spaceXs;
+@borderRadius: @spaceSm;
+@borderRadiusLg: @spaceMd;
+//checkbox size
+@checkboxSize: 1.5;
 
 //boxShadows
+//color is added directly to the bosShadow and testShadow functions
+//box-shadow = horizontal - vertical - blur - spread - color
 //opacitycodes: 100% — FF
 // 95% — F2 90% — E6 85% — D9 80% — CC 75% — BF 70% — B3 65% — A6 60% — 99 55% — 8C 50% — 80 45% — 73 40% — 66 35% — 59 30% — 4D 25% — 40 20% — 33 15% — 26 10% — 1A 5% — 0D 0% — 00
-@base: inset 0 0 4px;
-@one:  0 1px 2px @shadowColor;
-@two: 0 2px 4px @shadowColor;
-@three: 0 4px 8px @shadowColor;
-@four: 0 8px 16px @shadowColor;
-@five: 0 16px 32px @shadowColor;
+@base: inset 0 0 @spaceSm;
+@one: 0 1px @spaceXs;
+@two: 0 @spaceXs @spaceSm;
+@three: 0 @spaceSm @spaceMd;
+@four: 0 @spaceMd @spaceLg;
+@five: 0 @spaceLg @spaceXl;
 //textShadows (text-shadow: topOffset leftOffset blurRadius color;)
 @baseText: @base;
-@oneText:  @one;
+@oneText: @one;
 @twoText: @two;
 @threeText: @three;
 @fourText: @four;
 @fiveText: @five;
+
 //transitions
-@transition: all 0.8s cubic-bezier(0.25,0.8,0.25,1);
+@transitionDuration: 0.3s;
+@transitionTimingFunction: cubic-bezier(0.55, 0, 0.1, 1);
+@transition: all @transitionDuration @transitionTimingFunction;
 
 
-//border radius bootstrap
-@border-radius-base:        @borderRadiusMd;
-@border-radius-large:       @borderRadiusLg;
-@border-radius-small:       @borderRadiusSm;
+//z-index
+@bodyZ: 0;
+@headerZ: 200;
+@contentZ: 100;
+@modalZ: 300;
+// @zindex-navbar:            1000;
+// @zindex-dropdown:          1000;
+// @zindex-popover:           1060;
+// @zindex-tooltip:           1070;
+// @zindex-navbar-fixed:      1030;
+// @zindex-modal-background:  1040;
+// @zindex-modal:             1050;
+
+
+
 
 /*
     codepen website shadows values were used for material design

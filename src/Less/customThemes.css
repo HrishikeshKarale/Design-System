@@ -1,39 +1,76 @@
-
 html {
-    --white:                 #FFFFFF;
-    --black:                 #000000;
-    --cometLogo:             #51A4DB;
-    --complemarBlue:         #015D9A;
-    --cometBlue:             #003A65;
-    --CMTeal:                #00B6A8;
-    --offWhite:              #FAFBFC;
-    --offBlack:              #333333;
+  --primaryColor: #FBCE51;
+  --secondaryColor: #F1BA45;
+  --CMTeal: #00B6A8;
+
+  --white: #FFFFFF;
+  --offWhite: #FAFBFC;
+
+  /* dark colors */
+  --black: #000000;
+  --offBlack: #0C090D;
+  /* shades of grey */
+  --grayDarker: ~"lighten(--black, 13.5%)";
+  --grayDark: ~"lighten(--black, 20%)";
+  --gray: ~"lighten(--black, 33.5%)";
+  --grayLight: ~"lighten(--black, 46.7%)";
+  --grayLighter: ~"lighten(--black, 93.5%)";
 }
 
 :root {
-    --primaryColor:          var(--complemarBlue);
-    --secondaryColor:        var(--cometBlue);
-    --accentColor:           var(--CMTeal);
-    --cometLogo:             var(--cometLogo);
-    --cometText:             var(--offBlack);
-    --backgroundColor:       var(--offWhite);
-    --navBackground:         var(--white);
-    --navText:               var(--secondaryColor);
-    --navType:               var(--cometLogo);
-    --shadowColor:          #3333337F;
+  --textColor: var(--offBlack);
+  --backgroundColor: var(--offWhite);
+  --navBackground: var(--offBlack);
+  --navText: var(--offWhite);
+  --shadowColor: var(--black);
 }
 
 html[theme='darkMode'] {
-    --primaryColor:          var(--cometLogo);
-    --secondaryColor:        var(--cometBlue);
-    --accentColor:           var(--accentColor);
-    --cometLogo:             var(--cometLogo);
-    --cometText:             var(--offWhite);
-    --backgroundColor:       var(--offBlack);
-    --navBackground:         var(--cometBlue);
-    --navText:               var(--white);
-    --navType:               var(--cometLogo);
-    --shadowColor:            #ffffff7F;
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--offBlack);
+  --navBackground: var(--black);
+  --navText: var(--white);
+  --shadowColor: var(--offBlack);
+}
+
+html[theme='blueMode'] {
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--offBlack);
+  --navBackground: var(--black);
+  --navText: var(--white);
+  --shadowColor: var(--offBlack);
+
+  /* indigo dye: 003A65, Blue NCS: 0094C6, Opera Mauve: ad7a99, Eggshell: f4f1de, DeepChampagne: f2cc8f */
+}
+
+html[theme='blueMode'] {
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--offBlack);
+  --navBackground: var(--black);
+  --navText: var(--white);
+  --shadowColor: var(--offBlack);
+
+  /* maize Crayola : fbce51, black: 000000, Flame: cf5c36, lavender Blush: eee5e9, grey Web: 7c7c7c */
+}
+
+html[theme='greenMode'] {
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--offBlack);
+  --navBackground: var(--black);
+  --navText: var(--white);
+  --shadowColor: var(--offBlack);
+
+  /* maize Crayola : fbce51, Moss Green: 709255, dark Moss green: 3e5622, Phthalo Green: 172815, Persian Pink: f991cc */
+}
+
+html[theme='purpleMode'] {
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--offBlack);
+  --navBackground: var(--black);
+  --navText: var(--white);
+  --shadowColor: var(--offBlack);
+
+  /* maize Crayola : fbce51, black: 000000, oxford Blue: 14213d, electric Purple: b14aed, french Mauve: c874d9 */
 }
 
 
