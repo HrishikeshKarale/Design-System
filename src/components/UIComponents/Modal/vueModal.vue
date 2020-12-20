@@ -210,7 +210,7 @@
                     height: fit-content;
                     margin: 0px auto;
                     background-color: @backgroundColor;
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
                     .boxShadow(0 2px 8px rgba(0, 0, 0, .33));
                     transition: all .3s ease;
                     font-family: Helvetica, Arial, sans-serif;

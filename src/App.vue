@@ -208,7 +208,7 @@
 
     body {
         margin: 0;
-        color: @cometText;
+        color: @textColor;
         background-color: @backgroundColor;
     }
 </style>

@@ -1722,7 +1722,7 @@
                                 <template slot= 'good'>
                                     <fieldset style= 'width: 400px;'>
                                         <legend style= 'color: #FFFFFF; 
-                                                        background-color: @accentColor;
+                                                        background-color: @secondaryColor;
                                                         text-align: center;'>
                                             <h2>C O M E T</h2>
                                         </legend>

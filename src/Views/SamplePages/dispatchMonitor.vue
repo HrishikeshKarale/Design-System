@@ -349,7 +349,7 @@
         flex-direction: row;
         justify-content: space-between;
         background-color: @secondLevelBackground;
-        border-radius: @borderRadiusMd;
+        border-radius: @borderRadius;
         padding: @spaceMd @spaceLg;
 
         // .boxShadow(@one);
@@ -372,7 +372,7 @@
         min-height: @height; 
         min-width: @height * @phi;
         border: hidden 2px solid ~"darken(#fafbfc, 10%)";
-        border-radius: @borderRadiusMd;
+        border-radius: @borderRadius;
         display: flex; 
         flex-direction: column;
         justify-content: space-evenly;
@@ -565,7 +565,7 @@
                     padding: @spaceMd @spaceLg;
                     border-radius: 8px;
                     border: hidden 2px solid ~"darken(#fafbfc, 10%)";
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
 
                     & > div {
                         display: flex;
@@ -653,7 +653,7 @@
                         padding: @spaceMd @spaceLg;
                         border-radius: 8px;
                         border: hidden 2px solid ~"darken(#fafbfc, 10%)";
-                        border-radius: @borderRadiusMd;
+                        border-radius: @borderRadius;
 
                         & > div {
                             display: flex;

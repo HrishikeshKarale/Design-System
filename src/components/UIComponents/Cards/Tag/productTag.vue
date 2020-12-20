@@ -293,7 +293,7 @@
             flex-direction: row;
             flex-wrap: nowrap;
             border: 1px solid black;
-            border-radius: @borderRadiusMd;
+            border-radius: @borderRadius;
             background-color: @white;
             padding: @spaceMd @spaceLg;
             width: 320px;

@@ -183,7 +183,7 @@
                                         
         & > a > div > span {
             font-size: 20px;
-            color: @accentColor;
+            color: @secondaryColor;
         }
     };
 
@@ -276,7 +276,7 @@
                 padding: 4px 16px 4px 16px;
                 width: fit-content;
                 margin: auto 0px;
-                color: @cometLogo;
+                color: @secondaryColor;
                 cursor: pointer;
                 text-transform: uppercase;
                 border-left: 4px solid transparent;

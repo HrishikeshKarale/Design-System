@@ -191,7 +191,7 @@
                 .boxShadow(none);
                 color: @color;
                 padding: @spaceSm @spaceMd;
-                border-radius: @borderRadiusMd;
+                border-radius: @borderRadius;
                 text-decoration: none;
                 font-weight: bold;
 
@@ -202,7 +202,7 @@
             }
 
             &.btn-border {
-                border-radius: @borderRadiusMd;
+                border-radius: @borderRadius;
                 background-color: @white;
                 border: 1px solid @color;
                 color: @color;

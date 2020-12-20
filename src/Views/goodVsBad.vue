@@ -140,7 +140,7 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 border-radius: 0 0 4px 4px;
-                color: @cometText;
+                color: @textColor;
                 font-size: 16px;
                 padding: @spaceMd @spaceLg;
 
@@ -151,7 +151,7 @@
                     padding: @spaceLg @spaceXl;
                     border: 1px solid transparent;
                     border-top-width: 4px;
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
                     align-self: flex-start;
                     min-width: fit-content;
                     
@@ -176,7 +176,7 @@
                                 margin-top: 32px;
                                 padding: @spaceSm @spaceMd;
                                 text-align: center;
-                                border-radius: @borderRadiusMd;
+                                border-radius: @borderRadius;
                                 font-weight: bold;
                                 color: @white;
                             }
@@ -222,7 +222,7 @@
                 border-radius: 4px 4px 0 0 ;
 
                 & > p {
-                    color: @cometText;
+                    color: @textColor;
                  }
             }
         }        

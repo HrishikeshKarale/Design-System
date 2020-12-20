@@ -138,7 +138,7 @@
 
                 a {
                     text-decoration: none;
-                    color: ~"lighten(@cometText, 8%)";
+                    color: ~"lighten(@textColor, 8%)";
                 }
                 
                 & > li {

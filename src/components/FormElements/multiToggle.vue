@@ -220,7 +220,7 @@
                 &.checked {
                     transition: all 350ms;
                     background: #ffffff;
-                    border-color: @accentColor;
+                    border-color: @secondaryColor;
                 }
                 
                 &.unchecked {
@@ -246,7 +246,7 @@
                     &.checked {
                         transform: translateX(32px);
                         transition: all 350ms;
-                        background: @accentColor;
+                        background: @secondaryColor;
                     }
 
                     &.unchecked {

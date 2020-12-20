@@ -407,7 +407,7 @@
                         <good-vs-bad message= ''>
                             <template slot= 'good'>
                                 <p>
-                                    Use @accentColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.
+                                    Use @secondaryColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.
                                 </p>
                                 <div class= 'container'>
                                     <h1>H1</h1>
@@ -418,7 +418,7 @@
                                     <h6>H3</h6>
                                 </div>
                                 <p>
-                                    Use @accentColor (#003A65) for text links.
+                                    Use @secondaryColor (#003A65) for text links.
                                 </p>
                                 <div class= 'container'>
                                     <div
@@ -430,7 +430,7 @@
                                     
                                 </div>
                                 <p>
-                                    Use @accentColor (#00B6A8) to suggest highlight and/or suggest active status.
+                                    Use @secondaryColor (#00B6A8) to suggest highlight and/or suggest active status.
                                 </p>
                                 <div class= 'container'>
                                     <multi-toggle 
@@ -547,7 +547,7 @@
                             </template>
                             <template slot= 'bad'>
                                 <p>
-                                    Do not use @accentColor (#00B6A8) for background color with lightly colored text on top.
+                                    Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
                                 </p>
                                 <div class= 'container'>
                                     <div
@@ -777,7 +777,7 @@
                 margin: 8px 16px;
                 padding: @spaceMd @spaceLg;
                 width: fit-content;
-                border-radius: @borderRadiusMd;
+                border-radius: @borderRadius;
 
                 &.icon {
                     padding: @spaceSm @spaceMd;

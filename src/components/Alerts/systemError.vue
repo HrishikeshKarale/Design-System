@@ -330,7 +330,7 @@
             background-color:@backgroundColor;
             border: 1px solid ~"darken(@backgroundColor, 10%)";
             padding: @spaceSm @spaceMd;
-            border-radius: @borderRadiusMd;
+            border-radius: @borderRadius;
 
              & > div {
                 display: flex;
@@ -360,12 +360,12 @@
                             }
                             
                             &.stackTrace {
-                                border-radius: @borderRadiusMd;
+                                border-radius: @borderRadius;
 
                                 textarea:disabled {
                                     background-color: transparent;
                                     border-color: ~"darken(@backgroundColor, 25%)";
-                                    border-radius: @borderRadiusMd;
+                                    border-radius: @borderRadius;
                                     width: auto;
                                 }
                             }

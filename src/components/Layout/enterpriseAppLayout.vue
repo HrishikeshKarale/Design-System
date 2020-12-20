@@ -91,7 +91,7 @@
                     height: fit-content;
                     width: 100%;
                     padding: @spaceLg @spaceXl;
-                    color: @cometText;
+                    color: @textColor;
                     
                     .scroll(100%);
                 }

@@ -483,7 +483,7 @@
                 flex-direction: row;
                 justify-content: space-around;
                 padding: @spaceMd @spaceLg;
-                border-radius: @borderRadiusMd;
+                border-radius: @borderRadius;
             }
 
             & > div {
@@ -493,7 +493,7 @@
                 .content {
                     display: flex;
                     background-color: #f5f5f5;
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
                     max-width: 1400px;
                     min-width: 640px;
                 }

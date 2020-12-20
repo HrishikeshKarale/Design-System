@@ -260,7 +260,7 @@
 
         .typographyCard {
             margin: 64px auto 32px;
-            color: @cometText;
+            color: @textColor;
 
             .typoCardContainer {
                 background-color: @white;
@@ -325,7 +325,7 @@
                 width: 480px;
                 margin: @spaceLg @spaceXl;
                 font-weight: 400;
-                border-radius: @borderRadiusMd;
+                border-radius: @borderRadius;
                 background-color: @white;
 
                 .boxShadow(@one);

@@ -49,7 +49,7 @@
 
     .cardBackground {
         background: transparent;
-        border-radius: @borderRadiusMd;
+        border-radius: @borderRadius;
 
         &.text {
             &.idle-1 {
@@ -139,27 +139,27 @@
             transition: @transition;
 
             &:hover.hover-1 {
-                .boxShadow(@one @accentColor);
+                .boxShadow(@one);
                 transition: @transition;
             }
 
             &:hover.hover-2 {
-                .boxShadow(@two @accentColor);
+                .boxShadow(@two);
                 transition: @transition;
             }
 
             &:hover.hover-3 {
-                .boxShadow(@three @accentColor);
+                .boxShadow(@three);
                 transition: @transition;
             }
 
             &:hover.hover-4 {
-                .boxShadow(@four @accentColor);
+                .boxShadow(@four);
                 transition: @transition;
             }
 
             &:hover.hover-5 {
-                .boxShadow(@five @accentColor);
+                .boxShadow(@five);
                 transition: @transition;
             }
         }
@@ -169,22 +169,22 @@
             transition: @transition;
 
             &:hover.hover-2 {
-                .boxShadow(@two @accentColor);
+                .boxShadow(@two);
                 transition: @transition;
             }
 
             &:hover.hover-3 {
-                .boxShadow(@three @accentColor);
+                .boxShadow(@three);
                 transition: @transition;
             }
 
             &:hover.hover-4 {
-                .boxShadow(@four @accentColor);
+                .boxShadow(@four);
                 transition: @transition;
             }
 
             &:hover.hover-5 {
-                .boxShadow(@five @accentColor);
+                .boxShadow(@five);
                 transition: @transition;
             }
         }
@@ -194,17 +194,17 @@
             transition: @transition;
 
             &:hover.hover-3 {
-                .boxShadow(@three @accentColor);
+                .boxShadow(@three);
                 transition: @transition;
             }
 
             &:hover.hover-4 {
-                .boxShadow(@four @accentColor);
+                .boxShadow(@four);
                 transition: @transition;
             }
 
             &:hover.hover-5 {
-                .boxShadow(@five @accentColor);
+                .boxShadow(@five);
                 transition: @transition;
             }
         }
@@ -214,12 +214,12 @@
             transition: @transition;
 
             &:hover.hover-4 {
-                .boxShadow(@four @accentColor);
+                .boxShadow(@four);
                 transition: @transition;
             }
 
             &:hover.hover-5 {
-                .boxShadow(@five @accentColor);
+                .boxShadow(@five);
                 transition: @transition;
             }
         }
@@ -229,7 +229,7 @@
             transition: @transition;
 
             &:hover.hover-5 {
-                .boxShadow(@five @accentColor);
+                .boxShadow(@five);
                 transition: @transition;
             }
         }

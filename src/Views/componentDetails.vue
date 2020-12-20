@@ -377,7 +377,7 @@
                 margin-bottom: 16px;
 
                 h3 {
-                    color: @cometText;
+                    color: @textColor;
                     font-weight: bold;
                 }
             }
@@ -438,7 +438,7 @@
                         //     display: flex;
                         //     flex-direction: column;
                         //     flex-wrap: nowrap;
-                        //     border-radius: @borderRadiusMd;
+                        //     border-radius: @borderRadius;
                         //     width: 100%;
 
                         //     & > div {

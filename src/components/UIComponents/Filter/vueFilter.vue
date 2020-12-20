@@ -163,7 +163,7 @@
                 &.open {
                     background-color: @backgroundColor;
                     width: fit-content;
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
                     border: 1px solid ~"darken(@backgroundColor, 10%)";
                 }
 
@@ -172,10 +172,10 @@
                     flex-direction: row;
                     flex-wrap: nowrap;
                     justify-content: space-between;
-                    background-color: @accentColor;
+                    background-color: @secondaryColor;
                     color: @white;
                     margin-right: 8px;
-                    border-radius: @borderRadiusMd;
+                    border-radius: @borderRadius;
                     padding: @spaceXs @spaceSm;
 
                     & > div {

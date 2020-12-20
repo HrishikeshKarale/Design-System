@@ -183,7 +183,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         // border: 1px solid #333;
-        border-radius: @borderRadiusMd;
+        border-radius: @borderRadius;
         background-color: transparent;
         min-width: 320px;
         padding: @spaceMd @spaceLg;
@@ -210,7 +210,7 @@
                     margin-bottom: 16px;
 
                     span {
-                        color: @accentColor;
+                        color: @secondaryColor;
 
                         &.inActive {
                             color: @gray;

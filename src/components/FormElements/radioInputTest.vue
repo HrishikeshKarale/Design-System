@@ -320,7 +320,7 @@
             margin-left: 8px;
             width: fit-content;
             background-color: @backgroundColor;
-            border-radius: @borderRadiusMd;
+            border-radius: @borderRadius;
 
             &.checked {
                 background-color: @secondaryColor;

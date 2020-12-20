@@ -190,7 +190,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        border-radius: @borderRadiusMd;
+        border-radius: @borderRadius;
         border: 1px solid transparent;
         width: fit-content;
         background-color: @white;

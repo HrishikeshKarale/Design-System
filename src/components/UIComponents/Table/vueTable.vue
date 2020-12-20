@@ -661,12 +661,12 @@
         .boxShadow(@one);
         width: fit-content;
         font-size: 16px;
-        color: @cometText;
+        color: @textColor;
 
         table {
             display: flex;
             flex-direction: column;
-            border-radius: @borderRadiusMd;
+            border-radius: @borderRadius;
             background-color: @backgroundColor;
 
             thead {
@@ -721,7 +721,7 @@
                             padding-left: 16px;
                             text-align: left;
                             width: @cellWidth;  
-                            color: @cometText;
+                            color: @textColor;
                             cursor: pointer;
 
                             &:last-child {
@@ -767,7 +767,7 @@
 
                                                 & > label {
                                                     font-size: @fontSizeSm;
-                                                    color: @cometText;
+                                                    color: @textColor;
 
                                                     & > input[type= checkbox] {
                                                         margin-right: 4px;
@@ -795,7 +795,7 @@
                                     &.showOptions {
                                         position: absolute;
                                         background-color: @backgroundColor;
-                                        border-radius: @borderRadiusMd;
+                                        border-radius: @borderRadius;
                                         z-index: 100;
 
                                         .boxShadow(@one);
@@ -1016,7 +1016,7 @@
             flex-direction: row;
             margin: auto 0px;
             font-size: @fontSizeMd;
-            color: @cometText;
+            color: @textColor;
 
             &:first-child {
                 font-weight: normal;

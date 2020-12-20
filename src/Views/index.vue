@@ -111,7 +111,7 @@
         flex-direction: column;
         justify-content: space-around;
         margin-right: 32px;
-        color: @cometText;
+        color: @textColor;
 
         > div {
 
