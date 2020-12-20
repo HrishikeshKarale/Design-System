@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'spacing'>
                     <h1>Spacing</h1>
-                    <dt>
+                    <p>
                         Consistent spacing creates visual balance that makes the user interface (UI) easier for users to scan. Apply consistent spacing to improve the quality of the UI.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "system">
                         <h3>The spacing system</h3>

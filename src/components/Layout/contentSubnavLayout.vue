@@ -134,7 +134,7 @@
                 position: sticky;
                 height: fit-content;
                 top: 5vh;
-                font-size: 16px;
+                font-size: @fontSizeMd;
 
                 a {
                     text-decoration: none;

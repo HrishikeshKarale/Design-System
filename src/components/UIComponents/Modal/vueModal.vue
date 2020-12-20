@@ -221,7 +221,7 @@
                         border-top-left-radius: 4px;
                         border-top-right-radius: 4px;
                         padding: @spaceMd @spaceLg;
-                        font-size: 32px;
+                        font-size: 2*@fontSize;
                         height: auto;
                         text-align: left;
                     }

@@ -204,7 +204,7 @@
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
-                    font-size: 24px;
+                    font-size: @fontSize;
                     color: @secondaryColor;
                     font-weight: bold;
                     margin-bottom: 16px;

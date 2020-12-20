@@ -5,9 +5,9 @@
             <template slot= 'left'>
                 <article id= 'actionableLanguage'>
                     <h1>Actionable Language</h1>
-                    <dt>
+                    <p>
                         Merchants use COMET to get things done. Content should be written and structured to help them understand and take the most important actions.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "sentences">
                         <h3>Sentences</h3>

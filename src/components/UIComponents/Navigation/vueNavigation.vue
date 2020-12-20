@@ -182,7 +182,7 @@
         flex-wrap: nowrap;
                                         
         & > a > div > span {
-            font-size: 20px;
+            font-size: @fontSize;
             color: @secondaryColor;
         }
     };

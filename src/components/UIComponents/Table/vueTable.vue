@@ -660,7 +660,7 @@
     .vueTable {
         .boxShadow(@one);
         width: fit-content;
-        font-size: 16px;
+        font-size: @fontSizeMd;
         color: @textColor;
 
         table {
@@ -851,7 +851,7 @@
                                 div {
 
                                     &.smalltext {
-                                        font-size: 10px;
+                                        font-size: @fontSizeSm;
                                         margin-left: 8px;
                                         text-decoration: underline;
                                         color: @secondaryColor;
@@ -1044,7 +1044,7 @@
 
                 & span {
                     color: @secondaryColor;
-                    font-size: 20px;
+                    font-size: @fontSize;
                 }
             }
         }

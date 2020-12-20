@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'icons'>
                     <h1>Icons</h1>
-                    <dt>
+                    <p>
                         FONT AWESOME icons act as visual aids to help users complete tasks. They should be used purposefully.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "iconPrinciples">
                         <h3>Icon Principles</h3>

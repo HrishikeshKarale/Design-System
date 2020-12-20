@@ -141,7 +141,7 @@
                 flex-wrap: wrap;
                 border-radius: 0 0 4px 4px;
                 color: @textColor;
-                font-size: 16px;
+                font-size: @fontSizeMd;
                 padding: @spaceMd @spaceLg;
 
                 & > div {

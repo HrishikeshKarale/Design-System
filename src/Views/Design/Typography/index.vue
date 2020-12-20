@@ -267,14 +267,14 @@
                 width: 320px;
 
                 .typographyAlphabet {
-                    font-size: 96px;
+                    font-size: 4*@fontSize;
                     padding: 32px 8px;
                     margin: 0 auto;
                     text-align: center;
                 }
 
                 .typographyType {
-                    font-size: 32px;
+                    font-size: 2*@fontSizeMd;
                     color: @white;
                     padding: 16px 8px;
                     margin: 0 auto;
@@ -336,7 +336,7 @@
                 
                 > .char {
                     display: inline-flex;
-                    font-size: 32px;
+                    font-size: 2*@fontSizeMd;
                     padding: @spaceSm @spaceMd;
                 }
             }

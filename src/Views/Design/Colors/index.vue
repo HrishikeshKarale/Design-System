@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'colors'>
                     <h1 id= "colors">Colors</h1>
-                    <dt>
+                    <p>
                         COMET uses colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "guidlines">
                         <h3>Guidlines</h3>

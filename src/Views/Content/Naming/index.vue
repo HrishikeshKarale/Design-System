@@ -5,9 +5,9 @@
             <template slot= 'left'>
                 <article id= 'naming'>
                     <h1>Naming</h1>
-                    <dt>
+                    <p>
                         The names we give our products and features teach users how to use COMET and how to find the things they need to run their business.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "thoughtfulNaming">
                         <h3>Thoughtful naming</h3>

@@ -362,7 +362,7 @@
             font-weight: bold;
 
             span {
-                font-size: 9px;
+                font-size: @fontSizeSm;
             }
         }
     };
@@ -414,7 +414,7 @@
                         font-size: @fontSizeMd;
                         
                         > span {
-                            font-size: 16px;
+                            font-size: @fontSizeMd;
                             color: @linkColor;
                         }
                     }
@@ -515,11 +515,11 @@
                                     flex-direction: row;      
                                     justify-content: space-between;         
                                     flex-grow: 3;
-                                    font-size: 16px;
+                                    font-size: @fontSizeMd;
 
                                     &:last-child {
                                         font-weight: bold;
-                                        font-size: 18px;
+                                        font-size: @fontSizeMd;
                                     }
 
                                     > span {
@@ -546,7 +546,7 @@
 
                                     &:first-child {
                                         font-weight: bold;
-                                        font-size: 24px;
+                                        font-size: @fontSize;
                                     }
 
                                     &:last-child {

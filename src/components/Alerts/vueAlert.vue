@@ -241,7 +241,7 @@
                 & > .alertMessage {
                     
                     & > p {
-                        font-size: 16px;
+                        font-size: @fontSizeMd;
                     }
                 }
 
