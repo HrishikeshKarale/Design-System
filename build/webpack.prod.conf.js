@@ -34,9 +34,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   }),
   new UglifyJsPlugin({
    uglifyOptions: {
-    compress: {
-     warnings: false
-    }
+  compress: {
+   warnings: false
+  }
    },
    sourceMap: config.build.productionSourceMap,
    parallel: true
@@ -54,8 +54,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   // duplicated CSS from different components can be deduped.
   new OptimizeCSSPlugin({
    cssProcessorOptions: config.build.productionSourceMap
-    ? { safe: true, map: { inline: false } }
-    : { safe: true }
+  ? { safe: true, map: { inline: false } }
+  : { safe: true }
   }),
   // generate dist index.html with correct asset hash for caching.
   // you can customize output by editing /index.html
@@ -65,11 +65,11 @@ const webpackConfig = merge(baseWebpackConfig, {
    template: 'index.html',
    inject: true,
    minify: {
-    removeComments: true,
-    collapseWhitespace: true,
-    removeAttributeQuotes: true
-    // more options:
-    // https://github.com/kangax/html-minifier#options-quick-reference
+  removeComments: true,
+  collapseWhitespace: true,
+  removeAttributeQuotes: true
+  // more options:
+  // https://github.com/kangax/html-minifier#options-quick-reference
    },
    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
    chunksSortMode: 'dependency'
@@ -82,14 +82,14 @@ const webpackConfig = merge(baseWebpackConfig, {
   new webpack.optimize.CommonsChunkPlugin({
    name: 'vendor',
    minChunks (module) {
-    // any required modules inside node_modules are extracted to vendor
-    return (
-     module.resource &&
-     /\.js$/.test(module.resource) &&
-     module.resource.indexOf(
-      path.join(__dirname, '../node_modules')
-     ) === 0
-    )
+  // any required modules inside node_modules are extracted to vendor
+  return (
+   module.resource &&
+   /\.js$/.test(module.resource) &&
+   module.resource.indexOf(
+    path.join(__dirname, '../node_modules')
+   ) === 0
+  )
    }
   }),
   // extract webpack runtime and module manifest to its own file in order to
@@ -111,9 +111,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   // copy custom static assets
   new CopyWebpackPlugin([
    {
-    from: path.resolve(__dirname, '../static'),
-    to: config.build.assetsSubDirectory,
-    ignore: ['.*']
+  from: path.resolve(__dirname, '../static'),
+  to: config.build.assetsSubDirectory,
+  ignore: ['.*']
    }
   ])
  ]
@@ -127,9 +127,9 @@ if (config.build.productionGzip) {
    asset: '[path].gz[query]',
    algorithm: 'gzip',
    test: new RegExp(
-    '\\.(' +
-    config.build.productionGzipExtensions.join('|') +
-    ')$'
+  '\\.(' +
+  config.build.productionGzipExtensions.join('|') +
+  ')$'
    ),
    threshold: 10240,
    minRatio: 0.8

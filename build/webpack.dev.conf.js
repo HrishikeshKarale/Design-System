@@ -25,7 +25,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   clientLogLevel: 'warning',
   historyApiFallback: {
    rewrites: [
-    { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
+  { from: /.*/, to: path.posix.join(config.dev.assetsPublicPath, 'index.html') },
    ],
   },
   hot: true,
@@ -60,9 +60,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   // copy custom static assets
   new CopyWebpackPlugin([
    {
-    from: path.resolve(__dirname, '../static'),
-    to: config.dev.assetsSubDirectory,
-    ignore: ['.*']
+  from: path.resolve(__dirname, '../static'),
+  to: config.dev.assetsSubDirectory,
+  ignore: ['.*']
    }
   ])
  ]
@@ -81,12 +81,12 @@ module.exports = new Promise((resolve, reject) => {
 
    // Add FriendlyErrorsPlugin
    devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-    compilationSuccessInfo: {
-     messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
-    },
-    onErrors: config.dev.notifyOnErrors
-    ? utils.createNotifierCallback()
-    : undefined
+  compilationSuccessInfo: {
+   messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+  },
+  onErrors: config.dev.notifyOnErrors
+  ? utils.createNotifierCallback()
+  : undefined
    }))
 
    resolve(devWebpackConfig)

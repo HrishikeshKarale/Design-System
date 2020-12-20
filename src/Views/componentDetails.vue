@@ -1,146 +1,146 @@
 <template>
   <div class= 'componentDetails'>
-    <fieldset>
-      <legend :id= 'compData.title'>
-        <h3>
-          {{compData.title}}
-        </h3>
-      </legend>
-      <div class= 'contentWrapper'>
-        <div class= 'contentText'>
-          <div>
-            <h3>Definition and Usage</h3>
-          </div>
+  <fieldset>
+    <legend :id= 'compData.title'>
+    <h3>
+      {{compData.title}}
+    </h3>
+    </legend>
+    <div class= 'contentWrapper'>
+    <div class= 'contentText'>
+      <div>
+      <h3>Definition and Usage</h3>
+      </div>
+    </div>
+    </div>
+    <div class= 'contentWrapper'>
+    <div class= 'contentText'>
+      <!-- definitionand usage text goes here-->
+      <div v-html= 'compData.description'/> 
+
+      <div class= 'sampleCode'>
+      <div>
+        <div class= 'title'>
+        Syntax:
+        </div>
+        <div>
+        <vue-clipboard
+          :componentCode= 'defaultComponentCode'
+          buttonName= 'copySyntax'
+          buttonIcon= 'fas fa-copy'
+          id= 'codeSyntax'
+        />
         </div>
       </div>
-      <div class= 'contentWrapper'>
-        <div class= 'contentText'>
-          <!-- definitionand usage text goes here-->
-          <div v-html= 'compData.description'/> 
+      <div>
+        <div class= 'contentImport'>
 
-          <div class= 'sampleCode'>
-            <div>
-              <div class= 'title'>
-                Syntax:
-              </div>
-              <div>
-                <vue-clipboard
-                  :componentCode= 'defaultComponentCode'
-                  buttonName= 'copySyntax'
-                  buttonIcon= 'fas fa-copy'
-                  id= 'codeSyntax'
-                />
-              </div>
-            </div>
-            <div>
-              <div class= 'contentImport'>
-
-                <vue-info
-                  label= 'Import Statement'
-                  name= 'importstatement'
-                  :value= 'compData.import'
-                />
-                <vue-clipboard
-                  :componentCode= 'compData.import'
-                  buttonName= 'copyImportStatement'
-                  :textButton= 'd_booleanTrue'
-                  buttonText= 'copy import'
-                  id= 'importStatement'
-                />
-              </div>
-            </div>
-            <div>
-              <div class= 'syntaxCode'>
-                <pre><code v-html= 'code'/></pre>
-              </div>
-              <div class= 'syntaxComponent'>
-                <slot/>
-              </div>
-            </div>
-          </div>
+        <vue-info
+          label= 'Import Statement'
+          name= 'importstatement'
+          :value= 'compData.import'
+        />
+        <vue-clipboard
+          :componentCode= 'compData.import'
+          buttonName= 'copyImportStatement'
+          :textButton= 'd_booleanTrue'
+          buttonText= 'copy import'
+          id= 'importStatement'
+        />
         </div>
       </div>
-
-      <div class= 'contentWrapper'>
-        <div class= 'contentText'>
-          <div>
-            <h3 
-              id= 'AttributeTable' 
-              href= '#AttributeTable'
-            >
-              Attributes
-            </h3>
-          </div>
+      <div>
+        <div class= 'syntaxCode'>
+        <pre><code v-html= 'code'/></pre>
         </div>
-        <div class= 'attributeTable'>
-          <table>
-            <body>
-              <tr>
-                <th>Name</th>
-                <th>Value Type</th>
-                <th>Description</th>
-              </tr>
-              <tr
-                v-for= "(attr, index) in compData.attributes"
-                :key= 'index'
-              >
-                <td>
-                  <a :href= '"#"+ attr.type'>
-                    {{attr.type}}
-                  </a>
-                </td>
-                <td>
-                  <span v-if= 'attr.type== "inputIcon"'>
-                    {{typeof attr.value}}
-                  </span>
-                  <span v-else-if= 'attr.type!= "pattern"'>
-                    {{typeof attr.value}}
-                  </span>
-                  <span v-else>
-                    RegExp
-                  </span>
-                </td>
-                <td>
-                  {{attr.text}}
-                </td>
-              </tr>
-            </body>
-          </table>
+        <div class= 'syntaxComponent'>
+        <slot/>
         </div>
       </div>
-      <div class= 'contentWrapper'>
-        <div class= 'contentText'>
-          <h3
-            id= 'AttributeDetails' 
-            href= '#AttributeDetails'
-          >
-            Attributes details
-          </h3>
-        </div>
-        <div class= 'attributeDetails'>
-          <div 
-            class= 'subSection'
-            v-for= "(attr, index) in compData.attributes"
-            :key= 'index'
-          >
-            <h4 :id= 'attr.type'>
-              {{attr.type}}
-            </h4>
-            <div v-html= 'attr.description'/>
-            <div v-if= 'typeof attr.value!= "function" && attr.type!= "v-model" && attr.type!= "value"'>
-              <code-details 
-                :attributes= 'd_vModelVariables'
-                :attr= 'attr'
-                :compName= 'compData.compName'
-                :hideCode= 'd_hideCode'
-                :d_attr= 'd_attr'
-                @change= 'change'
-              />
-            </div>
-          </div>
-        </div>
-      </div> <!-- attr in compData.attributes LOAD ATTRIBUTE DETAILS-->
-    </fieldset>
+      </div>
+    </div>
+    </div>
+
+    <div class= 'contentWrapper'>
+    <div class= 'contentText'>
+      <div>
+      <h3 
+        id= 'AttributeTable' 
+        href= '#AttributeTable'
+      >
+        Attributes
+      </h3>
+      </div>
+    </div>
+    <div class= 'attributeTable'>
+      <table>
+      <body>
+        <tr>
+        <th>Name</th>
+        <th>Value Type</th>
+        <th>Description</th>
+        </tr>
+        <tr
+        v-for= "(attr, index) in compData.attributes"
+        :key= 'index'
+        >
+        <td>
+          <a :href= '"#"+ attr.type'>
+          {{attr.type}}
+          </a>
+        </td>
+        <td>
+          <span v-if= 'attr.type== "inputIcon"'>
+          {{typeof attr.value}}
+          </span>
+          <span v-else-if= 'attr.type!= "pattern"'>
+          {{typeof attr.value}}
+          </span>
+          <span v-else>
+          RegExp
+          </span>
+        </td>
+        <td>
+          {{attr.text}}
+        </td>
+        </tr>
+      </body>
+      </table>
+    </div>
+    </div>
+    <div class= 'contentWrapper'>
+    <div class= 'contentText'>
+      <h3
+      id= 'AttributeDetails' 
+      href= '#AttributeDetails'
+      >
+      Attributes details
+      </h3>
+    </div>
+    <div class= 'attributeDetails'>
+      <div 
+      class= 'subSection'
+      v-for= "(attr, index) in compData.attributes"
+      :key= 'index'
+      >
+      <h4 :id= 'attr.type'>
+        {{attr.type}}
+      </h4>
+      <div v-html= 'attr.description'/>
+      <div v-if= 'typeof attr.value!= "function" && attr.type!= "v-model" && attr.type!= "value"'>
+        <code-details 
+        :attributes= 'd_vModelVariables'
+        :attr= 'attr'
+        :compName= 'compData.compName'
+        :hideCode= 'd_hideCode'
+        :d_attr= 'd_attr'
+        @change= 'change'
+        />
+      </div>
+      </div>
+    </div>
+    </div> <!-- attr in compData.attributes LOAD ATTRIBUTE DETAILS-->
+  </fieldset>
   </div>
 </template>
 
@@ -166,201 +166,201 @@
   import vueAlert from '@/components/Alerts/vueAlert'
 
   export default {
-    name: "componentDetails",
+  name: "componentDetails",
 
-    data() {
+  data() {
 
-        var d_vModelVariables= null
-      return {
+    var d_vModelVariables= null
+    return {
 
-        d_hideCode: null,
+    d_hideCode: null,
 
-        d_booleanTrue: true,
+    d_booleanTrue: true,
 
-        d_vModelVariables: d_vModelVariables,
+    d_vModelVariables: d_vModelVariables,
 
-        code: "",
+    code: "",
 
-        defaultComponentCode: null,
+    defaultComponentCode: null,
 
-      } //return
-    }, //data
+    } //return
+  }, //data
 
-    props: {
+  props: {
 
-      compData: {
-        required: true,
-        type: Object,
-        default: function () {
-          alert('No dacompDatata passed down to componentDetails')
-        }
-      },
+    compData: {
+    required: true,
+    type: Object,
+    default: function () {
+      alert('No dacompDatata passed down to componentDetails')
+    }
+    },
 
-      d_attr: {
-        required: false,
-        type: Object,
-        default: null
-      },
-    }, //props
+    d_attr: {
+    required: false,
+    type: Object,
+    default: null
+    },
+  }, //props
 
-    methods: { 
+  methods: { 
 
-      change: function (type, value) {
-        var attributes= this.d_vModelVariables
+    change: function (type, value) {
+    var attributes= this.d_vModelVariables
 
-        for (var attr in attributes) {
-          if (attributes[attr].type== type) {
-            // console.log('change: ', attributes[attr].value, value, type)
-            
-            //dropdown list
-            if (Array.isArray(value)) {
-              // this.d_attr= value.type
-              attributes[attr].value= value.value
-              // console.log('change!!!!!: ', value.type, type)
-            }
-            //searchable dropdown list
-            else if (typeof value == 'object') {
-              this.d_attr= value.type
-              attributes[attr].value= value.selected
-              // console.log('change!!!!!: ', value.type, value.selected, type)
-            }
-            //any other input
-            else {
-              attributes[attr].value= value 
-            }
-          }
-        }
-        this.d_vModelVariables= attributes
-        // console.log('change: ', attributes, this.d_vModelVariables)
-      }
-    }, //methods
-
-    created() {
-      // console.log('0')
+    for (var attr in attributes) {
+      if (attributes[attr].type== type) {
+      // console.log('change: ', attributes[attr].value, value, type)
       
-      var compData= this.compData
+      //dropdown list
+      if (Array.isArray(value)) {
+        // this.d_attr= value.type
+        attributes[attr].value= value.value
+        // console.log('change!!!!!: ', value.type, type)
+      }
+      //searchable dropdown list
+      else if (typeof value == 'object') {
+        this.d_attr= value.type
+        attributes[attr].value= value.selected
+        // console.log('change!!!!!: ', value.type, value.selected, type)
+      }
+      //any other input
+      else {
+        attributes[attr].value= value 
+      }
+      }
+    }
+    this.d_vModelVariables= attributes
+    // console.log('change: ', attributes, this.d_vModelVariables)
+    }
+  }, //methods
 
-      var codet = '';
-      var defaultCodet = '';
+  created() {
+    // console.log('0')
+    
+    var compData= this.compData
 
-      var attr= ''
-      var data= compData.attributes
-      this.d_vModelVariables= data;
-      this.hidecode= false
-      var d_attr= this.d_attr
-      var str= ''
+    var codet = '';
+    var defaultCodet = '';
 
-      for (attr in data) {
-        var type= data[attr].type
-        var value= data[attr].value
-        var tempStr= null
-        var defaultTempStr= null
-        // console.log('0-', attr, type, value, d_attr)
+    var attr= ''
+    var data= compData.attributes
+    this.d_vModelVariables= data;
+    this.hidecode= false
+    var d_attr= this.d_attr
+    var str= ''
+
+    for (attr in data) {
+    var type= data[attr].type
+    var value= data[attr].value
+    var tempStr= null
+    var defaultTempStr= null
+    // console.log('0-', attr, type, value, d_attr)
  
-        if (typeof value== 'string') {
-          // console.log('0-', attr, typeof value)
-          if (d_attr) {
-            var index= (d_attr.type).indexOf(type)
-            if (index!= -1){
-              var tempval= '['
-              var defaultVal= '['
-              var val
-              var D_attrValue= d_attr.value[index]
+    if (typeof value== 'string') {
+      // console.log('0-', attr, typeof value)
+      if (d_attr) {
+      var index= (d_attr.type).indexOf(type)
+      if (index!= -1){
+        var tempval= '['
+        var defaultVal= '['
+        var val
+        var D_attrValue= d_attr.value[index]
 
-              for (val in D_attrValue) {
-                
-                if (value==D_attrValue[val]) {
-                  tempval+='<label>'+D_attrValue[val]+'</label>' 
-                  defaultVal+=''+D_attrValue[val]+'' 
-                }
-                else {
-                  tempval+= D_attrValue[val]
-                  defaultVal+= D_attrValue[val]
-                } 
-                if (val < D_attrValue.length-1) {
-                  tempval+= ', '
-                  defaultVal+= ', '
-                } //formatting arrays to include commas for display
-              }
-              tempval+= ']'
-              defaultVal+= ']'
-              // console.log(tempval, defaultVal)
-              tempStr= '\t\t'+type+'= "'+tempval+'"\n';
-              defaultTempStr= '\t\t'+type+'= "'+defaultVal+'"\n';
-            }
-          }
-          
-          tempStr= '\t\t'+type+'= "'+value+'"\n';
-          defaultTempStr= '\t\t'+type+'= "'+value+'"\n';
-        }
-        else if (typeof value== 'array'|| typeof value== 'object') {
-          // console.log(type, value)
-          var tempval= '['
-          var val
-
-          for (val in value) {
-            tempval+='"'+data[attr].value[val]+'"' 
-            if (val < value.length-1) {
-              tempval+= ', '
-            } //formatting arrays to include commas for display
-          }
-          tempval+= ']'
-
-          tempStr= '\t\t'+type+'= '+tempval+'\n';
-          defaultTempStr= tempStr;
-        }
-        else if (typeof value== 'boolean' || 
-            typeof value== 'number' || 
-            typeof value== 'date' ) {
-          tempStr= '\t\t'+type+'= '+value+'\n';
-          defaultTempStr= tempStr;
-        }
-        else if (typeof value== 'function') {
-          tempStr= '\t\t'+type+'= '+value+'\n';
-          defaultTempStr= tempStr;
+        for (val in D_attrValue) {
+        
+        if (value==D_attrValue[val]) {
+          tempval+='<label>'+D_attrValue[val]+'</label>' 
+          defaultVal+=''+D_attrValue[val]+'' 
         }
         else {
-          tempStr= '\t\t'+type+'= '+value+'\n';
-          defaultTempStr= tempStr;
+          tempval+= D_attrValue[val]
+          defaultVal+= D_attrValue[val]
+        } 
+        if (val < D_attrValue.length-1) {
+          tempval+= ', '
+          defaultVal+= ', '
+        } //formatting arrays to include commas for display
         }
-        codet += tempStr;
-        defaultCodet += defaultTempStr;
+        tempval+= ']'
+        defaultVal+= ']'
+        // console.log(tempval, defaultVal)
+        tempStr= '\t\t'+type+'= "'+tempval+'"\n';
+        defaultTempStr= '\t\t'+type+'= "'+defaultVal+'"\n';
       }
-      this.code = "\t&lt;"+ compData.compName+" \n" + codet + "\t/&gt;";
-      this.defaultComponentCode = "<"+ compData.compName+" \n" + defaultCodet + "/>";
-    }, //created
-
-    components: {
-      codeDetails,
-      dynamicComponent,
-      textInput,
-      passwordInput,
-      emailInput,
-      numberInput,
-      searchableDropdownList,
-      dropdownList,
-      fileInput,
-      multiToggle,
-      checkboxInput,
-      radioInput,
-      vueDate,
-      vueTextarea,
-      vueInfo,
-      vueClipboard,
-      vueModal,
-      vueButton,
-      vueAlert,
-    }, //components
-
-    watch: {
-
-      d_vModelVariables: function (newValue, oldValue) {
-        // console.log(newValue)
-        if (newValue!= oldValue){
-          return newValue
-        }
       }
-    } //watch
+      
+      tempStr= '\t\t'+type+'= "'+value+'"\n';
+      defaultTempStr= '\t\t'+type+'= "'+value+'"\n';
+    }
+    else if (typeof value== 'array'|| typeof value== 'object') {
+      // console.log(type, value)
+      var tempval= '['
+      var val
+
+      for (val in value) {
+      tempval+='"'+data[attr].value[val]+'"' 
+      if (val < value.length-1) {
+        tempval+= ', '
+      } //formatting arrays to include commas for display
+      }
+      tempval+= ']'
+
+      tempStr= '\t\t'+type+'= '+tempval+'\n';
+      defaultTempStr= tempStr;
+    }
+    else if (typeof value== 'boolean' || 
+      typeof value== 'number' || 
+      typeof value== 'date' ) {
+      tempStr= '\t\t'+type+'= '+value+'\n';
+      defaultTempStr= tempStr;
+    }
+    else if (typeof value== 'function') {
+      tempStr= '\t\t'+type+'= '+value+'\n';
+      defaultTempStr= tempStr;
+    }
+    else {
+      tempStr= '\t\t'+type+'= '+value+'\n';
+      defaultTempStr= tempStr;
+    }
+    codet += tempStr;
+    defaultCodet += defaultTempStr;
+    }
+    this.code = "\t&lt;"+ compData.compName+" \n" + codet + "\t/&gt;";
+    this.defaultComponentCode = "<"+ compData.compName+" \n" + defaultCodet + "/>";
+  }, //created
+
+  components: {
+    codeDetails,
+    dynamicComponent,
+    textInput,
+    passwordInput,
+    emailInput,
+    numberInput,
+    searchableDropdownList,
+    dropdownList,
+    fileInput,
+    multiToggle,
+    checkboxInput,
+    radioInput,
+    vueDate,
+    vueTextarea,
+    vueInfo,
+    vueClipboard,
+    vueModal,
+    vueButton,
+    vueAlert,
+  }, //components
+
+  watch: {
+
+    d_vModelVariables: function (newValue, oldValue) {
+    // console.log(newValue)
+    if (newValue!= oldValue){
+      return newValue
+    }
+    }
+  } //watch
   } // default
 </script>
 
@@ -371,122 +371,122 @@
 
   .componentDetails {
 
-    fieldset {
-      legend {
-        border-color: #333;
-        margin-bottom: 16px;
+  fieldset {
+    legend {
+    border-color: #333;
+    margin-bottom: 16px;
 
-        h3 {
-          color: @textColor;
-          font-weight: bold;
-        }
-      }
+    h3 {
+      color: @textColor;
+      font-weight: bold;
+    }
+    }
+
+    div {
+
+    &.contentWrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 16px 32px;
 
       div {
 
-        &.contentWrapper {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          margin: 16px 32px;
+      &.contentText {
+        width: 100%;
 
-          div {
+        & > .sampleCode {
 
-            &.contentText {
-              width: 100%;
+        .displayCode();
 
-              & > .sampleCode {
-
-                .displayCode();
-
-                .boxShadow(@three);
-              }
-            }
-
-            &.attributeTable {
-
-              & > table {
-                
-                & > body {
-
-                  & > tr {
-                    background: white;
-
-                    & > td,
-                    & > th {
-                      padding: @spaceMd @spaceLg;
-                    }
-
-                    & > th {
-                      color: white;
-                    }
-
-                    &:first-child {
-                      background-color: grey;
-                    }
-
-                    &:nth-child(2n) {
-                      background-color: @backgroundColor;
-                    }
-                  }
-                }
-              }
-            }
-
-            /* // &.attributeTable {
-            //   display: flex;
-            //   flex-direction: column;
-            //   flex-wrap: nowrap;
-            //   border-radius: @borderRadius;
-            //   width: 100%;
-
-            //   & > div {
-            //     display: flex;
-            //     flex-direction: row;
-            //     flex-wrap: nowrap;
-            //     background-color: @backgroundColor;
-
-            //     & > div {
-            //       display: flex;
-            //       flex-direction: column;
-            //       flex-wrap: wrap;
-
-            //       width: 240px;
-            //       padding: @spaceMd @spaceLg;
-                  
-            //       &:nth-child(2) {
-            //         color: blue;
-            //       }
-
-            //       &:first-child {
-            //         font-weight: 400;
-            //       }
-
-            //       &:last-child {
-            //         width: 640px;
-            //       }
-            //     }
-
-            //     &:first-child {
-            //       background-color: grey;
-
-            //       & > div {
-            //         font-weight: bold;
-            //         text-decoration: none;
-                      color: @white;
-            //       }
-            //     }
-
-            //     &:nth-child(2n) {
-            //       background-color: @white;
-            //     }
-            //   }
-            // } */
-          }
+        .boxShadow(@three);
         }
       }
+
+      &.attributeTable {
+
+        & > table {
+        
+        & > body {
+
+          & > tr {
+          background: white;
+
+          & > td,
+          & > th {
+            padding: @spaceMd @spaceLg;
+          }
+
+          & > th {
+            color: white;
+          }
+
+          &:first-child {
+            background-color: grey;
+          }
+
+          &:nth-child(2n) {
+            background-color: @backgroundColor;
+          }
+          }
+        }
+        }
+      }
+
+      /* // &.attributeTable {
+      //   display: flex;
+      //   flex-direction: column;
+      //   flex-wrap: nowrap;
+      //   border-radius: @borderRadius;
+      //   width: 100%;
+
+      //   & > div {
+      //   display: flex;
+      //   flex-direction: row;
+      //   flex-wrap: nowrap;
+      //   background-color: @backgroundColor;
+
+      //   & > div {
+      //     display: flex;
+      //     flex-direction: column;
+      //     flex-wrap: wrap;
+
+      //     width: 240px;
+      //     padding: @spaceMd @spaceLg;
+          
+      //     &:nth-child(2) {
+      //     color: blue;
+      //     }
+
+      //     &:first-child {
+      //     font-weight: 400;
+      //     }
+
+      //     &:last-child {
+      //     width: 640px;
+      //     }
+      //   }
+
+      //   &:first-child {
+      //     background-color: grey;
+
+      //     & > div {
+      //     font-weight: bold;
+      //     text-decoration: none;
+            color: @white;
+      //     }
+      //   }
+
+      //   &:nth-child(2n) {
+      //     background-color: @white;
+      //   }
+      //   }
+      // } */
+      }
     }
+    }
+  }
   }
 
 </style>
