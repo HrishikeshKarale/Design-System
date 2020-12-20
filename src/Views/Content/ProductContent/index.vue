@@ -13,14 +13,12 @@
                     <p>
                         Each component also includes content guidelines about how to write for specific interface elements.
                     </p>
-                    <hr>
                     <sction id= "responseToNeeds">
                         <h3>Respond to User needs</h3>
                         <p>
                             Not everyone is a confident writer, but everyone can improve their content by making sure it responds to the needs of users. Keep in mind that real people rely on COMET every day to run their businesses. The product, feature, or app you’re building can make a big difference to the people using it. Take some time to learn about who they are, what they need, and the language they use.
                         </p>
                     </sction>
-                    <hr>
                     <section id= "readingLevel">
                         <h3>Write for a grade 7 reading level</h3>
                         <p>
@@ -45,7 +43,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "encourageActions">
                         <h3>Encourage action</h3>
                         <p>
@@ -64,7 +61,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "consistency">
                         <h3>Be consistent</h3>
                         <p>

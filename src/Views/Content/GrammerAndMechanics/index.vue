@@ -6,7 +6,6 @@
                     <p>
                         This guide is to help designers, developers, recruiters, UX-ers, product managers, gurus—anyone who writes public-facing text for COMET.
                     </p>
-                    <hr>
                     <section id= "basics">
                         <h3>Basics</h3>
                         <div class= 'subSection'>
@@ -53,7 +52,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "capitalization">
                         <h3>Capitalization</h3>
                         <div class= 'subSection'>
@@ -99,7 +97,6 @@
                             </div>
                         </div>
                     </section>
-                    <hr>
                     <section id= "headingsAndSubheadings">
                         <h3>Headings and subheadings</h3>
                         <div 
@@ -145,7 +142,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= 'capitalication'>
                         <h3>Capitalization in headings and subheadings</h3>
                         <p>
@@ -157,7 +153,6 @@
                             <li>Lowercase for everything else</li>
                         </ul>
                     </section>
-                    <hr>
                     <section id= "lists">
                         <h3>Lists</h3>
                         <div 
@@ -235,7 +230,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "datesNumbersAndAddresses">
                         <h3>Dates, numbers, and addresses</h3>
                         <p>
@@ -343,7 +337,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "placesNamesAndFormalNouns">
                         <h3>Places, names, and formal nouns</h3>
                         <div
@@ -378,7 +371,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section  id= "punctuation">
                         <h3>Punctuation</h3>
                         <div
@@ -582,7 +574,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "spellingAndFormatting">
                         <h3>Spelling and formatting</h3>
                         <div
@@ -613,7 +604,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "youWeAndOtherPersonalPronouns">
                         <h3>You, we, and other personal pronouns</h3>
                         <div

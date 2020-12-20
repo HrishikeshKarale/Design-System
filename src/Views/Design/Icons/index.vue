@@ -6,7 +6,6 @@
                     <p>
                         FONT AWESOME icons act as visual aids to help users complete tasks. They should be used purposefully.
                     </p>
-                    <hr>
                     <section id= "iconPrinciples">
                         <h3>Icon Principles</h3>
                         <p>
@@ -50,7 +49,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "guidlines">
                         <h3>Icon guidlines</h3>
                         <div class= 'subSection'>
@@ -84,7 +82,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "usage">
                         <h3>When to use icons</h3>
                         <p>
@@ -101,7 +98,6 @@
                             <li>to direct a user’s attention to something they can take action on, or which results in an action</li>
                         </ul>
                     </section>
-                    <hr>
                     <section id= "systemIcons">
                         <h3>System icons</h3>
                         <p>
@@ -122,7 +118,6 @@
                             For example, we wouldn’t use a discounts system icon to decorate a promotional announcement about discounts, but we would use the discounts icon in the COMET admin’s sidebar to help identify where to configure store discounts.
                         </p>
                     </section>
-                    <hr>
                     <section id= "spotIcons">
                         <h3>Spot icons</h3>
                         <p>
@@ -158,7 +153,6 @@
                             The paper with the graph does a good job of being professional over fun and literal over abstract. It would fit well as a system icon. But with spot icons in a marketing experience, being aspirational and abstract sparks emotion and engagement. In a marketing experience, the boost arrow does a better job of expressing the excitement of generating more sales.
                         </p>
                     </section>
-                    <hr>
                     <section id= "systemIconUsage">
                         <h3>Using system icons in your design</h3>
                         <p>

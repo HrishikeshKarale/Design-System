@@ -6,7 +6,6 @@
                     <p>
                         COMET uses sounds intentionally to communicate information and to enhance our users’ experience of our product. Sound patterns make interactions with our product easier and more predictable.
                     </p>
-                    <hr>
                     <section id= "considerations">
                         <h3>Considerations</h3>
                         <div class= 'subSection'>
@@ -52,7 +51,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "whenToUse">
                         <h3>When to use sound</h3>
                         <p>
@@ -74,7 +72,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "howToApproach">
                         <h3>How to approach sound design</h3>
                         <p>

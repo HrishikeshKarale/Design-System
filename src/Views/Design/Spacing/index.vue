@@ -6,7 +6,6 @@
                     <p>
                         Consistent spacing creates visual balance that makes the user interface (UI) easier for users to scan. Apply consistent spacing to improve the quality of the UI.
                     </p>
-                    <hr>
                     <section id= "system">
                         <h3>The spacing system</h3>
                         <p>
@@ -25,7 +24,6 @@
                         </p>
                         <img src= "https://polaris.shopify.com/assets/5155645c415f242388f0d5696f62abd1-components-and-type@2x.png">
                     </section>
-                    <hr>
                     <section id= "code">
                         <h3>Spacing in code</h3>
                         <p>
@@ -108,7 +106,6 @@
                             </div>
                         </div>
                     </section>
-                    <hr>
                     <section id= "howToChoose">
                         <h3>How to choose spacing</h3>
                         <p>
@@ -126,7 +123,6 @@
                             For screens with specialized layouts, adjust overall spacing based on the density of the content. For example, a simple login screen on desktop display has more room to breathe, so more space can be used.
                         </p>
                     </section>
-                    <hr>
                     <section id= "commonValues">
                         <h3>Common values</h3>
                         <p>
@@ -178,7 +174,6 @@
                         </p>
                         <img srcset= "https://polaris.shopify.com/assets/f52cd017696b30045da3af93be1f66a3-card-spacing@2x.png 2x" alt= "">
                     </section>
-                    <hr>
                     <section id= "exceptions">
                         <h3>Exceptions</h3>
                         <p>
@@ -194,7 +189,6 @@
                         </p>
                         <img src= "https://polaris.shopify.com/assets/e7bef23155ff9a8d1d372c880e90eaeb-natural-widths@2x.png" alt= "">
                     </section>
-                    <hr>
                     <section id= "opticalAdjustment">
                         <h3>Optical Adjustment</h3>
                         <p>

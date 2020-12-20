@@ -12,7 +12,6 @@
                     <p>
                         To include a link to help documentation in your app or channel, use the Footer help component.
                     </p>
-                    <hr>
                     <section id= "planAudience">
                         <h3>Plan your audience</h3>
                         <p>
@@ -103,7 +102,6 @@
                             This is just one way to imagine the variety of users that fit into our audience. However we imagine their skill level, our aim for documentation remains the same: to accommodate a wide range of users and their objectives. We can do this by presenting information in a way that’s inclusive of different skill levels, different learning styles, and different workflows.
                         </p>
                     </section>
-                    <hr>
                     <section id= "headingsToOrganizeDocument">
                         <h3>Use headings to organize your document</h3>
                         <p>
@@ -150,7 +148,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "documentTasks">
                         <h3>Document tasks</h3>
                         <div class= 'subSection'>
@@ -197,14 +194,12 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "structureConditionalStatements">
                         <h3>Structure conditional statements</h3>
                         <p>
                             For conditional cases, start the step with “if” so the reader doesn’t have to read the whole sentence only to find out that the condition does not apply to them. It often helps to add a “then” to help the reader identify the condition and the outcome.
                         </p>
                     </section>
-                    <hr>
                     <section id= "clarifyResultsOfActions">
                         <h3>Clarify results of actions</h3>
                         <p>
@@ -246,7 +241,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "clarityWithScreenshots">
                         <h3>Use screenshots for clarity</h3>
                         <p>
@@ -269,7 +263,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "teachThroughDocumentation">
                         <h3>Teach through documentation</h3>
                         <p>
@@ -306,7 +299,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "useRightTone">
                         <h3>Use the right tone</h3>
                         <p>
@@ -352,14 +344,12 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "useActiveVoice">
                         <h3>Use the active voice</h3>
                         <p>
                             Use the active voice as much as possible, which generally sounds less formal than the passive voice. This means writing “what users do instead of “what is being done by users.” But in cases where the passive voice sounds more natural than the active voice, go ahead and use passive voice (like with verbs such as “publish” or “assign” and with nouns like “discount”).
                         </p>
                     </section>
-                    <hr>
                     <section id= "improveReadability">
                         <h3>Improve readability</h3>
                         <p>

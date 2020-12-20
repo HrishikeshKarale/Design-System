@@ -7,7 +7,6 @@
                     <p>
                         Merchants use COMET to get things done. Content should be written and structured to help them understand and take the most important actions.
                     </p>
-                    <hr>
                     <section id= "sentences">
                         <h3>Sentences</h3>
                         <p>
@@ -17,7 +16,6 @@
                             When a merchant reads a sentence that starts with an imperative verb it should sound like they’re being instructed what to do. Don’t use permissive language like “you can”.
                         </p>
                     </section>
-                    <hr>
                     <section id= "buttons">
                         <h3>Buttons</h3>
                         <p>
@@ -29,7 +27,6 @@
                             <li>Avoid unnecessary words and articles such as the, an, or a.</li>
                         </ul>
                     </section>
-                    <hr>
                     <section id= "links">
                         <h3>Links</h3>
                         <p>
@@ -55,7 +52,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "confirmations">
                         <h3>Confirmations</h3>
                         <p>
@@ -129,7 +125,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "saveVsDone">
                         <h3>Save vs. done</h3>
                         <p>
@@ -205,7 +200,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "okVsAccept">
                         <h3>OK vs. accept</h3>
                         <p>
@@ -215,7 +209,6 @@
                             Use the adjective “Accept” when terms of service require legal confirmation before users can continue.
                         </p>
                     </section>
-                    <hr>
                     <section id= "closeVsCancel">
                         <h3>Close vs. cancel</h3>
                         <p>
@@ -235,7 +228,6 @@
                             Use “Cancel” as the option for users to back out of any changes made on a page, modal, or sheet. When the cancel button is pressed, changes automatically get discarded. “Cancel” is often paired with “Save” and “Done” actions (and is always placed to the left).
                         </p>
                     </section>
-                    <hr>
                     <section id= "selectVsChoose">
                         <h3>Select vs. choose</h3>
                         <p>
@@ -258,7 +250,6 @@
                             <li>Merchants have to pick from a large inventory of items, like themes, or options that require strategic decision making, like pricing plans</li>
                         </ul>
                     </section>
-                    <hr>
                     <section id= "editVsManage">
                         <h3>Edit vs. manage</h3>
                         <p>
@@ -268,7 +259,6 @@
                             Use the verb “manage” at a higher level to convey that multiple actions can be done, or sections and settings can be updated. Pair this verb with a noun if it’s in a button or if it’s unclear what is being managed.
                         </p>
                     </section>
-                    <hr>
                     <section id= "changeVsSwitch">
                         <h3>Change vs. switch</h3>
                         <p>
@@ -287,7 +277,6 @@
                             Use the verb “add” when you’re encouraging users to bring something that already exists into COMET, like a product.
                         </p>
                     </section>
-                    <hr>
                     <section id= "viewVsSee">
                         <h3>View vs. see</h3>
                         <p>
@@ -297,14 +286,12 @@
                             Use the verb “see” in more general, conversational descriptions without a specific call to action.
                         </p>
                     </section>
-                    <hr>
                     <section id= "needVsMust">
                         <h3>Need vs. must</h3>
                         <p>
                             Use the verb “need” when you’re telling users something they’re required to do or should do.
                         </p>
                     </section>
-                    <hr>
                     <section id= "exportVsDownload">
                         <h3>Export vs. download</h3>
                         <p>
@@ -314,7 +301,6 @@
                             Use “download” as the call to action when users need to copy data (of the same format) from COMET to a computer system.
                         </p>
                     </section>
-                    <hr>
                     <section id= "importVsUpload">
                         <h3>Import vs. upload</h3>
                         <p>

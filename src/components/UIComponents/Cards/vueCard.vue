@@ -186,7 +186,6 @@
         border-radius: @borderRadius;
         background-color: transparent;
         min-width: 320px;
-        padding: @spaceMd @spaceLg;
 
         &.selectedCard{
             background-color: @secondaryColor;

@@ -7,7 +7,6 @@
                     <p>
                         Learn how to apply Shopify’s voice and choose the right tone, no matter what product, feature, or app you’re building.
                     </p>
-                    <hr>
                     <section id= "What">
                         <h3>What is voice and tone?</h3>
                         <p>
@@ -20,7 +19,6 @@
                             When users encounter an error message, they might be feeling anxious, stressed out, and worried about the impact it could have on their business. We can respond to this by stating what went wrong and giving clear direction about how to fix the problem. We never want to use a negative or frightening tone.
                         </p>
                     </section>
-                    <hr>
                     <section id= "guidlines">
                         <h3>Voice guidelines</h3>
                         <p>
@@ -64,7 +62,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section>
                         <h3 id= "toneInAction">Tone in action</h3>
                         <p>

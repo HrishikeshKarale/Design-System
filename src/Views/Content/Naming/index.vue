@@ -7,7 +7,6 @@
                     <p>
                         The names we give our products and features teach users how to use COMET and how to find the things they need to run their business.
                     </p>
-                    <hr>
                     <section id= "thoughtfulNaming">
                         <h3>Thoughtful naming</h3>
                         <p>
@@ -25,7 +24,6 @@
                             The naming process involves collaboration. Include different disciplines and people with different subject matter expertise in the creation of a name.
                         </p>
                     </section>
-                    <hr>
                     <section id= "brandedName">
                         <h3>Does it need a branded name?</h3>
                         <p>
@@ -70,7 +68,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "DescriptiveVsEvocative">
                         <h3>Descriptive vs evocative names</h3>
                         <div
@@ -147,7 +144,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "ProductsAndFeatures">
                         <h3>COMET products and features</h3>
                         <p>
@@ -230,7 +226,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "generalGuidelines">
                         <h3>General guidelines</h3>
                         <p>
@@ -357,7 +352,6 @@
                             </ul>
                         </div>
                     </section>
-                    <hr>
                     <section id= "components">
                         <h3>Components</h3>
                         <p>
@@ -398,7 +392,6 @@
                             There is an exception: the Labelled component uses the British spelling, following the aria-labelledby attribute as per the ARIA specification itself.
                         </p>
                     </section>
-                    <hr>
                     <section id= "icons">
                         <h3>Icons</h3>
                         <p>

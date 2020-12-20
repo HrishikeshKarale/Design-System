@@ -13,7 +13,6 @@
                     <p>
                         Use American English spelling for all merchant-facing content. When in doubt, check the <a href= "https://www.merriam-webster.com/">Merriam-Webster dictionary</a> for the preferred spelling of specific terms not found in this list.
                     </p>
-                    <hr>
                     <section id= "A">
                         <h3>A: admin, app…</h3>
                         <div
@@ -44,7 +43,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "C">
                         <h3>C: cart page, check out…</h3>
                         <div
@@ -116,7 +114,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "D">
                         <h3>D: dev store…</h3>
                         <div
@@ -135,7 +132,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "E">
                         <h3>E: email…</h3>
                         <div
@@ -151,7 +147,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "F">
                         <h3>F: fulfill, fulfillment…</h3>
                         <div
@@ -179,7 +174,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "H">
                         <h3>H: home card…</h3>
                         <div
@@ -195,7 +189,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "I">
                         <h3>I: inventory, item…</h3>
                         <div
@@ -227,7 +220,6 @@
                             </ol>
                         </div>
                     </section>
-                    <hr>
                     <section id= "L">
                         <h3>L: log in, login…</h3>
                         <div
@@ -255,7 +247,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "M">
                         <h3>M: merchant…</h3>
                         <div
@@ -280,7 +271,6 @@
 
                         </div>
                     </section>
-                    <hr>
                     <section id= "O">
                         <h3>O: online store…</h3>
                         <div
@@ -296,7 +286,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "P">
                         <h3>P: password page, payment…</h3>
                         <div
@@ -396,7 +385,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "R">
                         <h3>R: returning customer…</h3>
                         <div
@@ -412,7 +400,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "S">
                         <h3>S: sales channel, Shopify…</h3>
                         <div
@@ -466,15 +453,7 @@
                                 Tip: Use “store” instead of “shop” to prevent sentences like, “your Shopify shop.”
                             </p>
                         </div>
-                        <div
-                            id= ''
-                            class= 'subSection'
-                        >
-                            <h4></h4>
-                            <p></p>
-                        </div>
                     </section>
-                    <hr>
                     <section id= "T">
                         <h3>T: template, theme…</h3>
                         <div
@@ -547,7 +526,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "V">
                         <h3>V: variant...</h3>
                         <div

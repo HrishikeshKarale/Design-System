@@ -6,7 +6,6 @@
                     <p>
                         Interaction states define a visual language for communicating the state of a component as users interact with it. These visual styles correspond to hover, focus, active, selected, disabled, and subdued states. They help users understand what to expect while interacting with COMET.
                     </p>
-                    <hr>
                     <section id= "principles">
                         <h3>Principles</h3>
                         <p>
@@ -27,7 +26,6 @@
                             <img src= "https://polaris.shopify.com/assets/88eda48c035dda14dd319e968871147b-consistent@2x.png">
                         </div>
                     </section>
-                    <hr>
                     <section id= "designingInteractionState">
                         <h3>Designing interaction state</h3>
                         <p>
@@ -76,7 +74,6 @@
                             </p>
                         </div>
                     </section>
-                    <hr>
                     <section id= "styles">
                         <h3>Styles</h3>
                         <p>

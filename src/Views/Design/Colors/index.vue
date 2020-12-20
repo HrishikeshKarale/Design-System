@@ -17,7 +17,9 @@
             These guidelines are the framework upon which we build our system for how color is used.
           </p>
           <div class="subSection">
-            <h4>Communication over decoration</h4>
+            <header>
+              <h4>Communication over decoration</h4>
+            </header>
             <p>
               Although we value an aesthetically pleasing use of color, we place a higher value on clear communication. Our use of color should be purposeful, rational, and should serve to support the purpose of the content.
             </p>
@@ -26,14 +28,18 @@
             </div>
           </div>
           <div class="subSection">
-            <h4>Colors should be accessible</h4>
+            <header>
+              <h4>Colors should be accessible</h4>
+            </header>
             <p>
               When choosing colors, consider users who are color blind or who have low vision. Never use color alone to convey information.
             </p>
             <vue-img :src="colorsShouldBeAccessible" />
           </div>
           <div class="subSection">
-            <h4>Colors should focus attention</h4>
+            <header>
+              <h4>Colors should focus attention</h4>
+            </header>
             <p>
               The use of color should help bring attention to what matters most. Color should support the hierarchy of the page. Use restraint.
             </p>
@@ -130,11 +136,8 @@
           <p>
             Use the following as a guide for how and when to use colors from our palette together.
           </p>
-          <good-vs-bad message="">
+          <good-vs-bad message="Use any light background color with its corresponding text color">
             <template slot="good">
-              <p>
-          		  Use any light background color with its corresponding text color 
-            	</p>
 							<div class="container">
             		<div
               		class="content"
@@ -313,7 +316,6 @@
 						</template>
           </good-vs-bad>
         </section>
-     <hr>
      <section id="usage">
       <h3>Color usage
             </h3>
@@ -364,11 +366,11 @@
         />
         <span 
          class="fas fa-circle fa-2x"
-         style="color: #3C763D;"
+         style="color: #31708F;"
         />
         <span 
          class="fas fa-circle fa-2x"
-         style="color: #D6E9C6;"
+         style="color: #BCE8F1;"
         />
         Information
        </div>
@@ -379,11 +381,11 @@
         />
         <span 
          class="fas fa-circle fa-2x"
-         style="color: #31708F;"
+         style="color: #3C763D;"
         />
         <span 
          class="fas fa-circle fa-2x"
-         style="color: #BCE8F1;"
+         style="color: #D6E9C6;"
         />
         Success
        </div>
@@ -418,11 +420,8 @@
         Danger
        </div>
       </div>
-      <good-vs-bad message="">
+      <good-vs-bad message="Use @secondaryColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.">
        <template slot="good">
-        <p>
-         Use @secondaryColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.
-        </p>
         <div class="container">
          <h1>H1</h1>
          <h2>H2</h2>
@@ -536,7 +535,6 @@
        </template>
       </good-vs-bad>
      </section>
-     <hr>
      <section id="accessibility">
       <h3>Accessibility
             </h3>
@@ -548,38 +546,37 @@
        <li>7:1 contrast ratio of needs to be maintained for normal text.</li>
        <li>4.5:1 contrast ratio needs to be maintained for large text.</li>
       </ul>
-      <good-vs-bad message="">
-       <template slot="good">
-        <p>
-         Use @secondaryColor (#003A65) as Background for lightly colored (preferably white) text.
-        </p>
-        <div class="container">
-         <div
-          class="content"
-          style="color: #ffffff;
-            background-color: #003A65;"
-         >
-          Hello
-         </div>
-        </div>
-       </template>
-       <template slot="bad">
-        <p>
-         Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
-        </p>
-        <div class="container">
-         <div
-          class="content"
-          style="color: #ffffff;
-            background-color: #00B6A8;"
-         >
-          Hello
-         </div>
-        </div>
-       </template>
+        <good-vs-bad message="Use @secondaryColor (#003A65) as Background for lightly colored (preferably white) text.">
+          <template slot="good">
+            <div class="container">
+              <div
+                class="content"
+                style="color: #ffffff;
+                  background-color: #003A65;"
+              >
+                Hello
+              </div>
+            </div>
+          </template>
+        <template slot="bad">
+          <p>
+            Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
+          </p>
+          <div class="container">
+            <div
+              class="content"
+              style="color: #ffffff;
+                background-color: #00B6A8;"
+            >
+              Hello
+            </div>
+          </div>
+        </template>
       </good-vs-bad>
       <div class="subSection">
-       <h4>Exception to this rule</h4>
+       <header>
+         <h4>Exception to this rule</h4>
+        </header>
        <p>
         These examples in our visual language break this rule in favor of hierarchy or communication benefits.
         </p>
@@ -608,48 +605,23 @@
                 background-color: #F2DEDE;
                 border: 1px solid #EBCCD1;"
           />
-              </div>
-              <p>
-                Used to indicate importance.
-              </p>
-            </div>
-          </section>
-  
-          <section>
-            <header>
-            <h3>
-              Resources
-            </h3>
-          </header>              
-            <ul>
-              <li>How to Meet WCAG 2.0 requirements? <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0" target="_blank" class="fas fa-external-link-alt"/></li>
-            </ul>
-          </section>
-        </article>
-        <li
-          v-for="col in colors"
-          :key="col.id"
-          :index="col.index"
-        >
-          <a
-            :href="`#${col.subTitle}`"
-          >
-            {{col.subTitle}}
-          </a>
-          <ul v-if="col.color[0].color!= null">
-            <li
-              v-for="color in col.color"
-              :key="color.id"
-            >
-              <a :href="`#${color.subTitle}`">
-                {{color.subTitle}}
-              </a>
-            </li>
-          </ul>
-        </li>
+          </div>
+          <p>
+            Used to indicate importance.
+          </p>
+        </div>
+      </section>
+    </article>
+    <header>
+      <h3>
+        Resources
+      </h3>
+    </header>              
+    <ul>
+      <li>How to Meet WCAG 2.0 requirements? <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0" target="_blank" class="fas fa-external-link-alt"/></li>
+    </ul>
   </div>
 </template>
-
 <script>
 
   import vueButton from "@/components/UIComponents/Buttons"
@@ -827,15 +799,15 @@
 
     
 
-    .palette {
-      width: fit-content;
-      margin-right: 16px;
-      margin-bottom: 16px;
+    // .palette {
+    //   width: fit-content;
+    //   margin-right: 16px;
+    //   margin-bottom: 16px;
 
-      & + &:last-child {
-        margin-right: 0px;
-      }
-    }
+    //   & + &:last-child {
+    //     margin-right: 0px;
+    //   }
+    // }
 
     .container {
       display: flex;

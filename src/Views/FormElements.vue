@@ -3,7 +3,6 @@
             <template slot= 'left'>
                 <article id= 'forms'>
                     <h1>Forms</h1>
-                    <hr>
                     <p>
                         Forms are commonly used to provide user interaction on websites and in web applications. For example, login, registering, commenting, and purchasing. This tutorial shows you how to create accessible forms. The same concepts apply to all forms, whether they are processed client or server-side.
                     </p>
@@ -55,7 +54,6 @@
                             </p>
                         </li>
                     </ul>
-                    <hr>
                     <section id= "importance">    
                         <h3>Why is this important?</h3>
                         <p>
@@ -235,7 +233,6 @@
                             </template>
                         </good-vs-bad>
                     </section>
-                    <hr>
                     <section id= 'dosVsDonts'>
                         <h3>
                             Do's vs Dont's

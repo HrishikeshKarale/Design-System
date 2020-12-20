@@ -3,8 +3,6 @@
     https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118
     <div>
         <p>Code readability is a universal subject in the world of computer programming. It's one of the first things we learn as developers. This article will detail the fifteen most important best practices when writing readable code. </p>
-        <p></p>
-        <hr>
         <h2>1 - Commenting &amp; Documentation</h2>
         <p>IDE's (Integrated Development Environment) have come a long way in the past few years. This made commenting your code more useful than ever. Following certain standards in your comments allows IDE's and other tools to utilize them in different ways.</p>
         <p>Consider this example:</p>
@@ -13,7 +11,6 @@
             <p>Here is another example where I call a function from a third party library:</p>
             <div><img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" data-was-processed= "true"></div>
         <p>In these particular examples, the type of commenting (or documentation) used is based on <a href= "http://www.phpdoc.org/">PHPDoc</a>, and the IDE is <a href= "http://aptana.org/">Aptana</a>.</p>
-        <hr>
         <h2>2 - Consistent Indentation</h2>
         <p>I assume you already know that you should indent your code. However, it's also worth noting that it is a good idea to keep your indentation style consistent.</p>
         <p>There are more than one way of indenting code.</p>
@@ -173,7 +170,6 @@
         </div>
         <p>Also note that they are using four spaces instead of tabs for indentations.</p>
         <p><a href= "http://en.wikipedia.org/wiki/Indent_style">Here</a> is a Wikipedia article with samples of different indent styles.</p>
-        <hr>
         <div style= "display: block; margin-top: 30px;">
             <div>
                 <div>
@@ -248,7 +244,6 @@
                 </table>
             </div>
         </div>
-        <hr>
         <h2>4 - Code Grouping</h2>
         <p>More often than not, certain tasks require a few lines of code. It is a good idea to keep these tasks within separate blocks of code, with some spaces between them.</p>
         <p>Here is a simplified example:</p>
@@ -291,7 +286,6 @@
             </div>
         </div>
         <p>Adding a comment at the beginning of each block of code also emphasizes the visual separation.</p>
-        <hr>
         <h2>5 - Consistent Naming Scheme</h2>
         <p>PHP itself is sometimes guilty of not following consistent naming schemes:</p>
         <ul>
@@ -346,7 +340,6 @@
             </div>
         </div>
         <p>So again, there is no obvious "best" style. Just being consistent.</p>
-        <hr>
         <h2>6 - DRY Principle</h2>
         <p>DRY stands for Don't Repeat Yourself. Also known as DIE: Duplication is Evil.</p>
         <p>The principle states:</p>
@@ -381,7 +374,6 @@
                 </table>
             </div>
         </div>
-        <hr>
         <h2>7 - Avoid Deep Nesting</h2>
         <p>Too many levels of nesting can make code harder to read and follow.</p>
         <div>
@@ -515,7 +507,6 @@
                 </table>
             </div>
         </div>
-        <hr>
         <h2>8 - Limit Line Length</h2>
         <p>Our eyes are more comfortable when reading tall and narrow columns of text. This is precisely the reason why newspaper articles look like this:</p>
         <div><img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" data-was-processed= "true"></div>
@@ -575,13 +566,11 @@
                 </div>
             </div>
             <p>Also, if anyone intends to read the code from a terminal window, such as <a href= "https://net.tutsplus.com/tutorials/other/venturing-into-vim-new-premium-video-series/">Vim users</a>, it is a good idea to to limit the line length to around 80 characters.</p>
-            <hr>
             <h2>9 - File and Folder Organization</h2>
             <p>Technically, you could write an entire application code within a single file. But that would prove to be a nightmare to read and maintain.</p>
             <p>During my first programming projects, I knew about the idea of creating "include files." However, I was not yet even remotely organized. I created an "inc" folder, with two files in it: <code>db.php</code> and <code>functions.php</code>. As the applications grew, the functions file also became huge and unmaintainable.</p>
             <p>One of the best approaches is to either <a href= "https://net.tutsplus.com/sessions/codeigniter-from-scratch/">use a framework</a>, or imitate their folder structure. Here is what CodeIgniter looks like:</p>
             <div><img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" data-was-processed= "true"></div>
-            <hr>
             <h2>10 - Consistent Temporary Names</h2>
             <p>Normally, the variables should be descriptive and contain one or more words. But, this doesn't necessarily apply to temporary variables. They can be as short as a single character.</p>
             <p>It is a good practice to use consistent names for your temporary variables that have the same kind of role. Here are a few examples that I tend use in my code:</p>
@@ -663,7 +652,6 @@
                     </table>
                 </div>
             </div>
-            <hr>
             <h2>11 - Capitalize SQL Special Words</h2>
             <p>Database interaction is a big part of most web applications. If you are writing raw SQL queries, it is a good idea to keep them readable as well.</p>
             <p>Even though SQL special words and function names are case insensitive, it is common practice to capitalize them to distinguish them from your table and column names.</p>
@@ -705,7 +693,6 @@
                     </table>
                 </div>
             </div>
-            <hr>
             <h2>12 - Separation of Code and Data</h2>
             <p>This is another principle that applies to almost all programming languages in all environments. In the case of web development, the "data" usually implies HTML output.</p>
             <p>When PHP was first released many years ago, it was primarily seen as a template engine. It was common to have big HTML files with a few lines of PHP code in between. However, things have changed over the years and websites became more and more dynamic and functional. The code is now a huge part of web applications, and it is no longer a good practice to combine it with the HTML.</p>
@@ -724,7 +711,6 @@
                 <li><a href= "http://phpsavant.com/">Savant</a></li>
             </ul>
             <p>Popular Content Management Systems</p>
-            <hr>
             <h2>13 - Alternate Syntax Inside Templates</h2>
             <p>You may choose not to use a fancy template engine, and instead go with plain inline PHP in your template files. This does not necessarily violate the "Separation of Code and Data," as long as the inline code is directly related to the output, and is readable. In this case you should consider using the <a href= "http://php.net/manual/en/control-structures.alternative-syntax.php">alternate syntax for control structures</a>.</p>
             <p>Here is an example:</p>
@@ -821,7 +807,6 @@
                 </div>
             </div>
             <p>This lets you avoid lots of curly braces. Also, the code looks and feels similar to the way HTML is structured and indented.</p>
-            <hr>
             <h2>14 - Object Oriented vs. Procedural</h2>
             <p>Object oriented programming can help you create well structured code. But that does not mean you need to abandon procedural programming completely. Actually creating a mix of both styles can be good.</p>
             <p>Objects should be used for representing data, usually residing in a database. </p>
@@ -923,7 +908,6 @@
             <h2>15 - Read Open Source Code</h2>
             <p>Open Source projects are built with the input of many developers. These projects need to maintain a high level of code readability so that the team can work together as efficiently as possible. Therefore, it is a good idea to browse through the source code of these projects to observe what these developers are doing.</p>
             <div><img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" data-was-processed= "true"></div>
-            <hr>
             <h2>16 - Code Refactoring</h2>
             <p>When you "refactor," you make changes to the code without changing any of its functionality. You can think of it like a "clean up," for the sake of improving readability and quality.</p>
             <p>This doesn't include bug fixes or the addition of any new functionality. You might refactor code that you have written the day before, while it's still fresh in your head, so that it is more readable and reusable when you may potentially look at it two months from now. As the motto says: "refactor early, refactor often."</p>

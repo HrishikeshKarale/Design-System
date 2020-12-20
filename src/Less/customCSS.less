@@ -945,12 +945,14 @@ article {
   justify-content: center;
   align-content: center;
 
+  //indenttitle
   &>*,
-  &>section>* {
+  &>section>*,
+  &>section>.subSection>* {
     padding: @spaceMd 0;
 
     &:not(header) {
-      padding: @spaceMd @spaceLg;
+      padding: 0 @spaceLg;
     }
   }
 
@@ -964,7 +966,16 @@ article {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    min-height: @body;
+    // min-height: @body;
+
+    &::after {
+      content: "";
+      border-top: 1px dotted @textColor;
+      filter: opacity(16%);
+      width: 100%;
+      align-self: center;
+    }
+
   }
 }
 
@@ -1085,7 +1096,7 @@ h4,
 h5,
 h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.1;
   color: @secondaryColor;
   width: fit-content;
@@ -1209,8 +1220,9 @@ body {
   height: 100%;
   width: 100%;
   z-index: @bodyZ;
+  font-size: @fontSize;
 
-  &#portfolio {
+  &>#app {
     font-family: @fontFamily, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

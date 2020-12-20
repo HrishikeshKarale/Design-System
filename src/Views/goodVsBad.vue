@@ -1,18 +1,12 @@
 <template>
     <div class= "goodVsBad">
       <div 
-        v-if= 'message'
         class= 'header'
       >
-        <p>
-          {{message}}
-        </p>
-        <div>
-          Example
-          <vue-button 
+        {{message}}
+        <vue-button 
           :buttonType= 'd_buttonType'
           buttonName= "togglecode"
-          buttonText= null
           :buttonIcon= '!d_hidden? "fas fa-chevron-up":"fas fa-chevron-down"'
           :buttonStyle= 'd_buttonStyle[9]'
           :disabled= '!d_booleanTrue'
@@ -20,34 +14,29 @@
           :formID= "d_form"
           :onClickAction= 'toggle.bind(this)'
         />
-        </div>
       </div>
       <div 
         class= 'content'
         v-if= '!d_hidden'
       >
-      <card-background
-        low= "3"
-        class= 'good'
-      >
-        <div>
-          <slot name= 'good'/>
-        </div>
-        <div>
-          GOOD
-        </div>
-      </card-background>
-      <card-background
-        low= "3"
-        class= 'bad'
-      >
-        <div>
-          <slot name= 'bad'/>
-        </div>
-        <div>
-          BAD
-        </div>
-      </card-background>
+        <card-background
+          low= "1"
+          class= 'good'
+        >
+          <span class="fas fa-check-circle"><em>Recomended</em></span>
+          <div>
+            <slot name= 'good'/>
+          </div>
+        </card-background>
+        <card-background
+          low= "1"
+          class= 'bad'
+        >
+          <span class="fas fa-times-circle"><em>NOT Recomended</em></span>
+          <div>
+            <slot name= 'bad'/>
+          </div>
+        </card-background>
       </div>
     </div>
 </template>
@@ -76,7 +65,7 @@
 
       var d_onClickAction= this.toggle
 
-      var d_hidden= !d_booleanTrue
+      var d_hidden= d_booleanTrue
       return {
 
         d_buttonType: d_buttonType,
@@ -132,8 +121,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: space-around; 
+      align-items: flex-start;
+      justify-content: space-between; 
+      width: 100%;
+      padding: @spaceMd @spaceLg;
 
       &.content {
         display: flex;
@@ -142,88 +133,50 @@
         border-radius: 0 0 4px 4px;
         color: @textColor;
         font-size: 16px;
-        padding: @spaceMd @spaceLg;
+        justify-content: space-between;
+        align-content: flex-end;
 
         & > div {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: nowrap;
-          padding: @spaceLg @spaceXl;
-          border: 1px solid transparent;
-          border-top-width: 4px;
-          border-radius: @borderRadius;
-          align-self: flex-start;
-          min-width: fit-content;
-          
-          & > div {
-            display: flex;
-            flex-direction: column;
-            align-content: space-between;
+          max-width: 48%;
 
-            & > div {
-              display: flex;
-              flex-direction: column;
-              align-content: space-between;
-              margin: 0 16px 8px 16px;
-             }
-          }
-
-          & > div {
-
-            & > div {
-
-              &:last-child {
-                margin-top: 32px;
-                padding: @spaceSm @spaceMd;
-                text-align: center;
-                border-radius: @borderRadius;
-                font-weight: bold;
-                color: @white;
-              }
+          & > span {
+            align-self: center;
+            border-radius: @borderRadius;
+            padding: @spaceMd @spaceLg;
+            width: 100%;
+            & > em {
+              font-weight: bold;
+              margin: @spaceMd;
             }
           }
-          max-width: 48%;
+
+          & > div {
+            padding: @spaceMd @spaceLg;
+          }
           
           &.good {
-            border-top-color: @successText;
-            
-            & > div {
-
-              & > div {
-
-                &:last-child {
-                  background-color: @successText;
-                }
-              }
+            & > span {
+              color: @successText;
+              background-color: @successBackground;
             }
           }
 
           &.bad {
-            border-top-color: @dangerText;
-            
-            & > div {
-              
-              & > div {
-
-                &:last-child {
-                  background-color: @dangerText;
-                }
-              }
+            & > span {
+              color: @dangerText;
+              background-color: @dangerBackground;
             }
           }
         }
-      } 
+      }
 
       &.header{
-        justify-content: space-between;
+        flex-wrap: nowrap;
         background-color: @infoBackground;
         color: @infoText;
         padding: @spaceMd @spaceLg;
-        border-radius: 4px 4px 0 0 ;
-
-        & > p {
-          color: @textColor;
-         }
+        border-radius: @borderRadius;
+        color: @textColor;
       }
     }    
   }

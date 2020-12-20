@@ -21,7 +21,6 @@
                         <li>Provide an inclusive experience</li>
                         <li>Be as specific and concise as possible</li>
                     </ul>
-                    <hr>
                     <section id= "imageAltText">
                         <h3>Alt text for images</h3>
                         <p>
@@ -31,7 +30,6 @@
                             Empty alt text attribute for images: <code>&#60;img alt= "" /&#62;</code>
                         </p>
                     </section>
-                    <hr>
                     <section id= "writingAltText">
                         <h3>Writing alt text</h3>
                         <p>
@@ -44,7 +42,6 @@
                             <li>Write in the active voice. Only use the passive voice if you want to hide who is doing the thing described.</li>
                         </ul>
                     </section>
-                    <hr>
                     <section id= "WhyAltText">
                         <h3>Situations that need alt text</h3>
                         <div
@@ -78,14 +75,12 @@
                             <img src= "https://polaris.shopify.com/assets/63d59a2c7031ee7971bc54a8244a431b-complex-images@2x.png" alt= "">
                         </div>
                     </section>
-                    <hr>
                     <section id= "pronunciationAndTranslation">
                         <h3>Pronunciation and translation</h3>
                         <p>
                             Not only are we striving to make interactions with our products pleasurable, we also want to try to make the listening experience for our users pleasant as well. The HTML lang attribute helps speech synthesis tools figure out pronunciation and translation tools figure out what rules to use.
                         </p>
                     </section>
-                    <hr>
                     <section id= "SEO">
                         <h3>SEO</h3>
                         <p>
