@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 {
   "presets": [
     ["env", {
@@ -12,31 +10,3 @@
   ],
   "plugins": ["transform-vue-jsx", "transform-runtime"]
 }
-=======
-{
-  "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-      }
-    }],
-    "stage-2"
-  ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"]
-}
->>>>>>> dc83ae0ef91f39efdb6bc65b6e3524ed6fa6e146
-=======
-{
-  "presets": [
-    ["env", {
-      "modules": false,
-      "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-      }
-    }],
-    "stage-2"
-  ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"]
-}
->>>>>>> dc83ae0ef91f39efdb6bc65b6e3524ed6fa6e146
