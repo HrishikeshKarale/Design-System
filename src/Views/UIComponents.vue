@@ -1,54 +1,54 @@
 <template>
-    <div class= "uiComponents">
-        <h1>
-            Filters
-        </h1>
-        <vue-filter
-            :filters= 'd_filters'
-            :selected= 'd_filterSelected'
-            @updateFilter= "updateFilter"
-        />
+  <div class= "uiComponents">
+    <h1>
+      Filters
+    </h1>
+    <vue-filter
+      :filters= 'd_filters'
+      :selected= 'd_filterSelected'
+      @updateFilter= "updateFilter"
+    />
 
-        <h1>
-            Buttons
-        </h1>
-        <div
-            v-for= "(buttonStyle, index) in d_buttonStyle"
-            :key= 'index'
-        >
-            <h4>
-                ButtonType: {{buttonStyle}}
-            </h4>
-            <vue-button 
-                :buttonType= 'd_buttonType'
-                :buttonName= "d_buttonName"
-                :buttonText= "d_buttonText"
-                :buttonIcon= "d_buttonIcon"
-                :buttonStyle= 'buttonStyle'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'd_onClickAction'
-            />
-        </div>
+    <h1>
+      Buttons
+    </h1>
+    <div
+      v-for= "(buttonStyle, index) in d_buttonStyle"
+      :key= 'index'
+    >
+      <h4>
+        ButtonType: {{buttonStyle}}
+      </h4>
+      <vue-button 
+        :buttonType= 'd_buttonType'
+        :buttonName= "d_buttonName"
+        :buttonText= "d_buttonText"
+        :buttonIcon= "d_buttonIcon"
+        :buttonStyle= 'buttonStyle'
+        :disabled= '!d_booleanTrue'
+        :autofocus= '!d_booleanTrue'
+        :formID= "d_form"
+        :onClickAction= 'd_onClickAction'
+      />
+    </div>
 
-        <h1>
-            Cards
-        </h1>
-        <vue-card
-            :cardTitle= 'd_cardTitle'
-            :cardLogo= 'd_cardLogo'
-            :actionButtons= 'd_booleanTrue'
-            :cardData= 'd_cardData'
-            :onClickAction= 'd_cardOnClickAction' 
-            :cardFooter= 'd_cardFooter'
-            :bookmark= '!d_booleanTrue'
-            low= '2'
-        >
-            <div slot= 'actionButtons'>
-                <div >       
-                    <vue-button 
-                        :buttonType= 'd_buttonType'
+    <h1>
+      Cards
+    </h1>
+    <vue-card
+      :cardTitle= 'd_cardTitle'
+      :cardLogo= 'd_cardLogo'
+      :actionButtons= 'd_booleanTrue'
+      :cardData= 'd_cardData'
+      :onClickAction= 'd_cardOnClickAction' 
+      :cardFooter= 'd_cardFooter'
+      :bookmark= '!d_booleanTrue'
+      low= '2'
+    >
+      <div slot= 'actionButtons'>
+        <div >    
+          <vue-button 
+                   :buttonType= 'd_buttonType'
                         buttonName= "toggleFilter"
                         :buttonText= "d_buttonText"
                         buttonIcon= "fas fa-times"
