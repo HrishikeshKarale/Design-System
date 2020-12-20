@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'helpDocumentation'>
                     <h1>Help documentation</h1>
-                    <dt>
+                    <p>
                         After you build an app or other integration, writing help documentation will show users how to use it.
-                    </dt>
+                    </p>
                     <p>
                         These guidelines are based on our experience writing help documentation for the COMET Help Center. They’re all intended to serve the same goal: to educate and empower COMET users.
                     </p>

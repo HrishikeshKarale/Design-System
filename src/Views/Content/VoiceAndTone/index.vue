@@ -5,9 +5,9 @@
             <template slot= 'left'>
                 <article id= 'voiceAndTone'>
                     <h1>Voice And Tone</h1>
-                    <dt>
+                    <p>
                         Learn how to apply Shopify’s voice and choose the right tone, no matter what product, feature, or app you’re building.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "What">
                         <h3>What is voice and tone?</h3>

@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'grammerAndMechanics'>
                     <h1 id= "title">Grammer and Mechanics</h1>
-                    <dt>
+                    <p>
                         This guide is to help designers, developers, recruiters, UX-ers, product managers, gurus—anyone who writes public-facing text for COMET.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "basics">
                         <h3>Basics</h3>

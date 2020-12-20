@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'interactionStates'>
                     <h1>Interaction states</h1>
-                    <dt>
+                    <p>
                         Interaction states define a visual language for communicating the state of a component as users interact with it. These visual styles correspond to hover, focus, active, selected, disabled, and subdued states. They help users understand what to expect while interacting with COMET.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "principles">
                         <h3>Principles</h3>

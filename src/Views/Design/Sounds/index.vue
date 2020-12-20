@@ -4,9 +4,9 @@
             <template slot= 'left'>
                 <article id= 'sound'>
                     <h1>Sounds</h1>
-                    <dt>
+                    <p>
                         COMET uses sounds intentionally to communicate information and to enhance our users’ experience of our product. Sound patterns make interactions with our product easier and more predictable.
-                    </dt>
+                    </p>
                     <hr>
                     <section id= "considerations">
                         <h3>Considerations</h3>

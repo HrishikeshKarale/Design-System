@@ -5,9 +5,9 @@
             <template slot= 'left'>
                 <article id= 'alternativeText'>
                     <h1 id= "title">Alternative text</h1>
-                    <dt>
+                    <p>
                         COMET aims to provide an inclusive experience. Alternative text (alt text) helps people with low or loss of vision use our products.
-                    </dt>
+                    </p>
                     <p>
                         Generally, alt text is text replacement for an image and is often represented by the alt HTML element attribute, alt= "", but is also used in other scenarios.
                     </p>

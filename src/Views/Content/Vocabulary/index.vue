@@ -5,9 +5,9 @@
             <template slot= 'left'>
                 <article id= 'vocabulary'>
                     <h1>Vocabulary</h1>
-                    <dt>
+                    <p>
                         It’s important to use the same words, spelling, and capitalization consistently, otherwise things start looking messy and confusing for merchants.
-                    </dt>
+                    </p>
                     <p>
                         In general, if a feature or product isn’t unique to us (e.g. blogs, navigation, pages, etc.) don’t capitalize it. If it’s unique to Shopify and marketable as its own “product” (e.g. Shopify Shipping) then capitalize it. Edge cases will be addressed individually and documented here.
                     </p>
