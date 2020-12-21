@@ -95,7 +95,7 @@ var data= [
         id: 3, 
         name: 'Components',
         component: 'FormElements',
-        icon: "fas fa-creative-commons-share",
+        icon: "fab fa-creative-commons-share",
         subNav: [
             {
                 id: 1, 
@@ -308,11 +308,12 @@ var data= [
     {
         id: 4, 
         name: 'Others',
+        icon: "fas fa-atom",
         subNav: [
             {
                 id: 1, 
                 name:'Sample Pages',
-                    component: 'createMove',
+                component: 'createMove',
                 icon: "fas fa-vial",
                 subNav: [
                     {
