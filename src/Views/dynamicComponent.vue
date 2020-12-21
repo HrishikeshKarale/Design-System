@@ -22,7 +22,7 @@
     import vueTable from '@/components/UIComponents/Table/vueTable'
     import vueAlert from '@/components/Alerts/vueAlert'
     import inputResponse from '@/components/Alerts/inputResponse'
-    import vueNavigation from '@/components/UIComponents/Navigation/vueNavigation'
+    import sideNav from '@/components/UIComponents/Navigation/sideNav'
     import vueWizard from "@/components/UIComponents/StepWizard/vueWizard"
     import masterDetail from "@/components/UIComponents/MasterDetail/masterDetail"
 // import all other dynamically rendered components
@@ -51,7 +51,7 @@
             vueTable,
             vueAlert,
             inputResponse,
-            vueNavigation,
+            sideNav,
             vueWizard,
             masterDetail,
         },

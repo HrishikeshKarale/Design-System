@@ -14,29 +14,29 @@ var data= {
             <p>For the param element, the name attribute is used together with the value attribute to specify parameters for the plugin specified with the &lt;object&gt; tag.</p>",
     nameText: "Specifies the name for the input element.",
 
-    buttonType: '<p>The type attribute specifies the type of button.</p>\
+    type: '<p>The type attribute specifies the type of button.</p>\
                 <p><b>Tip:</b> Always specify the type attribute for the &lt;button&gt; element. Different browsers may use different default types for the &lt;button&gt; element.</p>',
-    buttonTypeText: 'Specifies that type of button (button|submit|reset)',
+    typeText: 'Specifies that type of button (button|submit|reset)',
 
-    buttonName: "<p>The buttonName attribute specifies the name for a &lt;button&gt; tag.</p>\
+    tag: "<p>The tag attribute specifies the name for a &lt;button&gt; tag.</p>\
                         <p>The name attribute is used to reference form-data after the form has been submitted, or to reference the element in a JavaScript.</p>\
                         <p><b>Tip:</b> Several &lt;button&gt; elements can share the same name. This allows you to have several buttons with equal names, which can submit different values when used in a form.</p>",
-    buttonNameText: "Specifies a name for the button",
+    tagText: "Specifies a name for the button",
 
-    buttonText: "<p>The buttonText attribute specifies the actual text that is displayed on the &lt;button&gt; tag.</p>",
-    buttonTextText: "Specified the actual text on the button",
+    text: "<p>The text attribute specifies the actual text that is displayed on the &lt;button&gt; tag.</p>",
+    textText: "Specified the actual text on the button",
 
-    buttonIcon: "<p>The buttonIcon attribute specifies the actual icon that is displayed on the &lt;button&gt; tag.</p>",
-    buttonIconText: "Specified the icon displayed on the button, use fontawesome class names as input.",
+    icon: "<p>The icon attribute specifies the actual icon that is displayed on the &lt;button&gt; tag.</p>",
+    iconText: "Specified the icon displayed on the button, use fontawesome class names as input.",
 
-    buttonStyle: '<p>The buttonStyle  attribute speficies the style that will be applied to the button</p>',
-    buttonStyleText: 'Speficies classes applied to the button',
+    category: '<p>The category  attribute speficies the style that will be applied to the button</p>',
+    categoryText: 'Speficies classes applied to the button',
             
-    onClickAction: '<p>onClickAction is a function from our parent vue methods which action should be preformed when the button is clicked.</p>',
-    onClickActionText: "Specifies the function that should be called when the button is clicked.",
+    ctx: '<p>ctx is a function from our parent vue methods which action should be preformed when the button is clicked.</p>',
+    ctxText: "Specifies the function that should be called when the button is clicked.",
 
-    formID: '<p>Specifies the form element the &lt;button&gt; element belongs to. The value of this attribute must be the id attribute of a &lt;form&gt; element in the same document.</p>',
-    formIDText: 'Specifies one or more forms the button belongs to',
+    form: '<p>Specifies the form element the &lt;button&gt; element belongs to. The value of this attribute must be the id attribute of a &lt;form&gt; element in the same document.</p>',
+    formText: 'Specifies one or more forms the button belongs to',
             
     value: '<p>The value attribute specifies the value of an input element.</p>\
             <p>The value attribute is used differently for different input types:</p>\

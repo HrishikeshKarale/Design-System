@@ -5,15 +5,15 @@
                 :d_attr= 'd_attr'
             >        
                 <vue-button 
-                    :buttonType= 'd_buttonType'
-                    :buttonName= "d_buttonName"
-                    :buttonText= "d_buttonText"
-                    :buttonIcon= "d_buttonIcon"
-                    :buttonStyle= 'd_buttonStyle[0]'
+                    :type= 'd_type'
+                    :tag= "d_tag"
+                    :text= "d_text"
+                    :icon= "d_icon"
+                    :category= 'd_category[0]'
                     :disabled= '!d_booleanTrue'
                     :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'd_onClickAction'
+                    :form= "d_form"
+                    :ctx= 'd_ctx'
                 />
             </component-details>
         
@@ -31,41 +31,41 @@
         
         data () {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= 'Click Me'
+            var d_text= 'Click Me'
 
-            var d_buttonIcon= 'fas fa-registered'
+            var d_icon= 'fas fa-registered'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.consoleClick
+            var d_ctx= this.consoleClick
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
-                d_attr: {'type':['buttonStyle', ] , 'value': [d_buttonStyle]},
+                d_attr: {'type':['category', ] , 'value': [d_category]},
 
                 d_vueButton: {
 
@@ -81,34 +81,34 @@
 
                     attributes: [
                         {
-                            type: "buttonType",
-                            value: d_buttonType,
-                            description: this.$store.state.navText.buttonType,
-                            text: this.$store.state.navText.buttonTypeText,
+                            type: "type",
+                            value: d_type,
+                            description: this.$store.state.navText.type,
+                            text: this.$store.state.navText.typeText,
                         },
                         {
-                            type: "buttonName",
-                            value: d_buttonName,
-                            description: this.$store.state.navText.buttonName,
-                            text: this.$store.state.navText.buttonNameText,
+                            type: "tag",
+                            value: d_tag,
+                            description: this.$store.state.navText.tag,
+                            text: this.$store.state.navText.tagText,
                         },
                         {
-                            type: "buttonText",
-                            value: d_buttonText,
-                            description: this.$store.state.navText.buttonText,
-                            text: this.$store.state.navText.buttonTextText,
+                            type: "text",
+                            value: d_text,
+                            description: this.$store.state.navText.text,
+                            text: this.$store.state.navText.textText,
                         },
                         {
-                            type: "buttonIcon",
-                            value: d_buttonIcon,
-                            description: this.$store.state.navText.buttonIcon,
-                            text: this.$store.state.navText.buttonIconText,
+                            type: "icon",
+                            value: d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.iconText,
                         },
                         {
-                            type: "buttonStyle",
-                            value: d_buttonStyle[0],
-                            description: this.$store.state.navText.buttonStyle,
-                            text: this.$store.state.navText.buttonStyleText,
+                            type: "category",
+                            value: d_category[0],
+                            description: this.$store.state.navText.category,
+                            text: this.$store.state.navText.categoryText,
                         },
                         {
                             type: "disabled",
@@ -123,16 +123,16 @@
                             text: this.$store.state.navText.autofocusText,
                         },
                         {
-                            type: "formID",
+                            type: "form",
                             value: d_form,
-                            description: this.$store.state.navText.formID,
-                            text: this.$store.state.navText.formIDText,
+                            description: this.$store.state.navText.form,
+                            text: this.$store.state.navText.formText,
                         },
                         {
-                            type: "onClickAction",
-                            value: d_onClickAction,
-                            description: this.$store.state.navText.onClickAction,
-                            text: this.$store.state.navText.onClickActionText,
+                            type: "ctx",
+                            value: d_ctx,
+                            description: this.$store.state.navText.ctx,
+                            text: this.$store.state.navText.ctxText,
                         },
                     ] //attributes
                 }, //d_vueButton

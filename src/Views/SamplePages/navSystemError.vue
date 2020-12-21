@@ -18,9 +18,9 @@
       version= 'v1.19.1'
     />
     <vue-modal
-      :buttonText= 'd_buttonText'
-      :buttonName= 'd_buttonName'
-      :buttonIcon= 'd_buttonIcon'
+      :text= 'd_text'
+      :tag= 'd_tag'
+      :icon= 'd_icon'
       :showModal= 'd_showModal'
     >
       <system-error
@@ -49,13 +49,13 @@
 
       var d_modalTitle= 'Modal title'
       
-      var d_buttonText= 'openModal'
+      var d_text= 'openModal'
       
-      var d_buttonName= 'approveText'
+      var d_tag= 'approveText'
       
-      var d_buttonIcon= 'fas fa-eject'
+      var d_icon= 'fas fa-eject'
       
-      var d_onClickAction= this.consoleClick
+      var d_ctx= this.consoleClick
 
       var d_showModal= false
 
@@ -63,13 +63,13 @@
         
         d_modalTitle: d_modalTitle,
 
-        d_buttonText: d_buttonText,
+        d_text: d_text,
 
-        d_buttonName: d_buttonName,
+        d_tag: d_tag,
 
-        d_buttonIcon: d_buttonIcon,
+        d_icon: d_icon,
 
-        d_onClickAction: d_onClickAction,
+        d_ctx: d_ctx,
 
         d_showModal: d_showModal,
       } //return

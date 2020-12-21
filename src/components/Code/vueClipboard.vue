@@ -1,148 +1,120 @@
 <template>
-        <div class= 'copyClipboard'>
-            <div>
-                <vue-button 
-                    v-if= 'buttonText && buttonText'
-                    :buttonType= 'd_buttonType'
-                    :buttonName= "buttonName"
-                    :buttonText= "buttonText"
-                    :buttonIcon= "buttonIcon"
-                    :buttonStyle= 'd_buttonStyle[11]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'copyToClipboard'
-                />
-                <vue-button 
-                    v-else-if= 'buttonText'
-                    :buttonType= 'd_buttonType'
-                    :id= 'buttonName'
-                    :buttonName= "buttonName"
-                    :buttonText= "buttonText"
-                    :buttonIcon= "buttonIcon"
-                    :buttonStyle= 'd_buttonStyle[2]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'copyToClipboard'
-                />
-                <vue-button 
-                    v-else
-                    :buttonType= 'd_buttonType'
-                    buttonName= "togglecode"
-                    :buttonText= "buttonText"
-                    :buttonIcon= "buttonIcon"
-                    :buttonStyle= 'd_buttonStyle[9]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'copyToClipboard'
-                />
-            </div>
-            <div>
-                <!-- <input type= 'hidden' :id= "id" :value= 'componentCode'> -->
-                <textarea :id= "id" :value= 'componentCode'></textarea>
-            </div>
-        </div>
+  <div class="copyClipboard">
+    <vue-button
+      :type="dButtonType"
+      tag="togglecode"
+      :text="buttonText"
+      :icon="buttonIcon"
+      :category="category"
+      :disabled="!dBooleanTrue"
+      :autofocus="!dBooleanTrue"
+      :ctx="copyToClipboard"
+    />
+    <textarea :id="id" :value="componentCode"></textarea>
+  </div>
 </template>
 <script>
+import vueButton from "@/components/UIComponents/Buttons";
 
-    import vueButton from "@/components/UIComponents/Buttons";
+export default {
+  name: "VueClipboard",
 
-    export default {
-        name: "vueClipboard",
+  components: {
+    vueButton
+  }, //components
 
-        data() {
+  props: {
+    text: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-            var d_buttonType= 'button'
+    tag: {
+      required: false,
+      type: [String, null],
+      default: "copyToClipboard"
+    },
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+    icon: {
+      required: false,
+      type: [String, null],
+      default: "fas fa-copy"
+    },
 
-            var d_booleanTrue= true
+    category: {
+      required: false,
+      type: [String, null],
+      default: "small"
+    },
 
-            var d_form= ''
+    //content to be copied
+    componentCode: {
+      type: String,
+      required: true
+    },
 
-            var d_onClickAction= this.consoleClick
+    id: {
+      required: true,
+      type: String
+    }
+  }, //props
 
-            return {
+  data() {
+    const dButtonType = "button";
 
-              d_buttonType: d_buttonType,
+    const dButtonStyle = this.$store.state.buttonStyle;
 
-              d_buttonStyle: d_buttonStyle,
+    const dBooleanTrue = true;
 
-              d_booleanTrue: d_booleanTrue,
+    const form = "";
 
-              d_form: d_form,
+    const dctx = this.consoleClick;
 
-              d_onClickAction: d_onClickAction,
-            } //return 
-        }, //data
+    return {
+      dButtonType,
 
-        props: {
+      dButtonStyle,
 
-            buttonText: {
-                required: false,
-                type: String,
-                default: null
-            },
+      dBooleanTrue,
 
-            buttonName: {
-                required: false,
-                type: String,
-                default: "copyToClipboard"
-            },
+      form,
 
-            buttonIcon: {
-                required: false,
-                type: String,
-                default: "fas fa-copy"
-            },
+      dctx
+    }; //return
+  }, //components
 
-            componentCode: {
-                required: true,
-            },
-            
-            id: {
-                required: true,
-                type: String
-            }
-        }, //props
+  methods: {
+    copyToClipboard: function() {
+      const tempId = "#" + this.id;
+      const codeToCopy = document.querySelector(tempId);
+      codeToCopy.style.display = "block";
+      codeToCopy.select();
 
-        components: {
-            vueButton
-        }, //components
+      try {
+        const successful = document.execCommand("copy");
+        // document.execCommand("copy");
+        const msg = successful ? "successful" : "unsuccessful";
+        alert("code copied!", msg);
+        // console.log('copy successfull', tempId)
+        // alert("copied: ", successful)
+      } catch (err) {
+        alert("Oops, unable to copy");
+      }
 
-        methods: {
-            copyToClipboard: function () {
-                var tempId= '#'+ this.id
-                var codeToCopy = document.querySelector(tempId);
-                codeToCopy.style.display= "block";
-                codeToCopy.select();
-
-                try {
-                    var successful = document.execCommand("copy");
-                    var msg = successful ? "successful" : "unsuccessful";
-                    // alert("code copied!");
-                    // console.log('copy successfull', tempId)
-                    // alert("copied: ", successful)
-                } catch (err) {
-                    alert("Oops, unable to copy");
-                }
-
-                document.querySelector(tempId).style.display= "none";
-                window.getSelection().removeAllRanges();
-            }, //copyToClipboard
-        }, //methods
-    } //default
+      document.querySelector(tempId).style.display = "none";
+      window.getSelection().removeAllRanges();
+    } //copyToClipboard
+  } //methods
+}; //default
 </script>
 
-<style lang= "less" scoped>
+<style lang="less" scoped>
+.copyClipboard {
+  display: flex;
 
-    .copyClipboard {
-        display: flex;
-
-        textarea {
-            display: none;
-        }
-    }
+  textarea {
+    display: none;
+  }
+}
 </style>

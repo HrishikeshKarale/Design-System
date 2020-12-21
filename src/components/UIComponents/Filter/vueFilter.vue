@@ -4,11 +4,11 @@
     >
         <div :class= '{open: showFilter || (selected && selected["type"].length!=0)}'>
             <vue-button 
-                buttonType= "button"
-                buttonName= "filterButton"
-                buttonIcon= "fas fa-filter"
-                buttonStyle= "icon"
-                :onClickAction= 'toggleFilter'
+                type= "button"
+                tag= "filterButton"
+                icon= "fas fa-filter"
+                category= "icon"
+                :ctx= 'toggleFilter'
             />
             <template 
                 v-if= 'selected && selected["type"].length!=0'
@@ -50,12 +50,12 @@
             </div>
             <div v-if= 'optionsIndex> -1'>
                 <vue-button 
-                    buttonType= "button"
-                    buttonName= "filterButton"
-                    buttonText= "Add"
-                    buttonStyle= "small"
+                    type= "button"
+                    tag= "filterButton"
+                    text= "Add"
+                    category= "small"
                     :disabled= 'd_filterOptionValue==null'
-                    :onClickAction= 'updateFilter'
+                    :ctx= 'updateFilter'
                 />
             </div>
         </div>

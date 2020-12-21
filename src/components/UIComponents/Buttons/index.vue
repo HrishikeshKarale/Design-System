@@ -1,223 +1,269 @@
+// https://tympanus.net/Development/CreativeButtons/ //
+https://tympanus.net/Development/categorysInspiration/ //
+https://tympanus.net/Development/DistortedButtonEffects/ //
+https://tympanus.net/Development/Progresscategorys/ //
+https://tympanus.net/Development/categorysInspiration/
 <template>
-    <div class= 'vueButton'
-        :class= '(buttonStyle== "fullWidth" || buttonStyle== "border-fwidth")? "fullWidth": null'
-    >
-        <button 
-            :type='buttonType' 
-            :class= 'buttonClass'
-            :name= 'buttonName'
-            :autofocus= 'autofocus'
-            :disabled= 'disabled'
-            form= 'formID'
-            @click.stop= "onClickAction"
-        >
-            <span 
-                v-if= 'buttonIcon'
-                :class= "buttonIcon"
-            />
-            <template 
-                v-if= 'buttonStyle!= "icon" && buttonStyle!= "icon-sm" && buttonStyle!= "icon-lg"'
-            >
-                {{buttonText}}
-            </template>
-        </button>
-    </div><!--div-->
+  <button
+    :class="[
+      'vueButton',
+      ['fullWidth', 'border-fwidth'].includes(category) ? 'fullWidth' : null,
+      buttonClass
+    ]"
+    :type="type"
+    :value="type != 'button' ? type : null"
+    :name="tag"
+    :autofocus="autofocus"
+    :disabled="disabled"
+    :form="form"
+    @click.stop.prevent="ctx"
+  >
+    <span v-if="icon" :class="icon" />
+    <template v-if="!['icon', 'icon-sm', 'icon-lg'].includes(category)">
+      {{ text }}
+    </template>
+  </button>
 </template>
 
 <script>
+export default {
+  name: "VueButton",
 
-    export default {
-        name: 'vueButton',
+  props: {
+    type: {
+      required: false,
+      type: [String, null],
+      default: "button",
+      validator: function(value) {
+        return ["button", "submit", "reset", null].indexOf(value) !== -1;
+      }
+    },
 
-        props: {
+    tag: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-            buttonType: {
-                required: false,
-                type: String,
-                default: 'button',
-                validator: function (value) {
-                    return ['button', 'submit', 'reset', null ].indexOf(value) !== -1
-                }
-            },
-            
-            buttonName: {
-                required: false,
-                type: String,
-                default: null
-            },
+    icon: {
+      default: null,
+      required: function(props) {
+        return ["icon", "icon-lg", "icon-sm"].indexOf(props.category) !== -1;
+      },
+      type: [String, null]
+    },
 
-            buttonIcon: {
-                required: function () {
-                    if (this.buttonStyle== 'icon') {
-                        return true
-                    }
-                    return false
-                },
-                type: String,
-            },
+    text: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-            buttonText: {
-                required: false,
-                type: String,
-                default: null
-            },
+    category: {
+      required: false,
+      type: [String, null],
+      default: "standard",
+      validator: function(value) {
+        return (
+          [
+            "standard",
+            "large",
+            "small",
+            "fullWidth",
+            "border",
+            "border-sm",
+            "border-lg",
+            "border-fwidth",
+            "text",
+            "text-sm",
+            "text-lg",
+            "icon",
+            "icon-sm",
+            "icon-lg",
+            null
+          ].indexOf(value) !== -1
+        );
+      }
+    },
 
-            buttonStyle: {
-                required: false,
-                type: String,
-                default: 'standard',
-                validator: function (value) {
-                    return ['standard', 'large', 'small', 'fullWidth', 'border', 'border-sm', 'border-lg','border-fwidth', 'text', 'text-sm', 'text-lg', 'icon', 'icon-sm', 'icon-lg', null ].indexOf(value) !== -1
-                }
-            },
+    disabled: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            disabled: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    autofocus: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            autofocus: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //sets the autocomplete attribute for the input field
+    autocomplete: {
+      required: false,
+      type: [Boolean, null],
+      default: true
+    },
 
-            buttonClass: {
-                required: false,
-                type: String,
-                default: function () {
-                    var tempClass= 'btn';
+    buttonClass: {
+      required: false,
+      type: [String, null],
+      default: function(props) {
+        let tempClass = "btn";
+        switch (props.category) {
+          case "standard":
+            tempClass += " btn-primary";
+            break;
+          case "icon":
+            tempClass += " btn-icon";
+            break;
+          case "icon-sm":
+            tempClass += " btn-icon btn-sm";
+            break;
+          case "icon-lg":
+            tempClass += " btn-icon btn-lg";
+            break;
+          case "text":
+            tempClass += " btn-link btn-text";
+            break;
+          case "text-sm":
+            tempClass += " btn-text btn-sm";
+            break;
+          case "text-lg":
+            tempClass += " btn-text btn-lg";
+            break;
+          case "small":
+            tempClass += " btn-primary btn-sm";
+            break;
+          case "large":
+            tempClass += " btn-primary btn-lg";
+            break;
+          case "fullWidth":
+            tempClass += " btn-fullWidth btn-block";
+            break;
+          case "border":
+            tempClass += " btn-border";
+            break;
+          case "border-sm":
+            tempClass += " btn-border btn-sm";
+            break;
+          case "border-lg":
+            tempClass += " btn-border btn-lg";
+            break;
+          case "border-fwidth":
+            tempClass += " btn-border btn-fullWidth btn-block";
+            break;
+          default:
+            tempClass += "";
+        }
+        return tempClass;
+      }
+    },
 
-                    switch (this.buttonStyle) {
-                        case 'standard': tempClass+= ' btn-primary';
-                            break;
-                        case 'icon': tempClass+= ' btn-icon';
-                            break;
-                        case 'icon-sm': tempClass+= ' btn-icon btn-sm';
-                            break;
-                        case 'icon-lg': tempClass+= ' btn-icon btn-lg';
-                            break;
-                        case 'text': tempClass+= ' btn-link btn-text';
-                            break;
-                        case 'text-sm': tempClass+= ' btn-text btn-sm';
-                            break;
-                        case 'text-lg': tempClass+= ' btn-text btn-lg';
-                            break;
-                        case 'small': tempClass+= ' btn-primary btn-sm';
-                            break;
-                        case 'large': tempClass+= ' btn-primary btn-lg';
-                            break;
-                        case 'fullWidth': tempClass+= ' btn-fullWidth btn-block';
-                            break;
-                        case 'border': tempClass+= ' btn-border';
-                            break;
-                        case 'border-sm': tempClass+= ' btn-border btn-sm';
-                            break;
-                        case 'border-lg': tempClass+= ' btn-border btn-lg';
-                            break;
-                        case 'border-fwidth': tempClass+= ' btn-border btn-fullWidth btn-block';
-                            break;
-                        default: tempClass+= ' btn-primary';
-                    }
-                    return tempClass
-                }
-            },
+    form: {
+      required: false,
+      type: [String, null],
+      default: function(props) {
+        if (props.tag) {
+          return props.tag;
+        }
+        return "form";
+      }
+    },
 
-            formID: {
-                required: false,
-                type: String,
-                default: null
-            },
-
-            onClickAction: {
-                required: true,
-                type: Function,
-                default: function () {
-                    alert("button undefined: Please send a function to execute when the button is clicked")
-                }
-            }
-        }, //props
-    } //default
+    ctx: {
+      required: function(props) {
+        // console.log(props.type);
+        if (props.type == "button") {
+          return true;
+        }
+        return false;
+      },
+      type: [Function, null],
+      default: function() {
+        alert(
+          "button undefined: Please send a function to execute when the button is clicked"
+        );
+      }
+    }
+  } //props
+}; //default
 </script>
 
-<style lang= "less" scoped>
+<style lang="less" scoped>
+@import (reference) "../../../Less/customVariables.less";
+@import (reference) "../../../Less/customMixins.less";
 
-    @import (reference) "../../../Less/customVariables.less";
-    @import (reference) "../../../Less/customMixins.less";
+@color: @secondaryColor; // #1B746D;
 
-    @color: @secondaryColor;// #1B746D;
+.vueButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: fit-content;
 
-    .vueButton {
-        display: inline-flex;
-        
-        & > button {
-            letter-spacing: 2px;
-            font-weight: bold;
-            
-            .boxShadow(@one);
+  & > span {
+    margin-right: @spaceMd;
+  }
 
-            &:hover {
-                .boxShadow(@five);
-            }
+  &.btn-sm {
+    padding: @spaceSm @spaceMd;
+    font-size: @fontSizeSm;
+  }
 
-            &.btn-icon{
-                background-color: transparent;
-                color: transparent;
-                .boxShadow(none);
-                color: @color;
-                padding: @spaceSm;
-                font-size: @fontSize;
+  &.btn-lg {
+    padding: @spaceMd @spaceLg;
+    font-size: @fontSizeSm * 2;
+  }
 
-                .textShadow(@oneText);
-                
-                &:hover {
-                    .textShadow(@fourText);
-                }
+  .boxShadow(@three);
 
-                &.btn-sm {
-                    padding: @spaceSm;
-                    font-size: @fontSizeSm;
-                }
+  &:hover {
+    .boxShadow(@one);
+  }
+  //icon buttons
+  &.btn-icon {
+    background-color: transparent;
+    color: @color;
+    padding: @spaceSm;
+    font-size: @fontSize;
 
-                &.btn-lg {
-                    padding: @spaceSm;
-                    font-size: @fontSizeSm*2;
-                }
-            }
-            &.btn-text {
-                background-color: transparent;
-                color: transparent;
-                .boxShadow(none);
-                color: @color;
-                padding: @spaceSm @spaceMd;
-                border-radius: @borderRadius;
-                text-decoration: none;
-                font-weight: bold;
-
-                &:hover {
-                    border: 1px solid @color;
-                    background-color: ~"lighten(@color, 78%)";
-                }
-            }
-
-            &.btn-border {
-                border-radius: @borderRadius;
-                background-color: @white;
-                border: 1px solid @color;
-                color: @color;
-                font-weight: bold;
-
-                &:hover {
-                    background-color: ~"lighten(@color, 60%)";
-                }
-            }
-        }
-
-        &.fullWidth, 
-        .btn-fullWidth {
-            width: 100%;
-        }
+    & > span {
+      margin-right: 0;
     }
-</style>
 
+    .textShadow(@one);
+
+    &:hover {
+      .textShadow(@base);
+    }
+  }
+
+  //text links or  text as buttons
+  &.btn-text {
+    background-color: transparent;
+    color: @color;
+    padding: @spaceSm @spaceMd;
+    font-weight: bold;
+
+    &:hover {
+      border: 1px solid @color;
+    }
+  }
+
+  //buttons with a border outline and transparent background
+  &.btn-border {
+    border-radius: @borderRadius;
+    background-color: transparent;
+    border: 1px solid @color;
+    color: @color;
+    font-weight: bold;
+  }
+
+  &.fullWidth,
+  .btn-fullWidth {
+    width: 100%;
+  }
+}
+</style>

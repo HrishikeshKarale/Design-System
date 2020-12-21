@@ -25,7 +25,7 @@
         },
 
         checkCookie: function (name) {
-            var value = getCookie(name);
+            var value = this.getCookie(name);
             if (value == "") {
              alert('no cookie for "'+name+'" was found');
             } 

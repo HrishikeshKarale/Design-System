@@ -145,20 +145,20 @@
                                     />
                                     <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Confirm"
-                                            buttonStyle= "small"
-                                            buttonIcon= "fas fa-clipboard-check"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Confirm"
+                                            category= "small"
+                                            icon= "fas fa-clipboard-check"
+                                            :ctx= 'buttonClick'
                                         />
                                         <div class= 'divide16'/>
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Cancel"
-                                            buttonStyle= "text"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Cancel"
+                                            category= "text"
+                                            :ctx= 'buttonClick'
                                         />
                                     </div>
                                 </fieldset>
@@ -976,20 +976,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "OK"
-                                                buttonStyle= "small"
-                                                buttonIcon= "fas fa-clipboard-check"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "OK"
+                                                category= "small"
+                                                icon= "fas fa-clipboard-check"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1066,19 +1066,19 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "OK"
-                                                buttonStyle= "standard"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "OK"
+                                                category= "standard"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "standard"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "standard"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1116,19 +1116,19 @@
                                             v-model= 'd_checkboxValue'
                                         />
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Log In"
-                                            buttonStyle= "fullWidth"
-                                            buttonIcon= "fas fa-sign-in-alt"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Log In"
+                                            category= "fullWidth"
+                                            icon= "fas fa-sign-in-alt"
+                                            :ctx= 'buttonClick'
                                         />
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Forgot Username and/or Password"
-                                            buttonStyle= "text"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Forgot Username and/or Password"
+                                            category= "text"
+                                            :ctx= 'buttonClick'
                                         />
                                     </fieldset>
                                 </template>
@@ -1162,20 +1162,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Log In"
-                                                buttonStyle= "standard"
-                                                buttonIcon= "fas fa-unlock-alt"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Log In"
+                                                category= "standard"
+                                                icon= "fas fa-unlock-alt"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Forgot Username and/or Password"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Forgot Username and/or Password"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                         
@@ -1268,20 +1268,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Confirm"
-                                                buttonStyle= "small"
-                                                buttonIcon= "fas fa-clipboard-check"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Confirm"
+                                                category= "small"
+                                                icon= "fas fa-clipboard-check"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1356,19 +1356,19 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "OK"
-                                                buttonStyle= "small"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "OK"
+                                                category= "small"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1406,19 +1406,19 @@
                                             v-model= 'd_checkboxValue'
                                         />
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Log In"
-                                            buttonStyle= "fullWidth"
-                                            buttonIcon= "fas fa-sign-in-alt"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Log In"
+                                            category= "fullWidth"
+                                            icon= "fas fa-sign-in-alt"
+                                            :ctx= 'buttonClick'
                                         />
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Forgot Username and/or Password"
-                                            buttonStyle= "text"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Forgot Username and/or Password"
+                                            category= "text"
+                                            :ctx= 'buttonClick'
                                         />
                                     </fieldset>
                                 </template>
@@ -1453,29 +1453,29 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Log In"
-                                                buttonStyle= "standard"
-                                                buttonIcon= "fas fa-unlock-alt"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Log In"
+                                                category= "standard"
+                                                icon= "fas fa-unlock-alt"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Reset"
-                                                buttonStyle= "text"
-                                                buttonIcon= "fas fa-redo"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Reset"
+                                                category= "text"
+                                                icon= "fas fa-redo"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                         <vue-button 
-                                            buttonType= "button"
-                                            buttonName= "consoleTextButton"
-                                            buttonText= "Forgot Username and/or Password"
-                                            buttonStyle= "text"
-                                            :onClickAction= 'buttonClick'
+                                            type= "button"
+                                            tag= "consoleTextButton"
+                                            text= "Forgot Username and/or Password"
+                                            category= "text"
+                                            :ctx= 'buttonClick'
                                         />
                                     </fieldset>
                                 </template>
@@ -1590,20 +1590,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Confirm"
-                                                buttonStyle= "small"
-                                                buttonIcon= "fas fa-clipboard-check"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Confirm"
+                                                category= "small"
+                                                icon= "fas fa-clipboard-check"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1683,19 +1683,19 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Confirm"
-                                                buttonStyle= "small"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Confirm"
+                                                category= "small"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1792,20 +1792,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Confirm"
-                                                buttonStyle= "small"
-                                                buttonIcon= "fas fa-clipboard-check"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Confirm"
+                                                category= "small"
+                                                icon= "fas fa-clipboard-check"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1883,20 +1883,20 @@
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Confirm"
-                                                buttonStyle= "small"
-                                                buttonIcon= "fas fa-clipboard-check"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Confirm"
+                                                category= "small"
+                                                icon= "fas fa-clipboard-check"
+                                                :ctx= 'buttonClick'
                                             />
                                             <div class= 'divide16'/>
                                             <vue-button 
-                                                buttonType= "button"
-                                                buttonName= "consoleTextButton"
-                                                buttonText= "Cancel"
-                                                buttonStyle= "text"
-                                                :onClickAction= 'buttonClick'
+                                                type= "button"
+                                                tag= "consoleTextButton"
+                                                text= "Cancel"
+                                                category= "text"
+                                                :ctx= 'buttonClick'
                                             />
                                         </div>
                                     </fieldset>
@@ -1964,7 +1964,7 @@
     import vueInfo from "@/components/FormElements/vueInfo";
 
     export default {
-        name: "forms",
+        name: "FormElements",
 
         components: {
             

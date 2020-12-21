@@ -51,15 +51,15 @@
                     <span>
 
                         <vue-button 
-                            :buttonType= 'd_buttonType'
-                            buttonName= "removeFile"
-                            :buttonText= "d_buttonText"
-                            buttonIcon= "fas fa-times"
-                            :buttonStyle= 'd_buttonStyle[9]'
+                            :type= 'd_type'
+                            tag= "removeFile"
+                            :text= "d_text"
+                            icon= "fas fa-times"
+                            :category= 'd_category[9]'
                             :disabled= '!d_booleanTrue'
                             :autofocus= '!d_booleanTrue'
-                            :formID= "d_form"
-                            :onClickAction= 'removeFile.bind(this, index)'
+                            :form= "d_form"
+                            :ctx= 'removeFile.bind(this, index)'
                         />
                     </span>
                 </div>
@@ -78,11 +78,11 @@
         
         data () {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonText= ''
+            var d_text= ''
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
@@ -90,11 +90,11 @@
 
             return {
 
-              d_buttonType: d_buttonType,
+              d_type: d_type,
 
-              d_buttonText: d_buttonText,
+              d_text: d_text,
 
-              d_buttonStyle: d_buttonStyle,
+              d_category: d_category,
 
               d_booleanTrue: d_booleanTrue,
 

@@ -4,29 +4,29 @@
             id= "show-modal"
         >  
             <vue-button 
-                v-if= "buttonText"
-                :buttonType= 'd_buttonType'
-                :buttonName= '"open"+buttonName+"Modal"'
-                :buttonText= "buttonText"
-                :buttonIcon= "buttonIcon"
-                :buttonStyle= 'd_buttonStyle[2]'
+                v-if= "text"
+                :type= 'd_type'
+                :tag= '"open"+tag+"Modal"'
+                :text= "text"
+                :icon= "icon"
+                :category= 'd_category[2]'
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'd_onClickAction'
+                :form= "d_form"
+                :ctx= 'd_ctx'
             />
               
             <vue-button 
                 v-else
-                :buttonType= 'd_buttonType'
-                buttonName= '"open"+buttonName+"Modal"'
-                :buttonText= "buttonText"
-                :buttonIcon= "buttonIcon"
-                :buttonStyle= 'd_buttonStyle[9]'
+                :type= 'd_type'
+                tag= '"open"+tag+"Modal"'
+                :text= "text"
+                :icon= "icon"
+                :category= 'd_category[9]'
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'd_onClickAction'
+                :form= "d_form"
+                :ctx= 'd_ctx'
             />
         </div>
         <transition 
@@ -53,30 +53,30 @@
 
                     <div class= "modal-footer">
                         <div
-                            v-if= 'onClickAction'
+                            v-if= 'ctx'
                         >
                             <vue-button
-                                :buttonType= 'd_buttonType'
-                                :buttonName= "buttonName"
-                                buttonText= "CONFIRM"
-                                :buttonIcon= 'buttonIcon'
-                                :buttonStyle= 'd_buttonStyle[2]'
+                                :type= 'd_type'
+                                :tag= "tag"
+                                text= "CONFIRM"
+                                :icon= 'icon'
+                                :category= 'd_category[2]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'onClickAction'
+                                :form= "d_form"
+                                :ctx= 'ctx'
                             />
                         </div>
                         <div>  
                             <vue-button
-                                :buttonType= 'd_buttonType'
-                                buttonName= "closeModal"
-                                buttonText= "Close"
-                                :buttonStyle= 'd_buttonStyle[11]'
+                                :type= 'd_type'
+                                tag= "closeModal"
+                                text= "Close"
+                                :category= 'd_category[11]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'd_onClickAction'
+                                :form= "d_form"
+                                :ctx= 'd_ctx'
                             />
                         </div>
                     </div>
@@ -97,29 +97,29 @@
 
         data () {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.toggle
+            var d_ctx= this.toggle
 
             var d_showModal= false
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_showModal: d_showModal
             } //return
@@ -132,19 +132,19 @@
                 type: String,
             },
 
-            buttonText: {
+            text: {
                 required: false,
                 type: String,
                 default: null
             },
 
-            buttonName: {
+            tag: {
                 required: false,
                 type: String,
                 default: null
             },
 
-            buttonIcon: {
+            icon: {
                 required: false,
                 type: String,
                 default: null
@@ -156,7 +156,7 @@
                 default: false
             },
 
-            onClickAction: {
+            ctx: {
                 required: false,
                 type: Function
             }
@@ -213,7 +213,6 @@
                     border-radius: @borderRadius;
                     .boxShadow(0 2px 8px rgba(0, 0, 0, .33));
                     transition: all .3s ease;
-                    font-family: Helvetica, Arial, sans-serif;
 
                     .modal-header {
                         color: @backgroundColor;

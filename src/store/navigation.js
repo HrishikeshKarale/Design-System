@@ -1,170 +1,177 @@
 var data= [
     {
         id: 1,
-        text:'Design',
-        subnav: [
+        name:'Design',
+        component: 'design',
+        icon: "far fa-object-group",
+        subNav: [
             {
                 id: 1, 
-                text:'Colors',
+                name:'Colors',
                 component: 'colors',
-                icon: '<i class= "fas fa-palette"></i>'
+                icon: "fas fa-palette"
             },
             {
                 id: 2, 
-                text:'Typography',
+                name:'Typography',
                 component: 'typography',
-                icon: '<i class= "fas fa-font"></i>'
+                icon: "fas fa-font"
             },
             {
                 id: 3, 
-                text:'Icons',
+                name:'Icons',
                 component: 'icons',
-                icon: '<i class= "fab fa-fonticons"></i>'
+                icon: "fab fa-fonticons"
             },
             {
                 id: 4, 
-                text:'Interaction States',
+                name:'Interaction States',
                 component: 'interactionStates',
-                icon: '<i class= "fas fa-hand-point-up"></i>'
+                icon: "fas fa-hand-point-up"
             },
             {
                 id: 5, 
-                text:'Spacing',
+                name:'Spacing',
                 component: 'spacing',
-                icon: '<i class= "fas fa-expand">'
+                icon: "fas fa-expand"
             },
             {
                 id: 6,
-                text:'Sounds',
+                name:'Sounds',
                 component: 'sound',
-                icon: '<i class= "fas fa-volume-up"></i>'
+                icon: "fas fa-volume-up"
             },
         ]
     },
     {
         id: 2,
-        text:'Content',
-        subnav: [
+        name:'Content',
+        component: 'content',
+        icon: "fas fa-file-signature",
+        subNav: [
             {
                 id: 1, 
-                text:'Product Content',
-                icon: '<i class= "fas fa-pen"></i>'
+                name:'Product Content',
+                icon: "fas fa-pen"
             },
             {
                 id: 2, 
-                text:'Help Documentation',
-                icon: '<i class= "fas fa-question-circle"></i>'
+                name:'Help Documentation',
+                icon: "fas fa-question-circle"
             },
             {
                 id: 3, 
-                text:'Voice And Tone',
-                icon: '<i class= "fas fa-comment-dots"></i>'
+                name:'Voice And Tone',
+                icon: "fas fa-comment-dots"
             },
             {
                 id: 4, 
-                text:'Naming',
-                icon: '<i class= "fas fa-file-signature"></i>'
+                name:'Naming',
+                icon: "fas fa-file-signature"
             },
             {
                 id: 5, 
-                text:'Vocabulary',
-                icon: '<i class= "fas fa-book"></i>'
+                name:'Vocabulary',
+                icon: "fas fa-book"
             },
             {
                 id: 6, 
-                text:'Actionalble Language',
-                icon: '<i class= "fas fa-language"></i>'
+                name:'Actionalble Language',
+                icon: "fas fa-language"
             },
             {
                 id: 7, 
-                text:'Grammer and Mechanics',
-                icon: '<i class= "fas fa-check-double"></i>'
+                name:'Grammer and Mechanics',
+                icon: "fas fa-check-double"
             },
             {
                 id: 8, 
-                text:'Alternative Text',
-                icon: '<i class= "fas fa-low-vision"></i>'
+                name:'Alternative name',
+                icon: "fas fa-low-vision"
             },
         ]
     },
     {
         id: 3, 
-        text: 'Components',
-        subnav: [
+        name: 'Components',
+        component: 'FormElements',
+        icon: "fas fa-creative-commons-share",
+        subNav: [
             {
                 id: 1, 
-                text:'Form Elements',
-                icon: '<i class= "fas fa-align-left"></i>',
-                subnav: [
+                name:'Form Elements',
+                component: 'FormElements',
+                icon: "fas fa-align-left",
+                subNav: [
                     {
                         id: 1,
-                        text: 'Form',
+                        name: 'Form',
                         component: 'navForm',
-                        icon: '<i class= "fab fa-wpforms"></i>',
+                        icon: "fab fa-wpforms",
                     },
                     {
                         id: 2,
-                        text: 'Text Input',
-                        component: 'navText',
-                        icon: '<i class= "fas fa-text-width"></i>',
+                        name: 'name Input',
+                        component: 'navname',
+                        icon: "fas fa-name-width",
                     },
                     {
                         id: 3,
-                        text: 'Password Input',
+                        name: 'Password Input',
                         component: 'navPassword',
-                        icon: '<i class= "fas fa-key"></i>',
+                        icon: "fas fa-key",
                     },
                     {
                         id: 4,
-                        text: 'Email Input',
+                        name: 'Email Input',
                         component: 'navEmail',
-                        icon: '<i class= "fas fa-at"></i>',
+                        icon: "fas fa-at",
                     },
                     {
                         id: 5,
-                        text: 'Number Input',
+                        name: 'Number Input',
                         component: 'navNumber',
-                        icon: '<i class= "fas fa-hashtag"></i>',
+                        icon: "fas fa-hashtag",
                     },
                     {
                         id: 6,
-                        text: 'Info Field',
+                        name: 'Info Field',
                         component: 'navInfo',
-                        icon: '<i class= "fas fa-at"></i>',
+                        icon: "fas fa-at",
                     },
                     {
                         id: 7,
-                        text: 'Toggle Input',
+                        name: 'Toggle Input',
                         component: 'navToggle',
-                        icon: '<i class= "fas fa-toggle-on"></i>',
+                        icon: "fas fa-toggle-on",
                     },
                     {
                         id: 8,
-                        text: 'DropDown List',
+                        name: 'DropDown List',
                         component: 'navDropdownList',
-                        icon: '<i class= "fas fa-caret-square-down"></i>',
+                        icon: "fas fa-caret-square-down",
                     },
                     {
                         id: 9,
-                        text: 'Dropdown w-Search',
+                        name: 'Dropdown w-Search',
                         component: 'navSearchableDropdownList',
-                        icon: '<i class= "fas fa-search-plus"></i>',
+                        icon: "fas fa-search-plus",
                     },
                     {
                         id: 10,
-                        text: 'File Upload',
+                        name: 'File Upload',
                         component: 'navFile',
-                        icon: '<i class= "fas fa-upload"></i>',
+                        icon: "fas fa-upload",
                     },
                     {
                         id: 11,
-                        text: 'Checkbox Input',
+                        name: 'Checkbox Input',
                         component: 'navCheckbox',
-                        icon: '<i class= "fas fa-check-square"></i>',
+                        icon: "fas fa-check-square",
                     },
                     {
                         id: 12,
-                        text: 'Radiobox Input',
+                        name: 'Radiobox Input',
                         component: 'navRadio',
                         icon: '<span class= "fa-stack"  style= "font-size: 8px;">\
                                     <i class= "fas fa-circle fa-stack-2x"></i>\
@@ -173,86 +180,89 @@ var data= [
                     },
                     {
                         id: 13,
-                        text: 'Date Input',
+                        name: 'Date Input',
                         component: 'navDate',
-                        icon: '<i class= "fas fa-calendar-alt"></i>',
+                        icon: "fas fa-calendar-alt",
                     },
                     {
                         id: 14,
-                        text: 'Textarea Input',
-                        component: 'navTextarea',
-                        icon: '<i class= "fas fa-text-height"></i>',
+                        name: 'namearea Input',
+                        component: 'navnamearea',
+                        icon: "fas fa-name-height",
                     }
                 ]
             },
             {
                 id: 2, 
-                text:'UI Components',
-                icon: '<i class= "fas fa-drafting-compass"></i>',
-                subnav: [
+                name:'UI Components',
+                name: 'ui components',
+                icon: "fas fa-drafting-compass",
+                subNav: [
                     {
                         id: 1,
-                        text: 'Buttons',
+                        name: 'Buttons',
                         component: 'navButton',
-                        icon: '<i class= "fas fa-hand-point-up"></i>',
+                        icon: "fas fa-hand-point-up",
                     },
                     {
                         id: 2,
-                        text: 'Cards',
+                        name: 'Cards',
                         component: 'navCard',
-                        icon: '<i class= "fas fa-id-card"></i>',
+                        icon: "fas fa-id-card",
                     },
                     {
                         id: 3,
-                        text: 'Table',
+                        name: 'Table',
                         component: 'navTable',
-                        icon: '<i class= "fas fa-table"></i>',
+                        icon: "fas fa-table",
                     },
                     {
                         id: 4,
-                        text: 'Master Detail',
+                        name: 'Master Detail',
                         component: 'navMasterDetail',
-                        icon: '<i class= "fas fa-code-branch fa-rotate-180 fa-flip-vertical"></i>',
+                        icon: "fas fa-code-branch fa-rotate-180 fa-flip-vertical",
                     },
                     {
                         id: 5,
-                        text: 'Navigation',
+                        name: 'Navigation',
                         component: 'navNavigation',
-                        icon: '<i class= "fas fa-ellipsis-v"></i>',
+                        icon: "fas fa-ellipsis-v",
                     },
                     {
                         id: 6,
-                        text: 'Modal',
+                        name: 'Modal',
                         component: 'navModal',
-                        icon: '<i class= "fas fa-window-maximize"></i>',
+                        icon: "fas fa-window-maximize",
                     },
                     {
                         id: 7,
-                        text: 'Step Wizard',
+                        name: 'Step Wizard',
                         component: 'navWizard',
-                        icon: '<i class= "fas fa-shoe-prints"></i>',
+                        icon: "fas fa-shoe-prints",
                     }                            
                 ]
             },
             // {
             //     id: 4, 
-            //     text:'Grid',
-            //     icon: '<i class= "fas fa-th"></i>'
+            //     name:'Grid',
+                    // component: grid,
+            //     icon: "fas fa-th"
             // },
             {
                 id: 5,
-                text:'layout',
-                icon: '<i class= "fas fa-align-justify"></i>',
-                subnav: [
+                name:'layout',
+                component: 'layout',
+                icon: "fas fa-align-justify",
+                subNav: [
                     {
                         id: 1,
-                        text: 'Enterprise App',
+                        name: 'Enterprise App',
                         component: 'navEnterpriseAppLayout',
-                        icon: '<i class= "fas fa-vector-square"></i>',
+                        icon: "fas fa-vector-square",
                     },
                     {
                         id: 2,
-                        text: 'Side by Side',
+                        name: 'Side by Side',
                         component: 'navSideBySideLayout',
                         icon: '<span class= "fa-stack">\
                                     <i class= "fas fa-square fa-stack-1x"></i>\
@@ -261,34 +271,35 @@ var data= [
                     },
                     {
                         id: 3,
-                        text: 'Content Sub Navigation',
+                        name: 'Content Sub Navigation',
                         component: 'nav',
-                        icon: '<i class= "fas fa-vector-square"></i>',
+                        icon: "fas fa-vector-square",
                     },
                     {
                         id: 4,
-                        text: 'Golden Ratio',
+                        name: 'Golden Ratio',
                         component: 'navGoldenRatioLayout',
-                        icon: '<i class= "fas fa-shapes"></i>',
+                        icon: "fas fa-shapes",
                     },
                 ]
             },
             {
                 id: 6, 
-                text:'Alerts',
-                icon: '<i class= "fas fa-bell"></i>',
-                subnav: [
+                name:'Alerts',
+                component: 'navAlert',
+                icon: "fas fa-bell",
+                subNav: [
                     {
                         id: 11.01,
-                        text: 'Proactive Alert',
+                        name: 'Proactive Alert',
                         component: 'navAlertProactive',
-                        icon: '<i class= "fas fa-exclamation"></i>',
+                        icon: "fas fa-exclamation",
                     },
                     {
                         id: 11.02,
-                        text: 'Reactive Alert',
+                        name: 'Reactive Alert',
                         component: 'navAlertReactive',
-                        icon: '<i class= "fas fa-exclamation-circle"></i>',
+                        icon: "fas fa-exclamation-circle",
                     },
                 ]
             },
@@ -296,55 +307,57 @@ var data= [
     },
     {
         id: 4, 
-        text: 'Others',
-        subnav: [
+        name: 'Others',
+        subNav: [
             {
                 id: 1, 
-                text:'Sample Pages',
-                icon: '<i class= "fas fa-vial"></i>',
-                subnav: [
+                name:'Sample Pages',
+                    component: 'createMove',
+                icon: "fas fa-vial",
+                subNav: [
                     {
                         id: 1,
-                        text: 'Error Page',
+                        name: 'Error Page',
                         component: 'navSystemError',
-                        icon: '<i class= "fas fa-bug"></i>',
+                        icon: "fas fa-bug",
                     },
                     {
                         id: 2,
-                        text: 'Reassign Assignment',
+                        name: 'Reassign Assignment',
                         component: 'navReassign',
-                        icon: '<i class= "fas fa-bezier-curve"></i>',
+                        icon: "fas fa-bezier-curve",
                     },
                     {
                         id: 3,
-                        text: 'Dispatch Monitor',
+                        name: 'Dispatch Monitor',
                         component: 'dispatchMonitor',
-                        icon: '<i class= "fas fa-bezier-curve"></i>',
+                        icon: "fas fa-bezier-curve",
                     },
                 ]
             },
             {
                 id: 2, 
-                text:'Coding Guidlines',
-                icon: '<i class= "fas fa-code"></i>',
-                subnav: [
+                name:'Coding Guidlines',
+                component: 'navBestPractices',
+                icon: "fas fa-code",
+                subNav: [
                     {
                         id: 1,
-                        text: 'Agile',
+                        name: 'Agile',
                         component: 'navAgileBestPractices',
-                        icon: '<i class= "fas fa-bezier-curve"></i>',
+                        icon: "fas fa-bezier-curve",
                     },
                     {
                         id: 2,
-                        text: 'Vue',
+                        name: 'Vue',
                         component: 'navVueBestPractices',
-                        icon: '<i class= "fas fa-bezier-curve"></i>',
+                        icon: "fas fa-bezier-curve",
                     },
                     {
                         id: 3,
-                        text: 'c-Sharp',
+                        name: 'c-Sharp',
                         component: 'navCSharpBestPractices',
-                        icon: '<i class= "fas fa-bezier-curve"></i>',
+                        icon: "fas fa-bezier-curve",
                     },
                 ]
             }

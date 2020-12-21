@@ -228,32 +228,32 @@
                         {
                             type: "error",
                             value: d_danger,
-                            description: this.$store.state.navText.buttonName,
-                            text: this.$store.state.navText.buttonNameText,
+                            description: this.$store.state.navText.tag,
+                            text: this.$store.state.navText.tagText,
                         },
                         {
                             type: "warning",
                             value: d_warning,
-                            description: this.$store.state.navText.buttonName,
-                            text: this.$store.state.navText.buttonNameText,
+                            description: this.$store.state.navText.tag,
+                            text: this.$store.state.navText.tagText,
                         },
                         {
                             type: "info",
                             value: d_info,
-                            description: this.$store.state.navText.buttonText,
-                            text: this.$store.state.navText.buttonTextText,
+                            description: this.$store.state.navText.text,
+                            text: this.$store.state.navText.textText,
                         },
                         {
                             type: "charLimitReached",
                             value: d_charLimitReached,
-                            description: this.$store.state.navText.buttonIcon,
-                            text: this.$store.state.navText.buttonIconText,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.iconText,
                         },
                         {
                             type: "maxlength",
                             value: d_maxlength,
-                            description: this.$store.state.navText.buttonIcon,
-                            text: this.$store.state.navText.buttonIconText,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.iconText,
                         },
                     ] //attributes
                 }, //alert

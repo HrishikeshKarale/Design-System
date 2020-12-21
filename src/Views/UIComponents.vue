@@ -13,22 +13,22 @@
     Buttons
   </h1>
   <div
-    v-for= "(buttonStyle, index) in d_buttonStyle"
+    v-for= "(category, index) in d_category"
     :key= 'index'
   >
     <h4>
-    ButtonType: {{buttonStyle}}
+    type: {{category}}
     </h4>
     <vue-button 
-    :buttonType= 'd_buttonType'
-    :buttonName= "d_buttonName"
-    :buttonText= "d_buttonText"
-    :buttonIcon= "d_buttonIcon"
-    :buttonStyle= 'buttonStyle'
+    :type= 'd_type'
+    :tag= "d_tag"
+    :text= "d_text"
+    :icon= "d_icon"
+    :category= 'category'
     :disabled= '!d_booleanTrue'
     :autofocus= '!d_booleanTrue'
-    :formID= "d_form"
-    :onClickAction= 'd_onClickAction'
+    :form= "d_form"
+    :ctx= 'd_ctx'
     />
   </div>
 
@@ -40,7 +40,7 @@
     :cardLogo= 'd_cardLogo'
     :actionButtons= 'd_booleanTrue'
     :cardData= 'd_cardData'
-    :onClickAction= 'd_cardOnClickAction' 
+    :ctx= 'd_cardctx' 
     :cardFooter= 'd_cardFooter'
     :bookmark= '!d_booleanTrue'
     low= '2'
@@ -48,15 +48,15 @@
     <div slot= 'actionButtons'>
     <div >  
       <vue-button 
-           :buttonType= 'd_buttonType'
-            buttonName= "toggleFilter"
-            :buttonText= "d_buttonText"
-            buttonIcon= "fas fa-times"
-            buttonStyle= 'icon'
+           :type= 'd_type'
+            tag= "toggleFilter"
+            :text= "d_text"
+            icon= "fas fa-times"
+            category= 'icon'
             :disabled= '!d_booleanTrue'
             :autofocus= '!d_booleanTrue'
-            :formID= "d_form"
-            :onClickAction= 'consoleClickDelete'
+            :form= "d_form"
+            :ctx= 'consoleClickDelete'
           />
         </div>
       </div>
@@ -67,7 +67,7 @@
     <vue-card
       :cardLogo= 'd_cardLogo'
       :cardData= 'd_cardData'
-      :onClickAction= 'd_cardOnClickAction' 
+      :ctx= 'd_cardctx' 
       low= '2'
       high= '3'
     />
@@ -85,22 +85,22 @@
       :cardLogo= 'd_cardLogo'
       :actionButtons= 'd_booleanTrue'
       :cardData= 'd_cardData'
-      :onClickAction= 'd_cardOnClickAction' 
+      :ctx= 'd_cardctx' 
       low= '2'
       high= '3'
     >
       <div slot= 'actionButtons'>
         <div>
           <vue-button 
-            :buttonType= 'd_buttonType'
-            buttonName= "toggleFilter"
-            :buttonText= "d_buttonText"
-            buttonIcon= "fas fa-times"
-            buttonStyle= 'icon'
+            :type= 'd_type'
+            tag= "toggleFilter"
+            :text= "d_text"
+            icon= "fas fa-times"
+            category= 'icon'
             :disabled= '!d_booleanTrue'
             :autofocus= '!d_booleanTrue'
-            :formID= "d_form"
-            :onClickAction= 'consoleClickDelete'
+            :form= "d_form"
+            :ctx= 'consoleClickDelete'
           />
         </div>
       </div>
@@ -112,7 +112,7 @@
       :cardLogo= 'd_cardLogo'
       :actionButtons= 'd_booleanTrue'
       :cardData= 'd_cardData'
-      :onClickAction= 'd_cardOnClickAction' 
+      :ctx= 'd_cardctx' 
       :cardFooter= 'd_cardFooter'
       low= '1'
     />
@@ -123,7 +123,7 @@
       :cardLogo= 'd_cardLogo'
       :actionButtons= 'd_booleanTrue'
       :cardData= 'd_cardData'
-      :onClickAction= 'd_cardOnClickAction'
+      :ctx= 'd_cardctx'
       low= '1'
     />
 
@@ -132,7 +132,7 @@
       :cardLogo= 'd_cardLogo'
       :actionButtons= 'd_booleanTrue'
       :cardData= 'd_cardData'
-      :onClickAction= 'd_cardOnClickAction'
+      :ctx= 'd_cardctx'
       low= '1'
     />
 
@@ -328,15 +328,15 @@
             </div>
             <div>
               <vue-button 
-                :buttonType= 'd_buttonType'
-                buttonName= "AddSKUButton"
-                buttonText= "Add SKU"
-                buttonIcon= "fas fa-plus"
-                buttonStyle= 'icon'
+                :type= 'd_type'
+                tag= "AddSKUButton"
+                text= "Add SKU"
+                icon= "fas fa-plus"
+                category= 'icon'
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'createCard()'
+                :form= "d_form"
+                :ctx= 'createCard()'
               />
             </div>
           </card-background>
@@ -352,15 +352,15 @@
               <div slot= 'actionButtons'>
                 <div >  
                   <vue-button 
-                    :buttonType= 'd_buttonType'
-                    buttonName= "closeButton"
-                    :buttonText= "d_buttonText"
-                    buttonIcon= "fas fa-times"
-                    buttonStyle= 'icon'
+                    :type= 'd_type'
+                    tag= "closeButton"
+                    :text= "d_text"
+                    icon= "fas fa-times"
+                    category= 'icon'
                     :disabled= '!d_booleanTrue'
                     :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'delCard.bind(this, index)'
+                    :form= "d_form"
+                    :ctx= 'delCard.bind(this, index)'
                   />
                 </div>
               </div>
@@ -374,23 +374,17 @@
     <div style= 'background-color: grey; 
           width: fit-content'
     >
-      <vue-navigation 
-        :navigationTitles= 'd_navigation'
-        :logoLink= 'd_logoLink'
-        :title= 'd_title'
-        @nav= 'd_nav'
-      />
+      <side-nav :logo-link="d_logoLink" :nav="d_nav" />
     </div>
   
     <h3>Header</h3>
     <div style= 'background-color: #0B304F; 
           height: fit-content;'
       >
-      <vue-header>
-        <div>
-          <span class= 'fas fa-th' />
-        </div>
-      </vue-header>
+        <vue-header
+          :logoLink= 'd_logoLink'
+          nav= '["nav1", "nav2", "nav3", "nav4", "nav5"]'
+        />
     </div>
     <h3>Table</h3>
     <vue-table 
@@ -415,7 +409,7 @@
   import vueFilter from "@/components/UIComponents/Filter/vueFilter"
   import vueButton from "@/components/UIComponents/Buttons"
   import vueCard from '@/components/UIComponents/Cards/vueCard'
-  import vueNavigation from '@/components/UIComponents/Navigation/vueNavigation'
+  import sideNav from '@/components/UIComponents/Navigation/sideNav'
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
   import vueTable from '@/components/UIComponents/Table/vueTable'
   import vueWizard from '@/components/UIComponents/StepWizard/vueWizard' 
@@ -444,21 +438,21 @@
     data () {
 
       //buttons
-      var d_buttonType= 'button'
+      var d_type= 'button'
 
-      var d_buttonName= 'consoleTextButton'
+      var d_tag= 'consoleTextButton'
 
-      var d_buttonText= 'Click Me'
+      var d_text= 'Click Me'
 
-      var d_buttonIcon= 'fas fa-registered'
+      var d_icon= 'fas fa-registered'
       
-      var d_buttonStyle= this.$store.state.buttonStyle
+      var d_category= this.$store.state.category
 
       var d_form= ''
 
       var d_booleanTrue= true
 
-      var d_onClickAction= this.consoleClick
+      var d_ctx= this.consoleClick
 
       //card
       var d_cardDetails= this.$store.state.cardDetails
@@ -473,7 +467,7 @@
 
       var d_cardData= {"cols": d_cardDetails.cols, "data": d_cardDetails.data[0]}
 
-      var d_cardOnClickAction= this.consoleClick
+      var d_cardctx= this.consoleClick
 
       //navigation
       const d_logoLink= require('@/assets/CometDocsTransparent.svg')
@@ -618,21 +612,21 @@
 
         //button
 
-        d_buttonType: d_buttonType,
+        d_type: d_type,
 
-        d_buttonName: d_buttonName,
+        d_tag: d_tag,
 
-        d_buttonText: d_buttonText,
+        d_text: d_text,
 
-        d_buttonIcon: d_buttonIcon,
+        d_icon: d_icon,
 
-        d_buttonStyle: d_buttonStyle,
+        d_category: d_category,
 
         d_booleanTrue: d_booleanTrue,
 
         d_form: d_form,
 
-        d_onClickAction: d_onClickAction,
+        d_ctx: d_ctx,
 
         //card
         d_customerCarts: d_customerCarts,
@@ -647,7 +641,7 @@
 
         d_cardData: d_cardData,
 
-        d_cardOnClickAction: d_cardOnClickAction,
+        d_cardctx: d_cardctx,
 
         //navigation
          d_logoLink: d_logoLink,
@@ -799,7 +793,7 @@
       vueFilter,
       vueButton,
       vueCard,
-      vueNavigation,
+      sideNav,
       vueHeader,
       vueTable,
       radioInput,

@@ -26,8 +26,8 @@
         <div>
         <vue-clipboard
           :componentCode= 'defaultComponentCode'
-          buttonName= 'copySyntax'
-          buttonIcon= 'fas fa-copy'
+          tag= 'copySyntax'
+          icon= 'fas fa-copy'
           id= 'codeSyntax'
         />
         </div>
@@ -42,9 +42,8 @@
         />
         <vue-clipboard
           :componentCode= 'compData.import'
-          buttonName= 'copyImportStatement'
-          :textButton= 'd_booleanTrue'
-          buttonText= 'copy import'
+          tag= 'copyImportStatement'
+          text= 'copy import'
           id= 'importStatement'
         />
         </div>

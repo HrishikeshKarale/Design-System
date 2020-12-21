@@ -5,15 +5,15 @@
         </div>
         <div class= 'formButtons'>
             <vue-button 
-                :buttonType= 'd_buttonType'
-                buttonName= "ConfirmDetailsButton"
-                :buttonText= "d_buttonTextConfirm"
-                :buttonIcon= "d_buttonIcon"
-                :buttonStyle= 'd_buttonStyle[3]'
+                :type= 'd_type'
+                tag= "ConfirmDetailsButton"
+                :text= "d_textConfirm"
+                :icon= "d_icon"
+                :category= 'd_category[3]'
                 :disabled= 'alerts'
                 :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'd_onClickAction'
+                :form= "d_form"
+                :ctx= 'd_ctx'
             />
         </div> 
     </div>
@@ -28,47 +28,47 @@
 
         data() {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= 'Click Me'
+            var d_text= 'Click Me'
 
-            var d_buttonIcon= 'fas fa-registered'
+            var d_icon= 'fas fa-registered'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.consoleClickConfirm
+            var d_ctx= this.consoleClickConfirm
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
-                d_buttonTextSubmit: 'Submit',
+                d_textSubmit: 'Submit',
 
-                d_buttonTextNext: 'Next Page',
+                d_textNext: 'Next Page',
 
-                d_buttonTextPrevious: 'Previous Page',
+                d_textPrevious: 'Previous Page',
 
-                d_buttonTextConfirm: 'Confirm',
+                d_textConfirm: 'Confirm',
 
                 d_completed: false,
 

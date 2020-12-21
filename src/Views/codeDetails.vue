@@ -6,14 +6,14 @@
             </div>
             <div>
                 <vue-button 
-                    :buttonType= 'd_buttonType'
-                    buttonName= "togglecode"
-                    :buttonIcon= 'd_hideCode? "fas fa-minus":"fas fa-plus"'
-                    :buttonStyle= 'd_buttonStyle[12]'
+                    :type= 'd_type'
+                    tag= "togglecode"
+                    :icon= 'd_hideCode? "fas fa-minus":"fas fa-plus"'
+                    :category= 'd_category[12]'
                     :disabled= '!d_booleanTrue'
                     :autofocus= '!d_booleanTrue'
-                    :formID= "d_form"
-                    :onClickAction= 'toggle.bind(this)'
+                    :form= "d_form"
+                    :ctx= 'toggle.bind(this)'
                 />
             </div>
         </div>
@@ -118,35 +118,35 @@
 
         data () {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= ''
+            var d_text= ''
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.toggle
+            var d_ctx= this.toggle
 
             var d_numRegEx= new RegExp(/^([0-9]*)|(([0-9]*))$/)
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_hideCode: null,
 

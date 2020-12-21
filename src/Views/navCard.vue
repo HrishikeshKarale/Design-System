@@ -10,22 +10,22 @@
                     :logoColor= 'd_logoColor'
                     :actionButtons= 'd_booleanTrue'
                     :cardData= 'd_cardData'
-                    :onClickAction= 'd_onClickAction' 
+                    :ctx= 'd_ctx' 
                     :cardFooter= 'd_cardFooter'
                     :bookmark= '!d_booleanTrue'
                 >
                     <div slot= 'actionButtons'>
                         <div >  
                             <vue-button 
-                                :buttonType= 'd_buttonType'
-                                buttonName= "closeButton"
-                                :buttonText= "d_buttonText"
-                                buttonIcon= "fas fa-times"
-                                :buttonStyle= 'd_buttonStyle[9]'
+                                :type= 'd_type'
+                                tag= "closeButton"
+                                :text= "d_text"
+                                icon= "fas fa-times"
+                                :category= 'd_category[9]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'consoleClickDelete'
+                                :form= "d_form"
+                                :ctx= 'consoleClickDelete'
                             />
                         </div>
                     </div>
@@ -80,15 +80,15 @@
                     </div>
                     <div>
                         <vue-button 
-                            :buttonType= 'd_buttonType'
-                            buttonName= "AddSKUButton"
-                            buttonText= "Add SKU"
-                            buttonIcon= "fas fa-plus"
-                            :buttonStyle= 'd_buttonStyle[9]'
+                            :type= 'd_type'
+                            tag= "AddSKUButton"
+                            text= "Add SKU"
+                            icon= "fas fa-plus"
+                            :category= 'd_category[9]'
                             :disabled= '!d_booleanTrue'
                             :autofocus= '!d_booleanTrue'
-                            :formID= "d_form"
-                            :onClickAction= 'createCard.bind()'
+                            :form= "d_form"
+                            :ctx= 'createCard.bind()'
                         />
                     </div>
                 </card-background>
@@ -104,15 +104,15 @@
                         <div slot= 'actionButtons'>
                             <div >  
                                 <vue-button 
-                                    :buttonType= 'd_buttonType'
-                                    buttonName= "closeButton"
-                                    :buttonText= "d_buttonText"
-                                    buttonIcon= "fas fa-times"
-                                    :buttonStyle= 'd_buttonStyle[9]'
+                                    :type= 'd_type'
+                                    tag= "closeButton"
+                                    :text= "d_text"
+                                    icon= "fas fa-times"
+                                    :category= 'd_category[9]'
                                     :disabled= '!d_booleanTrue'
                                     :autofocus= '!d_booleanTrue'
-                                    :formID= "d_form"
-                                    :onClickAction= 'delCard.bind(this, index)'
+                                    :form= "d_form"
+                                    :ctx= 'delCard.bind(this, index)'
                                 />
                             </div>
                         </div>
@@ -162,17 +162,17 @@
 
             var d_cardData= {"cols":d_cardDetails.cols, "data": d_cardDetails.data[0]}
 
-            var d_onClickAction= this.consoleClick 
+            var d_ctx= this.consoleClick 
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= 'Click Me'
+            var d_text= 'Click Me'
 
-            var d_buttonIcon= 'fas fa-registered'
+            var d_icon= 'fas fa-registered'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_form= ''
 
@@ -185,19 +185,19 @@
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_customerCarts: d_customerCarts,
 
@@ -213,7 +213,7 @@
 
                 d_cardData: d_cardData,
                 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
                 
                 d_maxlength: 20,
                 d_value: null,
@@ -224,7 +224,7 @@
                 
                 d_booleanTrue: d_booleanTrue,
 
-                d_attr: {'type':['d_buttonStyle'] , 'value': [d_buttonStyle]},
+                d_attr: {'type':['d_category'] , 'value': [d_category]},
 
                 d_vueCard: {
                     
@@ -274,8 +274,8 @@
                             text: 'Specifies the value for the checked label'
                         },
                         {
-                            type: "onClickAction",
-                            value: d_onClickAction,
+                            type: "ctx",
+                            value: d_ctx,
                             description: '<p>display the label as checked/unchecked state for toggle.</p>',
                             text: 'Specifies the if the labels should be displayed'
                         },

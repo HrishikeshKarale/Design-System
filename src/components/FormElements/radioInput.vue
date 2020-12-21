@@ -19,12 +19,12 @@
         <vue-button 
             v-if= 'd_checkedValue && !required'
             id= 'clearSelection'
-            :buttonType= 'd_buttonType'
-            :buttonName= "d_buttonName"
-            :buttonText= "d_buttonText"
-            :buttonIcon= "d_buttonIcon"
-            :buttonStyle= 'd_buttonStyle[5]'
-            :onClickAction= 'd_onClickAction'
+            :type= 'd_type'
+            :tag= "d_tag"
+            :text= "d_text"
+            :icon= "d_icon"
+            :category= 'd_category[5]'
+            :ctx= 'd_ctx'
         />
         </label>
         <div
@@ -79,19 +79,19 @@
 
             var d_checkedValue= null
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'clearRadioSelection'
+            var d_tag= 'clearRadioSelection'
 
-            var d_buttonText= 'Clear'
+            var d_text= 'Clear'
 
-            var d_buttonIcon= 'fas fa-times'
+            var d_icon= 'fas fa-times'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
-            var d_onClickAction= this.clearSelection
+            var d_ctx= this.clearSelection
 
             var d_danger= null
                         
@@ -105,19 +105,19 @@
 
                 d_checkedValue: d_checkedValue,
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 cValue: null,
 

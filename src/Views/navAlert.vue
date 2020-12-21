@@ -122,21 +122,21 @@
                 
             var d_message= 'Please select a valid shipping method and try again.'
             
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'closeAlertButton'
+            var d_tag= 'closeAlertButton'
 
-            var d_buttonText= 'Cancel Request'
+            var d_text= 'Cancel Request'
 
-            var d_buttonIcon= ''
+            var d_icon= ''
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.consoleClick
+            var d_ctx= this.consoleClick
 
             var d_timeout= 10
             
@@ -151,21 +151,21 @@
                 
                 d_message: d_message,
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_timeout: d_timeout,
 

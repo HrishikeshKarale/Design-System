@@ -5,14 +5,14 @@
       >
         {{message}}
         <vue-button 
-          :buttonType= 'd_buttonType'
-          buttonName= "togglecode"
-          :buttonIcon= '!d_hidden? "fas fa-chevron-up":"fas fa-chevron-down"'
-          :buttonStyle= 'd_buttonStyle[9]'
+          :type= 'd_type'
+          tag= "togglecode"
+          :icon= '!d_hidden? "fas fa-chevron-up":"fas fa-chevron-down"'
+          :category= 'd_category[9]'
           :disabled= '!d_booleanTrue'
           :autofocus= '!d_booleanTrue'
-          :formID= "d_form"
-          :onClickAction= 'toggle.bind(this)'
+          :form= "d_form"
+          :ctx= 'toggle.bind(this)'
         />
       </div>
       <div 
@@ -51,34 +51,34 @@
 
     data () {
 
-      var d_buttonType= 'button'
+      var d_type= 'button'
 
-      var d_buttonName= 'consoleTextButton'
+      var d_tag= 'consoleTextButton'
 
-      var d_buttonText= ''
+      var d_text= ''
 
-      var d_buttonStyle= this.$store.state.buttonStyle
+      var d_category= this.$store.state.category
 
       var d_booleanTrue= true
 
       var d_form= ''
 
-      var d_onClickAction= this.toggle
+      var d_ctx= this.toggle
 
       var d_hidden= d_booleanTrue
       return {
 
-        d_buttonType: d_buttonType,
+        d_type: d_type,
 
-        d_buttonName: d_buttonName,
+        d_tag: d_tag,
 
-        d_buttonStyle: d_buttonStyle,
+        d_category: d_category,
 
         d_booleanTrue: d_booleanTrue,
 
         d_form: d_form,
 
-        d_onClickAction: d_onClickAction,
+        d_ctx: d_ctx,
 
         d_hidden: d_hidden,
       } //return

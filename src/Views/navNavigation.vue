@@ -3,12 +3,7 @@
             <component-details
                 :compData= 'd_navigation'
             >
-                <vue-navigation 
-                    :navigationTitles= 'd_navigationTiles'
-                    :logoLink= 'd_logoLink'
-                    :title= 'd_title'
-                    @nav= 'd_nav'
-                />
+                <side-nav :logo-link="d_logoLink" :nav="d_nav" />
             </component-details>
         
     </div>
@@ -16,7 +11,7 @@
 
 <script>
 
-    import vueNavigation from '@/components/UIComponents/Navigation/vueNavigation'
+    import sideNav from '@/components/UIComponents/Navigation/sideNav'
     import componentDetails from '@/Views/componentDetails'
     
 
@@ -55,9 +50,9 @@
 
                     title: 'Navigation',
 
-                    compName: 'vue-navigation',
+                    compName: 'side-nav',
 
-                    import: 'import vueTable from "@/components/UIComponents/Navigation/vueNavigation"',
+                    import: 'import vueTable from "@/components/UIComponents/Navigation/sideNav"',
 
                     description: '<p></p>',
 
@@ -111,7 +106,7 @@
 
         components: {
             
-            vueNavigation,
+            sideNav,
             componentDetails,
             
         }, //components

@@ -193,15 +193,15 @@
                                 @click.self= 'toggleCheckbox(entry[select])' 
                             />                                  
                             <!-- <vue-button 
-                                :buttonType= 'd_buttonType'
-                                buttonName= "ExpandRow"
-                                :buttonText= "d_buttonText"
-                                :buttonIcon= 'entry.showSub? "fas fa-chevron-down":"fas fa-chevron-up"'
-                                :buttonStyle= 'd_buttonStyle[9]'
+                                :type= 'd_type'
+                                tag= "ExpandRow"
+                                :text= "d_text"
+                                :icon= 'entry.showSub? "fas fa-chevron-down":"fas fa-chevron-up"'
+                                :category= 'd_category[9]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'toggleSubTable.bind(this, entry)'
+                                :form= "d_form"
+                                :ctx= 'toggleSubTable.bind(this, entry)'
                             />  -->
                         </td>
                     
@@ -214,9 +214,9 @@
                         <td> 
                             <vue-modal
                                 :modalTitle= '"Delete "+ entry[select]'
-                                buttonName= 'toggleExpandButton'
-                                buttonIcon= 'fas fa-trash-alt'
-                                :onClickAction= 'consoleClickDelete'
+                                tag= 'toggleExpandButton'
+                                icon= 'fas fa-trash-alt'
+                                :ctx= 'consoleClickDelete'
                             >
                                        
                                 you can use custom content here to overwrite default content
@@ -227,11 +227,11 @@
                             
                             </vue-modal>                                
                             <vue-button 
-                                :buttonType= 'd_buttonType'
-                                buttonName= "ExpandRow"
-                                :buttonIcon= 'entry? "fas fa-chevron-left":"fas fa-chevron-up"'
-                                :buttonStyle= 'd_buttonStyle[9]'
-                                :onClickAction= 'toggleSubTable.bind(this, entry)'
+                                :type= 'd_type'
+                                tag= "ExpandRow"
+                                :icon= 'entry? "fas fa-chevron-left":"fas fa-chevron-up"'
+                                :category= 'd_category[9]'
+                                :ctx= 'toggleSubTable.bind(this, entry)'
                             /> 
                             <!-- <span 
                                 :class= 'entry? "fas fa-chevron-right":"fas fa-chevron-down"'
@@ -292,11 +292,11 @@
                     />                                -->
                     <vue-button 
                         v-show= 'metadata.pageNumber> 1'
-                        :buttonType= 'd_buttonType'
-                        buttonName= "previousPage"
-                        buttonIcon= 'fas fa-chevron-left'
-                        :buttonStyle= 'd_buttonStyle[9]'
-                        :onClickAction= 'setPage.bind(this, metadata.pageNumber-1)'
+                        :type= 'd_type'
+                        tag= "previousPage"
+                        icon= 'fas fa-chevron-left'
+                        :category= 'd_category[9]'
+                        :ctx= 'setPage.bind(this, metadata.pageNumber-1)'
                     /> 
                 </div>
                 <div>
@@ -310,11 +310,11 @@
                     />                                 -->
                     <vue-button 
                         v-show= 'metadata.pageNumber< metadata.pageCount'
-                        :buttonType= 'd_buttonType'
-                        buttonName= "nextPage"
-                        buttonIcon= 'fas fa-chevron-right'
-                        :buttonStyle= 'd_buttonStyle[9]'
-                        :onClickAction= 'setPage.bind(this, metadata.pageNumber+1)'
+                        :type= 'd_type'
+                        tag= "nextPage"
+                        icon= 'fas fa-chevron-right'
+                        :category= 'd_category[9]'
+                        :ctx= 'setPage.bind(this, metadata.pageNumber+1)'
                     /> 
                 </div> 
             </div>
@@ -410,15 +410,15 @@
 
         data() {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= 'Click Me'
+            var d_text= 'Click Me'
 
-            var d_buttonIcon= 'fas fa-registered'
+            var d_icon= 'fas fa-registered'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
@@ -436,15 +436,15 @@
 
                 d_rowElements: d_rowElements,
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 

@@ -19,15 +19,15 @@
         </div>
         <div v-if= 'dismissible' >
             <vue-button 
-                :buttonType= 'd_buttonType'
-                :buttonName= "d_buttonName"
-                :buttonText= "d_buttonText"
-                :buttonIcon= "d_buttonIcon"
-                :buttonStyle= 'd_buttonStyle[11]'
+                :type= 'd_type'
+                :tag= "d_tag"
+                :text= "d_text"
+                :icon= "d_icon"
+                :category= 'd_category[11]'
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
-                :formID= "d_form"
-                :onClickAction= 'd_onClickAction'
+                :form= "d_form"
+                :ctx= 'd_ctx'
             />
         </div>
     </div>
@@ -46,21 +46,21 @@
 
             var d_close= false
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'closeAlertButton'
+            var d_tag= 'closeAlertButton'
 
-            var d_buttonText= null
+            var d_text= null
 
-            var d_buttonIcon= 'fas fa-times'
+            var d_icon= 'fas fa-times'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.closeAlertBox
+            var d_ctx= this.closeAlertBox
 
             return {
 
@@ -68,21 +68,21 @@
 
                 d_close: d_close,
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
             } //return
         }, //data
 

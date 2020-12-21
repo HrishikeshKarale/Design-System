@@ -63,7 +63,7 @@
   import loadingAnimation from '@/Views/SamplePages/loadingAnimation.vue'
   import barcodeScanAnimation from '@/Views/SamplePages/barcodeScanAnimation.vue'
   import phoneInput from '@/components/FormElements/phoneInput.vue'
-  import { cookie } from '@/typeScript/cookie'
+  import { cookie } from '@/typeScript/cookie.js'
   import { mapState } from 'vuex';
 
   export default {

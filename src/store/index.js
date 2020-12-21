@@ -147,7 +147,7 @@ export const store = new Vuex.Store({
 
         navText: navText,
 
-        buttonStyle: ['small', 'standard', 'large', 'fullWidth', 'border-sm', 'border', 'border-lg','border-fwidth', 'text-sm', 'text', 'text-lg', 'icon-sm', 'icon', 'icon-lg']
+        category: ['small', 'standard', 'large', 'fullWidth', 'border-sm', 'border', 'border-lg','border-fwidth', 'text-sm', 'text', 'text-lg', 'icon-sm', 'icon', 'icon-lg']
         
     },
       

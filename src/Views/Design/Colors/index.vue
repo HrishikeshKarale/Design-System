@@ -92,8 +92,8 @@
                         <div slot='actionButtons'>
                           <vue-clipboard
                             :componentCode='cols.hex'
-                            :buttonName='"copy #"+ cols.hex +" Color"'
-                            buttonIcon='fas fa-copy'
+                            :tag='"copy #"+ cols.hex +" Color"'
+                            icon='fas fa-copy'
                             :id='cols.hex'
                           />
                         </div>
@@ -116,8 +116,8 @@
                   <div slot="actionButtons">
                     <vue-clipboard
                       :componentCode="color.hex"
-                      :buttonName="`copy #${color.hex} Color`"
-                      buttonIcon="fas fa-copy"
+                      :tag="`copy #${color.hex} Color`"
+                      icon="fas fa-copy"
                       :id="color.hex"
                     />
                   </div>
@@ -637,15 +637,15 @@
 
     data () {
       
-      var d_buttonType="button"
+      var d_type="button"
 
-      var d_buttonName="consoleTextButton"
+      var d_tag="consoleTextButton"
 
-      var d_buttonText="Click Me"
+      var d_text="Click Me"
 
-      var d_buttonIcon="fas fa-copy"
+      var d_icon="fas fa-copy"
 
-      var d_buttonStyle= this.$store.state.buttonStyle
+      var d_category= this.$store.state.category
       
       var d_form=""
 
@@ -659,15 +659,15 @@
     colorsShouldBeAccessible,
     colorsShouldFocusAttention, 
 
-        d_buttonType: d_buttonType,
+        d_type: d_type,
 
-        d_buttonName: d_buttonName,
+        d_tag: d_tag,
 
-        d_buttonText: d_buttonText,
+        d_text: d_text,
 
-        d_buttonIcon: d_buttonIcon,
+        d_icon: d_icon,
 
-        d_buttonStyle: d_buttonStyle,
+        d_category: d_category,
 
         d_form: d_form,
 

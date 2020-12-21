@@ -10,7 +10,7 @@
             <div class= 'row1'>
                 <div 
                     class= 'col1'
-                    @click= 'onClickAction'
+                    @click= 'ctx'
                 >
                     <template
                         v-if= 'cardTitle'
@@ -119,7 +119,7 @@
                 default: null
             },
 
-            onClickAction: {
+            ctx: {
                 required: false,
                 type: Function,
                 default: function () {}

@@ -5,19 +5,14 @@ import app from '@/App'
 import index from '@/Views/index.vue'
 
 import design from '@/Views/Design/'
-
 import colors from '@/Views/Design/Colors'
-
 import typography from '@/Views/Design/Typography'
-
 import icons from '@/Views/Design/Icons'
-
 import interactionStates from '@/Views/Design/Interaction States'
-
 import spacing from '@/Views/Design/Spacing'
-
 import sound from '@/Views/Design/Sounds'
 
+import content from '@/Views/Content/'
 import productContent from '@/Views/Content/ProductContent'
 
 import voiceAndTone from '@/Views/Content/VoiceAndTone'
@@ -105,280 +100,305 @@ export default new Router({
         },
         {
             path: '/Design',
-            name: 'design',
-            component: design,
-        },
-        {
-            path: '/Design/Colors',
-            name: 'colors',
-            component: colors
-        },
-
-        {
-            path: '/Design/Icons',
-            name: 'icons',
-            component: icons
-        },
-
-        {
-            path: '/Design/InteractionStates',
-            name: 'interactionStates',
-            component: interactionStates
-        },
-
-        {
-            path: '/Design/Spacing',
-            name: 'spacing',
-            component: spacing
-        },
-
-        {
-            path: '/Design/Sounds',
-            name: 'sound',
-            component: sound
-        },
-
-        {
-            path: '/Design/Typography',
-            name: 'typography',
-            component: typography
+            children: [
+                {
+                    path: '',
+                    name: 'design',
+                    component: design,
+                },
+                {
+                    path: 'Colors',
+                    name: 'colors',
+                    component: colors
+                },
+                {
+                    path: 'Icons',
+                    name: 'icons',
+                    component: icons
+                },
+                {
+                    path: 'InteractionStates',
+                    name: 'interactionStates',
+                    component: interactionStates
+                },
+                {
+                    path: 'Spacing',
+                    name: 'spacing',
+                    component: spacing
+                },
+                {
+                    path: 'Sounds',
+                    name: 'sound',
+                    component: sound
+                },
+                {
+                    path: 'Typography',
+                    name: 'typography',
+                    component: typography
+                }
+            ]
         },
         
         {
             path: '/Content',
-            name: 'content',
-            component: index,
+            children: [
+                {
+                    path: '',
+                    name: 'content',
+                    component: content,
+                },
+                {
+                    path: 'Help Documentation',
+                    name: 'helpDocumentation',
+                    component: helpDocumentation
+                },
+                {
+                    path: 'Voice And Tone',
+                    name: 'voiceAndTone',
+                    component: voiceAndTone
+                },
+                {
+                    path: 'Product Content',
+                    name: 'productContent',
+                    component: productContent
+                },
+                
+                {
+                    path: 'Naming',
+                    name: 'naming',
+                    component: naming
+                },
+                {
+                    path: 'Vocabulary',
+                    name: 'vocabulary',
+                    component: vocabulary
+                },
+                {
+                    path: 'Actionalble Language',
+                    name: 'actionableLanguage',
+                    component: actionableLanguage
+                },
+                {
+                    path: 'Grammer and Mechanics',
+                    name: 'grammerAndMechanics',
+                    component: grammerAndMechanics
+                },
+                {
+                    path: 'Alternative Text',
+                    name: 'alternativeText',
+                    component: alternativeText
+                }
+            ]
         },
         {
-            path: '/Content/Help Documentation',
-            name: 'helpDocumentation',
-            component: helpDocumentation
+            path: '/Components',
+            children: [
+                {
+                    path: 'UI Components',
+                    children: [
+                        {
+                            path: '',
+                            name: 'ui components',
+                            component: uiComponents,
+                        },
+                        {
+                            path: 'Buttons',
+                            name: 'navButton',
+                            component: navButton
+                        },
+                        {
+                            path: 'Cards',
+                            name: 'navCard',
+                            component: navCard
+                        },
+                        {
+                            path: 'MasterDetail',
+                            name: 'navMasterDetail',
+                            component: navMasterDetail
+                        },
+                        {
+                            path: 'Modal',
+                            name: 'navModal',
+                            component: navModal
+                        },
+                        {
+                            path: 'StepWizard/',
+                            name: 'navWizard',
+                            component: navWizard
+                        },
+                        {
+                            path: 'Table',
+                            name: 'navTable',
+                            component: navTable
+                        },
+                        {
+                            path: 'Navigation',
+                            name: 'navNavigation',
+                            component: navNavigation
+                        }
+                    ]
+                },
+                {
+                    path: 'Form Elements',
+                    children: [
+                        {
+                            path: '',
+                            name: 'FormElements',
+                            component: FormElements,
+                        },
+                        {
+                            path: '/components/Form Elements/Form',
+                            name: 'navForm',
+                            component: navForm
+                        },
+                        {
+                            path: '/components/Form Elements/Text Input',
+                            name: 'navText',
+                            component: navText
+                        },
+                        {
+                            path: '/components/Form Elements/Password Input',
+                            name: 'navPassword',
+                            component: navPassword
+                        },
+                        {
+                            path: '/components/Form Elements/Email Input',
+                            name: 'navEmail',
+                            component: navEmail
+                        },
+                        {
+                            path: '/components/Form Elements/Number Input',
+                            name: 'navNumber',
+                            component: navNumber
+                        },
+                        {
+                            path: '/components/Form Elements/Info Field',
+                            name: 'navInfo',
+                            component: navInfo
+                        },
+                        {
+                            path: '/components/Form Elements/Toggle Input',
+                            name: 'navToggle',
+                            component: navToggle
+                        },
+                        {
+                            path: '/components/Form Elements/DropDown List',
+                            name: 'navDropdownList',
+                            component: navDropdownList
+                        },
+                        {
+                            path: '/components/Form Elements/Dropdown w-Search',
+                            name: 'navSearchableDropdownList',
+                            component: navSearchableDropdownList
+                        },
+                        {
+                            path: '/components/Form Elements/File Upload',
+                            name: 'navFile',
+                            component: navFile
+                        },
+                        {
+                            path: '/components/Form Elements/Checkbox Input',
+                            name: 'navCheckbox',
+                            component: navCheckbox
+                        },
+                        {
+                            path: '/components/Form Elements/Radiobox Input',
+                            name: 'navRadio',
+                            component: navRadio
+                        },
+                        {
+                            path: '/components/Form Elements/Date Input',
+                            name: 'navDate',
+                            component: navDate
+                        },
+                        {
+                            path: '/components/Form Elements/Textarea Input',
+                            name: 'navTextarea',
+                            component: navTextarea
+                        }
+                    ]
+                },
+                {
+                    path: 'Grid',
+                    name: 'grid',
+                    component: grid
+                },
+                {
+                    path: 'Layout',
+                    name: 'layout',
+                    component: layout
+                },
+                {
+                    path: 'Alerts',
+                    children: [
+                        {
+                            path: '',
+                            name: 'navAlert',
+                            component: navAlert,
+                        },
+                        {
+                            path: 'navAlertProactive',
+                            name: 'navAlertProactive',
+                            component: navAlertProactive
+                        },
+                        {
+                            path: 'navAlertReactive',
+                            name: 'navAlertReactive',
+                            component: navAlertReactive
+                        }
+                    ]
+                },
+            ]
         },
-
-        {
-            path: '/Content/Voice And Tone',
-            name: 'voiceAndTone',
-            component: voiceAndTone
-        },
-
-        {
-            path: '/Content/Product Content',
-            name: 'productContent',
-            component: productContent
-        },
-        
-        {
-            path: '/Content/Naming',
-            name: 'naming',
-            component: naming
-        },
-        {
-            path: '/Content/Vocabulary',
-            name: 'vocabulary',
-            component: vocabulary
-        },
-        {
-            path: '/Content/Actionalble Language',
-            name: 'actionableLanguage',
-            component: actionableLanguage
-        },
-        {
-            path: '/Content/Grammer and Mechanics',
-            name: 'grammerAndMechanics',
-            component: grammerAndMechanics
-        },
-        {
-            path: '/Content/Alternative Text',
-            name: 'alternativeText',
-            component: alternativeText
-        },
-        
-        {
-            path: '/Components/UI Components',
-            name: 'ui components',
-            component: uiComponents,
-        },
-        {
-            path: '/Components/UI Components/Buttons',
-            name: 'navButton',
-            component: navButton
-        },
-        {
-            path: '/Components/UI Components/Cards',
-            name: 'navCard',
-            component: navCard
-        },
-        {
-            path: '/Components/UI Components/MasterDetail',
-            name: 'navMasterDetail',
-            component: navMasterDetail
-        },
-        {
-            path: '/Components/UI Components/Modal',
-            name: 'navModal',
-            component: navModal
-        },
-        {
-            path: '/Components/UI Components/StepWizard/',
-            name: 'navWizard',
-            component: navWizard
-        },
-        {
-            path: '/Components/UI Components/Table',
-            name: 'navTable',
-            component: navTable
-        },
-        {
-            path: '/Components/UI Components/Navigation',
-            name: 'navNavigation',
-            component: navNavigation
-        },
-
-        {
-            path: '/Components/Form Elements',
-            name: 'FormElements',
-            component: FormElements,
-        },
-        {
-            path: '/Components/Form Elements/Form',
-            name: 'navForm',
-            component: navForm
-        },
-        {
-            path: '/Components/Form Elements/Text Input',
-            name: 'navText',
-            component: navText
-        },
-        {
-            path: '/Components/Form Elements/Password Input',
-            name: 'navPassword',
-            component: navPassword
-        },
-        {
-            path: '/Components/Form Elements/Email Input',
-            name: 'navEmail',
-            component: navEmail
-        },
-
-        {
-            path: '/Components/Form Elements/Number Input',
-            name: 'navNumber',
-            component: navNumber
-        },
-        {
-            path: '/Components/Form Elements/Info Field',
-            name: 'navInfo',
-            component: navInfo
-        },
-        {
-            path: '/Components/Form Elements/Toggle Input',
-            name: 'navToggle',
-            component: navToggle
-        },
-        {
-            path: '/Components/Form Elements/DropDown List',
-            name: 'navDropdownList',
-            component: navDropdownList
-        },
-        {
-            path: '/Components/Form Elements/Dropdown w-Search',
-            name: 'navSearchableDropdownList',
-            component: navSearchableDropdownList
-        },
-        {
-            path: '/Components/Form Elements/File Upload',
-            name: 'navFile',
-            component: navFile
-        },
-        {
-            path: '/Components/Form Elements/Checkbox Input',
-            name: 'navCheckbox',
-            component: navCheckbox
-        },
-        {
-            path: '/Components/Form Elements/Radiobox Input',
-            name: 'navRadio',
-            component: navRadio
-        },
-        {
-            path: '/Components/Form Elements/Date Input',
-            name: 'navDate',
-            component: navDate
-        },
-        {
-            path: '/Components/Form Elements/Textarea Input',
-            name: 'navTextarea',
-            component: navTextarea
-        },
-
-        {
-            path: '/Components/Grid',
-            name: 'grid',
-            component: grid
-        },
-
-        {
-            path: '/Components/Layout',
-            name: 'layout',
-            component: layout
-        },
-
-        {
-            path: '/Components/Alerts',
-            name: 'navAlert',
-            component: navAlert,
-        },
-        {
-            path: '/navAlertProactive',
-            name: 'navAlertProactive',
-            component: navAlertProactive
-        },
-        {
-            path: '/navAlertReactive',
-            name: 'navAlertReactive',
-            component: navAlertReactive
-        },     
-        
         {
             path: '/Sample Pages',
-            name: 'createMove',
-            component: createMove,
+            children: [
+                {
+                    path: '',
+                    name: 'createMove',
+                    component: createMove,
+                },
+                {
+                    path: 'navSystemError',
+                    name: 'navSystemError',
+                    component: navSystemError
+                },
+                {
+                    path: 'navReassign',
+                    name: 'navReassign',
+                    component: navReassign
+                },  
+                {
+                    path: 'dispatchMonitor',
+                    name: 'dispatchMonitor',
+                    component: dispatchMonitor
+                }
+            ]
         },
-        {
-            path: '/Sample Pages/navSystemError',
-            name: 'navSystemError',
-            component: navSystemError
-        },
-        {
-            path: '/Sample Pages/navReassign',
-            name: 'navReassign',
-            component: navReassign
-        },  
-        {
-            path: '/Sample Pages/dispatchMonitor',
-            name: 'dispatchMonitor',
-            component: dispatchMonitor
-        },
-
         {
             path: '/Coding Guidlines',
-            name: 'navBestPractices',
-            component: navBestPractices,
-        },
-        {
-            path: '/Coding Guidlines/navVueBestPractices',
-            name: 'navVueBestPractices',
-            component: navVueBestPractices
-        },
-        {
-            path: '/Coding Guidlines/navCSharpBestPractices',
-            name: 'navCSharpBestPractices',
-            component: navCSharpBestPractices
-        },
-        {
-            path: '/Coding Guidlines/navAgileBestPractices',
-            name: 'navAgileBestPractices',
-            component: navAgileBestPractices
+            children: [
+                {
+                    path: '',
+                    name: 'navBestPractices',
+                    component: navBestPractices,
+                },
+                {
+                    path: 'navVueBestPractices',
+                    name: 'navVueBestPractices',
+                    component: navVueBestPractices
+                },
+                {
+                    path: 'navCSharpBestPractices',
+                    name: 'navCSharpBestPractices',
+                    component: navCSharpBestPractices
+                },
+                {
+                    path: 'navAgileBestPractices',
+                    name: 'navAgileBestPractices',
+                    component: navAgileBestPractices
+                }
+            ]
         },
     ]
 })

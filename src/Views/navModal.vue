@@ -5,10 +5,10 @@
             >
                 <vue-modal
                     :modalTitle= 'd_modalTitle'
-                    :buttonText= 'd_buttonText'
-                    :buttonName= 'd_buttonName'
-                    :buttonIcon= 'd_buttonIcon'
-                    :onClickAction= 'd_onClickAction'
+                    :text= 'd_text'
+                    :tag= 'd_tag'
+                    :icon= 'd_icon'
+                    :ctx= 'd_ctx'
                     :showModal= 'd_showModal'
                 >
                     <!--
@@ -35,13 +35,13 @@
 
             var d_modalTitle= 'Modal title'
             
-            var d_buttonText= 'openModal'
+            var d_text= 'openModal'
             
-            var d_buttonName= 'approveText'
+            var d_tag= 'approveText'
             
-            var d_buttonIcon= 'fas fa-eject'
+            var d_icon= 'fas fa-eject'
             
-            var d_onClickAction= this.consoleClick
+            var d_ctx= this.consoleClick
 
             var d_showModal= false
 
@@ -49,13 +49,13 @@
                 
                 d_modalTitle: d_modalTitle,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_showModal: d_showModal,
 
@@ -73,38 +73,38 @@
                         {
                             type: "modalTitle",
                             value: d_modalTitle,
-                            description: this.$store.state.navText.buttonName,
-                            text: this.$store.state.navText.buttonNameText,
+                            description: this.$store.state.navText.tag,
+                            text: this.$store.state.navText.tagText,
                         },
                         {
-                            type: "buttonName",
-                            value: d_buttonName,
-                            description: this.$store.state.navText.buttonName,
-                            text: this.$store.state.navText.buttonNameText,
+                            type: "tag",
+                            value: d_tag,
+                            description: this.$store.state.navText.tag,
+                            text: this.$store.state.navText.tagText,
                         },
                         {
-                            type: "buttonText",
-                            value: d_buttonText,
-                            description: this.$store.state.navText.buttonText,
-                            text: this.$store.state.navText.buttonTextText,
+                            type: "text",
+                            value: d_text,
+                            description: this.$store.state.navText.text,
+                            text: this.$store.state.navText.textText,
                         },
                         {
-                            type: "buttonIcon",
-                            value: d_buttonIcon,
-                            description: this.$store.state.navText.buttonIcon,
-                            text: this.$store.state.navText.buttonIconText,
+                            type: "icon",
+                            value: d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.iconText,
                         },
                         
                         {
                             type: "showModal",
                             value: d_showModal,
-                            description: this.$store.state.navText.buttonIcon,
-                            text: this.$store.state.navText.buttonIconText,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.iconText,
                         },
                         {
-                            type: "onClickAction",
-                            value: d_onClickAction,
-                            description: this.$store.state.navText.onClickAction,
+                            type: "ctx",
+                            value: d_ctx,
+                            description: this.$store.state.navText.ctx,
                             text: 'Specifies the function that should be called when the confirm button inside the modal is clicked.'
                         },
                     ] //attributes

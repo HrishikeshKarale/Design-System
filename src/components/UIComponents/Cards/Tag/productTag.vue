@@ -28,27 +28,27 @@
                 <div class= 'col2'>
                     <div>
                         <vue-button 
-                            :buttonType= 'd_buttonType'
-                            buttonName= "toggleFilter"
-                            buttonIcon= 'fas fa-redo-alt'
-                            :buttonStyle= 'd_buttonStyle[0]'
+                            :type= 'd_type'
+                            tag= "toggleFilter"
+                            icon= 'fas fa-redo-alt'
+                            :category= 'd_category[0]'
                             :disabled= '!d_booleanTrue'
                             :autofocus= '!d_booleanTrue'
-                            :formID= "d_form"
-                            :onClickAction= 'd_onClickAction'
+                            :form= "d_form"
+                            :ctx= 'd_ctx'
                         />
                     </div>
                     <div class= 'divide16'/>
                     <div>
                         <vue-button 
-                            :buttonType= 'd_buttonType'
-                            buttonName= "toggleFilter"
-                            buttonIcon= 'fas fa-plus'
-                            :buttonStyle= 'd_buttonStyle[0]'
+                            :type= 'd_type'
+                            tag= "toggleFilter"
+                            icon= 'fas fa-plus'
+                            :category= 'd_category[0]'
                             :disabled= '!d_booleanTrue'
                             :autofocus= '!d_booleanTrue'
-                            :formID= "d_form"
-                            :onClickAction= 'd_onClickAction'
+                            :form= "d_form"
+                            :ctx= 'd_ctx'
                         />
                     </div>
                 </div>
@@ -101,29 +101,29 @@
                     <div class= 'col2'>
                         <div v-if= 'editable'>
                             <vue-button 
-                                :buttonType= 'd_buttonType'
-                                buttonName= "deleteTag"
-                                :buttonText= "d_buttonText"
-                                buttonIcon= 'fas fa-times'
-                                :buttonStyle= 'd_buttonStyle[0]'
+                                :type= 'd_type'
+                                tag= "deleteTag"
+                                :text= "d_text"
+                                icon= 'fas fa-times'
+                                :category= 'd_category[0]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'deleteTag.bind(this, t.sku)'
+                                :form= "d_form"
+                                :ctx= 'deleteTag.bind(this, t.sku)'
                             />
                         </div>
                         <div class= 'divide16'/>
                         <div>
                             <vue-button 
-                                :buttonType= 'd_buttonType'
-                                buttonName= "toggleFilter"
-                                :buttonText= "d_buttonText"
-                                :buttonIcon= 'editId && editId==t.sku? "fas fa-plus":"fas fa-pen-alt"'
-                                :buttonStyle= 'd_buttonStyle[0]'
+                                :type= 'd_type'
+                                tag= "toggleFilter"
+                                :text= "d_text"
+                                :icon= 'editId && editId==t.sku? "fas fa-plus":"fas fa-pen-alt"'
+                                :category= 'd_category[0]'
                                 :disabled= '!d_booleanTrue'
                                 :autofocus= '!d_booleanTrue'
-                                :formID= "d_form"
-                                :onClickAction= 'toggleEdit.bind(this, t.sku)'
+                                :form= "d_form"
+                                :ctx= 'toggleEdit.bind(this, t.sku)'
                             />
                         </div>
                     </div>
@@ -150,33 +150,33 @@
 
         data() {
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= ''
+            var d_text= ''
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.toggle
+            var d_ctx= this.toggle
 
             return {
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 sku: null,
 

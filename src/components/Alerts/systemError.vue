@@ -24,9 +24,8 @@
                 <span @click= "d_hideDetails= !d_hideDetails" :class= '["fas", d_hideDetails? "fa-plus": "fa-minus"]'> {{d_hideDetails? "View": "Hide"}} Details</span>
                 <vue-clipboard
                     :componentCode= 'd_danger'
-                    :buttonName= 'd_buttonName'
-                    :buttonText= 'd_buttonText'
-                    :buttonStyle= 'd_buttonStyle'
+                    :tag= 'd_tag'
+                    :text= 'd_text'
                     :id= 'd_id'
                 />
             </div>
@@ -112,9 +111,8 @@
                 "stackTrace": this.stackTrace,
             }
 
-            var d_buttonName= 'StackTrace'
-            var d_buttonText= 'Copy'
-            var d_buttonStyle= 'text'
+            var d_tag= 'StackTrace'
+            var d_text= 'Copy'
             var d_id= 'stackTrace'
 
             return {
@@ -125,11 +123,9 @@
 
                 d_errorObject: d_errorObject,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
-
-                d_buttonStyle: d_buttonStyle,
+                d_text: d_text,
 
                 d_id: d_id,
             }//return

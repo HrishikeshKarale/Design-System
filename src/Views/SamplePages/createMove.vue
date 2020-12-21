@@ -30,14 +30,14 @@
                             </div>
                             <div>
                                 <vue-button
-                                    :buttonType= 'd_buttonType'
-                                    buttonName= "ApplyFilter"
-                                    buttonText= "Filter"
-                                    :buttonStyle= 'd_buttonStyle[2]'
+                                    :type= 'd_type'
+                                    tag= "ApplyFilter"
+                                    text= "Filter"
+                                    :category= 'd_category[2]'
                                     :disabled= '!d_booleanTrue'
                                     :autofocus= '!d_booleanTrue'
-                                    :formID= "d_form"
-                                    :onClickAction= 'consoleClickApply'
+                                    :form= "d_form"
+                                    :ctx= 'consoleClickApply'
                                 />
                             </div>
                         </div>
@@ -223,41 +223,41 @@
             var d_PNumber= null
             var d_mNumber= null
 
-            var d_buttonType= 'button'
+            var d_type= 'button'
 
-            var d_buttonName= 'consoleTextButton'
+            var d_tag= 'consoleTextButton'
 
-            var d_buttonText= 'Click Me'
+            var d_text= 'Click Me'
 
-            var d_buttonIcon= 'fas fa-registered'
+            var d_icon= 'fas fa-registered'
 
-            var d_buttonStyle= this.$store.state.buttonStyle
+            var d_category= this.$store.state.category
 
             var d_booleanTrue= true
 
             var d_form= ''
 
-            var d_onClickAction= this.consoleClickApply
+            var d_ctx= this.consoleClickApply
 
             return {
 
                 d_tableToggle: false,
 
-                d_buttonType: d_buttonType,
+                d_type: d_type,
 
-                d_buttonName: d_buttonName,
+                d_tag: d_tag,
 
-                d_buttonText: d_buttonText,
+                d_text: d_text,
 
-                d_buttonIcon: d_buttonIcon,
+                d_icon: d_icon,
 
-                d_buttonStyle: d_buttonStyle,
+                d_category: d_category,
 
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
 
-                d_onClickAction: d_onClickAction,
+                d_ctx: d_ctx,
 
                 d_columns: ['Tag Number', 'Product', 'Quantity'],
 

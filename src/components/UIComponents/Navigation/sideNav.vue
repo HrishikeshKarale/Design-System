@@ -1,22 +1,23 @@
 //https://codepen.io/pietvanzoen/pen/Ccjlt
 <template>
-  <header ref="vueHeader" class="vueHeader">
-    <vue-button
+  <header ref="sideNav" class="sideNav">
+    <!-- <vue-button
       v-if="toggleNavIcon"
       class="menuTrigger"
-      buttop-name="toggleNav"
-      button-style="icon-lg"
-      :button-icon="toggleNavIcon"
+      tag="toggleNav"
+      category="icon-lg"
+      :icon="toggleNavIcon"
       :ctx="toggleNavigation.bind(this)"
-    />
+    /> -->
     <nav>
+      <!-- level 1 -->
       <ul>
         <li>
           <router-link :to="{ name: 'home' }">
             <vue-img :src="logoLink" alt="Logo" />
             <h3>
-              Hrishikesh Karale
-              <h5>Kkiokio.com</h5>
+              Design Guide
+              <h6>Hrishikesh Karale</h6>
             </h3>
           </router-link>
         </li>
@@ -25,57 +26,48 @@
           :key="index + '-' + navigation.name"
         >
           <router-link :to="{ name: navigation.component }">
-            <span v-if="index > 0" :class="navigation.icon" />
-            <template v-else>
-              <vue-img :src="logoLink" alt="Kkiokio.com" />
-              <!-- <small>kkiokio.com</small> -->
-            </template>
+            <span :class="navigation.icon" />
             <div>
               <h4>{{ navigation.name }}</h4>
-              <span> {{ navigation.tagline }}</span>
+              <span v-if="navigation.tagline"> {{ navigation.tagline }}</span>
             </div>
           </router-link>
+          <!-- level 2 -->
+          <ul class="subNav" v-show="navigation.subNav && $route.path.includes(navigation.name)">
+            <li
+              v-for="(nav2, index) in navigation.subNav"
+              :key="index + '-' + nav2.name"
+            >
+              <router-link :to="{ name: nav2.component }">
+                <span :class="nav2.icon" />
+                <h4>{{ nav2.name }}</h4>
+              </router-link>
+              <!-- level 3 -->
+              <ul class="subNav2" v-if="nav2.subNav && $route.path.includes(nav2.name)">
+                <li
+                  v-for="(nav3, index) in nav2.subNav"
+                  :key="index + '-' + nav3.name"
+                >
+                  <router-link :to="{ name: nav3.component }">
+                    <span :class="nav3.icon" />
+                    <h4>{{ nav3.name }}</h4>
+                  </router-link>
+              </li>
+              </ul>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
-    <div>
-      <span class="fas fa-user" />
-      <div class="user">
-        <template v-if="signedIn">
-          <vue-img :src="user ? user.image : null" alt="Logo" />
-          <h5 v-if="user">
-            {{ user ? user.name : null }}
-          </h5>
-          <h5 v-else>
-            Guest
-          </h5>
-        </template>
-        <div class="g-signin2" data-onsuccess="triggerGoogleLoaded" />
-        <vue-button
-          v-if="!signedIn"
-          buttop-name="loginButton"
-          button-style="text-sm"
-          button-text="LogIn"
-          button-icon="fas fa-sign-in-alt"
-          :ctx="login.bind(this)"
-        />
-        <vue-button
-          v-else
-          button-name="googleSignOutButton"
-          button-text="logout"
-          button-icon="fas fa-sign-out-alt"
-          button-style="text-sm"
-          :ctx="signOut.bind()"
-        />
-        <vue-button
-          v-if="themeIcon"
-          buttop-name="themeToggle"
-          button-style="text-sm"
-          button-text="Theme"
-          :button-icon="themeIcon"
-          :ctx="theme.bind(this)"
-        />
-      </div>
+    <slot name="options" />
+    <!-- <vue-button
+      v-if="themeIcon"
+      tag="themeToggle"
+      category="text-sm"
+      text="Theme"
+      :icon="themeIcon"
+      :ctx="theme.bind(this)"
+    /> -->
     </div>
   </header>
 </template>
@@ -87,7 +79,7 @@ import vueButton from "@/components/UIComponents/Buttons";
 import vueImg from "../Image/vueImg.vue";
 
 export default {
-  name: "VueHeader",
+  name: "sideNav",
 
   components: {
     vueButton,
@@ -105,7 +97,7 @@ export default {
 
     nav: {
       required: true,
-      type: Object,
+      type: Array,
       default: null
     }
   },
@@ -132,8 +124,8 @@ export default {
 
   methods: {
     clickHandler: function(event) {
-      // console.log("modal", !event.target.closest(".vueHeader").length);
-      if (!event.target.closest(".vueHeader") && this.isOpen("nav")) {
+      // console.log("modal", !event.target.closest(".sideNav").length);
+      if (!event.target.closest(".sideNav") && this.isOpen("nav")) {
         this.toggleNavigation();
         // alert("click outside!");
       }
@@ -145,7 +137,7 @@ export default {
     }, //login
 
     toggleNavigation: function() {
-      this.$refs["vueHeader"].classList.toggle("showNav");
+      this.$refs["sideNav"].classList.toggle("showNav");
       this.toggle("nav");
     } //toggleNavigation
   }
@@ -162,135 +154,134 @@ export default {
 
 //nav sub text
 .navSubText() {
-  color: @navText;
-  opacity: @lowOpacity;
+  color: white;
+  // opacity: @lowOpacity;
 }
 
 header {
-  &.vueHeader {
+  .scroll(100vh);
+  &.sideNav {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: @spaceMd @spaceXl;
+    padding: @spaceXl;
     background-color: @navBackground;
-    max-width: 100vw;
+    max-width: max-content;
     z-index: @headerZ;
-    height: @header;
-    // .boxShadow(@one);
+    height: 100vh;
+    .boxShadow(@one, white);
     & > .menuTrigger {
       display: none;
       margin-left: auto;
     }
     & > nav {
+      fisplay: flex;
       & > ul {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-content: flex-start;
 
         & > li {
           display: flex;
-          justify-content: space-evenly;
+          flex-direction: column;
           align-items: flex-start;
-          flex: 1;
-          //hide website name and logo
           &:first-child {
-            display: none;
-            & > a > img {
-              display: block;
-              height: 64px;
-              margin: auto;
-              & + h3 {
-                display: flex;
-                flex-direction: column;
-                & > h5 {
-                  align-self: flex-end;
-                  color: @white;
-                }
-              }
-            }
-          }
-          & > a {
-            margin: 0 @spaceLg;
-            color: @navText;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-
-            & > span {
-              font-size: @fontSizeSm * 2;
-              .navSubText();
-            }
-            & > img {
-              height: 48px;
-            }
-            & > div {
+            align-self: center;
+            & > a {
               display: flex;
               flex-direction: column;
-              margin-left: @spaceLg;
-              //nav Text
-              & > h4 {
-                color: @navText;
-                //nav subText
-                & + span {
-                  font-size: 12px;
-                  .navSubText();
-                }
-              }
-            }
-
-            //styling selected link
-            &.router-link-active {
-              color: @secondaryColor;
-              &::before {
-                transform: scale(0.8);
-              }
-              &.router-link-exact-active {
-                color: @secondaryColor;
-              }
-
-              & > span {
-                opacity: 1;
-              }
-              & > div {
-                & > h4 {
-                  color: @secondaryColor;
-                  font-weight: bold;
-                  & + span {
-                    color: @navText;
-                    opacity: 1;
+              & > img {
+                display: block;
+                height: 64px;
+                margin: auto;
+                & + h3 {
+                  display: flex;
+                  flex-direction: column;
+                  & > h6 {
+                    align-self: flex-end;
+                    color: @white;
                   }
                 }
               }
             }
+          }
 
-            //bottom line for nav
-            &::before {
-              content: "";
-              position: absolute;
-              width: 100%;
-              background-color: @secondaryColor;
-              bottom: -8px;
-              height: 2px;
-              transform: scale(0);
-              transition: @transition;
-            }
-            //hover effect for li
-            &:hover {
-              color: @primaryColor;
-              &::before {
-                transform: scale(1.2);
-              }
+          &,
+          & > .subNav > li,
+          & > .subNav > li > .subNav2 > li {
+            & > a {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-items: center;
+              color: white;
+              position: relative;
+
               & > span {
-                color: @navText;
-                opacity: 1;
+                font-size: @fontSizeSm * 2;
+                .navSubText();
+              }
+              & > img {
+                height: 48px;
               }
               & > div {
+                display: flex;
+                flex-direction: column;
+                margin-left: @spaceLg;
+                //nav Text
                 & > h4 {
-                  color: @secondaryColor;
+                  color: white;
+                  //nav subText
                   & + span {
-                    color: @navText;
-                    opacity: 1;
+                    font-size: 12px;
+                    .navSubText();
+                  }
+                }
+              }
+
+              //styling selected link
+              &.router-link-active {
+                color: @secondaryColor;
+                &::before {
+                  transform: scale(0.8);
+                }
+                &.router-link-exact-active {
+                  color: @secondaryColor;
+                }
+
+                & > span {
+                  //opacity: 1;
+                }
+                & > div {
+                  & > h4 {
+                    color: white;
+                    font-weight: bold;
+                    & + span {
+                      color: white;
+                      //opacity: 1;
+                    }
+                  }
+                }
+              }
+              & + .subNav,
+              & + .subNav > li > .subNav2 {
+                display: flex;
+                flex-direction: column;
+                margin-left: @spaceMd;
+                & > li {
+                  display: flex;
+                  flex-direction: column;
+                  & > a {
+                    margin: 0;
+                    display: flex;
+                    align-content: center;
+                    & > span {
+                      font-size: @fontSizeSm !important;
+                      & + h4 {
+                        color: white;
+                        margin: @spaceSm 0 @spaceSm @spaceMd;
+                      }
+                    }
                   }
                 }
               }
