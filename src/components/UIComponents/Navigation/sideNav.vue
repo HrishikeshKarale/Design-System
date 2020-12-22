@@ -247,13 +247,18 @@ header {
                 & > h5  {
                   color: @secondaryColor;
                 }
+                & > span {
+                  transform: scale(1.6);
+                }
                 &.router-link-exact-active {
                   & > span,
                   & > div > h4,
                   & > h4,
                   & > h5  {
                     color: @secondaryColor;
-                    transform: scale(1.1);
+                  }
+                  & > span {
+                    transform: scale(2);
                   }
                 }
                 & > div {
