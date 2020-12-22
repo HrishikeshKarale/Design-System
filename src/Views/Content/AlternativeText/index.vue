@@ -1,7 +1,7 @@
 <template>
     <div class= "alternativeText">
         https://polaris.shopify.com/content/alternative-text#navigation   
-            <template slot= 'left'>
+            
                 <article id= 'alternativeText'>
                     <h1 id= "title">Alternative text</h1>
                     <p>
@@ -51,7 +51,7 @@
                             <h4>Icons</h4>
                             <p>
                                 Icons that could be misinterpreted need an explanation, so use the aria-label attribute.
-                                <img src= "https://polaris.shopify.com/assets/b3f6efe7826616c022884e110b293e37-accessibility-icons@2x.png" alt= "">
+                                <vue-img src= "https://polaris.shopify.com/assets/b3f6efe7826616c022884e110b293e37-accessibility-icons@2x.png" alt= "" />
                             </p>
                         </div>
                         <div
@@ -62,7 +62,7 @@
                             <p>
                                 If space constraints require you to write calls to action without nouns, like “learn more” and “apply now”, give further indication of where users will be sent after they select.
                             </p>
-                            <img src= "https://polaris.shopify.com/assets/82f9d1c8bdedc3f9da2e2c3284dbf169-calls-to-action@2x.png" alt= "">
+                            <vue-img src= "https://polaris.shopify.com/assets/82f9d1c8bdedc3f9da2e2c3284dbf169-calls-to-action@2x.png" alt= "" />
                         </div>
                         <div
                             id= 'cimplexImages'
@@ -72,7 +72,7 @@
                             <p>
                                 Images with a bit more complexity need more logic in the code.
                             </p>
-                            <img src= "https://polaris.shopify.com/assets/63d59a2c7031ee7971bc54a8244a431b-complex-images@2x.png" alt= "">
+                            <vue-img src= "https://polaris.shopify.com/assets/63d59a2c7031ee7971bc54a8244a431b-complex-images@2x.png" alt= "" />
                         </div>
                     </section>
                     <section id= "pronunciationAndTranslation">
@@ -95,33 +95,6 @@
                         </p>
                     </section>
                 </article>
-            </template>
-            <template slot= 'right'>
-                <li
-                    v-for= "col in colors"
-                    :key= "col.id"
-                    :index= "col.index"
-                >
-                    <a
-                        :href= '"#"+col.subTitle'
-                    >
-                        {{col.subTitle}}
-                    </a>
-                    <ul 
-                        v-if= "col.color[0].color!= null"
-                    
-                    >
-                        <li
-                            v-for= "color in col.color"
-                            :key= "color.id"
-                        >
-                            <a :href= '"#"+color.subTitle'>
-                                {{color.subTitle}}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </template>
     </div>
 </template>
 

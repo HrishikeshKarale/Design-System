@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "VueImg", //data
+  name: "vueImg", //data
 
   props: {
     src: {

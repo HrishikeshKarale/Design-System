@@ -1,6 +1,5 @@
 <template>
-    <div class= "forms">   
-            <template slot= 'left'>
+            
                 <article id= 'forms'>
                     <h1>Forms</h1>
                     <p>
@@ -1905,8 +1904,6 @@
                         </div>
                     </section>
                 </article>
-            </template>
-    </div>
 </template>
 
 <script>

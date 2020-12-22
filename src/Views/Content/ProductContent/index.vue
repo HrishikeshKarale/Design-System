@@ -1,7 +1,7 @@
 <template>
     <div class= "productContent">
         https://polaris.shopify.com/content/product-content   
-            <template slot= 'left'>
+            
                 <article id= 'productContent'>
                     <h1>Product content</h1>
                     <p>
@@ -80,33 +80,6 @@
                         </div>
                     </section>
                 </article>
-            </template>
-            <template slot= 'right'>
-                <li
-                    v-for= "col in colors"
-                    :key= "col.id"
-                    :index= "col.index"
-                >
-                    <a
-                        :href= '"#"+col.subTitle'
-                    >
-                        {{col.subTitle}}
-                    </a>
-                    <ul 
-                        v-if= "col.color[0].color!= null"
-                        
-                    >
-                        <li
-                            v-for= "color in col.color"
-                            :key= "color.id"
-                        >
-                            <a :href= '"#"+color.subTitle'>
-                                {{color.subTitle}}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </template>
     </div>
 </template>
 

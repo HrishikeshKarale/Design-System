@@ -115,7 +115,7 @@
                 </div>
             </card-background>
             <div :class= 'selected? "selected":"second"'>
-                <img src= "https://datavizcatalogue.com/methods/images/top_images/line_graph.png" alt= "graph">
+                <vue-img src= "https://datavizcatalogue.com/methods/images/top_images/line_graph.png" alt= "graph" />
                 
                 <div style= 'background-color: #ffffff; height: fit-content;'>
                     <card-background
@@ -284,7 +284,7 @@
 </template>
 
 <script>
-
+import vueImg from "@/components/UIComponents/Image/vueImg"
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
     import masterDetail from "@/components/UIComponents/MasterDetail/masterDetail"
     import vueCard from "@/components/UIComponents/Cards/vueCard"
@@ -321,7 +321,7 @@
         }, //methods
 
         components: {
-
+            vueImg,
             cardBackground,
             masterDetail,
             vueCard,

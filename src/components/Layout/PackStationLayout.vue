@@ -1,7 +1,7 @@
 <template>
     <div class= 'packStationLayout'>
 		<div class= 'head'>
-			<img :src= 'd_packLogo'/>
+			<vue-img :src= 'd_packLogo'/>
 			<div>
 				<span>Logout</span>
 				<span>Hrishikesh Karale <span class= 'fas fa-user'/></span>
@@ -20,16 +20,17 @@
 </template>
 
 <script>
+import vueImg from "@/components/UIComponents/Image/vueImg"
 
     export default {
 		name: 'packStationLayout',
+
+		components: { vueImg },
 		
 		data () {
-
-            const d_packLogo= require('@/assets/SVG/packStationLogo.svg')
+			const d_packLogo= require('@/assets/SVG/packStationLogo.svg')
 			return {
-
-				d_packLogo: d_packLogo,
+				d_packLogo,
 			} //return
 		}, //date
     }
