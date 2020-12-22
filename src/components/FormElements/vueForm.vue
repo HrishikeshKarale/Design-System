@@ -87,15 +87,12 @@
         }, //props
 
         components: {
-            
-            vueButton
+                       vueButton
         }, //components
 
         computed: {
-            
-            validInput: function () {
-                
-                var alerts= this.alerts
+                       validInput: function () {
+                               var alerts= this.alerts
                 var inputs = document.getElementsByTagName('input');
 
                 for (var index = 0; index < inputs.length; ++index) {
@@ -174,15 +171,13 @@
                 text-align: center;
                 vertical-align: middle;
                 padding-left: 0;
-                
-                li {
+                               li {
                     display: table-cell;
                     position: relative;
                     float: none;
                     padding: 0;
                     width: 1%;
-                    
-                    &:after {
+                                       &:after {
                         background-color: @wizard-color-neutral;
                         content: "";
                         display: block;
@@ -191,46 +186,38 @@
                         width: 100%;
                         top: @wizard-step-width-height/2;
                     }
-                    
-                    &:after {
+                                       &:after {
                         left: 50%;
                     }
-                    
-                    &:last-child {
+                                       &:last-child {
                         &:after {
                             display: none;
                         }
                     }
-                    
-                    &.active {
+                                       &.active {
                         .step {
                             border-color: @wizard-color-active;
                             color: @wizard-color-active;
                         }
-                        
-                        .caption {
+                                               .caption {
                             width: 100%;
                             color: @wizard-color-active;
                         }
                     }
-                    
-                    &.complete {
+                                       &.complete {
                         &:after {
                             background-color: @wizard-color-complete;
                         }
-                        
-                        .step {
+                                               .step {
                             border-color: @wizard-color-complete;
                             color: @wizard-color-complete;
                         }
-                        
-                        .caption {
+                                               .caption {
                             color: @wizard-color-complete;
                         }
                     }
                 }
-                
-                .step {
+                               .step {
                     background-color: @white;
                     border-radius: 50%;
                     border: 2px solid @wizard-color-neutral;
@@ -242,13 +229,11 @@
                     position: relative;
                     width: @wizard-step-width-height;
                     z-index: 1;
-                    
-                    &:hover {
+                                       &:hover {
                         cursor: pointer;
                     }
                 }
-                
-                .caption {
+                               .caption {
                     color: @wizard-color-neutral;
                     padding: @spaceMd @spaceLg;
                 }
@@ -262,14 +247,12 @@
             margin: 0 auto;
             padding: @spaceLg @spaceXl;
         }
-        
-        .wizardButtons {
+               .wizardButtons {
             margin-top: 16px;
             // margin: 0 auto;
             // padding: @spaceLg @spaceXl;
             background-color: @backgroundColor;
-            
-            & > div {
+                       & > div {
                 display: flex;
                 justify-content: space-between;
                 flex-direction: row;

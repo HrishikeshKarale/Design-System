@@ -154,15 +154,12 @@ const initializeData= function (state, context) {
         Object.keys(dataObject[0])
         .forEach(function eachKey(key) { 
             state.columns.push(key); // alerts key 
-        });               
-
+        });              
         if (!state.metadata.sortOrders) {
             sortOrdersInitialization(state.columns);
         }
-        
-        context.dispatch('setPageCount', context);
-        
-        context.dispatch('setFilteredData', context);
+               context.dispatch('setPageCount', context);
+               context.dispatch('setFilteredData', context);
         context.dispatch('setPagination', context);
     } //initDataset
     

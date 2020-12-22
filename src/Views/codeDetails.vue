@@ -151,8 +151,7 @@
                 d_hideCode: null,
 
                 d_value: null,
-                
-                d_numRegEx: d_numRegEx
+                               d_numRegEx: d_numRegEx
             } //return
         }, //data
 
@@ -202,8 +201,7 @@
                 var attr= this.attr
                 var attributes= this.attributes
                 var str= new Object()
-                
-                for (var attribute in attributes)
+                               for (var attribute in attributes)
                 {
                     // console.log(attribute)
                     var type= attributes[attribute].type
@@ -276,8 +274,7 @@
             else {
                 this.d_hideCode= this.hideCode
             }
-            
-            var attributes= this.attributes
+                       var attributes= this.attributes
 
             for (var attribute in attributes) {
                 // console.log(attributes[attribute].type)
@@ -298,8 +295,7 @@
     @import (reference) "./../Less/customVariables";
     
     .codeDetails {
-        
-        .displayCode();
+               .displayCode();
         .boxShadow(@one);
     }
 </style>

@@ -1,6 +1,5 @@
 <template>
-            
-                <article id= 'forms'>
+                           <article id= 'forms'>
                     <h1>Forms</h1>
                     <p>
                         Forms are commonly used to provide user interaction on websites and in web applications. For example, login, registering, commenting, and purchasing. This tutorial shows you how to create accessible forms. The same concepts apply to all forms, whether they are processed client or server-side.
@@ -1177,8 +1176,7 @@
                                                 :ctx= 'buttonClick'
                                             />
                                         </div>
-                                        
-                                    </fieldset>
+                                                                           </fieldset>
                                 </template>
                             </good-vs-bad>
                         </div>
@@ -1930,8 +1928,7 @@
         name: "formElements",
 
         components: {
-            
-            goodVsBad,
+                       goodVsBad,
             vueButton,
             vueAlert,
 
@@ -1965,8 +1962,7 @@
             }, //alerts
         }, //methods
 
-        data() {         
-
+        data() {        
             var d_textareaValue= ''
             var d_passwordValue= ''
             var d_emailValue= ''
@@ -2040,12 +2036,9 @@
             var d_DTinputIcon= 'fas fa-calendar-alt'
 
             var d_alerts= this.alerts
-                
-            var d_labelChecked= "ON"
-            
-            var d_labelUnchecked= "OFF"  
-            
-            var d_options= this.$store.state.warehouse
+                           var d_labelChecked= "ON"
+                       var d_labelUnchecked= "OFF"  
+                       var d_options= this.$store.state.warehouse
 
             var d_size= null
 

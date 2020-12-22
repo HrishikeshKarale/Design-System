@@ -1,8 +1,7 @@
 <template>
     <div class= "navInfo">
             <div class= "FormElementsContent">
-                <form>         
-                    <component-details
+                <form>                            <component-details
                         :compData= 'd_info'
                     >
                         <vue-info 
@@ -13,8 +12,7 @@
                     </component-details>  
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -29,8 +27,7 @@
 
             componentDetails,
             vueInfo,
-            
-        }, //components
+                   }, //components
 
 
         data() {
@@ -50,8 +47,7 @@
                 v: d_booleanTrue,
 
                 d_info: {
-                    
-                    title: 'Info Field',
+                                       title: 'Info Field',
 
                     compName: 'vue-info',
 

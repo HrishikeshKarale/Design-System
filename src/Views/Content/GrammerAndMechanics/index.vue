@@ -1,7 +1,6 @@
 <template>
     <div class= "grammerAndMechanics">   
-            
-                <article id= 'grammerAndMechanics'>
+                           <article id= 'grammerAndMechanics'>
                     <h1 id= "title">Grammer and Mechanics</h1>
                     <p>
                         This guide is to help designers, developers, recruiters, UX-ers, product managers, gurus—anyone who writes public-facing text for COMET.
@@ -85,8 +84,7 @@
                                     Job titles should be capitalized when they come before or after a person’s name (e.g. Content Strategist Jane Smith or Jane Smith, Content Strategist). When referring to a job title without referencing a name, don’t capitalize the job title (e.g. Jane Smith is a content strategist at COMET.)
                                 </p>
                             </div>
-                            
-                            <div
+                                                       <div
                                 id= 'lettersFollowingSlashes' 
                                 class= 'subSection'
                             >
@@ -646,8 +644,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -656,10 +653,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -674,8 +669,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

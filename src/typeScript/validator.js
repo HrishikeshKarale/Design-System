@@ -12,8 +12,7 @@ export const validator= {
         var d_info= null,
         //stores inpu field value
         var d_value= null,
-        
-
+       
         return {
 
             d_danger: d_danger,
@@ -50,8 +49,7 @@ export const validator= {
             var maxlength= this.maxLength
             var minlength= this.minLength
 
-            
-            var pattern= null
+                       var pattern= null
             if(this.pattern.constructor!= RegExp) {
                 pattern= new RegExp (this.pattern)
             }

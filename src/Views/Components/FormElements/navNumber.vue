@@ -45,8 +45,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -134,8 +133,7 @@
 
                 d_number: {
                     id: 4,
-                    
-                    title: 'Number Input Field',
+                                       title: 'Number Input Field',
 
                     compName: 'number-input',
 

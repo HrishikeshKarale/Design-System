@@ -25,10 +25,8 @@ export const store = new Vuex.Store({
     //         rowElements: 20,
     //         searchKey: null,
     //         groupBy: null,
-    //     },        
-    // },
-      
-    mutations: {
+    //     },           // },
+         mutations: {
 
         setURL: function (state, newValue) {
             state.tableURL = newValue
@@ -41,8 +39,7 @@ export const store = new Vuex.Store({
             // console.log('setPage(): ', newValue[1], state.metadata.pageCount)
             if (state.metadata.pageCount<= newValue[1] || newValue[1]>= 1 ) {
                 state.metadata.pageNumber= newValue[1];
-                
-                // context.dispatch('initData', context);
+                               // context.dispatch('initData', context);
                 newValue[0].commit('initializeData', newValue[0])
             }
         }, //setPage
@@ -62,12 +59,10 @@ export const store = new Vuex.Store({
             // console.log('setRowElements set: ', state.metadata.rowElements);
             // console.log('\n');
         }, //setRowElements
-        
-        setSearchKey: function (state, newValue) {
+               setSearchKey: function (state, newValue) {
             // console.log('setSearchKey()')
             state.metadata.searchKey= newValue[1]
-            
-            newValue[0].commit('initializeData', newValue[0])
+                       newValue[0].commit('initializeData', newValue[0])
             // newValue[0].dispatch('initData', newValue[0]);
             // console.log('setSearchKey set: ', state.metadata.searchKey)
             // console.log('\n')
@@ -84,13 +79,11 @@ export const store = new Vuex.Store({
             // console.log('setSortKey set: ', state.metadata.sortKey)
             // console.log('\n')
         }, //setSortKey
-        
-        pagination: function (state, data) {
+               pagination: function (state, data) {
             // console.log('pagination()', data.length, state.metadata.pageNumber,(state.metadata.pageNumber-1) * state.metadata.rowElements, (state.metadata.pageNumber,(state.metadata.pageNumber-1) * state.metadata.rowElements) + state.metadata.rowElements )
             var start = (state.metadata.pageNumber-1) * state.metadata.rowElements;
             var end = start + state.metadata.rowElements;
-            
-            if (data.length< end) {
+                       if (data.length< end) {
                 state.metadata.pageNumber=state.metadata.pageCount
                 // console.log()
                 start = (state.metadata.pageNumber-1) * state.metadata.rowElements;
@@ -116,8 +109,7 @@ export const store = new Vuex.Store({
             // console.log('pagination()', tempPaginatedData, state.pagination)
             // console.log('\n')
         }, //paginationData
-        
-        filterData: function (state, data) {
+               filterData: function (state, data) {
             // console.log('filterData()', 'data: ', state.data)
             var tempdata= state.data
             state.pagination= tempdata
@@ -191,23 +183,19 @@ export const store = new Vuex.Store({
                 .forEach(function eachKey(key) { 
                     state.columns.push(key); // alerts key 
                     // alert(foo[key]); // alerts value
-                });               
-
+                });              
                 if (!state.metadata.sortOrders) {
                     sortOrdersInitialization(state.columns);
                 }
-                
-                context.dispatch('pageCount', context);
-                
-                context.dispatch('setFilteredData', context);
+                               context.dispatch('pageCount', context);
+                               context.dispatch('setFilteredData', context);
                 // context.dispatch('setStatusFilters', context);
                 // console.log(state.pagination.data, state.metadata.pageNumber)
                 context.dispatch('setPagination', context);
                 // console.log(state.pagination.data, state.metadata.pageNumber)
                 // console.log('\n')
             } //processData
-            
-
+           
             function sortOrdersInitialization (tempObjectCols) {
                 // console.log('sortOrdersInitialization()')
                 var tempSortOrders= [];
@@ -224,8 +212,7 @@ export const store = new Vuex.Store({
     },
 
     actions: {
-        
-        async initData (context, link) {
+               async initData (context, link) {
             // console.log('initDataAction: ', link)
             store.commit('setTableURL', link)
             context.commit('initializeData', context)
@@ -270,14 +257,12 @@ export const store = new Vuex.Store({
             context.commit('setRowElements', [context, newValue])
             // console.log('\n')
         }, //setRowElements
-        
-        async setPage (context, newValue) {
+               async setPage (context, newValue) {
             // console.log('setPageAction: ', newValue)
             context.commit('setPage', [context, newValue])
             // console.log('\n')
         }, //setPage
-        
-        async selectRow (context, newValue) {
+               async selectRow (context, newValue) {
             // console.log('setSelectedRowAction: ',newValue)
             context.commit('setSelectedRow',  [context, newValue])
             // console.log('\n')

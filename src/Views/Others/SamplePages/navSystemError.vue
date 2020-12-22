@@ -48,20 +48,15 @@
     data () {
 
       var d_modalTitle= 'Modal title'
-      
-      var d_text= 'openModal'
-      
-      var d_tag= 'approveText'
-      
-      var d_icon= 'fas fa-eject'
-      
-      var d_ctx= this.consoleClick
+           var d_text= 'openModal'
+           var d_tag= 'approveText'
+           var d_icon= 'fas fa-eject'
+           var d_ctx= this.consoleClick
 
       var d_showModal= false
 
       return {
-        
-        d_modalTitle: d_modalTitle,
+               d_modalTitle: d_modalTitle,
 
         d_text: d_text,
 

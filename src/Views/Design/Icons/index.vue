@@ -40,8 +40,7 @@
                     <li>follow the simple over detailed principle</li>
                     <li>pick a logically related symbol, like a stethoscope for a doctor, or a shovel for gardening</li>
                 </ul>
-            </div>        
-            <div class= 'subSection'>
+            </div>                   <div class= 'subSection'>
                 <h4>Professional over fun</h4>
                 <p>
                     The design of an icon assists in communicating tone, much like the content it’s paired with. Focus on the effectiveness of the message instead of its ability to delight. In other words, prioritize representing the function, rather than how nice it looks.
@@ -249,8 +248,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -259,10 +257,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -277,8 +273,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

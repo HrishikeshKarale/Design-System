@@ -41,8 +41,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -101,8 +100,7 @@
                 d_accept: d_accept,
 
                 d_booleanTrue: d_booleanTrue,
-                
-                d_alerts: d_alerts,
+                               d_alerts: d_alerts,
 
                 d_danger: null,
 

@@ -137,8 +137,7 @@
         animation-name: checkmark;
         transform: scaleX(-1) rotate(135deg);
       }
-      
-      &.block {
+           &.block {
         display: block;
 
         &:after {

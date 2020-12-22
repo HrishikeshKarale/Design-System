@@ -41,8 +41,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -55,8 +54,7 @@
         name: "navRadio",
 
         components: {
-            
-            componentDetails,
+                       componentDetails,
             radioInputTest
         }, //components
 
@@ -81,20 +79,16 @@
         data() {
 
             var d_label= "Warehouse"
-            
-            var d_name= "radioField"
-            
-            var d_value= ''
-            
-            var d_radioValue= null
+                       var d_name= "radioField"
+                       var d_value= ''
+                       var d_radioValue= null
 
             var d_options= this.$store.state.warehouse
 
             var d_booleanTrue= true
 
             var d_alerts= this.alerts
-            
-            return {
+                       return {
 
                 d_label: d_label,
 

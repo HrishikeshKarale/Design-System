@@ -36,10 +36,8 @@
         flex-wrap: nowrap;
 
         & > div {
-         
-            &.master {
-            
-                & > div{
+                    &.master {
+                           & > div{
                     display: flex;
                     flex-direction: column;
                     margin-bottom: 8px;

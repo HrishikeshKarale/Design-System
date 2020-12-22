@@ -68,8 +68,7 @@
 
     mapState,
 
-    data () {
-      
+    data () {     
       var d_booleanTrue= false
       return {
         d_booleanTrue: d_booleanTrue,
@@ -89,8 +88,7 @@
     }, //computed
     
     components: {
-      
-      vueImg,
+           vueImg,
     }, //components
   }
 </script>
@@ -139,8 +137,7 @@
               flex-direction: column;
               border-radius: 4px;
               padding: 8px 16px;
-            
-              .boxShadow(@two);
+                         .boxShadow(@two);
             }
 
             & .levelThree {

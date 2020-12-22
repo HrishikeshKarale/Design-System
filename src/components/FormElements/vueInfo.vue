@@ -26,8 +26,7 @@
         name: 'vueInfo',
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: true,
                 type: String,

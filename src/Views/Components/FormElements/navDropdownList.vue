@@ -43,8 +43,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -79,14 +78,12 @@
         }, //methods
 
         data() {
-            
-            var d_label= "Warehouse"
+                       var d_label= "Warehouse"
 
             var d_name= "dropdownField"
 
             var d_dropdownValue= ''
-            
-            var d_options= this.$store.state.warehouse
+                       var d_options= this.$store.state.warehouse
 
             var d_size= 0
 
@@ -95,8 +92,7 @@
             var d_inputIcon= 'fas fa-warehouse'
 
             var d_alerts= this.alerts
-            
-            return {
+                       return {
 
                 d_label: d_label,
 
@@ -125,8 +121,7 @@
                     compName: 'dropdown-list',
 
                     import: 'import dropdownList from "@/components/FormElements/dropdownList"',
-                    
-                    description: "<p>The &lt;dropdown-list&gt; element is used to create a drop-down list.</p>\
+                                       description: "<p>The &lt;dropdown-list&gt; element is used to create a drop-down list.</p>\
                     <p>The &lt;option&gt;</a> tags inside the &lt;select&gt; element define the available options in the list.</p>",
 
                     attributes:[

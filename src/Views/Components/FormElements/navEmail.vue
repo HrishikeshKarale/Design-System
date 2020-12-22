@@ -21,8 +21,7 @@
                 </div>
             </div>
             <div class= "FormElementsContent">
-                <form>               
-                    <component-details
+                <form>                                  <component-details
                         :compData= 'd_email'
                     >
                         <email-input 
@@ -45,8 +44,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -64,8 +62,7 @@
             componentDetails,
             emailInput
         }, //components
-        
-        methods: {
+               methods: {
 
             alerts: function (type, message) {
                 if (type== 'error') {
@@ -126,8 +123,7 @@
                 d_warning: null,
 
                 d_email: {
-                    
-                    title: 'Email Input Field',
+                                       title: 'Email Input Field',
 
                     compName: 'email-input',
 

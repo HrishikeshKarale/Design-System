@@ -50,8 +50,7 @@ import components from '@/Views/Components'
     import navAlert from '@/Views/Components/Alerts'
             import navAlertProactive from '@/Views/Components/Alerts/navAlertProactive'
             import navAlertReactive from '@/Views/Components/Alerts/navAlertReactive'
-        
-import grid from '@/Views/Grids'
+       import grid from '@/Views/Grids'
 
 import others from '@/Views/Others'
     import samplePages from '@/Views/Others/SamplePages'
@@ -146,8 +145,7 @@ export default new Router({
                 name: 'productContent',
                 component: productContent
             },
-            
-            {
+                       {
                 path: '/content/naming',
                 name: 'naming',
                 component: naming

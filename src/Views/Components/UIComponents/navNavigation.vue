@@ -5,8 +5,7 @@
             >
                 <side-nav :logo-link="d_logoLink" :nav="d_nav" />
             </component-details>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -19,8 +18,7 @@
 
     export default {
         name: 'navNavigation',
-        
-        mapState,
+               mapState,
 
         data () {
 
@@ -105,11 +103,9 @@
         }, //methods
 
         components: {
-            
-            sideNav,
+                       sideNav,
             componentDetails,
-            
-        }, //components
+                   }, //components
     } //default
 </script>
 

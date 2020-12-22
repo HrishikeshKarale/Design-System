@@ -1,7 +1,6 @@
 <template>
     <div class= "helpDocumentation">   
-            
-                <article id= 'helpDocumentation'>
+                           <article id= 'helpDocumentation'>
                     <h1>Help documentation</h1>
                     <p>
                         After you build an app or other integration, writing help documentation will show users how to use it.
@@ -54,8 +53,7 @@
                                     <li>Experienced problem-solvers</li>
                                     <li>Self serve through forums and help documentation</li>
                                 </ul>
-                            </div>                    
-                        </div>
+                            </div>                                           </div>
                         <div class= 'subSection'>
                             <h4>Audience Expectations</h4>
                             <p>
@@ -96,8 +94,7 @@
                                     <li>Code fragments</li>
                                     <li>Pointers to information sources</li>
                                 </ul>
-                            </div>                    
-                        </div>
+                            </div>                                           </div>
                         <p>
                             This is just one way to imagine the variety of users that fit into our audience. However we imagine their skill level, our aim for documentation remains the same: to accommodate a wide range of users and their objectives. We can do this by presenting information in a way that’s inclusive of different skill levels, different learning styles, and different workflows.
                         </p>
@@ -392,8 +389,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -402,10 +398,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -420,8 +414,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

@@ -105,8 +105,7 @@
         mapActions,
 
         components: {
-            
-            vueButton,
+                       vueButton,
             vueWizard,
             vueTable,
 
@@ -306,8 +305,7 @@
                         display: flex;
                         flex-direction: column;
                         flex-wrap: wrap;
-                    
-                        & > div {
+                                           & > div {
                             width: fit-content;
                             height: fit-content;
 

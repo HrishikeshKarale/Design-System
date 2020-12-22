@@ -165,8 +165,7 @@
                 this.d_danger= null
                 this.d_warning= null
                 //temporarily stores values passed to the function
-                var checkboxValue= []               
-                //stores the index location within the above 'checkboxValue[]' of the value passed down to the function.
+                var checkboxValue= []                              //stores the index location within the above 'checkboxValue[]' of the value passed down to the function.
                 var index= 0;
 
                 //check if the a value is passed by the function
@@ -185,8 +184,7 @@
                         // console.log(typeof value, this.d_checkboxValue, checkboxValue, value)
                         index= checkboxValue.indexOf(value);
                         // console.log(index)
-                        
-                        //if value already exist in checkboxValue, remove value from checkboxValue
+                                               //if value already exist in checkboxValue, remove value from checkboxValue
                         if (index!=-1) {
                             checkboxValue.splice(index, 1)
                         }
@@ -236,8 +234,7 @@
 
                 //if val is a singlevalue (boolean), store it in d_checkboxValue for future manipulation
                 if (typeof val== 'boolean') {
-                    this.d_checkboxValue= val        
-                }
+                    this.d_checkboxValue= val                       }
                 //if val is an array check if each value towards acceptable values as input
                 else if (typeof val== 'array') {
                     var tempVal= []
@@ -260,8 +257,7 @@
 
                     //save acceptable values back to d_checkboxValue for future manipulation
                     this.d_checkboxValue= tempVal
-                    
-                    //if errorVal exists trigger an alert and set warning message
+                                       //if errorVal exists trigger an alert and set warning message
                     if (alertVal) {
                         this.d_danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the checkbox options.'
                     }

@@ -62,10 +62,8 @@
                 d_toggled: null,
             } //return
         }, //data
-        
-        props: {
-            
-            //sets heading/Label for multitoggle 
+               props: {
+                       //sets heading/Label for multitoggle 
             label: {
                 required: false,
                 type: String,
@@ -166,8 +164,7 @@
                 this.$emit("input", !this.d_toggled);
             }, //toggle
         }, //methods
-        
-        created() {
+               created() {
 
             //store values passed as props into d_toggled for future manipulation 
             if (this.value) {
@@ -204,8 +201,7 @@
     @round: 16px;
 
     .multiToggle {
-        width: fit-content;        
-
+        width: fit-content;       
         .checkbox-toggle {
             display: flex;
             flex-direction: row;
@@ -228,8 +224,7 @@
                     background: #ffffff;
                     border-color: @secondaryColor;
                 }
-                
-                &.unchecked {
+                               &.unchecked {
                     transition: all 350ms;
                     background: #e0e0e0;
                 }

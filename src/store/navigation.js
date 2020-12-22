@@ -245,8 +245,7 @@ var data= [
                         name: 'Step Wizard',
                         component: 'navWizard',
                         icon: "fas fa-shoe-prints",
-                    }                            
-                ]
+                    }                                           ]
             },
             {
                 id: 4, 

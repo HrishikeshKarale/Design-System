@@ -11,8 +11,7 @@
                     :maxlength= 'd_maxlength'
                 />
             </component-details>
-        
-        <div>
+               <div>
             <h2>Email Input</h2>
             <email-input 
                 :label= "d_Elabel"
@@ -104,8 +103,7 @@
 
     export default {
         name: 'navAlertsProactive',
-        
-        data () {
+               data () {
             var d_danger= 'this is an error' 
 
             var d_warning= '' 
@@ -155,8 +153,7 @@
             var d_DTinputIcon= 'fas fa-calendar-alt'
 
             var d_alerts= this.alerts
-            
-            var d_options= this.$store.state.warehouse
+                       var d_options= this.$store.state.warehouse
 
             var d_size= null
 
@@ -259,8 +256,7 @@
                 }, //alert
             } //return
         }, //data
-        
-        methods: {
+               methods: {
 
             //handels alerts thrown by the component
             alerts: function (type, message) {
@@ -282,9 +278,7 @@
             inputResponse,
             vueButton,
             componentDetails,
-            
-            
-            emailInput,
+                                  emailInput,
             searchableDropdownList,
             checkboxInput,
             vueDate,

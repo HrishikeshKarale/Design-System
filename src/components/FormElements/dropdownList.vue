@@ -71,8 +71,7 @@
 
                 //stores errors thrown by the input fields 
                 d_danger: null,
-                
-                d_warning: null,
+                               d_warning: null,
 
                 d_BooleanTrue: true,
 
@@ -82,8 +81,7 @@
         }, //data
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -225,8 +223,7 @@
                 //if not trigger alert and set error message
                 else {
                     this.error= 'Invalid Input: The preset value '+val+' is not included in the options for the dropdown.'
-                }        
-            }
+                }                   }
             //if val is an array check if each value towards acceptable values as input
             else if (multiple && typeof val== 'array') {
                 var tempVal= []
@@ -247,8 +244,7 @@
 
                 //save acceptable values back to d_selectedOption for future manipulation
                 this.d_selectedOption= tempVal
-                
-                //if errorVal exists trigger an alert and set warning message
+                               //if errorVal exists trigger an alert and set warning message
                 if (alertVal) {
                     this.d_danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the options for the dropdown.'
                 }
@@ -261,8 +257,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate()
             }

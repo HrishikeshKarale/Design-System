@@ -112,8 +112,7 @@
                     />
                 </vue-form>
             </component-details>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -136,16 +135,14 @@
         mapState,
 
         data () {
-            
-            var d_label= "Warehouse"
+                       var d_label= "Warehouse"
 
             var d_name= "searchableDropdownField"
 
             var d_value= ''
 
             var d_searchDropboxValue= ''
-            
-            var d_options= this.$store.state.warehouse
+                       var d_options= this.$store.state.warehouse
 
             var d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
 
@@ -158,8 +155,7 @@
             var d_inputIcon= 'fas fa-warehouse'
 
             var d_alerts= this.alerts
-            
-            return {
+                       return {
 
                 d_label: d_label,
 
@@ -225,8 +221,7 @@
         }, //data
 
         computed: {
-            
-            ...mapState (['warehouse'] ),
+                       ...mapState (['warehouse'] ),
         },
 
         components: {

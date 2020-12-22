@@ -220,8 +220,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 
     export default {
         name: 'spacing',
-        
-        data() {
+               data() {
             const img1 = require("@/assets/design/spacing/77cbbfac15fc417248ff564e03cbe3a2.png");
             const img2 = require("@/assets/design/spacing/edee413a2250a2f7b9696096035c6601.png");
             const img3 = require("@/assets/design/spacing/c555cdf9647f5f8817fe8b1685fdade3.png");

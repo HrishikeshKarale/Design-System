@@ -3,8 +3,7 @@
             <component-details
                 :compData= 'd_vueButton'
                 :d_attr= 'd_attr'
-            >        
-                <vue-button 
+            >                       <vue-button 
                     :type= 'd_type'
                     :tag= "d_tag"
                     :text= "d_text"
@@ -16,8 +15,7 @@
                     :ctx= 'd_ctx'
                 />
             </component-details>
-        
-    </div><!--buttons-->
+           </div><!--buttons-->
 </template>
 
 <script>
@@ -28,8 +26,7 @@
 
     export default {
         name: 'navButton',
-        
-        data () {
+               data () {
 
             var d_type= 'button'
 
@@ -138,13 +135,11 @@
                 }, //d_vueButton
             } //return
         }, //data
-        
-        components: {
+               components: {
 
             componentDetails,
             vueButton,
-            
-        }, //components
+                   }, //components
 
         methods: {
 

@@ -94,12 +94,9 @@
             var d_ctx= this.clearSelection
 
             var d_danger= null
-                        
-            var d_warning= null
-            
-            var d_success= null
-            
-            var d_info= null
+                                   var d_warning= null
+                       var d_success= null
+                       var d_info= null
 
             return {
 
@@ -123,12 +120,9 @@
 
                 //stores errors thrown by the input fields
                 d_danger: d_danger,
-                            
-                d_warning: d_warning,
-                
-                d_success: d_success,
-                
-                d_info: d_info
+                                           d_warning: d_warning,
+                               d_success: d_success,
+                               d_info: d_info
             } //return
         }, //data
 
@@ -305,8 +299,7 @@
             }
 
             & > label {
-                
-                & > input {
+                               & > input {
                     display: none;
                 }
             }

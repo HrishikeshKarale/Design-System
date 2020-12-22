@@ -75,8 +75,7 @@
 
     export default {
         name: 'fileInput',
-        
-        data () {
+               data () {
 
             var d_type= 'button'
 
@@ -99,8 +98,7 @@
               d_booleanTrue: d_booleanTrue,
 
               d_form: d_form,
-                
-                //stores file uploaded values
+                               //stores file uploaded values
                 d_fileValue: null,
             } //return
         }, //data
@@ -119,8 +117,7 @@
                 //loads files in temp variable tempFiles
                 var tempid= '#'+this.name
                 var tempFiles= document.querySelector(tempid).files;
-                
-                //if tempFiles is not empty, load files in filelist array
+                               //if tempFiles is not empty, load files in filelist array
                 if (tempFiles && tempFiles.length>0) {
 
                     for (var file in tempFiles) {
@@ -151,8 +148,7 @@
         }, //methods
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -242,8 +238,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate()
             }

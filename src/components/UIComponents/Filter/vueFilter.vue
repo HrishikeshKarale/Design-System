@@ -93,8 +93,7 @@
                 required: true,
                 type: Object
             },
-            
-            selected: {
+                       selected: {
                 required: false,
                 type: Object,
                 default: null
@@ -159,8 +158,7 @@
         & > div {
 
             &:first-child {
-            
-                &.open {
+                           &.open {
                     background-color: @backgroundColor;
                     width: fit-content;
                     border-radius: @borderRadius;

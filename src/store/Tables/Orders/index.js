@@ -17,7 +17,6 @@ const state= {
             end: null,
             rowElements: 20,
             searchKey: null,
-        },        
-    };
+        },           };
 
     export {state as orderState}

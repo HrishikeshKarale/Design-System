@@ -45,8 +45,7 @@
                     </component-details>  
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -77,14 +76,11 @@
         }, //methods
 
         data() {
-            
-            var d_label= "Date"
-            
-            var d_name= "dateField"
+                       var d_label= "Date"
+                       var d_name= "dateField"
 
             var d_value= '2018-12-12'
-            
-            var d_dateValue= null
+                       var d_dateValue= null
 
             var d_min= '2000-12-12'
 
@@ -94,21 +90,16 @@
                             //"^d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
 
             var d_booleanTrue= true
-            
-            var d_inputIcon= 'fas fa-calendar-alt'
-            
-            var d_alerts= this.alerts
+                       var d_inputIcon= 'fas fa-calendar-alt'
+                       var d_alerts= this.alerts
 
 
             return {
-            
-                d_label: d_label,
-                
-                d_name: d_name,
+                           d_label: d_label,
+                               d_name: d_name,
 
                 d_value: d_value,
-                
-                d_dateValue: d_dateValue,
+                               d_dateValue: d_dateValue,
 
                 d_pattern: d_pattern,
 
@@ -117,18 +108,15 @@
                 d_max: d_max,
 
                 d_booleanTrue: d_booleanTrue,
-                
-                d_inputIcon: d_inputIcon,
-                
-                d_alerts: d_alerts,
+                               d_inputIcon: d_inputIcon,
+                               d_alerts: d_alerts,
 
                 d_danger: null,
 
                 d_warning: null,
 
                 d_date: {
-                    
-                    title: 'Date Input Field',
+                                       title: 'Date Input Field',
 
                     compName: 'vue-date',
 

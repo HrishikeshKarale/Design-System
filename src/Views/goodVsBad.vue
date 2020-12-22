@@ -123,8 +123,7 @@
           & > div {
             padding: @spaceMd @spaceLg;
           }
-          
-          &.good {
+                   &.good {
             & > span {
               color: @successText;
               background-color: @successBackground;

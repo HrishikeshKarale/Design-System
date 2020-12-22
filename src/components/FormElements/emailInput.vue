@@ -72,8 +72,7 @@
         }, //data
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -254,8 +253,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate()
             }
@@ -297,7 +295,6 @@
 
     .emailInput {
         min-width: 160px;
-        
-        .inputcss();
+               .inputcss();
     }
 </style>

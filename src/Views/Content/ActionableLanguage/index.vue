@@ -1,8 +1,7 @@
 <template>
     <div class= "actionableLanguage">
         https://polaris.shopify.com/content/actionable-language#navigation   
-            
-                <article id= 'actionableLanguage'>
+                           <article id= 'actionableLanguage'>
                     <h1>Actionable Language</h1>
                     <p>
                         Merchants use COMET to get things done. Content should be written and structured to help them understand and take the most important actions.
@@ -328,8 +327,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -338,10 +336,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -356,8 +352,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

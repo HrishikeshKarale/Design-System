@@ -65,6 +65,5 @@
             // return h(input, {attrs: {type: "text", id: 'id', class:'btn' }})
             // return h('input', {attrs: {props}},[h('p', 'Example Text')]);
         }
-        
-    }
+           }
 </script>

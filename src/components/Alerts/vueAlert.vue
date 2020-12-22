@@ -38,8 +38,7 @@
     name: 'alert',
 
     data () { 
-      
-      var d_alertIcon= ''
+           var d_alertIcon= ''
 
       var d_close= false
 
@@ -172,8 +171,7 @@
 
     &.danger {
       border-color: @dangerText;
-      
-      h5, span {
+           h5, span {
         color: @dangerText;
       }
     }
@@ -212,8 +210,7 @@
         flex-direction: column;
 
         & > .alertMessage {
-          
-          & > p {
+                   & > p {
             font-size: 16px;
           }
         }
@@ -222,7 +219,6 @@
           display: flex;
           flex-direction: row-reverse;
         }
-      }      
-    }
+      }         }
   }
 </style>

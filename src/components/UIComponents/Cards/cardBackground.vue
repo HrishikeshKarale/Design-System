@@ -13,8 +13,7 @@
         name: 'cardBackground',
 
         props: {
-            
-            low: {
+                       low: {
                 required: false,
                 type: String,
                 validator: function (value) {
@@ -42,8 +41,7 @@
     .cardBackground {
         border-radius: @borderRadius;
         padding: @spaceMd @spaceLg;
-        
-        &.idle-1 {
+               &.idle-1 {
             .boxShadow(@one);
 
             &:hover.hover-1 {

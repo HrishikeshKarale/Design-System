@@ -71,8 +71,7 @@
             <!-- <pre><code>&lt;ul&gt;<br>  &lt;li<br>    v-for&#61;&bdquo;game in games&bdquo;<br>    v-if&#61;&bdquo;game.isActive&bdquo;<br>    :key&#61;&bdquo;game.slug&bdquo;<br>  &gt;<br>    &#123;&#123; game.title &#125;&#125;<br>  &lt;li&gt;<br>&lt;/ul&gt;</code></pre>
             <p>Will be evaluated similar to the following:</p>
             <pre><code>this.games.map&#40;function &#40;game&#41; &#123;<br>  if &#40;game.isActive&#41; &#123;<br>    return game.title<br>  &#125;<br>&#125;&#41;</code></pre> -->
-            
-            <p>We can see here that we’ll have to iterate though the entire list of <code>games</code>, whether or not the active <code>games</code> have been changed or not.</p>
+                       <p>We can see here that we’ll have to iterate though the entire list of <code>games</code>, whether or not the active <code>games</code> have been changed or not.</p>
             <p>In other frameworks, like Angular, this practice would just not compile <em>&#40;</em><code><em>*ngIf</em></code><em> can't go in the same element where there is an </em><code><em>*ngFor</em></code><em>&#41;</em>.</p>
             <h3>Actions must always&nbsp;return</h3>
             <p>This is fruit of struggling with <code>async</code>/<code>await</code> and Vuex actions.</p>

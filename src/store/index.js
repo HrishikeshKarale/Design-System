@@ -46,8 +46,7 @@ export const store = new Vuex.Store({
         },
 
         colors: colorPalette,
-                
-        cardDetails: {
+                       cardDetails: {
             cols: [
                 'Name',
                 'Emp no',
@@ -147,10 +146,8 @@ export const store = new Vuex.Store({
         navText: navText,
 
         category: ['small', 'standard', 'large', 'fullWidth', 'border-sm', 'border', 'border-lg','border-fwidth', 'text-sm', 'text', 'text-lg', 'icon-sm', 'icon', 'icon-lg']
-        
-    },
-      
-    mutations: {
+           },
+         mutations: {
 
         setTableURL: function (state, newValue) {
             state.tableURL = newValue
@@ -208,8 +205,7 @@ export const store = new Vuex.Store({
             state.metadata.rowElements = newValue[1];
             newValue[0].commit('initializeData', newValue[0]);
         }, //setRowElements
-        
-        setSearchKey: function (state, newValue) {
+               setSearchKey: function (state, newValue) {
             state.metadata.searchKey= newValue[1]
             newValue[0].commit('initializeData', newValue[0])
         }, //setSearchKey
@@ -225,8 +221,7 @@ export const store = new Vuex.Store({
         paginatedData: function (state, data) {
             var start = (state.metadata.pageNumber-1) * state.metadata.rowElements;
             var end = start + state.metadata.rowElements;
-            
-            if (data.length< end) {
+                       if (data.length< end) {
                 state.metadata.pageNumber=state.metadata.pageCount
                 start = (state.metadata.pageNumber-1) * state.metadata.rowElements;
                 end = start + state.metadata.rowElements;
@@ -248,8 +243,7 @@ export const store = new Vuex.Store({
             var tempPaginatedData= data.slice(start, end);
             state.paginatedData= tempPaginatedData
         }, //paginationData
-        
-        filteredData: function (state, data) {
+               filteredData: function (state, data) {
             var tempdata= state.specialTable
             state.paginatedData= tempdata
             var sortKey = state.metadata.sortKey
@@ -307,19 +301,15 @@ export const store = new Vuex.Store({
                 Object.keys(dataObject[0])
                 .forEach(function eachKey(key) { 
                     state.columns.push(key); // alerts key 
-                });               
-
+                });              
                 if (!state.metadata.sortOrders) {
                     sortOrdersInitialization(state.columns);
                 }
-                
-                context.dispatch('setPageCount', context);
-                
-                context.dispatch('setFilteredData', context);
+                               context.dispatch('setPageCount', context);
+                               context.dispatch('setFilteredData', context);
                 context.dispatch('setPagination', context);
             } //initDataset
-            
-
+           
             function sortOrdersInitialization (tempObjectCols) {
                 var tempSortOrders= [];
 
@@ -345,14 +335,12 @@ export const store = new Vuex.Store({
     },
 
     actions: {
-        
-        async initData (context, link) {
+               async initData (context, link) {
             store.commit('setTableURL', link)
             context.commit('initializeData', context)
             // console.log('\n')
         }, //initData
-        
-        async setData (context, link) {
+               async setData (context, link) {
             var xmlhttp = new XMLHttpRequest();
             store.commit('setEmployeeURL', link)
             context.commit('setData', xmlhttp)
@@ -388,12 +376,10 @@ export const store = new Vuex.Store({
         async setRowElements (context, newValue) {
             context.commit('setRowElements', [context, newValue])
         }, //setRowElements
-        
-        async setPage (context, newValue) {
+               async setPage (context, newValue) {
             context.commit('setPage', [context, newValue])
         }, //setPage
-        
-        async selectRow (context, newValue) {
+               async selectRow (context, newValue) {
             context.commit('setSelectedRow',  [context, newValue])
         }, //gotoPrevPage
     },

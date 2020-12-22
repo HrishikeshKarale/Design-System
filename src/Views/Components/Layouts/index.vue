@@ -21,8 +21,7 @@
                 <p>This layout defines a layout where the content is divided into two parts a subnavigation/section that sticks to the right whereas the main content stays in the content section of the parent payout.</p>
             </li>
             <li>
-                
-                <a href= '#goldenRatio'>Golden Ratio Layout</a>
+                               <a href= '#goldenRatio'>Golden Ratio Layout</a>
                 <p>This layout defines a layout where the content placed according to the golden ratio.</p>
             </li>
             <li>
@@ -90,8 +89,7 @@
                     Detail (right side) Content
                 </div>
             </div>
-            
-            <div>
+                       <div>
                 <h2 id= 'EAL'>Enterprise App Layout</h2>
                 <p>This Layout defines the basic structure of our vue application and contains 3 slots.</p>
                 <p>These 3 slots, namely:
@@ -213,8 +211,7 @@
                             height: fit-content;
                             width: 800px;'
                 >
-                                
-                        <template slot= 'left'>
+                                                       <template slot= 'left'>
                             <div style= ' width: 400px;
                                     height: 480px;
                                 background-color: yellow;'
@@ -362,8 +359,7 @@
                             />
                         </template>
                         <template slot= 'content'>
-                            
-                            <div 
+                                                       <div 
                                 style= ' height: fit-content;
                                         width: fit-content;
                                         background-color: lightblue;'
@@ -408,8 +404,7 @@
         mapState,
 
         mapActions,
-        
-        data () {
+               data () {
 
             var d_title= 'Order Details Table'
 

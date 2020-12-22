@@ -414,7 +414,7 @@
       const d_filterSelected= {
         type: ['warehouse'],
         value:['Rochester']
-      }      
+      }
       const d_columns= [
         'Order Number',
         'Status',
@@ -526,8 +526,7 @@
         const info= this.d_info
         const details= new Array()
         // console.log('details: ', sku, quantity, info)
-          
-        if (quantity && sku) {
+                 if (quantity && sku) {
           // console.log('this', this.d_SKUdetails['details'][0])
           if (this.d_SKUdetails['details'][0]){
             this.d_SKUdetails['details'].push(new Array(sku, quantity, info))
@@ -542,8 +541,7 @@
           // console.log('ERROR in details')
         }
       }, //createCard
-      
-      nav: function (id) {
+           nav: function (id) {
         this.d_selected= id
 
         if (id) {
@@ -610,8 +608,7 @@
       vueHeader,
       vueTable,
       radioInput,
-      
-      vueWizard,
+           vueWizard,
       searchableDropdownList,
       textInput,
       checkboxInput,
@@ -651,21 +648,17 @@
             flex-direction: row;
             justify-content: space-between;
             justify-items: center;
-            
-            & > div {
-              
-               > div {
+                       & > div {
+                            > div {
               &:last-child{
-              
-                  background-color: red;
+                               background-color: red;
                 }
               }
             }
           }
         }
       }
-      
-      & > .tagCards {
+           & > .tagCards {
         background-color: transparent;
         margin-bottom: 16px;
 

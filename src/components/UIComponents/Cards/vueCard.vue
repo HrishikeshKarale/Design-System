@@ -73,8 +73,7 @@
 
     export default {
         name: 'vueCard',
-        
-        props: {
+               props: {
 
             title: {
                 required: false,
@@ -124,8 +123,7 @@
                 type: Boolean,
                 default: null
             },
-            
-            low: {
+                       low: {
                 type: String,
                 validator: function (value) {
                     // console.log(value)
@@ -211,30 +209,25 @@
                             min-width: fit-content;
                             margin-right: 16px;
                         }
-                        
-                        &:last-child {
+                                               &:last-child {
                             width: 100%;
                         }
-                    }                    
-                }
+                    }                                   }
             }
 
             .col2 {
                 float: right;
             }
         }
-        
-        .row2 {
+               .row2 {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            
-            & > div {
+                       & > div {
                 margin-right: 16px;
                 color: @secondaryColor;
             }
 
         }
     }
-       
-</style>
+      </style>

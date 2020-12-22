@@ -18,8 +18,7 @@
                     @setRowElements= 'setRowElements'
                 />
             </component-details>
-        
-    </div><!--uiComponents-->
+           </div><!--uiComponents-->
 </template>
 
 <script>
@@ -45,8 +44,7 @@
         data() {
 
             var d_title= 'Table Name'
-            
-            var d_low= '1'
+                       var d_low= '1'
 
             var d_table= {
 
@@ -114,14 +112,12 @@
                 d_title: d_title,
 
                 d_low: d_low,
-                    
-                d_table: d_table,
+                                   d_table: d_table,
             } //return
         }, //data
 
         methods: {
-            
-            ...mapActions(
+                       ...mapActions(
                 [
                     'selectRow',
                     'setSortKey',
@@ -161,7 +157,6 @@
 
             vueTable,
             componentDetails,
-            
-        }, //components
+                   }, //components
     } //default
 </script>

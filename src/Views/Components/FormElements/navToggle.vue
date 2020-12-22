@@ -11,8 +11,7 @@
                 </div>
             </div>
             <div class= "FormElementsContent">
-                <form>         
-                    <component-details
+                <form>                            <component-details
                         :compData= 'd_multiToggle'
                     >
                         <multi-toggle 
@@ -30,8 +29,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -62,10 +60,8 @@
                 var d_toggle= null
 
                 var d_booleanTrue= true
-                
-                var d_labelChecked= "ON"
-                
-                var d_labelUnchecked= "OFF"
+                               var d_labelChecked= "ON"
+                               var d_labelUnchecked= "OFF"
 
                 return {
 
@@ -84,8 +80,7 @@
                     d_booleanTrue: d_booleanTrue,
 
                 d_multiToggle: {
-                    
-                    title: 'Multi-Toggle Input Field',
+                                       title: 'Multi-Toggle Input Field',
 
                     compName: 'multi-toggle',
 

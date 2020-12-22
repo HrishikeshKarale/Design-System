@@ -11,8 +11,7 @@
                     :description= 'd_message'
                 />
             </component-details>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -24,16 +23,13 @@
 
     export default {
         name: 'navAlertsReactive',
-        
-        data () {
+               data () {
 
             var d_alertType= ['danger', 'warning', 'info', 'success']
 
             var d_alertMessage= 'Order creation failed.'
-                
-            var d_message= 'Please select a valid shipping method and try again.'
-            
-            var d_type= 'button'
+                           var d_message= 'Please select a valid shipping method and try again.'
+                       var d_type= 'button'
 
             var d_tag= 'closeAlertButton'
 
@@ -58,8 +54,7 @@
                 d_alertType: d_alertType,
 
                 d_alertMessage: d_alertMessage,
-                
-                d_message: d_message,
+                               d_message: d_message,
 
                 d_type: d_type,
 
@@ -135,8 +130,7 @@
                 }, //d_alert
             } //return
         }, //data
-        
-        methods: {
+               methods: {
 
             consoleClick: function () {
                 // console.log('ButtonClick');
@@ -148,7 +142,6 @@
             vueAlert,
             vueButton,
             componentDetails,
-            
-        }, //components
+                   }, //components
     } //default
 </script>

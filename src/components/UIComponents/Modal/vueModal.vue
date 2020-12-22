@@ -15,8 +15,7 @@
                 :form= "d_form"
                 :ctx= 'd_ctx'
             />
-              
-            <vue-button 
+                         <vue-button 
                 v-else
                 :type= 'd_type'
                 tag= '"open"+tag+"Modal"'
@@ -124,8 +123,7 @@
                 d_showModal: d_showModal
             } //return
         }, //data
-        
-        props: {
+               props: {
 
             modalTitle: {
                 required: false,
@@ -175,8 +173,7 @@
         }, //methods
 
         created() {
-            
-            this.d_showModal= this.showModal
+                       this.d_showModal= this.showModal
         }, //created
     } //default
 </script>

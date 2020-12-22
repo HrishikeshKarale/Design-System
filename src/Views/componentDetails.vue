@@ -210,8 +210,7 @@
     for (var attr in attributes) {
       if (attributes[attr].type== type) {
       // console.log('change: ', attributes[attr].value, value, type)
-      
-      //dropdown list
+           //dropdown list
       if (Array.isArray(value)) {
         // this.d_attr= value.type
         attributes[attr].value= value.value
@@ -267,8 +266,7 @@
         var D_attrValue= d_attr.value[index]
 
         for (val in D_attrValue) {
-        
-        if (value==D_attrValue[val]) {
+               if (value==D_attrValue[val]) {
           tempval+='<label>'+D_attrValue[val]+'</label>' 
           defaultVal+=''+D_attrValue[val]+'' 
         }
@@ -288,8 +286,7 @@
         defaultTempStr= '\t\t'+type+'= "'+defaultVal+'"\n';
       }
       }
-      
-      tempStr= '\t\t'+type+'= "'+value+'"\n';
+           tempStr= '\t\t'+type+'= "'+value+'"\n';
       defaultTempStr= '\t\t'+type+'= "'+value+'"\n';
     }
     else if (typeof value== 'array'|| typeof value== 'object') {
@@ -406,8 +403,7 @@
       &.attributeTable {
 
         & > table {
-        
-        & > body {
+               & > body {
 
           & > tr {
           background: white;
@@ -453,8 +449,7 @@
 
       //     width: 240px;
       //     padding: @spaceMd @spaceLg;
-          
-      //     &:nth-child(2) {
+               //     &:nth-child(2) {
       //     color: blue;
       //     }
 

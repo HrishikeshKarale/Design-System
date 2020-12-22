@@ -1,8 +1,7 @@
 <template>
     <div class= "naming">
         https://polaris.shopify.com/content/naming#navigation   
-            
-                <article id= 'naming'>
+                           <article id= 'naming'>
                     <h1>Naming</h1>
                     <p>
                         The names we give our products and features teach users how to use COMET and how to find the things they need to run their business.
@@ -439,8 +438,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -449,10 +447,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -467,8 +463,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

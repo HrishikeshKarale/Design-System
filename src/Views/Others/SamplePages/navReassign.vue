@@ -9,8 +9,7 @@
           :selected= 'd_selected'
           v-if= 'empData'
         >
-          <template slot= 'master' >     
-            <div
+          <template slot= 'master' >                <div
               v-for= '(emp, index) in empData.data'
               :key= 'index'
             >
@@ -45,8 +44,7 @@
             </div>
           </template>
         </master-detail>
-      
-      </template>
+           </template>
 
       <template slot= '2'>
         <h3>Product Details</h3>
@@ -78,8 +76,7 @@
     mapState, 
 
     data() {
-      
-      var d_steps= [
+           var d_steps= [
         {
           id: 1,
           title: "Select Assignment",

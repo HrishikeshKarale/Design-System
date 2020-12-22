@@ -116,8 +116,7 @@
             </card-background>
             <div :class= 'selected? "selected":"second"'>
                 <vue-img src= "https://datavizcatalogue.com/methods/images/top_images/line_graph.png" alt= "graph" />
-                
-                <div style= 'background-color: #ffffff; height: fit-content;'>
+                               <div style= 'background-color: #ffffff; height: fit-content;'>
                     <card-background
                         :low= 'selected? "2": "1"'
                         :high= 'selected? "4": "1"'
@@ -219,13 +218,11 @@
                 </div>
             </div>
         </div>
-        
-        <div class= 'secondLevel' v-if= 'selected'>
+               <div class= 'secondLevel' v-if= 'selected'>
             <master-detail 
                 :selected= 'd_selected'
             >
-                <template slot= 'master'>                   
-                    <div
+                <template slot= 'master'>                                      <div
                         v-for= '(emp, index) in d_empData.data'
                         :key= 'index'
                     >
@@ -389,19 +386,16 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
             .sCard();
         }
 
-        > .lateVsNotLate {      
-            display: flex; 
+        > .lateVsNotLate {                 display: flex; 
             flex-direction: row; 
             flex-wrap: nowrap; 
             justify-content: space-around;  
-            flex-grow: 2;         
-
+            flex-grow: 2;        
             & > div {
                 display: flex;
                 flex-direction: column;
                 // justify-content: space-between;
-                
-                span {
+                               span {
                     text-align: center;
                     margin-top: 8px;
                     color: @textColor;
@@ -412,8 +406,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                         flex-wrap: nowrap;
                         justify-content: space-between;
                         font-size: @fontSizeMd;
-                        
-                        > span {
+                                               > span {
                             font-size: 16px;
                             color: @linkColor;
                         }
@@ -427,18 +420,14 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                 }
 
                 &.late {
-                    flex-grow: 1;       
-                    // justify-content: space-between;
-                
-                    .fas, .far {
+                    flex-grow: 1;                          // justify-content: space-between;
+                                   .fas, .far {
                         color: @errorText;
                     }
                 }
 
                 &.notLate {
-                    flex-grow: 1;       
-                
-                    .fas, .far {
+                    flex-grow: 1;                                         .fas, .far {
                         color: @successText;
                     }
                 }
@@ -479,8 +468,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 
                         h4 {
                             margin-top: 0px;
-                            
-                            > span {
+                                                       > span {
                                 font-size: @fontSizeSm;
                                 color: ~"lighten(@textColor, 50%)";
                             }
@@ -492,8 +480,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                         }
 
                         //image
-                        & > span {       
-                            flex-grow: 1;
+                        & > span {                                  flex-grow: 1;
                             color: ~"lighten(@textColor, 30%)";
                         }
 
@@ -501,20 +488,16 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                         & > div {
                             display: flex;
                             flex-direction: column;
-                            margin-left: 16px;         
-                            flex-grow: 10;
+                            margin-left: 16px;                                    flex-grow: 10;
 
                             //rows
                             & > div {
-                                display: flex;           
-                                flex-grow: 1;
+                                display: flex;                                          flex-grow: 1;
 
                                 //key - Value
                                 & > div {
                                     display: flex;
-                                    flex-direction: row;      
-                                    justify-content: space-between;         
-                                    flex-grow: 3;
+                                    flex-direction: row;                                         justify-content: space-between;                                            flex-grow: 3;
                                     font-size: 16px;
 
                                     &:last-child {
@@ -665,14 +648,12 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                             &:last-child {
                                 margin-bottom: 0px;
                             }
-                            
-                            > div:not(.subCard) {
+                                                       > div:not(.subCard) {
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: space-around;
                                 margin-left: 16px;
-                                
-                                .fas {
+                                                               .fas {
                                     color: @errorText;
                                 }
                             }

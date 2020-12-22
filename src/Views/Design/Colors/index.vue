@@ -47,8 +47,7 @@
             <h3>
               Color Palette
             </h3>
-          </header>              
-          <p>
+          </header>                       <p>
             Adhering to the following color reproduction guidelines will help in creating a consistent image and maintaining the visual impact of the visual identity.
           </p>
           <div
@@ -127,8 +126,7 @@
             <h3>
               Color combinations
             </h3>
-          </header>              
-          <p>
+          </header>                       <p>
             Use the following as a guide for how and when to use colors from our palette together.
           </p>
           <good-vs-bad message="Use any light background color with its corresponding text color">
@@ -314,8 +312,7 @@
      <section id="usage">
       <h3>Color usage
             </h3>
-          </header>              
-      <p>
+          </header>                   <p>
        The following is a set of specific guidelines for when and how to use each color in our palette.
       </p>
       <div class="colorSamples">
@@ -422,8 +419,7 @@
          <h2>H2</h2>
          <h3>H3
             </h3>
-          </header>              
-         <h4>H4</h4>
+          </header>                      <h4>H4</h4>
          <h5>H1</h5>
          <h6>H3</h6>
         </div>
@@ -437,8 +433,7 @@
          >
           <p>These <a href="#">guidelines</a> are the framework upon which we have built our system for how color is used in COMET.</p>
          </div>
-         
-        </div>
+                </div>
         <p>
          Use @secondaryColor (#00B6A8) to suggest highlight and/or suggest active status.
         </p>
@@ -533,8 +528,7 @@
      <section id="accessibility">
       <h3>Accessibility
             </h3>
-          </header>              
-      <p>
+          </header>                   <p>
        It’s important for COMET to meet all web accessibility standards. We encourage meeting the minimum contrast ratios specified by <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> Level AA for text, icons, other indicators, and background colors.
       </p>
       <ul>
@@ -613,8 +607,7 @@
           <h3>
             Resources
           </h3>
-        </header>              
-        <ul>
+        </header>                     <ul>
           <li>How to Meet WCAG 2.0 requirements? <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0" target="_blank" class="fas fa-external-link-alt"/></li>
         </ul>
       </section>
@@ -634,8 +627,7 @@
     name: "colors",
 
     data () {
-      const d_booleanTrue = true;      
-      const colors= this.$store.state.colors
+      const d_booleanTrue = true;           const colors= this.$store.state.colors
       const communicationOverDecoration = require("@/assets/design/color/6de009ff5c705bb127c26ee805ed9579.png");
       const colorsShouldBeAccessible = require("@/assets/design/color/b9de27c544ab6b6cbaea59f9db8e634e.png");
       const colorsShouldFocusAttention = require("@/assets/design/color/8f9062860d7a21c1222172b4a485f218.png");
@@ -720,8 +712,7 @@
             }
           }
         }
-        
-        &#colorPalette {
+               &#colorPalette {
           display: flex;
           flex-direction: column;
 
@@ -731,10 +722,8 @@
             &#Other {
               display: flex;
               flex-direction: column;
-              
-              &.subSection {
-                
-                .section {
+                           &.subSection {
+                               .section {
                   .section();
                 }
               }
@@ -743,12 +732,10 @@
             &#Alerts {
               display: flex;
               flex-direction: column;
-              
-              &.subSection {
+                           &.subSection {
 
                 .section {
-                  
-                  & > #Information, 
+                                   & > #Information, 
                   & > #Success,
                   & > #Warning,
                   & > #Danger {

@@ -240,8 +240,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate()
             }

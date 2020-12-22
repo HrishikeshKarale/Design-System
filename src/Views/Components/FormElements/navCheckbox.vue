@@ -26,8 +26,7 @@
                 v-model= 'd_checkboxValue'
             />
             <div class= "FormElementsContent">
-                <form>        
-                    <component-details
+                <form>                           <component-details
                         :compData= 'd_checkbox'
                     >
                         <checkbox-input 
@@ -45,8 +44,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -62,8 +60,7 @@
 
             componentDetails,
             checkboxInput,
-            
-        }, //components
+                   }, //components
 
         methods: {
 
@@ -81,20 +78,16 @@
         data() {
 
             var d_label= "Warehouse"
-            
-            var d_name= "checkboxField"
-            
-            var d_value= ''
-            
-            var d_checkboxValue= null
+                       var d_name= "checkboxField"
+                       var d_value= ''
+                       var d_checkboxValue= null
 
             var d_options= this.$store.state.warehouse
 
             var d_booleanTrue= true
 
             var d_alerts= this.alerts
-            
-            return {
+                       return {
 
                 d_label: d_label,
 

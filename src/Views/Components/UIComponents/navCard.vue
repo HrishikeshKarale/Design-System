@@ -118,8 +118,7 @@
                     </vue-card>
                 </div>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -144,8 +143,7 @@
         // store,
 
         data() {
-            
-            const d_cardDetails= this.$store.state.cardDetails
+                       const d_cardDetails= this.$store.state.cardDetails
 
             const d_customerCarts= this.$store.state.customerCarts
 
@@ -158,8 +156,7 @@
             const d_logoColor= '#015D9A'
 
             const d_booleanTrue= true
-            
-            const bookmark = d_booleanTrue;
+                       const bookmark = d_booleanTrue;
 
             const d_data= {"cols":d_cardDetails.cols, "values": d_cardDetails.data[0]}
 
@@ -207,30 +204,25 @@
                 d_cardFooter,
 
                 d_title,
-                
-                d_logo,
+                               d_logo,
 
                 d_logoColor,
 
                 d_data,
-                
-                d_ctx,
+                               d_ctx,
                 bookmark,
-                
-                d_maxlength: 20,
+                               d_maxlength: 20,
                 d_value: null,
                 d_SKU: null,
                 d_SKUData: d_SKUData,
                 d_numberValue: null,
                 d_info: 900,
-                
-                d_booleanTrue: d_booleanTrue,
+                               d_booleanTrue: d_booleanTrue,
 
                 d_attr: {'type':['d_category'] , 'value': [d_category]},
 
                 d_vueCard: {
-                    
-                    title: 'Vue Card',
+                                       title: 'Vue Card',
 
                     compName: 'vue-card',
 
@@ -322,8 +314,7 @@
                 const info= this.d_info
                 const details= new Array()
                 // console.log('data: ', sku, quantity, info)
-                    
-                if (quantity && sku) {
+                                   if (quantity && sku) {
                     // console.log('this', this.d_SKUData['data'][0])
                     if (this.d_SKUData['data'][0]){
                         this.d_SKUData['data'].push(new Array(sku, quantity, info))
@@ -370,8 +361,7 @@
     @import (reference) "../../../Less/customvariables.less";
 
     .navCard {
-        
-        .tag {
+               .tag {
             width: fit-content;
             margin-bottom: 32px;
 
@@ -395,8 +385,7 @@
                     }
                 }
             }
-            
-            & > .tagCards {
+                       & > .tagCards {
                 background-color: transparent;
                 margin-bottom: 16px;
 

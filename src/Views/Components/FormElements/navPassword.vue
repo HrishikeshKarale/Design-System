@@ -21,8 +21,7 @@
                 </div>
             </div>
             <div class= "FormElementsContent">
-                <form>                   
-                    <component-details
+                <form>                                      <component-details
                         :compData= 'd_password'
                     >
                         <password-input 
@@ -45,8 +44,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -127,8 +125,7 @@
                 d_danger: null,
 
                 d_warning: null,
-            
-                d_password: {
+                           d_password: {
 
                     title: 'Password Input Field',
 

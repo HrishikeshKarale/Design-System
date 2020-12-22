@@ -23,8 +23,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <th>                            
-                        <div :class= '{showOptions: metadata.selected && metadata.selected.length> 0}'>
+                    <th>                                                   <div :class= '{showOptions: metadata.selected && metadata.selected.length> 0}'>
                             <div>
                                 <input 
                                     v-if= "!subtableId"
@@ -57,20 +56,17 @@
                                             <span class= "fas fa-times fa-1x"/>
                                             <span>
                                                 Remove
-                                            </span>        
-                                        </li>
+                                            </span>                                               </li>
                                         <li>
                                             <span class= "fas fa-pen fa-1x"/>
                                             <span>
                                                 Edit
-                                            </span>        
-                                        </li>
+                                            </span>                                               </li>
                                         <li>
                                             <span class= "fas fa-check fa-1x"/>
                                             <span>
                                                 Accept
-                                            </span>        
-                                        </li>
+                                            </span>                                               </li>
                                     </ul>
                                 </div> -->
                                 <div
@@ -97,14 +93,11 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- <div v-else-if= 'subtableId'>
+                                               <!-- <div v-else-if= 'subtableId'>
                             id: {{subtableId}}
                         </div> -->
-                        
-                    </th>
-                    
-                    <th
+                                           </th>
+                                       <th
                         v-for= 'col in columns'
                         :key= 'col.index'
                         @click.stop= 'setSortKey(col)'
@@ -191,8 +184,7 @@
                                 class= 'selectRow'
                                 :checked= '(metadata.selected && metadata.selected.includes(entry[select]))? true: false'
                                 @click.self= 'toggleCheckbox(entry[select])' 
-                            />                                  
-                            <!-- <vue-button 
+                            />                                                             <!-- <vue-button 
                                 :type= 'd_type'
                                 tag= "ExpandRow"
                                 :text= "d_text"
@@ -204,8 +196,7 @@
                                 :ctx= 'toggleSubTable.bind(this, entry)'
                             />  -->
                         </td>
-                    
-                        <td 
+                                           <td 
                             v-for= '(col, index) in columns'
                             :key= 'index'
                         >
@@ -218,15 +209,11 @@
                                 icon= 'fas fa-trash-alt'
                                 :ctx= 'consoleClickDelete'
                             >
-                                       
-                                you can use custom content here to overwrite default content
-                               
-                                <h3>
+                                                                      you can use custom content here to overwrite default content
+                                                              <h3>
                                     Custom body
                                 </h3>
-                            
-                            </vue-modal>                                
-                            <vue-button 
+                                                       </vue-modal>                                                           <vue-button 
                                 :type= 'd_type'
                                 tag= "ExpandRow"
                                 :icon= 'entry? "fas fa-chevron-left":"fas fa-chevron-up"'
@@ -378,8 +365,7 @@
                 type: String,
                 default: null
             },
-            
-            low: {
+                       low: {
                 required: false,
                 type: String,
                 default: null,
@@ -449,18 +435,14 @@
                 d_booleanTrue: d_booleanTrue,
 
                 d_form: d_form,
-                
-                editColumns: false,
-                
-                tableBgStriped: false,
+                               editColumns: false,
+                               tableBgStriped: false,
 
                 d_dropdownValue: d_dropdownValue,
-        
-                d_url: 'https://api.myjson.com/bins/qcjt6',
+                       d_url: 'https://api.myjson.com/bins/qcjt6',
             } //return
         }, //data
-        
-        computed: {
+               computed: {
 
             showRecords: function () {
                 return this.metadata.rowElements
@@ -477,17 +459,12 @@
             //     }
             // }, //metadata.searchKey
         }, //computed
-        
-        filters: {
-            
-            capitalize: function (str) {
+               filters: {
+                       capitalize: function (str) {
                 return str.charAt(0).toUpperCase() + str.slice(1)
             }, //capitalize
         }, //filters
-        
-        methods: {         
-            
-            toggleColumns: function (newValue) {
+               methods: {                               toggleColumns: function (newValue) {
                 this.$emit('toggleCloumns', newValue)
             }, //toggleColumns
 
@@ -503,13 +480,10 @@
                         // alert(foo[key]); // alerts value
                     });
             }, //dataTablecolumns
-            
-            consoleClickEdit: function () {
+                       consoleClickEdit: function () {
                 // console.log("TableClickEdit")
             }, // consoleClick
-            
-            
-            consoleClickDelete: function () {
+                                  consoleClickDelete: function () {
                 // console.log("TableClickDelete")
             }, // consoleClick
 
@@ -550,8 +524,7 @@
                 var tr= document.getElementById(id)
                 // console.log(event, id)
                 var checkbox= tr.getElementsByClassName('selectRow')[0]  
-                
-                //check if already exists
+                               //check if already exists
                 if (!checkbox.checked) {
                         //if not then add
                     selected.push(id)
@@ -583,17 +556,14 @@
                 var selectAllrows= document.getElementById('selectAllRows')
                 var inputs= document.getElementsByClassName('selectRow')
                 var selectAll= selectAllrows.checked
-                
-                for (var checkbox in inputs) {
+                               for (var checkbox in inputs) {
 
                         var td= inputs[checkbox].parentNode
                         var tr= td.parentNode
                         // console.log(checkbox, td.parentNode, tr.id)
-                    
-                        //check if selectAll or selectNone
+                                           //check if selectAll or selectNone
                         if (!selectAll) {
-            
-                            //if selectNone, then remove selected
+                                       //if selectNone, then remove selected
                             if (selected.includes(tr.id)) {
                                 this.SelectRow(tr.id)
                             }
@@ -634,8 +604,7 @@
         created() {
 
             var tempArray= []
-            
-            Object.keys(this.tableData[0])
+                       Object.keys(this.tableData[0])
                     .forEach(function eachKey(key) { 
                         tempArray.push(key); // alerts key 
                         // console.log(key); // alerts value
@@ -694,14 +663,12 @@
                                     margin: auto 0;
 
                                     &:last-child {
-                                        
-                                        &#search {
+                                                                               &#search {
                                             display: flex;
                                             flex-direction: row;
 
                                             span {
-                                                
-                                                &.fas {
+                                                                                               &.fas {
                                                     position: relative;
                                                     left: 0px;
                                                     right: -24px;
@@ -785,8 +752,7 @@
                                 position: relative;
                                 display: flex;
                                 flex-direction: row;
-                                
-                                & > div {
+                                                               & > div {
                                     display: flex;
                                     flex-direction: row;
                                     cursor: default;
@@ -817,8 +783,7 @@
                                     }
                                 }
                             }
-                                
-                            & > div {
+                                                           & > div {
                                 cursor: pointer;
                             }
 
@@ -847,8 +812,7 @@
 
                             &:first-child {
                                 padding-right: 4px;
-                            
-                                div {
+                                                           div {
 
                                     &.smalltext {
                                         font-size: 10px;
@@ -868,8 +832,7 @@
                                             list-style: none;
                                             padding: 0;
                                             margin: 0;
-                                        
-                                        div:before {
+                                                                               div:before {
                                                 content:null;
                                                 height:3px;
                                                 width:0;
@@ -945,8 +908,7 @@
                         //     background-color: #e5e5e5;
 
                         //     .vueTable.inner {
-                                
-                        //         table {
+                                                       //         table {
                         //             border: 1px solid @backgroundColor;
 
                         //             thead {
@@ -981,8 +943,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         // height: 48px;
-        
-        & > td,
+               & > td,
         & > th {
             height: inherit;
             border-left: 1px solid #ddd;

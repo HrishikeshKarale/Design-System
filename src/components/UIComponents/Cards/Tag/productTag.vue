@@ -189,8 +189,7 @@
                 options: ["rochester", 'perks'],
 
                 index: 0,
-                
-                editId: null
+                               editId: null
 
             } //return
         }, //data
@@ -217,13 +216,11 @@
                 // console.log(id, this.editID)
 
                 var index= this.d_tags.findIndex(x => x.sku == id);
-                
-                var tag= document.getElementById(id);
+                               var tag= document.getElementById(id);
                 var dropdown= tag.getElementsByTagName('input')
                 dropdown[0].disabled=!dropdown[0].disabled
                 dropdown[1].disabled=!dropdown[1].disabled
-                
-                if (this.editId) {
+                               if (this.editId) {
                     if (id== this.editId) {
                         id= null
                         this.editId= id;
@@ -248,8 +245,7 @@
 
             deleteTag: function (id) {
                 var index= this.d_tags.findIndex(x => x.sku == id);
-                
-                if (index > -1) {
+                               if (index > -1) {
                     this.d_tags.splice(index, 1);
                 }
             }, //deleteTag
@@ -260,8 +256,7 @@
                 this.index= index + 1
                 return result
             }, //spaceCounter
-            
-        }, //methods
+                   }, //methods
 
         components: {
             searchableDropdownList,

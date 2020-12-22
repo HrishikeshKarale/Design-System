@@ -28,8 +28,7 @@
             <span class= 'fas fa-info-circle'/>
             Character limit of {{maxlength}} reached
         </div>
-    </div>      
-</template>
+    </div>     </template>
 
 <script>
 
@@ -74,8 +73,7 @@
         display: flex;
         flex-direction:  row;
         flex-wrap: wrap;
-        
-        & > div {
+               & > div {
             margin: @spaceSm 0;
             font-size: @fontSizeSm;
             font-family: monospace;

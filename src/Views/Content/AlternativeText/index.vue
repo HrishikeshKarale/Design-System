@@ -1,8 +1,7 @@
 <template>
     <div class= "alternativeText">
         https://polaris.shopify.com/content/alternative-text#navigation   
-            
-                <article id= 'alternativeText'>
+                           <article id= 'alternativeText'>
                     <h1 id= "title">Alternative text</h1>
                     <p>
                         COMET aims to provide an inclusive experience. Alternative text (alt text) helps people with low or loss of vision use our products.
@@ -112,8 +111,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -122,10 +120,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -140,8 +136,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

@@ -73,8 +73,7 @@
         }, //data
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -285,8 +284,7 @@
         }, //methods
 
         created() {
-          
-            //store values passed as props into d_textValue for future manipulation  
+                     //store values passed as props into d_textValue for future manipulation  
             if (this.value)
             {
                 this.d_textValue= this.value
@@ -296,8 +294,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate();
             }

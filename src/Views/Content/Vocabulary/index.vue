@@ -1,8 +1,7 @@
 <template>
     <div class= "vocabulary">
         https://polaris.shopify.com/content/vocabulary#navigation   
-            
-                <article id= 'vocabulary'>
+                           <article id= 'vocabulary'>
                     <h1>Vocabulary</h1>
                     <p>
                         It’s important to use the same words, spelling, and capitalization consistently, otherwise things start looking messy and confusing for merchants.
@@ -559,8 +558,7 @@
         // store,
 
         data () {
-            
-            var d_type= 'button'
+                       var d_type= 'button'
 
             var d_tag= 'consoleTextButton'
 
@@ -569,10 +567,8 @@
             var d_icon= 'fas fa-copy'
 
             var d_category= this.$store.state.category
-            
-            var d_form= ''
-            
-            return {
+                       var d_form= ''
+                       return {
 
                 d_type: d_type,
 
@@ -587,8 +583,7 @@
                 d_form: d_form,
 
                 d_booleanTrue: true,
-            
-                colors: this.$store.state.colors
+                           colors: this.$store.state.colors
             } //return
         }, //data
 

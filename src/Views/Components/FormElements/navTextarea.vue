@@ -21,8 +21,7 @@
                 </div>
             </div>
             <div class= "FormElementsContent">
-                <form>      
-                    <component-details
+                <form>                         <component-details
                         :compData= 'd_textarea'
                     >
                         <vue-textarea 
@@ -42,11 +41,9 @@
                             :mask= '!d_booleanTrue'
                             @alerts= 'd_alerts'
                         />
-                    </component-details>     
-                </form>
+                    </component-details>                    </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -63,8 +60,7 @@
         // store,
 
         components: {
-            
-            componentDetails,
+                       componentDetails,
             vueTextarea
         }, //components
 

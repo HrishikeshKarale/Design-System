@@ -130,8 +130,7 @@
                 d_id: d_id,
             }//return
         }, //data
-        
-        props: {
+               props: {
 
             errorCode: {
                 type: String,
@@ -226,8 +225,7 @@
                     width: 100%;
                     height: 60%;
                     top: 20%;
-                    
-                    & > .eye,
+                                       & > .eye,
                     & > .eye-right {
                         position: absolute;
                         background: @dark;
@@ -350,12 +348,10 @@
 
                         td {
                             padding: @spaceSm @spaceMd;
-                            
-                            &:first-child {
+                                                       &:first-child {
                                 font-weight: bold;
                             }
-                            
-                            &.stackTrace {
+                                                       &.stackTrace {
                                 border-radius: @borderRadius;
 
                                 textarea:disabled {

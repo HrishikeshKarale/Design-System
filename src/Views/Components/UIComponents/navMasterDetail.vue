@@ -13,8 +13,7 @@
                         v-model= 'd_searchKey'
                         inputIcon= 'fas fa-search'
                     />
-                    <template slot= 'master'>                   
-                        <div
+                    <template slot= 'master'>                                          <div
                             v-for= '(emp, index) in employees.data'
                             :key= 'index'
                         >
@@ -43,8 +42,7 @@
                     </template>
                 </master-detail>
             </component-details>
-        
-    </div><!--uiComponents-->
+           </div><!--uiComponents-->
 </template>
 
 <script>
@@ -148,8 +146,7 @@
         }, //beforeCreate
 
         computed: {
-            
-            ...mapState (
+                       ...mapState (
                 [
                     'paginatedData',
                     'metadata',
@@ -176,8 +173,7 @@
         }, //methods
 
         components: {
-            
-            masterDetail,
+                       masterDetail,
             componentDetails,
             vueCard,
             vueTable,
@@ -199,8 +195,7 @@
                                     return String(row[key]).toLowerCase().indexOf(newValue) > -1
                         })
                     })
-                }                
-                // console.log(this.employeeData.data.length, this.empData.data.length, newValue)
+                }                               // console.log(this.employeeData.data.length, this.empData.data.length, newValue)
             }, //d_searchKey
         }, //watch
     } //default

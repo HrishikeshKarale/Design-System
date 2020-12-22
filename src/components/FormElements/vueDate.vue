@@ -69,10 +69,8 @@
                 d_dataValue: null,
             } //return
         }, //data
-        
-        props: {
-            
-            //sets heading/Label for the input field
+               props: {
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -241,8 +239,7 @@
 
                 //check if year is a number
                 if (typeof lowYear== 'number' && typeof highYear== 'number' ) {
-                    
-                    //compare years and send a boolean value if not different
+                                       //compare years and send a boolean value if not different
                     if (lowYear< highYear) {
                         return false
                     }
@@ -250,8 +247,7 @@
                         return true
                     }
                     //if years are same compare months
-                    else {                        
-                        //stores the date min month and converts it into number
+                    else {                                               //stores the date min month and converts it into number
                         vtempLow= lowValue.substr(5, 2)
                         var lowMonth= parseInt(tempLow, 10)
                         //stores the date max month and converts it into number
@@ -260,8 +256,7 @@
 
                         //check if month are number's
                         if (typeof lowMonth== 'number' && typeof highMonth== 'number' ) {
-            
-                            //compare month and send a boolean value if not different
+                                       //compare month and send a boolean value if not different
                             if (lowMonth< highMonth) {
                                 return false
                             }
@@ -269,18 +264,15 @@
                                 return true
                             }
                             //if months are same compare dates
-                            else {      
-                                //stores the date min date and converts it into number
+                            else {                                     //stores the date min date and converts it into number
                                 tempLow= lowValue.substr(8, 2)
                                 var lowDate= parseInt(tempLow, 10)
                                 //stores the date max date and converts it into number
                                 tempHigh= highValue.substr(8, 2)
                                 var highDate= parseInt(tempHigh, 10)
-                                
-                                //check if date are number's
+                                                               //check if date are number's
                                 if (typeof lowDate== 'number' && typeof highDate== 'number' ) {
-            
-                                    //compare date and send a boolean false if low date is lower than lowValue
+                                               //compare date and send a boolean false if low date is lower than lowValue
                                     //send a boolean true if its greater or equal to highdate
                                     if (lowDate< highDate) {
                                         return false
@@ -338,8 +330,7 @@
         beforeMount() {
 
             var alertMessage= this.alertMessage
-            
-            if (this.value || this.setDefaultDate)
+                       if (this.value || this.setDefaultDate)
             {
                 this.validate()
             }

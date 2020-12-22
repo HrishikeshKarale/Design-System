@@ -104,8 +104,7 @@
 
       toggleTheme: function () {
         var theme= this.getCookie('theme');
-        
-        if(theme != 'lightMode') {
+               if(theme != 'lightMode') {
           this.setCookie("theme", "lightMode", 100);
           this.trans();
           document.documentElement.setAttribute('theme', 'darkMode');
@@ -115,14 +114,12 @@
           this.trans();
           document.documentElement.setAttribute('theme', 'lightMode');
         }
-        
-      }, //toggleTheme
+             }, //toggleTheme
 
       toggleNav: function () {
         this.show= !this.show;
       }, //toggleNav
-      
-      nav: function (id) {
+           nav: function (id) {
         // console.log('nav', id)
         this.d_selected= id;
       }

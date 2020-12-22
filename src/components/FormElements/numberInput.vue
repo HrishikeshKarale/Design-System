@@ -69,8 +69,7 @@
         }, //data
 
         props: {
-            
-            //sets heading/Label for the input field
+                       //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -207,8 +206,7 @@
                 if (typeof max== 'string') {
                     max= Number(max)
                 }
-                
-                var pattern= new RegExp (this.pattern)
+                               var pattern= new RegExp (this.pattern)
                 //if value for val(temp) exists check for warning triggers
                 if (val || val==0) {
                    if (pattern && !(val.toString()).match(pattern))
@@ -241,13 +239,11 @@
             //store values passed as props into d_numberValue for future manipulation  
             if (this.value) {
                 this.d_numberValue= this.value
-            }            
-        }, //created
+            }                   }, //created
 
         beforeMount() {
             var alertMessage= this.alertMessage
-            
-            if (this.value)
+                       if (this.value)
             {
                 this.validate()
             }

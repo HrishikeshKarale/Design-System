@@ -21,8 +21,7 @@
                 </div>
             </div>
             <div class= "FormElementsContent">
-                <form>        
-                    <component-details
+                <form>                           <component-details
                         :compData= 'd_searchableDropdownList'
                     >
                         <searchable-dropdown-list 
@@ -46,8 +45,7 @@
                     </component-details>
                 </form>
             </div>
-        
-    </div>
+           </div>
 </template>
 
 <script>
@@ -81,16 +79,13 @@
                 }
             }, //alerts
         }, //methods
-        
-        data() {
-            
-            var d_label= "Warehouse"
+               data() {
+                       var d_label= "Warehouse"
 
             var d_name= "searchableDropdownField"
 
             var d_searchDropboxValue= ''
-            
-            var d_options= this.$store.state.warehouse
+                       var d_options= this.$store.state.warehouse
 
             var d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
 
@@ -103,8 +98,7 @@
             var d_inputIcon= 'fas fa-warehouse'
 
             var d_alerts= this.alerts
-            
-            return {
+                       return {
 
                 d_label: d_label,
 
@@ -137,8 +131,7 @@
                     compName: 'searchable-dropdown-list',
 
                     import: 'import searchableDropdownList from "@/components/FormElements/searchableDropdownList"',
-                    
-                    description: "<p>The &lt;searchable-dropdown-list&gt; element specifies a list of pre-defined options for an &lt;input&gt; element.</p>\
+                                       description: "<p>The &lt;searchable-dropdown-list&gt; element specifies a list of pre-defined options for an &lt;input&gt; element.</p>\
                                     <p>The &lt;searchable-dropdown-list&gt; element is used to provide an 'autocomplete' feature on &lt;input&gt; elements. Users will see a drop-down list of pre-defined options as they input data.</p>\
                                     <p>It uses the &lt;input&gt; element's list attribute to bind it together with a &lt;datalist&gt; element.</p>\
                                     <p>By default the &lt;searchable-dropdown-list&gt; element element works like a searchable dropdown but can be set to allow user generated custom values as inputs as well</p>",

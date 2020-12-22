@@ -40,8 +40,7 @@
                         <p>You can translate your intentions into alert configuration. You must ensure that alerts detect error situations and nothing but error situations. In other words, you must ensure that failure notifications are sent and corrective actions are performed always when needed, but only in those situations.</p>
                     </li>
                 </ul>
-                
-                <p>When configuring alerts, first of all you must consider what the system would be showing if you were troubleshooting a failure in a reactive mode. These could be, for example, slow operations, HTTP response time, SSL handshake errors, stopped pages, 5xx HTTP errors on the login URL, or some textual information that needs to be captured with application error recognition.</p>
+                               <p>When configuring alerts, first of all you must consider what the system would be showing if you were troubleshooting a failure in a reactive mode. These could be, for example, slow operations, HTTP response time, SSL handshake errors, stopped pages, 5xx HTTP errors on the login URL, or some textual information that needs to be captured with application error recognition.</p>
                 <p>Then you need to ask yourself what values for a given time duration are still acceptable and what values mean a real problem. Thus, for example, 5 minutes of high server time might not signify a problem, but if it stays high for more than 15 minutes it might be a problem, particularly if after 30 minutes you also see 5xx HTTP errors. Then you have to react. With this type of information, you can start to think about looking for the right alerts to configure.</p>
                 <p>It is not enough to detect alert conditions and then trigger and send alert notifications. You need a business process that ensures that this situation will be fixed as soon as possible. In other words, it is not enough to generate many alerts from monitoring tools if you still react to problems only when users call to complain.</p>
                 <h2>Usage scenarios for alerts</h2>
@@ -113,16 +112,13 @@
 
     export default {
         name: 'navAlerts',
-        
-        data () {
+               data () {
 
             var d_alertType= ['danger', 'warning', 'info', 'success']
 
             var d_alert= 'Order creation failed.'
-                
-            var d_message= 'Please select a valid shipping method and try again.'
-            
-            var d_type= 'button'
+                           var d_message= 'Please select a valid shipping method and try again.'
+                       var d_type= 'button'
 
             var d_tag= 'closeAlertButton'
 
@@ -139,8 +135,7 @@
             var d_ctx= this.consoleClick
 
             var d_timeout= 10
-            
-            var d_code= '5.1.104'
+                       var d_code= '5.1.104'
 
 
             return {
@@ -148,8 +143,7 @@
                 d_alertType: d_alertType,
 
                 d_alert: d_alert,
-                
-                d_message: d_message,
+                               d_message: d_message,
 
                 d_type: d_type,
 
@@ -172,8 +166,7 @@
                 d_code: d_code,
             } //return
         }, //data
-        
-        methods: {
+               methods: {
 
             consoleClick: function () {
                 // console.log('ButtonClick');

@@ -67,8 +67,7 @@
             dashoffset: function () {
                 var val= this.val
                 var maxlength= this.maxlength
-            
-                if (isNaN(val)) {
+                           if (isNaN(val)) {
                 return 0; 
                 }
                 else {
@@ -89,8 +88,7 @@
         position: relative;
 
         #svg {
-            
-            circle {
+                       circle {
                 stroke-dashoffset: 0;
                 transition: stroke-dashoffset 0.25s linear;
                 stroke: #666;

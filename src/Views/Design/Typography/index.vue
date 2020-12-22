@@ -292,8 +292,7 @@
         &:last-child {
           font-weight: bold;
         }
-        
-        & > .char {
+               & > .char {
           display: inline-flex;
           font-size: 2*@fontSize;
           padding: @spaceMd @spaceLg;
