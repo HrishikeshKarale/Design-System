@@ -1,19 +1,19 @@
 //https://codepen.io/pietvanzoen/pen/Ccjlt
 <template>
   <header ref="sideNav" class="sideNav">
-    <!-- <vue-button
+    <vue-button
       v-if="toggleNavIcon"
       class="menuTrigger"
       tag="toggleNav"
       category="icon-lg"
       :icon="toggleNavIcon"
       :ctx="toggleNavigation.bind(this)"
-    /> -->
+    />
     <nav>
       <!-- level 1 -->
       <ul>
         <li>
-          <router-link :to="{ name: 'home' }">
+          <router-link :to="{ name: 'app' }">
             <vue-img :src="logoLink" alt="Logo" />
             <h3>
               Design Guide
@@ -33,7 +33,7 @@
             </div>
           </router-link>
           <!-- level 2 -->
-          <ul class="subNav" v-show="navigation.subNav && $route.path.includes(navigation.name)">
+          <ul class="subNav" v-show="navigation.subNav && $route.path.includes(navigation.component)">
             <li
               v-for="(nav2, index) in navigation.subNav"
               :key="index + '-' + nav2.name"
@@ -43,14 +43,14 @@
                 <h4>{{ nav2.name }}</h4>
               </router-link>
               <!-- level 3 -->
-              <ul class="subNav2" v-if="nav2.subNav && $route.path.includes(nav2.name)">
+              <ul class="subNav2" v-if="nav2.subNav && $route.path.includes(nav2.component)">
                 <li
                   v-for="(nav3, index) in nav2.subNav"
                   :key="index + '-' + nav3.name"
                 >
                   <router-link :to="{ name: nav3.component }">
                     <span :class="nav3.icon" />
-                    <h4>{{ nav3.name }}</h4>
+                    <h5>{{ nav3.name }}</h5>
                   </router-link>
               </li>
               </ul>
@@ -164,27 +164,26 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: @spaceXl;
+    justify-content: space-evenly;
+    padding: @spaceLg;
     background-color: @navBackground;
     max-width: max-content;
     z-index: @headerZ;
     height: 100vh;
-    .boxShadow(@one, white);
-    & > .menuTrigger {
-      display: none;
-      margin-left: auto;
-    }
+
+    //Icons Only (hide text)
     & > nav {
-      fisplay: flex;
+      display: flex;
+      height: 100%;
       & > ul {
         display: flex;
         flex-direction: column;
-        align-content: flex-start;
-
         & > li {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          margin-bottom: @spaceLg;
+
+          //logo home button
           &:first-child {
             align-self: center;
             & > a {
@@ -192,20 +191,15 @@ header {
               flex-direction: column;
               & > img {
                 display: block;
-                height: 64px;
-                margin: auto;
+                height: 48px;
                 & + h3 {
-                  display: flex;
-                  flex-direction: column;
-                  & > h6 {
-                    align-self: flex-end;
-                    color: @white;
-                  }
+                  display: none;
                 }
               }
             }
           }
 
+          //level 1 Level 2 and level 3
           &,
           & > .subNav > li,
           & > .subNav > li > .subNav2 > li {
@@ -213,44 +207,54 @@ header {
               display: flex;
               flex-direction: row;
               flex-wrap: nowrap;
-              align-items: center;
-              color: white;
-              position: relative;
+              padding: @spaceMd @spaceSm;
 
-              & > span {
-                font-size: @fontSizeSm * 2;
-                .navSubText();
-              }
-              & > img {
-                height: 48px;
-              }
-              & > div {
-                display: flex;
-                flex-direction: column;
-                margin-left: @spaceLg;
-                //nav Text
-                & > h4 {
-                  color: white;
-                  //nav subText
-                  & + span {
-                    font-size: 12px;
-                    .navSubText();
+              // level 1  level 2 level 3
+                & > span {
+                  font-size: @fontSize * 2;
+                  .navSubText();
+                }
+                & > div > h4,
+                & > h4,
+                & > h5 {
+                  display: none;
+                }
+
+
+              //level 2 and level 3 only
+              & + .subNav,
+              & + .subNav > li > .subNav2 {
+                & > li {
+                  display: flex;
+                  flex-direction: column;
+                  & > a {
+                    display: flex;
+                    padding: @spaceMd;
+                    & > span {
+                      font-size: @fontSize;
+                      & + h4 {
+                        display: none;
+                      }
+                    }
                   }
                 }
               }
-
               //styling selected link
               &.router-link-active {
-                color: @secondaryColor;
-                &::before {
-                  transform: scale(0.8);
-                }
-                &.router-link-exact-active {
+                & > span,
+                & > div > h4,
+                & > h4,
+                & > h5  {
                   color: @secondaryColor;
                 }
-
-                & > span {
-                  //opacity: 1;
+                &.router-link-exact-active {
+                  & > span,
+                  & > div > h4,
+                  & > h4,
+                  & > h5  {
+                    color: @secondaryColor;
+                    transform: scale(1.1);
+                  }
                 }
                 & > div {
                   & > h4 {
@@ -258,28 +262,82 @@ header {
                     font-weight: bold;
                     & + span {
                       color: white;
-                      //opacity: 1;
                     }
                   }
                 }
               }
-              & + .subNav,
-              & + .subNav > li > .subNav2 {
-                display: flex;
+            }
+          }
+        }
+      }
+    }
+
+    //Extend nav to full size
+    &.showNav {
+      & > .menuTrigger {
+        margin-left: auto;
+      }
+      & > nav {
+        & > ul {
+          & > li {
+            align-self: flex-start;
+            //logo home link
+            &:first-child {
+              align-self: center;
+              & > a {
                 flex-direction: column;
-                margin-left: @spaceMd;
-                & > li {
-                  display: flex;
-                  flex-direction: column;
-                  & > a {
-                    margin: 0;
+                & > img {
+                  height: 64px;
+                  & + h3 {
                     display: flex;
-                    align-content: center;
-                    & > span {
-                      font-size: @fontSizeSm !important;
-                      & + h4 {
-                        color: white;
-                        margin: @spaceSm 0 @spaceSm @spaceMd;
+                    flex-direction: column;
+                    margin-top: @spaceMd;
+                    & > h6 {
+                      align-self: flex-end;
+                      color: @white;
+                    }
+                  }
+                }
+              }
+            }
+
+            //level 1 Level 2 and level 3
+            &,
+            & > .subNav > li,
+            & > .subNav > li > .subNav2 > li {
+              & > a {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+                // level 1  level 2 level 3
+                & > span {
+                  font-size: @fontSize;
+                  margin-right: @spaceMd;
+                }
+                & > div > h4,
+                & > h4,
+                & > h5  {
+                  margin: 0;
+                  display: flex;
+                  .navSubText();
+                }
+
+                //level 2 level 3
+                & + .subNav,
+                & + .subNav > li > .subNav2 {
+                  flex-direction: column;
+                  margin-left: @spaceMd;
+                  & > li {
+                    flex-direction: column;
+                    // align-self: flex-start;
+                    & > a {
+                      & > span {
+                        align-self: center;
+                        font-size: @fontSizeSm;
+                        & + h4 {
+                          .navSubText();
+                        }
                       }
                     }
                   }
@@ -289,56 +347,10 @@ header {
           }
         }
       }
-      //user account
-      & + div {
-        display: flex;
-        margin-left: auto;
-        position: relative;
-        & > span {
-          color: @secondaryColor;
-          padding: @spaceMd;
-          border: 1px solid @secondaryColor;
-          border-radius: 50%;
-          cursor: pointer;
-          & + .user {
-            display: none;
-            position: absolute;
-            border: 1px solid @secondaryColor;
-            & > img {
-              width: 80px;
-            }
-            & > .g-signin2 {
-              display: none;
-            }
-          }
-        }
-        &:hover {
-          & > span {
-            border-radius: 50% 50% 0 50%;
-            background-color: @secondaryColor;
-            color: @navBackground;
-            .boxShadow(@one, @shadowColor, 1001);
-            & + .user {
-              display: flex;
-              flex-direction: column;
-              background-color: @backgroundColor;
-              top: 100%;
-              right: 0;
-              height: fit-content;
-              width: fit-content;
-              border-radius: @borderRadius;
-              padding: @spaceLg @spaceXl;
-              .boxShadow(@one, @shadowColor, 1001);
-            }
-          }
-        }
-      }
     }
     @media screen {
       @media (max-width: 1540px) {
         flex-direction: column;
-        flex-wrap: nowrap;
-        padding: @spaceMd @spaceLg;
         border-bottom-right-radius: @borderRadiusLg;
         height: auto;
         width: fit-content;
@@ -371,7 +383,6 @@ header {
               justify-content: space-between;
               align-items: flex-start;
               & > li {
-                margin-top: @spaceLg;
                 & > a {
                   & > img {
                     height: @spaceXl;
@@ -382,7 +393,7 @@ header {
                   & > a {
                     flex-direction: column;
                     & > img {
-                      height: 96px;
+                      height: 64px;
                     }
                     &::before {
                       display: none;

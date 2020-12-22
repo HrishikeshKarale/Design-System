@@ -79,16 +79,16 @@ export default {
       const offsetHeader = Array.from(
         document.getElementsByClassName("vueHeader")
       )[0];
-      // console.log(offsetHeader.offsetHeight, this.headerOffset.offsetHeight);
       this.tag = Array.from(document.getElementsByTagName("section"));
       this.tag = this.tag.filter(tag => tag.id != "");
+      const headerOffset= offsetHeader? offsetHeader.offsetHeight: 0
       this.tagOffset = this.tag.map(section => {
         return {
-          top: section.offsetTop - offsetHeader.offsetHeight,
+          top: section.offsetTop - headerOffset,
           bottom:
             section.offsetTop +
             section.offsetHeight -
-            offsetHeader.offsetHeight,
+            headerOffset,
           id: section.getAttribute("id"),
           selected: false
         };

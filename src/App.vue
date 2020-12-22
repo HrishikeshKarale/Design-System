@@ -42,7 +42,6 @@
   import sideBySideLayout from '@/components/Layout/sideBySideLayout'
   import enterpriseAppLayout from '@/components/Layout/enterpriseAppLayout'
   import vueButton from '@/components/UIComponents/Buttons'
-  import scrollIndicator from '@/components/Layout/scrollIndicator.vue'
 
   import { mapState, mapActions } from 'vuex';
   import { toggle, show } from '@/typeScript/toggle'
@@ -150,7 +149,6 @@
       sideBySideLayout,
       enterpriseAppLayout,
       sideNav,
-      scrollIndicator,
       vueButton
     }, //components
   }

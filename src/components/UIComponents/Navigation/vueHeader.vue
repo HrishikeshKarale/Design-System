@@ -12,7 +12,7 @@
     <nav>
       <ul>
         <li>
-          <router-link :to="{ name: 'home' }">
+          <router-link :to="{ name: 'app' }">
             <vue-img :src="logoLink" alt="Logo" />
             <h3>
               Hrishikesh Karale

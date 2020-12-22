@@ -78,14 +78,14 @@
                     <template 
                       v-for="(cols, index) in color.color"
                     >
-                      <vue-card
+                      <!-- <vue-card
                         class="palette"
                         :key="index"
-                        :cardTitle="cols.text"
-                        cardLogo="fas fa-circle fa-5x"
+                        :title="cols.text"
+                        logo="fas fa-circle fa-5x"
                         :logoColor="`#${cols.hex}}`"
                         :actionButtons='d_booleanTrue'
-                        :cardData='{ cols: ["Name", "HEX", "RGB"], data: [cols.name, cols.hex, hexToRgb(cols.hex)]}'
+                        :details='{ cols: ["Name", "HEX", "RGB"], data: [cols.name, cols.hex, hexToRgb(cols.hex)]}'
                         low='2'
                         high='1'
                       >
@@ -94,22 +94,23 @@
                             :componentCode='cols.hex'
                             :tag='"copy #"+ cols.hex +" Color"'
                             icon='fas fa-copy'
+                            category="icon"
                             :id='cols.hex'
                           />
                         </div>
-                      </vue-card>
+                      </vue-card> -->
                     </template>
                   </div>
                 </div>
-                <vue-card
+                <!-- <vue-card
                   :key="index"
                   v-else
                   class="palette"
-                  :cardTitle="color.text"
-                  cardLogo="fas fa-circle fa-5x"
+                  :title="color.text"
+                  logo="fas fa-circle fa-5x"
                   :logoColor="`#${color.hex}`"
                   :actionButtons="d_booleanTrue"
-                  :cardData="{ cols: ['Name', 'HEX', 'RGB'], data: [color.name, color.hex, hexToRgb(color.hex)]}"
+                  :details="{ cols: ['Name', 'HEX', 'RGB'], data: [color.name, color.hex, hexToRgb(color.hex)]}"
                   low="2"
                   high="1"
                 >
@@ -121,7 +122,7 @@
                       :id="color.hex"
                     />
                   </div>
-                </vue-card>
+                </vue-card> -->
               </template>
             </div>
           </div>
@@ -546,7 +547,9 @@
        <li>7:1 contrast ratio of needs to be maintained for normal text.</li>
        <li>4.5:1 contrast ratio needs to be maintained for large text.</li>
       </ul>
-        <good-vs-bad message="Use @secondaryColor (#003A65) as Background for lightly colored (preferably white) text.">
+        <good-vs-bad 
+          message="Use @secondaryColor (#003A65) as Background for lightly colored (preferably white) text."
+        >
           <template slot="good">
             <div class="container">
               <div
@@ -558,21 +561,21 @@
               </div>
             </div>
           </template>
-        <template slot="bad">
-          <p>
-            Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
-          </p>
-          <div class="container">
-            <div
-              class="content"
-              style="color: #ffffff;
-                background-color: #00B6A8;"
-            >
-              Hello
+          <template slot="bad">
+            <p>
+              Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
+            </p>
+            <div class="container">
+              <div
+                class="content"
+                style="color: #ffffff;
+                  background-color: #00B6A8;"
+              >
+                Hello
+              </div>
             </div>
-          </div>
-        </template>
-      </good-vs-bad>
+          </template>
+       </good-vs-bad>
       <div class="subSection">
        <header>
          <h4>Exception to this rule</h4>
@@ -636,44 +639,17 @@
     name: "colors",
 
     data () {
-      
-      var d_type="button"
-
-      var d_tag="consoleTextButton"
-
-      var d_text="Click Me"
-
-      var d_icon="fas fa-copy"
-
-      var d_category= this.$store.state.category
-      
-      var d_form=""
-
-      
-    const communicationOverDecoration = require("@/assets/design/color/6de009ff5c705bb127c26ee805ed9579.png");
-    const colorsShouldBeAccessible = require("@/assets/design/color/b9de27c544ab6b6cbaea59f9db8e634e.png");
-    const colorsShouldFocusAttention = require("@/assets/design/color/8f9062860d7a21c1222172b4a485f218.png");
-      
+      const d_booleanTrue = true;      
+      const colors= this.$store.state.colors
+      const communicationOverDecoration = require("@/assets/design/color/6de009ff5c705bb127c26ee805ed9579.png");
+      const colorsShouldBeAccessible = require("@/assets/design/color/b9de27c544ab6b6cbaea59f9db8e634e.png");
+      const colorsShouldFocusAttention = require("@/assets/design/color/8f9062860d7a21c1222172b4a485f218.png");
       return {
         communicationOverDecoration,
-    colorsShouldBeAccessible,
-    colorsShouldFocusAttention, 
-
-        d_type: d_type,
-
-        d_tag: d_tag,
-
-        d_text: d_text,
-
-        d_icon: d_icon,
-
-        d_category: d_category,
-
-        d_form: d_form,
-
-        d_booleanTrue: true,
-      
-        colors: this.$store.state.colors
+        colorsShouldBeAccessible,
+        colorsShouldFocusAttention, 
+        d_booleanTrue,
+        colors
       } //return
     }, //data
 

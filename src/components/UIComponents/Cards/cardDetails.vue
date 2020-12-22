@@ -1,16 +1,16 @@
 <template>
     <div class= 'cardDetails'>
         <div
-            v-for= '(data, index) in cardData.data'
+            v-for= '(data, index) in data.data'
             :key= 'index'
         >
             <div>
-                <label v-if= 'cardData.cols[index]'>
-                    {{cardData.cols[index]}}:
+                <label v-if= 'data.cols[index]'>
+                    {{data.cols[index]}}:
                 </label>
             </div>
             <div>
-                {{cardData.data[index]}}
+                {{data.data[index]}}
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         name: 'cardDetails',
 
         props: {
-            cardData: {
+            data: {
                 type: Object,
                 required: true,
                 default: null

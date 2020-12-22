@@ -230,8 +230,8 @@
                         :key= 'index'
                     >
                         <!-- <vue-card
-                            cardLogo= 'fas fa-user fa-3x'
-                            :cardData= '{"cols": d_empData.cols, "data": emp}'
+                            logo= 'fas fa-user fa-3x'
+                            :details= '{"cols": d_empData.cols, "data": emp}'
                             low= '1'
                             high= '4'
                         /> -->
@@ -288,7 +288,7 @@
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
     import masterDetail from "@/components/UIComponents/MasterDetail/masterDetail"
     import vueCard from "@/components/UIComponents/Cards/vueCard"
-    import {pickers} from '../../store/pickers'
+    import {pickers} from '@/store/pickers'
 
     export default {
         name: 'dispatchMonitor',
@@ -331,8 +331,8 @@
 
 <style lang= "less" scoped>
 
-    @import (reference) "./../../Less/customMixins.less";
-    @import (reference) "./../../Less/customVariables.less";
+    @import (reference) "../../../Less/customMixins.less";
+    @import (reference) "../../../Less/customVariables.less";
     
     @errorText: #A94442;
     @successText: #3C763D;

@@ -4,15 +4,16 @@
                 :compData= 'd_vueCard'
                 :d_attr= 'd_attr'
             >
-                <vue-card
-                    :cardTitle= 'd_cardTitle'
-                    :cardLogo= 'd_cardLogo'
+                <!-- <vue-card
+                    :title= 'd_title'
+                    :logo= 'd_logo'
                     :logoColor= 'd_logoColor'
                     :actionButtons= 'd_booleanTrue'
-                    :cardData= 'd_cardData'
+                    :details= 'd_data'
                     :ctx= 'd_ctx' 
                     :cardFooter= 'd_cardFooter'
-                    :bookmark= '!d_booleanTrue'
+                    :bookmark= '!bookmark'
+                    @bookmark= "val => bookmark = val"
                 >
                     <div slot= 'actionButtons'>
                         <div >  
@@ -29,7 +30,7 @@
                             />
                         </div>
                     </div>
-                </vue-card>
+                </vue-card> -->
             </component-details>
             <div class= 'tag'>
                 <card-background
@@ -97,9 +98,9 @@
                     :key= 'index'
                     class= 'tagCards'
                 >
-                    <vue-card
+                    <!-- <vue-card
                         :actionButtons= 'd_booleanTrue'
-                        :cardData= '{"cols": d_SKUData["cols"], "data": dat}'
+                        :details= '{"cols": d_SKUData["cols"], "data": dat}'
                     >
                         <div slot= 'actionButtons'>
                             <div >  
@@ -116,7 +117,7 @@
                                 />
                             </div>
                         </div>
-                    </vue-card>
+                    </vue-card> -->
                 </div>
             </div>
         
@@ -146,74 +147,77 @@
 
         data() {
             
-            var d_cardDetails= this.$store.state.cardDetails
+            const d_cardDetails= this.$store.state.cardDetails
 
-            var d_customerCarts= this.$store.state.customerCarts
+            const d_customerCarts= this.$store.state.customerCarts
 
-            var d_cardFooter= this.$store.state.customfooter
+            const d_cardFooter= this.$store.state.customfooter
 
-            var d_cardTitle= 'Custom Card'
+            const d_title= 'Custom Card'
 
-            var d_cardLogo= 'fas fa-user fa-3x'
+            const d_logo= 'fas fa-user fa-3x'
 
-            var d_logoColor= '#015D9A'
+            const d_logoColor= '#015D9A'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
+            
+            const bookmark = d_booleanTrue;
 
-            var d_cardData= {"cols":d_cardDetails.cols, "data": d_cardDetails.data[0]}
+            const d_data= {"cols":d_cardDetails.cols, "data": d_cardDetails.data[0]}
 
-            var d_ctx= this.consoleClick 
+            const d_ctx= this.consoleClick 
 
-            var d_type= 'button'
+            const d_type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const d_tag= 'consoleTextButton'
 
-            var d_text= 'Click Me'
+            const d_text= 'Click Me'
 
-            var d_icon= 'fas fa-registered'
+            const d_icon= 'fas fa-registered'
 
-            var d_category= this.$store.state.category
+            const d_category= this.$store.state.category
 
-            var d_form= ''
+            const d_form= ''
 
-            var d_column= ['SKU', 'Quantity', 'Available']
+            const d_column= ['SKU', 'Quantity', 'Available']
 
-            var d_SKUData= {
+            const d_SKUData= {
                 'cols': d_column, 
                 'data': new Array()
             }
 
             return {
 
-                d_type: d_type,
+                d_type,
 
-                d_tag: d_tag,
+                d_tag,
 
-                d_text: d_text,
+                d_text,
 
-                d_icon: d_icon,
+                d_icon,
 
-                d_category: d_category,
+                d_category,
 
-                d_form: d_form,
+                d_form,
 
-                d_ctx: d_ctx,
+                d_ctx,
 
-                d_customerCarts: d_customerCarts,
+                d_customerCarts,
 
-                d_customerCarts: d_customerCarts,
+                d_customerCarts,
 
-                d_cardFooter: d_cardFooter,
+                d_cardFooter,
 
-                d_cardTitle: d_cardTitle,
+                d_title,
                 
-                d_cardLogo: d_cardLogo,
+                d_logo,
 
-                d_logoColor: d_logoColor,
+                d_logoColor,
 
-                d_cardData: d_cardData,
+                d_data,
                 
-                d_ctx: d_ctx,
+                d_ctx,
+                bookmark,
                 
                 d_maxlength: 20,
                 d_value: null,
@@ -238,15 +242,15 @@
 
                     attributes:[
                         {
-                            type: "cardTitle",
-                            value: d_cardTitle,
-                            description: '<p>The cardTitle attribute specifies the title for the Card which is displayed on top of the card.</p>',
+                            type: "title",
+                            value: d_title,
+                            description: '<p>The title attribute specifies the title for the Card which is displayed on top of the card.</p>',
                             text: 'Specifies the Name/Title of the card',
                         },
                         {
-                            type: "cardLogo",
-                            value: d_cardLogo,
-                            description: '<p>The cardLogo attribute specifies the logo/image which is displayed on top of the card.</p>',
+                            type: "logo",
+                            value: d_logo,
+                            description: '<p>The logo attribute specifies the logo/image which is displayed on top of the card.</p>',
                             text: 'Specifies the logo/image to be displayed on the card',
                         },
                         {
@@ -256,8 +260,8 @@
                             text: 'Specifies the color of the logo to be displayed on the card, Accepts hex values in string format.',
                         },
                         {
-                            type: "cardData",
-                            value: d_cardData,
+                            type: "data",
+                            value: d_data,
                             description: this.$store.state.navText.value,
                             text: "Specifies the value for the &lt;multi-toggle&gt element.",
                         },
@@ -315,10 +319,10 @@
             }, //delCard
 
             createCard: function () {
-                var quantity= this.d_numberValue
-                var sku= this.d_SKU
-                var info= this.d_info
-                var data= new Array()
+                const quantity= this.d_numberValue
+                const sku= this.d_SKU
+                const info= this.d_info
+                const details= new Array()
                 // console.log('data: ', sku, quantity, info)
                     
                 if (quantity && sku) {
@@ -364,8 +368,8 @@
 
 <style lang= "less" scoped>
 
-    @import (reference) "./../Less/customMixins.less";
-    @import (reference) "./../Less/customVariables.less";
+    @import (reference) "../../../Less/customMixins.less";
+    @import (reference) "../../../Less/customvariables.less";
 
     .navCard {
         

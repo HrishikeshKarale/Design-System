@@ -13,16 +13,16 @@
                     @click= 'ctx'
                 >
                     <template
-                        v-if= 'cardTitle'
+                        v-if= 'title'
                     >
                         <div 
                             class= 'row11'
                         >
-                            {{cardTitle}}
+                            {{title}}
                             <template
-                                v-if= 'd_bookmark'
+                                v-if= 'bookmark'
                             ><span
-                                :class= '{inActive:!d_bookmark}'
+                                :class= '{inActive:!bookmark}'
                                 class= "fas fa-bookmark"
                                 @click= 'toggleBookmark'
                             />
@@ -31,13 +31,13 @@
                     </template>
                     <div class= 'row12'>
                         <div 
-                            v-if= 'cardLogo'
+                            v-if= 'logo'
                             class= 'logoDetails'
                         >
-                            <span :class= 'cardLogo' :style= '"color: "+ logoColor' />
+                            <span :class= 'logo' :style= '"color: "+ logoColor' />
                         </div>
-                        <div v-if= 'cardData'>
-                            <card-details :cardData= 'cardData'/>
+                        <div v-if= 'data'>
+                            <card-details :data= 'data'/>
                         </div>
                         <div v-else>
                             <slot/>
@@ -73,22 +73,15 @@
     export default {
         name: 'vueCard',
         
-         data () {
-            return {
-
-                d_bookmark: null,
-            } //return
-        }, //data
-        
         props: {
 
-            cardTitle: {
+            title: {
                 required: false,
                 type: String,
                 default: null
             },
 
-            cardLogo: {
+            logo: {
                 required: false,
                 type: String,
                 default: null
@@ -100,7 +93,7 @@
                 default: '#333'
             },
 
-            cardData: {
+            details: {
                 required: false,
                 type: Object,
                 rewuired: true,
@@ -156,15 +149,9 @@
         methods: {
 
             toggleBookmark: function () {
-                
-                this.d_bookmark= !this.d_bookmark
+                this.$emit("bookmark", !this.bookmark);
             }, // consoleClickBookmark
         }, //methods
-
-        created () {
-
-            this.d_bookmark= this.bookmark
-        }, //created
 
         components: {
 

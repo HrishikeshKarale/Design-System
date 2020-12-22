@@ -5,13 +5,9 @@
       >
         {{message}}
         <vue-button 
-          :type= 'd_type'
-          tag= "togglecode"
+          tag= "toggleExample"
           :icon= '!d_hidden? "fas fa-chevron-up":"fas fa-chevron-down"'
-          :category= 'd_category[9]'
-          :disabled= '!d_booleanTrue'
-          :autofocus= '!d_booleanTrue'
-          :form= "d_form"
+          category= 'icon-sm'
           :ctx= 'toggle.bind(this)'
         />
       </div>
@@ -50,36 +46,10 @@
     name: 'goodVsBad',
 
     data () {
-
-      var d_type= 'button'
-
-      var d_tag= 'consoleTextButton'
-
-      var d_text= ''
-
-      var d_category= this.$store.state.category
-
-      var d_booleanTrue= true
-
-      var d_form= ''
-
-      var d_ctx= this.toggle
-
-      var d_hidden= d_booleanTrue
+      const ctx= this.toggle
+      const d_hidden= true
       return {
-
-        d_type: d_type,
-
-        d_tag: d_tag,
-
-        d_category: d_category,
-
-        d_booleanTrue: d_booleanTrue,
-
-        d_form: d_form,
-
-        d_ctx: d_ctx,
-
+        ctx,
         d_hidden: d_hidden,
       } //return
     }, //data

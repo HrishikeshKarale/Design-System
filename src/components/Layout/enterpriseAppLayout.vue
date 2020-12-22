@@ -131,7 +131,7 @@ export default {
             }
             //if user is not admin then redirect to  about page
             else {
-              next({ path: "home" });
+              next({ name: "app" });
             }
           } else {
             next();

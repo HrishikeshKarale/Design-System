@@ -1906,40 +1906,6 @@
                     </section>
                 </article>
             </template>
-            <template slot= 'right'>
-                <li>
-                    <a href= '#forms'>Forms</a>
-                </li>
-                <li>
-                    <a href= '#importance'>Why is it important?</a>
-                </li>
-                <li>
-                    <a href= '#dosVsDonts'>Do's vs Dont's</a>
-                    <ul>
-                        <li>
-                            <a href= '#alignTheSection'>Align The Section</a>
-                        </li>
-                        <li>
-                            <a href= '#groupRelatedFields'>Group Related Fields</a>
-                        </li>
-                        <li>
-                            <a href= '#writeClearLabels'>Write Clear Labels</a>
-                        </li>
-                        <li>
-                            <a href= '#CTAConversion'>CTA Conversion</a>
-                        </li>
-                        <li>
-                            <a href= '#tailorYourCTA'>Tailor Your CTA</a>
-                        </li>
-                        <li>
-                            <a href= '#validateTheForm'>Validate The Form</a>
-                        </li>
-                        <li>
-                            <a href= '#useColorsEfficiently'>Use Colors Efficiently</a>
-                        </li>
-                    </ul>
-                </li>
-            </template>
     </div>
 </template>
 
@@ -1964,7 +1930,7 @@
     import vueInfo from "@/components/FormElements/vueInfo";
 
     export default {
-        name: "FormElements",
+        name: "formComponents",
 
         components: {
             
@@ -2185,8 +2151,8 @@
 
 <style lang= "less" scoped>
 
-    @import (reference) "./../Less/customMixins.less";
-    @import (reference) "./../Less/customVariables.less";
+    @import (reference) "../../../Less/customMixins.less";
+    @import (reference) "../../../Less/customVariables.less";
     
     .forms {
 

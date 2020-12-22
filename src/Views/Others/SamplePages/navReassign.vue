@@ -14,13 +14,13 @@
               v-for= '(emp, index) in empData.data'
               :key= 'index'
             >
-              <vue-card
-                cardLogo= 'fas fa-user fa-3x'
-                :cardData= '{"cols": empData.cols, "data": emp}'
+              <!-- <vue-card
+                logo= 'fas fa-user fa-3x'
+                :details= '{"cols": empData.cols, "data": emp}'
                 :ctx= 'select.bind(this, emp[0])'
                 :low= 'd_selected==emp[0]? "2": "4"'
                 :class= '{selected: (d_selected==emp[0])}'
-              />
+              /> -->
             </div>
           </template>
 
@@ -153,8 +153,8 @@
 
 <style lang= "less" scoped>
 
-  @import (reference) "./../../Less/customMixins.less";
-  @import (reference) "./../../Less/customVariables.less";
+  @import (reference) "../../../Less/customMixins.less";
+  @import (reference) "../../../Less/customVariables.less";
 
   .navReassign {
 

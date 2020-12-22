@@ -1,14 +1,12 @@
 <template>
   <div class="copyClipboard">
     <vue-button
-      :type="dButtonType"
-      tag="togglecode"
-      :text="buttonText"
-      :icon="buttonIcon"
+      type="button"
+      :tag="tag"
+      :text="text"
+      :icon="icon"
       :category="category"
-      :disabled="!dBooleanTrue"
-      :autofocus="!dBooleanTrue"
-      :ctx="copyToClipboard"
+      :ctx="copyToClipboard.bind(this)"
     />
     <textarea :id="id" :value="componentCode"></textarea>
   </div>
@@ -59,30 +57,6 @@ export default {
       type: String
     }
   }, //props
-
-  data() {
-    const dButtonType = "button";
-
-    const dButtonStyle = this.$store.state.buttonStyle;
-
-    const dBooleanTrue = true;
-
-    const form = "";
-
-    const dctx = this.consoleClick;
-
-    return {
-      dButtonType,
-
-      dButtonStyle,
-
-      dBooleanTrue,
-
-      form,
-
-      dctx
-    }; //return
-  }, //components
 
   methods: {
     copyToClipboard: function() {

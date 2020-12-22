@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import { tags } from './Tables/Tags/tags'
 import { colorPalette } from './colorPalette';
 import { nav } from './navigation';
-import { nav as navigation1 } from './navigation';
 import { navText } from './navText';
 
 Vue.use(Vuex)

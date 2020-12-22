@@ -35,18 +35,18 @@
   <h1>
     Cards
   </h1>
-  <vue-card
-    :cardTitle= 'd_cardTitle'
-    :cardLogo= 'd_cardLogo'
+  <!-- <vue-card
+    :title= 'd_title'
+    :logo= 'd_logo'
     :actionButtons= 'd_booleanTrue'
-    :cardData= 'd_cardData'
+    :details= 'd_details'
     :ctx= 'd_cardctx' 
     :cardFooter= 'd_cardFooter'
     :bookmark= '!d_booleanTrue'
     low= '2'
   >
     <div slot= 'actionButtons'>
-    <div >  
+      <div >  
       <vue-button 
            :type= 'd_type'
             tag= "toggleFilter"
@@ -58,33 +58,33 @@
             :form= "d_form"
             :ctx= 'consoleClickDelete'
           />
-        </div>
       </div>
-    </vue-card>
+    </div>
+  </vue-card> -->
 
     
     <h3>Clickable Employee Card</h3>
-    <vue-card
-      :cardLogo= 'd_cardLogo'
-      :cardData= 'd_cardData'
+    <!-- <vue-card
+      :logo= 'd_logo'
+      :details= 'd_details'
       :ctx= 'd_cardctx' 
       low= '2'
       high= '3'
-    />
+    /> -->
 
     <h3>Employee Card (no click event)</h3>
-    <vue-card
-      :cardLogo= 'd_cardLogo'
-      :cardData= 'd_cardData' 
+    <!-- <vue-card
+      :logo= 'd_logo'
+      :details= 'd_details' 
       low= '1'
-    />
+    > -->
     
     <h3>Customer Card</h3>
-    <vue-card
-      :cardTitle= 'd_cardTitle'
-      :cardLogo= 'd_cardLogo'
+    <!-- <vue-card
+      :title= 'd_title'
+      :logo= 'd_logo'
       :actionButtons= 'd_booleanTrue'
-      :cardData= 'd_cardData'
+      :details= 'd_details'
       :ctx= 'd_cardctx' 
       low= '2'
       high= '3'
@@ -104,37 +104,37 @@
           />
         </div>
       </div>
-    </vue-card>
+    </vue-card> -->
     
     <h3>Customer Card no actionButton</h3>
-    <vue-card
-      :cardTitle= 'd_cardTitle'
-      :cardLogo= 'd_cardLogo'
+    <!-- <vue-card
+      :title= 'd_title'
+      :logo= 'd_logo'
       :actionButtons= 'd_booleanTrue'
-      :cardData= 'd_cardData'
+      :details= 'd_details'
       :ctx= 'd_cardctx' 
       :cardFooter= 'd_cardFooter'
       low= '1'
-    />
+    /> -->
 
     <h3>Customer Card no carts no actionButton</h3>
-    <vue-card
-      :cardTitle= 'd_cardTitle'
-      :cardLogo= 'd_cardLogo'
+    <!-- <vue-card
+      :title= 'd_title'
+      :logo= 'd_logo'
       :actionButtons= 'd_booleanTrue'
-      :cardData= 'd_cardData'
+      :details= 'd_details'
       :ctx= 'd_cardctx'
       low= '1'
-    />
+    /> -->
 
     <h3>Customer Card no carts no actionButton no header</h3>
-    <vue-card
-      :cardLogo= 'd_cardLogo'
+    <!-- <vue-card
+      :logo= 'd_logo'
       :actionButtons= 'd_booleanTrue'
-      :cardData= 'd_cardData'
+      :details= 'd_details'
       :ctx= 'd_cardctx'
       low= '1'
-    />
+    /> -->
 
 
     <h3>Step Wizard</h3>  
@@ -341,13 +341,13 @@
             </div>
           </card-background>
           <div
-            v-for= '(dat, index) in d_SKUData["data"]' 
+            v-for= '(dat, index) in d_SKUdetails["details"]' 
             :key= 'index'
             class= 'tagCards'
           >
-            <vue-card
+            <!-- <vue-card
               :actionButtons= 'd_booleanTrue'
-              :cardData= '{"cols": d_SKUData["cols"], "data": dat}'
+              :details= '{"cols": d_SKUdetails["cols"], "details": dat}'
             >
               <div slot= 'actionButtons'>
                 <div >  
@@ -364,7 +364,7 @@
                   />
                 </div>
               </div>
-            </vue-card>
+            </vue-card> -->
           </div>
         </div>
       </template>
@@ -388,10 +388,10 @@
     </div>
     <h3>Table</h3>
     <vue-table 
-      v-if= 'd_data'
-      :tableData= 'd_data'
+      v-if= 'd_details'
+      :tabledetails= 'd_details'
       :columns= 'd_columns'
-      :metadata= 'metadata'
+      :metadetails= 'metadetails'
       :select= 'd_columns[0]'
       :title= 'd_title'
       low= '1'
@@ -435,7 +435,7 @@
 
     mapActions,
 
-    data () {
+    details () {
 
       //buttons
       var d_type= 'button'
@@ -461,11 +461,11 @@
 
       var d_cardFooter= this.$store.state.customfooter
 
-      var d_cardTitle= 'Custom Card'
+      var d_title= 'Custom Card'
 
-      var d_cardLogo= 'fas fa-user fa-3x'
+      var d_logo= 'fas fa-user fa-3x'
 
-      var d_cardData= {"cols": d_cardDetails.cols, "data": d_cardDetails.data[0]}
+      var d_details= {"cols": d_cardDetails.cols, "details": d_cardDetails.details[0]}
 
       var d_cardctx= this.consoleClick
 
@@ -519,13 +519,13 @@
 
       var d_column= ['SKU', 'Quantity', 'Available']
 
-      var d_SKUData= {
+      var d_SKUdetails= {
         'cols': d_column, 
-        'data': new Array()
+        'details': new Array()
       }
 
       var d_warehouse= this.$store.state.warehouse
-      var d_recordsPerPage= this.$store.state.metadata.recordsPerPage
+      var d_recordsPerPage= this.$store.state.metadetails.recordsPerPage
 
       var d_filters= {
         type: ['warehouse', 'recordsPerPage'],
@@ -557,13 +557,13 @@
         d_maxlength: 20,
         d_value: null,
         d_SKU: null,
-        d_SKUData: d_SKUData,
+        d_SKUdetails: d_SKUdetails,
         d_numberValue: null,
         d_info: 900,
 
         //stepWaizard
 
-        d_SKUData: d_SKUData,
+        d_SKUdetails: d_SKUdetails,
 
         d_label: d_label,
 
@@ -635,11 +635,11 @@
 
         d_cardFooter: d_cardFooter,
 
-        d_cardTitle: d_cardTitle,
+        d_title: d_title,
         
-        d_cardLogo: d_cardLogo,
+        d_logo: d_logo,
 
-        d_cardData: d_cardData,
+        d_details: d_details,
 
         d_cardctx: d_cardctx,
 
@@ -654,7 +654,7 @@
 
         content: false,
       } //return
-    }, //data
+    }, //details
 
     methods: {
 
@@ -704,29 +704,29 @@
       }, //updateFilter
 
       delCard: function (index) {
-        this.d_SKUData.data.splice(index, 1)
+        this.d_SKUdetails.details.splice(index, 1)
       }, //delCard
 
       createCard: function () {
         var quantity= this.d_numberValue
         var sku= this.d_SKU
         var info= this.d_info
-        var data= new Array()
-        // console.log('data: ', sku, quantity, info)
+        var details= new Array()
+        // console.log('details: ', sku, quantity, info)
           
         if (quantity && sku) {
-          // console.log('this', this.d_SKUData['data'][0])
-          if (this.d_SKUData['data'][0]){
-            this.d_SKUData['data'].push(new Array(sku, quantity, info))
-            // console.log('data: ', typeof this.d_SKUData['cols'], Array.isArray(this.d_SKUData), Array.isArray(this.d_SKUData.cols), this.d_SKUData)
+          // console.log('this', this.d_SKUdetails['details'][0])
+          if (this.d_SKUdetails['details'][0]){
+            this.d_SKUdetails['details'].push(new Array(sku, quantity, info))
+            // console.log('details: ', typeof this.d_SKUdetails['cols'], Array.isArray(this.d_SKUdetails), Array.isArray(this.d_SKUdetails.cols), this.d_SKUdetails)
           }
           else{
-            // console.log('cols: ', typeof this.d_SKUData.cols, Array.isArray(this.d_SKUData), Array.isArray(this.d_SKUData.cols), this.d_SKUData)
-            this.d_SKUData['data']= new Array(new Array(sku, quantity, info))
+            // console.log('cols: ', typeof this.d_SKUdetails.cols, Array.isArray(this.d_SKUdetails), Array.isArray(this.d_SKUdetails.cols), this.d_SKUdetails)
+            this.d_SKUdetails['details']= new Array(new Array(sku, quantity, info))
           }
         }
         else{
-          // console.log('ERROR in data')
+          // console.log('ERROR in details')
         }
       }, //createCard
       
@@ -767,17 +767,17 @@
 
       ...mapState (
         {
-          d_navData: 'navigation',
+          d_navdetails: 'navigation',
           d_warehouse: 'warehouse',
-          d_data: 'paginatedData',
-          empData: 'employees'
+          d_details: 'paginateddetails',
+          empdetails: 'employees'
         }
       ),
 
       ...mapState (
         [
-          'paginatedData',
-          'metadata',
+          'paginateddetails',
+          'metadetails',
           // 'selectedFilter',
         ]
       ),
@@ -785,7 +785,7 @@
 
     beforeCreate () {
 
-      this.$store.dispatch('initData', 'https://api.myjson.com/bins/qcjt6')
+      this.$store.dispatch('initdetails', 'https://api.myjson.com/bins/qcjt6')
     }, //beforeCreate
 
     components: {
@@ -812,8 +812,8 @@
 
 <style lang= "less" scoped>
 
-  @import (reference) "./../Less/customMixins.less";
-  @import (reference) "./../Less/customVariables.less";
+  @import (reference) "../../../Less/customMixins.less";
+  @import (reference) "../../../Less/customVariables.less";
 
   .uiComponents {
 

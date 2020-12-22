@@ -11,17 +11,16 @@ https://tympanus.net/Development/categorysInspiration/
       buttonClass
     ]"
     :type="type"
-    :value="type != 'button' ? type : null"
     :name="tag"
     :autofocus="autofocus"
     :disabled="disabled"
     :form="form"
     @click.stop.prevent="ctx"
   >
-    <span v-if="icon" :class="icon" />
-    <template v-if="!['icon', 'icon-sm', 'icon-lg'].includes(category)">
+    <!-- <template v-if="!['icon', 'icon-sm', 'icon-lg'].includes(category)">
       {{ text }}
-    </template>
+    </template> -->
+    <span v-if="icon" :class="icon" />
   </button>
 </template>
 
@@ -45,13 +44,6 @@ export default {
       default: null
     },
 
-    icon: {
-      default: null,
-      required: function(props) {
-        return ["icon", "icon-lg", "icon-sm"].indexOf(props.category) !== -1;
-      },
-      type: [String, null]
-    },
 
     text: {
       required: false,
@@ -86,6 +78,14 @@ export default {
       }
     },
 
+    icon: {
+      default: null,
+      required: function() {
+        return ["icon", "icon-lg", "icon-sm"].indexOf(this.category) !== -1;
+      },
+      type: [String, null]
+    },
+    
     disabled: {
       required: false,
       type: [Boolean, null],
@@ -108,9 +108,9 @@ export default {
     buttonClass: {
       required: false,
       type: [String, null],
-      default: function(props) {
+      default: function() {
         let tempClass = "btn";
-        switch (props.category) {
+        switch (this.category) {
           case "standard":
             tempClass += " btn-primary";
             break;
@@ -163,18 +163,18 @@ export default {
     form: {
       required: false,
       type: [String, null],
-      default: function(props) {
-        if (props.tag) {
-          return props.tag;
+      default: function() {
+        if (this.tag) {
+          return this.tag;
         }
         return "form";
       }
     },
 
     ctx: {
-      required: function(props) {
-        // console.log(props.type);
-        if (props.type == "button") {
+      required: function() {
+        // console.log(this.type);
+        if (this.type == "button") {
           return true;
         }
         return false;

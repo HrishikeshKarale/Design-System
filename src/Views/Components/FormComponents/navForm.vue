@@ -243,8 +243,8 @@
 
 <style lang= "less" scoped>
 
-    @import (reference) "../../Less/customMixins.less";
-    @import (reference) "../../Less/customVariables.less";
+    @import (reference) "../../../Less/customMixins.less";
+    @import (reference) "../../../Less/customVariables.less";
 
     .navForm {
 

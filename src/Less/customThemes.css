@@ -1,5 +1,5 @@
 html {
-  --primaryColor: #FBCE51;
+  --primaryColor: #003a65;
   --secondaryColor: #F1BA45;
   --CMTeal: #00B6A8;
 
@@ -18,18 +18,29 @@ html {
 }
 
 :root {
-  --textColor: var(--offBlack);
+  --primaryColor: #F1BA45;
+  --secondaryColor: #F1BA45;
+  --accentColor: #3a5a40;
+  --textColor: var(--offWhite);
+  --backgroundColor: var(--black);
+  --navBackground: #3a5a40;
+  --navText: #d8d8d8;
+  --shadowColor: var(--offBlack);
+  /* --textColor: var(--offBlack);
   --backgroundColor: var(--offWhite);
   --navBackground: var(--offBlack);
   --navText: var(--offWhite);
-  --shadowColor: var(--black);
+  --shadowColor: var(--black); */
 }
 
 html[theme='darkMode'] {
+  --primaryColor: #588157;
+  --secondaryColor: #ff5e5b;
+  --accentColor: #3a5a40;
   --textColor: var(--offWhite);
-  --backgroundColor: var(--offBlack);
-  --navBackground: var(--black);
-  --navText: var(--white);
+  --backgroundColor: var(--black);
+  --navBackground: #3a5a40;
+  --navText: #d8d8d8;
   --shadowColor: var(--offBlack);
 }
 

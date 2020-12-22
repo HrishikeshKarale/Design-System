@@ -1,255 +1,228 @@
 <template>
-    <div
-        v-if= '!d_close' 
-        class= 'alert'
-        :class= 'type'
-    >
-        <div>
-            <span 
-                :class= '[type, d_alertIcon]'
-            />
-            <div :class= 'type'>
-                <div class= 'message'>
-                    <h5><b>{{type=="danger"? code+" - ":""}} {{message}}</b></h5> 
-                    <p>
-                        {{description}}
-                    </p>
-                </div>
-            </div>
+  <div
+    v-if= '!d_close' 
+    class= 'alert'
+    :class= 'type'
+  >
+    <div>
+      <span 
+        :class= '[type, d_alertIcon]'
+      />
+      <div :class= 'type'>
+        <div class= 'message'>
+          <h5><b>{{type=="danger"? code+" - ":""}} {{message}}</b></h5> 
+          <p>
+            {{description}}
+          </p>
         </div>
-        <div v-if= 'dismissible' >
-            <vue-button 
-                :type= 'd_type'
-                :tag= "d_tag"
-                :text= "d_text"
-                :icon= "d_icon"
-                :category= 'd_category[11]'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
-                :form= "d_form"
-                :ctx= 'd_ctx'
-            />
-        </div>
+      </div>
     </div>
+    <div v-if= 'dismissible' >
+      <vue-button 
+        type= 'button'
+        tag= "closeAlertButton"
+        :text= "d_text"
+        icon= "fas fa-times"
+        category= 'icon'
+        :ctx= 'd_ctx'
+      />
+    </div>
+  </div>
 </template>
 
 <script>
 
-    import vueButton from '@/components/UIComponents/Buttons'
+  import vueButton from '@/components/UIComponents/Buttons'
 
-    export default {
-        name: 'alert',
+  export default {
+    name: 'alert',
 
-        data () { 
-            
-            var d_alertIcon= ''
+    data () { 
+      
+      var d_alertIcon= ''
 
-            var d_close= false
+      var d_close= false
 
-            var d_type= 'button'
+      var d_text= null
 
-            var d_tag= 'closeAlertButton'
+      var d_ctx= this.closeAlertBox
 
-            var d_text= null
+      return {
 
-            var d_icon= 'fas fa-times'
+        d_alertIcon,
 
-            var d_category= this.$store.state.category
+        d_close,
 
-            var d_booleanTrue= true
+        d_text,
 
-            var d_form= ''
+        d_ctx,
+      } //return
+    }, //data
 
-            var d_ctx= this.closeAlertBox
+    components: {
 
-            return {
+      vueButton
+    }, //components
 
-                d_alertIcon: d_alertIcon,
+    props: {
 
-                d_close: d_close,
+      type: {
+        required: true,
+        type: String,
+        default: 'info',
+        validator: function (value) {
+          if (['info', 'success', 'warning', 'danger'].includes(value)) {
+            return true
+          }
+          else {
+            alert("Invalid prop value found in <vue-alert>.\nPossible values: [info, success, warning, danger]\nYou Entered: "+value)
+          }
+        }
+      },
 
-                d_type: d_type,
+      code: {
+        required: function () {
+          if(type== 'danger') {
+            return true
+          }
+          return false
+        },
+        type: String,
+      },
 
-                d_tag: d_tag,
+      message: {
+        required: true,
+        type: String,
+        default: 'default/no alert message specified'
+      },
 
-                d_text: d_text,
+      description: {
+        required: true,
+        type: String,
+        default: 'default/no alert message specified'
+      },
 
-                d_icon: d_icon,
+      dismissible: {
+        required: false,
+        type: Boolean,
+        default: false
+      },
 
-                d_category: d_category,
+      timeout: {
+        required: false,
+        type: Number,
+        default: null
+      },
+    }, //props
 
-                d_booleanTrue: d_booleanTrue,
+    methods: {
 
-                d_form: d_form,
+      closeAlertBox() {
+        this.d_close= true
+      }, //closeAlertBox
 
-                d_ctx: d_ctx,
-            } //return
-        }, //data
-
-        components: {
-
-            vueButton
-        }, //components
-
-        props: {
-
-            type: {
-                required: true,
-                type: String,
-                default: 'info',
-                validator: function (value) {
-                    if (['info', 'success', 'warning', 'danger'].includes(value)) {
-                        return true
-                    }
-                    else {
-                        alert("Invalid prop value found in <vue-alert>.\nPossible values: [info, success, warning, danger]\nYou Entered: "+value)
-                    }
+      closeAlert: function () {
+        document.getElementsByClassName('dangerAlert')
+              .fadeTo(5000, 0)
+                .slideUp(500, function () {
+                  $(this).remove()
                 }
-            },
+            )//slideUp
+      }, //closeAlert
+    }, //methods
 
-            code: {
-                required: function () {
-                    if(type== 'danger') {
-                        return true
-                    }
-                    return false
-                },
-                type: String,
-            },
+    created() {
 
-            message: {
-                required: true,
-                type: String,
-                default: 'default/no alert message specified'
-            },
+      switch (this.type) {
+        case 'warning': this.d_alertIcon= 'fas fa-exclamation-triangle'
+          break;
+        case 'info': this.d_alertIcon= 'fas fa-info-circle'
+          break;
+        case 'success': this.d_alertIcon= 'fas fa-check-circle'
+          break;
+        case 'danger': this.d_alertIcon= 'fas fa-exclamation-circle'
+          break;
+      }
+    }, //created
 
-            description: {
-                required: true,
-                type: String,
-                default: 'default/no alert message specified'
-            },
+    mounted () {
+      var timeout= this.timeout
 
-            dismissible: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            timeout: {
-                required: false,
-                type: Number,
-                default: null
-            },
-        }, //props
-
-        methods: {
-
-            closeAlertBox() {
-                this.d_close= true
-            }, //closeAlertBox
-
-            closeAlert: function () {
-                document.getElementsByClassName('dangerAlert')
-                            .fadeTo(5000, 0)
-                                .slideUp(500, function () {
-                                    $(this).remove()
-                                }
-                        )//slideUp
-            }, //closeAlert
-        }, //methods
-
-        created() {
-
-            switch (this.type) {
-                case 'warning': this.d_alertIcon= 'fas fa-exclamation-triangle'
-                    break;
-                case 'info': this.d_alertIcon= 'fas fa-info-circle'
-                    break;
-                case 'success': this.d_alertIcon= 'fas fa-check-circle'
-                    break;
-                case 'danger': this.d_alertIcon= 'fas fa-exclamation-circle'
-                    break;
-            }
-        }, //created
-
-        mounted () {
-            var timeout= this.timeout
-
-            if(timeout && timeout!=0) {
-                setTimeout(this.closeAlertBox, timeout*1000);
-            }
-        }, //mounted
-    } //default
+      if(timeout && timeout!=0) {
+        setTimeout(this.closeAlertBox, timeout*1000);
+      }
+    }, //mounted
+  } //default
 </script>
 
 <style lang= "less" scoped>
 
-    @import (reference) '../../Less/customVariables.less';
+  @import (reference) '../../Less/customVariables.less';
 
-    .alert{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        border-radius: @borderRadius;
-        border: 1px solid transparent;
-        width: fit-content;
-        background-color: @white;
-        border-left-width: 8px;
-        padding: @spaceSm @spaceMd;
+  .alert{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: @borderRadius;
+    border: 1px solid transparent;
+    width: fit-content;
+    background-color: @white;
+    border-left-width: 8px;
+    padding: @spaceSm @spaceMd;
 
-        &.danger {
-            border-color: @dangerText;
-            
-            h5, span {
-                color: @dangerText;
-            }
-        }
-        &.warning {
-            border-color:@warningText;
-
-            h5, span {
-                color: @warningText;
-            }
-        } 
-        &.success {
-            border-color: @successText;
-
-            h5, span {
-                color: @successText;
-            }
-        }
-        &.info {
-            border-color: @infoText;
-
-            h5, span {
-                color: @infoText;
-            }
-        }
-
-        & > div {
-            display: flex;
-            flex-direction: row;
-
-            & > span {
-                padding: @spaceSm*3+@spaceXs @spaceMd @spaceSm @spaceSm;
-            }
-
-            & > div {
-                display: flex;
-                flex-direction: column;
-
-                & > .alertMessage {
-                    
-                    & > p {
-                        font-size: 16px;
-                    }
-                }
-
-                & > .slot {
-                    display: flex;
-                    flex-direction: row-reverse;
-                }
-            }            
-        }
+    &.danger {
+      border-color: @dangerText;
+      
+      h5, span {
+        color: @dangerText;
+      }
     }
+    &.warning {
+      border-color:@warningText;
+
+      h5, span {
+        color: @warningText;
+      }
+    } 
+    &.success {
+      border-color: @successText;
+
+      h5, span {
+        color: @successText;
+      }
+    }
+    &.info {
+      border-color: @infoText;
+
+      h5, span {
+        color: @infoText;
+      }
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+
+      & > span {
+        padding: @spaceSm*3+@spaceXs @spaceMd @spaceSm @spaceSm;
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        & > .alertMessage {
+          
+          & > p {
+            font-size: 16px;
+          }
+        }
+
+        & > .slot {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }      
+    }
+  }
 </style>
