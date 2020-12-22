@@ -36,8 +36,9 @@
                         >
                             <span :class= 'logo' :style= '"color: "+ logoColor' />
                         </div>
-                        <div v-if= 'data'>
-                            <card-details :data= 'data'/>
+                        <div v-if= 'details'>
+                        <!-- {{details}} -->
+                            <card-details :data= 'details'/>
                         </div>
                         <div v-else>
                             <slot/>

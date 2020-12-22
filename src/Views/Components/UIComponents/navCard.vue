@@ -98,7 +98,7 @@
                     class= 'tagCards'
                 >
                     <vue-card
-                        :details= '{"cols": d_SKUData["cols"], "data": dat}'
+                        :details= '{"cols": d_SKUData["cols"], "values": dat}'
                     >
                         <div slot= 'actionButtons'>
                             <div >  
@@ -161,7 +161,7 @@
             
             const bookmark = d_booleanTrue;
 
-            const d_data= {"cols":d_cardDetails.cols, "data": d_cardDetails.data[0]}
+            const d_data= {"cols":d_cardDetails.cols, "values": d_cardDetails.data[0]}
 
             const d_ctx= this.consoleClick 
 

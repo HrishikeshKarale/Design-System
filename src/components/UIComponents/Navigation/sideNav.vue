@@ -12,25 +12,25 @@
     <nav>
       <!-- level 1 -->
       <ul>
-        <li>
-          <router-link :to="{ name: 'app' }">
-            <vue-img :src="logoLink" alt="Logo" />
-            <h3>
-              Design Guide
-              <h6>Hrishikesh Karale</h6>
-            </h3>
-          </router-link>
-        </li>
         <li
           v-for="(navigation, index) in nav"
           :key="index + '-' + navigation.name"
         >
           <router-link :to="{ name: navigation.component }">
-            <span :class="navigation.icon" />
-            <div>
-              <h4>{{ navigation.name }}</h4>
-              <span v-if="navigation.tagline"> {{ navigation.tagline }}</span>
-            </div>
+            <template v-if= "navigation.id === 0">
+              <vue-img :src="logoLink" alt="Logo" />
+              <h3>
+                Design Guide
+                <h6>Hrishikesh Karale</h6>
+              </h3>
+            </template>
+            <template v-else>
+              <span :class="navigation.icon" />
+              <div>
+                <h4>{{ navigation.name }}</h4>
+                <span v-if="navigation.tagline"> {{ navigation.tagline }}</span>
+              </div>
+            </template>
           </router-link>
           <!-- level 2 -->
           <ul class="subNav" v-show="navigation.subNav && $route.path.includes(navigation.component)">
@@ -60,14 +60,14 @@
       </ul>
     </nav>
     <slot name="options" />
-    <!-- <vue-button
+    <vue-button
       v-if="themeIcon"
       tag="themeToggle"
       category="text-sm"
       text="Theme"
       :icon="themeIcon"
       :ctx="theme.bind(this)"
-    /> -->
+    />
     </div>
   </header>
 </template>
@@ -174,6 +174,7 @@ header {
     //Icons Only (hide text)
     & > nav {
       display: flex;
+      margin-top: @spaceLg;
       height: 100%;
       & > ul {
         display: flex;

@@ -16,7 +16,7 @@
             >
               <vue-card
                 logo= 'fas fa-user fa-3x'
-                :details= '{"cols": empData.cols, "data": emp}'
+                :details= '{"cols": empData.cols, "values": emp}'
                 :ctx= 'select.bind(this, emp[0])'
                 :low= 'd_selected==emp[0]? "2": "4"'
                 :class= '{selected: (d_selected==emp[0])}'

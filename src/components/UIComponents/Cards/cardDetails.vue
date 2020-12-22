@@ -1,7 +1,7 @@
 <template>
     <div class= 'cardDetails'>
         <div
-            v-for= '(data, index) in data.data'
+            v-for= '(data, index) in data.values'
             :key= 'index'
         >
             <div>
@@ -10,7 +10,7 @@
                 </label>
             </div>
             <div>
-                {{data.data[index]}}
+                {{data.values[index]}}
             </div>
         </div>
     </div>

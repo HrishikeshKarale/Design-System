@@ -20,7 +20,7 @@
                         >
                             <vue-card
                                 logo= 'fas fa-user fa-3x'
-                                :details= '{"cols": employees.cols, "data": emp}'
+                                :details= '{"cols": employees.cols, "values": emp}'
                                 :ctx= 'selected.bind(this, emp[0])'
                                 :low= '1'
                                 high= '5'

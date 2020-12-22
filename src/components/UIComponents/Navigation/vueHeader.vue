@@ -11,7 +11,7 @@
     />
     <nav>
       <ul>
-        <li>
+        <!-- <li>
           <router-link :to="{ name: 'app' }">
             <vue-img :src="logoLink" alt="Logo" />
             <h3>
@@ -19,21 +19,29 @@
               <h5>Kkiokio.com</h5>
             </h3>
           </router-link>
-        </li>
+        </li> -->
         <li
           v-for="(navigation, index) in nav"
           :key="index + '-' + navigation.name"
         >
           <router-link :to="{ name: navigation.component }">
-            <span v-if="index > 0" :class="navigation.icon" />
-            <template v-else>
-              <vue-img :src="logoLink" alt="Kkiokio.com" />
-              <!-- <small>kkiokio.com</small> -->
+            <template v-if= "navigation.id === 0">
+              <vue-img :src="logoLink" alt="Logo" />
+              <h3>
+                Hrishikesh Karale
+                <h5>Kkiokio.com</h5>
+              </h3>
             </template>
-            <div>
-              <h4>{{ navigation.name }}</h4>
-              <span> {{ navigation.tagline }}</span>
-            </div>
+            <template v-else>
+              <span v-if="index > 0" :class="navigation.icon" />
+              <template v-else>
+                <vue-img :src="logoLink" alt="Kkiokio.com" />
+              </template>
+              <div>
+                <h4>{{ navigation.name }}</h4>
+                <span> {{ navigation.tagline }}</span>
+              </div>
+            </template>
           </router-link>
         </li>
       </ul>

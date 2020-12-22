@@ -231,7 +231,7 @@
                     >
                         <vue-card
                             logo= 'fas fa-user fa-3x'
-                            :details= '{"cols": d_empData.cols, "data": emp}'
+                            :details= '{"cols": d_empData.cols, "values": emp}'
                             low= '1'
                             high= '4'
                         />

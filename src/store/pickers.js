@@ -8,7 +8,7 @@ var data= {
         "rate",
         "late"
     ],
-    "data": [
+    "values": [
         [
             "Xaviera F. Hutchinson",
             "8699",

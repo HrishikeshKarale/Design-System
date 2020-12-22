@@ -1,5 +1,11 @@
 var data= [
     {
+        id: 0,
+        name: 'Home',
+        component: 'app',
+        icon: "far fa-object-group",
+    },
+    {
         id: 1,
         name:'Design',
         component: 'design',
@@ -94,7 +100,7 @@ var data= [
     {
         id: 3, 
         name: 'Components',
-        component: 'formElements',
+        component: 'components',
         icon: "fab fa-creative-commons-share",
         subNav: [
             {
@@ -112,7 +118,7 @@ var data= [
                     {
                         id: 2,
                         name: 'name Input',
-                        component: 'navname',
+                        component: 'navName',
                         icon: "fas fa-name-width",
                     },
                     {
@@ -187,7 +193,7 @@ var data= [
                     {
                         id: 14,
                         name: 'namearea Input',
-                        component: 'navnamearea',
+                        component: 'navNamearea',
                         icon: "fas fa-name-height",
                     }
                 ]
@@ -195,7 +201,7 @@ var data= [
             {
                 id: 2, 
                 name:'UI Components',
-                name: 'ui components',
+                component: 'uiComponents',
                 icon: "fas fa-drafting-compass",
                 subNav: [
                     {
@@ -242,12 +248,12 @@ var data= [
                     }                            
                 ]
             },
-            // {
-            //     id: 4, 
-            //     name:'Grid',
-                    // component: grid,
-            //     icon: "fas fa-th"
-            // },
+            {
+                id: 4, 
+                name:'Grid',
+                component: "grid",
+                icon: "fas fa-th"
+            },
             {
                 id: 5,
                 name:'layout',
@@ -308,12 +314,13 @@ var data= [
     {
         id: 4, 
         name: 'Others',
+        component: 'others',
         icon: "fas fa-atom",
         subNav: [
             {
                 id: 1, 
                 name:'Sample Pages',
-                component: 'createMove',
+                component: 'samplePages',
                 icon: "fas fa-vial",
                 subNav: [
                     {

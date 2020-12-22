@@ -16,7 +16,7 @@
         @afterEnter="afterEnter"
       >
         <div :key="$route.path" class="content">
-          <!-- <breadcrums /> -->
+          <breadcrums :navigation="navigation"/>
           <scroll-indicator>
             <router-view :key="$route.path" />
           </scroll-indicator>
@@ -42,8 +42,9 @@
 </template>
 
 <script>
+import { nav } from "@/store/navigation"
 import scrollIndicator from "./scrollIndicator.vue";
-// import breadcrums from "@/components/breadcrums";
+import breadcrums from "@/components/UIComponents/Navigation/breadcrums";
 import vueImg from "../UIComponents/Image/vueImg.vue";
 // import { authentication } from "@/typeScript/authentication";
 import { cookie } from "@/typeScript/cookie.js";
@@ -52,7 +53,7 @@ export default {
   name: "EnterpriseAppLayout",
   components: {
     scrollIndicator,
-    // breadcrums,
+    breadcrums,
     vueImg
   },
 
@@ -64,12 +65,14 @@ export default {
     const DEFAULT_TRANSITION_MODE = "out-in";
     const transitionEnterActiveClass = "";
     const prevHeight = 0;
+    const navigation = nav;
     return {
       logo,
       transitionName: DEFAULT_TRANSITION,
       transitionMode: DEFAULT_TRANSITION_MODE,
       transitionEnterActiveClass,
-      prevHeight
+      prevHeight,
+      navigation
     };
   }, //mixins
 
