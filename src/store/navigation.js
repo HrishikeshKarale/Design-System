@@ -117,9 +117,9 @@ var data= [
                     },
                     {
                         id: 2,
-                        name: 'name Input',
-                        component: 'navName',
-                        icon: "fas fa-name-width",
+                        name: 'Text Input',
+                        component: 'navText',
+                        icon: "fas fa-text-width",
                     },
                     {
                         id: 3,
@@ -192,9 +192,9 @@ var data= [
                     },
                     {
                         id: 14,
-                        name: 'namearea Input',
-                        component: 'navNamearea',
-                        icon: "fas fa-name-height",
+                        name: 'Textarea Input',
+                        component: 'navTextarea',
+                        icon: "fas fa-text-height",
                     }
                 ]
             },

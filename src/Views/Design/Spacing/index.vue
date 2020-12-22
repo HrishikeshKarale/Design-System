@@ -267,3 +267,9 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
         }, //componnets
     } //default
 </script>
+
+<<style lang="less">
+    img {
+        max-width: 480px;
+    }
+</style>

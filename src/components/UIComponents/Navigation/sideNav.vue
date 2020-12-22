@@ -59,15 +59,16 @@
         </li>
       </ul>
     </nav>
-    <slot name="options" />
-    <vue-button
-      v-if="themeIcon"
-      tag="themeToggle"
-      category="text-sm"
-      text="Theme"
-      :icon="themeIcon"
-      :ctx="theme.bind(this)"
-    />
+    <div class="options">
+      <slot name="options" />
+      <vue-button
+        v-if="themeIcon"
+        tag="themeToggle"
+        category="text-sm"
+        text="Theme"
+        :icon="themeIcon"
+        :ctx="theme.bind(this)"
+      />
     </div>
   </header>
 </template>
@@ -206,13 +207,14 @@ header {
           & > .subNav > li > .subNav2 > li {
             & > a {
               display: flex;
-              flex-direction: row;
+              flex-direction: column;
               flex-wrap: nowrap;
               padding: @spaceMd @spaceSm;
 
               // level 1  level 2 level 3
                 & > span {
-                  font-size: @fontSize * 2;
+                  align-self: center;
+                  font-size: @fontSizeSm * 2;
                   .navSubText();
                 }
                 & > div > h4,
@@ -225,6 +227,7 @@ header {
               //level 2 and level 3 only
               & + .subNav,
               & + .subNav > li > .subNav2 {
+                margin-bottom:@spaceMd;
                 & > li {
                   display: flex;
                   flex-direction: column;
@@ -238,6 +241,11 @@ header {
                       }
                     }
                   }
+                }
+              }
+              & + .subNav > li > .subNav2 {
+                & > li > a > span {
+                  font-size: @fontSizeSm;
                 }
               }
               //styling selected link
@@ -259,7 +267,7 @@ header {
                     color: @secondaryColor;
                   }
                   & > span {
-                    transform: scale(2);
+                    transform: scale(1.2);
                   }
                 }
                 & > div {
@@ -275,6 +283,12 @@ header {
             }
           }
         }
+      }
+      & + .options {
+        display: flex;
+        position: fixed;
+        top: @spaceXl;
+        right: @spaceXl;
       }
     }
 
@@ -334,6 +348,7 @@ header {
                 & + .subNav > li > .subNav2 {
                   flex-direction: column;
                   margin-left: @spaceMd;
+                  margin-bottom: 0;
                   & > li {
                     flex-direction: column;
                     // align-self: flex-start;
