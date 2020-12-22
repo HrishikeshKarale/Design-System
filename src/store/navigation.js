@@ -58,41 +58,49 @@ var data= [
             {
                 id: 1, 
                 name:'Product Content',
+                component: 'productContent',
                 icon: "fas fa-pen"
             },
             {
                 id: 2, 
                 name:'Help Documentation',
+                component: 'helpDocumentation',
                 icon: "fas fa-question-circle"
             },
             {
                 id: 3, 
                 name:'Voice And Tone',
+                component: 'voiceAndTone',
                 icon: "fas fa-comment-dots"
             },
             {
                 id: 4, 
                 name:'Naming',
+                component: 'voiceAndTone',
                 icon: "fas fa-file-signature"
             },
             {
                 id: 5, 
                 name:'Vocabulary',
+                component: 'voiceAndTone',
                 icon: "fas fa-book"
             },
             {
                 id: 6, 
                 name:'Actionalble Language',
+                component: 'actionableLanguage',
                 icon: "fas fa-language"
             },
             {
                 id: 7, 
                 name:'Grammer and Mechanics',
+                component: 'grammerAndMechanics',
                 icon: "fas fa-check-double"
             },
             {
                 id: 8, 
-                name:'Alternative name',
+                name:'Alternative Text',
+                component: 'alternativeText',
                 icon: "fas fa-low-vision"
             },
         ]
