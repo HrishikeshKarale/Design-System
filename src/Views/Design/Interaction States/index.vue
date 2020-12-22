@@ -1,10 +1,11 @@
 <template><article id= 'interactionStates'>
-        <h1>Interaction states</h1>
         <p>
             Interaction states define a visual language for communicating the state of a component as users interact with it. These visual styles correspond to hover, focus, active, selected, disabled, and subdued states. They help users understand what to expect while interacting with COMET.
         </p>
         <section id= "principles">
-            <h3>Principles</h3>
+            <header>
+              <h3>Principles</h3>
+            </header>
             <p>
                 Interaction states should communicate the status of an action, establish confidence once an action is taken, and suggest the ability or inability to interact with an element.
             </p>
@@ -13,18 +14,20 @@
                 <p>
                     Interaction state styles should be subtle, but clear about the message that’s being relayed. Successful interaction feedback should inform and is not decorative. Avoid elaborate transitions that create visual noise or intense color changes. Distracting animation can create disturbance and make an interface unpleasant to use. Instead, aim to empower users and help them feel confident when carrying out their tasks.
                 </p>
-                <vue-img src= "https://polaris.shopify.com/assets/2d11b7285771077927f86c99622da852-subtle-but-clear@2x.png" />
+                <vue-img :src= "beSubtleBeClear" />
             </div>
             <div class= 'subSection'>
                 <h4>Be consistent</h4>
                 <p>
                     Consistent treatments for interaction feedback create recognizable patterns for users. If an interaction produces different feedback across COMET, it risks confusing users and deteriorates the integrity of the pattern.
                 </p>
-                <vue-img src= "https://polaris.shopify.com/assets/88eda48c035dda14dd319e968871147b-consistent@2x.png" />
+                <vue-img :src= "beConsistent" />
             </div>
         </section>
         <section id= "designingInteractionState">
-            <h3>Designing interaction state</h3>
+            <header>
+              <h3>Designing interaction state</h3>
+            </header>
             <p>
                 Merchants interact with interfaces differently depending on input device, so when designing your feature consider different input devices users use.
             </p>
@@ -72,7 +75,9 @@
             </div>
         </section>
         <section id= "styles">
-            <h3>Styles</h3>
+            <header>
+              <h3>Styles</h3>
+            </header>
             <p>
                 Polaris components have interaction state styles built in. Follow these guidelines when styling the interaction states of new components or custom features.
             </p>
@@ -127,6 +132,15 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
     
     export default {
         name: 'interactionStates',
+
+        data() {
+            const beSubtleBeClear = require("@/assets/design/interactionStates/d3ac47ef99465e40fd9c3b584115b928.png");
+            const beConsistent = require("@/assets/design/interactionStates/f95f524e33b1844bc616708c5967ace2.png");
+            return {
+                beSubtleBeClear,
+                beConsistent
+            }
+        }, //data
 
         components: {
             vueImg

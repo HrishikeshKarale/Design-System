@@ -2,7 +2,9 @@
   <article>
     <section id="typography">
       <header>
-        <h1>Typography</h1>
+        <header>
+            <h3>Roboto</h3>
+            </header>
       </header>
       <p>
         The official Comet typeface is Roboto and it is suggested for use on Comet print publications. In the event that a unit does not have access to Roboto fonts, other suggested fonts are Times New Roman or Open Sans.
@@ -26,6 +28,11 @@
       </div>
     </section>
     <section id="details">
+      <header>
+        <header>
+            <h3>Font Family</h3>
+            </header>
+      </header>
       <div class= 'subSection'>
         <label class="h2">
           Font Family:
@@ -40,6 +47,9 @@
       </div>
     </section>
     <section id="characters">
+        <header>
+            <h3>Characters</h3>
+            </header>
       <div>
         <div
           v-for= '(char, index) in characters'
@@ -58,6 +68,7 @@
       </div>
     </section>
     <section id="FontInfo">
+        <h3>Info</h3>
       <font-info
         v-for= 'info in fontInfo'
         :key= 'info.index'

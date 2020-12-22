@@ -1,9 +1,5 @@
 <template>
-  <div class="colors">
-      <article id="colors">
-        <header>
-          <h1>Colors</h1>
-        </header>
+      <article>
         <p>
           We uses colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.
         </p>
@@ -612,16 +608,17 @@
           </p>
         </div>
       </section>
+      <section id='resources'>
+        <header>
+          <h3>
+            Resources
+          </h3>
+        </header>              
+        <ul>
+          <li>How to Meet WCAG 2.0 requirements? <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0" target="_blank" class="fas fa-external-link-alt"/></li>
+        </ul>
+      </section>
     </article>
-    <header>
-      <h3>
-        Resources
-      </h3>
-    </header>              
-    <ul>
-      <li>How to Meet WCAG 2.0 requirements? <a href="https://www.w3.org/WAI/WCAG21/quickref/?versions=2.0" target="_blank" class="fas fa-external-link-alt"/></li>
-    </ul>
-  </div>
 </template>
 <script>
 
@@ -687,9 +684,6 @@
     justify-content: space-evenly;
   }
 
-  .colors {
-    display: flex;
-    flex-direction: column;
 
     article {
       section {
@@ -800,7 +794,4 @@
         }
       }
     }
-
-    
-  }
 </style>

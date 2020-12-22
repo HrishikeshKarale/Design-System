@@ -1,11 +1,12 @@
 <template>
     <article id= 'icons'>
-        <h1>Icons</h1>
         <p>
             FONT AWESOME icons act as visual aids to help users complete tasks. They should be used purposefully.
         </p>
         <section id= "iconPrinciples">
-            <h3>Icon Principles</h3>
+            <header>
+              <h3>Icon Principles</h3>
+            </header>
             <p>
                 FONT AWESOME icons are simple and informative. Each icon builds on the visual language of the design system.
             </p>
@@ -48,7 +49,9 @@
             </div>
         </section>
         <section id= "guidlines">
-            <h3>Icon guidlines</h3>
+            <header>
+              <h3>Icon guidlines</h3>
+            </header>
             <div class= 'subSection'>
                 <h4>User established icons</h4>
                 <p>
@@ -81,7 +84,9 @@
             </div>
         </section>
         <section id= "usage">
-            <h3>When to use icons</h3>
+            <header>
+              <h3>When to use icons</h3>
+            </header>
             <p>
                 Icons are powerful visual helpers and should be used with care. Overuse quickly results in user interfaces that are visually overwhelming or distracting.
             </p>
@@ -97,7 +102,9 @@
             </ul>
         </section>
         <section id= "systemIcons">
-            <h3>System icons</h3>
+            <header>
+              <h3>System icons</h3>
+            </header>
             <p>
                 System icons are meant to help users wayfind and shouldn’t be ornamental.
             </p>
@@ -117,7 +124,9 @@
             </p>
         </section>
         <section id= "spotIcons">
-            <h3>Spot icons</h3>
+            <header>
+              <h3>Spot icons</h3>
+            </header>
             <p>
             Spot icons are rarely used in product experiences since they have a marketing purpose. One instance where it might show up is on a sell page in product.
             </p>
@@ -152,7 +161,9 @@
             </p>
         </section>
         <section id= "systemIconUsage">
-            <h3>Using system icons in your design</h3>
+            <header>
+              <h3>Using system icons in your design</h3>
+            </header>
             <p>
                 FONT AWESOME system icons come in two styles: minor and major.
             </p>

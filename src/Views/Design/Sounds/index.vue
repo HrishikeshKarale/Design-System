@@ -1,13 +1,12 @@
-<template>
-  <div class= "sound">   
-      
-        <article id= 'sound'>
-          <h1>Sounds</h1>
+<template>    
+        <article>
           <p>
             COMET uses sounds intentionally to communicate information and to enhance our users’ experience of our product. Sound patterns make interactions with our product easier and more predictable.
           </p>
           <section id= "considerations">
-            <h3>Considerations</h3>
+            <header>
+              <h3>Considerations</h3>
+            </header>
             <div class= 'subSection'>
               <h4>Considering the Urgency of the event</h4>
               <p>
@@ -52,7 +51,9 @@
             </div>
           </section>
           <section id= "whenToUse">
-            <h3>When to use sound</h3>
+            <header>
+              <h3>When to use sound</h3>
+            </header>
             <p>
               Sounds in our product help convey information. There’s an important balance between having too many sounds and not enough. Useful and well-planned sounds will help with merchant understanding. Unnecessary sounds will reduce the perceived quality of our product.
             </p>
@@ -73,7 +74,9 @@
             </div>
           </section>
           <section id= "howToApproach">
-            <h3>How to approach sound design</h3>
+            <header>
+              <h3>How to approach sound design</h3>
+            </header>
             <p>
               Be creative and intentional in sound design. Here are a few simple considerations:
             </p>
@@ -94,7 +97,6 @@
             </p>
           </section>
         </article>
-  </div>
 </template>
 
 <script>

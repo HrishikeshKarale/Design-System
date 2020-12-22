@@ -1,29 +1,32 @@
 <template>    
     <article id= 'spacing'>
-        <h1>Spacing</h1>
         <p>
             Consistent spacing creates visual balance that makes the user interface (UI) easier for users to scan. Apply consistent spacing to improve the quality of the UI.
         </p>
-        <section id= "system">
-            <h3>The spacing system</h3>
+        <section id= "spacingSystem">
+            <header>
+              <h3>The spacing system</h3>
+            </header>
             <p>
                 All spacing for components and typography is done in increments of 4 pixels. This 4 px value forms the basic unit of measurement for spacing.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/7d7a7ef3f45d44619ef2e130bd238eac-components@2x.png" />
+            <vue-img :src= "img1" />
             <p>
                 Typography doesn’t use a traditional baseline grid. Instead, line heights are set in increments of 4 px and spacing is measured from the edges of the text boxes.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/a58cbc6bc33beb4fadae7b041acf8635-typography@2x.png" />
+            <vue-img :src= "img2" />
             <p>
                 Many components are sized in increments of 20 px to match the line height of body text. This makes it easy to create harmonious arrangements of components and text.
             </p>
             <p>
                 For example, the standard sizes of the avatar component have been chosen match the line height of body text:
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/5155645c415f242388f0d5696f62abd1-components-and-type@2x.png" />
+            <vue-img :src= "img3" />
         </section>
         <section id= "code">
-            <h3>Spacing in code</h3>
+            <header>
+              <h3>Spacing in code</h3>
+            </header>
             <p>
                 You can apply spacing in code in several ways:
             </p>
@@ -90,7 +93,7 @@
                     <p>
                         Use the text container component to wrap and automatically add the correct spacing between a set of paragraphs, lists, or other textual components.
                     </p>
-                    <vue-img src= "https://polaris.shopify.com/assets/bb265b78ed07bcf1897b5b9b4748af19-text-container@2x.png" alt= "" />
+                    <vue-img :src= "img4" />
                 </div>
                 <div class= 'subSection'>
                     <h5>Stack</h5>
@@ -100,20 +103,22 @@
                     <p>
                         It accepts the same values as the Sass spacing function to control spacing between the items.
                     </p>
-                    <vue-img src= "https://polaris.shopify.com/assets/392f4cfb96fbc23e09f8758da818825e-stack@2x.png" alt= "" />
+                    <vue-img :src= "img5" />
                 </div>
             </div>
         </section>
         <section id= "howToChoose">
-            <h3>How to choose spacing</h3>
+            <header>
+              <h3>How to choose spacing</h3>
+            </header>
             <p>
                 Use less space between small components, or components that share a close functional relationship.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/f2da072a1577c0e6ba7539dd242827cc-spacing-micro@2x.png 2x" alt= "" />
+            <vue-img :src= "img6" />
             <p>
                 Use more space between large components, or between components which are less functionally related.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/6eb747ae735dc79314014c4d16e78e03-spacing-macro@2x.png 2x" alt= "" />
+            <vue-img :src= "img7" />
             <p>
                 Coordinate small and large values, along with structural components like cards, to create visual groupings of related things. This helps users understand the interface and find what they’re looking for.
             </p>
@@ -122,21 +127,23 @@
             </p>
         </section>
         <section id= "commonValues">
-            <h3>Common values</h3>
+            <header>
+              <h3>Common values</h3>
+            </header>
             <p>
                 4px (extra-tight) between icon and text
             </p>
             <p>
                 The button component has this spacing built in.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/f3660e075f98e11181e8c5dc80b74977-icon-text-spacing@2x.png 2x" alt= "" />
+            <vue-img :src= "img8" />
             <p>
                 8px (tight) between buttons
             </p>
             <p>
                 The button group component has this spacing built in.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/f3660e075f98e11181e8c5dc80b74977-icon-text-spacing@2x.png 2x" alt= "" />
+            <vue-img :src= "img9" />
             <p>
                 16 or 20px between form fields:
             </p>
@@ -149,7 +156,7 @@
             <p>
                 The form layout component has this spacing built in.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/2cc376269ee87cd5c42d5dbdfde9780b-form-layout@2x.png 2x" alt= "" />
+            <vue-img :src= "img10" />
             <p>
                 20px (loose) padding in cards
             </p>
@@ -159,8 +166,8 @@
             <p>
                 The card component has this built in.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/80aad1ee53af5d357d520cc214ab84dd-card-padding@2x.png 2x" alt= "" />
-            <vue-img srcset= "https://polaris.shopify.com/assets/e84137a8520bbe36a0eaca708abe72b1-card-padding-small-screen@2x.png 2x" alt= "" />
+            <vue-img :src= "img11" />
+            <vue-img :src= "img12" />
             <p>
                 20px (loose) between cards
             </p>
@@ -170,39 +177,42 @@
             <p>
                 For horizontal spacing, use the layout component to create multi-column layouts.
             </p>
-            <vue-img srcset= "https://polaris.shopify.com/assets/f52cd017696b30045da3af93be1f66a3-card-spacing@2x.png 2x" alt= "" />
+            <vue-img :src= "img13" />
         </section>
         <section id= "exceptions">
-            <h3>Exceptions</h3>
+            <header>
+              <h3>Exceptions</h3>
+            </header>
             <p>
                 When text is vertically centered inside a component, the top and bottom padding can be any size.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/9ad6611582014cf691e1ea71214e04c6-centering@2x.png" alt= "" />
+            <vue-img :src= "img14" />
             <p>
                 The side padding within pill shapes can also be an odd number to match the shape’s radius.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/b2ee7700226949d18e2a8d0f8ef638ef-caps@2x.png" alt= "" />
+            <vue-img :src= "img15" />
             <p>
                 Allow the length of text to determine the width of components and where they fall horizontally when placed in a row.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/e7bef23155ff9a8d1d372c880e90eaeb-natural-widths@2x.png" alt= "" />
+            <vue-img :src= "img16" />
         </section>
         <section id= "opticalAdjustment">
-            <h3>Optical Adjustment</h3>
+            <header>
+              <h3>Optical Adjustment</h3>
+            </header>
             <p>
                 Sometimes an element is larger than it appears. Spacing based on the invisible edges of the element will feel wrong. Correct for these optical effects by adjusting the space in 4 px increments until it looks more balanced.
             </p>
             <p>
                 Without optical adjustment, the disclosure icon appears too far from the right edge of the button.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/90cc9cd6fd36ca1979c06fe074058ec6-optical-uncorrected@2x.png" alt= "" />
+            <vue-img :src= "img17" />
             <p>
                 After optical correction, the perceived spacing is more balanced.
             </p>
-            <vue-img src= "https://polaris.shopify.com/assets/912602b121b2fafa19c5cf5df74ba526-optical-corrected@2x.png" alt= "" />
+            <vue-img :src= "img18" />
         </section>
     </article>
-    </div>
 </template>
 
 <script>
@@ -210,6 +220,47 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 
     export default {
         name: 'spacing',
+        
+        data() {
+            const img1 = require("@/assets/design/spacing/77cbbfac15fc417248ff564e03cbe3a2.png");
+            const img2 = require("@/assets/design/spacing/edee413a2250a2f7b9696096035c6601.png");
+            const img3 = require("@/assets/design/spacing/c555cdf9647f5f8817fe8b1685fdade3.png");
+            const img4 = require("@/assets/design/spacing/2ec5ec17dcb8b996ecf1f3ebec992e66.png");
+            const img5 = require("@/assets/design/spacing/06cf82c565ebe0126717286e050f34bf.png");
+            const img6 = require("@/assets/design/spacing/2b7241efdb4598599d53a08d50421db9.png");
+            const img7 = require("@/assets/design/spacing/1bd4f319325809ce92e5d153f155a04b.png");
+            const img8 = require("@/assets/design/spacing/858525cb0c3dcb84d827223c842a8f8e.png");
+            const img9 = require("@/assets/design/spacing/a83a6350f0b45247b9348ee16cd6bcba.png");
+            const img10 = require("@/assets/design/spacing/0f82da84cab264e5019abe4c676db759.png");
+            const img11 = require("@/assets/design/spacing/a4e75f8f6a39ed53727da0a373f9de25.png");
+            const img12 = require("@/assets/design/spacing/42aa486ef00cc52a2c2979c4eadd3ff0.png");
+            const img13 = require("@/assets/design/spacing/446c269a3c0c16e25bf70327435ed807.png");
+            const img14 = require("@/assets/design/spacing/32fbb59c4e996fc20e8b3d04431a7eb0.png");
+            const img15 = require("@/assets/design/spacing/5af993743f52a65733e04f8b263d085a.png");
+            const img16 = require("@/assets/design/spacing/9e497b70378eafc52827b5d17d820a86.png");
+            const img17 = require("@/assets/design/spacing/025ac531ae2f3e735c1b744ed31b7e10.png");
+            const img18 = require("@/assets/design/spacing/4582e5529e4037b61c38cdec6621eb8a.png");
+            return{
+                img1,
+                img2,
+                img3,
+                img4,
+                img5,
+                img6,
+                img7,
+                img8,
+                img9,
+                img10,
+                img11,
+                img12,
+                img13,
+                img14,
+                img15,
+                img16,
+                img17,
+                img18
+            }
+        }, //data
 
         components: {
             vueImg
