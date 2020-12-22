@@ -5688,7 +5688,7 @@
     <None Include="src\components\%28del%29HelloWorld.vue" />
     <None Include="src\components\Alerts.vue" />
     <None Include="src\components\ColorPallet.vue" />
-    <None Include="src\components\FormComponents.vue" />
+    <None Include="src\components\FormElements.vue" />
     <None Include="src\components\Grid.vue" />
     <None Include="src\components\Layout.vue" />
     <None Include="src\components\NavigationMain.vue" />

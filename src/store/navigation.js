@@ -94,13 +94,13 @@ var data= [
     {
         id: 3, 
         name: 'Components',
-        component: 'FormElements',
+        component: 'formElements',
         icon: "fab fa-creative-commons-share",
         subNav: [
             {
                 id: 1, 
                 name:'Form Elements',
-                component: 'FormElements',
+                component: 'formElements',
                 icon: "fas fa-align-left",
                 subNav: [
                     {

@@ -1930,7 +1930,7 @@
     import vueInfo from "@/components/FormElements/vueInfo";
 
     export default {
-        name: "formComponents",
+        name: "formElements",
 
         components: {
             

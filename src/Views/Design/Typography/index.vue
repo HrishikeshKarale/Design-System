@@ -245,13 +245,13 @@
   @import (reference) "./../../../Less/customMixins.less";
   @import (reference) "./../../../Less/customVariables";
 
-  @width: 1280px;
+  /* @width: 1280px; */
 
   .typography {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: @width;
+    /* width: @width; */
 
     .typographyTitle {
       margin-bottom: 96px;
@@ -315,7 +315,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      max-width: @width;
+      /* max-width: @width; */
       margin: 0 auto;
 
       > div {  

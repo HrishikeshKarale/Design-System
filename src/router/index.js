@@ -31,21 +31,21 @@ import components from '@/Views/Components'
         import navWizard from '@/Views/Components/uiComponents/navWizard'
         import navTable from '@/Views/Components/uiComponents/navTable'
         import navNavigation from '@/Views/Components/uiComponents/navNavigation'
-    import formComponents from '@/Views/Components/FormComponents'
-        import navForm from '@/Views/Components/FormComponents/navForm.vue'
-        import navText from '@/Views/Components/FormComponents/navText'
-        import navCheckbox from '@/Views/Components/FormComponents/navCheckbox'
-        import navDropdownList from '@/Views/Components/FormComponents/navDropdownList'
-        import navSearchableDropdownList from '@/Views/Components/FormComponents/navSearchableDropdownList'
-        import navEmail from '@/Views/Components/FormComponents/navEmail'
-        import navFile from '@/Views/Components/FormComponents/navFile'
-        import navToggle from '@/Views/Components/FormComponents/navToggle'
-        import navNumber from '@/Views/Components/FormComponents/navNumber'
-        import navPassword from '@/Views/Components/FormComponents/navPassword'
-        import navRadio from '@/Views/Components/FormComponents/navRadio'
-        import navDate from '@/Views/Components/FormComponents/navDate'
-        import navInfo from '@/Views/Components/FormComponents/navInfo'
-        import navTextarea from '@/Views/Components/FormComponents/navTextarea'
+    import formElements from '@/Views/Components/FormElements'
+        import navForm from '@/Views/Components/FormElements/navForm.vue'
+        import navText from '@/Views/Components/FormElements/navText'
+        import navCheckbox from '@/Views/Components/FormElements/navCheckbox'
+        import navDropdownList from '@/Views/Components/FormElements/navDropdownList'
+        import navSearchableDropdownList from '@/Views/Components/FormElements/navSearchableDropdownList'
+        import navEmail from '@/Views/Components/FormElements/navEmail'
+        import navFile from '@/Views/Components/FormElements/navFile'
+        import navToggle from '@/Views/Components/FormElements/navToggle'
+        import navNumber from '@/Views/Components/FormElements/navNumber'
+        import navPassword from '@/Views/Components/FormElements/navPassword'
+        import navRadio from '@/Views/Components/FormElements/navRadio'
+        import navDate from '@/Views/Components/FormElements/navDate'
+        import navInfo from '@/Views/Components/FormElements/navInfo'
+        import navTextarea from '@/Views/Components/FormElements/navTextarea'
     import layout from '@/Views/Components/Layouts'
     import navAlert from '@/Views/Components/Alerts'
             import navAlertProactive from '@/Views/Components/Alerts/navAlertProactive'
@@ -218,77 +218,77 @@ export default new Router({
                     component: navNavigation
                 },
             {
-                path: '/components/formComponents',
-                name: 'formComponents',
-                component: formComponents,
+                path: '/components/formElements',
+                name: 'formElements',
+                component: formElements,
             },
                 {
-                    path: '/components/formComponents/navForm',
+                    path: '/components/formElements/navForm',
                     name: 'navForm',
                     component: navForm
                 },
                 {
-                    path: '/components/formComponents/navText',
+                    path: '/components/formElements/navText',
                     name: 'navText',
                     component: navText
                 },
                 {
-                    path: '/components/formComponents/navPassword',
+                    path: '/components/formElements/navPassword',
                     name: 'navPassword',
                     component: navPassword
                 },
                 {
-                    path: '/components/formComponents/navEmail',
+                    path: '/components/formElements/navEmail',
                     name: 'navEmail',
                     component: navEmail
                 },
                 {
-                    path: '/components/formComponents/navNumber',
+                    path: '/components/formElements/navNumber',
                     name: 'navNumber',
                     component: navNumber
                 },
                 {
-                    path: '/components/formComponents/navInfo',
+                    path: '/components/formElements/navInfo',
                     name: 'navInfo',
                     component: navInfo
                 },
                 {
-                    path: '/components/formComponents/navToggle',
+                    path: '/components/formElements/navToggle',
                     name: 'navToggle',
                     component: navToggle
                 },
                 {
-                    path: '/components/formComponents/navDropdownList',
+                    path: '/components/formElements/navDropdownList',
                     name: 'navDropdownList',
                     component: navDropdownList
                 },
                 {
-                    path: '/components/formComponents/navSearchableDropdownList',
+                    path: '/components/formElements/navSearchableDropdownList',
                     name: 'navSearchableDropdownList',
                     component: navSearchableDropdownList
                 },
                 {
-                    path: '/components/formComponents/navFile',
+                    path: '/components/formElements/navFile',
                     name: 'navFile',
                     component: navFile
                 },
                 {
-                    path: '/components/formComponents/navCheckbox',
+                    path: '/components/formElements/navCheckbox',
                     name: 'navCheckbox',
                     component: navCheckbox
                 },
                 {
-                    path: '/components/formComponents/navRadio',
+                    path: '/components/formElements/navRadio',
                     name: 'navRadio',
                     component: navRadio
                 },
                 {
-                    path: '/components/formComponents/navDate',
+                    path: '/components/formElements/navDate',
                     name: 'navDate',
                     component: navDate
                 },
                 {
-                    path: '/components/formComponents/navTextarea',
+                    path: '/components/formElements/navTextarea',
                     name: 'navTextarea',
                     component: navTextarea
                 },

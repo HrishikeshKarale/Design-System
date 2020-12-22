@@ -1,6 +1,6 @@
 <template>
     <div class= 'vueForm'>
-        <div class= 'formComponents'>
+        <div class= 'formElements'>
             <slot/>
         </div>
         <div class= 'formButtons'>
