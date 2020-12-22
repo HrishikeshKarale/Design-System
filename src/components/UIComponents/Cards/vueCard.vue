@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                <template v-if= 'actionButtons'>
+                <template v-if= 'this.$slots.actionButtons'>
                     <div class= 'col2'>
                         <slot name= 'actionButtons'/>
                     </div>
@@ -98,12 +98,6 @@
                 type: Object,
                 rewuired: true,
                 default: null
-            },
-
-            actionButtons: {
-                required: false,
-                type: Boolean,
-                default: false
             },
 
             cardFooter: {

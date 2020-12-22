@@ -229,12 +229,12 @@
                         v-for= '(emp, index) in d_empData.data'
                         :key= 'index'
                     >
-                        <!-- <vue-card
+                        <vue-card
                             logo= 'fas fa-user fa-3x'
                             :details= '{"cols": d_empData.cols, "data": emp}'
                             low= '1'
                             high= '4'
-                        /> -->
+                        />
                         <card-background
                             low= '2'
                             high= '3'

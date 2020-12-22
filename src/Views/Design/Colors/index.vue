@@ -78,13 +78,12 @@
                     <template 
                       v-for="(cols, index) in color.color"
                     >
-                      <!-- <vue-card
+                      <vue-card
                         class="palette"
                         :key="index"
                         :title="cols.text"
                         logo="fas fa-circle fa-5x"
                         :logoColor="`#${cols.hex}}`"
-                        :actionButtons='d_booleanTrue'
                         :details='{ cols: ["Name", "HEX", "RGB"], data: [cols.name, cols.hex, hexToRgb(cols.hex)]}'
                         low='2'
                         high='1'
@@ -98,18 +97,17 @@
                             :id='cols.hex'
                           />
                         </div>
-                      </vue-card> -->
+                      </vue-card>
                     </template>
                   </div>
                 </div>
-                <!-- <vue-card
+                <vue-card
                   :key="index"
                   v-else
                   class="palette"
                   :title="color.text"
                   logo="fas fa-circle fa-5x"
                   :logoColor="`#${color.hex}`"
-                  :actionButtons="d_booleanTrue"
                   :details="{ cols: ['Name', 'HEX', 'RGB'], data: [color.name, color.hex, hexToRgb(color.hex)]}"
                   low="2"
                   high="1"
@@ -122,7 +120,7 @@
                       :id="color.hex"
                     />
                   </div>
-                </vue-card> -->
+                </vue-card>
               </template>
             </div>
           </div>

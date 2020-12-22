@@ -20,70 +20,61 @@
     type: {{category}}
     </h4>
     <vue-button 
-    :type= 'd_type'
-    :tag= "d_tag"
-    :text= "d_text"
-    :icon= "d_icon"
-    :category= 'category'
-    :disabled= '!d_booleanTrue'
-    :autofocus= '!d_booleanTrue'
-    :form= "d_form"
-    :ctx= 'd_ctx'
+      tag= "consoleTextButton"
+      text= "Click Me "
+      icon= "fas fa-registered"
+      category= 'category'
+      :ctx= 'd_ctx'
     />
   </div>
 
   <h1>
     Cards
   </h1>
-  <!-- <vue-card
-    :title= 'd_title'
-    :logo= 'd_logo'
-    :actionButtons= 'd_booleanTrue'
+  <vue-card
+    title= 'Sample Navigation'
+    logo= 'fas fa-user fa-3x'
     :details= 'd_details'
     :ctx= 'd_cardctx' 
     :cardFooter= 'd_cardFooter'
-    :bookmark= '!d_booleanTrue'
+    :bookmark= 'bookmark'
+    @bookmark="val => bookmark = val"
     low= '2'
   >
     <div slot= 'actionButtons'>
       <div >  
-      <vue-button 
-           :type= 'd_type'
+      <vue-button
             tag= "toggleFilter"
-            :text= "d_text"
+            text= "Click Me "
             icon= "fas fa-times"
             category= 'icon'
-            :disabled= '!d_booleanTrue'
-            :autofocus= '!d_booleanTrue'
-            :form= "d_form"
             :ctx= 'consoleClickDelete'
           />
       </div>
     </div>
-  </vue-card> -->
+  </vue-card>
 
     
     <h3>Clickable Employee Card</h3>
-    <!-- <vue-card
-      :logo= 'd_logo'
+    <vue-card
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details'
       :ctx= 'd_cardctx' 
       low= '2'
       high= '3'
-    /> -->
+    />
 
     <h3>Employee Card (no click event)</h3>
-    <!-- <vue-card
-      :logo= 'd_logo'
+    <vue-card
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details' 
       low= '1'
-    > -->
+    />
     
     <h3>Customer Card</h3>
-    <!-- <vue-card
-      :title= 'd_title'
-      :logo= 'd_logo'
-      :actionButtons= 'd_booleanTrue'
+    <vue-card
+      title= 'Custom Card'
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details'
       :ctx= 'd_cardctx' 
       low= '2'
@@ -92,49 +83,42 @@
       <div slot= 'actionButtons'>
         <div>
           <vue-button 
-            :type= 'd_type'
             tag= "toggleFilter"
-            :text= "d_text"
+            text= "Click Me "
             icon= "fas fa-times"
             category= 'icon'
-            :disabled= '!d_booleanTrue'
-            :autofocus= '!d_booleanTrue'
-            :form= "d_form"
             :ctx= 'consoleClickDelete'
           />
         </div>
       </div>
-    </vue-card> -->
+    </vue-card>
     
     <h3>Customer Card no actionButton</h3>
-    <!-- <vue-card
-      :title= 'd_title'
-      :logo= 'd_logo'
-      :actionButtons= 'd_booleanTrue'
+    <vue-card
+      title= 'Custom Card'
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details'
       :ctx= 'd_cardctx' 
       :cardFooter= 'd_cardFooter'
       low= '1'
-    /> -->
+    />
 
     <h3>Customer Card no carts no actionButton</h3>
-    <!-- <vue-card
-      :title= 'd_title'
-      :logo= 'd_logo'
-      :actionButtons= 'd_booleanTrue'
+    <vue-card
+      title= 'Custom Card'
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details'
       :ctx= 'd_cardctx'
       low= '1'
-    /> -->
+    />
 
     <h3>Customer Card no carts no actionButton no header</h3>
-    <!-- <vue-card
-      :logo= 'd_logo'
-      :actionButtons= 'd_booleanTrue'
+    <vue-card
+      logo= 'fas fa-user fa-3x'
       :details= 'd_details'
       :ctx= 'd_cardctx'
       low= '1'
-    /> -->
+    />
 
 
     <h3>Step Wizard</h3>  
@@ -150,17 +134,12 @@
               <text-input 
                 label= "Customer"
                 name= "customerField"
-                :value= 'd_value'
-                v-model= 'd_customerVal'
+                :value= 'd_customerVal'
                 :pattern= 'd_pattern'
-                :placeholder= "d_placeholder"
+                placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-user'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -168,19 +147,14 @@
               <searchable-dropdown-list 
                 label= "Cost Center"
                 name= "costCenterField"
-                v-model= 'd_costCenterVal'
                 :value= 'd_costCenterVal'
                 :options= 'd_warehouse'
                 :pattern= 'd_pattern'
-                :placeholder= 'd_placeholder'
+                placeholder= 'Enter a value/Select an option'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                :multiple= '!d_booleanTrue'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-closed-captioning'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -188,17 +162,12 @@
               <text-input 
                 label= "Order Name"
                 name= "orderNameField"
-                v-model= 'd_OrderNameVal'
-                :value= 'd_value'
+                :value= 'd_OrderNameVal'
                 :pattern= 'd_pattern'
-                :placeholder= "d_placeholder"
+                placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-file-signature'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -206,17 +175,12 @@
               <text-input 
                 label= "Recipient"
                 name= "orderNameField"
-                v-model= 'd_recipientVal'
-                :value= 'd_value'
+                :value= 'd_recipientVal'
                 :pattern= 'd_pattern'
-                :placeholder= "d_placeholder"
+                placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-user'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -225,18 +189,14 @@
                 label= "Delivery Option"
                 name= "customerField"
                 v-model= 'd_deliveryOptionVal'
-                :value= 'd_value'
+                :value= 'd_deliveryOptionVal'
                 :options= 'd_warehouse'
                 :pattern= 'd_pattern'
-                :placeholder= 'd_placeholder'
+                placeholder= 'Enter a value/Select an option'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                :multiple= '!d_booleanTrue'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-truck'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -244,13 +204,9 @@
               <checkbox-input 
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
-                v-model= 'd_shipping'
-                :value= 'd_value'
+                :value= 'd_shipping'
                 :options= null
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -258,17 +214,12 @@
               <vue-textarea 
                 label= "Add a note for Recipient"
                 name= "recipientNoteField"
-                v-model= "d_recipientNote"
-                :value= 'd_value'
+                :value= 'd_recipientNote'
                 :pattern= 'd_pattern'
-                :placeholder= "d_placeholder"
+                placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_TAmaxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-comment'
-                :inline= '!d_booleanTrue'
                 @alerts= 'd_alerts'
               />
             </div>
@@ -293,11 +244,7 @@
                   placeholder= "Enter SKU..."
                   :maxlength= 'd_maxlength'
                   :required= 'd_booleanTrue'
-                  :disabled= '!d_booleanTrue'
-                  :readonly= '!d_booleanTrue'
-                  :autofocus= '!d_booleanTrue'
                   inputIcon= 'fas fa-barcode'
-                  :inline= '!d_booleanTrue'
                   @alerts= 'alerts'
                 />
               </div>
@@ -310,11 +257,7 @@
                     value= ''
                     placeholder= "0"
                     :required= 'd_booleanTrue'
-                    :disabled= '!d_booleanTrue'
-                    :readonly= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
                     inputIcon= 'fas fa-hashtag'
-                    :inline= '!d_booleanTrue'
                     @alerts= 'alerts'
                   />
                 </div>
@@ -328,14 +271,10 @@
             </div>
             <div>
               <vue-button 
-                :type= 'd_type'
                 tag= "AddSKUButton"
                 text= "Add SKU"
                 icon= "fas fa-plus"
                 category= 'icon'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
-                :form= "d_form"
                 :ctx= 'createCard()'
               />
             </div>
@@ -345,26 +284,21 @@
             :key= 'index'
             class= 'tagCards'
           >
-            <!-- <vue-card
-              :actionButtons= 'd_booleanTrue'
+            <vue-card
               :details= '{"cols": d_SKUdetails["cols"], "details": dat}'
             >
               <div slot= 'actionButtons'>
                 <div >  
                   <vue-button 
-                    :type= 'd_type'
                     tag= "closeButton"
-                    :text= "d_text"
+                    text= "Click Me "
                     icon= "fas fa-times"
                     category= 'icon'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
-                    :form= "d_form"
                     :ctx= 'delCard.bind(this, index)'
                   />
                 </div>
               </div>
-            </vue-card> -->
+            </vue-card>
           </div>
         </div>
       </template>
@@ -393,7 +327,7 @@
       :columns= 'd_columns'
       :metadetails= 'metadetails'
       :select= 'd_columns[0]'
-      :title= 'd_title'
+      title= 'Sample Table'
       low= '1'
       @setPage= 'setPage'
       @setSortKey= 'setSortKey'
@@ -423,7 +357,6 @@
   
   import radioInput from "@/components/FormElements/radioInput";
 
-  // import { store } from '@/store/store'
   import { mapState, mapActions } from 'vuex';
 
   export default {
@@ -436,53 +369,22 @@
     mapActions,
 
     details () {
-
       //buttons
-      var d_type= 'button'
-
-      var d_tag= 'consoleTextButton'
-
-      var d_text= 'Click Me'
-
-      var d_icon= 'fas fa-registered'
-      
-      var d_category= this.$store.state.category
-
-      var d_form= ''
-
-      var d_booleanTrue= true
-
-      var d_ctx= this.consoleClick
-
+      const d_category= this.$store.state.category;
+      const d_booleanTrue= true
+      const bookmark= d_booleanTrue
+      const d_ctx= this.consoleClick
       //card
-      var d_cardDetails= this.$store.state.cardDetails
-
-      var d_customerCarts= this.$store.state.customerCarts
-
-      var d_cardFooter= this.$store.state.customfooter
-
-      var d_title= 'Custom Card'
-
-      var d_logo= 'fas fa-user fa-3x'
-
-      var d_details= {"cols": d_cardDetails.cols, "details": d_cardDetails.details[0]}
-
-      var d_cardctx= this.consoleClick
-
+      const d_cardDetails= this.$store.state.cardDetails
+      const d_customerCarts= this.$store.state.customerCarts
+      const d_cardFooter= this.$store.state.customfooter
+      const d_details= {"cols": d_cardDetails.cols, "details": d_cardDetails.details[0]}
+      const d_cardctx= this.consoleClick
       //navigation
-      const d_logoLink= require('@/assets/CometDocsTransparent.svg')
-
-      var d_title= 'Sample Navigation'
-
-      var d_navigation= this.$store.state.navigation
-
-      var d_nav= this.nav 
-      
-      //table
-      var d_title= 'Sample Table'
-
+      const d_navigation= this.$store.state.navigation
+      const d_nav= this.nav
       //stepWizard
-      var d_steps= [
+      const d_steps= [
         {
           id: 1,
           title: "Order details",
@@ -494,164 +396,75 @@
           icon_class: "fa fa-th-list"
         }
       ]
-
-      var d_label= "Warehouse"
-
-      var d_name= "searchableDropdownField"
-
-      var d_value= ''
-
-      var d_searchDropboxValue= ''
-
-      var d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
-
-      var d_placeholder= 'Enter a value/Select an option'
-
-      var d_maxlength= 20
-
-      var d_TAmaxlength= 120
-
-      var d_booleanTrue= true
-
-      var d_inputIcon= 'fas fa-warehouse'
-
-      var d_alerts= this.alerts
-
-      var d_column= ['SKU', 'Quantity', 'Available']
-
-      var d_SKUdetails= {
+      const d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
+      const d_maxlength= 20
+      const d_TAmaxlength= 120
+      const d_alerts= this.alerts
+      const d_column= ['SKU', 'Quantity', 'Available']
+      const d_SKUdetails= {
         'cols': d_column, 
         'details': new Array()
       }
-
-      var d_warehouse= this.$store.state.warehouse
-      var d_recordsPerPage= this.$store.state.metadetails.recordsPerPage
-
-      var d_filters= {
+      const d_warehouse= this.$store.state.warehouse
+      const d_recordsPerPage= this.$store.state.metadetails.recordsPerPage
+      const d_filters= {
         type: ['warehouse', 'recordsPerPage'],
         options:[d_warehouse, d_recordsPerPage ]
       }
-
-      var d_filterSelected= {
+      const d_filterSelected= {
         type: ['warehouse'],
         value:['Rochester']
       }      
-
-      var d_columns= [
+      const d_columns= [
         'Order Number',
         'Status',
         'Created On',
         'Created By'
       ]
-
       return {
         d_radioValue: null,
         d_options: ["Rochester", "Harrisburg", "Reno", "Oklahoma", "Buffalo"],
-
-        d_columns: d_columns,
-
-        d_filters: d_filters,
-        d_filterSelected: d_filterSelected,
-
+        d_columns,
+        d_filters,
+        d_filterSelected,
         //tag
         d_maxlength: 20,
-        d_value: null,
         d_SKU: null,
-        d_SKUdetails: d_SKUdetails,
+        d_SKUdetails,
         d_numberValue: null,
         d_info: 900,
-
         //stepWaizard
-
-        d_SKUdetails: d_SKUdetails,
-
-        d_label: d_label,
-
-        d_name: d_name,
-
-        d_value: d_value,
-
-        d_searchDropboxValue: d_searchDropboxValue,
-
-        d_pattern: d_pattern,
-
-        d_placeholder: d_placeholder,
-
-        d_maxlength: d_maxlength,
-
-        d_TAmaxlength: d_TAmaxlength,
-
-        d_booleanTrue: d_booleanTrue,
-
-        d_inputIcon: d_inputIcon,
-
-        d_alerts: d_alerts,
-
+        d_SKUdetails,
+        bookmark,
+        d_pattern,
+        d_maxlength,
+        d_TAmaxlength,
+        d_booleanTrue,
+        d_alerts,
         d_danger: null,
-
         d_warning: null,
-
         d_customerVal: null,
-
         d_costCenterVal: null,
-
         d_OrderNameVal: null,
-
         d_recipientVal: null,
-
         d_deliveryOptionVal: null,
-
         d_shipping: false,
-
         d_recipientNote: null,
-
-        d_steps: d_steps,
-
-        //table
-        d_title: d_title,
-
+        d_steps,
         //button
-
-        d_type: d_type,
-
-        d_tag: d_tag,
-
-        d_text: d_text,
-
-        d_icon: d_icon,
-
-        d_category: d_category,
-
-        d_booleanTrue: d_booleanTrue,
-
-        d_form: d_form,
-
-        d_ctx: d_ctx,
-
+        d_category,
+        d_booleanTrue,
+        d_ctx,
         //card
-        d_customerCarts: d_customerCarts,
-
-        d_customerCarts: d_customerCarts,
-
-        d_cardFooter: d_cardFooter,
-
-        d_title: d_title,
-        
-        d_logo: d_logo,
-
-        d_details: d_details,
-
-        d_cardctx: d_cardctx,
-
+        d_customerCarts,
+        d_customerCarts,
+        d_cardFooter,
+        d_details,
+        d_cardctx,
         //navigation
-         d_logoLink: d_logoLink,
-
-        d_title: d_title,
-
-        d_navigation: d_navigation,
-
-        d_nav: d_nav,
-
+         d_logoLink,
+        d_navigation,
+        d_nav,
         content: false,
       } //return
     }, //details
@@ -668,7 +481,7 @@
       ),
 
       toggleCloumns: function (newValue) {
-        var tempColumns= this.d_columns
+        const tempColumns= this.d_columns
 
         if (!tempColumns.includes(newValue)) {
           tempColumns.push(newValue)
@@ -683,7 +496,7 @@
       }, //toggleCloumns
 
       updateFilter: function (filter) {
-        var index= this.d_filterSelected["type"].indexOf(filter.type)
+        const index= this.d_filterSelected["type"].indexOf(filter.type)
         // console.log(filter, index, this.d_filterSelected["value"][index]== filter.value)
 
         //type alerady exists
@@ -708,10 +521,10 @@
       }, //delCard
 
       createCard: function () {
-        var quantity= this.d_numberValue
-        var sku= this.d_SKU
-        var info= this.d_info
-        var details= new Array()
+        const quantity= this.d_numberValue
+        const sku= this.d_SKU
+        const info= this.d_info
+        const details= new Array()
         // console.log('details: ', sku, quantity, info)
           
         if (quantity && sku) {

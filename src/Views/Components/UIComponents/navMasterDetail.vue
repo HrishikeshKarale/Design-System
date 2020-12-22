@@ -18,14 +18,14 @@
                             v-for= '(emp, index) in employees.data'
                             :key= 'index'
                         >
-                            <!-- <vue-card
+                            <vue-card
                                 logo= 'fas fa-user fa-3x'
                                 :details= '{"cols": employees.cols, "data": emp}'
                                 :ctx= 'selected.bind(this, emp[0])'
                                 :low= '1'
                                 high= '5'
                                 :style= '{"background-color: #00B6A8;": d_selected}'
-                            /> -->
+                            />
                         </div>
                     </template>
 

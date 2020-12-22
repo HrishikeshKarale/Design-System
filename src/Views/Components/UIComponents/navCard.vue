@@ -4,11 +4,10 @@
                 :compData= 'd_vueCard'
                 :d_attr= 'd_attr'
             >
-                <!-- <vue-card
+                <vue-card
                     :title= 'd_title'
                     :logo= 'd_logo'
                     :logoColor= 'd_logoColor'
-                    :actionButtons= 'd_booleanTrue'
                     :details= 'd_data'
                     :ctx= 'd_ctx' 
                     :cardFooter= 'd_cardFooter'
@@ -30,7 +29,7 @@
                             />
                         </div>
                     </div>
-                </vue-card> -->
+                </vue-card>
             </component-details>
             <div class= 'tag'>
                 <card-background
@@ -98,8 +97,7 @@
                     :key= 'index'
                     class= 'tagCards'
                 >
-                    <!-- <vue-card
-                        :actionButtons= 'd_booleanTrue'
+                    <vue-card
                         :details= '{"cols": d_SKUData["cols"], "data": dat}'
                     >
                         <div slot= 'actionButtons'>
@@ -117,7 +115,7 @@
                                 />
                             </div>
                         </div>
-                    </vue-card> -->
+                    </vue-card>
                 </div>
             </div>
         
