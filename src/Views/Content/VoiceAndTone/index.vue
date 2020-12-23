@@ -273,7 +273,7 @@ import cardBackground from "@/components/UIComponents/Cards/cardBackground.vue"
     } //default
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import (reference) "../../../Less/customVariables.less";
     .securityContainer {
         display: flex;
