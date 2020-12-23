@@ -1,4 +1,5 @@
-<template><article id= 'interactionStates'>
+<template>
+    <article id= 'interactionStates'>
         <p>
             Interaction states define a visual language for communicating the state of a component as users interact with it. These visual styles correspond to hover, focus, active, selected, disabled, and subdued states. They help users understand what to expect while interacting with COMET.
         </p>

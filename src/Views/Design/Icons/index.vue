@@ -237,63 +237,7 @@
 </template>
 
 <script>
-
-    import vueButton from '@/components/UIComponents/Buttons'
-    import vueCard from "@/components/UIComponents/Cards/vueCard"
-    import vueClipboard from "@/components/Code/vueClipboard";
-
     export default {
         name: 'icons',
-
-        // store,
-
-        data () {
-                       var d_type= 'button'
-
-            var d_tag= 'consoleTextButton'
-
-            var d_text= 'Click Me'
-
-            var d_icon= 'fas fa-copy'
-
-            var d_category= this.$store.state.category
-                       var d_form= ''
-                       return {
-
-                d_type: d_type,
-
-                d_tag: d_tag,
-
-                d_text: d_text,
-
-                d_icon: d_icon,
-
-                d_category: d_category,
-
-                d_form: d_form,
-
-                d_booleanTrue: true,
-                           colors: this.$store.state.colors
-            } //return
-        }, //data
-
-        components: {
-
-            vueButton,
-            vueCard,
-            vueClipboard
-        }, //componnets
-
-        methods: {
-
-            hexToRgb: function (hex) {
-                var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-                return result ? [
-                    parseInt(result[1], 16),
-                    parseInt(result[2], 16),
-                    parseInt(result[3], 16)
-                 ] : null;
-            }, //hexToRgb
-        }, //methods
     } //default
 </script>

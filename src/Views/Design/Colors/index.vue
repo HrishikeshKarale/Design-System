@@ -1,7 +1,7 @@
 <template>
-      <article>
+      <article id="colors">
         <p>
-          We uses colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.
+          We use colors purposefully to communicate how things function in the interface. This helps us create visual patterns that can make interacting with our product easier and more predictable.
         </p>
         <section id="guidlines">
           <header>
@@ -614,8 +614,6 @@
     </article>
 </template>
 <script>
-
-  import vueButton from "@/components/UIComponents/Buttons"
   import multiToggle from "@/components/FormElements/multiToggle";
   import goodVsBad from "@/Views/goodVsBad"
   import vueCard from "@/components/UIComponents/Cards/vueCard"
@@ -641,8 +639,6 @@
     }, //data
 
     components: {
-
-      vueButton,
       multiToggle,
       goodVsBad,
       vueCard,
@@ -754,15 +750,15 @@
 
     
 
-    // .palette {
-    //   width: fit-content;
-    //   margin-right: 16px;
-    //   margin-bottom: 16px;
+    .palette {
+      width: fit-content;
+      margin-right: 16px;
+      margin-bottom: 16px;
 
-    //   & + &:last-child {
-    //     margin-right: 0px;
-    //   }
-    // }
+      & + &:last-child {
+        margin-right: 0px;
+      }
+    }
 
     .container {
       display: flex;

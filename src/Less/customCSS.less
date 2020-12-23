@@ -944,8 +944,9 @@ article {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  margin: @spaceXl 0;
 
-  //indenttitle
+  //indent heading
   &>*,
   &>section>*,
   &>section>.subSection>* {
@@ -956,27 +957,38 @@ article {
     }
   }
 
-  // &>header {
-  //   visibility: hidden;
-  //   height: 0;
-  // }
-
   &>section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin-bottom: @spaceXl;
+    margin: @spaceXl 0;
     // min-height: @body;
 
-    &::after {
+    &::before {
       content: "";
-      border-top: 1px dotted @textColor;
-      filter: opacity(16%);
+      border-top: 1px solid @textColor;
+      filter: opacity(32%);
       width: 100%;
       align-self: center;
     }
 
+    &>.subSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      margin: @spaceMd 0;
+
+      &::before {
+        content: "";
+        border-top: 1px solid @textColor;
+        filter: opacity(16%);
+        max-width: 32%;
+        min-width: 240px;
+        // align-self: center;
+      }
+    }
   }
 }
 

@@ -1,6 +1,12 @@
 <template>
-  <article>
-    <section id="typography">
+  <article id="typography">
+  <p>
+    We provides a constrainted, powerful set of typographical styles. These styles map as much as possible to functional roles so you now when each can be used.
+  </p>
+  <small>
+    By consistently tying typographic styles to appropriate functions in the interface, we create a clear visual pattern for merchants to follow while they’re interacting with our product.
+  </small>
+    <section id="roboto">
       <header>
         <header>
             <h3>Roboto</h3>
