@@ -1,264 +1,147 @@
 <template>
-    <div class= 'vueForm'>
-        <div class= 'formElements'>
-            <slot/>
-        </div>
-        <div class= 'formButtons'>
-            <vue-button 
-                :type= 'd_type'
-                tag= "ConfirmDetailsButton"
-                :text= "d_textConfirm"
-                :icon= "d_icon"
-                :category= 'd_category[3]'
-                :disabled= 'alerts'
-                :autofocus= '!d_booleanTrue'
-                :form= "d_form"
-                :ctx= 'd_ctx'
-            />
-        </div> 
+  <form
+    :id="form"
+    :ref="form"
+    class="vueForm"
+    :name="form"
+    :novalidate="validate"
+    :autocomplete="autocomplete"
+    @submit="ctx"
+  >
+    <div class="formElements">
+      <slot />
     </div>
+    <div class="formButtons">
+      <vue-button
+        button-type="submit"
+        button-text="Submit"
+        buttop-name="formSubmitButton"
+        button-style="small"
+        button-icon="fas fa-clipboard-check"
+        :disabled="!validInput"
+        :ctx="ctx"
+      />
+      <input class="btn" type="reset" value="Reset" />
+    </div>
+  </form>
 </template>
 
 <script>
+import vueButton from "@/components/UIComponents/Buttons";
 
-  import vueButton from '@/components/UIComponents/Buttons'
+export default {
+  name: "VueForm", //props
 
-    export default {
-        name: 'vueForm',
+  components: {
+    vueButton
+  }, //data
 
-        data() {
+  props: {
+    alert: {
+      required: true,
+      type: Object
+    },
+    ctx: {
+      required: true,
+      type: Function
+    },
+    form: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
+    autocomplete: {
+      required: false,
+      type: [Boolean, null],
+      default: true
+    },
+    validate: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    }
+  },
 
-            var d_type= 'button'
+  data() {
+    const warning = "";
+    const danger = "";
+    return {
+      warning,
+      danger
+    };
+  }, //data
 
-            var d_tag= 'consoleTextButton'
-
-            var d_text= 'Click Me'
-
-            var d_icon= 'fas fa-registered'
-
-            var d_category= this.$store.state.category
-
-            var d_booleanTrue= true
-
-            var d_form= ''
-
-            var d_ctx= this.consoleClickConfirm
-
-            return {
-
-                d_type: d_type,
-
-                d_tag: d_tag,
-
-                d_text: d_text,
-
-                d_icon: d_icon,
-
-                d_category: d_category,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_form: d_form,
-
-                d_ctx: d_ctx,
-
-                d_textSubmit: 'Submit',
-
-                d_textNext: 'Next Page',
-
-                d_textPrevious: 'Previous Page',
-
-                d_textConfirm: 'Confirm',
-
-                d_completed: false,
-
-                d_totalSteps: null,
-
-                d_currentStep: null,
-            }
-        }, //data
-
-        props: {
-
-            alerts: {
-                type: Object,
-                required: true,
-            }
-        }, //props
-
-        components: {
-                       vueButton
-        }, //components
-
-        computed: {
-                       validInput: function () {
-                               var alerts= this.alerts
-                var inputs = document.getElementsByTagName('input');
-
-                for (var index = 0; index < inputs.length; ++index) {
-                        // console.log(inputs[index].name)
-
-                    if (!alerts['error'] && !alerts['warning'] && inputs[index].required && !inputs[index].value) {
-                        // console.log(inputs[index].name, '-required')
-                        return true
-                    }
+  computed: {
+    validInput: function() {
+        if(validate) {
+            const alerts = this.alerts;
+            const form = this.$refs[this.form];
+            if (form && !alerts["error"] && !alerts["warning"]) {
+            const inputs = [
+                ...Array.from(form.getElementsByTagName("select")),
+                ...Array.from(form.getElementsByTagName("input"))
+            ];
+    
+            for (let index = 0; index < inputs.length; ++index) {
+                if (inputs[index].required && !inputs[index].value) {
+                return false;
                 }
-                return false
-            }, //validInput
-        }, //computed
+                //skipPAsswordMatch value check
+                if (inputs[index].type === "password") {
+                index++;
+                }
+            }
+            return true;
+            }
+            return false;
+        }
+        return true;   
+    } //validInput
+  }, //computed
 
-        methods: {
-
-            consoleClickNext: function () {
-                    this.d_currentStep+= 1;
-                    // console.log("NextPageButtonClick", "Page: ", this.d_currentStep)
-            }, // consoleClickNext
-
-            consoleClickPrevious: function () {
-                    this.d_currentStep-= 1;
-                    // console.log("PreviousPageButtonClick", "Page: ", this.d_currentStep)
-            }, // consoleClickPrevious
-
-            consoleClickSubmit: function () {
-                    // console.log("Submit")
-                    this.d_completed= true;
-            }, // consoleClickSubmit
-
-            consoleClickConfirm: function () {
-                    // console.log("Close")
-                    alert("form Submitted!");
-            }, // consoleClickConfirm
-        }, //methods
-
-        created() {
-
-            // console.log(this.steps.length)
-            this.d_totalSteps= this.steps.length;
-            this.d_currentStep= 1;
-        }, //created
-    } //default
+  methods: {
+      //use by form elements sent via slot 
+    alert: function(type, message) {
+      // console.log(message);
+      if (type == "warning") {
+        this.dWarning = message;
+      } else if (type == "error") {
+        this.dDanger = message;
+      } else {
+        alert("error in input alert module");
+      }
+    } //alerts
+  } //methods
+}; //default
 </script>
 
-<style lang= "less" scoped>
+<style lang="less" scoped>
+@import (reference) "../../Less/customMixins.less";
+@import (reference) "../../Less/customVariables.less";
 
-    @import (reference) "../../Less/customMixins.less";
-    @import (reference) "../../Less/customVariables.less";
-
-    @wizard-color-neutral: #ccc ;
-    @wizard-color-active: #4183D7 ;
-    @wizard-color-complete: #87D37C ;
-    @wizard-step-width-height: 48px ;
-    @wizard-step-font-size: 20px;
-
-    .vueForm {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        .wizardSteps {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            margin: auto;
-
-            .step-indicator {
-                border-collapse: separate;
-                display: table;
-                margin-left: 0px;
-                position: relative;
-                table-layout: fixed;
-                text-align: center;
-                vertical-align: middle;
-                padding-left: 0;
-                               li {
-                    display: table-cell;
-                    position: relative;
-                    float: none;
-                    padding: 0;
-                    width: 1%;
-                                       &:after {
-                        background-color: @wizard-color-neutral;
-                        content: "";
-                        display: block;
-                        height: 4px;
-                        position: absolute;
-                        width: 100%;
-                        top: @wizard-step-width-height/2;
-                    }
-                                       &:after {
-                        left: 50%;
-                    }
-                                       &:last-child {
-                        &:after {
-                            display: none;
-                        }
-                    }
-                                       &.active {
-                        .step {
-                            border-color: @wizard-color-active;
-                            color: @wizard-color-active;
-                        }
-                                               .caption {
-                            width: 100%;
-                            color: @wizard-color-active;
-                        }
-                    }
-                                       &.complete {
-                        &:after {
-                            background-color: @wizard-color-complete;
-                        }
-                                               .step {
-                            border-color: @wizard-color-complete;
-                            color: @wizard-color-complete;
-                        }
-                                               .caption {
-                            color: @wizard-color-complete;
-                        }
-                    }
-                }
-                               .step {
-                    background-color: @white;
-                    border-radius: 50%;
-                    border: 2px solid @wizard-color-neutral;
-                    color: @wizard-color-neutral;
-                    font-size: @wizard-step-font-size;
-                    height: @wizard-step-width-height;
-                    line-height: @wizard-step-width-height;
-                    margin: 0 auto;
-                    position: relative;
-                    width: @wizard-step-width-height;
-                    z-index: 1;
-                                       &:hover {
-                        cursor: pointer;
-                    }
-                }
-                               .caption {
-                    color: @wizard-color-neutral;
-                    padding: @spaceMd @spaceLg;
-                }
-            }
-        }
-
-        .wizardFrom {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            padding: @spaceLg @spaceXl;
-        }
-               .wizardButtons {
-            margin-top: 16px;
-            // margin: 0 auto;
-            // padding: @spaceLg @spaceXl;
-            background-color: @backgroundColor;
-                       & > div {
-                display: flex;
-                justify-content: space-between;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                width: 100%;
-            }
-        }
+.vueForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  & > div {
+    display: flex;
+    &.formElements {
+      flex-direction: column;
     }
+    &.formButtons {
+      flex-direction: row-reverse;
+      & > input {
+        font-size: @fontSizeMd;
+        margin-right: @spaceMd;
+        &:first-child {
+          margin-right: 0;
+        }
+        &[type="reset"] {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
 </style>

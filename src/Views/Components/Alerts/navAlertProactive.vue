@@ -28,7 +28,7 @@
                 :autofocus= '!d_booleanTrue'
                 :inputIcon= 'd_EinputIcon'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
             />
         </div>
         <div>
@@ -48,7 +48,7 @@
                 :autofocus= '!d_booleanTrue'
                 :inputIcon= 'd_inputIcon'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
             />
         </div>
         <div>
@@ -63,7 +63,7 @@
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
             />
         </div>
         <div>
@@ -83,7 +83,7 @@
                 :readonly= '!d_booleanTrue'
                 :inline= '!d_booleanTrue'
                 :inputIcon= 'd_DTinputIcon'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
             />
         </div>
     </div>

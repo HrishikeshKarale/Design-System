@@ -5,7 +5,7 @@
       >
         <vue-wizard 
           :steps= 'd_steps'
-          :alerts= "{'error': d_danger, 'warning': d_warning}"
+          :alert= "{'error': d_danger, 'warning': d_warning}"
         >
           <template slot= '1'>
             <h3>Order Processing Details</h3>
@@ -24,7 +24,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-user'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -44,7 +44,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-closed-captioning'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -62,7 +62,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-file-signature'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -80,7 +80,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-user'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -100,7 +100,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-truck'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -114,7 +114,7 @@
                 :disabled= '!d_booleanTrue'
                 :autofocus= '!d_booleanTrue'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -131,7 +131,7 @@
                 :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-comment'
                 :inline= '!d_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
           </template>

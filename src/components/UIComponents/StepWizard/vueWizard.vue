@@ -156,7 +156,7 @@
                 required: true,
             },
 
-            alerts: {
+            alert: {
                 type: Object,
                 required: true,
             }

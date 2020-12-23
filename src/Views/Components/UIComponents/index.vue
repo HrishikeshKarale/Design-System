@@ -35,7 +35,7 @@
     title= 'Sample Navigation'
     logo= 'fas fa-user fa-3x'
     :details= 'd_details'
-    :ctx= 'd_cardctx' 
+    :ctx= 'd_carctx' 
     :cardFooter= 'd_cardFooter'
     :bookmark= 'bookmark'
     @bookmark="val => bookmark = val"
@@ -59,7 +59,7 @@
     <vue-card
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_cardctx' 
+      :ctx= 'd_carctx' 
       low= '2'
       high= '3'
     />
@@ -76,7 +76,7 @@
       title= 'Custom Card'
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_cardctx' 
+      :ctx= 'd_carctx' 
       low= '2'
       high= '3'
     >
@@ -98,7 +98,7 @@
       title= 'Custom Card'
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_cardctx' 
+      :ctx= 'd_carctx' 
       :cardFooter= 'd_cardFooter'
       low= '1'
     />
@@ -108,7 +108,7 @@
       title= 'Custom Card'
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_cardctx'
+      :ctx= 'd_carctx'
       low= '1'
     />
 
@@ -116,7 +116,7 @@
     <vue-card
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_cardctx'
+      :ctx= 'd_carctx'
       low= '1'
     />
 
@@ -124,7 +124,7 @@
     <h3>Step Wizard</h3>  
     <vue-wizard 
       :steps= 'd_steps'
-      :alerts= "{'error': d_danger, 'warning': d_warning}"
+      :alert= "{'error': d_danger, 'warning': d_warning}"
     >
       <template slot= '1'>
         <form>
@@ -140,7 +140,7 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-user'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -155,7 +155,7 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-closed-captioning'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -168,7 +168,7 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-file-signature'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -181,7 +181,7 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-user'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -197,7 +197,7 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-truck'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -207,7 +207,7 @@
                 :value= 'd_shipping'
                 :options= null
                 :required= 'd_booleanTrue'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
             <div>
@@ -220,7 +220,7 @@
                 :maxlength= 'd_TAmaxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-comment'
-                @alerts= 'd_alerts'
+                @notify= 'd_alerts'
               />
             </div>
           </fieldset>
@@ -245,7 +245,7 @@
                   :maxlength= 'd_maxlength'
                   :required= 'd_booleanTrue'
                   inputIcon= 'fas fa-barcode'
-                  @alerts= 'alerts'
+                  @notify= 'alerts'
                 />
               </div>
               <div>
@@ -258,7 +258,7 @@
                     placeholder= "0"
                     :required= 'd_booleanTrue'
                     inputIcon= 'fas fa-hashtag'
-                    @alerts= 'alerts'
+                    @notify= 'alerts'
                   />
                 </div>
                 <div>
@@ -379,7 +379,7 @@
       const d_customerCarts= this.$store.state.customerCarts
       const d_cardFooter= this.$store.state.customfooter
       const d_details= {"cols": d_cardDetails.cols, "details": d_cardDetails.details[0]}
-      const d_cardctx= this.consoleClick
+      const d_carctx= this.consoleClick
       //navigation
       const d_navigation= this.$store.state.navigation
       const d_nav= this.nav
@@ -460,7 +460,7 @@
         d_customerCarts,
         d_cardFooter,
         d_details,
-        d_cardctx,
+        d_carctx,
         //navigation
          d_logoLink,
         d_navigation,

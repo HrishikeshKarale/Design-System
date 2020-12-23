@@ -282,7 +282,7 @@
 
             //send error messages back to parent component
             d_danger: function (newValue) {
-                this.$emit('alerts', 'error', newValue)
+                this.$emit('notify', 'error', newValue)
             },
         }, //WATCH
     } //default

@@ -2,7 +2,7 @@
     <div class= 'createMove'>
         <vue-wizard 
             :steps= 'd_steps'
-            :alerts= "{'error': d_danger, 'warning': d_warning}"
+            :alert= "{'error': d_danger, 'warning': d_warning}"
         >
             <template slot= '1'>
                 <fieldset>
@@ -15,7 +15,7 @@
                                     v-model= 'd_fName'
                                     :required= 'd_booleanTrue'
                                     :readonly= '!d_booleanTrue'
-                                    @alerts= 'alerts'
+                                    @notify= 'alerts'
                                 />
                             </div>
                             <div>
@@ -25,7 +25,7 @@
                                     v-model= 'd_lName'
                                     :required= 'd_booleanTrue'
                                     :readonly= '!d_booleanTrue'
-                                    @alerts= 'alerts'
+                                    @notify= 'alerts'
                                 />
                             </div>
                             <div>

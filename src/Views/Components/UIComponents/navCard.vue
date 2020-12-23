@@ -50,7 +50,7 @@
                                 :autofocus= '!d_booleanTrue'
                                 inputIcon= 'fas fa-barcode'
                                 :inline= '!d_booleanTrue'
-                                @alerts= 'alerts'
+                                @notify= 'alerts'
                             />
                         </div>
                         <div>
@@ -67,7 +67,7 @@
                                     :autofocus= '!d_booleanTrue'
                                     inputIcon= 'fas fa-hashtag'
                                     :inline= '!d_booleanTrue'
-                                    @alerts= 'alerts'
+                                    @notify= 'alerts'
                                 />
                             </div>
                             <div>

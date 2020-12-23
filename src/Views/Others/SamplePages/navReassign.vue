@@ -2,7 +2,7 @@
 <div class= 'navReassign'>
     <vue-wizard 
       :steps= 'd_steps'
-      :alerts= "{'error': d_danger, 'warning': d_warning}"
+      :alert= "{'error': d_danger, 'warning': d_warning}"
     >
       <template slot= '1'>
         <master-detail

@@ -36,7 +36,7 @@
                             :autofocus= '!d_booleanTrue'
                             :inline= '!d_booleanTrue'
                             :mask= '!d_booleanTrue'
-                            @alerts= 'd_alerts'
+                            @notify= 'd_alerts'
                         />
                     </component-details>
                 </form>
@@ -191,7 +191,7 @@
                             text: this.$store.state.navText.maskText,
                         },
                         {
-                            type: "@alerts",
+                            type: "alerts",
                             value: d_alerts,
                             description: this.$store.state.navText.alerts,
                             text: this.$store.state.navText.alertsText,
