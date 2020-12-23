@@ -161,7 +161,7 @@
                     return
                 }
                 this.d_toggled = !this.d_toggled;
-                this.$emit("input", !this.d_toggled);
+                this.$emit("value", !this.d_toggled);
             }, //toggle
         }, //methods
                created() {
@@ -217,7 +217,7 @@
                 height: 32px;
                 border-radius: @round;
                 cursor: pointer;
-                border: 1px solid ~"darken(#e0e0e0, 10%)";;
+                border: 1px solid @textColor;
 
                 &.checked {
                     transition: all 350ms;

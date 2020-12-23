@@ -15,7 +15,7 @@
                 :name= 'name'
                 :disabled= 'disabled'
                 :autofocus= 'autofocus'
-                @input= '$emit("input", $event.target.checked)'
+                @input= '$emit("value", $event.target.checked)'
             />
             {{label}}
             <abbr v-if= 'required' title= 'Required Field'>*</abbr>

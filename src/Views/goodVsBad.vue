@@ -1,6 +1,7 @@
 <template>
     <div class= "goodVsBad">
       <div 
+      v-if="message"
         class= 'header'
       >
         {{message}}
@@ -47,7 +48,7 @@
 
     data () {
       const ctx= this.toggle
-      const d_hidden= true
+      const d_hidden= this.message? true : false;
       return {
         ctx,
         d_hidden: d_hidden,
@@ -112,29 +113,33 @@
           & > span {
             align-self: center;
             border-radius: @borderRadius;
-            padding: @spaceMd @spaceLg;
-            width: 100%;
+            padding: @spaceLg;
+            width: 99%;
+            /* min-width: fit-content; */
+            margin: @spaceSm;
+            border-radius: @borderRadius @borderRadius 0 0; 
+            margin: @spaceXs; 
             & > em {
               font-weight: bold;
               margin: @spaceMd;
             }
           }
+        &.good {
+          & > span {
+            color: @successText;
+            background-color: @successBackground;
+          }
+        }
+
+        &.bad {
+          & > span {
+            color: @dangerText;
+            background-color: @dangerBackground;
+          }
+        }
 
           & > div {
             padding: @spaceMd @spaceLg;
-          }
-                   &.good {
-            & > span {
-              color: @successText;
-              background-color: @successBackground;
-            }
-          }
-
-          &.bad {
-            & > span {
-              color: @dangerText;
-              background-color: @dangerBackground;
-            }
           }
         }
       }

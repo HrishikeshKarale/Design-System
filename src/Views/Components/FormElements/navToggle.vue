@@ -17,14 +17,14 @@
                         <multi-toggle 
                             :label= "d_label"
                             :name= "d_name"
-                            :value= "d_value"
-                            v-model= "d_toggle"
+                            :value= "d_toggle"
                             :labelChecked= "d_labelChecked"
                             :labelUnchecked= "d_labelUnchecked"
                             :showLabels= 'd_booleanTrue'
                             :disabled= '!d_booleanTrue'
                             :inline= '!d_booleanTrue'
                             :mask= '!d_booleanTrue'
+                            @value= "val => d_toggle= val"
                         />
                     </component-details>
                 </form>

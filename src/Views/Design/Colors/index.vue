@@ -126,7 +126,8 @@
             <h3>
               Color combinations
             </h3>
-          </header>                       <p>
+          </header
+          <p>
             Use the following as a guide for how and when to use colors from our palette together.
           </p>
           <good-vs-bad message="Use any light background color with its corresponding text color">

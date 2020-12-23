@@ -6,10 +6,10 @@
         <h2>1 - Commenting &amp; Documentation</h2>
         <p>IDE's (Integrated Development Environment) have come a long way in the past few years. This made commenting your code more useful than ever. Following certain standards in your comments allows IDE's and other tools to utilize them in different ways.</p>
         <p>Consider this example:</p>
-        <div><vue-img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_1.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_1.png" data-was-processed= "true" /></div>
+        <div><vue-img data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_1.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_1.png" data-was-processed= "true" /></div>
             <p>The comments I added at the function definition can be previewed whenever I use that function, even from other files.</p>
             <p>Here is another example where I call a function from a third party library:</p>
-            <div><vue-img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" data-was-processed= "true" /></div>
+            <div><vue-img data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_2.png" data-was-processed= "true" /></div>
         <p>In these particular examples, the type of commenting (or documentation) used is based on <a href= "http://www.phpdoc.org/">PHPDoc</a>, and the IDE is <a href= "http://aptana.org/">Aptana</a>.</p>
         <h2>2 - Consistent Indentation</h2>
         <p>I assume you already know that you should indent your code. However, it's also worth noting that it is a good idea to keep your indentation style consistent.</p>
@@ -509,7 +509,7 @@
         </div>
         <h2>8 - Limit Line Length</h2>
         <p>Our eyes are more comfortable when reading tall and narrow columns of text. This is precisely the reason why newspaper articles look like this:</p>
-        <div><vue-img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" data-was-processed= "true" /></div>
+        <div><vue-img data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/newspaper.jpg" data-was-processed= "true" /></div>
             <p>It is a good practice to avoid writing horizontally long lines of code.</p>
             <div>
                 <div id= "highlighter_444118">
@@ -570,7 +570,7 @@
             <p>Technically, you could write an entire application code within a single file. But that would prove to be a nightmare to read and maintain.</p>
             <p>During my first programming projects, I knew about the idea of creating "include files." However, I was not yet even remotely organized. I created an "inc" folder, with two files in it: <code>db.php</code> and <code>functions.php</code>. As the applications grew, the functions file also became huge and unmaintainable.</p>
             <p>One of the best approaches is to either <a href= "https://net.tutsplus.com/sessions/codeigniter-from-scratch/">use a framework</a>, or imitate their folder structure. Here is what CodeIgniter looks like:</p>
-            <div><vue-img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" data-was-processed= "true" /></div>
+            <div><vue-img data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/readable_code_3.png" data-was-processed= "true" /></div>
             <h2>10 - Consistent Temporary Names</h2>
             <p>Normally, the variables should be descriptive and contain one or more words. But, this doesn't necessarily apply to temporary variables. They can be as short as a single character.</p>
             <p>It is a good practice to use consistent names for your temporary variables that have the same kind of role. Here are a few examples that I tend use in my code:</p>
@@ -907,7 +907,7 @@
             </div>
             <h2>15 - Read Open Source Code</h2>
             <p>Open Source projects are built with the input of many developers. These projects need to maintain a high level of code readability so that the team can work together as efficiently as possible. Therefore, it is a good idea to browse through the source code of these projects to observe what these developers are doing.</p>
-            <div><vue-img alt= "" data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" data-was-processed= "true" /></div>
+            <div><vue-img data-src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" class= "loaded" src= "https://cdn.tutsplus.com/net/uploads/legacy/516_code/open_source.png" data-was-processed= "true" /></div>
             <h2>16 - Code Refactoring</h2>
             <p>When you "refactor," you make changes to the code without changing any of its functionality. You can think of it like a "clean up," for the sake of improving readability and quality.</p>
             <p>This doesn't include bug fixes or the addition of any new functionality. You might refactor code that you have written the day before, while it's still fresh in your head, so that it is more readable and reusable when you may potentially look at it two months from now. As the motto says: "refactor early, refactor often."</p>

@@ -76,13 +76,13 @@ var data= [
             {
                 id: 4, 
                 name:'Naming',
-                component: 'voiceAndTone',
+                component: 'naming',
                 icon: "fas fa-file-signature"
             },
             {
                 id: 5, 
                 name:'Vocabulary',
-                component: 'voiceAndTone',
+                component: 'vocabulary',
                 icon: "fas fa-book"
             },
             {

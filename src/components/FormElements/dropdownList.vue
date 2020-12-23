@@ -196,7 +196,7 @@
                 //if value is required then trigger alert and set error message
                 if (val)  {
                     //emit/send new values to parent component v-model attribute
-                    this.$emit("input", val)
+                    this.$emit("value", val)
                 }
                 else {
                     if (this.required) {

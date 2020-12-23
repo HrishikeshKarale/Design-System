@@ -301,7 +301,7 @@
                 var temp= (year +'-'+ month +'-'+ day)
 
                 //sendoremit todays date as default date for the field
-                this.$emit("input", temp)
+                this.$emit("value", temp)
                 return temp
             }, //getDate
 

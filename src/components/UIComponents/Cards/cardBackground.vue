@@ -40,7 +40,6 @@
 
     .cardBackground {
         border-radius: @borderRadius;
-        padding: @spaceMd @spaceLg;
                &.idle-1 {
             .boxShadow(@one);
 

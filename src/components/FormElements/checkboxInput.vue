@@ -11,7 +11,7 @@
                 :name= 'name'
                 :disabled= 'disabled'
                 :autofocus= 'autofocus'
-                @input= '$emit("input", $event.target.checked)'
+                @input= '$emit("value", $event.target.checked)'
             />
             {{label}}
             <abbr v-if= 'options && required' title= 'Required field'>*</abbr>
@@ -198,7 +198,7 @@
                     this.d_checkboxValue= checkboxValue
 
                     //emit or send new values to parent component v-model attribute
-                    this.$emit("input", this.d_checkboxValue)
+                    this.$emit("value", this.d_checkboxValue)
 
                     //check to trigger error/warning conditions and set d_danger/d_warning messages accordingly
                     if (checkboxValue.length<=0) {
