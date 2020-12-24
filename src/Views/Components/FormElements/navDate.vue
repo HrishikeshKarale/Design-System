@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_dateValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class="FormElementsContent">
@@ -28,19 +28,20 @@
                         <vue-date 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_dateValue'
-                            :setDefaultDate= '!d_booleanTrue'
+                            :value= 'd_dateValue'
+                            
                             :min= 'd_min'
                             :max= 'd_max'
                             :pattern= "d_pattern"
                             :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :readonly= '!d_booleanTrue'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
+                           
+                            
+                            
+                            
+                            
                             :inputIcon= 'd_inputIcon'
-                            @notify= 'd_alerts'
+                            @notify= 'alerts'
+                            @value= 'val=> d_dateValue = val'
                         />
                     </component-details>  
                 </form>
@@ -67,31 +68,31 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
-                       var d_label= "Date"
-                       var d_name= "dateField"
+                       const label= "Date"
+                       const name= "dateField"
 
-            var d_value= '2018-12-12'
-                       var d_dateValue= null
+            const value= '2018-12-12'
+                       const dateValue= null
 
-            var d_min= '2000-12-12'
+            const min= '2000-12-12'
 
-            var d_max= '2040-12-12'
+            const max= '2040-12-12'
 
-            var d_pattern= '^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$'
+            const pattern= '^[0-9]{4}-(((0[13578]|(10|12))-(0[1-9]|[1-2][0-9]|3[0-1]))|(02-(0[1-9]|[1-2][0-9]))|((0[469]|11)-(0[1-9]|[1-2][0-9]|30)))$'
                             //"^d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
 
-            var d_booleanTrue= true
-                       var d_inputIcon= 'fas fa-calendar-alt'
-                       var d_alerts= this.alerts
+            const d_booleanTrue= true
+                       const inputIcon= 'fas fa-calendar-alt'
+                       const alerts= this.alerts
 
 
             return {
@@ -111,9 +112,9 @@
                                d_inputIcon: d_inputIcon,
                                d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_date: {
                                        title: 'Date Input Field',

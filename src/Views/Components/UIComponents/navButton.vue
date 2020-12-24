@@ -2,15 +2,15 @@
     <div class= "navButton">
             <component-details
                 :compData= 'd_vueButton'
-                :d_attr= 'd_attr'
+                :attr= 'attr'
             >                       <vue-button 
                     :type= 'd_type'
                     :tag= "d_tag"
                     :text= "d_text"
                     :icon= "d_icon"
                     :category= 'd_category[0]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
+                   
+                    
                     :form= "d_form"
                     :ctx= 'd_ctx'
                 />
@@ -28,21 +28,21 @@
         name: 'navButton',
                data () {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const tag= 'consoleTextButton'
 
-            var d_text= 'Click Me'
+            const text= 'Click Me'
 
-            var d_icon= 'fas fa-registered'
+            const icon= 'fas fa-registered'
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_ctx= this.consoleClick
+            const ctx= this.consoleClick
 
             return {
 
@@ -62,7 +62,7 @@
 
                 d_ctx: d_ctx,
 
-                d_attr: {'type':['category', ] , 'value': [d_category]},
+                attr: {'type':['category', ] , 'value': [d_category]},
 
                 d_vueButton: {
 

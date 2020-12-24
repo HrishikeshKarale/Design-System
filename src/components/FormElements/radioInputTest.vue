@@ -41,8 +41,8 @@
             v-if= 'options'
             :class= '{
                         box: box,
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         maskField: mask,
                         inline: inline
                     }'
@@ -52,7 +52,7 @@
                     v-for= '(option, index) in options'
                     :key= 'index'
                     :class= '{
-                                errorLabel: d_danger,
+                                errorLabel: danger,
                                 checked: option==value
                             }'
                     :style= '{
@@ -73,7 +73,7 @@
             </template>
         </div>
         <input-response
-            :error= 'd_danger'
+            :error= 'danger'
         />
     </div>
 </template>
@@ -89,26 +89,26 @@
 
         data () {
 
-            var d_tempValue= null
+            const tempValue= null
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'clearRadioSelection'
+            const tag= 'clearRadioSelection'
 
-            var d_text= 'Clear'
+            const text= 'Clear'
 
-            var d_icon= 'fas fa-undo'
+            const icon= 'fas fa-undo'
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_ctx= this.clearSelection
+            const ctx= this.clearSelection
 
-            var d_danger= null
-                                   var d_warning= null
-                       var d_success= null
-                       var d_info= null
+            const danger= ""
+                                   const warning= ""
+                       const success= ""
+                       const info= ""
 
             return {
 
@@ -131,10 +131,10 @@
                 cValue: null,
 
                 //stores errors thrown by the input fields
-                d_danger: d_danger,
-                                           d_warning: d_warning,
-                               d_success: d_success,
-                               d_info: d_info
+                danger: danger,
+                                           warning: warning,
+                               success: success,
+                               info: info
             } //return
         }, //data
 
@@ -164,17 +164,13 @@
         }, //methods
 
         props: {
-                       //sets type for the input field
+            //sets type for the input field
             //valid values include ['checkbox', 'radio']
             type: {
                 required: false,
                 type: String,
                 validator: function (value) {
-                    if (['checkbox', 'radio'].includes(value)) {
-                        return true
-                    }
-                    alert("Invalid prop value found in <vue-alert>.\nPossible values: [info, success, warning, danger]\nYou Entered: "+value)
-                    return false
+                    return ['checkbox', 'radio'].indexOf(value) !== -1;
                 },
                 default: 'radio',
             },
@@ -268,16 +264,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount

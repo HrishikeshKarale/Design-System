@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_radioValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -28,15 +28,16 @@
                         <radio-input-test 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_radioValue'
+                            :value= 'd_radioValue'
                             :options= 'd_options'
-                            :required= '!d_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
+                            
+                           
+                            
+                            
+                            
                             @selected= 'selected'
                             @notify= 'alerts'
+                            @value= 'val=> d_radioValue = val'
                         />
                     </component-details>
                 </form>
@@ -45,13 +46,14 @@
 </template>
 
 <script>
-
     import componentDetails from "@/Views/componentDetails";
     import radioInputTest from "@/components/FormElements/radioInputTest";
-    
+    import { alerts } from "@/typeScript/common/alerts";    
 
     export default {
-        name: "navRadio",
+        name: "navRadio",  
+
+        mixins: [ alerts ],
 
         components: {
                        componentDetails,
@@ -68,26 +70,26 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //change
         }, //methods
 
         data() {
 
-            var d_label= "Warehouse"
-                       var d_name= "radioField"
-                       var d_value= ''
-                       var d_radioValue= null
+            const label= "Warehouse"
+                       const name= "radioField"
+                       const value= ''
+                       const radioValue= null
 
-            var d_options= this.$store.state.warehouse
+            const options= this.$store.state.warehouse
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
                        return {
 
                 d_label: d_label,
@@ -104,9 +106,9 @@
 
                 d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_radio: {
 

@@ -21,9 +21,9 @@
                             :labelChecked= "d_labelChecked"
                             :labelUnchecked= "d_labelUnchecked"
                             :showLabels= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
+                           
+                            
+                            
                             @value= "val => d_toggle= val"
                         />
                     </component-details>
@@ -51,17 +51,17 @@
 
         data() {
 
-                var d_label= 'Username'
+                const label= 'Username'
 
-                var d_name= 'toggleInputField'
+                const name= 'toggleInputField'
 
-                var d_value= 'qwerty'
+                const value= 'qwerty'
 
-                var d_toggle= null
+                const toggle= null
 
-                var d_booleanTrue= true
-                               var d_labelChecked= "ON"
-                               var d_labelUnchecked= "OFF"
+                const d_booleanTrue= true
+                               const labelChecked= "ON"
+                               const labelUnchecked= "OFF"
 
                 return {
 

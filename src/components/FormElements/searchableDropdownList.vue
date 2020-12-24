@@ -13,8 +13,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         iconPadding: inputIcon,
                         maskField: mask
                     }'
@@ -48,8 +48,8 @@
             </datalist><!--datalist-->
         </div>
         <input-response
-            :warning= 'd_warning'
-            :error= 'd_danger'
+            :warning= 'warning'
+            :error= 'danger'
         />
     </div>
 </template>
@@ -71,10 +71,10 @@
             return {
 
                 //stores errors thrown by the input fields 
-                d_danger: null,
+                danger: null,
 
                 //stores errors thrown by the input fields 
-                d_warning: null,
+                warning: null,
 
                 //stores dropdown values
                 d_selectedOption: null,
@@ -212,8 +212,8 @@
             //it also emits/send the current textbox value to  parent component as v-model attribute value
             validate: function () {
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.d_danger= null
-                this.d_warning= null
+                this.danger= null
+                this.warning= null
                 //loads current value stored from d_selectedOption(data) into val(temp) variable val for readability of code
                 var val= this.d_selectedOption
 
@@ -226,13 +226,13 @@
                     }
                     //if options do not include the optio na dn user customized input is not acceptable then trigger alert and set warning message
                     else if (this.strict) {
-                        this.d_warning= 'Invalid Input. Please select an option from the options below.'
+                        this.warning= 'Invalid Input. Please select an option from the options below.'
                     }
                 }
                 //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
                 else {
                     if (this.required) {
-                        this.d_danger= 'Required field.';
+                        this.danger= 'Required field.';
                     }
                 }
             }, //validate
@@ -279,11 +279,11 @@
                 this.d_selectedOption= tempVal
                                //if errorVal exists trigger an alert and set warning message
                 if (alertVal) {
-                    this.d_danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the options for the dropdown.'
+                    this.danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the options for the dropdown.'
                 }
             }
             else if (val) {
-                this.d_danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
+                this.danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
             }
         }, //created
 
@@ -297,16 +297,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -314,12 +314,12 @@
         watch: {
 
             //send warning messages back to parent component
-            d_warning: function (newValue) {
+            warning: function (newValue) {
                 this.$emit('notify', 'warning', newValue)
             },
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
         }, //watch

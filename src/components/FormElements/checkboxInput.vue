@@ -24,7 +24,7 @@
                         v-for= '(option, index) in options'
                         :key= 'index'
                         :class= '{
-                                    errorLabel: d_danger
+                                    errorLabel: danger
                                 }'
                         :style= '{
                                     "color: #aaaaaa; cursor: not-allowed;": disabled,
@@ -45,8 +45,8 @@
             </div>
         </template>
         <input-response
-            :error= 'd_danger'
-            :warning= 'd_warning'
+            :error= 'danger'
+            :warning= 'warning'
         />
     </div>
 </template>
@@ -63,10 +63,10 @@
             return {
 
                 //stores errors thrown by the input fields 
-                d_danger: null,
+                danger: null,
 
                 //stores errors thrown by the input fields 
-                d_warning: null,
+                warning: null,
 
                 //stores checkbox values
                 d_checkboxValue: null,
@@ -162,8 +162,8 @@
             storeValues: function (value) {
 
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.d_danger= null
-                this.d_warning= null
+                this.danger= null
+                this.warning= null
                 //temporarily stores values passed to the function
                 var checkboxValue= []                              //stores the index location within the above 'checkboxValue[]' of the value passed down to the function.
                 var index= 0;
@@ -200,13 +200,13 @@
                     //emit or send new values to parent component v-model attribute
                     this.$emit("value", this.d_checkboxValue)
 
-                    //check to trigger error/warning conditions and set d_danger/d_warning messages accordingly
+                    //check to trigger error/warning conditions and set danger/warning messages accordingly
                     if (checkboxValue.length<=0) {
                         if (this.required) {
-                            this.d_danger= 'Required Field.'
+                            this.danger= 'Required Field.'
                         }
                         else {
-                            this.d_warning= 'No checkbox selected.'
+                            this.warning= 'No checkbox selected.'
                         }
                     }
                 }
@@ -259,11 +259,11 @@
                     this.d_checkboxValue= tempVal
                                        //if errorVal exists trigger an alert and set warning message
                     if (alertVal) {
-                        this.d_danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the checkbox options.'
+                        this.danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the checkbox options.'
                     }
                 }
                 else {
-                    this.d_danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
+                    this.danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
                 }
             }
         }, //created
@@ -274,16 +274,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -291,12 +291,12 @@
         watch: {
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
 
             //send warning messages back to parent component
-            d_warning: function (newValue) {
+            warning: function (newValue) {
                 this.$emit('notify', 'warning', newValue)
             },
         }, //watch

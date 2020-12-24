@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_passwordValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -27,19 +27,13 @@
                         <password-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_passwordValue'
-                            :value= 'd_value'
+                            :value= 'd_passwordValue'
                             :pattern= 'd_pattern'
                             :placeholder= "d_placeholder"
                             :maxlength= 'd_maxlength'
-                            :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :readonly= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :inputIcon= 'd_inputIcon'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            :required= 'd_booleanTrue':inputIcon= 'd_inputIcon'
+                            @notify= 'alerts'
+                            @value= 'val=> d_passwordValue = val'
                         />
                     </component-details>
                 </form>
@@ -70,35 +64,35 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
 
-            var d_label= 'Password'
+            const label= 'Password'
 
-            var d_name= 'passwordTextField'
+            const name= 'passwordTextField'
 
-            var d_value= ''
+            const value= ''
 
-            var d_passwordValue= ''
+            const passwordValue= ''
 
-            var d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
+            const pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
 
-            var d_maxlength= 20
+            const maxlength= 20
 
-            var d_placeholder= 'Enter password here...'
+            const placeholder= 'Enter password here...'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_inputIcon= 'fas fa-key'
+            const inputIcon= 'fas fa-key'
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
 
             return {
 
@@ -122,9 +116,9 @@
 
                 d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
                            d_password: {
 
                     title: 'Password Input Field',

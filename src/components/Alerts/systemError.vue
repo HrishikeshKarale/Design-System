@@ -23,7 +23,7 @@
             <div>
                 <span @click= "d_hideDetails= !d_hideDetails" :class= '["fas", d_hideDetails? "fa-plus": "fa-minus"]'> {{d_hideDetails? "View": "Hide"}} Details</span>
                 <vue-clipboard
-                    :componentCode= 'd_danger'
+                    :componentCode= 'danger'
                     :tag= 'd_tag'
                     :text= 'd_text'
                     :id= 'd_id'
@@ -87,9 +87,9 @@
 
         data() {
 
-            var d_hideDetails= true
+            const hideDetails= true
 
-            var d_danger= "error=\n\
+            var danger= "error=\n\
             {\n\
                 app: "+this.app+",\n\
                 version: "+this.version+",\n\
@@ -101,7 +101,7 @@
             }"
 
             //object (JSON)
-            var d_errorObject= {
+            const errorObject= {
                 "app": this.app,
                 "version": this.version,
                 "url": this.url,
@@ -111,15 +111,15 @@
                 "stackTrace": this.stackTrace,
             }
 
-            var d_tag= 'StackTrace'
-            var d_text= 'Copy'
-            var d_id= 'stackTrace'
+            const tag= 'StackTrace'
+            const text= 'Copy'
+            const id= 'stackTrace'
 
             return {
 
                 d_hideDetails: d_hideDetails,
 
-                d_danger: d_danger,
+                danger: danger,
 
                 d_errorObject: d_errorObject,
 

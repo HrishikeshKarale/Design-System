@@ -291,22 +291,14 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
         name: 'dispatchMonitor',
 
         data () {
-            var selected= null
-
-            var d_selected= false
-
-            var d_booleanTrue= false
-
-            var d_empData = pickers
-
+            const selected= false
+            const d_booleanTrue= false
+            const empData = pickers
             return {
-                selected: selected,
-
-                d_selected: d_selected,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_empData: d_empData,
+                selected,
+                d_selected,
+                d_booleanTrue,
+                d_empData,
             }
         }, //data
 

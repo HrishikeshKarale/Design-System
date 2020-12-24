@@ -5,7 +5,7 @@
       >
         <vue-wizard 
           :steps= 'd_steps'
-          :alert= "{'error': d_danger, 'warning': d_warning}"
+          :alert= "{'error': danger, 'warning': warning}"
         >
           <template slot= '1'>
             <h3>Order Processing Details</h3>
@@ -13,125 +13,121 @@
               <text-input 
                 label= "Customer"
                 name= "customerField"
-                :value= 'd_value'
-                v-model= 'd_customerVal'
+                :value= 'd_customerVal'
                 :pattern= 'd_pattern'
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
+                
                 inputIcon= 'fas fa-user'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                
+                @notify= 'alerts'
+                @value= 'val=> d_customerVal = val'
               />
             </div>
             <div>
               <searchable-dropdown-list 
                 label= "Cost Center"
                 name= "costCenterField"
-                v-model= 'd_costCenterVal'
                 :value= 'd_costCenterVal'
                 :options= 'warehouse'
                 :pattern= 'd_pattern'
                 :placeholder= 'd_placeholder'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                :multiple= '!d_booleanTrue'
+                
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
                 inputIcon= 'fas fa-closed-captioning'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                
+                @notify= 'alerts'
+                @value= 'val=> d_costCentreVal = val'
               />
             </div>
             <div>
               <text-input 
                 label= "Order Name"
                 name= "orderNameField"
-                v-model= 'd_OrderNameVal'
-                :value= 'd_value'
+                :value= 'd_OrderNameVal'
                 :pattern= 'd_pattern'
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
+                
                 inputIcon= 'fas fa-file-signature'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                
+                @notify= 'alerts'
+                @value= 'val=> d_OrderNameVal = val'
               />
             </div>
             <div>
               <text-input 
                 label= "Recipient"
                 name= "orderNameField"
-                v-model= 'd_recipientVal'
-                :value= 'd_value'
+                :value= 'd_recipientVal'
                 :pattern= 'd_pattern'
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
                 inputIcon= 'fas fa-user'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= 'val=> d_recipientVal = val'
               />
             </div>
             <div>
               <searchable-dropdown-list 
                 label= "Delivery Option"
                 name= "customerField"
-                v-model= 'd_deliveryOptionVal'
-                :value= 'd_value'
+                :value= 'd_deliveryOptionVal'
                 :options= 'warehouse'
                 :pattern= 'd_pattern'
                 :placeholder= 'd_placeholder'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                :multiple= '!d_booleanTrue'
+                
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
                 inputIcon= 'fas fa-truck'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                
+                @notify= 'alerts'
+                @value= 'val=> d_deliveryOptionVal = val'
               />
             </div>
             <div>
               <checkbox-input 
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
-                v-model= 'd_shipping'
-                :value= 'd_value'
+                :value= 'd_shipping'
                 :options= null
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+               
+                
+                
+                @notify= 'alerts'
+                @value= 'val=> d_shipping = val'
               />
             </div>
             <div>
               <vue-textarea 
                 label= "Add a note for Recipient"
                 name= "recipientNoteField"
-                v-model= "d_recipientNote"
-                :value= 'd_value'
+                :value= "d_recipientNote"
                 :pattern= 'd_pattern'
                 :placeholder= "d_placeholder"
                 :required= 'd_booleanTrue'
-                :disabled= '!d_booleanTrue'
-                :readonly= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
+                
                 inputIcon= 'fas fa-comment'
-                :inline= '!d_booleanTrue'
-                @notify= 'd_alerts'
+                
+                @notify= 'alerts'
+                @value= 'val=> d_recipientNote = val'
               />
             </div>
           </template>
@@ -168,7 +164,7 @@
 
     data () {
 
-      var d_steps= [
+      const steps= [
         {
           id: 1,
           title: "Order details",
@@ -180,26 +176,26 @@
           icon_class: "fa fa-th-list"
         }
       ]
-           var d_label= "Warehouse"
+           const label= "Warehouse"
 
-      var d_name= "searchableDropdownField"
+      const name= "searchableDropdownField"
 
-      var d_value= ''
+      const value= ''
 
-      var d_searchDropboxValue= ''
-           var d_options= this.$store.state.warehouse
+      const searchDropboxValue= ''
+           const options= this.$store.state.warehouse
 
-      var d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
+      const pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
 
-      var d_placeholder= 'Enter a value/Select an option'
+      const placeholder= 'Enter a value/Select an option'
 
-      var d_maxlength= 20
+      const maxlength= 20
 
-      var d_booleanTrue= true
+      const d_booleanTrue= true
 
-      var d_inputIcon= 'fas fa-warehouse'
+      const inputIcon= 'fas fa-warehouse'
 
-      var d_alerts= this.alerts
+      const alerts= this.alerts
            return {
 
         d_label: d_label,
@@ -224,9 +220,9 @@
 
         d_alerts: d_alerts,
 
-        d_danger: null,
+        danger: null,
 
-        d_warning: null,
+        warning: null,
 
         d_customerVal: null,
 
@@ -265,7 +261,7 @@
             },
             {
               type: "alerts",
-              value: {'error': this.d_danger, 'warning': this.d_warning},
+              value: {'error': this.danger, 'warning': this.warning},
               description: '<p>The steps attribute provides widget ith total no of steps, their title and the icons for each step for the wizard.</p>\
                       <p>The steps attribute accepts an Array of objects, where each object specifies the title and icon for each step for the wizard.</p>\
                       <p>This is a required field and cannot be left null/empty.</p>',
@@ -285,10 +281,10 @@
       //handels alerts thrown by the component
       alerts: function (type, message) {
         if (type== 'error') {
-          this.d_danger= message;
+          this.danger= message;
         }
         else {
-          this.d_warning= message;
+          this.warning= message;
         }
       }, //alerts
 

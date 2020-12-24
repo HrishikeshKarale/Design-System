@@ -406,9 +406,9 @@
         mapActions,
                data () {
 
-            var d_title= 'Order Details Table'
+            const title= 'Order Details Table'
 
-            var d_data= null
+            const data= null
 
             return {
 

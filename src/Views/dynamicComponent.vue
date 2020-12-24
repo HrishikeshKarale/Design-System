@@ -2,6 +2,7 @@
 
 <script>
 
+    import vueForm from "@/components/FormElements/vueForm";
     import textInput from "@/components/FormElements/textInput";
     import passwordInput from "@/components/FormElements/passwordInput";
     import emailInput from "@/components/FormElements/emailInput";
@@ -31,6 +32,7 @@
     export default {
         components: {
             // let it know what components are there
+            vueForm,
             textInput,
             passwordInput,
             emailInput,
@@ -65,5 +67,5 @@
             // return h(input, {attrs: {type: "text", id: 'id', class:'btn' }})
             // return h('input', {attrs: {props}},[h('p', 'Example Text')]);
         }
-           }
+    }
 </script>

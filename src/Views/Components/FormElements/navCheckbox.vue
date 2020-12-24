@@ -8,22 +8,24 @@
                     <label>Value Returned:</label> {{d_checkboxValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <checkbox-input 
                 label= "Ship on the same day"
                 name= "shipDyaCheckboxField"
-                v-model= 'd_checkboxValue'
+                :value= 'd_checkboxValue'
+                @notify= 'alerts'
+                @value= 'val=> d_checkboxValue = val'
             />
             <div class= "FormElementsContent">
                 <form>                           <component-details
@@ -32,14 +34,15 @@
                         <checkbox-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_checkboxValue'
+                            :value= 'd_checkboxValue'
                             :options= 'd_options'
                             :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
+                           
+                            
+                            
+                            
                             @notify= 'alerts'
+                            @value= 'val=> d_checkboxValue = val'
                         />
                     </component-details>
                 </form>
@@ -48,45 +51,30 @@
 </template>
 
 <script>
-
     import componentDetails from "@/Views/componentDetails";
     import checkboxInput from "@/components/FormElements/checkboxInput";
-    
+    import { alerts } from "@/typeScript/common/alerts";    
 
     export default {
         name: "navCheckbox",
 
-        components: {
+        mixins: [ alerts ],
 
+        components: {
             componentDetails,
             checkboxInput,
-                   }, //components
-
-        methods: {
-
-            //handels alerts thrown by the component
-            alerts: function (type, message) {
-                if (type== 'error') {
-                    this.d_danger= message;
-                }
-                else {
-                    this.d_warning= message;
-                }
-            }, //alerts
-        }, //methods
+        }, //components
 
         data() {
 
-            var d_label= "Warehouse"
-                       var d_name= "checkboxField"
-                       var d_value= ''
-                       var d_checkboxValue= null
+            const label= "Warehouse"
+            const name= "checkboxField"
+            const value= ''
+            const checkboxValue= null
 
-            var d_options= this.$store.state.warehouse
+            const options= this.$store.state.warehouse
 
-            var d_booleanTrue= true
-
-            var d_alerts= this.alerts
+            const d_booleanTrue= true
                        return {
 
                 d_label: d_label,
@@ -101,11 +89,9 @@
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_alerts: d_alerts,
+                danger: null,
 
-                d_danger: null,
-
-                d_warning: null,
+                warning: null,
 
                 d_checkbox: {
 

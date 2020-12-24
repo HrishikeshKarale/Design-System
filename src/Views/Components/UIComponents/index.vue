@@ -124,7 +124,7 @@
     <h3>Step Wizard</h3>  
     <vue-wizard 
       :steps= 'd_steps'
-      :alert= "{'error': d_danger, 'warning': d_warning}"
+      :alert= "{'error': danger, 'warning': warning}"
     >
       <template slot= '1'>
         <form>
@@ -140,7 +140,8 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-user'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_customerVal = val"
               />
             </div>
             <div>
@@ -155,7 +156,8 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-closed-captioning'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_costCenterVal = val"
               />
             </div>
             <div>
@@ -168,7 +170,8 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-file-signature'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_orderNameVal = val"
               />
             </div>
             <div>
@@ -181,14 +184,14 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-user'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_recipientVal = val"
               />
             </div>
             <div>
               <searchable-dropdown-list 
                 label= "Delivery Option"
                 name= "customerField"
-                v-model= 'd_deliveryOptionVal'
                 :value= 'd_deliveryOptionVal'
                 :options= 'd_warehouse'
                 :pattern= 'd_pattern'
@@ -197,7 +200,8 @@
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-truck'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= 'val=> d_deliveryOptionVal = val'
               />
             </div>
             <div>
@@ -207,7 +211,8 @@
                 :value= 'd_shipping'
                 :options= null
                 :required= 'd_booleanTrue'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_shipping = val"
               />
             </div>
             <div>
@@ -220,7 +225,8 @@
                 :maxlength= 'd_TAmaxlength'
                 :required= 'd_booleanTrue'
                 inputIcon= 'fas fa-comment'
-                @notify= 'd_alerts'
+                @notify= 'alerts'
+                @value= "val=> d_recipientNote = val"
               />
             </div>
           </fieldset>
@@ -239,13 +245,13 @@
                 <text-input 
                   label= "SKU"
                   name= "SKUinputName"
-                  v-model= 'd_SKU'
-                  value= ''
+                  :value= 'd_SKU'
                   placeholder= "Enter SKU..."
                   :maxlength= 'd_maxlength'
                   :required= 'd_booleanTrue'
                   inputIcon= 'fas fa-barcode'
                   @notify= 'alerts'
+                  @value= 'val=> d_SKU = val'
                 />
               </div>
               <div>
@@ -253,18 +259,19 @@
                   <number-input 
                     label= "Quantity"
                     name= "OrderQuantity"
-                    v-model= 'd_numberValue'
+                    :value= 'd_numberValue'
                     value= ''
                     placeholder= "0"
                     :required= 'd_booleanTrue'
                     inputIcon= 'fas fa-hashtag'
                     @notify= 'alerts'
+                    @value= 'val=> d_numberValue = val'
                   />
                 </div>
                 <div>
                   <vue-info 
                     label= "Available"
-                    :value= 'd_info'
+                    :value= 'info'
                   />
                 </div>
               </div>
@@ -354,13 +361,15 @@
   import numberInput from "@/components/FormElements/numberInput";
   import vueInfo from "@/components/FormElements/vueInfo";
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  
+  import { alerts } from "@/typeScript/common/alerts";  
   import radioInput from "@/components/FormElements/radioInput";
 
   import { mapState, mapActions } from 'vuex';
 
   export default {
-    name: 'uiComponents',
+    name: 'uiComponents',   
+
+        mixins: [ alerts ],
 
     // store,
 
@@ -399,7 +408,6 @@
       const d_pattern= '([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*'
       const d_maxlength= 20
       const d_TAmaxlength= 120
-      const d_alerts= this.alerts
       const d_column= ['SKU', 'Quantity', 'Available']
       const d_SKUdetails= {
         'cols': d_column, 
@@ -432,7 +440,7 @@
         d_SKU: null,
         d_SKUdetails,
         d_numberValue: null,
-        d_info: 900,
+        info: 900,
         //stepWaizard
         d_SKUdetails,
         bookmark,
@@ -440,9 +448,8 @@
         d_maxlength,
         d_TAmaxlength,
         d_booleanTrue,
-        d_alerts,
-        d_danger: null,
-        d_warning: null,
+        danger: null,
+        warning: null,
         d_customerVal: null,
         d_costCenterVal: null,
         d_OrderNameVal: null,
@@ -523,7 +530,7 @@
       createCard: function () {
         const quantity= this.d_numberValue
         const sku= this.d_SKU
-        const info= this.d_info
+        const info= this.info
         const details= new Array()
         // console.log('details: ', sku, quantity, info)
                  if (quantity && sku) {
@@ -566,10 +573,10 @@
       //handels alerts thrown by the component
       alerts: function (type, message) {
         if (type== 'error') {
-          this.d_danger= message;
+          this.danger= message;
         }
         else {
-          this.d_warning= message;
+          this.warning= message;
         }
       }, //alerts
     }, //methods

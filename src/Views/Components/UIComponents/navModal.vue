@@ -32,13 +32,13 @@
 
         data () {
 
-            var d_modalTitle= 'Modal title'
-                       var d_text= 'openModal'
-                       var d_tag= 'approveText'
-                       var d_icon= 'fas fa-eject'
-                       var d_ctx= this.consoleClick
+            const modalTitle= 'Modal title'
+                       const text= 'openModal'
+                       const tag= 'approveText'
+                       const icon= 'fas fa-eject'
+                       const ctx= this.consoleClick
 
-            var d_showModal= false
+            const showModal= false
 
             return {
                                d_modalTitle: d_modalTitle,

@@ -78,10 +78,10 @@ var data= {
                 <pre>\
                 alerts: function (type, message) {<br>\
                         if (type== \'error\') {<br>\
-                                this.d_danger= message;<br>\
+                                this.danger= message;<br>\
                         }<br>\
                         else {<br>\
-                                this.d_warning= message;<br>\
+                                this.warning= message;<br>\
                         }<br>\
                 },</pre>',
     alertsText: "Specifies the function that should be used to catch any alert emitted by the input element.",

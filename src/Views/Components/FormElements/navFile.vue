@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_fileUploadValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -28,15 +28,16 @@
                         <file-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_fileUploadValue'
+                            :value= 'd_fileUploadValue'
                             :accept= "d_accept"
                             :multiple= 'd_booleanTrue'
-                            :required= '!d_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            
+                           
+                            
+                            
+                            
+                            @notify= 'alerts'
+                            @value= 'val=> d_fileUploadValue = val'
                         />
                     </component-details>
                 </form>
@@ -63,29 +64,29 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
 
-            var d_label= "Upload File"
+            const label= "Upload File"
 
-            var d_name= "fileUploadField"
+            const name= "fileUploadField"
 
-            var d_value= ''
+            const value= ''
 
-            var d_fileUploadValue= null
+            const fileUploadValue= null
 
-            var d_accept= ".pdf, .doc, .docx"
+            const accept= ".pdf, .doc, .docx"
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
 
             return {
 
@@ -102,9 +103,9 @@
                 d_booleanTrue: d_booleanTrue,
                                d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_file: {
 

@@ -13,8 +13,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         iconPadding: inputIcon,
                         maskField: mask 
                     }'
@@ -40,8 +40,8 @@
             />
         </div>
         <input-response
-            :warning= 'd_warning'
-            :error= 'd_danger'
+            :warning= 'warning'
+            :error= 'danger'
         />
     </div>
 </template>
@@ -58,10 +58,10 @@
             return {
 
                 //stores errors thrown by the input fields 
-                d_danger: null,
+                danger: null,
 
                 //stores errors thrown by the input fields 
-                d_warning: null,
+                warning: null,
 
                 //stores textbox password values
                 d_numberValue: null
@@ -188,8 +188,8 @@
             //it also emits/send the current textbox value to  parent component as v-model attribute value
             validate: function () {
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.d_danger= null
-                this.d_warning= null
+                this.danger= null
+                this.warning= null
                 //loads current value stored from d_numberValue(data) into val(temp) variable val for readability of code
                 var val= this.d_numberValue
                 if (typeof val== 'string') {
@@ -211,15 +211,15 @@
                 if (val || val==0) {
                    if (pattern && !(val.toString()).match(pattern))
                     {
-                        this.d_warning= 'Wrong format: Please follow the pattern '+ pattern;
+                        this.warning= 'Wrong format: Please follow the pattern '+ pattern;
                     }
                     else if (min && val<min)
                     {
-                        this.d_warning= 'Invalid Value: Value is less than allowed minimum of '+ min
+                        this.warning= 'Invalid Value: Value is less than allowed minimum of '+ min
                     }
                     else if (max && val>max)
                     {
-                        this.d_warning= 'Invalid Value: Value is greater than allowed maximum of '+ max
+                        this.warning= 'Invalid Value: Value is greater than allowed maximum of '+ max
                     }
                     else {
                         //emit/send new values to parent component v-model attribute
@@ -229,7 +229,7 @@
                 //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
                 else {
                     if (this.required) {
-                        this.d_danger= 'Required field.';
+                        this.danger= 'Required field.';
                     }
                 }
             }, //validate
@@ -250,16 +250,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -267,12 +267,12 @@
         watch: {
 
             //send warning messages back to parent component
-            d_warning: function (newValue) {
+            warning: function (newValue) {
                 this.$emit('notify', 'warning', newValue)
             },
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
         }, //watch

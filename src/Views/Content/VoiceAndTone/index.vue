@@ -127,7 +127,7 @@
                         <text-input 
                             class= "noteText"
                             label="Notes"
-                            :disabled= "booleanTrue"
+                            :disabled= "d_booleanTrue"
                         />
                     </template>
                 </good-vs-bad>
@@ -242,7 +242,7 @@ import cardBackground from "@/components/UIComponents/Cards/cardBackground.vue"
 
         data() {
             const security = "ON";
-            const booleanTrue = true;
+            const d_booleanTrue = true;
             const confidentNotArrogant = require("@/assets/content/voice/dce4ec487f1f20d516657aae34b575e4.svg");
             const EmpatheticNotOverprotective = require("@/assets/content/voice/8f80a89f902511220b8a3b5579804b0b.svg");
             const transparentNotBlunt = require("@/assets/content/voice/b8cae87c753b46c89aec550f3a911897.svg");
@@ -252,7 +252,7 @@ import cardBackground from "@/components/UIComponents/Cards/cardBackground.vue"
             const negative2 = require("@/assets/content/voice/b53512dc5c4d8d7c80c59a237758bf3f.png");
             return {
                 security,
-                booleanTrue,
+                d_booleanTrue,
                 confidentNotArrogant,
                 EmpatheticNotOverprotective,
                 transparentNotBlunt,

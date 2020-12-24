@@ -2,12 +2,11 @@
     <div class= "navInfo">
             <div class= "FormElementsContent">
                 <form>                            <component-details
-                        :compData= 'd_info'
+                        :compData= 'info'
                     >
                         <vue-info 
                             :label= "d_label"
                             :value= 'd_value'
-                            :mask= '!d_booleanTrue'
                         />
                     </component-details>  
                 </form>
@@ -32,11 +31,11 @@
 
         data() {
 
-            var d_label= 'Available Quantity'
+            const label= 'Available Quantity'
 
-            var d_value= '3200'
+            const value= '3200'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
             return {
 
@@ -46,7 +45,7 @@
 
                 v: d_booleanTrue,
 
-                d_info: {
+                info: {
                                        title: 'Info Field',
 
                     compName: 'vue-info',

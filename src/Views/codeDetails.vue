@@ -10,8 +10,8 @@
                     tag= "togglecode"
                     :icon= 'd_hideCode? "fas fa-minus":"fas fa-plus"'
                     :category= 'd_category[12]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
+                   
+                    
                     :form= "d_form"
                     :ctx= 'toggle.bind(this)'
                 />
@@ -33,10 +33,11 @@
                             <template v-if= 'typeof attribute.value== "number"'>
                                 <number-input 
                                     name= "numField"
-                                    v-model= 'd_value'
+                                    :value= 'd_value'
                                     :pattern= 'd_numRegEx'
                                     inputIcon= 'fas fa-hashtag'
-                                    @input= "change(null)"
+                                    @notify= 'alerts'
+                                    @value= 'val=> d_value = val'
                                 />
                             </template>
                             <template v-else-if= 'typeof attribute.value== "boolean"'>
@@ -55,19 +56,73 @@
                             <template v-else-if= 'Array.isArray(attr.value) || typeof attr.value== "array"' >
                                 <searchable-dropdown-list
                                     name= "playpen"
-                                    v-model= 'd_value'
+                                    :value= 'd_value'
                                     :options= 'attribute.value'
-                                    :strict= '!d_booleanTrue'
-                                    @input= "change(attribute.value)"
+                                    @notify= 'alerts'
+                                    @value= 'val=> d_value = val'
                                 />
                             </template>
+                            <template v-else-if= 'typeof attr.value== "object"' >
+                                <template v-for=" k in Object.keys(attribute.value)">
+                                    {{k}}:
+                                    <template v-if= 'typeof attribute.value[k]== "number"'>
+                                        <number-input 
+                                            name= "numField"
+                                            :value= 'attribute.value[k]'
+                                            :pattern= 'd_numRegEx'
+                                            inputIcon= 'fas fa-hashtag'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_value = val'
+                                        />
+                                    </template>
+                                    <template v-else-if= 'typeof attribute.value[k]== "boolean"'>
+                                        <label  
+                                            id= 'checkbox'
+                                        >
+                                            <input 
+                                                type= 'checkbox' 
+                                                :value= "attribute.value[k]"
+                                                v-model= "d_value" 
+                                                for= 'checkbox'
+                                                @input= "change(null)"
+                                            />
+                                                <span style= 'text-transform: uppercase; margin-left: 8px;'>{{d_value}} </span>
+                                        </label>
+                                    </template>
+                                    <template v-else-if= 'Array.isArray(attribute.value[k]) || typeof attribute.value[k]== "array"' >
+                                        <searchable-dropdown-list
+                                            name= "playpen"
+                                            :value= 'd_value'
+                                            :options= 'attribute.value[k]'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_value = val'
+                                        />
+                                    </template>
+                                    <template v-else>
+                                        <text-input 
+                                            :name= "attr.type+'textField'"
+                                            :value= 'attribute.value[k]'
+                                            @notify= 'alerts'
+                                            @value= 'val=> attribute.value[k] = val'
+                                        />
+                                    </template>
+                                    <!-- <searchable-dropdown-list
+                                        name= "playpen"
+                                        :value= 'd_value'
+                                        :options= 'attribute.value'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_value = val'
+                                    /> -->
+                                </template>
+                            </template>
                             <template v-else>
-                                <template v-if= "d_attr && d_attr.type.indexOf(attr.type)!= -1">
+                                <template v-if= "attr && attr.type.indexOf(attr.type)!= -1">
                                     <dropdown-list 
                                         :name= 'attr.type+"dropdownField"'
-                                        v-model= 'd_value'
-                                        :options= 'd_attr.value[d_attr.type.indexOf(attr.type)]'
-                                        @input= "change(d_attr.type.indexOf(attr.type))"
+                                        :value= 'd_value'
+                                        :options= 'attr.value[attr.type.indexOf(attr.type)]'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_value = val'
                                     />
                                 </template>
                                 <template v-else-if= 'typeof attr.value== "object"' >
@@ -81,8 +136,9 @@
                                 <template v-else>
                                     <text-input 
                                         :name= "attr.type+'textField'"
-                                        v-model= 'd_value'
-                                        @input= "change(null)"
+                                        :value= 'd_value'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_value = val'
                                     />
                                 </template>
                             </template>
@@ -111,28 +167,31 @@
     import vueButton from "@/components/UIComponents/Buttons"
     import numberInput from "@/components/FormElements/numberInput";
     import textInput from "@/components/FormElements/textInput";
+    import { alerts } from "@/typeScript/common/alerts"
 
     export default {
 
         name: 'codeDetails',
 
+        mixins: [alerts],
+
         data () {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const tag= 'consoleTextButton'
 
-            var d_text= ''
+            const text= ''
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_ctx= this.toggle
+            const ctx= this.toggle
 
-            var d_numRegEx= new RegExp(/^([0-9]*)|(([0-9]*))$/)
+            const numRegEx= new RegExp(/^([0-9]*)|(([0-9]*))$/)
 
             return {
 
@@ -178,11 +237,15 @@
                 default: false
             },
 
-            d_attr: {
+            attr: {
                 required: false,
                 type: Object,
                 default: null
             },
+            index: {
+                type: Number,
+                required: true,
+            }
         }, //props
 
         components: {
@@ -201,15 +264,28 @@
                 var attr= this.attr
                 var attributes= this.attributes
                 var str= new Object()
-                               for (var attribute in attributes)
-                {
+                for (var attribute in attributes) {
                     // console.log(attribute)
                     var type= attributes[attribute].type
                     var value= attributes[attribute].value
 
+                    
+                    // if (attr.type== 'id' || attr.type== 'name') {
+                    //     this.d_value = this.d_value + "-" + this.index
+                    //     console.log(this.index);
+                    // } else if (attr.type== 'function') {
+                    //     this.d_value = JSON.parse(this.d_value);
+                    //     console.log(index, this.d_value);
+                    // }
+                        console.log(this.index, attr.type, type, attr.type=='ctx'? JSON.parse(value): value,typeof value,  this.d_value);
                     if (type!= 'v-model' && attr.type== type) {
-                        str[type]= this.d_value
-                    } //when the attribute types match, replace the value for user input 
+                        if(attr.type == "ctx") {
+                            str[type] = this.d_value+this.index;
+                        }
+                        else {
+                            str[type]= this.d_value;
+                        }
+                    } //when the attribute types match, replace the value for user input                    
                     else {
                         str[type]= value
                     }
@@ -222,7 +298,7 @@
         methods: {
 
             change: function (index) {
-                var d_attrValue= this.d_attr
+                const attrValue= this.attr
                 var selectedValue= this.d_value
                 if (index){
                     // console.log('change: ', this.attributes[4].type,  typeof index, Array.isArray(index), index)
@@ -231,7 +307,7 @@
                 //dropdown list
                 if (index && typeof index== 'number') {
                     // console.log('change', this.attr.type, selectedValue, this.d_value)
-                    this.$emit('change', this.attr.type, {type: d_attrValue, selected: selectedValue})
+                    this.$emit('change', this.attr.type, {type: attrValue, selected: selectedValue})
                 }
                 //searchable dropdown list
                 else if (index && Array.isArray(index)) {

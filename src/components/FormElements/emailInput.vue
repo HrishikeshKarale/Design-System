@@ -13,8 +13,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         iconPadding: inputIcon,
                         maskField: mask 
                     }'
@@ -40,8 +40,8 @@
             />
         </div>
         <input-response
-            :warning= 'd_warning'
-            :error= 'd_danger'
+            :warning= 'warning'
+            :error= 'danger'
             :charLimitReached= 'lengthDelta== 0'
             :maxlength= 'maxlength'
         />
@@ -60,10 +60,10 @@
             return {
 
                 //stores errors thrown by the input fields 
-                d_danger: null,
+                danger: null,
 
                 //stores errors thrown by the input fields 
-                d_warning: null,
+                warning: null,
 
                 //stores textbox values
                 d_emailValue: null,
@@ -206,8 +206,8 @@
             //it also emits/send the current textbox value to  parent component as v-model attribute value
             validate: function () {
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.d_danger= null
-                this.d_warning= null
+                this.danger= null
+                this.warning= null
                 //loads current value stored from data variables into temp variable val for readability of code
                 var val= this.d_emailValue
                 var maxlength= this.maxLength
@@ -218,13 +218,13 @@
                     //if a patters for acceptable value exists, then trigger warning and set warning message if val (temp) does not follow the patter
                     if (pattern && !val.match(pattern))
                     {
-                        this.d_warning= 'Wrong format: Please follow the pattern '+ pattern;
+                        this.warning= 'Wrong format: Please follow the pattern '+ pattern;
                     }
                     //if a pattern does not exist or value matches the pattern, check if maxlength exists and length of email entered is greater than maxlength 
                     //if true trigger an alert and set warning message
                     else if (maxlength && maxlength< val.length)
                     {
-                        this.d_warning= 'Invalid Input: Allowed maxlength for input exceeded by -'+this.lengthDelta+' characters.';
+                        this.warning= 'Invalid Input: Allowed maxlength for input exceeded by -'+this.lengthDelta+' characters.';
                     }
                     else{
                         //emit/send new values to parent component v-model attribute
@@ -234,7 +234,7 @@
                 //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
                 else {
                     if (this.required) {
-                        this.d_danger= 'Required field.';
+                        this.danger= 'Required field.';
                     }
                 }
             }, //validate
@@ -260,16 +260,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -277,12 +277,12 @@
         watch: {
 
             //send warning messages back to parent component
-            d_warning: function (newValue) {
+            warning: function (newValue) {
                 this.$emit('notify', 'warning', newValue)
             },
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
         }, //watch

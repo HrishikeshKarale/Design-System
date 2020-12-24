@@ -119,20 +119,20 @@
     <div class= 'attributeDetails'>
       <div 
       class= 'subSection'
-      v-for= "(attr, index) in compData.attributes"
+      v-for= "(attribute, index) in compData.attributes"
       :key= 'index'
       >
-      <h4 :id= 'attr.type'>
-        {{attr.type}}
+      <h4 :id= 'attribute.type'>
+        {{attribute.type}}
       </h4>
-      <div v-html= 'attr.description'/>
-      <div v-if= 'typeof attr.value!= "function" && attr.type!= "v-model" && attr.type!= "value"'>
+      <div v-html= 'attribute.description'/>
+      <div v-if= 'typeof attribute.value!= "function" && attribute.type!= "v-model" && attribute.type!= "value"'>
         <code-details 
         :attributes= 'd_vModelVariables'
-        :attr= 'attr'
+        :attribute= 'attribute'
         :compName= 'compData.compName'
         :hideCode= 'd_hideCode'
-        :d_attr= 'd_attr'
+        :index= "index"
         @change= 'change'
         />
       </div>
@@ -169,7 +169,7 @@
 
   data() {
 
-    var d_vModelVariables= null
+    const vModelVariables= null
     return {
 
     d_hideCode: null,
@@ -195,7 +195,7 @@
     }
     },
 
-    d_attr: {
+    attr: {
     required: false,
     type: Object,
     default: null
@@ -212,13 +212,13 @@
       // console.log('change: ', attributes[attr].value, value, type)
            //dropdown list
       if (Array.isArray(value)) {
-        // this.d_attr= value.type
+        // this.attr= value.type
         attributes[attr].value= value.value
         // console.log('change!!!!!: ', value.type, type)
       }
       //searchable dropdown list
       else if (typeof value == 'object') {
-        this.d_attr= value.type
+        this.attr= value.type
         attributes[attr].value= value.selected
         // console.log('change!!!!!: ', value.type, value.selected, type)
       }
@@ -240,41 +240,38 @@
 
     var codet = '';
     var defaultCodet = '';
-
-    var attr= ''
     var data= compData.attributes
     this.d_vModelVariables= data;
     this.hidecode= false
-    var d_attr= this.d_attr
     var str= ''
 
-    for (attr in data) {
-    var type= data[attr].type
-    var value= data[attr].value
+    for (this.attr in data) {
+    var type= data[this.attr].type
+    var value= data[this.attr].value
     var tempStr= null
     var defaultTempStr= null
-    // console.log('0-', attr, type, value, d_attr)
+    // console.log('0-', this.attr, type, value, this.attr)
  
     if (typeof value== 'string') {
-      // console.log('0-', attr, typeof value)
-      if (d_attr) {
-      var index= (d_attr.type).indexOf(type)
+      // console.log('0-', this.attr, typeof value)
+      if (this.attr) {
+      var index= (this.attr.type).indexOf(type)
       if (index!= -1){
         var tempval= '['
         var defaultVal= '['
         var val
-        var D_attrValue= d_attr.value[index]
+        const attrValue= this.attr.value[index]
 
-        for (val in D_attrValue) {
-               if (value==D_attrValue[val]) {
-          tempval+='<label>'+D_attrValue[val]+'</label>' 
-          defaultVal+=''+D_attrValue[val]+'' 
+        for (val in attrValue) {
+               if (value==attrValue[val]) {
+          tempval+='<label>'+attrValue[val]+'</label>' 
+          defaultVal+=''+attrValue[val]+'' 
         }
         else {
-          tempval+= D_attrValue[val]
-          defaultVal+= D_attrValue[val]
+          tempval+= attrValue[val]
+          defaultVal+= attrValue[val]
         } 
-        if (val < D_attrValue.length-1) {
+        if (val < attrValue.length-1) {
           tempval+= ', '
           defaultVal+= ', '
         } //formatting arrays to include commas for display
@@ -295,7 +292,7 @@
       var val
 
       for (val in value) {
-      tempval+='"'+data[attr].value[val]+'"' 
+      tempval+='"'+data[this.attr].value[val]+'"' 
       if (val < value.length-1) {
         tempval+= ', '
       } //formatting arrays to include commas for display

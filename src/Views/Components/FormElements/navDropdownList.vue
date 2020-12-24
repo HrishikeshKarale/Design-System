@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_dropdownValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -28,17 +28,18 @@
                         <dropdown-list 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_dropdownValue'
+                            :value= 'd_dropdownValue'
                             :options= 'd_options'
                             :size= 'd_size'
-                            :multiple= '!d_booleanTrue'
+                            
                             :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
                             :inputIcon= 'd_inputIcon'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            
+                            
+                            @notify= 'alerts'
+                            @value= 'val=> d_dropdownValue = val'
                         />
                     </component-details>
                 </form>
@@ -69,29 +70,29 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
-                       var d_label= "Warehouse"
+                       const label= "Warehouse"
 
-            var d_name= "dropdownField"
+            const name= "dropdownField"
 
-            var d_dropdownValue= ''
-                       var d_options= this.$store.state.warehouse
+            const dropdownValue= ''
+                       const options= this.$store.state.warehouse
 
-            var d_size= 0
+            const size= 0
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_inputIcon= 'fas fa-warehouse'
+            const inputIcon= 'fas fa-warehouse'
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
                        return {
 
                 d_label: d_label,
@@ -110,9 +111,9 @@
 
                 d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_dropdownList: {
 

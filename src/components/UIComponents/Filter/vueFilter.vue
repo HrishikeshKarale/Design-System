@@ -36,16 +36,20 @@
                 <dropdown-list 
                     label= "Type"
                     name= "filterType"
-                    v-model= "d_filterTypeValue"
+                    :value= "d_filterTypeValue"
                     :options= 'filters["type"]'
+                    @notify= 'alerts'
+                    @value= 'val=> d_filterTypeValue = val'
                 />
             </div>
             <div v-if= 'optionsIndex> -1'>
                 <dropdown-list 
                     label= 'Value'
                     name= "filterType"
-                    v-model= "d_filterOptionValue"
+                    :value= "d_filterOptionValue"
                     :options= 'filters["options"][optionsIndex]'
+                    @notify= 'alerts'
+                    @value= 'val=> d_filterOptionValue = val'
                 />
             </div>
             <div v-if= 'optionsIndex> -1'>
@@ -72,9 +76,9 @@
 
         data () {
 
-            var d_filterTypeValue= null
+            const filterTypeValue= null
 
-            var d_filterOptionValue= null
+            const filterOptionValue= null
 
             var showFilter= false
             return {

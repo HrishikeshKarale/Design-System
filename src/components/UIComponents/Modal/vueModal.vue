@@ -10,8 +10,8 @@
                 :text= "text"
                 :icon= "icon"
                 :category= 'd_category[2]'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
                 :form= "d_form"
                 :ctx= 'd_ctx'
             />
@@ -22,8 +22,8 @@
                 :text= "text"
                 :icon= "icon"
                 :category= 'd_category[9]'
-                :disabled= '!d_booleanTrue'
-                :autofocus= '!d_booleanTrue'
+               
+                
                 :form= "d_form"
                 :ctx= 'd_ctx'
             />
@@ -60,8 +60,8 @@
                                 text= "CONFIRM"
                                 :icon= 'icon'
                                 :category= 'd_category[2]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'ctx'
                             />
@@ -72,8 +72,8 @@
                                 tag= "closeModal"
                                 text= "Close"
                                 :category= 'd_category[11]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'd_ctx'
                             />
@@ -96,17 +96,17 @@
 
         data () {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_ctx= this.toggle
+            const ctx= this.toggle
 
-            var d_showModal= false
+            const showModal= false
 
             return {
 

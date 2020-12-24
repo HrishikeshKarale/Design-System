@@ -79,37 +79,45 @@
                                     </h4>
                                     <text-input 
                                         label= "First Name"
-                                        :name= "d_name"
-                                        v-model= 'd_textBoxValue'
-                                        :placeholder= "d_placeholder"
+                                        name= "usernameTextField"
+                                        :value= 'd_textBoxValue'
+                                        placeholder= "Enter text here..."
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_textBoxValue = val'
                                     />
                                     <text-input 
                                         label= "Last Name"
-                                        :name= "d_Pname"
-                                        v-model= 'd_textBoxValue'
-                                        :placeholder= "d_placeholder"
+                                        name= "passwordTextField"
+                                        :value= 'd_textBoxValue'
+                                        placeholder= "Enter text here..."
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_textBoxValue = val'
                                     />
                                     <radio-input 
                                         label= "Gender"
-                                        :name= "d_Cname"
-                                        :value= "gender[2]"
-                                        :options= 'gender'
+                                        name= "checkboxField"
+                                        :value= "d_radio1"
+                                        :options= 'd_gender'
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_radio1 = val'
                                     />
                                     <vue-date
                                         label= "Date of Birth"
                                         name= "d_DdateField"
-                                        v-model= "d_dateValue"
+                                        :value= "d_dateValue"
                                         :setDefaultDate= "d_booleanTrue"
                                         min= "2000-12-12"
                                         max= "2040-12-12"
                                         :readonly= 'd_booleanTrue'
                                         inputIcon= "fas fa-calendar-alt"
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_dateValue = val'
                                     />
                                     <h4 style= 'color: #333333;
                                                 font-weight: bold;'>
@@ -117,15 +125,15 @@
                                     </h4>
                                     <email-input 
                                         label= "Email"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= 'SFrye@gmail.com'
-                                        :placeholder= "d_placeholder"
+                                        placeholder= "Enter text here..."
                                         :readonly= 'd_booleanTrue'
                                         inputIcon= "fas fa-at"
                                     />
                                     <text-input 
                                         label= "Phone Number"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= ''
                                         placeholder= "Enter landline number..."
                                         :readonly= 'd_booleanTrue'
@@ -133,13 +141,13 @@
                                     />
                                     <text-input 
                                         label= "Mobile Number"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= '585520727'
                                         placeholder= "Enter your mobile number..."
                                         :readonly= 'd_booleanTrue'
                                         :required= 'd_booleanTrue'
                                         inputIcon= "fas fa-mobile-alt"
-                                        :alertMessage= alertMessage
+                                        :alertMessage= "d_alertMessage"
                                     />
                                     <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                         <vue-button 
@@ -166,52 +174,56 @@
                                     <h2>C O M E T</h2>
                                     <text-input 
                                         label= "Please write your first name"
-                                        :name= "d_name"
+                                        name= "usernameTextField"
                                         value= 'Steven'
-                                        :placeholder= "d_placeholder"
+                                        placeholder= "Enter text here..."
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
                                     <text-input 
                                         label= "My Last name is"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= 'Frye'
-                                        :placeholder= "d_placeholder"
+                                        placeholder= "Enter text here..."
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
                                     <radio-input 
                                         label= "I am"
-                                        :name= "d_Cname"
-                                        v-model= "d_radioValue"
-                                        :options= 'gender'
+                                        name= "checkboxField"
+                                        :value= "d_radioValue"
+                                        :options= 'd_gender'
                                         :required= 'd_booleanTrue'
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_radioValue = val'
                                     />
                                     <vue-date
                                         label= "My DOB is"
                                         name= "d_DdateField"
-                                        v-model= "d_dateValue"
+                                        :value= "d_dateValue"
                                         min= "2000-12-12"
                                         max= "2040-12-12"
                                         :readonly= 'd_booleanTrue'
                                         :setDefaultDate= "d_booleanTrue"
                                         :inline= 'd_booleanTrue'
+                                        @notify= 'alerts'
+                                        @value= 'val=> d_dateValue = val'
                                     />
                                     <email-input 
                                         label= "Email me at"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= 'SFrye@gmail.com'
-                                        :placeholder= "d_placeholder"
+                                        placeholder= "Enter text here..."
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
                                     <text-input 
                                         label= "what is your phone no?"
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= ''
                                         placeholder= "Enter landline number..."
                                         :readonly= 'd_booleanTrue'
@@ -219,13 +231,13 @@
                                     />
                                     <text-input 
                                         label= "Mobile No "
-                                        :name= "d_Pname"
+                                        name= "passwordTextField"
                                         value= '585520727'
                                         placeholder= "Enter your mobile number..."
                                         :readonly= 'd_booleanTrue'
                                         :required= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
-                                        :alertMessage= alertMessage
+                                        :alertMessage= "d_alertMessage"
                                     />
                                 </fieldset>
                             </template>
@@ -258,25 +270,31 @@
                                             Log In
                                         </h3>
                                         <text-input 
-                                            :label= "d_label"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Username"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <password-input 
-                                            :label= "d_Plabel"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Password"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <checkbox-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
-                                            v-model= 'd_checkboxValue'
+                                            :value= 'd_checkboxValue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_checboxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -287,27 +305,33 @@
                                                 Log In
                                             </h3>
                                             <text-input 
-                                                :label= "d_label"
-                                                :name= "d_name"
-                                                v-model= 'd_textBoxValue'
-                                                :placeholder= "d_placeholder"
+                                                label= "Username"
+                                                name= "usernameTextField"
+                                                :value= 'd_textBoxValue'
+                                                placeholder= "Enter text here..."
                                                 :required= 'd_booleanTrue'
                                                 :readonly= 'd_booleanTrue'
                                                 :inline= 'd_booleanTrue'
+                                                @notify= 'alerts'
+                                                @value= 'val=> d_textBoxValue = val'
                                             />
                                             <password-input 
-                                                :label= "d_Plabel"
-                                                :name= "d_Pname"
-                                                v-model= 'd_textBoxValue'
-                                                :placeholder= "d_placeholder"
+                                                label= "Password"
+                                                name= "passwordTextField"
+                                                :value= 'd_textBoxValue'
+                                                placeholder= "Enter text here..."
                                                 :required= 'd_booleanTrue'
                                                 :readonly= 'd_booleanTrue'
                                                 :inline= 'd_booleanTrue'
+                                                @notify= 'alerts'
+                                                @value= 'val=> d_textBoxValue = val'
                                             />
                                             <checkbox-input 
                                                 label= "Remember Me"
                                                 name= "shipDyaCheckboxField"
-                                                v-model= 'd_checkboxValue'
+                                                :value= 'd_checkboxValue'
+                                                @notify= 'alerts'
+                                                @value= 'val=> d_checkboxValue = val'
                                             />
                                     </fieldset>
                                 </template>
@@ -320,64 +344,78 @@
                                         <h2>C O M E T</h2>
                                         <text-input 
                                             label= "Please write your first name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "My Last name is"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "I am"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "My DOB is"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <email-input 
                                             label= "Email me at"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "what is your phone no?"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile No "
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             :inline= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -386,57 +424,71 @@
                                         <h2>C O M E T</h2>
                                         <text-input 
                                             label= "Please write your first name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "My Last name is"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            Value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "I am"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "My DOB is "
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <email-input 
                                             label= "Email me at"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "what is your phone no? "
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile No"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -463,57 +515,71 @@
                                         <h2>C O M E T</h2>
                                         <text-input 
                                             label= "Please write your first name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "My Last name is"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "I am"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "My DOB is "
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <email-input 
                                             label= "Email me at"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "what is your phone no?"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile No"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -525,60 +591,74 @@
                                         </h4>
                                         <text-input 
                                             label= "Please write your first name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "My Last name is "
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "I am"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "My DOB is"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email me at"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "what is your phone no?"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile No"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -605,60 +685,74 @@
                                         </h4>
                                         <text-input 
                                             label= "Please write your first name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "My Last name is"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "I am"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "My DOB is"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email me at"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "what is your phone no?"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile No"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -672,60 +766,74 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003a65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -757,60 +865,74 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -824,64 +946,78 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=>d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-phone"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                     </fieldset>
                                 </template>
@@ -913,64 +1049,76 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-phone"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1003,64 +1151,78 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            v-model= "d_radioValue"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radioValue"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_radioValue = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-phone"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1091,27 +1253,33 @@
                                             C O M E T
                                         </h3>
                                         <text-input 
-                                            :label= "d_label"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Username"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-user"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <password-input 
-                                            :label= "d_Plabel"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Password"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-key"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <checkbox-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
-                                            v-model= 'd_checkboxValue'
+                                            :value= 'd_checkboxValue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_checkboxValue = val'
                                         />
                                         <vue-button 
                                             type= "button"
@@ -1136,27 +1304,33 @@
                                             C O M E T
                                         </h3>
                                         <text-input 
-                                            :label= "d_label"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Username"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-user"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <password-input 
-                                            :label= "d_Plabel"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Password"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-key"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <checkbox-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
-                                            v-model= 'd_checkboxValue'
+                                            :value= 'd_checkboxValue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_checkboxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1203,52 +1377,55 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio2"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @value= 'val=> d_radio2 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             :setDefaultDate= "d_booleanTrue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1256,7 +1433,7 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
@@ -1293,27 +1470,29 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio3"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= "alerts"
+                                            @value= 'val=> d_radio3 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
@@ -1329,15 +1508,15 @@
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1345,7 +1524,7 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :required= 'd_booleanTrue'
@@ -1380,27 +1559,33 @@
                                             C O M E T
                                         </h3>
                                         <text-input 
-                                            :label= "d_label"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Username"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-user"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <password-input 
-                                            :label= "d_Plabel"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Password"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-key"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <checkbox-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
-                                            v-model= 'd_checkboxValue'
+                                            :value= 'd_checkboxValue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_checkboxValue = val'
                                         />
                                         <vue-button 
                                             type= "button"
@@ -1426,27 +1611,33 @@
                                             C O M E T
                                         </h3>
                                         <text-input 
-                                            :label= "d_label"
-                                            :name= "d_name"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Username"
+                                            name= "usernameTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-user"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <password-input 
-                                            :label= "d_Plabel"
-                                            :name= "d_Pname"
-                                            v-model= 'd_textBoxValue'
-                                            :placeholder= "d_placeholder"
+                                            label= "Password"
+                                            name= "passwordTextField"
+                                            :value= 'd_textBoxValue'
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-key"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_textBoxValue = val'
                                         />
                                         <checkbox-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
-                                            v-model= 'd_checkboxValue'
+                                            :value= 'd_checkboxValue'
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_checkboxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap'>
                                             <vue-button 
@@ -1524,52 +1715,55 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio4"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @value= 'val=> d_radio4 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             :setDefaultDate= "d_booleanTrue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1577,13 +1771,13 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
-                                            :alertMessage= alertMessage
+                                            :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1611,7 +1805,7 @@
                                             <h2>C O M E T</h2>
                                         </legend>
                                         <vue-alert 
-                                            alertType= 'danger'
+                                            type= 'danger'
                                             alert= 'Error'
                                             message= 'Form could not be submitted'
                                         />
@@ -1620,27 +1814,29 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio5"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= "alerts"
+                                            @value= 'val=> d_radio5 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
@@ -1656,15 +1852,15 @@
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1672,7 +1868,7 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :required= 'd_booleanTrue'
@@ -1725,37 +1921,41 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio6"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= "alerts"
+                                            @value= 'val=> d_radio6 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             :setDefaultDate= "d_booleanTrue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #333333;
                                                     font-weight: bold;'>
@@ -1763,15 +1963,15 @@
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1779,13 +1979,13 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
-                                            :alertMessage= alertMessage
+                                            :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1817,52 +2017,56 @@
                                         </h4>
                                         <text-input 
                                             label= "First Name"
-                                            :name= "d_name"
+                                            name= "usernameTextField"
                                             value= 'Steven'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <text-input 
                                             label= "Last Name"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'Frye'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
                                         <radio-input 
                                             label= "Gender"
-                                            :name= "d_Cname"
-                                            :value= "gender[2]"
-                                            :options= 'gender'
+                                            name= "checkboxField"
+                                            :value= "d_radio7"
+                                            :options= 'd_gender'
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
+                                            @notify= "alerts"
+                                            @value= 'val=> d_radio7 = val'
                                         />
                                         <vue-date
                                             label= "Date of Birth"
                                             name= "d_DdateField"
-                                            v-model= "d_dateValue"
+                                            :value= "d_dateValue"
                                             :setDefaultDate= "d_booleanTrue"
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-calendar-alt"
+                                            @notify= 'alerts'
+                                            @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
                                         <email-input 
                                             label= "Email"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
-                                            :placeholder= "d_placeholder"
+                                            placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
                                             inputIcon= "fas fa-at"
                                         />
                                         <text-input 
                                             label= "Phone Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
@@ -1870,13 +2074,13 @@
                                         />
                                         <text-input 
                                             label= "Mobile Number"
-                                            :name= "d_Pname"
+                                            name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
                                             inputIcon= "fas fa-mobile-alt"
-                                            :alertMessage= alertMessage
+                                            :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
                                             <vue-button 
@@ -1909,7 +2113,6 @@
     import goodVsBad from "@/Views/goodVsBad"
     import vueButton from "@/components/UIComponents/Buttons"
     import vueAlert from "@/components/Alerts/vueAlert"
-
     import textInput from "@/components/FormElements/textInput";
     import passwordInput from "@/components/FormElements/passwordInput";
     import emailInput from "@/components/FormElements/emailInput";
@@ -1923,15 +2126,17 @@
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import vueInfo from "@/components/FormElements/vueInfo";
+    import { alerts } from "@/typeScript/common/alerts"
 
     export default {
         name: "formElements",
 
+        mixins: [alerts], //mixins
+
         components: {
-                       goodVsBad,
+            goodVsBad,
             vueButton,
             vueAlert,
-
             textInput,
             passwordInput,
             emailInput,
@@ -1948,192 +2153,41 @@
         }, //components
 
         methods: {
-
             buttonClick: function () {}, //buttonClick
-
-            //handels alerts thrown by the component
-            alerts: function (type, message) {
-                if (type== 'error') {
-                    this.d_danger= message;
-                }
-                else {
-                    this.d_warning= message;
-                }
-            }, //alerts
         }, //methods
 
-        data() {        
-            var d_textareaValue= ''
-            var d_passwordValue= ''
-            var d_emailValue= ''
-            var d_numberValue= null
-            var d_toggle= null
-            var d_dropdownValue= ''
-            var d_searchDropboxValue= ''
-            var d_fileUploadValue= ''
-            var d_checkboxValue= null
-            var d_radioValue= ''
-            var d_dateValue= ''
-
-            var d_accept= ".pdf, .doc, .docx"
-
-            var d_label= 'Username'
-            var d_Plabel= 'Password'
-            var d_Elabel= 'Email'
-            var d_Nlabel= 'Quantity'
-            var d_Ilabel= 'Total Employees at work'
-            var d_Tlabel= 'Filter'
-            var d_DDlabel= 'Warehouse'
-            var d_Flabel= 'Upload File'
-            var d_DTlabel= 'Date'
-            var d_TAlabel= 'Description'
-
-            var d_name= 'usernameTextField'
-            var d_Pname= 'passwordTextField'
-            var d_Ename= 'emailField'
-            var d_Nname= 'numberTextField'
-            var d_Iame= 'infoField'
-            var d_Tname= 'toggleInputField'
-            var d_DDname= 'dropdownField'
-            var d_SDDname= 'searchableDropdownField'
-            var d_Fname= 'fileUploadField'
-            var d_Cname= 'checkboxField'
-            var d_Rname= 'radioField'
-            var d_DTname= 'dateField'
-            var d_TAname= 'textareaField'
-
-            var d_value= ''
-            var d_Nvalue= 0
-            var d_Ivalue= 39
-            var d_DTvalue= ''
-
-            var d_textBoxValue= ''
-
-            var d_pattern= /([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*/
-            var d_Ppattern= /([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*/
-            var d_Npattern= /^(([0-9]*)|(([0-9]*).([0-9]*)))$/
-            var d_Epattern= /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-            var d_DTpattern= /^d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/
-
-            var d_maxlength= 20
-            var d_TAmaxlength= 512
-            var d_min= 0
-            var d_max= 99999 
-            var d_DTmin= '2000-12-12'
-            var d_DTmax= '2040-12-12'
-
-
-            var d_placeholder= 'Enter text here...'
-
-            var d_booleanTrue= true
-
-            var d_inputIcon= 'fas fa-user'
-            var d_PinputIcon= 'fas fa-key'
-            var d_EinputIcon= 'fas fa-at'
-            var d_NinputIcon= 'fas fa-hashtag'
-            var d_DinputIcon= 'fas fa-user'
-            var d_TAinputIcon= 'fas fa-comment'
-            var d_DTinputIcon= 'fas fa-calendar-alt'
-
-            var d_alerts= this.alerts
-                           var d_labelChecked= "ON"
-                       var d_labelUnchecked= "OFF"  
-                       var d_options= this.$store.state.warehouse
-
-            var d_size= null
-
-            const gender= ["Male", "Female", "Other"]
-
-            var alertMessage=  {
+        data() {
+            const d_radio1= ''
+            const d_radio2= ''
+            const d_radio3= ''
+            const d_radio4= ''
+            const d_radio5= ''
+            const d_radio6= ''
+            const d_radio7= ''
+            const d_checkboxValue= ''
+            const d_radioValue= ''
+            const d_dateValue= ''
+            const d_textBoxValue= ''
+            const d_booleanTrue= true
+            const d_gender= ["Male", "Female", "Other"]
+            const d_alertMessage=  {
                 error: "Invalid mobile Number. Please enter a valid 10 digit mobile number"
             }
-
             return {
-
-                gender: gender,
-                alertMessage: alertMessage,
-
-                d_textareaValue: d_textareaValue,
-                d_passwordValue: d_passwordValue,
-                d_emailValue: d_emailValue,
-                d_numberValue: d_numberValue,
-                d_toggle: d_toggle,
-                d_dropdownValue: d_dropdownValue,
-                d_searchDropboxValue: d_searchDropboxValue,
-                d_fileUploadValue: d_fileUploadValue,
-                d_checkboxValue: d_checkboxValue,
-                d_radioValue: d_radioValue,
-                d_dateValue: d_dateValue,
-
-                d_accept: d_accept,
-
-                d_labelChecked:d_labelChecked,
-                d_labelUnchecked:d_labelUnchecked,
-
-                d_options: d_options,
-                d_size: d_size,
-
-                d_label: d_label,
-                d_Plabel: d_Plabel,
-                d_Elabel: d_Elabel,
-                d_Nlabel: d_Nlabel,
-                d_Ilabel: d_Ilabel,
-                d_Tlabel: d_Tlabel,
-                d_DDlabel: d_DDlabel,
-                d_Flabel: d_Flabel,
-                d_DTlabel: d_DTlabel,
-                d_TAlabel: d_TAlabel,
-
-                d_name: d_name,
-                d_Pname:d_Pname,
-                d_Ename: d_Ename,
-                d_Nname: d_Nname,
-                d_Iame: d_Iame,
-                d_Tname: d_Tname,
-                d_DDname: d_DDname,
-                d_SDDname: d_SDDname,
-                d_Fname: d_Fname,
-                d_Cname: d_Cname,
-                d_Rname: d_Rname,
-                d_DTname: d_DTname,
-                d_TAname: d_TAname,
-
-                d_value: d_value,
-                d_Ivalue: d_Ivalue,
-                d_Nvalue: d_Nvalue,
-                d_DTvalue: d_DTvalue,
-
-                d_textBoxValue: d_textBoxValue,
-
-                d_pattern: d_pattern,
-                d_Ppattern: d_Ppattern,
-                d_Npattern: d_Npattern,
-                d_Epattern: d_Epattern,
-                d_DTpattern: d_DTpattern,
-
-                d_maxlength: d_maxlength,
-                d_min: d_min,
-                d_max: d_max,
-                d_DTmin: d_DTmin,
-                d_DTmax: d_DTmax,
-                d_TAmaxlength: d_TAmaxlength,
-
-                d_placeholder: d_placeholder,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_inputIcon: d_inputIcon,
-                d_PinputIcon: d_PinputIcon,
-                d_EinputIcon: d_EinputIcon,
-                d_NinputIcon: d_NinputIcon,
-                d_TAinputIcon: d_TAinputIcon,
-                d_DTinputIcon: d_DTinputIcon,
-
-                d_alerts: d_alerts,
-
-                d_danger: null,
-
-                d_warning: null,
+                d_radio1,
+                d_radio2,
+                d_radio3,
+                d_radio4,
+                d_radio5,
+                d_radio6,
+                d_radio7,
+                d_gender,
+                d_alertMessage,
+                d_checkboxValue,
+                d_radioValue,
+                d_dateValue,
+                d_textBoxValue,
+                d_booleanTrue,
             } //return
         }, //data    
     }

@@ -60,11 +60,11 @@
 
       const d_logo= require('@/assets/Asset 7.svg')
 
-      var d_booleanTrue= false
+      const d_booleanTrue= false
 
-      var d_navCategories= null
+      const d_navCategories= null
 
-      var d_val= null
+      const d_val= null
 
       return {
 

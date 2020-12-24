@@ -1,7 +1,7 @@
 <template>
   <div
     v-if= '!d_close' 
-    class= 'alert'
+    class= 'vueAlert'
     :class= 'type'
   >
     <div>
@@ -17,16 +17,14 @@
         </div>
       </div>
     </div>
-    <div v-if= 'dismissible' >
-      <vue-button 
-        type= 'button'
-        tag= "closeAlertButton"
-        :text= "d_text"
-        icon= "fas fa-times"
-        category= 'icon'
-        :ctx= 'd_ctx'
-      />
-    </div>
+    <vue-button
+      v-if= 'dismissible'
+      type= 'button'
+      tag= "closeAlertButton"
+      icon= "fas fa-times"
+      category= 'icon'
+      :ctx= 'closeAlertBox.bind(this)'
+    />
   </div>
 </template>
 
@@ -35,26 +33,15 @@
   import vueButton from '@/components/UIComponents/Buttons'
 
   export default {
-    name: 'alert',
+    name: 'vueAlert',
 
     data () { 
-           var d_alertIcon= ''
-
-      var d_close= false
-
-      var d_text= null
-
-      var d_ctx= this.closeAlertBox
+      const d_alertIcon= ''
+      const d_close= false
 
       return {
-
         d_alertIcon,
-
         d_close,
-
-        d_text,
-
-        d_ctx,
       } //return
     }, //data
 
@@ -70,12 +57,7 @@
         type: String,
         default: 'info',
         validator: function (value) {
-          if (['info', 'success', 'warning', 'danger'].includes(value)) {
-            return true
-          }
-          else {
-            alert("Invalid prop value found in <vue-alert>.\nPossible values: [info, success, warning, danger]\nYou Entered: "+value)
-          }
+          return ['info', 'success', 'warning', 'danger'].indexOf(value) !== -1;
         }
       },
 
@@ -158,16 +140,20 @@
 
   @import (reference) '../../Less/customVariables.less';
 
-  .alert{
+  .vueAlert{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: @borderRadius;
     border: 1px solid transparent;
     width: fit-content;
-    background-color: @white;
+    background-color: @backgroundColor;
     border-left-width: 8px;
     padding: @spaceSm @spaceMd;
+
+    & > p {
+      color: @textColor;
+    }
 
     &.danger {
       border-color: @dangerText;
@@ -219,6 +205,7 @@
           display: flex;
           flex-direction: row-reverse;
         }
-      }         }
+      }         
+    }
   }
 </style>

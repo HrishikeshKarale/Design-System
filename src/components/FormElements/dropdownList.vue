@@ -14,8 +14,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         iconPadding: inputIcon,
                         maskField: mask 
                     }'
@@ -54,7 +54,7 @@
            </select>
         </div>
         <input-response
-            :error= 'd_danger'
+            :error= 'danger'
         />
     </div>
 </template>
@@ -70,8 +70,8 @@
             return {
 
                 //stores errors thrown by the input fields 
-                d_danger: null,
-                               d_warning: null,
+                danger: null,
+                               warning: null,
 
                 d_BooleanTrue: true,
 
@@ -188,7 +188,7 @@
             //it also emits/send the current textbox value to  parent component as v-model attribute value
             validate: function () {
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.d_danger= null
+                this.danger= null
                 //loads current value stored from d_selectedOption(data) into val(temp) variable val for readability of code
                 var val= this.d_selectedOption
 
@@ -200,7 +200,7 @@
                 }
                 else {
                     if (this.required) {
-                        this.d_danger= 'Required field.';
+                        this.danger= 'Required field.';
                     }
                 }
             }, //validate
@@ -246,11 +246,11 @@
                 this.d_selectedOption= tempVal
                                //if errorVal exists trigger an alert and set warning message
                 if (alertVal) {
-                    this.d_danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the options for the dropdown.'
+                    this.danger= 'Invalid Input: The preset value(s) '+alertVal+' is/are not included in the options for the dropdown.'
                 }
             }
             else if (val) {
-                this.d_danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
+                this.danger= 'Invalid Input: The preset value(s) '+val+' are not valid'
             }
         }, //created
 
@@ -264,16 +264,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -281,7 +281,7 @@
         watch: {
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
         }, //WATCH

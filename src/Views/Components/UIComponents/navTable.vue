@@ -43,10 +43,10 @@
 
         data() {
 
-            var d_title= 'Table Name'
-                       var d_low= '1'
+            const title= 'Table Name'
+                       const low= '1'
 
-            var d_table= {
+            const table= {
 
                 title: 'Table',
 
@@ -98,7 +98,7 @@
                 ], //attributes
             } //d_table
 
-            var d_columns= [
+            const columns= [
                 'Order Number',
                 'Status',
                 'Created On',

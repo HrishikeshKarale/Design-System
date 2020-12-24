@@ -2,7 +2,7 @@
 <div class= 'navReassign'>
     <vue-wizard 
       :steps= 'd_steps'
-      :alert= "{'error': d_danger, 'warning': d_warning}"
+      :alert= "{'error': danger, 'warning': warning}"
     >
       <template slot= '1'>
         <master-detail
@@ -76,7 +76,7 @@
     mapState, 
 
     data() {
-           var d_steps= [
+           const steps= [
         {
           id: 1,
           title: "Select Assignment",

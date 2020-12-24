@@ -1,95 +1,77 @@
-export const validator= {
+export const validator = {
+  methods: {
+    initializeValidator: function(pattern) {
+      this.pattern = pattern;
+    }, //initializeValidator
 
-    data () {
+    validator: function(object) {
+      let dDanger = null;
+      let dWarning = null;
 
-        //stores warning messages thrown by the input fields 
-        var d_warning= null,
-        //stores danger alerts thrown by the input fields 
-        var d_danger= null,
-        //stores success message thrown by the input fields 
-        var d_success= null,
-        //stores info message thrown by the input fields 
-        var d_info= null,
-        //stores inpu field value
-        var d_value= null,
-       
-        return {
-
-            d_danger: d_danger,
-            d_warning: d_warning,
-            d_success: d_success,
-            d_info: d_info,
-            d_value: d_value
-
+      //if value for val(temp) exists check for warning triggers
+      if (object.value) {
+        //if a patters for acceptable value exists, then trigger warning and set warning message if val (temp) does not follow the patter
+        if (
+          object.pattern &&
+          this.followsPattern(object.pattern, object.value)
+        ) {
+          dWarning = "Wrong format: Please follow the pattern.";
+        } else if (object.minlength) {
+          dWarning = this.isTooShort(object.minlength, object.value);
+        } else if (object.maxlength) {
+          dWarning = this.isTooLong(object.maxlength, object.value);
+        } else {
+          //emit/send new values to parent component v-model attribute
+          this.$emit("value", object.value);
         }
-    },
+      }
+      //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
+      else {
+        dDanger = this.isRequired();
+      }
 
-    computed: {
+      return { warning: dWarning, error: dDanger };
+    }, //validator
 
-        //returns the difference between maxlength and textboxValue.
-        //a negative value indicates that we have exceeded the allowed maximum for the textbox and 
-        lengthDelta: function () {
-            var val= this.d_value
-            var maxLength= this.maxlength
+    //value ebsent
+    isRequired: function() {
+      if (this.required) {
+        return "Required field.";
+      }
+      return null;
+    }, //isRequired
 
-            if (maxLength && val) {
-                return maxLength- val.length
-            }
-            return null
-        }, //lengthDelta
-    }, //computed
+    //value present
+    isTooShort: function(minlength, value) {
+      if (minlength > value.length) {
+        return (
+          "Invalid Input: Allowed minlength for input is " +
+          minlength +
+          " characters."
+        );
+      }
+      return null;
+    }, //isTooShort
+    isTooLong: function(maxlength, value) {
+      if (maxlength < value.length) {
+        return (
+          "Invalid Input: Allowed maxlength for input exceeded by " +
+          (maxlength.length - value.length) +
+          " characters."
+        );
+      }
+      return null;
+    }, //isTooLong
 
-    methods: {
+    //pattern matching
+    followsPattern: function(pattern, value) {
+      if (!pattern.test(value)) {
+        return "Wrong email format: Please follow the pattern " + pattern;
+      }
+    } //followsPattern
+  },
 
-        //validate the textbox input and set alert messages if required.
-        //it also emits/send the current textbox value to  parent component as v-model attribute value
-        validate: function () {
-            //loads current value stored from data variables into temp variable val for readability of code
-            var val= this.d_value
-            var maxlength= this.maxLength
-            var minlength= this.minLength
-
-                       var pattern= null
-            if(this.pattern.constructor!= RegExp) {
-                pattern= new RegExp (this.pattern)
-            }
-            else {
-                pattern= this.pattern
-            }
-
-            //initialize warning and error messages to null to accomodate change in alert messages
-            this.d_danger= null
-            this.d_warning= null
-            //if value for val(temp) exists check for warning triggers
-            if (val) {
-                //if a patters for acceptable value exists, then trigger warning and set warning message if val (temp) does not follow the patter
-                if (pattern && !val.match(pattern))
-                {
-                    this.d_warning= 'Wrong format: Please follow the pattern '+ pattern;
-                }
-                //if a pattern does not exist or value matches the pattern, check if minlength exists and length of text entered is less than than maxlength 
-                //if true trigger an alert and set warning message
-                else if (minlength && minlength> val.length)
-                {
-                    this.d_warning= 'Invalid Input: Allowed minlength for input is '+minlength+' characters.';
-                }
-                //if a pattern does not exist or value matches the pattern, check if maxlength exists and length of text entered is greater than maxlength 
-                //if true trigger an alert and set warning message
-                else if (maxlength && maxlength< val.length)
-                {
-                    this.d_warning= 'Invalid Input: Allowed maxlength for input exceeded by -'+this.lengthDelta+' characters.';
-                }
-                else{
-                    //emit/send new values to parent component v-model attribute
-                    this.$emit('input', val)
-                }
-            }
-            //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
-            else {
-                if (this.required) {
-                    this.d_danger= 'Required field.';
-                }
-            }
-        }, //validate
-    }, //methods
-}
+  mounted() {
+    //something
+  }
+};

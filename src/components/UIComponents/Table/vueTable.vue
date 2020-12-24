@@ -17,7 +17,9 @@
                                     name= 'tableSearchField'
                                     placeholder= 'Search...'
                                     inputIcon= "fas fa-search"
-                                    v-model= 'metadata.searchKey'
+                                    :value= 'metadata.searchKey'
+                                    @notify= 'alerts'
+                                    @value= 'val=> metadata.searchKey = val'
                                 />
                         </div>
                     </th>
@@ -136,9 +138,11 @@
                             >
                                 <checkbox-input 
                                     name= "editColumns"
-                                    v-model= "columns"
+                                    :value= "columns"
                                     :options= 'd_columns'
-                                    :inline= '!d_booleanTrue'
+                                    
+                                    @notify= 'alerts'
+                                    @value= 'val=> columns = val'
                                 />
                             </div> -->
                             <ul
@@ -190,8 +194,8 @@
                                 :text= "d_text"
                                 :icon= 'entry.showSub? "fas fa-chevron-down":"fas fa-chevron-up"'
                                 :category= 'd_category[9]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'toggleSubTable.bind(this, entry)'
                             />  -->
@@ -261,10 +265,12 @@
                 <dropdown-list 
                     label= 'Show'
                     name= "showRecords"
-                    v-model= "d_dropdownValue"
+                    :value= "d_dropdownValue"
                     :options= "metadata.recordsPerPage"
                     :required= 'd_booleanTrue'
                     :inline= 'd_booleanTrue'
+                    @notify= 'alerts'
+                    @value= 'val=> d_dropdownValue = val'
                 />
             </div>
             <div>
@@ -396,25 +402,25 @@
 
         data() {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const tag= 'consoleTextButton'
 
-            var d_text= 'Click Me'
+            const text= 'Click Me'
 
-            var d_icon= 'fas fa-registered'
+            const icon= 'fas fa-registered'
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_rowElements= this.metadata.rowElements
+            const rowElements= this.metadata.rowElements
 
-            var d_columns= null
+            const columns= null
 
-            var d_dropdownValue= this.metadata.rowElements
+            const dropdownValue= this.metadata.rowElements
 
             return {
 

@@ -3,14 +3,15 @@
         <phone-input 
             :label= "d_label"
             :name= "d_name"
-            v-model= 'd_textBoxValue'
+            :value= 'd_textBoxValue'
             :required= 'd_booleanTrue'
-            :disabled= '!d_booleanTrue'
-            :readonly= '!d_booleanTrue'
-            :autofocus= '!d_booleanTrue'
-            :inline= '!d_booleanTrue'
-            :mask= '!d_booleanTrue'
-            @notify= 'd_alerts'
+           
+            
+            
+            
+            
+            @notify= 'alerts'
+            @value= 'val=> d_textBoxValue = val'
         />
             <div class= 'FormElementsTitle'>
                 <div 
@@ -20,16 +21,16 @@
                     <label>Value Returned: </label>{{d_textBoxValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -39,19 +40,19 @@
                         <text-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_textBoxValue'
-                            :value= 'd_value'
+                            :value= 'd_textBoxValue'
                             :pattern= 'd_pattern'
                             :placeholder= "d_placeholder"
                             :maxlength= 'd_maxlength'
                             :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :readonly= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
+                           
+                            
+                            
+                            
                             :inputIcon= 'd_inputIcon'
-                            :inline= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            
+                            @notify= 'alerts'
+                            @value= 'val=> d_textBoxValue = val'
                         />
                     </component-details>                               </form>
             </div>
@@ -83,23 +84,23 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
 
-            var d_label= 'Username'
+            const label= 'Username'
 
-            var d_name= 'usernameTextField'
+            const name= 'usernameTextField'
 
-            var d_value= 'qwerty'
+            const value= 'qwerty'
 
-            var d_textBoxValue= ''
+            const textBoxValue= ''
 
             // ^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$
             // └─────┬────┘└───┬──┘└─────┬─────┘└─────┬─────┘ └───┬───┘
@@ -112,17 +113,17 @@
             //     │         no _ or . at the beginning
             //     │
             //     username is 8-20 characters long
-            var d_pattern= new RegExp(/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/)
+            const pattern= new RegExp(/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/)
 
-            var d_maxlength= 20
+            const maxlength= 20
 
-            var d_placeholder= 'Username'
+            const placeholder= 'Username'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_inputIcon= 'fas fa-user'
+            const inputIcon= 'fas fa-user'
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
 
             return {
 
@@ -146,9 +147,9 @@
 
                 d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_text: {
 

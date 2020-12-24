@@ -14,10 +14,10 @@
                     <label>Error Returned:</label> {{d_error}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -28,19 +28,16 @@
                         <number-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_numberValue'
+                            :value= 'd_numberValue'
                             :pattern= 'd_pattern'
                             :placeholder= "d_placeholder"
                             :min= 'd_min'
                             :max= 'd_max'
-                            :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :readonly= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
                             :inputIcon= 'd_inputIcon'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            
+                            
+                            @notify= 'alerts'
+                            @value= 'val=> d_numberValue = val'
                         />
                     </component-details>
                 </form>
@@ -74,34 +71,34 @@
                     this.d_error= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
 
-            var d_label= 'Quantity'
+            const label= 'Quantity'
 
-            var d_name= 'numberTextField'
+            const name= 'numberTextField'
 
-            var d_value= 0
+            const value= 0
 
-            var d_numberValue= ''
+            const numberValue= ''
 
-            var d_pattern= '^(([0-9]*)|(([0-9]*).([0-9]*)))$'
+            const pattern= '^(([0-9]*)|(([0-9]*).([0-9]*)))$'
 
-            var d_min= 0
+            const min= 0
 
-            var d_max= 99999
+            const max= 99999
 
-            var d_placeholder= '0-9999'
+            const placeholder= '0-9999'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_inputIcon= 'fas fa-hashtag'
+            const inputIcon= 'fas fa-hashtag'
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
 
             return {
 
@@ -129,7 +126,7 @@
 
                 d_error: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_number: {
                     id: 4,

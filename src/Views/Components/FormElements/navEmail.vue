@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_emailValue}}
                 </div>
                 <div 
-                    v-if= 'd_danger'
+                    v-if= 'danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{d_danger}}
+                    <label>Error Returned:</label> {{danger}}
                 </div>
                 <div 
-                    v-if= 'd_warning'
+                    v-if= 'warning'
                     class= 'warning'
                 >
-                    <label>Warning Returned:</label> {{d_warning}}
+                    <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -27,19 +27,20 @@
                         <email-input 
                             :label= "d_label"
                             :name= "d_name"
-                            v-model= 'd_emailValue'
+                            :value= 'd_emailValue'
                             :pattern= 'd_pattern'
                             :placeholder= "d_placeholder"
                             :maxlength= 'd_maxlength'
                             :multiple= 'd_booleanTrue'
                             :required= 'd_booleanTrue'
-                            :disabled= '!d_booleanTrue'
-                            :readonly= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
+                            
                             :inputIcon= 'd_inputIcon'
-                            :inline= '!d_booleanTrue'
-                            :mask= '!d_booleanTrue'
-                            @notify= 'd_alerts'
+                            
+                            
+                            @notify= 'alerts'
+                            @value= 'val=> d_emailValue = val'
                         />
                     </component-details>
                 </form>
@@ -66,35 +67,35 @@
 
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 if (type== 'warning') {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //change
         }, //methods
 
         data() {
 
-            var d_label= 'Email'
+            const label= 'Email'
 
-            var d_name= 'uemailTextField'
+            const name= 'uemailTextField'
 
-            var d_value= 'abc'
+            const value= 'abc'
 
-            var d_emailValue= ''
+            const emailValue= ''
 
-            var d_pattern= new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+            const pattern= new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
 
-            var d_maxlength= 50
+            const maxlength= 50
 
-            var d_placeholder= 'Enter email here...'
+            const placeholder= 'Enter email here...'
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_inputIcon= 'fas fa-at'
+            const inputIcon= 'fas fa-at'
 
-            var d_alerts= this.alerts
+            const alerts= this.alerts
 
             return {
 
@@ -118,9 +119,9 @@
 
                 d_alerts: d_alerts,
 
-                d_danger: null,
+                danger: null,
 
-                d_warning: null,
+                warning: null,
 
                 d_email: {
                                        title: 'Email Input Field',

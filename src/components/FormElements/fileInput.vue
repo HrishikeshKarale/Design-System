@@ -15,8 +15,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         iconPadding: inputIcon,
                         maskField: mask 
                     }'
@@ -56,8 +56,8 @@
                             :text= "d_text"
                             icon= "fas fa-times"
                             :category= 'd_category[9]'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
                             :form= "d_form"
                             :ctx= 'removeFile.bind(this, index)'
                         />
@@ -77,15 +77,15 @@
         name: 'fileInput',
                data () {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_text= ''
+            const text= ''
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
             return {
 
@@ -245,16 +245,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount
@@ -262,12 +262,12 @@
         watch: {
 
             //send warning messages back to parent component
-            d_warning: function (newValue) {
+            warning: function (newValue) {
                 this.$emit('notify', 'warning', newValue)
             },
 
             //send error messages back to parent component
-            d_danger: function (newValue) {
+            danger: function (newValue) {
                 this.$emit('notify', 'error', newValue)
             },
         }, //watch

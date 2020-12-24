@@ -12,8 +12,8 @@
         <div 
             class= "checkbox-toggle" 
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: warning,
+                        errorContainer: danger,
                         maskField: mask 
                     }'
             role= "checkbox" 
@@ -49,15 +49,15 @@
         name: 'multiToggle',
 
         data () {
-            const d_danger = null;
-            const d_info = null;
-            const d_success = null;
-            const d_warning = null;
+            const danger = null;
+            const info = null;
+            const success = null;
+            const warning = null;
             return {
-                d_danger,
-                d_info,
-                d_success,
-                d_warning,
+                danger,
+                info,
+                success,
+                warning,
                 //stores toggle state
                 d_toggled: null,
             } //return
@@ -178,16 +178,16 @@
 
             if (alertMessage) {
                 if (alertMessage['error']) {
-                    this.d_danger= alertMessage['error']
+                    this.danger= alertMessage['error']
                 }
                 else if (alertMessage['warning']) {
-                    this.d_warning= alertMessage['warning']
+                    this.warning= alertMessage['warning']
                 }
                 else if (alertMessage['success']) {
-                    this.d_success= alertMessage['success']
+                    this.success= alertMessage['success']
                 }
                 else if (alertMessage['info']) {
-                    this.d_info= alertMessage['info']
+                    this.info= alertMessage['info']
                 }
             }
         }, //beforeMount

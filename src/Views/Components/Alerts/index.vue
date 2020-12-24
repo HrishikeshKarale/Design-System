@@ -1,9 +1,9 @@
 <template>
     <div class= "navAlerts">
         https://designsystem.digital.gov/components/alert/
-        https://uxplanet.org/how-to-write-good-error-messages-858e4551cd4
-        https://uxplanet.org/how-to-write-a-perfect-error-message-da1ca65a8f36
-        https://uxplanet.org/how-to-write-the-perfect-error-message-ffc132fda06a
+        https://uxplanet.org/how-to-write-good-error-d_messages-858e4551cd4
+        https://uxplanet.org/how-to-write-a-perfect-error-d_message-da1ca65a8f36
+        https://uxplanet.org/how-to-write-the-perfect-error-d_message-ffc132fda06a
         <h1> Alert System </h1>
         <div class= "content">
             <div class= "content--main">
@@ -60,43 +60,41 @@
         </div>
         <div>
             <div 
-                v-for= 'type in d_alertType'
+                v-for= "type in ['danger', 'warning', 'info', 'success']"
                 :key= 'type'    
             >
                 <vue-alert
-                    :code= 'd_code'
+                    code= '5.1.104'
                     :type= 'type'
-                    :message= 'd_alert'
-                    :description= 'd_message'
+                    message= 'Order creation failed.'
+                    description= 'Please select a valid shipping method and try again.'
                     :dismissible= 'd_booleanTrue'
                 />
             </div>
         </div>
         <div>
             <div 
-                v-for= 'type in d_alertType'
+                v-for= "type in ['danger', 'warning', 'info', 'success']"
                 :key= 'type'    
             >
                 <vue-alert
-                    :code= 'd_code'
+                    code= '5.1.104'
                     :type= 'type'
-                    :message= 'd_alert'
-                    :description= 'd_message'
-                    :dismissible= '!d_booleanTrue'
+                    message= 'Order creation failed.'
+                    description= 'Please select a valid shipping method and try again.'
                 />
             </div>
         </div>
         <div>
             <div 
-                v-for= 'type in d_alertType'
+                v-for= "type in ['danger', 'warning', 'info', 'success']"
                 :key= 'type'    
             >
                 <vue-alert
-                    :code= 'd_code'
+                    code= '5.1.104'
                     :type= 'type'
-                    :message= 'd_alert'
-                    :description= 'd_message'
-                    :dismissible= '!d_booleanTrue'
+                    message= 'Order creation failed.'
+                    description= 'Please select a valid shipping method and try again.'
                     :timeout= 'd_timeout'
                 />
             </div>
@@ -112,61 +110,15 @@
 
     export default {
         name: 'navAlerts',
-               data () {
-
-            var d_alertType= ['danger', 'warning', 'info', 'success']
-
-            var d_alert= 'Order creation failed.'
-                           var d_message= 'Please select a valid shipping method and try again.'
-                       var d_type= 'button'
-
-            var d_tag= 'closeAlertButton'
-
-            var d_text= 'Cancel Request'
-
-            var d_icon= ''
-
-            var d_category= this.$store.state.category
-
-            var d_booleanTrue= true
-
-            var d_form= ''
-
-            var d_ctx= this.consoleClick
-
-            var d_timeout= 10
-                       var d_code= '5.1.104'
-
-
+        data () {
+            const d_booleanTrue= true
+            const d_timeout= 10
             return {
-
-                d_alertType: d_alertType,
-
-                d_alert: d_alert,
-                               d_message: d_message,
-
-                d_type: d_type,
-
-                d_tag: d_tag,
-
-                d_text: d_text,
-
-                d_icon: d_icon,
-
-                d_category: d_category,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_form: d_form,
-
-                d_ctx: d_ctx,
-
-                d_timeout: d_timeout,
-
-                d_code: d_code,
+                d_booleanTrue,
+                d_timeout
             } //return
         }, //data
-               methods: {
+        methods: {
 
             consoleClick: function () {
                 // console.log('ButtonClick');
@@ -178,7 +130,7 @@
             vueAlert,
             vueButton,
             componentDetails,
-        }, //components
+        } //components
     } //default
 </script>
 

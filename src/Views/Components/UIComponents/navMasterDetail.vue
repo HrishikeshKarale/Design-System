@@ -10,8 +10,10 @@
                     <text-input 
                         name= "tableSearchField"
                         placeholder= "Search..."
-                        v-model= 'd_searchKey'
+                        :value= 'd_searchKey'
                         inputIcon= 'fas fa-search'
+                        @notify= 'alerts'
+                        @value= 'val=> d_searchKey = val'
                     />
                     <template slot= 'master'>                                          <div
                             v-for= '(emp, index) in employees.data'

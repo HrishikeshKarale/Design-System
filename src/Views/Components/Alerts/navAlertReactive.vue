@@ -2,7 +2,7 @@
     <div class= "navAlertsReactive">
             <component-details
                 :compData= 'd_alert'
-                :d_attr= 'd_attr'
+                :attr= 'd_attr'
             >
                 <vue-alert 
                     :type= 'd_alertType[0]'
@@ -23,62 +23,15 @@
 
     export default {
         name: 'navAlertsReactive',
-               data () {
-
-            var d_alertType= ['danger', 'warning', 'info', 'success']
-
-            var d_alertMessage= 'Order creation failed.'
-                           var d_message= 'Please select a valid shipping method and try again.'
-                       var d_type= 'button'
-
-            var d_tag= 'closeAlertButton'
-
-            var d_text= 'Cancel Request'
-
-            var d_icon= ''
-
-            var d_category= this.$store.state.category
-
-            var d_booleanTrue= true
-
-            var d_form= ''
-
-            var d_ctx= this.consoleClick
-
-            var d_timeout= 0
-
-            var d_code= "5.2.105"
-
-            return {
-
-                d_alertType: d_alertType,
-
-                d_alertMessage: d_alertMessage,
-                               d_message: d_message,
-
-                d_type: d_type,
-
-                d_tag: d_tag,
-
-                d_text: d_text,
-
-                d_icon: d_icon,
-
-                d_category: d_category,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_form: d_form,
-
-                d_ctx: d_ctx,
-
-                d_timeout: d_timeout,
-
-                d_code: d_code,
-
-                d_attr: {'type':['type'] , 'value': [d_alertType]},
-
-                d_alert: {
+        data () {
+            const d_code= "5.2.105";
+            const d_alertType= ['danger', 'warning', 'info', 'success']
+            const d_alertMessage= 'Order creation failed.'
+            const d_message= 'Please select a valid shipping method and try again.'
+            const d_booleanTrue= true
+            const d_timeout= 0
+            const d_attr= {'type':['type'] , 'value': [d_alertType]};
+            const d_alert= {
 
                     title: 'Reactive Alerts',
 
@@ -127,8 +80,16 @@
                             <p>The when the timer is up, the alert is automatically dismissed.</p>',
                         },
                     ] //attributes
-                }, //d_alert
-            } //return
+                }; //d_alert
+            return {
+                d_alertType,
+                d_alertMessage,
+                d_message,
+                d_booleanTrue,
+                d_timeout,
+                d_attr,
+                d_alert
+                } //return
         }, //data
                methods: {
 

@@ -2,7 +2,7 @@
     <div class= 'navCard'>
             <component-details
                 :compData= 'd_vueCard'
-                :d_attr= 'd_attr'
+                :attr= 'attr'
             >
                 <vue-card
                     :title= 'd_title'
@@ -22,8 +22,8 @@
                                 :text= "d_text"
                                 icon= "fas fa-times"
                                 :category= 'd_category[9]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'consoleClickDelete'
                             />
@@ -40,17 +40,17 @@
                             <text-input 
                                 label= "SKU"
                                 name= "SKUinputName"
-                                v-model= 'd_SKU'
-                                value= ''
+                                :value= 'd_SKU'
                                 placeholder= "Enter SKU..."
                                 :maxlength= 'd_maxlength'
                                 :required= 'd_booleanTrue'
-                                :disabled= '!d_booleanTrue'
-                                :readonly= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
+                                
                                 inputIcon= 'fas fa-barcode'
-                                :inline= '!d_booleanTrue'
+                                
                                 @notify= 'alerts'
+                                @value= 'val=> d_SKU = val'
                             />
                         </div>
                         <div>
@@ -58,22 +58,22 @@
                                 <number-input 
                                     label= "Quantity"
                                     name= "OrderQuantity"
-                                    v-model= 'd_numberValue'
-                                    value= ''
+                                    :value= 'd_numberValue'
                                     placeholder= "0"
                                     :required= 'd_booleanTrue'
-                                    :disabled= '!d_booleanTrue'
-                                    :readonly= '!d_booleanTrue'
-                                    :autofocus= '!d_booleanTrue'
+                                   
+                                    
+                                    
                                     inputIcon= 'fas fa-hashtag'
-                                    :inline= '!d_booleanTrue'
+                                    
                                     @notify= 'alerts'
+                                    @value= 'val=> d_numberValue = val'
                                 />
                             </div>
                             <div>
                                 <vue-info 
                                     label= "Available"
-                                    :value= 'd_info'
+                                    :value= 'info'
                                 />
                             </div>
                         </div>
@@ -85,8 +85,8 @@
                             text= "Add SKU"
                             icon= "fas fa-plus"
                             :category= 'd_category[9]'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
                             :form= "d_form"
                             :ctx= 'createCard.bind()'
                         />
@@ -108,8 +108,8 @@
                                     :text= "d_text"
                                     icon= "fas fa-times"
                                     :category= 'd_category[9]'
-                                    :disabled= '!d_booleanTrue'
-                                    :autofocus= '!d_booleanTrue'
+                                   
+                                    
                                     :form= "d_form"
                                     :ctx= 'delCard.bind(this, index)'
                                 />
@@ -133,12 +133,15 @@
     import textInput from "@/components/FormElements/textInput";
     import numberInput from "@/components/FormElements/numberInput";
     import vueInfo from "@/components/FormElements/vueInfo";
+    import { alerts } from "@/typeScript/common/alerts";
     
     // import { store } from '@/store/store'
     
 
     export default {
         name: 'navCard',
+        
+        mixins: [ alerts ],
 
         // store,
 
@@ -216,10 +219,10 @@
                 d_SKU: null,
                 d_SKUData: d_SKUData,
                 d_numberValue: null,
-                d_info: 900,
+                info: 900,
                                d_booleanTrue: d_booleanTrue,
 
-                d_attr: {'type':['d_category'] , 'value': [d_category]},
+                attr: {'type':['d_category'] , 'value': [d_category]},
 
                 d_vueCard: {
                                        title: 'Vue Card',
@@ -311,7 +314,7 @@
             createCard: function () {
                 const quantity= this.d_numberValue
                 const sku= this.d_SKU
-                const info= this.d_info
+                const info= this.info
                 const details= new Array()
                 // console.log('data: ', sku, quantity, info)
                                    if (quantity && sku) {
@@ -334,10 +337,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
 

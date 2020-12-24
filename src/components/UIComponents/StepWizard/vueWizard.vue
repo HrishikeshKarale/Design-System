@@ -38,8 +38,8 @@
                     :text= "d_textConfirm"
                     :icon= "d_icon"
                     :category= 'd_category[3]'
-                    :disabled= '!d_booleanTrue'
-                    :autofocus= '!d_booleanTrue'
+                   
+                    
                     :form= "d_form"
                     :ctx= 'd_ctx'
                 />
@@ -53,8 +53,8 @@
                         tag= "Previous"
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-left"
-                        :disabled= '!d_booleanTrue'
-                        :autofocus= '!d_booleanTrue'
+                       
+                        
                         :form= "d_form"
                         :ctx= 'consoleClickPrevious'
                     />
@@ -68,7 +68,7 @@
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-right"
                         :disabled= 'validInput'
-                        :autofocus= '!d_booleanTrue'
+                        
                         :form= "d_form"
                         :ctx= 'consoleClickNext'
                     />
@@ -79,8 +79,8 @@
                         :text= "d_textSubmit"
                         icon= "fas fa-check"
                         :category= 'd_category[0]'
-                        :disabled= '!d_booleanTrue'
-                        :autofocus= '!d_booleanTrue'
+                       
+                        
                         :form= "d_form"
                         :ctx= 'consoleClickSubmit'
                     />
@@ -93,27 +93,30 @@
 <script>
 
   import vueButton from '@/components/UIComponents/Buttons'
+    import { alerts } from "@/typeScript/common/alerts";
 
     export default {
         name: 'vueWizard',
+        
+        mixins: [ alerts ],
 
         data() {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const tag= 'consoleTextButton'
 
-            var d_text= 'Click Me'
+            const text= 'Click Me'
 
-            var d_icon= 'fas fa-registered'
+            const icon= 'fas fa-registered'
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_ctx= this.consoleClickConfirm
+            const ctx= this.consoleClickConfirm
 
             return {
 

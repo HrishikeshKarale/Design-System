@@ -1987,7 +1987,7 @@
     <None Include="node_modules\domhandler\test\cases\06-comment_in_script.json" />
     <None Include="node_modules\domhandler\test\cases\07-unescaped_in_style.json" />
     <None Include="node_modules\domhandler\test\cases\08-extra_spaces_in_tag.json" />
-    <None Include="node_modules\domhandler\test\cases\09-unquoted_attrib.json" />
+    <None Include="node_modules\domhandler\test\cases\09-unquoteattrib.json" />
     <None Include="node_modules\domhandler\test\cases\10-singular_attribute.json" />
     <None Include="node_modules\domhandler\test\cases\11-text_outside_tags.json" />
     <None Include="node_modules\domhandler\test\cases\12-text_only.json" />

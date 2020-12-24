@@ -24,11 +24,11 @@
 
             const d_logoLink= require('@/assets/logoArtboard 1 copy 4 copy 2.svg')
 
-            var d_title= 'Sample Navigation'
+            const title= 'Sample Navigation'
 
-            var d_navigationTiles= this.$store.state.navigation
+            const navigationTiles= this.$store.state.navigation
 
-            var d_nav= this.nav
+            const nav= this.nav
 
             return {
 

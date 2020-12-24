@@ -32,8 +32,8 @@
                             tag= "toggleFilter"
                             icon= 'fas fa-redo-alt'
                             :category= 'd_category[0]'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
                             :form= "d_form"
                             :ctx= 'd_ctx'
                         />
@@ -45,8 +45,8 @@
                             tag= "toggleFilter"
                             icon= 'fas fa-plus'
                             :category= 'd_category[0]'
-                            :disabled= '!d_booleanTrue'
-                            :autofocus= '!d_booleanTrue'
+                           
+                            
                             :form= "d_form"
                             :ctx= 'd_ctx'
                         />
@@ -106,8 +106,8 @@
                                 :text= "d_text"
                                 icon= 'fas fa-times'
                                 :category= 'd_category[0]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'deleteTag.bind(this, t.sku)'
                             />
@@ -120,8 +120,8 @@
                                 :text= "d_text"
                                 :icon= 'editId && editId==t.sku? "fas fa-plus":"fas fa-pen-alt"'
                                 :category= 'd_category[0]'
-                                :disabled= '!d_booleanTrue'
-                                :autofocus= '!d_booleanTrue'
+                               
+                                
                                 :form= "d_form"
                                 :ctx= 'toggleEdit.bind(this, t.sku)'
                             />
@@ -150,19 +150,19 @@
 
         data() {
 
-            var d_type= 'button'
+            const type= 'button'
 
-            var d_tag= 'consoleTextButton'
+            const tag= 'consoleTextButton'
 
-            var d_text= ''
+            const text= ''
 
-            var d_category= this.$store.state.category
+            const category= this.$store.state.category
 
-            var d_booleanTrue= true
+            const d_booleanTrue= true
 
-            var d_form= ''
+            const form= ''
 
-            var d_ctx= this.toggle
+            const ctx= this.toggle
 
             return {
 

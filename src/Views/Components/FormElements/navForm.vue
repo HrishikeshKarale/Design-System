@@ -18,7 +18,7 @@
                         :value= 'customerVal'
                         placeholder= "Enter a value/Select an option"
                         :maxlength= 'maxlength'
-                        :required= 'booleanTrue'
+                        :required= 'd_booleanTrue'
                         inputIcon= 'fas fa-user'
                         @notify= 'alerts'
                         @value= "val => customerVal = val"
@@ -28,7 +28,7 @@
                         name= "costCenterField"
                         :value= 'costCenterVal'
                         :options= 'warehouse'
-                        :strict= 'booleanTrue'
+                        :strict= 'd_booleanTrue'
                         :maxlength= 'maxlength'
                         inputIcon= 'fas fa-closed-captioning'
                         @notify= 'alerts'
@@ -40,7 +40,7 @@
                         :value= 'OrderNameVal'
                         placeholder= "Enter a value/Select an option"
                         :maxlength= 'maxlength'
-                        :required= 'booleanTrue'
+                        :required= 'd_booleanTrue'
                         inputIcon= 'fas fa-file-signature'
                         @notify= 'alerts'
                         @value= "val => OrderNameVal = val"
@@ -51,7 +51,7 @@
                         :value= 'recipientVal'
                         placeholder= "Enter a value/Select an option"
                         :maxlength= 'maxlength'
-                        :required= 'booleanTrue'
+                        :required= 'd_booleanTrue'
                         inputIcon= 'fas fa-user'
                         @notify= 'alerts'
                         @value= "val => recipientVal = val"
@@ -61,7 +61,7 @@
                         name= "customerField"
                         :value= 'deliveryOptionVal'
                         :options= 'warehouse'
-                        :strict= 'booleanTrue'
+                        :strict= 'd_booleanTrue'
                         :maxlength= 'maxlength'
                         inputIcon= 'fas fa-truck'
                         @notify= 'alerts'
@@ -71,7 +71,7 @@
                         label= 'I want to specify a date for shipping'
                         name= "checkboxField"
                         :value= 'shipping'
-                        :required= 'booleanTrue'
+                        :required= 'd_booleanTrue'
                         @notify= 'alerts'
                         @value= "val => shipping = val"
                     />
@@ -81,7 +81,7 @@
                         :value= "recipientNote"
                         placeholder= "Enter a value/Select an option"
                         :maxlength= 'TAmaxlength'
-                        :required= 'booleanTrue'
+                        :required= 'd_booleanTrue'
                         inputIcon= 'fas fa-comment'
                         @notify= 'alerts'
                         @value= "val => recipientNote = val"
@@ -92,30 +92,31 @@
 </template>
 
 <script>
-
     import vueForm from '@/components/FormElements/vueForm'
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
     import componentDetails from '@/Views/componentDetails'
     import textInput from "@/components/FormElements/textInput";
     import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueTextarea from "@/components/FormElements/vueTextarea";
+    import { alerts } from "@/typeScript/common/alerts";
     
-
-    import { mapState, mapActions } from 'vuex';
+    import { mapState } from 'vuex';
 
     export default {
         name: 'uiComponents',
+        
+        mixins: [ alerts ],
 
         mapState,
 
         data () {
             const maxlength= 20;
-            const booleanTrue= true;
-            const validate= booleanTrue;
-            const autocomplete= booleanTrue;
-            const danger= null;
+            const d_booleanTrue= true;
+            const validate= d_booleanTrue;
+            const autocomplete= d_booleanTrue;
+            const danger= "";
             const warning= null;
-            const alertObject= { error: danger, warning: warning };
+            const alertObject= { error: danger, warning: "" };
             const customerVal= null;
             const costCenterVal= null;
             const OrderNameVal= null;
@@ -135,7 +136,7 @@
                 description: '<p></p>',
                 attributes: [
                     {
-                        type: "alerts",
+                        type: "alert",
                         value: alertObject,
                         description: '<p>alerts is used to catch any alerts thrown by the form elements inside our form.</p>\
                                         <p>The form elements that are inside the form are passed as slots.</p>',
@@ -143,7 +144,7 @@
                     },
                     {
                         type: "ctx",
-                        value: JSON.stringify(ctx),
+                        value: ctx,
                         description: '<p>alerts is used to catch any alerts thrown by the form elements inside our form.</p>\
                                         <p>The form elements that are inside the form are passed as slots.</p>',
                         text: 'catches the alerts thrown by the form elements'
@@ -173,7 +174,7 @@
             }; //form
             return {
                 maxlength: maxlength,
-                booleanTrue: booleanTrue,
+                d_booleanTrue: d_booleanTrue,
                 validate,
                 autocomplete,
                 alertObject,
@@ -194,18 +195,17 @@
         }, //data
 
         computed: {
-                       ...mapState (['warehouse'] ),
+        ...mapState (['warehouse'] ),
         },
 
         components: {
-
             vueForm,
             componentDetails,
             searchableDropdownList,
             textInput,
             checkboxInput,
             vueTextarea
-        }, //components
+        } //components
     } //default
 </script>
 

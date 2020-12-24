@@ -1,8 +1,8 @@
 <template>
     <div class= 'createMove'>
         <vue-wizard 
-            :steps= 'd_steps'
-            :alert= "{'error': d_danger, 'warning': d_warning}"
+            :steps= 'steps'
+            :alert= "{'error': danger, 'warning': warning}"
         >
             <template slot= '1'>
                 <fieldset>
@@ -12,44 +12,46 @@
                                 <text-input 
                                     label= "First Name"
                                     name= "First Name"
-                                    v-model= 'd_fName'
+                                    :value= 'fName'
                                     :required= 'd_booleanTrue'
-                                    :readonly= '!d_booleanTrue'
+                                    
                                     @notify= 'alerts'
+                                    @value= 'val=> fName = val'
                                 />
                             </div>
                             <div>
                                 <text-input 
                                     label= "Last Name"
                                     name= "Last Name"
-                                    v-model= 'd_lName'
+                                    :value= 'lName'
                                     :required= 'd_booleanTrue'
-                                    :readonly= '!d_booleanTrue'
+                                    
                                     @notify= 'alerts'
+                                    @value= 'val=> lName = val'
                                 />
                             </div>
                             <div>
                                 <vue-button
-                                    :type= 'd_type'
+                                    :type= 'type'
                                     tag= "ApplyFilter"
                                     text= "Filter"
-                                    :category= 'd_category[2]'
-                                    :disabled= '!d_booleanTrue'
-                                    :autofocus= '!d_booleanTrue'
-                                    :form= "d_form"
+                                    :category= 'category[2]'
+                                   
+                                    
+                                    :form= "form"
                                     :ctx= 'consoleClickApply'
                                 />
                             </div>
                         </div>
-                        <!-- {{d_tags}} -->
+                        <!-- {{tags}} -->
 
                         <div>
                             <vue-table 
                                 v-if= 'tagsData'
                                 :tableData= 'tagsData'
-                                :columns= 'd_columns'
+                                :columns= 'columns'
                                 :metadata= 'metadata'
-                                :select= 'd_columns[0]'
+                                :select= 'columns[0]'
                                 low= '1'
                                 @setPage= 'setPage'
                                 @setSortKey= 'setSortKey'
@@ -146,7 +148,7 @@
             ),
 
             toggleCloumns: function (newValue) {
-                var tempColumns= this.d_columns
+                var tempColumns= this.columns
 
                 if (!tempColumns.includes(newValue)) {
                     tempColumns.push(newValue)
@@ -157,11 +159,11 @@
                     // console.log('deleted')
                 }
 
-                this.d_columns= tempColumns
+                this.columns= tempColumns
             }, //toggleCloumns
 
             consoleClickApply: function () {
-                this.d_tableToggle= true
+                this.tableToggle= true
                     // console.log("Apply filter")
             }, // consoleClickApply
 
@@ -175,7 +177,7 @@
             }, //setPage
 
             input: function (value) {
-                // console.log('input', value, d_gValue)
+                // console.log('input', value, gValue)
             }, //input
 
             buttonClick: function () {}, //buttonClick
@@ -183,19 +185,17 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.d_danger= message;
+                    this.danger= message;
                 }
                 else {
-                    this.d_warning= message;
+                    this.warning= message;
                 }
             }, //alerts
         }, //methods
 
         data() {
-
-            var d_gender= ["Male", "Female", "Other"]
-
-            var d_steps= [
+            const gender= ["Male", "Female", "Other"]
+            const steps= [
                 {
                     id: 1,
                     title: "Select Assignment",
@@ -207,76 +207,62 @@
                     icon_class: "fa fa-th-list"
                 }
             ]
-
-            var d_danger= null
-
-            var d_warning= null
-
-            var d_booleanTrue= true
-
-            var d_fName= null
-            var d_lName= null
-            var d_dateValue= null
-            var d_gValue= null
-            var d_email= null
-            var d_PNumber= null
-            var d_mNumber= null
-
-            var d_type= 'button'
-
-            var d_tag= 'consoleTextButton'
-
-            var d_text= 'Click Me'
-
-            var d_icon= 'fas fa-registered'
-
-            var d_category= this.$store.state.category
-
-            var d_booleanTrue= true
-
-            var d_form= ''
-
-            var d_ctx= this.consoleClickApply
-
+            const danger= ""
+            const warning= ""
+            const d_booleanTrue= true
+            const fName= null
+            const lName= null
+            const dateValue= null
+            const gValue= null
+            const email= null
+            const PNumber= null
+            const mNumber= null
+            const type= 'button'
+            const tag= 'consoleTextButton'
+            const text= 'Click Me'
+            const icon= 'fas fa-registered'
+            const category= this.$store.state.category
+            const form= ''
+            const ctx= this.consoleClickApply
             return {
 
-                d_tableToggle: false,
+                tableToggle: false,
 
-                d_type: d_type,
+                type: type,
 
-                d_tag: d_tag,
+                tag: tag,
 
-                d_text: d_text,
+                text: text,
 
-                d_icon: d_icon,
+                icon: icon,
 
-                d_category: d_category,
+                category: category,
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_form: d_form,
+                form: form,
 
-                d_ctx: d_ctx,
+                ctx: ctx,
 
-                d_columns: ['Tag Number', 'Product', 'Quantity'],
+                columns: ['Tag Number', 'Product', 'Quantity'],
 
-                d_fName: d_fName,
-                d_lName: d_lName,
-                d_dateValue: d_dateValue,
-                d_gValue: d_gValue,
-                d_email: d_email,
-                d_PNumber: d_PNumber,
-                d_mNumber: d_mNumber,
+                fName: fName,
+                lName: lName,
+                dateValue: dateValue,
+                gValue: gValue,
+                email: email,
+                PNumber: PNumber,
+                mNumber: mNumber,
 
-                d_mPattern: /^\d{10}$/,
+                mPattern: /^\d{10}$/,
 
-                d_gender: d_gender,
+                gender: gender,
 
-                d_steps: d_steps,
+                steps: steps,
 
-                d_danger: d_danger,
+                danger: danger,
 
-                d_warning: d_warning,
+                warning: warning,
 
                 d_booleanTrue: d_booleanTrue,
             } //return

@@ -13,11 +13,11 @@
     </div>
     <div class="formButtons">
       <vue-button
-        button-type="submit"
-        button-text="Submit"
-        buttop-name="formSubmitButton"
-        button-style="small"
-        button-icon="fas fa-clipboard-check"
+        type="submit"
+        text="Submit"
+        tag="formSubmitButton"
+        category="small"
+        icon="fas fa-clipboard-check"
         :disabled="!validInput"
         :ctx="ctx"
       />
@@ -62,18 +62,9 @@ export default {
     }
   },
 
-  data() {
-    const warning = "";
-    const danger = "";
-    return {
-      warning,
-      danger
-    };
-  }, //data
-
   computed: {
     validInput: function() {
-        if(validate) {
+        if(this.validate) {
             const alerts = this.alerts;
             const form = this.$refs[this.form];
             if (form && !alerts["error"] && !alerts["warning"]) {
@@ -98,20 +89,6 @@ export default {
         return true;   
     } //validInput
   }, //computed
-
-  methods: {
-      //use by form elements sent via slot 
-    alert: function(type, message) {
-      // console.log(message);
-      if (type == "warning") {
-        this.dWarning = message;
-      } else if (type == "error") {
-        this.dDanger = message;
-      } else {
-        alert("error in input alert module");
-      }
-    } //alerts
-  } //methods
 }; //default
 </script>
 

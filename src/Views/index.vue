@@ -69,7 +69,7 @@
     mapState,
 
     data () {     
-      var d_booleanTrue= false
+      const d_booleanTrue= false
       return {
         d_booleanTrue: d_booleanTrue,
         d_val: null,

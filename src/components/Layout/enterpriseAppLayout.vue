@@ -43,7 +43,7 @@
 
 <script>
 import { nav } from "@/store/navigation"
-import scrollIndicator from "./scrollIndicator.vue";
+import scrollIndicator from "@/components/UIComponents/Navigation/scrollIndicator.vue";
 import breadcrums from "@/components/UIComponents/Navigation/breadcrums";
 import vueImg from "../UIComponents/Image/vueImg.vue";
 // import { authentication } from "@/typeScript/authentication";
