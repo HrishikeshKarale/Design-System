@@ -1,341 +1,216 @@
 //http://jsfiddle.net/8tka5h09/
 <template>
-    <div 
-        class= 'phoneInput'
-        :class= '{inline: inline}'
+  <div class="phoneInput" :class="{ inline: inline }">
+    <label v-if="label" :class="{ maskField: mask }">
+      {{ label }}
+      <abbr v-if="required" title="Required Field">*</abbr>
+      <span v-else> - Optional field<abbr>*</abbr></span>
+    </label>
+    <div
+      :class="{
+        warningContainer: d_warning,
+        errorContainer: d_danger,
+        iconPadding: inputIcon,
+        maskField: mask
+      }"
     >
-        <label 
-            v-if= 'label'
-            :class= '{maskField: mask}'
-        >
-            {{label}}
-            <abbr v-if= 'required' title= 'Required Field'>*</abbr>
-            <span v-else> - Optional field<abbr >*</abbr></span>
-        </label>
-        <div
-            :class= '{
-                        warningContainer: warning,
-                        errorContainer: danger,
-                        iconPadding: inputIcon,
-                        maskField: mask 
-                    }'
-        >
-            <span
-                v-if= 'inputIcon'
-                :class= 'inputIcon'
-            />
-            <input
-                v-if= '!mask'
-                type= 'text'
-                :name= 'name'
-                v-model= 'd_textValue'
-                :placeholder= 'placeholder'
-                :maxlength= 'maxlength'
-                :minlength= 'minlength'
-                :pattern= 'pattern'
-                :autofocus= 'autofocus'
-                :disabled= 'disabled'
-                :readonly= 'readonly'
-                :required= 'required'
-                @input= "phoneMask(mphone)"
-                @blur= 'validate'
-            />
-        </div>
-        <input-response
-            :warning= 'warning'
-            :error= 'danger'
-            :charLimitReached= 'lengthDelta== 0'
-            :maxlength= 'maxlength'
-        />
+      <span v-if="inputIcon" :class="inputIcon" />
+      <input
+        v-if="!mask"
+        v-model="d_value"
+        type="text"
+        :name="name"
+        :placeholder="placeholder"
+        :maxlength="maxlength"
+        :minlength="minlength"
+        :pattern="pattern"
+        :autofocus="autofocus"
+        :disabled="disabled"
+        :readonly="readonly"
+        :required="required"
+        @input="phoneMask(mphone)"
+        @blur="validate"
+      />
     </div>
+    <input-response
+      :warning="d_warning"
+      :error="d_danger"
+      :char-limit-reached="
+        d_value ? maxlength - d_value.length <= 0 : false
+      "
+      :maxlength="maxlength"
+    />
+  </div>
 </template>
 
 <script>
+import inputResponse from "@/components/Alerts/inputResponse.vue";
+import { validator } from "@/typeScript/validator";
 
-    import inputResponse from '@/components/Alerts/inputResponse';  
+export default {
+  name: "PhoneInput", //props
 
-    export default {
+  components: {
+    inputResponse
+  }, //data
 
-        name: "phoneInput",
+  mixins: [validator], //mixins
 
-        data() {
-            return {
+  props: {
+    //sets heading/Label for the input field
+    label: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-                //stores errors thrown by the input fields 
-                danger: null,
+    //sets name attribute for the input field (required field in case of forms)
+    name: {
+      required: false,
+      type: [String, null],
+      default: "phoneInput"
+    },
 
-                //stores errors thrown by the input fields 
-                warning: null,
+    //users can pass preset values for the input field
+    value: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-                //stores textbox values
-                d_textValue: null,
-            } //return
-        }, //data
+    //sets the format/pattern for acceptable values for the input field
+    //^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$
+    //https://learning.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
+    // phone number with extension
+    pattern: {
+      required: false,
+      type: [RegExp, String, null],
+      // eslint-disable-next-line vue/require-valid-default-prop
+      default: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
+    },
 
-        props: {
-                       //sets heading/Label for the input field
-            label: {
-                required: false,
-                type: String,
-                default: null
-            },
+    //sets the placeholder attribute for the input field
+    placeholder: {
+      required: false,
+      type: [String, null],
+      default: "Enter text here..."
+    },
 
-            //sets name attribute for the input field (required field in case of forms)
-            name: {
-                required: false,
-                type: String,
-                default: 'phoneInput'
-            },
+    //sets the minlength attribute for the input field
+    minlength: {
+      required: false,
+      type: [Number, null],
+      default: 10
+    },
 
-            //users can pass preset values for the input field 
-            value: {
-                required: false,
-                type: String,
-                default: null
-            },
+    //sets the maxlength attribute for the input field
+    maxlength: {
+      required: false,
+      type: [Number, null],
+      default: 14
+    },
 
-            //sets the format/pattern for acceptable values for the input field
-            //^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$
-            //https://learning.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
-            // phone number with extension
-            pattern: {
-                required: false,
-                type: RegExp,
-                default: function () {
-                    return new RegExp(/^(\d\d\d)(\d{3})(\d{4}).*/)
-                }
-            },
+    //sets the manual alerts
+    alert : {
+      required: false,
+      type: [Object, null],
+      default: null
+    },
 
-            //sets the placeholder attribute for the input field
-            placeholder: {
-                required: false,
-                type: String,
-                default: "Enter text here..."
-            },
+    //sets the required attribute for the input field
+    required: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the minlength attribute for the input field
-            minlength: {
-                required: false,
-                type: Number,
-                default: 10
-            },
+    //sets the disabled attribute for the input field
+    disabled: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the maxlength attribute for the input field
-            maxlength: {
-                required: false,
-                type: Number,
-                default: 10
-            },
+    //sets the autofocus attribute for the input field
+    autofocus: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the manual alerts
-            alertMessage: {
-                required: false,
-                type: Object,
-            },
+    //sets the autocomplete attribute for the input field
+    autocomplete: {
+      required: false,
+      type: [Boolean, null],
+      default: true
+    },
 
-            //sets the required attribute for the input field
-            required: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //sets the readonly attribute for the input field
+    readonly: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the disabled attribute for the input field
-            disabled: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //checks if label options should appear on the same line or not
+    inline: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the autofocus attribute for the input field
-            autofocus: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //reserves space and created a mask if set to true
+    mask: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the readonly attribute for the input field
-            readonly: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //if a valid fontawesome icon class string is passed, it displays it in the input field
+    //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
+    inputIcon: {
+      required: false,
+      type: [String, null],
+      default: "fas fa-phone"
+    }
+  }, //props
 
-            //checks if label options should appear on the same line or not
-            inline: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+  methods: {
+    phoneMask: function(func) {
+      setTimeout(() => {
+        const v = func(this.d_value);
+        if (v != this.d_value) {
+          this.d_value = v;
+        }
+      }, 1);
+    }, //phoneMask
 
-            //reserves space and created a mask if set to true
-            mask: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //if a valid fontawesome icon class string is passed, it displays it in the input field
-            //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-            inputIcon: {
-                required: false,
-                type: String,
-                default: 'fas fa-phone'
-            },
-        }, //props
-
-        components: {
-
-            inputResponse,
-        }, //components
-
-        computed: {
-
-            //returns the difference between maxlength and textboxValue.
-            //a negative value indicates that we have exceeded the allowed maximum for the textbox and 
-            lengthDelta: function () {
-                var val= this.d_textValue
-                var maxLength= this.maxlength
-
-                if (maxLength && val) {
-                    return maxLength- val.length
-                }
-                return null
-            }, //lengthDelta
-        }, //computed
-
-        methods: {
-
-            //validate the textbox input and set alert messages if required.
-            //it also emits/send the current textbox value to  parent component as v-model attribute value
-            validate: function () {
-                //initialize warning and error messages to null to accomodate change in alert messages
-                this.danger= null
-                this.warning= null
-                //loads current value stored from data variables into temp variable val for readability of code
-                var val= this.d_textValue
-                var maxlength= this.maxLength
-                var minlength= this.minLength
-                var pattern= new RegExp (this.pattern)
-
-                //if value for val(temp) exists check for warning triggers
-                if (val) {
-                    //if a patters for acceptable value exists, then trigger warning and set warning message if val (temp) does not follow the patter
-                    if (pattern && !val.match(pattern))
-                    {
-                        this.warning= 'Wrong format: Please follow the pattern '+ pattern;
-                    }
-                    //if a pattern does not exist or value matches the pattern, check if minlength exists and length of text entered is less than than maxlength 
-                    //if true trigger an alert and set warning message
-                    else if (minlength && minlength> val.length)
-                    {
-                        this.warning= 'Invalid Input: Allowed minlength for input is '+minlength+' characters.';
-                    }
-                    //if a pattern does not exist or value matches the pattern, check if maxlength exists and length of text entered is greater than maxlength 
-                    //if true trigger an alert and set warning message
-                    else if (maxlength && maxlength< val.length)
-                    {
-                        this.warning= 'Invalid Input: Allowed maxlength for input exceeded by -'+this.lengthDelta+' characters.';
-                    }
-                    else{
-                        //emit/send new values to parent component v-model attribute
-                        this.$emit('input', val)
-                    }
-                }
-                //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
-                else {
-                    if (this.required) {
-                        this.danger= 'Required field.';
-                    }
-                }
-            }, //validate
-
-            phoneMask: function (f) {
-                setTimeout(function () {
-                    var v = f(this.d_textValue);
-                    if (v != this.d_textValue) {
-                        this.d_textValue = v;
-                    }
-                }, .5);
-            }, //phoneMask
-
-            mphone: function (v) {
-                var r = v.replace(/\D/g,"");
-                r = r.replace(/^0/,"");
-                if (r.length > 10) {
-                    // 11+ digits. Format as 5+4.
-                    r = r.replace(/^(\d\d\d)(\d{3})(\d{4}).*/,"($1) $2-$3");
-                }
-                else if (r.length > 5) {
-                    // 6..10 digits. Format as 4+4
-                    r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/,"($1) $2-$3");
-                }
-                else if (r.length > 3) {
-                    // 3..5 digits. Add (0XX..)
-                    r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/,"($1) $2");
-                }
-                else {
-                    // 0..2 digits. Just add (0XX)
-                    r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/, "($1");
-                }
-                return r;
-            }, //mphone
-
-        }, //methods
-
-        created() {
-                     //store values passed as props into d_textValue for future manipulation  
-            if (this.value)
-            {
-                this.d_textValue= this.value
-            }
-        }, //created
-
-        beforeMount() {
-
-            var alertMessage= this.alertMessage
-                       if (this.value)
-            {
-                this.validate();
-            }
-
-            if (alertMessage) {
-                if (alertMessage['error']) {
-                    this.danger= alertMessage['error']
-                }
-                else if (alertMessage['warning']) {
-                    this.warning= alertMessage['warning']
-                }
-                else if (alertMessage['success']) {
-                    this.success= alertMessage['success']
-                }
-                else if (alertMessage['info']) {
-                    this.info= alertMessage['info']
-                }
-            }
-        }, //beforeMount
-
-        watch: {
-
-            //send warning messages back to parent component
-            warning: function (newValue) {
-                this.$emit('notify', 'warning', newValue)
-            },
-
-            //send error messages back to parent component
-            danger: function (newValue) {
-                this.$emit('notify', 'error', newValue)
-            },
-        }, //watch
-    } //default
+    mphone: function(v) {
+      let r = v.replace(/\D/g, "");
+      r = r.replace(/^0/, "");
+      if (r.length > 10) {
+        // 11+ digits. Format as 5+4.
+        r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/, "($1) $2-$3");
+      } else if (r.length > 6) {
+        // 6..10 digits. Format as 4+4
+        r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/, "($1) $2-$3");
+      } else if (r.length > 3) {
+        // 3..5 digits. Add (0XX..)
+        r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/, "($1) $2");
+      } else {
+        // 0..2 digits. Just add (0XX)
+        r = r.replace(/^(\d\d\d)(\d{3})(\d{0,4}).*/, "($1");
+      }
+      return r;
+    } //mphone
+  } //methods
+}; //default
 </script>
 
-<style lang= "less" scoped>
-    
-    @import (reference) "./../../Less/customMixins.less";
+<style lang="less" scoped>
+@import (reference) "../../Less/customMixins.less";
 
-    .phoneInput {
-
-        .inputcss();
-    }
+.phoneInput {
+  .inputcss();
+}
 </style>

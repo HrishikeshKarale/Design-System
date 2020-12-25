@@ -27,7 +27,7 @@
                 v-if= '!mask'
                 type= 'date'
                 :name= 'name'
-                v-model= 'd_dataValue'
+                v-model= 'd_value'
                 :max= 'max'
                 :min= 'min'
                 :autofocus= 'autofocus'
@@ -47,30 +47,19 @@
 <script>
 
     import inputResponse from '@/components/Alerts/inputResponse'; 
+  import { validator } from "@/typeScript/validator"
 
     export default {
 
         name: 'vueDate',
 
+    mixins: [validator], //mixins
+
         components: {
             inputResponse,
         }, //components
-
-        data () {
-            return {
-
-                //stores errors thrown by the input fields 
-                danger: null,
-
-                //stores errors thrown by the input fields 
-                warning: null,
-
-                //stores textbox date values
-                d_dataValue: null,
-            } //return
-        }, //data
-               props: {
-                       //sets heading/Label for the input field
+        props: {
+            //sets heading/Label for the input field
             label: {
                 required: false,
                 type: String,
@@ -129,7 +118,7 @@
             },
 
             //sets the manual alerts
-            alertMessage: {
+            alert : {
                 required: false,
                 type: Object,
             },
@@ -190,13 +179,13 @@
             //validate the textbox input and set alert messages if required.
             //it also emits/send the current textbox value to  parent component as v-model attribute value
             validate: function () {
-                // console.log(this.d_dataValue)
+                // console.log(this.d_value)
 
                 //initialize warning and error messages to null to accomodate change in alert messages
-                this.danger= null
-                this.warning= null
+                this.d_danger= null
+                this.d_warning= null
                 //loads current value stored from data variables into temp variable val for readability of code
-                var val= this.d_dataValue
+                var val= this.d_value
                 var min= this.min
                 var max= this.max
                 var pattern= new RegExp (this.pattern)
@@ -207,21 +196,21 @@
                 //if value for val(temp) exists check for warning triggers
                 if (val) {
                     if (min && this.isDateHigherOrSameAs(min, val)) {
-                        this.warning= 'Invalid Date: Please select a date after '+ min;
+                        this.d_warning= 'Invalid Date: Please select a date after '+ min;
                     }
                     else if (max && this.isDateHigherOrSameAs(val, max)) {
-                        this.warning= 'Invalid Date: Please select a date before '+ max;
+                        this.d_warning= 'Invalid Date: Please select a date before '+ max;
                     }
                     else if (pattern && !val.match(pattern))
                     {
                         // console.log(val.test(pattern), val, pattern)
-                        this.warning= 'Wrong date format: Please follow the pattern '+ pattern;
+                        this.d_warning= 'Wrong date format: Please follow the pattern '+ pattern;
                     }
                 }
                 //if a value for val(temp) does not exists  and is required, thentrigger error and set error message
                 else {
                     if (this.required) {
-                        this.danger= 'Required field: Please select a valid date value';
+                        this.d_danger= 'Required field: Please select a valid date value';
                         return
                     }
                 }
@@ -286,7 +275,7 @@
                     }
                 }
                 // if either the year/month/date from eithr lowValue or highValue are not numbers then trigger an alert and set error message
-                this.danger= 'Invalid Input: Please make sure value is either a Date or a String'
+                this.d_danger= 'Invalid Input: Please make sure value is either a Date or a String'
                 return null
             }, //isDateHigherOrSameAs
 
@@ -316,53 +305,17 @@
 
         created() {
 
-            //store values passed as props into d_dataValue for future manipulation 
+            this.d_needsValidation = false;
+            //store values passed as props into d_value for future manipulation 
             //if a value is not passed it checks if a setDefaultDate value flag is checked
             if (this.value) {
-                this.d_dataValue = this.value;
+                this.d_value = this.value;
             }
             //if a setDefaultDate flag is checked it sets the date to todays date
             else if (this.setDefaultDate) {
-                this.d_dataValue= this.getDate();
+                this.d_value= this.getDate();
             }
         }, //created
-
-        beforeMount() {
-
-            var alertMessage= this.alertMessage
-                       if (this.value || this.setDefaultDate)
-            {
-                this.validate()
-            }
-
-            if (alertMessage) {
-                if (alertMessage['error']) {
-                    this.danger= alertMessage['error']
-                }
-                else if (alertMessage['warning']) {
-                    this.warning= alertMessage['warning']
-                }
-                else if (alertMessage['success']) {
-                    this.success= alertMessage['success']
-                }
-                else if (alertMessage['info']) {
-                    this.info= alertMessage['info']
-                }
-            }
-        }, //beforeMount
-
-        watch: {
-
-            //send warning messages back to parent component
-            warning: function (newValue) {
-                this.$emit('notify', 'warning', newValue)
-            },
-
-            //send error messages back to parent component
-            danger: function (newValue) {
-                this.$emit('notify', 'error', newValue)
-            },
-        }, //watch
     } //default
 </script>
 

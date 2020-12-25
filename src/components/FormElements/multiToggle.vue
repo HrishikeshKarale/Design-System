@@ -1,270 +1,201 @@
 <template>
-    <div 
-        class= 'multiToggle'
-        :class= '{inline: inline}'
+  <div class="multiToggle" :class="{ inline: inline }">
+    <label v-if="label" :class="{ maskField: mask }">
+      {{ label }}
+    </label>
+    <div
+      class="checkbox-toggle"
+      :class="{
+        warningContainer: d_warning,
+        errorContainer: d_danger,
+        maskField: mask
+      }"
+      role="checkbox"
+      tabindex="0"
+      :aria-checked="d_value"
+      @keydown="toggle"
+      @click.prevent="toggle"
     >
-        <label 
-            v-if= 'label'
-            :class= '{maskField: mask}'
-        >
-            {{label}}
-        </label>
-        <div 
-            class= "checkbox-toggle" 
-            :class= '{
-                        warningContainer: warning,
-                        errorContainer: danger,
-                        maskField: mask 
-                    }'
-            role= "checkbox" 
-            tabindex= "0" 
-            :aria-checked= "d_toggled"
-            @keydown= "toggle" 
-            @click.prevent= "toggle"
-        >
-            <template v-if= '!mask'>
-                <div 
-                    class= "checkbox-slide" 
-                    :class= "classes"
-                >
-                    <div 
-                        class= "checkbox-switch" 
-                        :class= "classes"
-                    />
-                </div>
-                <div
-                    v-show= "showLabels"
-                    class= "checkbox-label"
-                    v-html= "labelToggle"
-                />
-            </template>
+      <template v-if="!mask">
+        <div class="checkbox-slide" :class="classes">
+          <div class="checkbox-switch" :class="classes" />
         </div>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div v-show="showLabels" class="checkbox-label" v-html="labelToggle" />
+      </template>
     </div>
+  </div>
 </template>
 
 <script>
+export default {
+  name: "MultiToggle",
 
-    export default {
+  props: {
+    //sets heading/Label for multitoggle
+    label: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-        name: 'multiToggle',
+    //sets name attribute for multitoggle  (required field in case of forms)
+    name: {
+      required: false,
+      type: [String, null],
+      default: "textInput"
+    },
 
-        data () {
-            const danger = null;
-            const info = null;
-            const success = null;
-            const warning = null;
-            return {
-                danger,
-                info,
-                success,
-                warning,
-                //stores toggle state
-                d_toggled: null,
-            } //return
-        }, //data
-               props: {
-                       //sets heading/Label for multitoggle 
-            label: {
-                required: false,
-                type: String,
-                default: null
-            },
+    //users can pass preset values for multitoggle
+    value: {
+      required: false,
+      type: [Boolean, String, null],
+      default: false
+    },
 
-            //sets name attribute for multitoggle  (required field in case of forms)
-            name: {
-                required: false,
-                type: String,
-                default: 'textInput'
-            },
+    //toggles label for multitoggle
+    showLabels: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //users can pass preset values for multitoggle 
-            value: {
-                required: false,
-                type: [Boolean, String],
-                default: false
-            },
+    //sets label text for checked state for multitoggle
+    labelChecked: {
+      required: true,
+      type: String,
+      default: ""
+    },
 
-            //toggles label for multitoggle 
-            showLabels: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //sets label text for unchecked state for multitoggle
+    labelUnchecked: {
+      required: true,
+      type: String,
+      default: ""
+    },
 
-            //sets label text for checked state for multitoggle 
-            labelChecked: {
-                required: true,
-                type: String,
-                default: ""
-            },
+    //sets the manual alerts
+    alert : {
+      required: false,
+      type: [Object, null],
+      default: null
+    },
 
-            //sets label text for unchecked state for multitoggle 
-            labelUnchecked: {
-                required: true,
-                type: String,
-                default: ""
-            },
+    //sets the disabled attribute for multitoggle
+    disabled: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the manual alerts
-            alertMessage: {
-                required: false,
-                type: Object,
-            },
+    //checks if label options should appear on the same line or not
+    inline: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            //sets the disabled attribute for multitoggle 
-            disabled: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+    //reserves space and created a mask if set to true
+    mask: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    }
+  }, //props
 
-            //checks if label options should appear on the same line or not
-            inline: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
+  computed: {
+    //triggers and returns class values depending on the toggle state
+    classes: function() {
+      return {
+        checked: this.d_value,
+        unchecked: !this.d_value,
+        disabled: this.disabled
+      };
+    }, //classes
 
-            //reserves space and created a mask if set to true
-            mask: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-        }, //props
+    //triggers and returns label title depending on the toggle state
+    labelToggle: function() {
+      return this.d_value && this.showLabels
+        ? this.labelChecked
+        : this.labelUnchecked;
+    } //labelToggle
+  }, //computed
 
-        computed: {
-
-            //triggers and returns class values depending on the toggle state
-            classes: function () {
-                return {
-                    checked: this.d_toggled,
-                    unchecked: !this.d_toggled,
-                    disabled: this.disabled
-                }
-            }, //classes
-
-            //triggers and returns label title depending on the toggle state
-            labelToggle: function () {
-                return this.d_toggled && this.showLabels
-                    ? this.labelChecked
-                    : this.labelUnchecked;
-            }, //labelToggle
-        }, //computed
-
-        methods: {
-
-            //toggle state unless toggle is disabled
-            toggle: function (e) {
-                if (this.disabled && e.keyCode === 9) { 
-                    // not if disabled or tab is pressed
-                    return
-                }
-                this.d_toggled = !this.d_toggled;
-                this.$emit("value", !this.d_toggled);
-            }, //toggle
-        }, //methods
-               created() {
-
-            //store values passed as props into d_toggled for future manipulation 
-            if (this.value) {
-                this.d_toggled= this.value
-            }
-        }, //created
-
-        beforeMount() {
-
-            var alertMessage= this.alertMessage
-
-            if (alertMessage) {
-                if (alertMessage['error']) {
-                    this.danger= alertMessage['error']
-                }
-                else if (alertMessage['warning']) {
-                    this.warning= alertMessage['warning']
-                }
-                else if (alertMessage['success']) {
-                    this.success= alertMessage['success']
-                }
-                else if (alertMessage['info']) {
-                    this.info= alertMessage['info']
-                }
-            }
-        }, //beforeMount
-    } //default
+  methods: {
+    //toggle state unless toggle is disabled
+    toggle: function(e) {
+      if (this.disabled && e.keyCode === 9) {
+        // not if disabled or tab is pressed
+        return;
+      }
+      this.d_value = !this.d_value;
+      this.$emit("value", !this.d_value);
+    } //toggle
+  } //methods
+}; //default
 </script>
 
-<style lang= "less" scoped>
-
-    @import (reference) "../../Less/customVariables.less";
-
-    @round: 16px;
-
-    .multiToggle {
-        width: fit-content;       
-        .checkbox-toggle {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            &:focus {
-                outline: none;
-            }
-
-            .checkbox-slide {
-                display: block;
-                width: 64px;
-                height: 32px;
-                border-radius: @round;
-                cursor: pointer;
-                border: 1px solid @textColor;
-
-                &.checked {
-                    transition: all 350ms;
-                    background: #ffffff;
-                    border-color: @secondaryColor;
-                }
-                               &.unchecked {
-                    transition: all 350ms;
-                    background: #e0e0e0;
-                }
-
-                &.disabled {
-                    cursor: not-allowed;
-                    background: #e0e0e0;
-                }
-
-                .checkbox-switch {
-                    display: block;
-                    padding: 0;
-                    margin: 0;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: @round;
-                    background: #8da3ba;
-                    cursor: pointer;
-
-                    &.checked {
-                        transform: translateX(32px);
-                        transition: all 350ms;
-                        background: @secondaryColor;
-                    }
-
-                    &.unchecked {
-                        transition: all 350ms;
-                    }
-
-                    &.disabled {
-                        cursor: not-allowed;
-                    }
-                }
-            }
-
-            .checkbox-label {
-                width: 32px;
-                margin-left: 8px;
-                font-weight: bold;
-            }
-        }
+<style lang="less" scoped>
+@import (reference) "../../Less/customVariables.less";
+@round: @spaceLg;
+.multiToggle {
+  width: fit-content;
+  .checkbox-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:focus {
+      outline: none;
     }
+    .checkbox-slide {
+      display: block;
+      width: 64px;
+      height: @spaceXl;
+      border-radius: @round;
+      cursor: pointer;
+      border: 1px solid ~"darken(#e0e0e0, 10%)";
+      //dLabelChecked
+      &.checked {
+        transition: all 350ms;
+        background: blue;
+        border-color: @secondaryColor;
+      }
+      &.unchecked {
+        transition: all 350ms;
+        background: red;
+      }
+      &.disabled {
+        cursor: not-allowed;
+        background: red;
+      }
+      .checkbox-switch {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: @spaceXl;
+        height: @spaceXl;
+        border-radius: @round;
+        background: @secondaryColor;
+        cursor: pointer;
+        &.checked {
+          transform: translateX(32px);
+          transition: all 350ms;
+          background: @secondaryColor;
+        }
+        &.unchecked {
+          transition: all 350ms;
+        }
+        &.disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+    .checkbox-label {
+      width: max-content;
+      color: @secondaryColor;
+      margin-left: @spaceMd;
+      font-weight: bold;
+    }
+  }
+}
 </style>

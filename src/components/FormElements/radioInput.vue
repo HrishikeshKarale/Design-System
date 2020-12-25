@@ -1,308 +1,263 @@
+// https://tympanus.net/Development/AnimatedCheckboxes/
 <template>
-    <div 
-        class= 'radioInput'
-        :class= '{inline: inline}'
+  <div class="radioInput" :class="{ inline: inline }">
+    <label
+      v-if="label || (type == 'checkbox' && !options)"
+      :class="{ maskField: mask }"
     >
-        <label 
-            v-if= 'label'
-            :class= '{maskField: mask}'
+      <!-- checkbox only -->
+      <input
+        v-if="type == 'checkbox' && !options && !mask"
+        ref="singleCheckbox"
+        type="checkbox"
+        :name="name"
+        :checked="value"
+        :disabled="disabled"
+        :autofocus="autofocus"
+        @input="check(value)"
+      />
+      {{ label }}
+      <abbr v-if="required" title="Required Field">*</abbr>
+      <span v-else> - Optional field<abbr>*</abbr></span>
+      <input :name="name" type="hidden" :value="value" :required="required" />
+      <vue-button
+        v-if="options && value"
+        id="clearSelection"
+        button-name="resetValue"
+        button-text="Reset"
+        button-icon="fas fa-undo"
+        button-style="icon-sm"
+        :ctx="clearSelection.bind(this)"
+      />
+    </label>
+    <div
+      v-if="options"
+      :class="{
+        box: box,
+        warningContainer: d_warning,
+        errorContainer: d_danger,
+        maskField: mask,
+        inline: inline
+      }"
+    >
+      <template v-if="!mask">
+        <label
+          v-for="(option, index) in options"
+          :key="index"
+          :class="{
+            errorLabel: d_danger,
+            checked:
+              value && type == 'checkbox'
+                ? value.includes(option)
+                : option == value
+          }"
+          :style="{
+            'color: #aaaaaa; cursor: not-allowed;': disabled
+          }"
         >
-            {{label}}
-            <abbr v-if= 'required' title= 'Required Field'>*</abbr>
-            <span v-else> - Optional field<abbr >*</abbr></span>
-            <input 
-                :name= 'name' 
-                type= 'hidden' 
-                :value= 'd_checkedValue'
-                :required= 'required'
-            >
-        <vue-button 
-            v-if= 'd_checkedValue && !required'
-            id= 'clearSelection'
-            :type= 'd_type'
-            :tag= "d_tag"
-            :text= "d_text"
-            :icon= "d_icon"
-            :category= 'd_category[5]'
-            :ctx= 'd_ctx'
-        />
+          <input
+            :ref="option"
+            :type="type"
+            :name="option"
+            :checked="
+              value && type == 'checkbox'
+                ? value.includes(option)
+                : option == value
+            "
+            :value="option"
+            :disabled="disabled"
+            :autofocus="index == 0 ? autofocus : false"
+            @input="check(option)"
+          />
+          {{ option }}
         </label>
-        <div
-            :class= '{
-                        box: box,
-                        warningContainer: warning,
-                        errorContainer: danger,
-                        maskField: mask 
-                    }'
-        >
-            <template v-if= '!mask'>
-                <label 
-                    v-for= '(option, index) in options'
-                    :key= 'index'
-                    :class= '{
-                                errorLabel: danger,
-                                checked: option==value,
-                            }'
-                    :style= '{
-                                "color: #aaaaaa; cursor: not-allowed;": disabled,
-                            }'
-                >
-                    <input
-                        type= 'radio'
-                        :name= 'option'
-                        :value= 'option'
-                        :disabled= 'disabled'
-                        v-model= 'd_checkedValue' 
-                        :autofocus= 'index== 0? autofocus: false'
-                        @input= 'checked(option)'
-                    />
-                    {{option}}
-                </label>
-            </template>
-        </div>
-        <input-response
-            :error= 'danger'
-        />
+      </template>
     </div>
+    <input-response :error="d_danger" />
+  </div>
 </template>
 
 <script>
+import inputResponse from "@/components/Alerts/inputResponse";
+import vueButton from "@/components/UIComponents/Button";
+import { validator } from "@/typeScript/validator";
 
-    import inputResponse from '@/components/Alerts/inputResponse';
-    import vueButton from '@/components/UIComponents/Buttons'
+export default {
+  name: "RadioInput",
+  
+  mixins: [validator], //mixins
 
-    export default {
+  components: {
+    inputResponse,
+    vueButton
+  }, //components
 
-        name: 'radioInput',
+  props: {
+    //sets type for the input field
+    //valid values include ['checkbox', 'radio']
+    type: {
+      required: false,
+      type: [String, null],
+      validator: function(value) {
+        return ["checkbox", "radio"].indexOf(value) !== -1;
+      },
+      default: "checkbox"
+    },
 
-        data () {
+    //sets heading for the checkboxes category
+    //in case of single/no-option checkbox, label is used as checkbox text
+    label: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-            const checkedValue= null
+    //sets the name attribute for the input field (required field in case of forms)
+    name: {
+      required: false,
+      type: [String, null],
+      default: "radioInput"
+    },
 
-            const type= 'button'
+    //users can pass preset values for the input field
+    value: {
+      required: true,
+      type: [Boolean, Array, String, Number, null],
+      // type: function() {
+      //   if (!this.options) {
+      //     return [Boolean, null];
+      //   } else if (this.type != "radio") {
+      //     return [Array, null];
+      //   } else {
+      //     //type == radio
+      //     return [String, Number, null];
+      //   }
+      // },
+      default: function() {
+        if (!this.options) {
+          return false;
+        } else if (this.type == "checkbox") {
+          return [];
+        } else {
+          //type == radio
+          return null;
+        }
+      }
+    },
 
-            const tag= 'clearRadioSelection'
+    //Array of options/labels in case of multiple checkboxes.
+    options: {
+      required: false,
+      type: [Array, null],
+      default: null
+    },
 
-            const text= 'Clear'
+    //sets the manual alerts
+    alert : {
+      required: false,
+      type: [Object, null],
+      default: null
+    },
 
-            const icon= 'fas fa-times'
+    //sets the required attribute for the input field
+    required: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            const category= this.$store.state.category
+    //sets the disabled attribute for the input field
+    disabled: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            const d_booleanTrue= true
+    //sets the autofocus attribute for the input field
+    autofocus: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            const ctx= this.clearSelection
+    //checks if label options should appear on the same line or not
+    inline: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            const danger= ""
-                                   const warning= ""
-                       const success= ""
-                       const info= ""
+    //reserves space and created a mask if set to true
+    mask: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    },
 
-            return {
+    //checks if label options should appear on the same line or as buttons
+    box: {
+      required: false,
+      type: [Boolean, null],
+      default: false
+    }
+  }, //props
 
-                d_checkedValue: d_checkedValue,
+  created() {
+    this.d_needsValidation= flase;
+  }, //created
 
-                d_type: d_type,
+  methods: {
+    clearSelection: function() {
+      const options = this.options;
+      options.forEach(option => {
+        let tag = this.$refs[option].checked;
 
-                d_tag: d_tag,
+        if (tag) {
+          tag = false;
+        }
+      });
+      this.$emit("value", null);
+    }, //clearSelection
 
-                d_text: d_text,
-
-                d_icon: d_icon,
-
-                d_category: d_category,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_ctx: d_ctx,
-
-                cValue: null,
-
-                //stores errors thrown by the input fields
-                danger: danger,
-                                           warning: warning,
-                               success: success,
-                               info: info
-            } //return
-        }, //data
-
-        methods: {
-
-            clearSelection: function () {
-                const table = document.getElementsByClassName('checked');
-
-                    table.item(0).childNodes[0].checked= false
-                    this.d_checkedValue= null
-                    this.$emit("selected", this.checkedValue)
-                // let status = cell.getAttribute('data-status');
-                // if (status === 'open') {
-                //     // Grab the data 
-                // }
-                // var parent= document.getElementById('clearSelection').parentNode
-                // console.log('hi: ', parent.getElementsByTagName('input').checked)
-                // parent.getElementByTagName("input").checked=  false;
-            }, //clearSelection
-
-            checked: function (checkedValue) {
-                // console.log('checked: ', checkedValue)
-                this.$emit("selected", checkedValue)
-                const table = document.getElementsByClassName('checked');
-                table.item(0).childNodes[0].checked= true
-            }, //checked
-        }, //methods
-
-        props: {
-
-            //sets heading for the checkboxes category
-            //in case of single/no-option checkbox, label is used as checkbox text
-            label: {
-                required: false,
-                type: String,
-                default: null
-            },
-
-            //sets the name attribute for the input field (required field in case of forms)
-            name: {
-                required: false,
-                type: String,
-                default: 'radioInput'
-            },
-
-            //users can pass preset values for the input field 
-            value: {
-                required: false,
-                type: [String, Array, Number, Boolean],
-                default: function () {
-                    if (options) {
-                        return null
-                    }
-                    return false;
-                }
-            },
-
-            //Array of options/labels in case of multiple checkboxes.
-            options: {
-                required: false,
-                type: Array,
-                default: null
-            },
-
-            //sets the manual alerts
-            alertMessage: {
-                required: false,
-                type: Object,
-            },
-
-            //sets the required attribute for the input field
-            required: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //sets the disabled attribute for the input field
-            disabled: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //sets the autofocus attribute for the input field
-            autofocus: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //checks if label options should appear on the same line or not
-            inline: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //reserves space and created a mask if set to true
-            mask: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-
-            //checks if label options should appear on the same line or as buttons
-            box: {
-                required: false,
-                type: Boolean,
-                default: false
-            },
-        }, //props
-
-        beforeMount() {
-
-            var alertMessage= this.alertMessage
-
-            if (alertMessage) {
-                if (alertMessage['error']) {
-                    this.danger= alertMessage['error']
-                }
-                else if (alertMessage['warning']) {
-                    this.warning= alertMessage['warning']
-                }
-                else if (alertMessage['success']) {
-                    this.success= alertMessage['success']
-                }
-                else if (alertMessage['info']) {
-                    this.info= alertMessage['info']
-                }
+    check: function(checkedValue) {
+      let value = this.value;
+      if (this.options) {
+        //checkbox
+        if (this.type == "checkbox") {
+          if (value) {
+            value = [...value];
+            const index = value.indexOf(checkedValue);
+            if (index != -1) {
+              value = value.splice(index, 1);
+              // console.log("check: ", Array.from(value), typeof value);
+              this.$emit("value", value);
+            } else {
+              value = [...this.value, checkedValue];
+              this.$emit("value", value);
             }
-        }, //beforeMount
-
-        watch: {
-
-            value: function (newValue, oldValue) {
-                if (newValue!= oldValue) {
-                    this.cValue= newValue
-                }
-            }, //value
-        }, //watch
-
-        components: {
-
-            inputResponse,
-            vueButton,
-        }, //components
-    } //default
+          } else {
+            this.$emit("value", [checkedValue]);
+          }
+        } else {
+          // if type = radio
+          // console.log(checkedValue, this.type);
+          this.$emit("value", checkedValue);
+        }
+      } else {
+        //this.options does not exist
+        // console.log(this.$refs["singleCheckbox"].checked);
+        this.$emit("value", this.$refs["singleCheckbox"].checked);
+      }
+    } //check
+  } //components
+}; //default
 </script>
 
-<style lang= "less" scoped>
-    
-    @import (reference) "./../../Less/customMixins.less";
-    @import (reference) "./../../Less/customVariables.less";
+<style lang="less" scoped>
+@import (reference) "../../Less/customMixins.less";
+@import (reference) "../../Less/customVariables.less";
 
-    .radioInput {
-
-        .checkboxCss();
-
-        .box {
-            padding: 4px 8px;
-            margin-left: 8px;
-            width: fit-content;
-            background-color: @backgroundColor;
-            border-radius: @borderRadius;
-
-            &.checked {
-                background-color: @secondaryColor;
-                color: @backgroundColor;
-
-                & > label {
-                    font-weight: bold;
-                }
-            }
-
-            & > label {
-                               & > input {
-                    display: none;
-                }
-            }
-        }
-    }
+.radioInput {
+  .checkboxCss();
+}
 </style>

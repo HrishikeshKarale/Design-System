@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import vueButton from "@/components/UIComponents/Buttons";
+import vueButton from "@/components/UIComponents/Button";
 
 export default {
   name: "VueForm", //props
