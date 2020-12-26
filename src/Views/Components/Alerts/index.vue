@@ -105,7 +105,7 @@
 <script>
 
     import vueAlert from '@/components/Alerts/vueAlert'
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import componentDetails from '@/Views/componentDetails'
 
     export default {

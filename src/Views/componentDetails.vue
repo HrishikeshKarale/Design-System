@@ -1,146 +1,115 @@
 <template>
-  <div class= 'componentDetails'>
-  <fieldset>
-    <legend :id= 'compData.title'>
-    <h3>
-      {{compData.title}}
-    </h3>
-    </legend>
-    <div class= 'contentWrapper'>
-    <div class= 'contentText'>
-      <div>
-      <h3>Definition and Usage</h3>
+    <fieldset>
+      <legend :id= 'compData.title'>
+        <h3>{{compData.title}}</h3>
+      </legend>
+      <div class= 'contentWrapper'>
+        <div class= 'contentText'>
+          <div>
+            <h3>Definition and Usage</h3>
+          </div>
+        </div>
+      </div>
+      <div class= 'contentWrapper'>
+          <div class= 'contentText'>
+            <!-- definitionand usage text goes here-->
+            <div v-html= 'compData.description'/> 
+            <div class= 'sampleCode'>
+              <div>
+                <div class= 'title'>Syntax:</div>
+              <div>
+              <vue-clipboard
+                :componentCode= 'defaultComponentCode'
+                tag= 'copySyntax'
+                icon= 'fas fa-copy'
+                id= 'codeSyntax'
+              />
+            </div>
+          </div>
+          <div>
+            <div class= 'contentImport'>
+              <vue-info
+                label= 'Import Statement'
+                name= 'importstatement'
+                :value= 'compData.import'
+              />
+              <vue-clipboard
+                :componentCode= 'compData.import'
+                tag= 'copyImportStatement'
+                text= 'copy import'
+                id= 'importStatement'
+              />
+            </div>
+          </div>
+          <div>
+            <div class= 'syntaxCode'>
+              <pre><code v-html= 'd_code'/></pre>
+            </div>
+            <div class= 'syntaxComponent'>
+              <slot/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
     <div class= 'contentWrapper'>
-    <div class= 'contentText'>
-      <!-- definitionand usage text goes here-->
-      <div v-html= 'compData.description'/> 
-
-      <div class= 'sampleCode'>
-      <div>
-        <div class= 'title'>
-        Syntax:
-        </div>
+      <div class= 'contentText'>
         <div>
-        <vue-clipboard
-          :componentCode= 'defaultComponentCode'
-          tag= 'copySyntax'
-          icon= 'fas fa-copy'
-          id= 'codeSyntax'
-        />
+          <h3 id= 'AttributeTable' href= '#AttributeTable'>Attributes
+          </h3>
         </div>
       </div>
-      <div>
-        <div class= 'contentImport'>
-
-        <vue-info
-          label= 'Import Statement'
-          name= 'importstatement'
-          :value= 'compData.import'
-        />
-        <vue-clipboard
-          :componentCode= 'compData.import'
-          tag= 'copyImportStatement'
-          text= 'copy import'
-          id= 'importStatement'
-        />
-        </div>
-      </div>
-      <div>
-        <div class= 'syntaxCode'>
-        <pre><code v-html= 'code'/></pre>
-        </div>
-        <div class= 'syntaxComponent'>
-        <slot/>
-        </div>
-      </div>
+      <div class= 'attributeTable'>
+        <table>
+          <body>
+            <tr>
+              <th>Name</th>
+              <th>Value Type</th>
+              <th>Description</th>
+            </tr>
+            <tr v-for= "(attr, index) in compData.attributes" :key= 'index' >
+              <td>
+                <a :href= '"#"+ attr.type'>{{attr.type}}</a>
+              </td>
+              <td>
+                <span v-if= 'attr.type== "inputIcon"'>{{typeof attr.value}}</span>
+                <span v-else-if= 'attr.type!= "pattern"'>{{typeof attr.value}}</span>
+                <span v-else>RegExp</span>
+              </td>
+              <td>{{attr.text}}</td>
+            </tr>
+          </body>
+        </table>
       </div>
     </div>
-    </div>
-
     <div class= 'contentWrapper'>
-    <div class= 'contentText'>
-      <div>
-      <h3 
-        id= 'AttributeTable' 
-        href= '#AttributeTable'
-      >
-        Attributes
-      </h3>
+      <div class= 'contentText'>
+        <h3 id= 'AttributeDetails' href= '#AttributeDetails' >
+          Attributes details
+        </h3>
       </div>
-    </div>
-    <div class= 'attributeTable'>
-      <table>
-      <body>
-        <tr>
-        <th>Name</th>
-        <th>Value Type</th>
-        <th>Description</th>
-        </tr>
-        <tr
-        v-for= "(attr, index) in compData.attributes"
-        :key= 'index'
+      <div class= 'attributeDetails'>
+        <div 
+          class= 'subSection'
+          v-for= "(attribute, index) in compData.attributes"
+          :key= 'index'
         >
-        <td>
-          <a :href= '"#"+ attr.type'>
-          {{attr.type}}
-          </a>
-        </td>
-        <td>
-          <span v-if= 'attr.type== "inputIcon"'>
-          {{typeof attr.value}}
-          </span>
-          <span v-else-if= 'attr.type!= "pattern"'>
-          {{typeof attr.value}}
-          </span>
-          <span v-else>
-          RegExp
-          </span>
-        </td>
-        <td>
-          {{attr.text}}
-        </td>
-        </tr>
-      </body>
-      </table>
-    </div>
-    </div>
-    <div class= 'contentWrapper'>
-    <div class= 'contentText'>
-      <h3
-      id= 'AttributeDetails' 
-      href= '#AttributeDetails'
-      >
-      Attributes details
-      </h3>
-    </div>
-    <div class= 'attributeDetails'>
-      <div 
-      class= 'subSection'
-      v-for= "(attribute, index) in compData.attributes"
-      :key= 'index'
-      >
-      <h4 :id= 'attribute.type'>
-        {{attribute.type}}
-      </h4>
-      <div v-html= 'attribute.description'/>
-      <div v-if= 'typeof attribute.value!= "function" && attribute.type!= "v-model" && attribute.type!= "value"'>
-        <code-details 
-        :attributes= 'd_vModelVariables'
-        :attribute= 'attribute'
-        :compName= 'compData.compName'
-        :hideCode= 'd_hideCode'
-        :index= "index"
-        @change= 'change'
-        />
-      </div>
+          <h4 :id= 'attribute.type'>{{attribute.type}}</h4>
+          <div v-html= 'attribute.description'/>
+          <div v-if= 'typeof attribute.value!= "function" && attribute.type!= "v-model" && attribute.type!= "value"'>
+            <code-details 
+              :attributes= 'd_vModelVariables'
+              :attribute= 'attribute'
+              :compName= 'compData.compName'
+              :hideCode= 'd_hideCode'
+              :index= "index"
+              @change= 'change'
+            />
+        </div>
       </div>
     </div>
-    </div> <!-- attr in compData.attributes LOAD ATTRIBUTE DETAILS-->
-  </fieldset>
-  </div>
+  </div> <!-- attr in compData.attributes LOAD ATTRIBUTE DETAILS-->
+</fieldset>
 </template>
 
 <script>
@@ -154,14 +123,13 @@
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
   import multiToggle from "@/components/FormElements/multiToggle";
   import dropdownList from "@/components/FormElements/dropdownList";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
   import radioInput from "@/components/FormElements/radioInput";
   import vueDate from "@/components/FormElements/vueDate";
   import vueTextarea from "@/components/FormElements/vueTextarea";
   import vueInfo from "@/components/FormElements/vueInfo";
   import vueClipboard from "@/components/Code/vueClipboard";
   import vueModal from "@/components/UIComponents/Modal/vueModal";
-  import vueButton from '@/components/UIComponents/Buttons'
+  import vueButton from '@/components/UIComponents/Button'
   import vueAlert from '@/components/Alerts/vueAlert'
 
   export default {
@@ -169,16 +137,14 @@
 
   data() {
 
-    const vModelVariables= null
+    const d_vModelVariables= null;
     return {
 
     d_hideCode: null,
 
-    d_booleanTrue: true,
+    d_vModelVariables,
 
-    d_vModelVariables: d_vModelVariables,
-
-    code: "",
+    d_code: "",
 
     defaultComponentCode: null,
 
@@ -188,11 +154,11 @@
   props: {
 
     compData: {
-    required: true,
-    type: Object,
-    default: function () {
-      alert('No dacompDatata passed down to componentDetails')
-    }
+      required: true,
+      type: Object,
+      default: function () {
+        alert('No compData passed down to componentDetails')
+      }
     },
 
     attr: {
@@ -319,7 +285,7 @@
     codet += tempStr;
     defaultCodet += defaultTempStr;
     }
-    this.code = "\t&lt;"+ compData.compName+" \n" + codet + "\t/&gt;";
+    this.d_code = "\t&lt;"+ compData.compName+" \n" + codet + "\t/&gt;";
     this.defaultComponentCode = "<"+ compData.compName+" \n" + defaultCodet + "/>";
   }, //created
 
@@ -334,7 +300,7 @@
     dropdownList,
     fileInput,
     multiToggle,
-    checkboxInput,
+    radioInput,
     radioInput,
     vueDate,
     vueTextarea,
@@ -348,13 +314,13 @@
   watch: {
 
     d_vModelVariables: function (newValue, oldValue) {
-    // console.log(newValue)
-    if (newValue!= oldValue){
-      return newValue
-    }
+      // console.log(newValue)
+      if (newValue!= oldValue){
+        return newValue
+      }
     }
   } //watch
-  } // default
+} // default
 </script>
 
 <style lang= "less" scoped>
@@ -425,55 +391,6 @@
         }
         }
       }
-
-      /* // &.attributeTable {
-      //   display: flex;
-      //   flex-direction: column;
-      //   flex-wrap: nowrap;
-      //   border-radius: @borderRadius;
-      //   width: 100%;
-
-      //   & > div {
-      //   display: flex;
-      //   flex-direction: row;
-      //   flex-wrap: nowrap;
-      //   background-color: @backgroundColor;
-
-      //   & > div {
-      //     display: flex;
-      //     flex-direction: column;
-      //     flex-wrap: wrap;
-
-      //     width: 240px;
-      //     padding: @spaceMd @spaceLg;
-               //     &:nth-child(2) {
-      //     color: blue;
-      //     }
-
-      //     &:first-child {
-      //     font-weight: 400;
-      //     }
-
-      //     &:last-child {
-      //     width: 640px;
-      //     }
-      //   }
-
-      //   &:first-child {
-      //     background-color: grey;
-
-      //     & > div {
-      //     font-weight: bold;
-      //     text-decoration: none;
-            color: @white;
-      //     }
-      //   }
-
-      //   &:nth-child(2n) {
-      //     background-color: @white;
-      //   }
-      //   }
-      // } */
       }
     }
     }

@@ -8,16 +8,16 @@
                     <label>Value Returned:</label> {{d_emailValue}}
                 </div>
                 <div 
-                    v-if= 'danger'
+                    v-if= 'd_danger'
                     class= 'error'
                 >
-                    <label>Error Returned:</label> {{danger}}
+                    <label>Error Returned:</label> {{d_danger}}
                 </div>
                 <div 
-                    v-if= 'warning'
-                    class= 'warning'
+                    v-if= 'd_warning'
+                    class= 'd_warning'
                 >
-                    <label>Warning Returned:</label> {{warning}}
+                    <label>d_warning Returned:</label> {{d_warning}}
                 </div>
             </div>
             <div class= "FormElementsContent">
@@ -51,78 +51,47 @@
 <script>
     import componentDetails from "@/Views/componentDetails";
     import emailInput from "@/components/FormElements/emailInput";
-    
-
-    // import { store } from '@/store/store'
+    import { alerts } from "@/typeScript/common/alerts";
 
     export default {
         name: "navEmail",
+        
+        mixins: [ alerts ],
 
         components: {
-
             componentDetails,
             emailInput
         }, //components
-               methods: {
-
-            alerts: function (type, message) {
-                if (type== 'error') {
-                    this.danger= message;
-                }
-                if (type== 'warning') {
-                    this.warning= message;
-                }
-            }, //change
-        }, //methods
 
         data() {
-
             const label= 'Email'
-
             const name= 'uemailTextField'
-
             const value= 'abc'
-
             const emailValue= ''
-
-            const pattern= new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-
+            const pattern= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             const maxlength= 50
-
             const placeholder= 'Enter email here...'
-
             const d_booleanTrue= true
-
             const inputIcon= 'fas fa-at'
-
-            const alerts= this.alerts
+            const readonly= !d_booleanTrue
+            const disabled= !d_booleanTrue
+            const autofocus= !d_booleanTrue
+            const required= !d_booleanTrue
+            const multipe= !d_booleanTrue
+            const inline= !d_booleanTrue
+            const mask= !d_booleanTrue
 
             return {
-
                 d_label: d_label,
-
                 d_name: d_name,
-
                 d_value: d_value,
-
                 d_emailValue: d_emailValue,
-
                 d_pattern: d_pattern,
-
                 d_maxlength: d_maxlength,
-
                 d_placeholder: d_placeholder,
-
                 d_booleanTrue: d_booleanTrue,
-
                 d_inputIcon: d_inputIcon,
-
                 d_alerts: d_alerts,
-
-                danger: null,
-
-                warning: null,
-
                 d_email: {
                                        title: 'Email Input Field',
 
@@ -227,7 +196,7 @@
                         },
                         {
                             type: "alerts",
-                            value: d_alerts,
+                            value: this.alerts,
                             description: this.$store.state.navText.alerts,
                             text: this.$store.state.navText.alertsText,
                         }

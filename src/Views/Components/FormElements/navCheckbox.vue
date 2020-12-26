@@ -20,7 +20,7 @@
                     <label>Warning Returned:</label> {{warning}}
                 </div>
             </div>
-            <checkbox-input 
+            <radio-input 
                 label= "Ship on the same day"
                 name= "shipDyaCheckboxField"
                 :value= 'd_checkboxValue'
@@ -31,7 +31,7 @@
                 <form>                           <component-details
                         :compData= 'd_checkbox'
                     >
-                        <checkbox-input 
+                        <radio-input 
                             :label= "d_label"
                             :name= "d_name"
                             :value= 'd_checkboxValue'
@@ -52,7 +52,7 @@
 
 <script>
     import componentDetails from "@/Views/componentDetails";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
+    import radioInput from "@/components/FormElements/radioInput";
     import { alerts } from "@/typeScript/common/alerts";    
 
     export default {
@@ -62,7 +62,7 @@
 
         components: {
             componentDetails,
-            checkboxInput,
+            radioInput,
         }, //components
 
         data() {
@@ -99,7 +99,7 @@
 
                     compName: 'checkbox-input',
 
-                    import: 'import checkboxInput from "@/components/FormElements/checkboxInput";',
+                    import: 'import radioInput from "@/components/FormElements/radioInput";',
 
                     description: '<p>The &lt;checkbox-input&gt; tag defines a checkbox.</p>\
                                     <p>The checkbox is shown as a square box that is ticked (checked) when activated.<p>\

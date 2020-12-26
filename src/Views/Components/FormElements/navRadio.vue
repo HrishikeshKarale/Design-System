@@ -25,16 +25,11 @@
                     <component-details
                         :compData= 'd_radio'
                     >
-                        <radio-input-test 
+                        <radio-input 
                             :label= "d_label"
                             :name= "d_name"
                             :value= 'd_radioValue'
                             :options= 'd_options'
-                            
-                           
-                            
-                            
-                            
                             @selected= 'selected'
                             @notify= 'alerts'
                             @value= 'val=> d_radioValue = val'
@@ -47,7 +42,7 @@
 
 <script>
     import componentDetails from "@/Views/componentDetails";
-    import radioInputTest from "@/components/FormElements/radioInputTest";
+    import radioInput from "@/components/FormElements/radioInput";
     import { alerts } from "@/typeScript/common/alerts";    
 
     export default {
@@ -57,7 +52,7 @@
 
         components: {
                        componentDetails,
-            radioInputTest
+            radioInput
         }, //components
 
         methods: {
@@ -70,10 +65,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.danger= message;
+                    this.d_danger= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_warning= message;
                 }
             }, //change
         }, //methods
@@ -116,7 +111,7 @@
 
                     compName: 'radio-input',
 
-                    import: 'import radioInputTest from "@/components/FormElements/radioInputTest";',
+                    import: 'import radioInput from "@/components/FormElements/radioInput";',
 
                     description: '<p>The &lt;radio-input"&gt; tag defines a radio button.</p>\
                                     <p>Radio buttons are normally presented in groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.</p>',

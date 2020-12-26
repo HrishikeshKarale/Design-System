@@ -33,7 +33,7 @@
             </template>
           </router-link>
           <!-- level 2 -->
-          <ul class="subNav" v-show="navigation.subNav && $route.path.includes(navigation.component)">
+          <ul class="subNav" v-show="navigation.subNav && $route.path.indexOf(navigation.component)!=-1">
             <li
               v-for="(nav2, index) in navigation.subNav"
               :key="index + '-' + nav2.name"
@@ -43,7 +43,7 @@
                 <h4>{{ nav2.name }}</h4>
               </router-link>
               <!-- level 3 -->
-              <ul class="subNav2" v-if="nav2.subNav && $route.path.includes(nav2.component)">
+              <ul class="subNav2" v-if="nav2.subNav && $route.path.indexOf(nav2.component)!=-1">
                 <li
                   v-for="(nav3, index) in nav2.subNav"
                   :key="index + '-' + nav3.name"
@@ -76,7 +76,7 @@
 <script>
 import { toggle } from "@/typeScript/toggle";
 import { authentication } from "@/typeScript/authentication";
-import vueButton from "@/components/UIComponents/Buttons";
+import vueButton from "@/components/UIComponents/Button";
 import vueImg from "../Image/vueImg.vue";
 
 export default {

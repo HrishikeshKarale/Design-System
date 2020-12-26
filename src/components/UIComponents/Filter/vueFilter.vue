@@ -68,7 +68,7 @@
 
 <script>
 
-    import vueButton from "@/components/UIComponents/Buttons"
+    import vueButton from "@/components/UIComponents/Button"
     import dropdownList from "@/components/FormElements/dropdownList"
 
     export default {

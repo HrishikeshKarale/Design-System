@@ -41,7 +41,7 @@
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
   import sideBySideLayout from '@/components/Layout/sideBySideLayout'
   import enterpriseAppLayout from '@/components/Layout/enterpriseAppLayout'
-  import vueButton from '@/components/UIComponents/Buttons'
+  import vueButton from '@/components/UIComponents/Button'
 
   import { mapState, mapActions } from 'vuex';
   import { toggle, show } from '@/typeScript/toggle'

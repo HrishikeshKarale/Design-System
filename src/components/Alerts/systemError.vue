@@ -23,10 +23,10 @@
             <div>
                 <span @click= "d_hideDetails= !d_hideDetails" :class= '["fas", d_hideDetails? "fa-plus": "fa-minus"]'> {{d_hideDetails? "View": "Hide"}} Details</span>
                 <vue-clipboard
-                    :componentCode= 'danger'
-                    :tag= 'd_tag'
-                    :text= 'd_text'
-                    :id= 'd_id'
+                    :componentCode= 'd_danger'
+                    tag= 'StackTrace'
+                    text= 'Copy'
+                    id= 'stackTrace'
                 />
             </div>
             <table v-if= '!d_hideDetails'>
@@ -86,10 +86,8 @@
         name:'systemError',
 
         data() {
-
-            const hideDetails= true
-
-            var danger= "error=\n\
+            const d_hideDetails= true
+            const d_danger= "error=\n\
             {\n\
                 app: "+this.app+",\n\
                 version: "+this.version+",\n\
@@ -99,7 +97,6 @@
                 errorMessage: "+this.errorMessage+",\n\
                 stackTrace: "+this.stackTrace+",\n\
             }"
-
             //object (JSON)
             const errorObject= {
                 "app": this.app,
@@ -110,27 +107,17 @@
                 "errorMessage": this.errorMessage,
                 "stackTrace": this.stackTrace,
             }
-
-            const tag= 'StackTrace'
-            const text= 'Copy'
-            const id= 'stackTrace'
-
             return {
 
-                d_hideDetails: d_hideDetails,
+                d_hideDetails,
 
-                danger: danger,
+                d_danger,
 
-                d_errorObject: d_errorObject,
-
-                d_tag: d_tag,
-
-                d_text: d_text,
-
-                d_id: d_id,
+                d_errorObject,
             }//return
         }, //data
-               props: {
+
+        props: {
 
             errorCode: {
                 type: String,
@@ -169,7 +156,6 @@
         },
 
         components: {
-
             vueClipboard,
         }
     } //default

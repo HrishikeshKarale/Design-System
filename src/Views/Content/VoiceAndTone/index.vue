@@ -231,11 +231,11 @@
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg.vue"
-import goodVsBad from "../../goodVsBad.vue"
-import multiToggle from "@/components/FormElements/multiToggle.vue"
-import textInput from "@/components/FormElements/textInput.vue"
-import cardBackground from "@/components/UIComponents/Cards/cardBackground.vue"
+import vueImg from "@/components/UIComponents/Image/vueImg"
+import goodVsBad from "@/Views/goodVsBad"
+import multiToggle from "@/components/FormElements/multiToggle"
+import textInput from "@/components/FormElements/textInput"
+import cardBackground from "@/components/UIComponents/Cards/cardBackground"
 
     export default {
         name: 'voiceAndTone',

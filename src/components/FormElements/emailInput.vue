@@ -17,7 +17,7 @@
       <input
         v-if="!mask"
         type="email"
-        v-model="d_Value"
+        v-model="d_value"
         :name="name"
         :placeholder="placeholder"
         :maxlength="maxlength"
@@ -30,11 +30,11 @@
         @input="validate"
       />
       <!-- [A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$ -->
-      <div v-if="d_Value" class="conditions">
+      <div v-if="d_value" class="conditions">
         <div>
           <span
             :class="
-              d_Value.match(/^[A-Za-z0-9._%+-]/g)
+              d_value.match(/^[A-Za-z0-9._%+-]/g)
                 ? 'fas fa-check'
                 : 'fas fa-times'
             "
@@ -45,7 +45,7 @@
         <div>
           <span
             :class="
-              d_Value.match(/(?=@[A-Za-z0-9.-])/g)
+              d_value.match(/(?=@[A-Za-z0-9.-])/g)
                 ? 'fas fa-check'
                 : 'fas fa-times'
             "
@@ -56,7 +56,7 @@
         <div>
           <span
             :class="
-              d_Value.match(/(?=.[A-Za-z]{2,3}$)/)
+              d_value.match(/(?=.[A-Za-z]{2,3}$)/)
                 ? 'fas fa-check'
                 : 'fas fa-times'
             "
@@ -70,7 +70,7 @@
       :warning="d_warning"
       :error="d_danger"
       :char-limit-reached="
-        d_Value ? maxlength - d_Value.length < 0 : false
+        d_value ? maxlength - d_value.length < 0 : false
       "
       :maxlength="maxlength"
     />
@@ -80,6 +80,7 @@
 <script>
 import inputResponse from "@/components/Alerts/inputResponse.vue";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "EmailInput",
@@ -88,7 +89,7 @@ export default {
     inputResponse
   }, //components
 
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   props: {
     //sets heading/Label for the input field
@@ -118,7 +119,7 @@ export default {
     pattern: {
       required: false,
       type: [RegExp, String, null],
-      default: new RegExp("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$")
+      default: () => /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$/
     },
 
     //sets the placeholder attribute for the input field
@@ -143,7 +144,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null

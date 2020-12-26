@@ -11,14 +11,13 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
     import dropdownList from "@/components/FormElements/dropdownList";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
     import radioInput from "@/components/FormElements/radioInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import vueInfo from "@/components/FormElements/vueInfo";
     import vueClipboard from "@/components/Code/vueClipboard";
     import vueModal from "@/components/UIComponents/Modal/vueModal";
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import vueCard from '@/components/UIComponents/Cards/vueCard'
     import vueTable from '@/components/UIComponents/Table/vueTable'
     import vueAlert from '@/components/Alerts/vueAlert'
@@ -41,7 +40,7 @@
             dropdownList,
             fileInput,
             multiToggle,
-            checkboxInput,
+            radioInput,
             radioInput,
             vueDate,
             vueTextarea,

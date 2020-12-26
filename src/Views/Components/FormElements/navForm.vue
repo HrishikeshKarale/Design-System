@@ -67,7 +67,7 @@
                         @notify= 'alerts'
                         @value= "val => deliveryOptionVal = val"
                     />
-                    <checkbox-input 
+                    <radio-input 
                         label= 'I want to specify a date for shipping'
                         name= "checkboxField"
                         :value= 'shipping'
@@ -96,7 +96,7 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
     import componentDetails from '@/Views/componentDetails'
     import textInput from "@/components/FormElements/textInput";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
+    import radioInput from "@/components/FormElements/radioInput";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import { alerts } from "@/typeScript/common/alerts";
     
@@ -114,9 +114,6 @@
             const d_booleanTrue= true;
             const validate= d_booleanTrue;
             const autocomplete= d_booleanTrue;
-            const danger= "";
-            const warning= null;
-            const alertObject= { error: danger, warning: "" };
             const customerVal= null;
             const costCenterVal= null;
             const OrderNameVal= null;
@@ -178,7 +175,7 @@
                 validate,
                 autocomplete,
                 alertObject,
-                danger,
+                d_danger,
                 warning,
                 customerVal,
                 costCenterVal,
@@ -203,7 +200,7 @@
             componentDetails,
             searchableDropdownList,
             textInput,
-            checkboxInput,
+            radioInput,
             vueTextarea
         } //components
     } //default

@@ -133,18 +133,6 @@
                                 @click.stop= 'editColumns= !editColumns'
                                 :class= '{open: editColumns}'
                             />
-                            <!-- <div
-                                :class= '{open: editColumns}'
-                            >
-                                <checkbox-input 
-                                    name= "editColumns"
-                                    :value= "columns"
-                                    :options= 'd_columns'
-                                    
-                                    @notify= 'alerts'
-                                    @value= 'val=> columns = val'
-                                />
-                            </div> -->
                             <ul
                                 :class= '{open: editColumns}'
                             >
@@ -159,7 +147,7 @@
                                         <input 
                                             type= 'checkbox'
                                             :value= 'col'
-                                            :checked= 'columns.includes(col)? true: false'
+                                            :checked= 'columns.indexOf(col)!=-1? true: false'
                                             @click= 'toggleColumns(col)'
                                         >
                                         {{col}}
@@ -177,7 +165,7 @@
                 >
                     <tr
                         :key= 'index' 
-                        :class= '{"selected": metadata.selected && metadata.selected.includes(entry[select]), tableBgStriped: tableBgStriped_Toggle()}'
+                        :class= '{"selected": metadata.selected && metadata.selected.indexOf(entry[select])!=-1, tableBgStriped: tableBgStriped_Toggle()}'
                         :id= 'entry[select]'
                         @click.stop= 'SelectRow(entry[select])' 
                     >
@@ -186,7 +174,7 @@
                                 v-if= "!subtableId"
                                 type= 'checkbox'
                                 class= 'selectRow'
-                                :checked= '(metadata.selected && metadata.selected.includes(entry[select]))? true: false'
+                                :checked= '(metadata.selected && metadata.selected.indexOf(entry[select])!=-1)? true: false'
                                 @click.self= 'toggleCheckbox(entry[select])' 
                             />                                                             <!-- <vue-button 
                                 :type= 'd_type'
@@ -318,11 +306,10 @@
 <script>
 
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import dropdownList from '@/components/FormElements/dropdownList'
     import textInput from '@/components/FormElements/textInput'
     import vueModal from '@/components/UIComponents/Modal/vueModal'
-    import checkboxInput from "@/components/FormElements/checkboxInput";
     import radioInput from "@/components/FormElements/radioInput";
 
     // import { store } from '@/store/store'
@@ -397,7 +384,7 @@
             vueModal,
             dropdownList,
             textInput,
-            checkboxInput
+            radioInput
         }, //components
 
         data() {
@@ -570,12 +557,12 @@
                                            //check if selectAll or selectNone
                         if (!selectAll) {
                                        //if selectNone, then remove selected
-                            if (selected.includes(tr.id)) {
+                            if (selected.indexOf(tr.id)!=-1) {
                                 this.SelectRow(tr.id)
                             }
                         }
                         //if SelectAll, then include not selected from page.
-                        else if (!selected.includes(tr.id)) {
+                        else if (!selected.indexOf(tr.id)!=-1) {
                             this.SelectRow(tr.id)
                         }
                 }

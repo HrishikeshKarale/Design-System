@@ -49,10 +49,12 @@
 <script>
 
     import inputResponse from '@/components/Alerts/inputResponse';  
+import { alerts } from "@/typeScript/common/alerts";
 
     export default {
 
         name: 'numberInput',
+        mixins: [alerts],
 
         data () {
             return {
@@ -94,9 +96,7 @@
             pattern: {
                 required: false,
                 type: [RegExp, String],
-                default: function () {
-                    return new RegExp(/^(0|[1-9][0-9]*)$/)
-                }
+                default: () => /^(0|[1-9][0-9]*)$/
             },
 
             //sets the placeholder attribute for the input field
@@ -121,7 +121,7 @@
             },
 
             //sets the manual alerts
-            alert : {
+            alert: {
                 required: false,
                 type: Object,
             },

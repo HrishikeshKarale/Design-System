@@ -40,11 +40,12 @@
 <script>
 import inputResponse from "@/components/Alerts/inputResponse";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "SearchableDropdownList",
   
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   components: {
     inputResponse
@@ -111,7 +112,7 @@ export default {
     pattern: {
       required: false,
       type: [RegExp, String, null],
-      default: new RegExp(/([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*/)
+      default: () => /([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*/
     },
 
     //sets the placeholder attribute for the input field
@@ -141,7 +142,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null
@@ -210,7 +211,7 @@ export default {
     //if val is a singlevalue, check if it is na acceptable input
     if (!multiple && (typeof val == "string" || typeof val == "number")) {
       //if value is an acceptable input store it in d_value for future manipulation
-      if ((options && options.includes(val)) || !strict) {
+      if ((options && options.indexOf(val)!=-1) || !strict) {
         this.d_value = val;
       }
       //if not trigger alert and set error message
@@ -229,7 +230,7 @@ export default {
       //loop through each value to check for validity of input value
       for (const v in val) {
         //if value is an acceptable input store sit intempVal for future manipulation
-        if ((options && options.includes(v)) || !strict) {
+        if ((options && options.indexOf(v)!=-1) || !strict) {
           tempVal.push(v);
         }
         //if not save it in a temp errorval variable for further use to trigger alert
@@ -268,7 +269,7 @@ export default {
       if (val) {
         //if an acceptable value exists,emit/send new values to parent component v-model attribute
         //if not then trigger d_warning and set d_warning message
-        if (this.options.includes(val) || !this.strict) {
+        if (this.options.indexOf(val)!=-1 || !this.strict) {
           this.$emit("value", val);
         }
         //if options do not include the optio na dn user customized input is not acceptable then trigger alert and set d_warning message

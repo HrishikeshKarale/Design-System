@@ -46,6 +46,7 @@
 <script>
 import inputResponse from "@/components/Alerts/inputResponse.vue";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "PhoneInput", //props
@@ -54,7 +55,7 @@ export default {
     inputResponse
   }, //data
 
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   props: {
     //sets heading/Label for the input field
@@ -86,7 +87,7 @@ export default {
       required: false,
       type: [RegExp, String, null],
       // eslint-disable-next-line vue/require-valid-default-prop
-      default: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
+      default: () => /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
     },
 
     //sets the placeholder attribute for the input field
@@ -111,7 +112,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null

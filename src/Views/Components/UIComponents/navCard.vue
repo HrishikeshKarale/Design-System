@@ -129,7 +129,7 @@
     import componentDetails from "@/Views/componentDetails";    
     import vueCard from '@/components/UIComponents/Cards/vueCard';
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import textInput from "@/components/FormElements/textInput";
     import numberInput from "@/components/FormElements/numberInput";
     import vueInfo from "@/components/FormElements/vueInfo";
@@ -314,7 +314,7 @@
             createCard: function () {
                 const quantity= this.d_numberValue
                 const sku= this.d_SKU
-                const info= this.info
+                const info= this.d_info
                 const details= new Array()
                 // console.log('data: ', sku, quantity, info)
                                    if (quantity && sku) {
@@ -337,10 +337,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.danger= message;
+                    this.d_danger= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_warning= message;
                 }
             }, //alerts
 

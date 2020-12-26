@@ -100,7 +100,7 @@
               />
             </div>
             <div>
-              <checkbox-input 
+              <radio-input 
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
@@ -148,7 +148,7 @@
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import componentDetails from '@/Views/componentDetails'
   import textInput from "@/components/FormElements/textInput";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
+  import radioInput from "@/components/FormElements/radioInput";
   import vueTextarea from "@/components/FormElements/vueTextarea";
   
 
@@ -261,7 +261,7 @@
             },
             {
               type: "alerts",
-              value: {'error': this.danger, 'warning': this.warning},
+              value: {'error': this.d_danger, 'warning': this.d_warning},
               description: '<p>The steps attribute provides widget ith total no of steps, their title and the icons for each step for the wizard.</p>\
                       <p>The steps attribute accepts an Array of objects, where each object specifies the title and icon for each step for the wizard.</p>\
                       <p>This is a required field and cannot be left null/empty.</p>',
@@ -281,10 +281,10 @@
       //handels alerts thrown by the component
       alerts: function (type, message) {
         if (type== 'error') {
-          this.danger= message;
+          this.d_danger= message;
         }
         else {
-          this.warning= message;
+          this.d_warning= message;
         }
       }, //alerts
 
@@ -300,7 +300,7 @@
       componentDetails,
       searchableDropdownList,
       textInput,
-          checkboxInput,
+          radioInput,
             vueTextarea
         }, //components
     } //default

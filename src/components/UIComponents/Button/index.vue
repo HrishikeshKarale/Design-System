@@ -1,13 +1,13 @@
 // https://tympanus.net/Development/CreativeButtons/ //
-https://tympanus.net/Development/categorysInspiration/ //
-https://tympanus.net/Development/DistortedButtonEffects/ //
-https://tympanus.net/Development/Progresscategorys/ //
-https://tympanus.net/Development/categorysInspiration/
+// https://tympanus.net/Development/categorysInspiration/ //
+// https://tympanus.net/Development/DistortedButtonEffects/ //
+// https://tympanus.net/Development/Progresscategorys/ //
+// https://tympanus.net/Development/categorysInspiration/
 <template>
   <button
     :class="[
       'vueButton',
-      ['fullWidth', 'border-fwidth'].includes(category) ? 'fullWidth' : null,
+      ['fullWidth', 'border-fwidth'].indexOf(category)!=-1 ? 'fullWidth' : null,
       buttonClass
     ]"
     :type="type"
@@ -17,7 +17,7 @@ https://tympanus.net/Development/categorysInspiration/
     :form="form"
     @click.stop.prevent="ctx"
   >
-    <!-- <template v-if="!['icon', 'icon-sm', 'icon-lg'].includes(category)">
+    <!-- <template v-if="!['icon', 'icon-sm', 'icon-lg'].indexOf(category)!=-1">
       {{ text }}
     </template> -->
     <span v-if="icon" :class="icon" />
@@ -79,11 +79,12 @@ export default {
     },
 
     icon: {
-      default: null,
-      required: function() {
-        return ["icon", "icon-lg", "icon-sm"].indexOf(this.category) !== -1;
-      },
-      type: [String, null]
+      type: [String, null],
+      required: false,
+      // function() {
+      //   return ["icon", "icon-lg", "icon-sm"].indexOf(this.category) !== -1;
+      // },
+      default: null
     },
     
     disabled: {
@@ -252,7 +253,7 @@ export default {
     }
   }
 
-  //buttons with a border outline and transparent background
+  //Button with a border outline and transparent background
   &.btn-border {
     border-radius: @borderRadius;
     background-color: transparent;

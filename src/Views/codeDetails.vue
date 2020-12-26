@@ -6,14 +6,10 @@
             </div>
             <div>
                 <vue-button 
-                    :type= 'd_type'
                     tag= "togglecode"
                     :icon= 'd_hideCode? "fas fa-minus":"fas fa-plus"'
-                    :category= 'd_category[12]'
-                   
-                    
-                    :form= "d_form"
-                    :ctx= 'toggle.bind(this)'
+                    category= 'icon'
+                    ctx= 'toggle.bind(this)'
                 />
             </div>
         </div>
@@ -30,6 +26,7 @@
                             {{attribute.type}}:
                         </div> 
                         <div v-if= 'attr.type==attribute.type'>
+                            <!-- attribue value is of type number -->
                             <template v-if= 'typeof attribute.value== "number"'>
                                 <number-input 
                                     name= "numField"
@@ -40,6 +37,7 @@
                                     @value= 'val=> d_value = val'
                                 />
                             </template>
+                            <!-- attribue value is of type boolean -->
                             <template v-else-if= 'typeof attribute.value== "boolean"'>
                                 <label  
                                     id= 'checkbox'
@@ -53,6 +51,7 @@
                                         <span style= 'text-transform: uppercase; margin-left: 8px;'>{{d_value}} </span>
                                 </label>
                             </template>
+                            <!-- attribue value is of type array -->
                             <template v-else-if= 'Array.isArray(attr.value) || typeof attr.value== "array"' >
                                 <searchable-dropdown-list
                                     name= "playpen"
@@ -62,85 +61,20 @@
                                     @value= 'val=> d_value = val'
                                 />
                             </template>
+                            <!-- attribue value is of type object -->
                             <template v-else-if= 'typeof attr.value== "object"' >
-                                <template v-for=" k in Object.keys(attribute.value)">
-                                    {{k}}:
-                                    <template v-if= 'typeof attribute.value[k]== "number"'>
-                                        <number-input 
-                                            name= "numField"
-                                            :value= 'attribute.value[k]'
-                                            :pattern= 'd_numRegEx'
-                                            inputIcon= 'fas fa-hashtag'
-                                            @notify= 'alerts'
-                                            @value= 'val=> d_value = val'
-                                        />
-                                    </template>
-                                    <template v-else-if= 'typeof attribute.value[k]== "boolean"'>
-                                        <label  
-                                            id= 'checkbox'
-                                        >
-                                            <input 
-                                                type= 'checkbox' 
-                                                :value= "attribute.value[k]"
-                                                v-model= "d_value" 
-                                                for= 'checkbox'
-                                                @input= "change(null)"
-                                            />
-                                                <span style= 'text-transform: uppercase; margin-left: 8px;'>{{d_value}} </span>
-                                        </label>
-                                    </template>
-                                    <template v-else-if= 'Array.isArray(attribute.value[k]) || typeof attribute.value[k]== "array"' >
-                                        <searchable-dropdown-list
-                                            name= "playpen"
-                                            :value= 'd_value'
-                                            :options= 'attribute.value[k]'
-                                            @notify= 'alerts'
-                                            @value= 'val=> d_value = val'
-                                        />
-                                    </template>
-                                    <template v-else>
-                                        <text-input 
-                                            :name= "attr.type+'textField'"
-                                            :value= 'attribute.value[k]'
-                                            @notify= 'alerts'
-                                            @value= 'val=> attribute.value[k] = val'
-                                        />
-                                    </template>
-                                    <!-- <searchable-dropdown-list
-                                        name= "playpen"
-                                        :value= 'd_value'
-                                        :options= 'attribute.value'
-                                        @notify= 'alerts'
-                                        @value= 'val=> d_value = val'
-                                    /> -->
+                                <template v-for=" (k, index) in Object.keys(attribute.value)">
+                                    {{k}}: {{attribute.value[k]}}
+                                    <br v-if="attribute.length < index-1">
                                 </template>
                             </template>
                             <template v-else>
-                                <template v-if= "attr && attr.type.indexOf(attr.type)!= -1">
-                                    <dropdown-list 
-                                        :name= 'attr.type+"dropdownField"'
-                                        :value= 'd_value'
-                                        :options= 'attr.value[attr.type.indexOf(attr.type)]'
-                                        @notify= 'alerts'
-                                        @value= 'val=> d_value = val'
-                                    />
-                                </template>
-                                <template v-else-if= 'typeof attr.value== "object"' >
-                                    <div
-                                        v-for= '(keys, index) in Object.keys(attr.value)'
-                                        :key= 'index'
-                                    >  
-                                        {{keys}}: {{attr.value[keys]}}
-                                    </div>
-                                </template>
-                                <template v-else>
-                                    <text-input 
-                                        :name= "attr.type+'textField'"
-                                        :value= 'd_value'
-                                        @notify= 'alerts'
-                                        @value= 'val=> d_value = val'
-                                    />
-                                </template>
+                                <text-input 
+                                    :name= "attr.type+'textField'"
+                                    :value= 'd_value'
+                                    @notify= 'alerts'
+                                    @value= 'val=> d_value = val'
+                                />
                             </template>
                         </div>
                         <div v-else-if= 'd_hideCode'>
@@ -164,7 +98,7 @@
     import dynamicComponent from '@/Views/dynamicComponent'
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
     import dropdownList from "@/components/FormElements/dropdownList"
-    import vueButton from "@/components/UIComponents/Buttons"
+    import vueButton from "@/components/UIComponents/Button"
     import numberInput from "@/components/FormElements/numberInput";
     import textInput from "@/components/FormElements/textInput";
     import { alerts } from "@/typeScript/common/alerts"
@@ -176,41 +110,11 @@
         mixins: [alerts],
 
         data () {
-
-            const type= 'button'
-
-            const tag= 'consoleTextButton'
-
-            const text= ''
-
-            const category= this.$store.state.category
-
-            const d_booleanTrue= true
-
-            const form= ''
-
-            const ctx= this.toggle
-
-            const numRegEx= new RegExp(/^([0-9]*)|(([0-9]*))$/)
-
+            const d_hideCode= null;
+            const d_value= null;
             return {
-
-                d_type: d_type,
-
-                d_tag: d_tag,
-
-                d_category: d_category,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_form: d_form,
-
-                d_ctx: d_ctx,
-
-                d_hideCode: null,
-
-                d_value: null,
-                               d_numRegEx: d_numRegEx
+                d_hideCode,
+                d_value
             } //return
         }, //data
 
@@ -235,12 +139,6 @@
                 required: false,
                 type: Boolean,
                 default: false
-            },
-
-            attr: {
-                required: false,
-                type: Object,
-                default: null
             },
             index: {
                 type: Number,
