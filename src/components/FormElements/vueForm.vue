@@ -28,9 +28,11 @@
 
 <script>
 import vueButton from "@/components/UIComponents/Button";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "VueForm", //props
+  mixins: [alerts],
 
   components: {
     vueButton

@@ -21,7 +21,7 @@
       <span v-else> - Optional field<abbr>*</abbr></span>
       <input :name="name" type="hidden" :value="value" :required="required" />
       <vue-button
-        v-if="options && value"
+        v-if="options && typeof value!= 'boolean'? value: false"
         id="clearSelection"
         button-name="resetValue"
         button-text="Reset"
@@ -46,10 +46,7 @@
           :key="index"
           :class="{
             errorLabel: d_danger,
-            checked:
-              value && type == 'checkbox'
-                ? value.includes(option)
-                : option == value
+            checked: isChecked(option)
           }"
           :style="{
             'color: #aaaaaa; cursor: not-allowed;': disabled
@@ -59,11 +56,7 @@
             :ref="option"
             :type="type"
             :name="option"
-            :checked="
-              value && type == 'checkbox'
-                ? value.includes(option)
-                : option == value
-            "
+            :checked="isChecked(option)"
             :value="option"
             :disabled="disabled"
             :autofocus="index == 0 ? autofocus : false"
@@ -81,11 +74,12 @@
 import inputResponse from "@/components/Alerts/inputResponse";
 import vueButton from "@/components/UIComponents/Button";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "RadioInput",
   
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   components: {
     inputResponse,
@@ -99,7 +93,7 @@ export default {
       required: false,
       type: [String, null],
       validator: function(value) {
-        return ["checkbox", "radio"].indexOf(value) !== -1;
+        return ["checkbox", "radio", null].indexOf(value) !== -1;
       },
       default: "checkbox"
     },
@@ -153,7 +147,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null
@@ -203,18 +197,21 @@ export default {
   }, //props
 
   created() {
-    this.d_needsValidation= flase;
+    this.d_needsValidation= false;
   }, //created
 
   methods: {
+
+    isChecked: function (option) {
+      if(this.type != 'radio') {
+        return this.value.indexOf(option)!=-1;
+      }
+      return this.value == option;
+    }, //isChecked
     clearSelection: function() {
       const options = this.options;
       options.forEach(option => {
-        let tag = this.$refs[option].checked;
-
-        if (tag) {
-          tag = false;
-        }
+        this.$refs[option].checked= false;
       });
       this.$emit("value", null);
     }, //clearSelection

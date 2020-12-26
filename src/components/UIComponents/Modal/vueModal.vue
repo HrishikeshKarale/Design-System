@@ -88,7 +88,7 @@
 
 <script>
 
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import vueClipboard from '@/components/Code/vueClipboard'
 
     export default {

@@ -2,12 +2,12 @@
     <div class= "navAlertsProactive">
             <component-details
                 :compData= 'inputResponse'
-                :attr= 'attr'
+                :d_attr= 'd_attr'
             >
                 <input-response
-                    :warning= 'warning'
-                    :error= 'danger'
-                    :charLimitReached= 'charLimitReached'
+                    :d_warning= 'd_warning'
+                    :error= 'd_danger'
+                    :d_charLimitReached= 'd_charLimitReached'
                     :maxlength= 'maxlength'
                 />
             </component-details>
@@ -16,7 +16,7 @@
             <email-input 
                 :label= "Elabel"
                 :name= "Ename"
-                :value= 'emailValue'
+                :value= 'd_emailValue'
                 :pattern= 'Epattern'
                 :placeholder= "placeholder"
                 :maxlength= 'maxlength'
@@ -25,10 +25,10 @@
                
                 
                 
-                :inputIcon= 'EinputIcon'
+                :d_inputIcon= 'Ed_inputIcon'
                 
                 @notify= 'alerts'
-                @value= 'val=> emailValue = val'
+                @value= 'val=> d_emailValue = val'
             />
         </div>
         <div>
@@ -36,7 +36,7 @@
             <searchable-dropdown-list 
                 :label= "DDlabel"
                 :name= "SDDname"
-                :value= 'searchDropboxValue'
+                :value= 'd_searchDropboxValue'
                 :options= 'options'
                 :placeholder= 'placeholder'
                 :strict= 'd_booleanTrue'
@@ -45,7 +45,7 @@
                 :required= 'd_booleanTrue'
                
                 
-                :inputIcon= 'inputIcon'
+                :d_inputIcon= 'd_inputIcon'
                 
                 @notify= 'alerts'
                 @value= 'val=> searchDropdownValue = val'
@@ -53,17 +53,17 @@
         </div>
         <div>
             <h2>CheckBox Input</h2>
-            <checkbox-input 
+            <radio-input 
                 :label= "DDlabel"
                 :name= "Cname"
-                :value= 'checkboxValue'
+                :value= 'd_checkboxValue'
                 :options= 'options'
                 :required= 'd_booleanTrue'
                
                 
                 
                 @notify= 'alerts'
-                @value= 'val=> checkboxValue = val'
+                @value= 'val=> d_checkboxValue = val'
             />
         </div>
         <div>
@@ -71,7 +71,7 @@
             <vue-date 
                 :label= "DTlabel"
                 :name= "DTname"
-                :value= 'dateValue'
+                :value= 'd_dateValue'
                 
                 :min= 'DTmin'
                 :max= 'DTmax'
@@ -81,9 +81,9 @@
                 
                 
                 
-                :inputIcon= 'DTinputIcon'
+                :d_inputIcon= 'DTd_inputIcon'
                 @notify= 'alerts'
-                @value= 'val=> dateValue = val'
+                @value= 'val=> d_dateValue = val'
             />
         </div>
     </div>
@@ -92,12 +92,12 @@
 <script>
 
     import inputResponse from '@/components/Alerts/inputResponse'
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     import componentDetails from '@/Views/componentDetails'
     import { alerts } from "@/typeScript/common/alerts"
     import emailInput from "@/components/FormElements/emailInput";
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
+    import radioInput from "@/components/FormElements/radioInput";
     import vueDate from "@/components/FormElements/vueDate";
 
     export default {
@@ -106,17 +106,17 @@
         mixins: [alerts ], //mixins
 
         data () {
-            const danger= 'this is an error' 
-            const warning= '' 
-            const info= '' 
+            const d_danger= 'this is an error' 
+            const d_warning= '' 
+            const d_info= '' 
             const d_booleanTrue= true
-            const charLimitReached= d_booleanTrue;
-            const inputIcon= 'fas fa-user'
-            const attr= null
-            const emailValue= ''
-            const searchDropboxValue= ''
-            const checkboxValue= null
-            const dateValue= ''
+            const d_charLimitReached= d_booleanTrue;
+            const d_inputIcon= 'fas fa-user'
+            const d_attr= null
+            const d_emailValue= ''
+            const d_searchDropboxValue= ''
+            const d_checkboxValue= null
+            const d_dateValue= ''
             const Elabel= 'Email'
             const DDlabel= 'Warehouse'
             const DTlabel= 'Date'
@@ -134,9 +134,9 @@
             const DTmin= '2000-12-12'
             const DTmax= '2040-12-12'
             const placeholder= 'Enter text here...'
-            const EinputIcon= 'fas fa-at'
-            const DinputIcon= 'fas fa-user'
-            const DTinputIcon= 'fas fa-calendar-alt'
+            const Ed_inputIcon= 'fas fa-at'
+            const Dd_inputIcon= 'fas fa-user'
+            const DTd_inputIcon= 'fas fa-calendar-alt'
             const options= this.$store.state.warehouse
             const size= null
             const inputResponse= {
@@ -146,28 +146,28 @@
                 description: '<p>In the <em>reactive</em>  model of alert monitoring, you react to problems reported by your users (for example, website users).</p>\
                             <p>In such a scenario, the CAS monitors a given website and the AMD continuously measures operation times for operations, transactions, and users. Using the gathered data, the report server displays details on charts so you can measure performance and troubleshoot problems.</p>\
                             <p>When problems are reported by users, you look at the reports and find out that, for example, the problem is with HTTP response time from a certain server. You then go and fix the problem: reboot or restart the process or take other corrective action. In other words, you <em>react</em>  to a problem that has already affected your users.</p>',
-                attributes: [
+                d_attributes: [
                     {
                         type: "error",
-                        value: danger,
+                        value: d_danger,
                         description: this.$store.state.navText.tag,
                         text: this.$store.state.navText.tagText,
                     },
                     {
-                        type: "warning",
-                        value: warning,
+                        type: "d_warning",
+                        value: d_warning,
                         description: this.$store.state.navText.tag,
                         text: this.$store.state.navText.tagText,
                     },
                     {
-                        type: "info",
-                        value: info,
+                        type: "d_info",
+                        value: d_info,
                         description: this.$store.state.navText.text,
                         text: this.$store.state.navText.textText,
                     },
                     {
-                        type: "charLimitReached",
-                        value: charLimitReached,
+                        type: "d_charLimitReached",
+                        value: d_charLimitReached,
                         description: this.$store.state.navText.icon,
                         text: this.$store.state.navText.iconText,
                     },
@@ -177,14 +177,14 @@
                         description: this.$store.state.navText.icon,
                         text: this.$store.state.navText.iconText,
                     },
-                ] //attributes
+                ] //d_attributes
             }
             return {
                 d_booleanTrue,
-                emailValue,
-                searchDropboxValue,
-                checkboxValue,
-                dateValue,
+                d_emailValue,
+                d_searchDropboxValue,
+                d_checkboxValue,
+                d_dateValue,
                 options,
                 size,
                 Elabel,
@@ -204,14 +204,14 @@
                 DTmin,
                 DTmax,
                 placeholder,
-                EinputIcon,
-                DTinputIcon,
-                danger,
-                attr,
-                warning,
-                info,
-                charLimitReached,
-                inputIcon,
+                Ed_inputIcon,
+                DTd_inputIcon,
+                d_danger,
+                d_attr,
+                d_warning,
+                d_info,
+                d_charLimitReached,
+                d_inputIcon,
                 inputResponse
             } //return
         }, //data
@@ -220,10 +220,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.danger= message;
+                    this.d_d_danger= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_d_warning= message;
                 }
             }, //alerts
 
@@ -239,7 +239,7 @@
             componentDetails,
                                   emailInput,
             searchableDropdownList,
-            checkboxInput,
+            radioInput,
             vueDate,
         }, //components
     } //default

@@ -29,7 +29,7 @@
                     value= ''
                     :selected= '!d_value'
                     disabled= 'true'
-                    :hidden= 'options.includes(d_value) && required'
+                    :hidden= 'options.indexOf(d_value)!=-1 && required'
                 >
                     pick an option
                </option> -->
@@ -45,11 +45,12 @@
 <script>
 import inputResponse from "@/components/Alerts/inputResponse";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "DropdownList",
 
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   components: {
     inputResponse
@@ -103,7 +104,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null
@@ -171,7 +172,7 @@ export default {
     //if val is a singlevalue, check if it is na acceptable input
     if (!multiple && (typeof val == "string" || typeof val == "number")) {
       //if value is an acceptable input store it in d_value for future manipulation
-      if (options && options.includes(val)) {
+      if (options && options.indexOf(val)!=-1) {
         this.d_value = val;
       }
       //if not trigger alert and set error message
@@ -190,7 +191,7 @@ export default {
       //loop through each value to check for validity of input value
       for (const v in val) {
         //if value is an acceptable input store it intempVal for future manipulation
-        if (options && options.includes(v)) {
+        if (options && options.indexOf(v)!=-1) {
           tempVal.push(v);
         }
         //if not save it in a temp errorval variable for further use to trigger alert

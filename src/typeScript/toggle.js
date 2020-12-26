@@ -24,7 +24,7 @@ export const toggle = {
   methods: {
     toggle: function(id) {
       const show = this.show;
-      if (!show.includes(id)) {
+      if (!show.indexOf(id!=-1)) {
         this.show = [...show, id];
       } else {
         //filter returns an array where id is not present
@@ -69,7 +69,7 @@ export const toggle = {
     }, //activeTheme
 
     isOpen: function(id) {
-      return this.show.includes(id);
+      return this.show.indexOf(id)!=-1;
     } //isOpen
   },
 

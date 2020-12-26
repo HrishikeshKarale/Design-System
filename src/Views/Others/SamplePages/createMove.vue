@@ -74,7 +74,7 @@
 
 <script>
 
-    import vueButton from "@/components/UIComponents/Buttons"
+    import vueButton from "@/components/UIComponents/Button"
     import vueWizard from "@/components/UIComponents/StepWizard/vueWizard"
     import vueTable from "@/components/UIComponents/Table/vueTable"
 
@@ -86,7 +86,6 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import dropdownList from "@/components/FormElements/dropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
     import radioInput from "@/components/FormElements/radioInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
@@ -119,7 +118,7 @@
             dropdownList,
             fileInput,
             multiToggle,
-            checkboxInput,
+            radioInput,
             radioInput,
             vueDate,
             vueInfo,
@@ -150,7 +149,7 @@
             toggleCloumns: function (newValue) {
                 var tempColumns= this.columns
 
-                if (!tempColumns.includes(newValue)) {
+                if (!tempColumns.indexOf(newValue)!=-1) {
                     tempColumns.push(newValue)
                     // console.log('added')
                 }
@@ -185,10 +184,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.danger= message;
+                    this.d_danger= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_warning= message;
                 }
             }, //alerts
         }, //methods

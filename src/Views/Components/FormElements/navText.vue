@@ -5,11 +5,6 @@
             :name= "d_name"
             :value= 'd_textBoxValue'
             :required= 'd_booleanTrue'
-           
-            
-            
-            
-            
             @notify= 'alerts'
             @value= 'val=> d_textBoxValue = val'
         />
@@ -45,12 +40,7 @@
                             :placeholder= "d_placeholder"
                             :maxlength= 'd_maxlength'
                             :required= 'd_booleanTrue'
-                           
-                            
-                            
-                            
                             :inputIcon= 'd_inputIcon'
-                            
                             @notify= 'alerts'
                             @value= 'val=> d_textBoxValue = val'
                         />
@@ -84,10 +74,10 @@
             //handels alerts thrown by the component
             alerts: function (type, message) {
                 if (type== 'error') {
-                    this.danger= message;
+                    this.d_danger= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_warning= message;
                 }
             }, //alerts
         }, //methods
@@ -113,7 +103,7 @@
             //     │         no _ or . at the beginning
             //     │
             //     username is 8-20 characters long
-            const pattern= new RegExp(/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/)
+            const pattern= /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
 
             const maxlength= 20
 

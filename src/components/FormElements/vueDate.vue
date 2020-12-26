@@ -13,8 +13,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: warning,
-                        errorContainer: danger,
+                        warningContainer: d_warning,
+                        errorContainer: d_danger,
                         iconPadding: inputIcon,
                         maskField: mask
                     }'
@@ -38,8 +38,8 @@
             />
         </div>
         <input-response
-            :warning= 'warning'
-            :error= 'danger'
+            :d_warning= 'd_warning'
+            :error= 'd_danger'
         />
     </div>
 </template>
@@ -48,12 +48,13 @@
 
     import inputResponse from '@/components/Alerts/inputResponse'; 
   import { validator } from "@/typeScript/validator"
+    import { alerts } from "@/typeScript/common/alerts";
 
     export default {
 
         name: 'vueDate',
 
-    mixins: [validator], //mixins
+    mixins: [validator, alerts], //mixins
 
         components: {
             inputResponse,
@@ -118,7 +119,7 @@
             },
 
             //sets the manual alerts
-            alert : {
+            alert: {
                 required: false,
                 type: Object,
             },
@@ -181,7 +182,7 @@
             validate: function () {
                 // console.log(this.d_value)
 
-                //initialize warning and error messages to null to accomodate change in alert messages
+                //initialize d_warning and error messages to null to accomodate change in alert messages
                 this.d_danger= null
                 this.d_warning= null
                 //loads current value stored from data variables into temp variable val for readability of code
@@ -193,7 +194,7 @@
                 //emit/send new values to parent component v-model attribute
                 this.$emit('input', val)
 
-                //if value for val(temp) exists check for warning triggers
+                //if value for val(temp) exists check for d_warning triggers
                 if (val) {
                     if (min && this.isDateHigherOrSameAs(min, val)) {
                         this.d_warning= 'Invalid Date: Please select a date after '+ min;

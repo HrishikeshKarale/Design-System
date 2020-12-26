@@ -14,7 +14,7 @@
       </div>
       <div 
         class= 'content'
-        v-if= '!d_hidden'
+        v-show= '!d_hidden'
       >
         <card-background
           low= "1"
@@ -41,17 +41,15 @@
 <script>
 
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import vueButton from "@/components/UIComponents/Buttons"
+  import vueButton from "@/components/UIComponents/Button"
 
   export default {
     name: 'goodVsBad',
 
     data () {
-      const ctx= this.toggle
       const d_hidden= this.message? true : false;
       return {
-        ctx,
-        d_hidden: d_hidden,
+        d_hidden,
       } //return
     }, //data
 

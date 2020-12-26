@@ -71,7 +71,7 @@
                     this.d_error= message;
                 }
                 else {
-                    this.warning= message;
+                    this.d_warning= message;
                 }
             }, //alerts
         }, //methods

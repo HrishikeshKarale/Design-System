@@ -205,7 +205,7 @@
               />
             </div>
             <div>
-              <checkbox-input 
+              <radio-input 
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
@@ -348,7 +348,7 @@
 <script>
 
   import vueFilter from "@/components/UIComponents/Filter/vueFilter"
-  import vueButton from "@/components/UIComponents/Buttons"
+  import vueButton from "@/components/UIComponents/Button"
   import vueCard from '@/components/UIComponents/Cards/vueCard'
   import sideNav from '@/components/UIComponents/Navigation/sideNav'
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
@@ -356,13 +356,12 @@
   import vueWizard from '@/components/UIComponents/StepWizard/vueWizard' 
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import textInput from "@/components/FormElements/textInput";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
+  import radioInput from "@/components/FormElements/radioInput";
   import vueTextarea from "@/components/FormElements/vueTextarea";
   import numberInput from "@/components/FormElements/numberInput";
   import vueInfo from "@/components/FormElements/vueInfo";
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import { alerts } from "@/typeScript/common/alerts";  
-  import radioInput from "@/components/FormElements/radioInput";
+  import { alerts } from "@/typeScript/common/alerts";
 
   import { mapState, mapActions } from 'vuex';
 
@@ -378,7 +377,7 @@
     mapActions,
 
     details () {
-      //buttons
+      //Button
       const d_category= this.$store.state.category;
       const d_booleanTrue= true
       const bookmark= d_booleanTrue
@@ -490,7 +489,7 @@
       toggleCloumns: function (newValue) {
         const tempColumns= this.d_columns
 
-        if (!tempColumns.includes(newValue)) {
+        if (!tempColumns.indexOf(newValue)!=-1) {
           tempColumns.push(newValue)
           // console.log('added')
         }
@@ -530,7 +529,7 @@
       createCard: function () {
         const quantity= this.d_numberValue
         const sku= this.d_SKU
-        const info= this.info
+        const info= this.d_info
         const details= new Array()
         // console.log('details: ', sku, quantity, info)
                  if (quantity && sku) {
@@ -573,10 +572,10 @@
       //handels alerts thrown by the component
       alerts: function (type, message) {
         if (type== 'error') {
-          this.danger= message;
+          this.d_danger= message;
         }
         else {
-          this.warning= message;
+          this.d_warning= message;
         }
       }, //alerts
     }, //methods
@@ -618,7 +617,7 @@
            vueWizard,
       searchableDropdownList,
       textInput,
-      checkboxInput,
+      radioInput,
       vueTextarea,
       numberInput,
       vueInfo,

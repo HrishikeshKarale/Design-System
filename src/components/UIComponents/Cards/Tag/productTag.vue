@@ -142,7 +142,7 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import numberInput from "@/components/FormElements/numberInput";
     import vueInfo from "@/components/FormElements/vueInfo";
-    import vueButton from "@/components/UIComponents/Buttons";
+    import vueButton from "@/components/UIComponents/Button";
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
 
     export default {

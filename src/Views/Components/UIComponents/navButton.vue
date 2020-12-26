@@ -21,7 +21,7 @@
 <script>
 
     import componentDetails from '@/Views/componentDetails'
-    import vueButton from '@/components/UIComponents/Buttons'
+    import vueButton from '@/components/UIComponents/Button'
     
 
     export default {
@@ -70,7 +70,7 @@
 
                     compName: 'vue-button',
 
-                    import: 'import vueButton from "@/components/UIComponents/Buttons"',
+                    import: 'import vueButton from "@/components/UIComponents/Button"',
 
                     description: '<p>The &lt;text-input&gt; tag specifies an input field where user can enter tect data.</p>\
                                 <p>&lt;text-input&gt; elements are used within a &lt;form&gt; element to declare input controls that allow users to input data.</p>\

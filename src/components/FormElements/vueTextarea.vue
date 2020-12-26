@@ -41,9 +41,12 @@
 
 <script>
 import inputResponse from "@/components/Alerts/inputResponse.vue";
+import { alerts } from "@/typeScript/common/alerts";
+import { validator } from "@/typeScript/validator";
 
 export default {
   name: "VueTextarea", //props
+  mixins: [validator, alerts],
 
   components: {
     inputResponse
@@ -93,7 +96,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null

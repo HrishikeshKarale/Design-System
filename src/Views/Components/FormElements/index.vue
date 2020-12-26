@@ -1,5 +1,5 @@
 <template>
-                           <article id= 'forms'>
+                <article id= 'forms'>
                     <h1>Forms</h1>
                     <p>
                         Forms are commonly used to provide user interaction on websites and in web applications. For example, login, registering, commenting, and purchasing. This tutorial shows you how to create accessible forms. The same concepts apply to all forms, whether they are processed client or server-side.
@@ -156,15 +156,14 @@
                                             text= "Confirm"
                                             category= "small"
                                             icon= "fas fa-clipboard-check"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
-                                        <div class= 'divide16'/>
                                         <vue-button 
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Cancel"
                                             category= "text"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                     </div>
                                 </fieldset>
@@ -289,7 +288,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <checkbox-input 
+                                        <radio-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -326,7 +325,7 @@
                                                 @notify= 'alerts'
                                                 @value= 'val=> d_textBoxValue = val'
                                             />
-                                            <checkbox-input 
+                                            <radio-input 
                                                 label= "Remember Me"
                                                 name= "shipDyaCheckboxField"
                                                 :value= 'd_checkboxValue'
@@ -1127,15 +1126,14 @@
                                                 text= "OK"
                                                 category= "small"
                                                 icon= "fas fa-clipboard-check"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1230,15 +1228,14 @@
                                                 tag= "consoleTextButton"
                                                 text= "OK"
                                                 category= "standard"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "standard"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1274,7 +1271,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <checkbox-input 
+                                        <radio-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1287,14 +1284,14 @@
                                             text= "Log In"
                                             category= "fullWidth"
                                             icon= "fas fa-sign-in-alt"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                         <vue-button 
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
                                             category= "text"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                     </fieldset>
                                 </template>
@@ -1325,7 +1322,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <checkbox-input 
+                                        <radio-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1339,18 +1336,17 @@
                                                 text= "Log In"
                                                 category= "standard"
                                                 icon= "fas fa-unlock-alt"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Forgot Username and/or Password"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
-                                                                           </fieldset>
+                                    </fieldset>
                                 </template>
                             </good-vs-bad>
                         </div>
@@ -1447,15 +1443,14 @@
                                                 text= "Confirm"
                                                 category= "small"
                                                 icon= "fas fa-clipboard-check"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1536,15 +1531,14 @@
                                                 tag= "consoleTextButton"
                                                 text= "OK"
                                                 category= "small"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1580,7 +1574,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <checkbox-input 
+                                        <radio-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1593,14 +1587,14 @@
                                             text= "Log In"
                                             category= "fullWidth"
                                             icon= "fas fa-sign-in-alt"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                         <vue-button 
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
                                             category= "text"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                     </fieldset>
                                 </template>
@@ -1632,7 +1626,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <checkbox-input 
+                                        <radio-input 
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1646,16 +1640,15 @@
                                                 text= "Log In"
                                                 category= "standard"
                                                 icon= "fas fa-unlock-alt"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Reset"
                                                 category= "text"
                                                 icon= "fas fa-redo"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                         <vue-button 
@@ -1663,7 +1656,7 @@
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
                                             category= "text"
-                                            :ctx= 'buttonClick'
+                                            :ctx= 'buttonClick.bind(this)'
                                         />
                                     </fieldset>
                                 </template>
@@ -1786,15 +1779,14 @@
                                                 text= "Confirm"
                                                 category= "small"
                                                 icon= "fas fa-clipboard-check"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1806,8 +1798,10 @@
                                         </legend>
                                         <vue-alert 
                                             type= 'danger'
+                                            code: "202.1.23"
                                             alert= 'Error'
                                             message= 'Form could not be submitted'
+                                            description= 'description of an alert explains the problem and what needs to be done in order to  solve this problem.'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
@@ -1880,15 +1874,14 @@
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
                                                 category= "small"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -1994,15 +1987,14 @@
                                                 text= "Confirm"
                                                 category= "small"
                                                 icon= "fas fa-clipboard-check"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -2089,15 +2081,14 @@
                                                 text= "Confirm"
                                                 category= "small"
                                                 icon= "fas fa-clipboard-check"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <div class= 'divide16'/>
                                             <vue-button 
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
                                                 category= "text"
-                                                :ctx= 'buttonClick'
+                                                :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
                                     </fieldset>
@@ -2111,7 +2102,7 @@
 <script>
 
     import goodVsBad from "@/Views/goodVsBad"
-    import vueButton from "@/components/UIComponents/Buttons"
+    import vueButton from "@/components/UIComponents/Button"
     import vueAlert from "@/components/Alerts/vueAlert"
     import textInput from "@/components/FormElements/textInput";
     import passwordInput from "@/components/FormElements/passwordInput";
@@ -2121,7 +2112,6 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import dropdownList from "@/components/FormElements/dropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
     import radioInput from "@/components/FormElements/radioInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
@@ -2145,7 +2135,7 @@
             dropdownList,
             fileInput,
             multiToggle,
-            checkboxInput,
+            radioInput,
             radioInput,
             vueDate,
             vueInfo,

@@ -28,8 +28,11 @@
 </template>
 
 <script>
+import { alerts } from "@/typeScript/common/alerts";
+import { validator } from "@/typeScript/validator";
 export default {
-  name: "MultiToggle",
+  name: "multiToggle",
+  mixins: [validator, alerts],
 
   props: {
     //sets heading/Label for multitoggle
@@ -75,7 +78,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null

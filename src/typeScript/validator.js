@@ -55,7 +55,7 @@ export const validator = {
         this.d_danger = this.isRequired();
       }
 
-      return { warning: d_warning, error: this.d_danger };
+      return { warning: this.d_warning, error: this.d_danger };
     }, //validator
 
     //value ebsent
@@ -89,7 +89,8 @@ export const validator = {
     }, //isTooLong
 
     //pattern matching
-    followsPattern: function(pattern, value) {
+    followsPattern: function (pattern, value) {
+      //if not regexp, convert to regexp
       if (!pattern.test(value)) {
         return "Wrong email format: Please follow the pattern " + pattern;
       }
@@ -111,11 +112,11 @@ export const validator = {
         this.d_info = alert["info"];
       }
     }
-    //store values passed as props into d_Value for future manipulation
+    //store values passed as props into d_value for future manipulation
     if (this.value) {
-      this.d_Value = this.value;
+      this.d_value = this.value;
 
-      if(d_needsValidation) {
+      if(this.d_needsValidation) {
         this.validate();
       }
     }

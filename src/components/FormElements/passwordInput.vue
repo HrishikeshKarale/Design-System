@@ -181,6 +181,7 @@
 <script>
 import inputResponse from "@/components/Alerts/inputResponse.vue";
 import { validator } from "@/typeScript/validator";
+import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "PasswordInput", //props
@@ -189,7 +190,7 @@ export default {
     inputResponse
   }, //components
 
-  mixins: [validator], //mixins
+  mixins: [validator, alerts], //mixins
 
   props: {
     //sets heading/Label for the input field
@@ -217,9 +218,7 @@ export default {
     pattern: {
       required: false,
       type: [RegExp, String, null],
-      default: new RegExp(
-        "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})"
-      )
+      default: () => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})/
     },
 
     //sets the placeholder attribute for the input field
@@ -237,7 +236,7 @@ export default {
     },
 
     //sets the manual alerts
-    alert : {
+    alert: {
       required: false,
       type: [Object, null],
       default: null
