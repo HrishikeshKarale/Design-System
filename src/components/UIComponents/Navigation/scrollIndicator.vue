@@ -143,8 +143,6 @@ export default {
         &:hover,
         &.active {
           border-radius: @borderRadius;
-          background-color: @primaryColor;
-          .boxShadow(@one);
           color: @white;
           //active block text;
           & > span:last-child {
@@ -185,19 +183,17 @@ export default {
             &:hover,
             &.active {
               background-color: none;
-              .boxShadow(none);
               & > span:last-child {
                 position: absolute;
                 width: max-content;
-                text-align: center;
+                text-align: right;
                 color: @primaryColor;
-                top: -32px;
-                right: -16px;
+                right: 32px;
                 font-weight: bold;
               }
             }
             & > span {
-              color: @backgroundColor;
+              color: @accentColor;
               .textShadow(@one);
             }
           }

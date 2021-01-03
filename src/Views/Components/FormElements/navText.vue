@@ -143,16 +143,22 @@
                             text: this.$store.state.navText.placeholderText,
                         },
                         {
-                            type: "maxlength",
-                            value: this.d_maxlength,
-                            description: this.$store.state.navText.maxlength,
-                            text: this.$store.state.navText.maxlengthText,
-                        },
-                        {
                             type: "pattern",
                             value: new RegExp(this.d_pattern),
                             description: this.$store.state.navText.pattern,
                             text: this.$store.state.navText.patternText,
+                        },
+                        {
+                            type: "minlength",
+                            value: this.d_minlength,
+                            description: this.$store.state.navText.minlength,
+                            text: this.$store.state.navText.minlengthText,
+                        },
+                        {
+                            type: "maxlength",
+                            value: this.d_maxlength,
+                            description: this.$store.state.navText.maxlength,
+                            text: this.$store.state.navText.maxlengthText,
                         },
                         {
                             type: "required",
@@ -177,6 +183,12 @@
                             value: this.d_readonly,
                             description: this.$store.state.navText.readonly,
                             text: this.$store.state.navText.readonlyText,
+                        },
+                        {
+                            type: "autocomplete",
+                            value: this.d_autocomplete,
+                            description: this.$store.state.navText.autocomplete,
+                            text: this.$store.state.navText.autocompleteText,
                         },
                         {
                             type: "inline",

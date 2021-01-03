@@ -1,7 +1,7 @@
 var data= {
     label: '<p>The &lt;label&gt; tag defines a label for a &lt;button&gt;, &lt;input&gt;, &lt;meter&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;select&gt;, or &lt;textarea&gt; element.</p>\
             <p>The &lt;label&gt; element does not render as anything special for the user. However, it provides a usability improvement for mouse users, because if the user clicks on the text within the &lt;label&gt; element, it toggles the control.</p>\
-            <p>The for attribute of the &lt;label&gt; tag should be equal to the id attribute of the related element to bind them together.</p>.',
+            <p>The for attribute of the &lt;label&gt; tag should be equal to the id attribute of the related element to bind them together.</p>',
 
     labelText: "Specifies a Label for the input element.",
 
