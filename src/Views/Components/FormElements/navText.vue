@@ -2,7 +2,7 @@
     <component-details
         :compData= 'd_text'
     >
-        <text-input 
+        <text-input
             :label= "d_label"
             :tag= "d_name"
             :value= 'd_textBoxValue'
@@ -10,19 +10,19 @@
             :placeholder= "d_placeholder"
             :minlength= 'd_minlength'
             :maxlength= 'd_maxlength'
-            :alert= 'alertObject'
+            :alert= 'd_alertObject'
             :required= 'd_required'
             :disabled= 'd_disabled'
             :autocomplete= 'd_autocomplete'
             :inline= 'd_inline'
-            :readOnly= 'd_readOnly'
+            :readOnly= 'd_readonly'
             :autofocus= 'd_autofocus'
             :mask = 'd_mask'
             :icon= 'd_icon'
             @notify= 'alerts'
             @value= 'val=> d_textBoxValue = val'
         />
-    </component-details> 
+    </component-details>
 </template>
 
 <script>
@@ -59,7 +59,7 @@
         data() {
             const d_label= 'Username'
             const d_name= 'usernameTextField'
-            const d_value= 'qwerty'
+            const d_value= 'JohnDoe123'
             const d_textBoxValue= ''
             const d_pattern= /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
             const d_maxlength= 20
@@ -68,13 +68,16 @@
             const d_booleanTrue= true
             const d_autofocus= !d_booleanTrue;
             const d_disabled= !d_booleanTrue;
-            const d_readOnly= !d_booleanTrue;
+            const d_readonly= !d_booleanTrue;
             const d_required= !d_booleanTrue;
             const d_autocomplete= !d_booleanTrue;
             const d_inline= !d_booleanTrue;
             const d_mask= !d_booleanTrue;
             const d_icon= 'fas fa-user'
-
+            const d_alertObject = {
+                error: "",
+                warning: ""
+            }
             return {
                 d_label,
                 d_name,
@@ -87,12 +90,13 @@
                 d_booleanTrue,
                 d_autofocus,
                 d_disabled,
-                d_readOnly,
+                d_readonly,
                 d_required,
                 d_autocomplete,
                 d_inline,
                 d_mask,
                 d_icon,
+                d_alertObject
             } //return
         }, //data
 
@@ -106,10 +110,12 @@
 
                     import: 'import textInput from "@/components/FormElements/textInput";',
 
-                    description: "<p>The &lt;text-input&gt; defines a single-line text field.</p>\
-                                <p>It used the &lt;input type= 'text'&gt; within &lt;text-input&gt;</p>\
-                                <p>&lt;text-input&gt; elements are usually used within a &lt;form&gt; element to declare input controls that allow users to input data.</p>\
-                                <p>The attributes for the text-input tag can be seen in the sample code.</p>",
+                    pattern: new RegExp(this.d_pattern),
+
+                    description: "<p>The &lt;text-input&gt; defines a single-line text field.\
+                    It used the &lt;input type= 'text'&gt; within &lt;text-input&gt;\
+                    &lt;text-input&gt; elements are usually used within a &lt;form&gt; element to declare input controls that allow users to input data.\
+                    The attributes for the text-input tag can be seen in the sample code.</p>",
 
                     attributes:[
                         {
@@ -123,12 +129,6 @@
                             value: this.d_name,
                             description: this.$store.state.navText.name,
                             text: this.$store.state.navText.nameText,
-                        },
-                        {
-                            type: "v-model",
-                            value: this.d_textBoxValue,
-                            description: this.$store.state.navText.vModel,
-                            text: this.$store.state.navText.vModelText,
                         },
                         {
                             type: "value",
@@ -150,7 +150,7 @@
                         },
                         {
                             type: "pattern",
-                            value: this.d_pattern,
+                            value: new RegExp(this.d_pattern),
                             description: this.$store.state.navText.pattern,
                             text: this.$store.state.navText.patternText,
                         },
@@ -180,7 +180,7 @@
                         },
                         {
                             type: "inline",
-                            value: this.inline,
+                            value: this.d_inline,
                             description: this.$store.state.navText.inline,
                             text: this.$store.state.navText.inlineText,
                         },
@@ -198,7 +198,7 @@
                         },
                         {
                             type: "alert",
-                            value: this.alertObject,
+                            value: this.d_alertObject,
                             description: this.$store.state.navText.alerts,
                             text: this.$store.state.navText.alertsText,
                         }

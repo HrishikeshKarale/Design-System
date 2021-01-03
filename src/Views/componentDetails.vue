@@ -1,156 +1,118 @@
 <template>
-  <div class= 'componentDetails'>
-	<fieldset>
-	  <legend :id= 'compData.title'>
-		<h3>
-		  {{compData.title}}
-		</h3>
-	  </legend>
-	  <div class= 'contentWrapper'>
-		<div class= 'contentText'>
-		  <div>
-			<h3>Definition and Usage</h3>
-		  </div>
-		</div>
-	  </div>
-	  <div class= 'contentWrapper'>
-		<div class= 'contentText'>
+	<article :id= 'compData.title'>
+		  <header>
+				<h3>Definition and Usage</h3>
+		  </header>
 		  <!-- definitionand usage text goes here -->
-		  <div v-html= 'compData.description'/>
-
-		  <div class= 'sampleCode'>
-			<div>
-			  <div class= 'title'>
+		  <p v-html= 'compData.description'/>
+		<section id= 'sampleCode'>
+			<div class= 'title'>
 				Syntax:
-			  </div>
-			  <div>
 				<vue-clipboard
-				  :copy= 'd_defaultcopy'
-				  tag= 'copySyntax'
-				  icon= 'fas fa-copy'
-				  id= 'codeSyntax'
-				  category="icon-sm"
+					:copy= 'd_defaultcopy'
+					tag= 'copySyntax'
+					icon= 'fas fa-copy'
+					id= 'codeSyntax'
+					category="icon-sm"
 				/>
-			  </div>
 			</div>
-			<div>
-			  <div class= 'contentImport'>
-
+			<div class= 'import' v-if="compData.import">
 				<vue-info
-				  label= 'Import Statement'
-				  :value= 'compData.import'
+					label= 'Import Statement'
+					:value= 'compData.import'
 				/>
 				<vue-clipboard
-				  :copy= 'compData.import'
-				  tag= 'copyImportStatement'
-				  text= 'import'
-				  id= 'importStatement'
-				  category="text-sm"
+					:copy= 'compData.import'
+					tag= 'copyImportStatement'
+					text= 'import'
+					id= 'importStatement'
+					category="text-sm"
 				/>
-			  </div>
 			</div>
-			<div>
-			  <div class= 'syntaxCode'>
+			<div class= 'import' v-if="compData.pattern">
+				<vue-info
+					label= 'Pattern'
+					:value= 'compData.pattern.toString()'
+				/>
+				<vue-clipboard
+					:copy= 'compData.pattern.toString()'
+					tag= 'copyImportStatement'
+					text= 'RegExp'
+					id= 'pattern'
+					category="text-sm"
+				/>
+			</div>
+			<div class= 'syntaxCode'>
 				<pre><code v-html= 'd_code'/></pre>
-			  </div>
-			  <div class= 'syntaxComponent'>
 				<slot/>
-			  </div>
 			</div>
-		  </div>
-		</div>
-	  </div>
-
-	  <div class= 'contentWrapper'>
-		<div class= 'contentText'>
-		  <div>
-			<h3
-			  id= 'AttributeTable'
-			  href= '#AttributeTable'
-			>
-			  Attributes
-			</h3>
-		  </div>
-		</div>
-		<div class= 'attributeTable'>
-		  <table>
-			<body>
-			  <tr>
-				<th>Name</th>
-				<th>Value Type</th>
-				<th>Description</th>
-			  </tr>
-			  <tr
-				v-for= "(attr, index) in compData.attributes"
-				:key= 'index'
-			  >
-				<td>
-				  <a :href= '"#"+ attr.type'>
-					{{attr.type}}
-				  </a>
-				</td>
-				<td>
-				  <span v-if= 'attr.type== "icon"'>
-					{{typeof attr.value}}
-				  </span>
-				  <span v-else-if= 'attr.type!= "pattern"'>
-					{{typeof attr.value}}
-				  </span>
-				  <span v-else>
-					RegExp
-				  </span>
-				</td>
-				<td>
-				  {{attr.text}}
-				</td>
-			  </tr>
-			</body>
-		  </table>
-		</div>
-	  </div>
-	  <div class= 'contentWrapper'>
-		<div class= 'contentText'>
-		  <h3
-			id= 'AttributeDetails'
-			href= '#AttributeDetails'
-		  >
-			Attributes details
-		  </h3>
-		</div>
-		<div class= 'attributeDetails'>
-		  <div
-			class= 'subSection'
-			v-for= "(attr, index) in compData.attributes"
-			:key= 'index'
-		  >
-			<h4 :id= 'attr.type'>
-			  {{attr.type}}
-			</h4>
-			<div v-html= 'attr.description'/>
-			<div v-if= 'typeof attr.value!= "function" && attr.type!= "v-model" && attr.type!= "value"'>
-			  <code-details
-				:attributes= 'd_vModelVariables'
-				:attr= "attr"
-				:compName= 'compData.compName'
-				:index= "index"
-				:hideCode= 'd_hideCode'
-				@change= 'change'
-			  />
-<!--
-				<br><br>
-				d_vModelVariables:<br> {{d_vModelVariables}}
-				<br><br>
-				compData:<br> {{compData.compName}}
-				<br><br>
-				d_hideCode:<br> {{d_hideCode}}
-				<br><br>
-				d_attr:<br> {{d_attr}} -->
+		</section>
+	  <section id= 'Attribute List'>
+		  <header>
+				<h3>
+					Attributes
+				</h3>
+		  </header>
+			<div class= 'subSection'>
+				<table>
+					<body>
+						<tr>
+							<th>Name</th>
+							<th>Value Type</th>
+							<th>Description</th>
+						</tr>
+						<tr
+							v-for= "(attr, index) in compData.attributes"
+							:key= 'index'
+						>
+							<td>
+								<a :href= '"#"+ attr.type'>
+									{{attr.type}}
+								</a>
+							</td>
+							<td>
+								<span v-if= 'attr.type== "icon"'>{{typeof attr.value}}</span>
+								<span v-else-if= 'attr.type!= "pattern"'>{{typeof attr.value}}</span>
+								<span v-else>RegExp</span>
+							</td>
+							<td>
+								{{attr.text}}
+							</td>
+						</tr>
+					</body>
+				</table>
 			</div>
-		  </div>
-		</div>
-	  </div> <!-- attr in compData.attributes LOAD ATTRIBUTE DETAILS-->
-	</fieldset>
-  </div>
+	  </section>
+		<section id = 'Attribute Details'>
+			<header>
+				<h3>
+					Attributes details
+				</h3>
+			</header>
+				<div
+					v-for= "(attr, index) in compData.attributes"
+					:key= 'index'
+				 	:id="attr.type"
+					class= 'subSection'
+				>
+					<header :id= 'attr.type'>
+						<h4>
+							{{attr.type}}
+						</h4>
+					</header>
+					<div v-html= 'attr.description'/>
+					<code-details
+						class="playpen"
+						:attributes= 'd_vModelVariables'
+						:attr= "attr"
+						:compName= 'compData.compName'
+						:index= "index"
+						:hideCode= 'd_hideCode'
+						@change= '(index, val) => (d_vModelVariables[index] = val)'
+					/>
+				</div>
+	  </section>
+	</article>
 </template>
 
 <script>
@@ -177,16 +139,17 @@
 	name: "componentDetails",
 
 	data() {
-	  const d_hideCode= false;
-	  const d_defaultcopy= null;
-	  const d_code= "";
-	  const d_booleanTrue= true;
+		const d_hideCode= false;
+		//used by clipboard to copy code
+		const d_defaultcopy= null;
+		//used to display code as text
+		const d_code= "";
+		// creats a copy of compData for manipulation and as a prop to code details
 	  const d_vModelVariables= null;
 	  return {
 		d_hideCode,
 		d_defaultcopy,
 		d_code,
-		d_booleanTrue,
 		d_vModelVariables
 	  } //return
 	}, //data
@@ -207,38 +170,6 @@
 		default: null
 	  },
 	}, //props
-
-	methods: {
-
-	  change: function (type, value) {
-		let attributes= this.d_vModelVariables
-
-		for (const attr in attributes) {
-		  if (attributes[attr].type== type) {
-			// console.log('change: ', attributes[attr].value, value, type)
-
-			//dropdown list
-			if (Array.isArray(value)) {
-			  // this.d_attr= value.type
-			  attributes[attr].value= value.value
-			  // console.log('change!!!!!: ', value.type, type)
-			}
-			//searchable dropdown list
-			else if (typeof value == 'object') {
-			  this.d_attr= value.type
-			  attributes[attr].value= value.selected
-			  // console.log('change!!!!!: ', value.type, value.selected, type)
-			}
-			//any other input
-			else {
-			  attributes[attr].value= value
-			}
-		  }
-		}
-		this.d_vModelVariables= attributes
-		// console.log('change: ', attributes, this.d_vModelVariables)
-	  }
-	}, //methods
 
 	created() {
 	  // console.log('0')
@@ -291,49 +222,64 @@
 			  tempval+= ']'
 			  defaultVal+= ']'
 			  // console.log(tempval, defaultVal)
-			  tempStr= '\t\t'+type+'= "'+tempval+'"\n';
-			  defaultTempStr= '\t\t'+type+'= "'+defaultVal+'"\n';
+			  tempStr= '\t'+type+'= "'+tempval+'"\n';
+			  defaultTempStr= '\t'+type+'= "'+defaultVal+'"\n';
 			  break;
 			}
 		  }
 
-		  tempStr= '\t\t'+type+'= "'+value+'"\n';
-		  defaultTempStr= '\t\t'+type+'= "'+value+'"\n';
+		  tempStr= '\t'+type+'= "'+value+'"\n';
+		  defaultTempStr= '\t'+type+'= "'+value+'"\n';
 		}
-		else if (typeof value== 'array'|| typeof value== 'object') {
+		else if (value instanceof RegExp){
+		  tempStr= "\t"+type+"= "+ "''" + "\n";
+		}
+		else if (Array.isArray(value)) {
 		  // console.log(type, value)
-		  let tempval= '['
-		  let val
-
-		  for (val in value) {
-			tempval+='"'+data[attr].value[val]+'"'
-			if (val < value.length-1) {
-			  tempval+= ', '
-			} //formatting arrays to include commas for display
+		  let tempval= '[';
+		  for (const val in value) {
+				tempval+='"'+value[val]+'"'
+				if (val < value.length-1) {
+					tempval+= ', '
+				} //formatting arrays to include commas for display
 		  }
 		  tempval+= ']'
 
-		  tempStr= '\t\t'+type+'= '+tempval+'\n';
+		  tempStr= '\t'+type+'= '+tempval+'\n';
 		  defaultTempStr= tempStr;
+		}
+		else if (typeof value == "object") {
+			let tempval = '{\n'
+			const tempKey = Object.keys(value);
+			for (const key in tempKey) {
+				const val = value[tempKey[key]];
+				tempval += '\t\t'+ tempKey[key] +': ' + (val ? val : '""');
+				// console.log("object", tempval);
+				if (key < tempKey.length-1) {
+					tempval+= ',\n'
+				}
+			}
+		  tempval+= '\n\t}'
+		  tempStr= '\t'+type+'= '+tempval+'\n';
 		}
 		else if (typeof value== 'boolean' ||
 			typeof value== 'number' ||
 			typeof value== 'date' ) {
-		  tempStr= '\t\t'+type+'= '+value+'\n';
+		  tempStr= '\t'+type+'= '+value+'\n';
 		  defaultTempStr= tempStr;
 		}
 		else if (typeof value== 'function') {
-		  tempStr= '\t\t'+type+'= '+value+'\n';
+		  tempStr= '\t'+type+'= '+JSON.stringify(value)+'\n';
 		  defaultTempStr= tempStr;
 		}
 		else {
-		  tempStr= '\t\t'+type+'= '+value+'\n';
+		  tempStr= '\t'+type+'= '+value+'\n';
 		  defaultTempStr= tempStr;
 		}
 		codet += tempStr;
 		defaultCodet += defaultTempStr;
 	  }
-	  this.d_code = "\t&lt;"+ compData.compName+" \n" + codet + "\t/&gt;";
+	  this.d_code = "&lt;"+ compData.compName+" \n" + codet + "/&gt;";
 	  this.d_defaultcopy = "<"+ compData.compName+" \n" + defaultCodet + "/>";
 	}, //created
 
@@ -361,10 +307,9 @@
 	watch: {
 
 	  d_vModelVariables: function (newValue, oldValue) {
-		// console.log(newValue)
-		if (newValue!= oldValue){
-		  return newValue
-		}
+			if (newValue!= oldValue){
+				return newValue
+			}
 	  }
 	} //watch
   } // default
@@ -373,59 +318,36 @@
 <style lang= "less" scoped>
 
   @import (reference) "./../Less/customMixins.less";
-  @import (reference) "./../Less/customVariables";
+	@import (reference) "./../Less/customVariables";
 
-  .componentDetails {
-		fieldset {
-			legend {
-				border-color: #333;
-				margin-bottom: 16px;
-				h3 {
-						color: @textColor;
-						font-weight: bold;
+		.playpen {
+			padding: 0 !important;
+		}
+
+		#sampleCode {
+			.displayCode();
+			.boxShadow(@one, @secondaryColor);
+			padding: 0 !important;
+		}
+
+		table {
+			.boxShadow(@one, @secondaryColor);
+			& > body {
+				& > tr {
+					& > td,
+					& > th {
+						padding: @spaceMd @spaceLg;
 					}
-			}
-			div {
-				&.contentWrapper {
-					display: flex;
-					flex-direction: row;
-					flex-wrap: wrap;
-					justify-content: space-between;
-					margin: 16px 32px;
-					div {
-						&.contentText {
-							width: 100%;
-							& > .sampleCode {
-								.displayCode();
-								.boxShadow(@one, @secondaryColor);
-							}
-						}
-						&.attributeTable {
-							& > table {
-								.boxShadow(@one, @secondaryColor);
-								& > body {
-									& > tr {
-										& > td,
-										& > th {
-											padding: @spaceMd @spaceLg;
-										}
-										& > th {
-											color: white;
-										}
-										&:first-child {
-											background-color: @primaryColor;
-										}
-										&:nth-child(2n) {
-											background-color: @secondaryColor;
-										}
-									}
-								}
-							}
-						}
+					& > th {
+						color: white;
+					}
+					&:first-child {
+						background-color: @primaryColor;
+					}
+					&:nth-child(2n) {
+						background-color: @secondaryColor;
 					}
 				}
 			}
 		}
-	}
-
 </style>

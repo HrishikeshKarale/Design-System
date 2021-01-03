@@ -60,12 +60,12 @@ export default {
     },
     autocomplete: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: true
     },
     validate: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     }
   },

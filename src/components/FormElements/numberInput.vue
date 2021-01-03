@@ -289,9 +289,11 @@ import { alerts } from "@/typeScript/common/alerts";
     @import (reference) "./../../Less/customMixins.less";
 
     .numberInput {
-        min-width: 120px !important;
-        max-width: 120px !important;
 
         .inputcss();
+        & > div {
+            min-width: 96px !important;
+            max-width: 96px !important;
+        }
     }
 </style>

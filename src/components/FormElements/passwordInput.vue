@@ -231,14 +231,14 @@ export default {
     //sets the maxlength attribute for the input field
     maxlength: {
       required: false,
-      type: [Number, null],
+      type: Number,
       default: 50
     },
 
     //sets the manual alerts
     alert: {
       required: false,
-      type: [Object, null],
+      type: Object,
       default:  () => {
           return {
               error: "",
@@ -250,35 +250,35 @@ export default {
     //sets the required attribute for the input field
     required: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the disabled attribute for the input field
     disabled: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the autofocus attribute for the input field
     autofocus: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the autocomplete attribute for the input field
     autocomplete: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: true
     },
 
     //sets the readonly attribute for the input field
     readonly: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
@@ -293,21 +293,21 @@ export default {
     //if true, the component generates a confirmation password box in order to check the password matches the original box password
     match: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //checks if label options should appear on the same line or not
     inline: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //reserves space and created a mask if set to true
     mask: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     }
   }, //props

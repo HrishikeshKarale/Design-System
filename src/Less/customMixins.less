@@ -273,7 +273,7 @@
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  margin: @spaceLg auto;
+  align-self: center;
   border-radius: @borderRadius;
   width: 80%;
   min-width: 640px;
@@ -291,46 +291,45 @@
       justify-content: space-between;
       background-color: @navBackground;
 
-      &>div {
-        flex-grow: 0;
 
-        &.title {
-          color: @backgroundColor;
-          font-weight: bold;
+      &.title {
+        color: @backgroundColor;
+        font-weight: bold;
+        align-items: center;
 
-          span.fas {
-            color: @primaryColor;
-            font-size: @fontSizeSm * 2;
-          }
+        span.fas {
+          color: @primaryColor;
+          font-size: @fontSizeSm * 2;
         }
       }
     }
 
-    &>.syntaxCode {
-      overflow-x: auto;
-      overflow-y: hidden;
+    &.syntaxCode {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
     }
 
-    &>.contentImport {
+    &.import {
       position: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      font-size: @fontSize;
+      justify-content: space-between;
     }
-
 
     &>div {
       display: flex;
       flex-flow: column;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      flex-grow: 1;
       padding: @spaceMd @spaceLg;
       font-size: @fontSize;
-      flex-grow: 2;
+
+      &.reactiveComponent {
+        margin: auto;
+      }
 
       &.interactiveCode {
-        flex-grow: 1;
 
         &>div {
           display: flex;
@@ -344,12 +343,14 @@
           }
 
           &>div {
-            margin-top: auto;
-            margin-bottom: auto;
+            display: flex;
+            margin-top: @spaceMd;
             font-weight: bold;
+            align-self: center;
 
             &:last-child {
               font-weight: normal;
+              margin-left: @spaceSm;
 
               input {
                 .checkboxSize();
@@ -528,7 +529,7 @@
         &+select,
         &+input,
         &+textarea {
-          padding: @spaceMd @spaceLg @spaceMd 2*@spaceLg;
+          padding: @spaceMd @spaceLg @spaceMd 2*@spaceLg+@spaceMd ;
           border-top-left-radius: 0px;
           border-bottom-left-radius: 0px;
           border-left-width: 0px;

@@ -74,16 +74,7 @@ var data= {
     Text: "Specifies icon displayed within the input element.",
                inline: '<p>label and input field inline when set to true else input field goeson next line.</p>',
     inlineText: "Specifies that the label and input tags within the input element appear on the same line or on different lines.",
-               alerts: '<p>@alert is a function defined in our vue methods designed to catch any error/warning messages thrown by the component.</p>\
-                <pre>\
-                alerts: function (type, message) {<br>\
-                        if (type== \'error\') {<br>\
-                                this.d_danger= message;<br>\
-                        }<br>\
-                        else {<br>\
-                                this.d_warning= message;<br>\
-                        }<br>\
-                },</pre>',
+               alerts: '<p>@alert is a function defined in our vue methods designed to catch any error/warning messages thrown by the component.</p>',
     alertsText: "Specifies the function that should be used to catch any alert emitted by the input element.",
                multiple: '<p>The multiple attribute is a boolean attribute.</p>\
                 <p>When present, it specifies that multiple options can be selected at once.</p>\

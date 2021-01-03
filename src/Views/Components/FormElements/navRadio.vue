@@ -1,191 +1,288 @@
+// https://tympanus.net/Development/AnimatedCheckboxes/
 <template>
-    <div class= "navRadio">
-            <div class= 'FormElementsTitle'>
-                <div 
-                    v-if= 'd_radioValue'
-                    class= 'value'
-                >
-                    <label>Value Returned:</label> {{d_radioValue}}
-                </div>
-                <div 
-                    v-if= 'danger'
-                    class= 'error'
-                >
-                    <label>Error Returned:</label> {{danger}}
-                </div>
-                <div 
-                    v-if= 'warning'
-                    class= 'warning'
-                >
-                    <label>Warning Returned:</label> {{warning}}
-                </div>
-            </div>
-            <div class= "FormElementsContent">
-                <form>
-                    <component-details
-                        :compData= 'd_radio'
-                    >
-                        <radio-input 
-                            :label= "d_label"
-                            :name= "d_name"
-                            :value= 'd_radioValue'
-                            :options= 'd_options'
-                            @selected= 'selected'
-                            @notify= 'alerts'
-                            @value= 'val=> d_radioValue = val'
-                        />
-                    </component-details>
-                </form>
-            </div>
-           </div>
+  <div class="radioInput" :class="{ inline: inline }">
+    <label
+      v-if="label || (type == 'checkbox' && !options)"
+      :class="{ maskField: mask }"
+    >
+      <!-- checkbox only -->
+      <input
+        v-if="type == 'checkbox' && !options && !mask"
+        ref="singleCheckbox"
+        type="checkbox"
+        :name="name"
+        :checked="value"
+        :disabled="disabled"
+        :autofocus="autofocus"
+        @input="check(value)"
+      />
+      {{ label }}
+      <abbr v-if="required" title="Required Field">*</abbr>
+      <span v-else> - Optional field<abbr>*</abbr></span>
+      <input :name="name" type="hidden" :value="value" :required="required" />
+      <vue-button
+        v-if="options && value"
+        id="clearSelection"
+        button-name="resetValue"
+        button-text="Reset"
+        button-icon="fas fa-undo"
+        button-style="icon-sm"
+        :ctx="clearSelection.bind(this)"
+      />
+    </label>
+    <div
+      v-if="options"
+      :class="{
+        box: box,
+        warningContainer: dWarning,
+        errorContainer: dDanger,
+        maskField: mask,
+        inline: inline
+      }"
+    >
+      <template v-if="!mask">
+        <label
+          v-for="(option, index) in options"
+          :key="index"
+          :class="{
+            errorLabel: dDanger,
+            checked:
+              value && type == 'checkbox'
+                ? value.includes(option)
+                : option == value
+          }"
+          :style="{
+            'color: #aaaaaa; cursor: not-allowed;': disabled
+          }"
+        >
+          <input
+            :ref="option"
+            :type="type"
+            :name="option"
+            :checked="
+              value && type == 'checkbox'
+                ? value.includes(option)
+                : option == value
+            "
+            :value="option"
+            :disabled="disabled"
+            :autofocus="index == 0 ? autofocus : false"
+            @input="check(option)"
+          />
+          {{ option }}
+        </label>
+      </template>
+    </div>
+    <input-response :error="dDanger" />
+  </div>
 </template>
 
 <script>
-    import componentDetails from "@/Views/componentDetails";
-    import radioInput from "@/components/FormElements/radioInput";
-    import { alerts } from "@/typeScript/common/alerts";    
+import inputResponse from "@/components/Alerts/inputResponse.vue";
+import vueButton from "@/components/UIComponents/Button/index.vue";
 
-    export default {
-        name: "navRadio",  
+export default {
+  name: "RadioInput", //watch
 
-        mixins: [ alerts ],
+  components: {
+    inputResponse,
+    vueButton
+  }, //emits
 
-        components: {
-                       componentDetails,
-            radioInput
-        }, //components
+  props: {
+    //sets type for the input field
+    //valid values include ['checkbox', 'radio']
+    type: {
+      required: false,
+      type: [String, null],
+      validator: function(value) {
+        return ["checkbox", "radio"].indexOf(value) !== -1;
+      },
+      default: "checkbox"
+    },
 
-        methods: {
+    //sets heading for the checkboxes category
+    //in case of single/no-option checkbox, label is used as checkbox text
+    label: {
+      required: false,
+      type: [String, null],
+      default: null
+    },
 
-            selected: function (value) {
-                // console.log("selected: ", value)
-                this.d_radioValue= value
-            }, //selected
+    //sets the name attribute for the input field (required field in case of forms)
+    name: {
+      required: false,
+      type: [String, null],
+      default: "radioInput"
+    },
 
-            //handels alerts thrown by the component
-            alerts: function (type, message) {
-                if (type== 'error') {
-                    this.d_danger= message;
-                }
-                else {
-                    this.d_warning= message;
-                }
-            }, //change
-        }, //methods
+    //users can pass preset values for the input field
+    value: {
+      required: true,
+      type: [Boolean, Array, String, Number, null],
+      // type: function(props) {
+      //   if (!props.options) {
+      //     return [Boolean, null];
+      //   } else if (props.type != "radio") {
+      //     return [Array, null];
+      //   } else {
+      //     //type == radio
+      //     return [String, Number, null];
+      //   }
+      // },
+      default: function(props) {
+        if (!props.options) {
+          return false;
+        } else if (props.type == "checkbox") {
+          return [];
+        } else {
+          //type == radio
+          return null;
+        }
+      }
+    },
 
-        data() {
+    //Array of options/labels in case of multiple checkboxes.
+    options: {
+      required: false,
+      type: Array,
+      default: null
+    },
 
-            const label= "Warehouse"
-                       const name= "radioField"
-                       const value= ''
-                       const radioValue= null
+    //sets the manual alerts
+    alertMessage: {
+      required: false,
+      type: Object,
+      default: null
+    },
 
-            const options= this.$store.state.warehouse
+    //sets the required attribute for the input field
+    required: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
 
-            const d_booleanTrue= true
+    //sets the disabled attribute for the input field
+    disabled: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
 
-            const alerts= this.alerts
-                       return {
+    //sets the autofocus attribute for the input field
+    autofocus: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
 
-                d_label: d_label,
+    //checks if label options should appear on the same line or not
+    inline: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
 
-                d_name: d_name,
+    //reserves space and created a mask if set to true
+    mask: {
+      required: false,
+      type: Boolean,
+      default: false
+    },
 
-                d_value: d_value,
+    //checks if label options should appear on the same line or as buttons
+    box: {
+      required: false,
+      type: Boolean,
+      default: false
+    }
+  }, //methods
 
-                d_radioValue: d_radioValue,
+  emits: ["selected"],
 
-                d_options: d_options,
+  data() {
+    const dDanger = null;
+    const dWarning = null;
+    const dSuccess = null;
+    const dInfo = null;
+    return {
+      //stores errors thrown by the input fields
+      dDanger: dDanger,
+      dWarning: dWarning,
+      dSuccess: dSuccess,
+      dInfo: dInfo
+    }; //return
+  }, //beforeMount
 
-                d_booleanTrue: d_booleanTrue,
+  beforeMount() {
+    const alertMessage = this.alertMessage;
 
-                d_alerts: d_alerts,
+    if (alertMessage) {
+      if (alertMessage["error"]) {
+        this.dDanger = alertMessage["error"];
+      } else if (alertMessage["warning"]) {
+        this.dWarning = alertMessage["warning"];
+      } else if (alertMessage["success"]) {
+        this.dSuccess = alertMessage["success"];
+      } else if (alertMessage["info"]) {
+        this.dInfo = alertMessage["info"];
+      }
+    }
+  }, //data
 
-                danger: null,
+  methods: {
+    clearSelection: function() {
+      const options = this.options;
+      options.forEach(option => {
+        let tag = this.$refs[option].checked;
 
-                warning: null,
+        if (tag) {
+          tag = false;
+        }
+      });
+      this.$emit("value", null);
+    }, //clearSelection
 
-                d_radio: {
-
-                    title: 'Radio Input Field',
-
-                    compName: 'radio-input',
-
-                    import: 'import radioInput from "@/components/FormElements/radioInput";',
-
-                    description: '<p>The &lt;radio-input"&gt; tag defines a radio button.</p>\
-                                    <p>Radio buttons are normally presented in groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.</p>',
-
-                    attributes:[
-                        {
-                            type: "label",
-                            value: d_label,
-                            description: this.$store.state.navText.label,
-                            text: this.$store.state.navText.labelText,
-                        },
-                        {
-                            type: "name",
-                            value: d_name,
-                            description: this.$store.state.navText.name,
-                            text: this.$store.state.navText.nameText,
-                        },
-                        {
-                            type: "value",
-                            value: d_value,
-                            description: this.$store.state.navText.value,
-                            text: "Specifies the value (boolean/string) for the &lt;radio-inpu&gt element.",
-                        },
-                        {
-                            type: "v-model",
-                            value: 'd_radioValue',
-                            description: this.$store.state.navText.vModel,
-                            text: this.$store.state.navText.vModelText,
-                        },
-                        {
-                            type: "options",
-                            value: d_options,
-                            description: this.$store.state.navText.options,
-                            text: this.$store.state.navText.optionsText,
-                        },
-                        {
-                            type: "required",
-                            value: d_booleanTrue,
-                            description: this.$store.state.navText.required,
-                            text: this.$store.state.navText.requiredText,
-                        },
-                        {
-                            type: "disabled",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.disabled,
-                            text: this.$store.state.navText.disabledText,
-                        },
-                        {
-                            type: "autofocus",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.autofocus,
-                            text: this.$store.state.navText.autofocusText,
-                        },
-                        {
-                            type: "inline",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.inline,
-                            text: this.$store.state.navText.inlineText
-                        },
-                        {
-                            type: "mask",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.mask,
-                            text: this.$store.state.navText.maskText,
-                        },
-                        {
-                            type: "alerts",
-                            value: d_alerts,
-                            description: this.$store.state.navText.alerts,
-                            text: this.$store.state.navText.alertsText,
-                        }
-                    ]
-                }, //radio
-            } //return
-        }, //data
-    } //default
+    check: function(checkedValue) {
+      let value = this.value;
+      if (this.options) {
+        //checkbox
+        if (this.type == "checkbox") {
+          if (value) {
+            value = [...value];
+            const index = value.indexOf(checkedValue);
+            if (index != -1) {
+              value = value.splice(index, 1);
+              // console.log("check: ", Array.from(value), typeof value);
+              this.$emit("value", value);
+            } else {
+              value = [...this.value, checkedValue];
+              this.$emit("value", value);
+            }
+          } else {
+            this.$emit("value", [checkedValue]);
+          }
+        } else {
+          // if type = radio
+          // console.log(checkedValue, this.type);
+          this.$emit("value", checkedValue);
+        }
+      } else {
+        //this.options does not exist
+        // console.log(this.$refs["singleCheckbox"].checked);
+        this.$emit("value", this.$refs["singleCheckbox"].checked);
+      }
+    } //check
+  } //components
+}; //default
 </script>
+
+<style lang="less" scoped>
+@import (reference) "../../../Less/customMixins.less";
+@import (reference) "../../../Less/customVariables.less";
+
+.radioInput {
+  .checkboxCss();
+}
+</style>

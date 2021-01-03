@@ -19,13 +19,13 @@
           &lt;{{compName}}
         </div>
         <template
-          v-for= '(attribute, index) in attributes'
+          v-for= 'attribute in attributes'
         >
-          <div :key= 'index'>
-            <div v-if= 'attr.type== attribute.type || d_hideCode'>
+          <div :key= 'attribute.type'>
+            <div v-if= 'attributes[index].type== attribute.type || d_hideCode'>
               {{attribute.type}}:
             </div>
-            <div v-if= 'attr.type==attribute.type'>
+            <div v-if= 'attributes[index].type==attribute.type'>
               <template v-if= 'typeof attribute.value== "number"'>
                 <number-input
                   name= "numField"
@@ -36,7 +36,7 @@
               </template>
               <template v-else-if= 'typeof attribute.value== "boolean"'>
 								<radio-input
-									label="d_value"
+									label="TRUE"
 									type="checkbox"
 									tag="radioBool"
 									:value="d_value"
@@ -44,7 +44,7 @@
 									@notify="alerts"
 								/>
               </template>
-              <template v-else-if= 'Array.isArray(attr.value) || typeof attr.value== "array"' >
+              <template v-else-if= 'Array.isArray(attributes[index].value) || typeof attributes[index].value== "array"' >
                 <searchable-dropdown-list
                   name= "playpen"
                   :value= 'd_value'
@@ -54,25 +54,22 @@
                 />
               </template>
               <template v-else>
-                <template v-if= "d_attr && d_attr.type.indexOf(attr.type)!= -1">
-                  <dropdown-list
-                    :name= 'attr.type+"dropdownField"'
-                    :value= 'd_value'
-                    :options= 'd_attr.value[d_attr.type.indexOf(attr.type)]'
-                  	@value= "val => (d_value = val)"
-                  />
-                </template>
-                <template v-else-if= 'typeof attr.value== "object"' >
+                <template v-if= 'typeof attributes[index].value== "object"' >
                   <div
-                    v-for= '(keys, index) in Object.keys(attr.value)'
-                    :key= 'index'
+                    v-for= 'k in Object.keys(attributes[index].value)'
+                    :key= 'k'
                   >
-                    {{keys}}: {{attr.value[keys]}}
+                    {{k}}:
+                    <text-input
+                      :name= "attributes[index].type+'textField'"
+                      :value= 'd_value[k]'
+                      @value= "val => (d_value[k] = val)"
+                    />
                   </div>
                 </template>
                 <template v-else>
                   <text-input
-                    :name= "attr.type+'textField'"
+                    :name= "attributes[index].type+'textField'"
                     :value= 'd_value'
                   	@value= "val => (d_value = val)"
                   />
@@ -112,6 +109,16 @@
 
     mixins: [alerts],
 
+    watch: {
+      d_value: function (newValue, oldValue) {
+        const tempAttr = this.attributes[this.index];
+        tempAttr.value = newValue;
+        if (newValue !== oldValue) {
+          this.$emit("change", this.index, tempAttr);
+        }
+      }
+    },
+
     data () {
       const d_hideCode= false;
       const d_value= null;
@@ -148,12 +155,6 @@
         required: false,
         type: Boolean,
         default: false
-      },
-
-      d_attr: {
-        required: false,
-        type: Object,
-        default: null
       }
     }, //props
 
@@ -171,19 +172,20 @@
     computed: {
 
       reactiveCode: function () {
-        let attr= this.attr
-				let attributes= this.attributes
+        let attributes= this.attributes
+        let attr= this.attributes[this.index]
         let str= {};
+
         for (let attribute in attributes) {
 					let type= attributes[attribute].type
           let value= attributes[attribute].value
-          if (type!= 'v-model' && attr.type== type) {
-						if(attr.type == "ctx") {
-							str[type] = this.d_value;
-            }
-            else {
+          if (attr.type== type) {
+						// if(attr.type == "ctx") {
+						// 	str[type] = this.d_value;
+            // }
+            // else {
 							str[type]= this.d_value;
-            }
+            // }
           } //when the attribute types match, replace the value for user input
           else {
             str[type]= value
@@ -202,14 +204,9 @@
 
     created() {
 
-			this.d_hideCode= this.hideCode
-			let attributes= this.attributes
-
-      for (let attribute in attributes) {
-        if (this.attr.type== attributes[attribute].type) {
-					this.d_value= attributes[attribute].value;
-        }
-      }
+			this.d_hideCode = this.hideCode
+      let attributes = this.attributes
+      this.d_value = attributes[this.index].value
     }, //created
   } //default
 </script>
@@ -221,6 +218,6 @@
 
   .codeDetails {
     .displayCode();
-    .boxShadow(@one);
+    .boxShadow(@one, @secondaryColor);
   }
 </style>

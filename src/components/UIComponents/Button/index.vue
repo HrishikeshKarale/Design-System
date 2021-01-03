@@ -88,20 +88,20 @@ export default {
 
     disabled: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     autofocus: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the autocomplete attribute for the input field
     autocomplete: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: true
     },
 

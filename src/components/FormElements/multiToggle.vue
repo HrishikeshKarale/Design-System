@@ -59,7 +59,7 @@ export default {
     //toggles label for multitoggle
     showLabels: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
@@ -80,7 +80,7 @@ export default {
     //sets the manual alerts
     alert: {
       required: false,
-      type: [Object, null],
+      type: Object,
       default:  () => {
           return {
               error: "",
@@ -92,21 +92,21 @@ export default {
     //sets the disabled attribute for multitoggle
     disabled: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //checks if label options should appear on the same line or not
     inline: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //reserves space and created a mask if set to true
     mask: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     }
   }, //props

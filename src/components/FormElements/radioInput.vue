@@ -142,14 +142,14 @@ export default {
     //Array of options/labels in case of multiple checkboxes.
     options: {
       required: false,
-      type: [Array, null],
+      type: Array,
       default: null
     },
 
     //sets the manual alerts
     alert: {
       required: false,
-      type: [Object, null],
+      type: Object,
       default:  () => {
           return {
               error: "",
@@ -161,42 +161,42 @@ export default {
     //sets the required attribute for the input field
     required: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the disabled attribute for the input field
     disabled: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //sets the autofocus attribute for the input field
     autofocus: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //checks if label options should appear on the same line or not
     inline: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //reserves space and created a mask if set to true
     mask: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     },
 
     //checks if label options should appear on the same line or as buttons
     box: {
       required: false,
-      type: [Boolean, null],
+      type: Boolean,
       default: false
     }
   }, //props
