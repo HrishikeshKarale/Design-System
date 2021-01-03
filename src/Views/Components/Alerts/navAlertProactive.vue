@@ -13,7 +13,7 @@
             </component-details>
                <div>
             <h2>Email Input</h2>
-            <email-input 
+            <email-input
                 :label= "Elabel"
                 :name= "Ename"
                 :value= 'd_emailValue'
@@ -22,18 +22,18 @@
                 :maxlength= 'maxlength'
                 :multiple= 'd_booleanTrue'
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 :d_= 'Ed_'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_emailValue = val'
             />
         </div>
         <div>
             <h2>Searchable DropDown Input</h2>
-            <searchable-dropdown-list 
+            <searchable-dropdown-list
                 :label= "DDlabel"
                 :name= "SDDname"
                 :value= 'd_searchDropboxValue'
@@ -41,46 +41,46 @@
                 :placeholder= 'placeholder'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'maxlength'
-                
+
                 :required= 'd_booleanTrue'
-               
-                
+
+
                 :d_= 'd_'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> searchDropdownValue = val'
             />
         </div>
         <div>
             <h2>CheckBox Input</h2>
-            <radio-input 
+            <radio-input
                 :label= "DDlabel"
                 :name= "Cname"
                 :value= 'd_checkboxValue'
                 :options= 'options'
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 @notify= 'alerts'
                 @value= 'val=> d_checkboxValue = val'
             />
         </div>
         <div>
             <h2>Date Input</h2>
-            <vue-date 
+            <vue-date
                 :label= "DTlabel"
                 :name= "DTname"
                 :value= 'd_dateValue'
-                
+
                 :min= 'DTmin'
                 :max= 'DTmax'
                 :pattern= "DTpattern"
                 :required= 'd_booleanTrue'
-               
-                
-                
-                
+
+
+
+
                 :d_= 'DTd_'
                 @notify= 'alerts'
                 @value= 'val=> d_dateValue = val'
@@ -106,9 +106,9 @@
         mixins: [alerts ], //mixins
 
         data () {
-            const d_danger= 'this is an error' 
-            const d_warning= '' 
-            const d_info= '' 
+            const d_danger= 'this is an error'
+            const d_warning= ''
+            const d_info= ''
             const d_booleanTrue= true
             const d_charLimitReached= d_booleanTrue;
             const d_= 'fas fa-user'
@@ -130,7 +130,7 @@
             const DTpattern= "^d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
             const maxlength= 20
             const min= 0
-            const max= 99999 
+            const max= 99999
             const DTmin= '2000-12-12'
             const DTmax= '2040-12-12'
             const placeholder= 'Enter text here...'
@@ -149,13 +149,13 @@
                 d_attributes: [
                     {
                         type: "error",
-                        value: d_danger,
+                        value: alert? alert.error: false,
                         description: this.$store.state.navText.tag,
                         text: this.$store.state.navText.tagText,
                     },
                     {
                         type: "d_warning",
-                        value: d_warning,
+                        value: alert? alert.warning: false,
                         description: this.$store.state.navText.tag,
                         text: this.$store.state.navText.tagText,
                     },

@@ -13,8 +13,8 @@
         </label>
         <div
             :class= '{
-                        warningContainer: d_warning,
-                        errorContainer: d_danger,
+                        warningContainer: alert? alert.warning: false,
+                        errorContainer: alert? alert.error: false,
                         iconPadding: icon,
                         maskField: mask
                     }'

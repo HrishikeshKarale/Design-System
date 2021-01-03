@@ -7,8 +7,8 @@
     </label>
     <div
       :class="{
-        warningContainer: d_warning,
-        errorContainer: d_danger,
+        warningContainer: alert? alert.warning: false,
+        errorContainer: alert? alert.error: false,
         iconPadding: icon,
         maskField: mask
       }"
@@ -33,7 +33,7 @@
         <!-- option --></datalist
       ><!--datalist-->
     </div>
-    <input-response :d_warning="d_warning" :error="d_danger" />
+    <input-response :d_warning="alert? alert.warning: false" :error="alert? alert.error: false" />
   </div>
 </template>
 

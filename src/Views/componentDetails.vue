@@ -232,7 +232,7 @@
 		  defaultTempStr= '\t'+type+'= "'+value+'"\n';
 		}
 		else if (value instanceof RegExp){
-		  tempStr= "\t"+type+"= "+ "''" + "\n";
+		  tempStr= "\t"+type+"= "+ value + "\n";
 		}
 		else if (Array.isArray(value)) {
 		  // console.log(type, value)
@@ -327,6 +327,7 @@
 		#sampleCode {
 			.displayCode();
 			.boxShadow(@one, @secondaryColor);
+			overflow-y: auto;
 			padding: 0 !important;
 		}
 

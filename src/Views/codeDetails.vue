@@ -44,7 +44,7 @@
 									@notify="alerts"
 								/>
               </template>
-              <template v-else-if= 'Array.isArray(attributes[index].value) || typeof attributes[index].value== "array"' >
+              <template v-else-if= 'Array.isArray(attributes[index].value)' >
                 <searchable-dropdown-list
                   name= "playpen"
                   :value= 'd_value'

@@ -8,8 +8,8 @@
     </label>
     <div
       :class="{
-        warningContainer: d_warning,
-        errorContainer: d_danger,
+        warningContainer: alert? alert.warning: false,
+        errorContainer: alert? alert.error: false,
         iconPadding: icon,
         maskField: mask
       }"
@@ -33,8 +33,8 @@
       />
     </div>
     <input-response
-      :warning="d_warning"
-      :error="d_danger"
+      :warning="alert? alert.warning: false"
+      :error="alert? alert.error: false"
       :char-limit-reached="
         d_value ? maxlength - d_value.length <= 0 : false
       "

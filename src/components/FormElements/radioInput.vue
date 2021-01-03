@@ -34,8 +34,8 @@
       v-if="options"
       :class="{
         box: box,
-        warningContainer: d_warning,
-        errorContainer: d_danger,
+        warningContainer: alert? alert.warning: false,
+        errorContainer: alert? alert.error: false,
         maskField: mask,
         inline: inline
       }"
@@ -45,7 +45,7 @@
           v-for="(option, index) in options"
           :key="index"
           :class="{
-            errorLabel: d_danger,
+            errorLabel: alert? alert.error: false,
             checked: isChecked(option)
           }"
           :style="{
@@ -66,7 +66,7 @@
         </label>
       </template>
     </div>
-    <input-response :error="d_danger" />
+    <input-response :error="alert? alert.error: false" />
   </div>
 </template>
 
