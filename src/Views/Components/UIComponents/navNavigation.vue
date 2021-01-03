@@ -3,7 +3,7 @@
             <component-details
                 :compData= 'd_navigation'
             >
-                <side-nav :logo-link="d_logoLink" :nav="d_nav" />
+                <side-nav :logo-link= "d_logoLink" :nav= "d_nav" />
             </component-details>
            </div>
 </template>
@@ -12,7 +12,7 @@
 
     import sideNav from '@/components/UIComponents/Navigation/sideNav'
     import componentDetails from '@/Views/componentDetails'
-    
+
 
     import { mapState, mapActions } from 'vuex';
 
@@ -94,7 +94,7 @@
                 this.selected= id
 
                 if (id) {
-                    this.content= true   
+                    this.content= true
                 }
                 else {
                     this.content= false

@@ -1,5 +1,5 @@
 <template>
-<div class='navBestPractices'>
+<div class= 'navBestPractices'>
     https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118
     <div>
         <p>Code readability is a universal subject in the world of computer programming. It's one of the first things we learn as developers. This article will detail the fifteen most important best practices when writing readable code. </p>

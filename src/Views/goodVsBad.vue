@@ -1,18 +1,18 @@
 <template>
     <div class= "goodVsBad">
-      <div 
-      v-if="message"
+      <div
+      v-if= "message"
         class= 'header'
       >
         {{message}}
-        <vue-button 
+        <vue-button
           tag= "toggleExample"
           :icon= '!d_hidden? "fas fa-chevron-up":"fas fa-chevron-down"'
           category= 'icon-sm'
           :ctx= 'toggle.bind(this)'
         />
       </div>
-      <div 
+      <div
         class= 'content'
         v-show= '!d_hidden'
       >
@@ -20,7 +20,7 @@
           low= "1"
           class= 'good'
         >
-          <span class="fas fa-check-circle"><em>Recomended</em></span>
+          <span class= "fas fa-check-circle"><em>Recomended</em></span>
           <div>
             <slot name= 'good'/>
           </div>
@@ -29,7 +29,7 @@
           low= "1"
           class= 'bad'
         >
-          <span class="fas fa-times-circle"><em>NOT Recomended</em></span>
+          <span class= "fas fa-times-circle"><em>NOT Recomended</em></span>
           <div>
             <slot name= 'bad'/>
           </div>
@@ -84,14 +84,14 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around; 
+    justify-content: space-around;
 
     & > div {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      justify-content: space-between; 
+      justify-content: space-between;
       width: 100%;
       padding: @spaceMd @spaceLg;
 
@@ -115,8 +115,8 @@
             width: 99%;
             /* min-width: fit-content; */
             margin: @spaceSm;
-            border-radius: @borderRadius @borderRadius 0 0; 
-            margin: @spaceXs; 
+            border-radius: @borderRadius @borderRadius 0 0;
+            margin: @spaceXs;
             & > em {
               font-weight: bold;
               margin: @spaceMd;
@@ -150,6 +150,6 @@
         border-radius: @borderRadius;
         color: @textColor;
       }
-    }    
+    }
   }
 </style>

@@ -20,8 +20,8 @@
                     }'
         >
             <span
-                v-if= ''
-                :class= ''
+                v-if= 'icon'
+                :class= 'icon'
             />
             <input
                 v-if= '!mask'

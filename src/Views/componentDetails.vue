@@ -13,10 +13,10 @@
 					tag= 'copySyntax'
 					icon= 'fas fa-copy'
 					id= 'codeSyntax'
-					category="icon-sm"
+					category= "icon-sm"
 				/>
 			</div>
-			<div class= 'import' v-if="compData.import">
+			<div class= 'import' v-if= "compData.import">
 				<vue-info
 					label= 'Import Statement'
 					:value= 'compData.import'
@@ -26,10 +26,10 @@
 					tag= 'copyImportStatement'
 					text= 'import'
 					id= 'importStatement'
-					category="text-sm"
+					category= "text-sm"
 				/>
 			</div>
-			<div class= 'import' v-if="compData.pattern">
+			<div class= 'import' v-if= "compData.pattern">
 				<vue-info
 					label= 'Pattern'
 					:value= 'compData.pattern.toString()'
@@ -39,7 +39,7 @@
 					tag= 'copyImportStatement'
 					text= 'RegExp'
 					id= 'pattern'
-					category="text-sm"
+					category= "text-sm"
 				/>
 			</div>
 			<div class= 'syntaxCode'>
@@ -92,7 +92,7 @@
 				<div
 					v-for= "(attr, index) in compData.attributes"
 					:key= 'index'
-				 	:id="attr.type"
+				 	:id= "attr.type"
 					class= 'subSection'
 				>
 					<header :id= 'attr.type'>
@@ -102,7 +102,7 @@
 					</header>
 					<div v-html= 'attr.description'/>
 					<code-details
-						class="playpen"
+						class= "playpen"
 						:attributes= 'd_vModelVariables'
 						:attr= "attr"
 						:compName= 'compData.compName'
@@ -207,8 +207,8 @@
 			  for (const val in D_attrValue) {
 
 				if (value==D_attrValue[val]) {
-				  tempval+='<label>'+D_attrValue[val]+'</label>'
-				  defaultVal+=''+D_attrValue[val]+''
+				  tempval+= '<label>'+D_attrValue[val]+'</label>'
+				  defaultVal+= ''+D_attrValue[val]+''
 				}
 				else {
 				  tempval+= D_attrValue[val]
@@ -238,7 +238,7 @@
 		  // console.log(type, value)
 		  let tempval= '[';
 		  for (const val in value) {
-				tempval+='"'+value[val]+'"'
+				tempval+= '"'+value[val]+'"'
 				if (val < value.length-1) {
 					tempval+= ', '
 				} //formatting arrays to include commas for display

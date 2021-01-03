@@ -1,5 +1,5 @@
 <template>
-    <div class='navAgileBestPractices'>
+    <div class= 'navAgileBestPractices'>
     https://www.altexsoft.com/blog/business/25-scrum-process-best-practices-that-set-your-agile-workflow-for-efficiency/
 
         <h1 class= "h1 whitepaper-title">25 Scrum Process Best Practices that Set Your Agile Workflow for Efficiency</h1>

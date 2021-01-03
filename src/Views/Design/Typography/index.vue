@@ -14,7 +14,7 @@
       </header>
       <p>
         The official Comet typeface is Roboto and it is suggested for use on Comet print publications. In the event that a unit does not have access to Roboto fonts, other suggested fonts are Times New Roman or Open Sans.
-      </p>   
+      </p>
       <p>
         If Roboto is available as webfonts and is recomended for the use of web. If you do not have access to this font, we recommend replacing it with Lato to enhance clarity and readability on the web.
       </p>
@@ -90,7 +90,7 @@
 <script>
 
   import cardBackground from  '@/components/UIComponents/Cards/cardBackground'
-  import fontInfo from '@/Views/fontInfo' 
+  import fontInfo from '@/Views/fontInfo'
 
   export default {
     name: 'typography',
@@ -182,7 +182,7 @@
         '+',
         '÷',
         '×',
-        '=',
+        '= ',
         '&gt;',
         '®',
         '©',
@@ -284,7 +284,7 @@
     & > #characters {
       align-self: center;
 
-      & > div {  
+      & > div {
         color: @backgroundColor;
         display: flex;
         flex-direction: row;

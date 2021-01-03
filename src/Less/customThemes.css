@@ -51,7 +51,7 @@ html {
   --shadowColor: var(--offBlack);
 }
 
-html[theme='darkMode'] {
+html[theme= 'darkMode'] {
   --primaryColor: #588157;
   --secondaryColor: #ff5e5b;
   --accentColor: #3a5a40;
@@ -62,7 +62,7 @@ html[theme='darkMode'] {
   --shadowColor: var(--offBlack);
 }
 
-html[theme='blueMode'] {
+html[theme= 'blueMode'] {
   --textColor: var(--offWhite);
   --backgroundColor: var(--offBlack);
   --navBackground: var(--black);
@@ -72,7 +72,7 @@ html[theme='blueMode'] {
   /* indigo dye: 003A65, Blue NCS: 0094C6, Opera Mauve: ad7a99, Eggshell: f4f1de, DeepChampagne: f2cc8f */
 }
 
-html[theme='blueMode'] {
+html[theme= 'blueMode'] {
   --textColor: var(--offWhite);
   --backgroundColor: var(--offBlack);
   --navBackground: var(--black);
@@ -82,7 +82,7 @@ html[theme='blueMode'] {
   /* maize Crayola : fbce51, black: 000000, Flame: cf5c36, lavender Blush: eee5e9, grey Web: 7c7c7c */
 }
 
-html[theme='greenMode'] {
+html[theme= 'greenMode'] {
   --textColor: var(--offWhite);
   --backgroundColor: var(--offBlack);
   --navBackground: var(--black);
@@ -92,7 +92,7 @@ html[theme='greenMode'] {
   /* maize Crayola : fbce51, Moss Green: 709255, dark Moss green: 3e5622, Phthalo Green: 172815, Persian Pink: f991cc */
 }
 
-html[theme='purpleMode'] {
+html[theme= 'purpleMode'] {
   --textColor: var(--offWhite);
   --backgroundColor: var(--offBlack);
   --navBackground: var(--black);

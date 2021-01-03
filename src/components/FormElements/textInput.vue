@@ -1,43 +1,43 @@
 <template>
-  <div class="textInput" :class="{ inline: inline }">
-    <label v-if="label" :class="{ maskField: mask }">
+  <div class= "textInput" :class= "{ inline: inline }">
+    <label v-if= "label" :class= "{ maskField: mask }">
       {{ label }}
-      <abbr v-if="required" title="Required Field">*</abbr>
+      <abbr v-if= "required" title= "Required Field">*</abbr>
       <span v-else> - Optional field<abbr>*</abbr></span>
     </label>
     <div
-      :class="{
+      :class= "{
         warningContainer: alert? alert.warning: false,
         errorContainer: alert? alert.error: false,
         iconPadding: icon,
         maskField: mask
       }"
     >
-      <span v-if="icon" :class="icon" />
+      <span v-if= "icon" :class= "icon" />
       <input
-        v-if="!mask"
-        v-model="d_value"
-        type="text"
-        :name="tag"
-        :placeholder="placeholder"
-        :maxlength="maxlength"
-        :minlength="minlength"
-        :pattern="pattern"
-        :autofocus="autofocus"
-        :disabled="disabled"
-        :readonly="readonly"
-        :autocomplete="autocomplete"
-        :required="required"
-        @input="validate"
+        v-if= "!mask"
+        v-model= "d_value"
+        type= "text"
+        :name= "tag"
+        :placeholder= "placeholder"
+        :maxlength= "maxlength"
+        :minlength= "minlength"
+        :pattern= "pattern"
+        :autofocus= "autofocus"
+        :disabled= "disabled"
+        :readonly= "readonly"
+        :autocomplete= "autocomplete"
+        :required= "required"
+        @input= "validate"
       />
     </div>
     <input-response
-      :warning="alert? alert.warning: false"
-      :error="alert? alert.error: false"
-      :char-limit-reached="
+      :warning= "alert? alert.warning: false"
+      :error= "alert? alert.error: false"
+      :char-limit-reached= "
         d_value ? maxlength - d_value.length <= 0 : false
       "
-      :maxlength="maxlength"
+      :maxlength= "maxlength"
     />
   </div>
 </template>
@@ -181,7 +181,7 @@ export default {
 }; //default
 </script>
 
-<style lang="less" scoped>
+<style lang= "less" scoped>
 @import (reference) "../../Less/customMixins.less";
 .textInput {
   .inputcss();

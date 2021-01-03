@@ -1,7 +1,7 @@
 <template>
   <div class= 'codeDetails'>
     <div>
-      <div class='title'>
+      <div class= 'title'>
         Playpen:
       </div>
       <div>
@@ -36,12 +36,12 @@
               </template>
               <template v-else-if= 'typeof attribute.value== "boolean"'>
 								<radio-input
-									label="TRUE"
-									type="checkbox"
-									tag="radioBool"
-									:value="d_value"
-									@value="val => (d_value = val)"
-									@notify="alerts"
+									label= "TRUE"
+									type= "checkbox"
+									tag= "radioBool"
+									:value= "d_value"
+									@value= "val => (d_value = val)"
+									@notify= "alerts"
 								/>
               </template>
               <template v-else-if= 'Array.isArray(attributes[index].value)' >

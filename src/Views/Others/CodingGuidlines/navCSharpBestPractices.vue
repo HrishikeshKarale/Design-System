@@ -1,5 +1,5 @@
 <template>
-    <div class='navCSharpBestPractices'>
+    <div class= 'navCSharpBestPractices'>
         https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions
 
         <h1>C# Coding Conventions (C# Programming Guide)</h1>
@@ -133,7 +133,7 @@
 
             </button></div>
                         <pre><code name= "csProgGuideCodingConventions#6" data-author-content= "string displayName = <template>">
-                <div class='navCSharpBestPractices'>
+                <div class= 'navCSharpBestPractices'>
                 https://www.altexsoft.com/blog/business/25-scrum-process-best-practices-that-set-your-agile-workflow-for-efficiency/
 
             <h1 sourcefile= "docs/csharp/programming-guide/inside-a-program/coding-conventions.md" sourcestartlinenumber= "11">C# Coding Conventions (C# Programming Guide)</h1>
@@ -282,7 +282,7 @@
 
     <span>Copy</span>
 
-    </button></div><pre ><code name= "csProgGuideCodingConventions#8" data-author-content= "// When the type of a variable is clear from the context, use var 
+    </button></div><pre ><code name= "csProgGuideCodingConventions#8" data-author-content= "// When the type of a variable is clear from the context, use var
     // in the declaration.
     var var1 = &quot;This is clearly a string.&quot;;
     var var2 = 27;
@@ -318,7 +318,7 @@
 
     <span>Copy</span>
 
-    </button></div><pre ><code name= "csProgGuideCodingConventions#10" data-author-content= "// Naming the following variable inputInt is misleading. 
+    </button></div><pre ><code name= "csProgGuideCodingConventions#10" data-author-content= "// Naming the following variable inputInt is misleading.
     // It is a string.
     var inputInt = Console.ReadLine();
     Console.WriteLine(inputInt);
@@ -431,7 +431,7 @@
 
     <span>Copy</span>
 
-    </button></div><pre ><code name= "csProgGuideCodingConventions#14" data-author-content= "// First, in class Program, define the delegate type and a method that  
+    </button></div><pre ><code name= "csProgGuideCodingConventions#14" data-author-content= "// First, in class Program, define the delegate type and a method that
     // has a matching signature.
 
     // Define the type.
@@ -609,7 +609,7 @@
     <span>Copy</span>
 
     </button></div><pre ><code><span class= "hljs-comment">// Object initializer.</span>
-    <span>var</span> instance3 = <span>new</span> ExampleClass { Name = <span class= "hljs-string">"Desktop"</span>, ID = <span class= "hljs-number">37414</span>, 
+    <span>var</span> instance3 = <span>new</span> ExampleClass { Name = <span class= "hljs-string">"Desktop"</span>, ID = <span class= "hljs-number">37414</span>,
         Location = <span class= "hljs-string">"Redmond"</span>, Age = <span class= "hljs-number">2.3</span> };
 
     <span class= "hljs-comment">// Default constructor and assignment statements.</span>
@@ -807,7 +807,7 @@
     <span>Copy</span>
 
     </button></div>
-                <pre ><code name= "csProgGuideCodingConventions#8" data-author-content= "// When the type of a variable is clear from the context, use var 
+                <pre ><code name= "csProgGuideCodingConventions#8" data-author-content= "// When the type of a variable is clear from the context, use var
     // in the declaration.
     var var1 = &quot;This is clearly a string.&quot;;
     var var2 = 27;
@@ -847,7 +847,7 @@
     <span>Copy</span>
 
     </button></div>
-                <pre ><code name= "csProgGuideCodingConventions#10" data-author-content= "// Naming the following variable inputInt is misleading. 
+                <pre ><code name= "csProgGuideCodingConventions#10" data-author-content= "// Naming the following variable inputInt is misleading.
     // It is a string.
     var inputInt = Console.ReadLine();
     Console.WriteLine(inputInt);
@@ -967,7 +967,7 @@
     <span>Copy</span>
 
     </button></div>
-                <pre ><code name= "csProgGuideCodingConventions#14" data-author-content= "// First, in class Program, define the delegate type and a method that  
+                <pre ><code name= "csProgGuideCodingConventions#14" data-author-content= "// First, in class Program, define the delegate type and a method that
     // has a matching signature.
 
     // Define the type.
@@ -1125,7 +1125,7 @@
     // If the divisor is 0, the second clause in the following condition
     // causes a run-time error. The &amp;&amp; operator short circuits when the
     // first expression is false. That is, it does not evaluate the
-    // second expression. The &amp; operator evaluates both, and causes 
+    // second expression. The &amp; operator evaluates both, and causes
     // a run-time error when divisor is 0.
     if ((divisor != 0) &amp;&amp; (dividend / divisor > 0))
     {
@@ -1196,7 +1196,7 @@
 
     </button></div>
                 <pre ><code name= "csProgGuideCodingConventions#21" data-author-content= "// Object initializer.
-    var instance3 = new ExampleClass { Name = &quot;Desktop&quot;, ID = 37414, 
+    var instance3 = new ExampleClass { Name = &quot;Desktop&quot;, ID = 37414,
         Location = &quot;Redmond&quot;, Age = 2.3 };
 
     // Default constructor and assignment statements.
@@ -1206,7 +1206,7 @@
     instance4.Location = &quot;Redmond&quot;;
     instance4.Age = 2.3;
     "><span class= "hljs-comment">// Object initializer.</span>
-    <span>var</span> instance3 = <span>new</span> ExampleClass { Name = <span class= "hljs-string">"Desktop"</span>, ID = <span class= "hljs-number">37414</span>, 
+    <span>var</span> instance3 = <span>new</span> ExampleClass { Name = <span class= "hljs-string">"Desktop"</span>, ID = <span class= "hljs-number">37414</span>,
         Location = <span class= "hljs-string">"Redmond"</span>, Age = <span class= "hljs-number">2.3</span> };
 
     <span class= "hljs-comment">// Default constructor and assignment statements.</span>

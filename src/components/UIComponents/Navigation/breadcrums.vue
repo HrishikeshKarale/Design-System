@@ -15,7 +15,7 @@
 			<h1 v-else>
 				{{isComponent(path).name}}</h1>
 			</h1>
-			<span v-if="pathBreakdown.length - 1 > index"  :key='path' class="fas fa-angle-right" />
+			<span v-if="pathBreakdown.length - 1 > index"  :key= 'path' class="fas fa-angle-right" />
 		</template>
   </div>
 </template>

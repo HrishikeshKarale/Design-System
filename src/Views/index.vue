@@ -93,7 +93,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang= "less" scoped>
 
   @import (reference) "../Less/customMixins.less";
   @import (reference) "../Less/customVariables.less";

@@ -15,8 +15,8 @@
     </label>
     <div
       :class= '{
-            warningContainer: warning,
-            errorContainer: danger,
+            warningContainer: alert? alert.warning: false,
+            errorContainer: alert? alert.error: false,
             iconPadding: icon,
             maskField: mask
           }'

@@ -64,7 +64,7 @@
           >
             <div
               :key="index"
-              v-if="Array.isArray(color.color) || typeof color.color=='array'"
+              v-if="Array.isArray(color.color) || typeof color.color== 'array'"
               :id="color.subTitle"
               class="subSection"
             >
@@ -79,17 +79,17 @@
                     :title="cols.text"
                     logo="fas fa-circle fa-5x"
                     :logoColor="`#${cols.hex}}`"
-                    :details='{ cols: ["Name", "HEX", "RGB"], data: [cols.name, cols.hex, hexToRgb(cols.hex)]}'
-                    low='2'
-                    high='1'
+                    :details= '{ cols: ["Name", "HEX", "RGB"], data: [cols.name, cols.hex, hexToRgb(cols.hex)]}'
+                    low= '2'
+                    high= '1'
                   >
-                    <div slot='actionButtons'>
+                    <div slot= 'actionButtons'>
                       <vue-clipboard
-                        :copy='cols.hex'
-                        :tag='"copy #"+ cols.hex +" Color"'
-                        icon='fas fa-copy'
+                        :copy= 'cols.hex'
+                        :tag= '"copy #"+ cols.hex +" Color"'
+                        icon= 'fas fa-copy'
                         category="icon"
-                        :id='cols.hex'
+                        :id= 'cols.hex'
                       />
                     </div>
                   </vue-card>
@@ -602,7 +602,7 @@
         </p>
       </div>
     </section>
-    <section id='resources'>
+    <section id= 'resources'>
       <header>
         <h3>
           Resources

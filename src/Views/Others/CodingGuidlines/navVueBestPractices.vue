@@ -1,5 +1,5 @@
 <template>
-    <div class='navVueBestPractices'>
+    <div class= 'navVueBestPractices'>
         https://blog.usejournal.com/vue-js-best-practices-c5da8d7af48d
         <div>
             <h1>VueJs best practices ✓

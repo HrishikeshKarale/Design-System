@@ -111,7 +111,7 @@
               type: "value",
               value: this.d_value,
               description: this.$store.state.navText.value,
-              text: "Specifies the value for the &lt;text-input&gt element.",
+              text: "Specifies the value for the &lt;email-input&gt element.",
             },
             {
               type: "placeholder",

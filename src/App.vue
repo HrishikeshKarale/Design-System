@@ -10,8 +10,8 @@
         </vue-header>
       </template> -->
       <template slot= 'menu'>
-      <side-nav :logo-link="d_logoLink" :nav="d_navData" />
-        <!-- <vue-navigation 
+      <side-nav :logo-link= "d_logoLink" :nav= "d_navData" />
+        <!-- <vue-navigation
           class= 'sideNav'
           :class= '{"showNav": show}'
           :navigationTitles= 'd_navData'
@@ -20,8 +20,8 @@
           :selected= 'd_selected'
           @nav= 'nav'
         />
-        <vue-button 
-          class= 'toggle' 
+        <vue-button
+          class= 'toggle'
           :icon= 'show? "fas fa-angle-double-right": "fas fa-angle-double-left"'
           category= 'icon'
           :ctx= 'toggleNav'
@@ -124,7 +124,7 @@
         this.d_selected= id;
       }
     }, //methods
-    
+
     beforeMount() {
       var name= this.getCookie('user');
       if(name== '') {

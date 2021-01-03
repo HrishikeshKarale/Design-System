@@ -19,7 +19,7 @@
     <h4>
     type: {{category}}
     </h4>
-    <vue-button 
+    <vue-button
       tag= "consoleTextButton"
       text= "Click Me "
       icon= "fas fa-registered"
@@ -35,14 +35,14 @@
     title= 'Sample Navigation'
     logo= 'fas fa-user fa-3x'
     :details= 'd_details'
-    :ctx= 'd_carctx' 
+    :ctx= 'd_carctx'
     :cardFooter= 'd_cardFooter'
     :bookmark= 'bookmark'
-    @bookmark="val => bookmark = val"
+    @bookmark= "val => bookmark = val"
     low= '2'
   >
     <div slot= 'actionButtons'>
-      <div >  
+      <div >
       <vue-button
             tag= "toggleFilter"
             text= "Click Me "
@@ -54,12 +54,12 @@
     </div>
   </vue-card>
 
-    
+
     <h3>Clickable Employee Card</h3>
     <vue-card
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_carctx' 
+      :ctx= 'd_carctx'
       low= '2'
       high= '3'
     />
@@ -67,22 +67,22 @@
     <h3>Employee Card (no click event)</h3>
     <vue-card
       logo= 'fas fa-user fa-3x'
-      :details= 'd_details' 
+      :details= 'd_details'
       low= '1'
     />
-    
+
     <h3>Customer Card</h3>
     <vue-card
       title= 'Custom Card'
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_carctx' 
+      :ctx= 'd_carctx'
       low= '2'
       high= '3'
     >
       <div slot= 'actionButtons'>
         <div>
-          <vue-button 
+          <vue-button
             tag= "toggleFilter"
             text= "Click Me "
             icon= "fas fa-times"
@@ -92,13 +92,13 @@
         </div>
       </div>
     </vue-card>
-    
+
     <h3>Customer Card no actionButton</h3>
     <vue-card
       title= 'Custom Card'
       logo= 'fas fa-user fa-3x'
       :details= 'd_details'
-      :ctx= 'd_carctx' 
+      :ctx= 'd_carctx'
       :cardFooter= 'd_cardFooter'
       low= '1'
     />
@@ -121,8 +121,8 @@
     />
 
 
-    <h3>Step Wizard</h3>  
-    <vue-wizard 
+    <h3>Step Wizard</h3>
+    <vue-wizard
       :steps= 'd_steps'
       :alert= "{'error': danger, 'warning': warning}"
     >
@@ -131,7 +131,7 @@
           <fieldset>
             <legend>Order Processing Details</legend>
             <div>
-              <text-input 
+              <text-input
                 label= "Customer"
                 name= "customerField"
                 :value= 'd_customerVal'
@@ -145,7 +145,7 @@
               />
             </div>
             <div>
-              <searchable-dropdown-list 
+              <searchable-dropdown-list
                 label= "Cost Center"
                 name= "costCenterField"
                 :value= 'd_costCenterVal'
@@ -161,7 +161,7 @@
               />
             </div>
             <div>
-              <text-input 
+              <text-input
                 label= "Order Name"
                 name= "orderNameField"
                 :value= 'd_OrderNameVal'
@@ -175,7 +175,7 @@
               />
             </div>
             <div>
-              <text-input 
+              <text-input
                 label= "Recipient"
                 name= "orderNameField"
                 :value= 'd_recipientVal'
@@ -189,7 +189,7 @@
               />
             </div>
             <div>
-              <searchable-dropdown-list 
+              <searchable-dropdown-list
                 label= "Delivery Option"
                 name= "customerField"
                 :value= 'd_deliveryOptionVal'
@@ -205,7 +205,7 @@
               />
             </div>
             <div>
-              <radio-input 
+              <radio-input
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
@@ -216,7 +216,7 @@
               />
             </div>
             <div>
-              <vue-textarea 
+              <vue-textarea
                 label= "Add a note for Recipient"
                 name= "recipientNoteField"
                 :value= 'd_recipientNote'
@@ -242,7 +242,7 @@
           >
             <div class= 'content'>
               <div>
-                <text-input 
+                <text-input
                   label= "SKU"
                   name= "SKUinputName"
                   :value= 'd_SKU'
@@ -256,7 +256,7 @@
               </div>
               <div>
                 <div>
-                  <number-input 
+                  <number-input
                     label= "Quantity"
                     name= "OrderQuantity"
                     :value= 'd_numberValue'
@@ -269,7 +269,7 @@
                   />
                 </div>
                 <div>
-                  <vue-info 
+                  <vue-info
                     label= "Available"
                     :value= 'info'
                   />
@@ -277,7 +277,7 @@
               </div>
             </div>
             <div>
-              <vue-button 
+              <vue-button
                 tag= "AddSKUButton"
                 text= "Add SKU"
                 icon= "fas fa-plus"
@@ -287,7 +287,7 @@
             </div>
           </card-background>
           <div
-            v-for= '(dat, index) in d_SKUdetails["details"]' 
+            v-for= '(dat, index) in d_SKUdetails["details"]'
             :key= 'index'
             class= 'tagCards'
           >
@@ -295,8 +295,8 @@
               :details= '{"cols": d_SKUdetails["cols"], "details": dat}'
             >
               <div slot= 'actionButtons'>
-                <div >  
-                  <vue-button 
+                <div >
+                  <vue-button
                     tag= "closeButton"
                     text= "Click Me "
                     icon= "fas fa-times"
@@ -312,14 +312,14 @@
     </vue-wizard>
 
     <h3>Navigation</h3>
-    <div style= 'background-color: grey; 
+    <div style= 'background-color: grey;
           width: fit-content'
     >
-      <side-nav :logo-link="d_logoLink" :nav="d_nav" />
+      <side-nav :logo-link= "d_logoLink" :nav= "d_nav" />
     </div>
-  
+
     <h3>Header</h3>
-    <div style= 'background-color: #0B304F; 
+    <div style= 'background-color: #0B304F;
           height: fit-content;'
       >
         <vue-header
@@ -328,7 +328,7 @@
         />
     </div>
     <h3>Table</h3>
-    <vue-table 
+    <vue-table
       v-if= 'd_details'
       :tabledetails= 'd_details'
       :columns= 'd_columns'
@@ -353,7 +353,7 @@
   import sideNav from '@/components/UIComponents/Navigation/sideNav'
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
   import vueTable from '@/components/UIComponents/Table/vueTable'
-  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard' 
+  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard'
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import textInput from "@/components/FormElements/textInput";
   import radioInput from "@/components/FormElements/radioInput";
@@ -366,7 +366,7 @@
   import { mapState, mapActions } from 'vuex';
 
   export default {
-    name: 'uiComponents',   
+    name: 'uiComponents',
 
         mixins: [ alerts ],
 
@@ -409,7 +409,7 @@
       const d_TAmaxlength= 120
       const d_column= ['SKU', 'Quantity', 'Available']
       const d_SKUdetails= {
-        'cols': d_column, 
+        'cols': d_column,
         'details': new Array()
       }
       const d_warehouse= this.$store.state.warehouse
@@ -516,7 +516,7 @@
           }
         }
         else {
-          this.d_filterSelected['type'].push(filter.type) 
+          this.d_filterSelected['type'].push(filter.type)
           this.d_filterSelected['value'].push(filter.value)
         }
 
@@ -551,12 +551,12 @@
         this.d_selected= id
 
         if (id) {
-          this.content= true   
+          this.content= true
         }
         else {
           this.content= false
         }
-      }, 
+      },
 
       consoleClickDelete: function () {
         // console.log("CardClickClose")
