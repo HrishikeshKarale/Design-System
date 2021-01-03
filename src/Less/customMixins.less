@@ -283,7 +283,7 @@
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    background-color: @navBackground;
+    background-color: @secondaryColor;
     color: @textColor;
 
     &:first-child {
@@ -295,7 +295,7 @@
         flex-grow: 0;
 
         &.title {
-          color: @textColor;
+          color: @backgroundColor;
           font-weight: bold;
 
           span.fas {
@@ -478,12 +478,12 @@
     &>select,
     &>input,
     &>textarea {
-      padding: @spaceMd @spaceLg @spaceMd 2*@spaceLg;
+      padding: @spaceMd;
       border-radius: @borderRadius;
       width: 100%;
       border: none;
       position: relative;
-      background-color: transparent !important;
+      background-color: @backgroundColor  !important;
       -webkit-appearance: none;
       outline: none;
 
@@ -528,7 +528,7 @@
         &+select,
         &+input,
         &+textarea {
-          padding: @spaceMd 2*@spaceLg;
+          padding: @spaceMd @spaceLg @spaceMd 2*@spaceLg;
           border-top-left-radius: 0px;
           border-bottom-left-radius: 0px;
           border-left-width: 0px;

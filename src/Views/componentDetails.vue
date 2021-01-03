@@ -43,9 +43,9 @@
 				<vue-clipboard
 				  :copy= 'compData.import'
 				  tag= 'copyImportStatement'
-				  text= 'copy import'
+				  text= 'import'
 				  id= 'importStatement'
-				  category="icon-sm"
+				  category="text-sm"
 				/>
 			  </div>
 			</div>
@@ -376,72 +376,56 @@
   @import (reference) "./../Less/customVariables";
 
   .componentDetails {
-
-  fieldset {
-  legend {
-  border-color: #333;
-  margin-bottom: 16px;
-
-  h3 {
-	color: @textColor;
-	font-weight: bold;
-  }
-  }
-
-  div {
-
-  &.contentWrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 16px 32px;
-
-	div {
-
-	&.contentText {
-	width: 100%;
-
-	& > .sampleCode {
-
-	.displayCode();
-
-	.boxShadow(@three);
+		fieldset {
+			legend {
+				border-color: #333;
+				margin-bottom: 16px;
+				h3 {
+						color: @textColor;
+						font-weight: bold;
+					}
+			}
+			div {
+				&.contentWrapper {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					margin: 16px 32px;
+					div {
+						&.contentText {
+							width: 100%;
+							& > .sampleCode {
+								.displayCode();
+								.boxShadow(@one, @secondaryColor);
+							}
+						}
+						&.attributeTable {
+							& > table {
+								.boxShadow(@one, @secondaryColor);
+								& > body {
+									& > tr {
+										& > td,
+										& > th {
+											padding: @spaceMd @spaceLg;
+										}
+										& > th {
+											color: white;
+										}
+										&:first-child {
+											background-color: @primaryColor;
+										}
+										&:nth-child(2n) {
+											background-color: @secondaryColor;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-	}
-
-	&.attributeTable {
-
-	& > table {
-		 & > body {
-
-	  & > tr {
-	  background: white;
-
-	  & > td,
-	  & > th {
-	  padding: @spaceMd @spaceLg;
-	  }
-
-	  & > th {
-	  color: white;
-	  }
-
-	  &:first-child {
-	  background-color: grey;
-	  }
-
-	  &:nth-child(2n) {
-	  background-color: @backgroundColor;
-	  }
-	  }
-	}
-	}
-	}
-	}
-  }
-  }
-  }
-  }
 
 </style>

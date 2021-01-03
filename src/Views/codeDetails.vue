@@ -220,7 +220,7 @@
   @import (reference) "./../Less/customVariables";
 
   .codeDetails {
-         .displayCode();
+    .displayCode();
     .boxShadow(@one);
   }
 </style>
