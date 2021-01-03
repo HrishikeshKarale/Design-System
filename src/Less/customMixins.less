@@ -503,11 +503,12 @@
       &+span {
         position: absolute;
         cursor: pointer;
-        left: calc(100% - 3*@spaceMd);
+        left: calc(100% + @spaceMd);
+        font-size: @fontSizeMd;
         top: 50%;
         transform: translate(0, -50%);
         z-index: @bodyZ + 5;
-        color: @primaryColor;
+        color: @accentColor;
       }
 
       .condition();
@@ -541,10 +542,12 @@
             border-color: none;
           }
 
-          //password peak functionality
+          // password peak functionality
           &+span {
             cursor: pointer;
-            left: calc(100% - 3*@spaceMd);
+            font-size: @fontSizeMd;
+            left: calc(100% + @spaceMd);
+            color: @accentColor;
           }
 
           .condition();
