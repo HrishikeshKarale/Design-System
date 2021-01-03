@@ -36,7 +36,7 @@
               </template>
               <template v-else-if= 'typeof attribute.value== "boolean"'>
 								<radio-input
-									label= "TRUE"
+									:label= "d_value.toString()"
 									type= "checkbox"
 									tag= "radioBool"
 									:value= "d_value"
