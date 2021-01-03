@@ -38,14 +38,14 @@ export default {
     //sets heading/Label for multitoggle
     label: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets name attribute for multitoggle  (required field in case of forms)
     name: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "textInput"
     },
 
@@ -81,7 +81,12 @@ export default {
     alert: {
       required: false,
       type: [Object, null],
-      default: null
+      default:  () => {
+          return {
+              error: "",
+              warning: ""
+          }
+      }
     },
 
     //sets the disabled attribute for multitoggle
@@ -161,7 +166,7 @@ export default {
       &.checked {
         transition: all 350ms;
         background: blue;
-        border-color: @secondaryColor;
+        border-color: @primaryColor;
       }
       &.unchecked {
         transition: all 350ms;
@@ -178,12 +183,12 @@ export default {
         width: @spaceXl;
         height: @spaceXl;
         border-radius: @round;
-        background: @secondaryColor;
+        background: @primaryColor;
         cursor: pointer;
         &.checked {
           transform: translateX(32px);
           transition: all 350ms;
-          background: @secondaryColor;
+          background: @primaryColor;
         }
         &.unchecked {
           transition: all 350ms;
@@ -195,7 +200,7 @@ export default {
     }
     .checkbox-label {
       width: max-content;
-      color: @secondaryColor;
+      color: @primaryColor;
       margin-left: @spaceMd;
       font-weight: bold;
     }

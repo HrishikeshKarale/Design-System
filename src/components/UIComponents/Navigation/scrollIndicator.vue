@@ -143,7 +143,7 @@ export default {
         &:hover,
         &.active {
           border-radius: @borderRadius;
-          background-color: @secondaryColor;
+          background-color: @primaryColor;
           .boxShadow(@one);
           color: @white;
           //active block text;
@@ -171,10 +171,10 @@ export default {
     }
   }
   @media screen {
-    @media (max-width: 1540px) {
+    @media (max-width: @maxWidth) {
       & > div {
         &.scroll {
-          background-color: @secondaryColor;
+          background-color: @primaryColor;
           border-radius: @spaceXl;
           padding: @spaceXs;
           top: 50%;
@@ -190,7 +190,7 @@ export default {
                 position: absolute;
                 width: max-content;
                 text-align: center;
-                color: @secondaryColor;
+                color: @primaryColor;
                 top: -32px;
                 right: -16px;
                 font-weight: bold;

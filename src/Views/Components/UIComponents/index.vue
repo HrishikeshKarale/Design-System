@@ -139,7 +139,7 @@
                 placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-user'
+                icon= 'fas fa-user'
                 @notify= 'alerts'
                 @value= "val=> d_customerVal = val"
               />
@@ -155,7 +155,7 @@
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-closed-captioning'
+                icon= 'fas fa-closed-captioning'
                 @notify= 'alerts'
                 @value= "val=> d_costCenterVal = val"
               />
@@ -169,7 +169,7 @@
                 placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-file-signature'
+                icon= 'fas fa-file-signature'
                 @notify= 'alerts'
                 @value= "val=> d_orderNameVal = val"
               />
@@ -183,7 +183,7 @@
                 placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-user'
+                icon= 'fas fa-user'
                 @notify= 'alerts'
                 @value= "val=> d_recipientVal = val"
               />
@@ -199,7 +199,7 @@
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-truck'
+                icon= 'fas fa-truck'
                 @notify= 'alerts'
                 @value= 'val=> d_deliveryOptionVal = val'
               />
@@ -224,7 +224,7 @@
                 placeholder= "Enter a value/Select an option"
                 :maxlength= 'd_TAmaxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-comment'
+                icon= 'fas fa-comment'
                 @notify= 'alerts'
                 @value= "val=> d_recipientNote = val"
               />
@@ -249,7 +249,7 @@
                   placeholder= "Enter SKU..."
                   :maxlength= 'd_maxlength'
                   :required= 'd_booleanTrue'
-                  inputIcon= 'fas fa-barcode'
+                  icon= 'fas fa-barcode'
                   @notify= 'alerts'
                   @value= 'val=> d_SKU = val'
                 />
@@ -263,7 +263,7 @@
                     value= ''
                     placeholder= "0"
                     :required= 'd_booleanTrue'
-                    inputIcon= 'fas fa-hashtag'
+                    icon= 'fas fa-hashtag'
                     @notify= 'alerts'
                     @value= 'val=> d_numberValue = val'
                   />

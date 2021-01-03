@@ -41,7 +41,13 @@ export default {
   props: {
     alert: {
       required: true,
-      type: Object
+      type: Object,
+        default: () => {
+          return {
+            error: "",
+            warning
+          }
+        }
     },
     ctx: {
       required: true,
@@ -49,8 +55,8 @@ export default {
     },
     form: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
     autocomplete: {
       required: false,
@@ -74,7 +80,7 @@ export default {
                 ...Array.from(form.getElementsByTagName("select")),
                 ...Array.from(form.getElementsByTagName("input"))
             ];
-    
+
             for (let index = 0; index < inputs.length; ++index) {
                 if (inputs[index].required && !inputs[index].value) {
                 return false;
@@ -88,7 +94,7 @@ export default {
             }
             return false;
         }
-        return true;   
+        return true;
     } //validInput
   }, //computed
 }; //default

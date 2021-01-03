@@ -21,7 +21,7 @@
                
                 
                 
-                inputIcon= 'fas fa-user'
+                icon= 'fas fa-user'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_customerVal = val'
@@ -41,7 +41,7 @@
                 :required= 'd_booleanTrue'
                
                 
-                inputIcon= 'fas fa-closed-captioning'
+                icon= 'fas fa-closed-captioning'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_costCentreVal = val'
@@ -59,7 +59,7 @@
                
                 
                 
-                inputIcon= 'fas fa-file-signature'
+                icon= 'fas fa-file-signature'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_OrderNameVal = val'
@@ -74,7 +74,7 @@
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-                inputIcon= 'fas fa-user'
+                icon= 'fas fa-user'
                 @notify= 'alerts'
                 @value= 'val=> d_recipientVal = val'
               />
@@ -93,7 +93,7 @@
                 :required= 'd_booleanTrue'
                
                 
-                inputIcon= 'fas fa-truck'
+                icon= 'fas fa-truck'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_deliveryOptionVal = val'
@@ -124,7 +124,7 @@
                
                 
                 
-                inputIcon= 'fas fa-comment'
+                icon= 'fas fa-comment'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_recipientNote = val'
@@ -193,7 +193,7 @@
 
       const d_booleanTrue= true
 
-      const inputIcon= 'fas fa-warehouse'
+      const icon= 'fas fa-warehouse'
 
       const alerts= this.alerts
            return {
@@ -216,7 +216,7 @@
 
         d_booleanTrue: d_booleanTrue,
 
-        d_inputIcon: d_inputIcon,
+        d_: d_,
 
         d_alerts: d_alerts,
 

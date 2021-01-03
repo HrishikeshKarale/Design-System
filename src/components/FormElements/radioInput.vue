@@ -78,7 +78,7 @@ import { alerts } from "@/typeScript/common/alerts";
 
 export default {
   name: "RadioInput",
-  
+
   mixins: [validator, alerts], //mixins
 
   components: {
@@ -91,7 +91,7 @@ export default {
     //valid values include ['checkbox', 'radio']
     type: {
       required: false,
-      type: [String, null],
+      type: String,
       validator: function(value) {
         return ["checkbox", "radio", null].indexOf(value) !== -1;
       },
@@ -102,14 +102,14 @@ export default {
     //in case of single/no-option checkbox, label is used as checkbox text
     label: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets the name attribute for the input field (required field in case of forms)
     name: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "radioInput"
     },
 
@@ -150,7 +150,12 @@ export default {
     alert: {
       required: false,
       type: [Object, null],
-      default: null
+      default:  () => {
+          return {
+              error: "",
+              warning: ""
+          }
+      }
     },
 
     //sets the required attribute for the input field
@@ -209,7 +214,7 @@ export default {
       }
       return value == option;
     }, //isChecked
-    
+
     clearSelection: function() {
       // const options = this.options;
       // options.forEach(option => {

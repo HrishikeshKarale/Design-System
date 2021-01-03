@@ -37,7 +37,7 @@
                             :required= 'd_booleanTrue'
                            
                             
-                            :inputIcon= 'd_inputIcon'
+                            := 'd_'
                             
                             
                             @notify= 'alerts'
@@ -96,7 +96,7 @@
 
             const d_booleanTrue= true
 
-            const inputIcon= 'fas fa-warehouse'
+            const icon= 'fas fa-warehouse'
 
             const alerts= this.alerts
                        return {
@@ -117,7 +117,7 @@
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_inputIcon: d_inputIcon,
+                d_: d_,
 
                 d_alerts: d_alerts,
 
@@ -223,10 +223,10 @@
                             text: this.$store.state.navText.maskText,
                         },
                         {
-                            type: "inputIcon",
-                            value: d_inputIcon,
-                            description: this.$store.state.navText.inputIcon,
-                            text: this.$store.state.navText.inputIconText,
+                            type: "icon",
+                            value: d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.Text,
                         },
                         {
                             type: "alerts",

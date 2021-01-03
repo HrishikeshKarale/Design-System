@@ -1,52 +1,28 @@
 <template>
-    <div class= "navText">
-        <phone-input 
+    <component-details
+        :compData= 'd_text'
+    >
+        <text-input 
             :label= "d_label"
-            :name= "d_name"
+            :tag= "d_name"
             :value= 'd_textBoxValue'
-            :required= 'd_booleanTrue'
+            :pattern= 'd_pattern'
+            :placeholder= "d_placeholder"
+            :minlength= 'd_minlength'
+            :maxlength= 'd_maxlength'
+            :alert= 'alertObject'
+            :required= 'd_required'
+            :disabled= 'd_disabled'
+            :autocomplete= 'd_autocomplete'
+            :inline= 'd_inline'
+            :readOnly= 'd_readOnly'
+            :autofocus= 'd_autofocus'
+            :mask = 'd_mask'
+            :icon= 'd_icon'
             @notify= 'alerts'
             @value= 'val=> d_textBoxValue = val'
         />
-            <div class= 'FormElementsTitle'>
-                <div 
-                    v-if= 'd_textBoxValue'
-                    class= 'value'
-                >
-                    <label>Value Returned: </label>{{d_textBoxValue}}
-                </div>
-                <div 
-                    v-if= 'danger'
-                    class= 'error'
-                >
-                    <label>Error Returned:</label> {{danger}}
-                </div>
-                <div 
-                    v-if= 'warning'
-                    class= 'warning'
-                >
-                    <label>Warning Returned:</label> {{warning}}
-                </div>
-            </div>
-            <div class= "FormElementsContent">
-                <form>                                  <component-details
-                        :compData= 'd_text'
-                    >
-                        <text-input 
-                            :label= "d_label"
-                            :name= "d_name"
-                            :value= 'd_textBoxValue'
-                            :pattern= 'd_pattern'
-                            :placeholder= "d_placeholder"
-                            :maxlength= 'd_maxlength'
-                            :required= 'd_booleanTrue'
-                            :inputIcon= 'd_inputIcon'
-                            @notify= 'alerts'
-                            @value= 'val=> d_textBoxValue = val'
-                        />
-                    </component-details>                               </form>
-            </div>
-           </div>
+    </component-details> 
 </template>
 
 <script>
@@ -54,20 +30,18 @@
     import componentDetails from "@/Views/componentDetails";
     import textInput from "@/components/FormElements/textInput";
     import phoneInput from "@/components/FormElements/phoneInput";
-    
-
-    // import { store } from '@/store/store'
+    import { alerts } from "@/typeScript/common/alerts"
 
     export default {
         name: "navText",
 
-        // store,
+        mixins: [alerts],
 
         components: {
-                       componentDetails,
+            componentDetails,
             textInput,
             phoneInput,
-                   }, //components
+        }, //components
 
         methods: {
 
@@ -83,65 +57,48 @@
         }, //methods
 
         data() {
-
-            const label= 'Username'
-
-            const name= 'usernameTextField'
-
-            const value= 'qwerty'
-
-            const textBoxValue= ''
-
-            // ^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$
-            // └─────┬────┘└───┬──┘└─────┬─────┘└─────┬─────┘ └───┬───┘
-            //     │         │         │            │           no _ or . at the end
-            //     │         │         │            │
-            //     │         │         │            allowed characters
-            //     │         │         │
-            //     │         │         no __ or _. or ._ or .. inside
-            //     │         │
-            //     │         no _ or . at the beginning
-            //     │
-            //     username is 8-20 characters long
-            const pattern= /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
-
-            const maxlength= 20
-
-            const placeholder= 'Username'
-
+            const d_label= 'Username'
+            const d_name= 'usernameTextField'
+            const d_value= 'qwerty'
+            const d_textBoxValue= ''
+            const d_pattern= /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/
+            const d_maxlength= 20
+            const d_minlength= 8
+            const d_placeholder= 'Username'
             const d_booleanTrue= true
-
-            const inputIcon= 'fas fa-user'
-
-            const alerts= this.alerts
+            const d_autofocus= !d_booleanTrue;
+            const d_disabled= !d_booleanTrue;
+            const d_readOnly= !d_booleanTrue;
+            const d_required= !d_booleanTrue;
+            const d_autocomplete= !d_booleanTrue;
+            const d_inline= !d_booleanTrue;
+            const d_mask= !d_booleanTrue;
+            const d_icon= 'fas fa-user'
 
             return {
+                d_label,
+                d_name,
+                d_value,
+                d_textBoxValue,
+                d_pattern,
+                d_maxlength,
+                d_minlength,
+                d_placeholder,
+                d_booleanTrue,
+                d_autofocus,
+                d_disabled,
+                d_readOnly,
+                d_required,
+                d_autocomplete,
+                d_inline,
+                d_mask,
+                d_icon,
+            } //return
+        }, //data
 
-                d_label: d_label,
-
-                d_name: d_name,
-
-                d_value: d_value,
-
-                d_textBoxValue: d_textBoxValue,
-
-                d_pattern: d_pattern,
-
-                d_maxlength: d_maxlength,
-
-                d_placeholder: d_placeholder,
-
-                d_booleanTrue: d_booleanTrue,
-
-                d_inputIcon: d_inputIcon,
-
-                d_alerts: d_alerts,
-
-                danger: null,
-
-                warning: null,
-
-                d_text: {
+        computed: {
+            d_text: function() {
+                return {
 
                     title: 'Text Input Field',
 
@@ -157,97 +114,97 @@
                     attributes:[
                         {
                             type: "label",
-                            value: d_label,
+                            value: this.d_label,
                             description: this.$store.state.navText.label,
                             text: this.$store.state.navText.labelText,
                         },
                         {
-                            type: "name",
-                            value: d_name,
+                            type: "tag",
+                            value: this.d_name,
                             description: this.$store.state.navText.name,
                             text: this.$store.state.navText.nameText,
                         },
                         {
                             type: "v-model",
-                            value: d_textBoxValue,
+                            value: this.d_textBoxValue,
                             description: this.$store.state.navText.vModel,
                             text: this.$store.state.navText.vModelText,
                         },
                         {
                             type: "value",
-                            value: d_value,
+                            value: this.d_value,
                             description: this.$store.state.navText.value,
                             text: "Specifies the value for the &lt;text-input&gt element.",
                         },
                         {
                             type: "placeholder",
-                            value: d_placeholder,
+                            value: this.d_placeholder,
                             description: this.$store.state.navText.placeholder,
                             text: this.$store.state.navText.placeholderText,
                         },
                         {
                             type: "maxlength",
-                            value: d_maxlength,
+                            value: this.d_maxlength,
                             description: this.$store.state.navText.maxlength,
                             text: this.$store.state.navText.maxlengthText,
                         },
                         {
                             type: "pattern",
-                            value: d_pattern,
+                            value: this.d_pattern,
                             description: this.$store.state.navText.pattern,
                             text: this.$store.state.navText.patternText,
                         },
                         {
                             type: "required",
-                            value: d_booleanTrue,
+                            value: this.d_required,
                             description: this.$store.state.navText.required,
                             text: this.$store.state.navText.requiredText,
                         },
                         {
                             type: "disabled",
-                            value: !d_booleanTrue,
+                            value: this.d_disabled,
                             description: this.$store.state.navText.disabled,
                             text: this.$store.state.navText.disabledText,
                         },
                         {
                             type: "autofocus",
-                            value: !d_booleanTrue,
+                            value: this.d_autofocus,
                             description: this.$store.state.navText.autofocus,
                             text: this.$store.state.navText.autofocusText,
                         },
                         {
                             type: "readonly",
-                            value: !d_booleanTrue,
+                            value: this.d_readonly,
                             description: this.$store.state.navText.readonly,
                             text: this.$store.state.navText.readonlyText,
                         },
                         {
                             type: "inline",
-                            value: !d_booleanTrue,
+                            value: this.inline,
                             description: this.$store.state.navText.inline,
                             text: this.$store.state.navText.inlineText,
                         },
                         {
                             type: "mask",
-                            value: !d_booleanTrue,
+                            value: this.d_mask,
                             description: this.$store.state.navText.mask,
                             text: this.$store.state.navText.maskText,
                         },
                         {
-                            type: "inputIcon",
-                            value: d_inputIcon,
-                            description: this.$store.state.navText.inputIcon,
-                            text: this.$store.state.navText.inputIconText,
+                            type: "icon",
+                            value: this.d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.Text,
                         },
                         {
-                            type: "alerts",
-                            value: d_alerts,
+                            type: "alert",
+                            value: this.alertObject,
                             description: this.$store.state.navText.alerts,
                             text: this.$store.state.navText.alertsText,
                         }
                     ]
-                }, //text
-            } //return
-        }, //data
+                };
+            } //d_text
+        }
     }
 </script>

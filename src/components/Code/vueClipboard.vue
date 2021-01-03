@@ -8,7 +8,7 @@
       :category="category"
       :ctx="copyToClipboard.bind(this)"
     />
-    <textarea :id="id" :value="componentCode"></textarea>
+    <textarea :id="id" :value="copy"></textarea>
   </div>
 </template>
 <script>
@@ -24,30 +24,30 @@ export default {
   props: {
     text: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     tag: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "copyToClipboard"
     },
 
     icon: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "fas fa-copy"
     },
 
     category: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "small"
     },
 
     //content to be copied
-    componentCode: {
+    copy: {
       type: String,
       required: true
     },

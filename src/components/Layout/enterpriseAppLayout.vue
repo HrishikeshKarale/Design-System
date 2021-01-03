@@ -235,7 +235,7 @@ export default {
               border-radius: @borderRadius 0 0 0;
 
               & > abbr {
-                color: @secondaryColor;
+                color: @primaryColor;
                 text-decoration: none;
               }
             }
@@ -245,7 +245,7 @@ export default {
     }
   }
   @media screen {
-    @media (max-width: 1540px) {
+    @media (max-width: @maxWidth) {
       & > div {
         &.body {
           & > div.content {

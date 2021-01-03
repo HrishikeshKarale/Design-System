@@ -1,9 +1,9 @@
 <template>
-    <div 
+    <div
         class= 'numberInput'
         :class= '{inline: inline}'
     >
-        <label 
+        <label
             v-if= 'label'
             :class= '{maskField: mask}'
         >
@@ -15,13 +15,13 @@
             :class= '{
                         warningContainer: warning,
                         errorContainer: danger,
-                        iconPadding: inputIcon,
-                        maskField: mask 
+                        iconPadding: icon,
+                        maskField: mask
                     }'
         >
             <span
-                v-if= 'inputIcon'
-                :class= 'inputIcon'
+                v-if= ''
+                :class= ''
             />
             <input
                 v-if= '!mask'
@@ -48,7 +48,7 @@
 
 <script>
 
-    import inputResponse from '@/components/Alerts/inputResponse';  
+    import inputResponse from '@/components/Alerts/inputResponse';
 import { alerts } from "@/typeScript/common/alerts";
 
     export default {
@@ -59,10 +59,10 @@ import { alerts } from "@/typeScript/common/alerts";
         data () {
             return {
 
-                //stores errors thrown by the input fields 
+                //stores errors thrown by the input fields
                 danger: null,
 
-                //stores errors thrown by the input fields 
+                //stores errors thrown by the input fields
                 warning: null,
 
                 //stores textbox password values
@@ -85,7 +85,7 @@ import { alerts } from "@/typeScript/common/alerts";
                 default: 'numberInput'
             },
 
-            //users can pass preset values for the input field 
+            //users can pass preset values for the input field
             value: {
                 required: false,
                 type: [Number, String],
@@ -124,6 +124,12 @@ import { alerts } from "@/typeScript/common/alerts";
             alert: {
                 required: false,
                 type: Object,
+                default: () => {
+                    return {
+                        error: "",
+                        warning: ""
+                    }
+                }
             },
 
             //sets the required attribute for the input field
@@ -170,7 +176,7 @@ import { alerts } from "@/typeScript/common/alerts";
 
             //if a valid fontawesome icon class string is passed, it displays it in the input field
             //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-            inputIcon: {
+            icon: {
                 required: false,
                 type: String,
                 default: null
@@ -178,7 +184,6 @@ import { alerts } from "@/typeScript/common/alerts";
         }, //props
 
         components: {
-
             inputResponse
         }, //components
 
@@ -236,7 +241,7 @@ import { alerts } from "@/typeScript/common/alerts";
         }, //methods
 
         created () {
-            //store values passed as props into d_numberValue for future manipulation  
+            //store values passed as props into d_numberValue for future manipulation
             if (this.value) {
                 this.d_numberValue= this.value
             }                   }, //created
@@ -280,7 +285,7 @@ import { alerts } from "@/typeScript/common/alerts";
 </script>
 
 <style lang= "less" scoped>
-    
+
     @import (reference) "./../../Less/customMixins.less";
 
     .numberInput {

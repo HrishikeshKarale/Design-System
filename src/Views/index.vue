@@ -1,7 +1,7 @@
 <template>
   <div class= 'intro'>
     <h1
-      @click= 'd_booleanTrue= !d_booleanTrue'>Hello {{getCookie('user')}}</h1> 
+      @click= 'd_booleanTrue= !d_booleanTrue'>Hello {{getCookie('user')}}</h1>
     <h2>Good to see you here.</h2>
     <h4>Click on the options in navigation on your left to get started.</h4>
     <div class= 'navIcons'>
@@ -11,21 +11,21 @@
         class= 'levelOne'
       >
         <h1>
-          <router-link 
+          <router-link
             :to= "'/' + nav.text"
           >
             {{nav.text}}
           </router-link>
         </h1>
-        <template 
+        <template
           v-if= 'nav.subnav'
         >
           <div
             v-for= 'sub in nav.subnav'
-            :key= 'nav.id + "-" + sub.id'   
+            :key= 'nav.id + "-" + sub.id'
             :class= 'nav.subnav.subnav? "levelThree": "levelTwo"'
           >
-            <router-link 
+            <router-link
               :to= "'/' + nav.text +'/'+ sub.text"
             >
               <h3 v-if= 'nav.subnav.subnav'>
@@ -35,15 +35,15 @@
                 {{sub.text}}
               </h2>
             </router-link>
-            <template 
+            <template
               v-if= 'sub.subnav'
             >
               <div
-                :key= "'/' + nav.text +'/'+ sub.text +'/'+ subs.text" 
+                :key= "'/' + nav.text +'/'+ sub.text +'/'+ subs.text"
                 class= 'levelThree'
                 v-for= 'subs in sub.subnav'
               >
-                <router-link 
+                <router-link
                   :to= "'/' + nav.text +'/'+ sub.text +'/'+ subs.text"
                 >
                   <span v-html= 'subs.icon' class= 'fa-2x'/>
@@ -68,7 +68,7 @@
 
     mapState,
 
-    data () {     
+    data () {
       const d_booleanTrue= false
       return {
         d_booleanTrue: d_booleanTrue,
@@ -86,7 +86,7 @@
         }
       )
     }, //computed
-    
+
     components: {
            vueImg,
     }, //components
@@ -128,7 +128,7 @@
 
               & > a {
                 font-weight: bold;
-                color: @secondaryColor;
+                color: @primaryColor;
               }
             }
 
@@ -152,5 +152,5 @@
         }
       }
     }
-  } 
+  }
 </style>

@@ -11,11 +11,11 @@
         :class="{
           warningContainer: d_warning,
           errorContainer: d_danger,
-          iconPadding: inputIcon,
+          iconPadding: icon,
           maskField: mask
         }"
       >
-        <span v-if="inputIcon" :class="inputIcon" />
+        <span v-if="" :class="" />
         <input
           v-if="!mask"
           v-model="d_value"
@@ -125,11 +125,11 @@
               ? null
               : 'Required Field'
             : null,
-          iconPadding: inputIcon,
+          iconPadding: icon,
           maskField: mask
         }"
       >
-        <span v-if="inputIcon" :class="inputIcon" />
+        <span v-if="" :class="" />
         <input
           v-if="!mask"
           v-model="dPasswordMatch"
@@ -196,22 +196,22 @@ export default {
     //sets heading/Label for the input field
     label: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets name attribute for the input field (required field in case of forms)
     name: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "passwordInput"
     },
 
     //users can pass preset values for the input field
     value: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets the format/pattern for acceptable values for the input field
@@ -224,7 +224,7 @@ export default {
     //sets the placeholder attribute for the input field
     placeholder: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "Enter passsword here..."
     },
 
@@ -239,7 +239,12 @@ export default {
     alert: {
       required: false,
       type: [Object, null],
-      default: null
+      default:  () => {
+          return {
+              error: "",
+              warning: ""
+          }
+      }
     },
 
     //sets the required attribute for the input field
@@ -279,10 +284,10 @@ export default {
 
     //if a valid fontawesome icon class string is passed, it displays it in the input field
     //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-    inputIcon: {
+    icon: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //if true, the component generates a confirmation password box in order to check the password matches the original box password

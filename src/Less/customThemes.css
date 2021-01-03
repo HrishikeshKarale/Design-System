@@ -1,13 +1,39 @@
-html {
-  --primaryColor: #003a65;
-  --secondaryColor: #00B6A8;
+/*              dark                        light
+navigation      --primaryColor(003a65)      --secondaryColor(c7e8f3)
+  text          --                          --offWhite
+    :hover      --
+    selected    --
+  background    --
+  icon          --
 
+popup background-color: D4E0D7
+
+
+
+*/
+
+
+
+
+html {
+  /* nav background, headlines or other text  */
+  --primaryColor: #003a65;
+  --secondaryColor: #c7e8f3;
+  --accentColor: #D34E45;
   --white: #FFFFFF;
   --offWhite: #FAFBFC;
-
-  /* dark colors */
   --black: #000000;
   --offBlack: #0C090D;
+
+
+
+  --textColor: var(--offBlack);
+  --backgroundColor: var(--offWhite);
+  --navText: var(--secondaryColor);
+  --navBackground: var(--primaryColor);
+
+
+  /* dark colors */
 
   /* shades of grey */
   --grayDarker: ~"lighten(--black, 13.5%)";
@@ -18,11 +44,10 @@ html {
 }
 
 :root {
-  --accentColor: var(--CMTeal);
-  --textColor: var(--black);
+  --textColor: var(--offBlack);
   --backgroundColor: var(--offWhite);
+  --navText: var(--secondaryColor);
   --navBackground: var(--primaryColor);
-  --navText: #d8d8d8;
   --shadowColor: var(--offBlack);
 }
 
@@ -78,7 +103,7 @@ html[theme='purpleMode'] {
 }
 
 
-/* 
+/*
     Alpha %	Hex	Num
     100%	FF	255
     99%	FC	252
@@ -180,5 +205,5 @@ html[theme='purpleMode'] {
     3%	08	8
     2%	05	5
     1%	03	3
-    0%	00	0 
+    0%	00	0
 */

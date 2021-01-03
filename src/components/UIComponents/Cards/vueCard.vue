@@ -8,14 +8,14 @@
             :class= '{selectedCard: selectedCard}'
         >
             <div class= 'row1'>
-                <div 
+                <div
                     class= 'col1'
                     @click= 'ctx'
                 >
                     <template
                         v-if= 'title'
                     >
-                        <div 
+                        <div
                             class= 'row11'
                         >
                             {{title}}
@@ -30,7 +30,7 @@
                         </div>
                     </template>
                     <div class= 'row12'>
-                        <div 
+                        <div
                             v-if= 'logo'
                             class= 'logoDetails'
                         >
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-    
+
     import cardDetails from '@/components/UIComponents/Cards/cardDetails'
     import cardBackground from'@/components/UIComponents/Cards/cardBackground'
 
@@ -136,7 +136,7 @@
                 validator: function (value) {
                     return ["1", "2", "3", "4", "5", null].indexOf(value)!= -1
                 }
-            }, 
+            },
         }, //props
 
         methods: {
@@ -168,7 +168,7 @@
         min-width: 320px;
 
         &.selectedCard{
-            background-color: @secondaryColor;
+            background-color: @primaryColor;
         }
 
         .row1 {
@@ -184,12 +184,12 @@
                     flex-direction: row;
                     flex-wrap: wrap;
                     font-size: 24px;
-                    color: @secondaryColor;
+                    color: @primaryColor;
                     font-weight: bold;
                     margin-bottom: 16px;
 
                     span {
-                        color: @secondaryColor;
+                        color: @primaryColor;
 
                         &.inActive {
                             color: @gray;
@@ -225,7 +225,7 @@
             flex-wrap: nowrap;
                        & > div {
                 margin-right: 16px;
-                color: @secondaryColor;
+                color: @primaryColor;
             }
 
         }

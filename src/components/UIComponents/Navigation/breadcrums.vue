@@ -69,7 +69,7 @@ export default {
   methods: {
 		navBreakdown: function(nav) {
 			this.unique = [...this.unique, { comp: nav.component, name: nav.name }];
-			const subNav = nav.subNav; 
+			const subNav = nav.subNav;
 			if(subNav) {
 				subNav.forEach(navigation => {
 					if(navigation)	this.navBreakdown(navigation);
@@ -78,7 +78,8 @@ export default {
 			else return;
 		}, //navBreakdown
     isComponent: function(comp) {
-			return this.unique.find(uni => comp == uni.comp);
+      var result = this.unique.find(uni => comp == uni.comp);
+      return result? result : false;
     }
   }
 };
@@ -109,7 +110,7 @@ export default {
 		margin: 0 @spaceMd;
   }
   @media screen {
-    @media (max-width: 1540px) {
+    @media (max-width: @maxWidth) {
       margin: 0 0 0 @spaceXl !important;
     }
   }

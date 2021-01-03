@@ -3,17 +3,17 @@
         class= 'vueFilter'
     >
         <div :class= '{open: showFilter || (selected && selected["type"].length!=0)}'>
-            <vue-button 
+            <vue-button
                 type= "button"
                 tag= "filterButton"
                 icon= "fas fa-filter"
                 category= "icon"
                 :ctx= 'toggleFilter'
             />
-            <template 
+            <template
                 v-if= 'selected && selected["type"].length!=0'
             >
-                <div 
+                <div
                     class= 'selectedFilter'
                     v-for= '(item, index) in selected["type"]'
                     :key= 'index'
@@ -23,7 +23,7 @@
                         {{selected["value"][index]}}
                     </div>
                     <div>
-                        <span 
+                        <span
                             class= 'fas fa-times'
                             @click.self= 'removeFilter(item, selected["value"][index])'
                         />
@@ -33,7 +33,7 @@
         </div>
         <div v-show= 'showFilter'>
             <div>
-                <dropdown-list 
+                <dropdown-list
                     label= "Type"
                     name= "filterType"
                     :value= "d_filterTypeValue"
@@ -43,7 +43,7 @@
                 />
             </div>
             <div v-if= 'optionsIndex> -1'>
-                <dropdown-list 
+                <dropdown-list
                     label= 'Value'
                     name= "filterType"
                     :value= "d_filterOptionValue"
@@ -53,7 +53,7 @@
                 />
             </div>
             <div v-if= 'optionsIndex> -1'>
-                <vue-button 
+                <vue-button
                     type= "button"
                     tag= "filterButton"
                     text= "Add"
@@ -150,7 +150,7 @@
 
     @import (reference) "../../../Less/customVariables.less";
 
-    @color: @secondaryColor;// #1B746D;
+    @color: @primaryColor;// #1B746D;
 
     .vueFilter {
         display: flex;
@@ -174,7 +174,7 @@
                     flex-direction: row;
                     flex-wrap: nowrap;
                     justify-content: space-between;
-                    background-color: @secondaryColor;
+                    background-color: @primaryColor;
                     color: @white;
                     margin-right: 8px;
                     border-radius: @borderRadius;

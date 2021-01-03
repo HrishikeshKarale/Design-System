@@ -52,7 +52,7 @@
       </p>
       <div
         :id="col.subTitle"
-        class="subSection" 
+        class="subSection"
         v-for="col in colors"
         :key="col.id"
         :index="col.index"
@@ -70,7 +70,7 @@
             >
               <h5>{{color.subTitle}}</h5>
               <div class="section">
-                <template 
+                <template
                   v-for="(cols, index) in color.color"
                 >
                   <vue-card
@@ -85,7 +85,7 @@
                   >
                     <div slot='actionButtons'>
                       <vue-clipboard
-                        :componentCode='cols.hex'
+                        :copy='cols.hex'
                         :tag='"copy #"+ cols.hex +" Color"'
                         icon='fas fa-copy'
                         category="icon"
@@ -109,7 +109,7 @@
             >
               <div slot="actionButtons">
                 <vue-clipboard
-                  :componentCode="color.hex"
+                  :copy="color.hex"
                   :tag="`copy #${color.hex} Color`"
                   icon="fas fa-copy"
                   :id="color.hex"
@@ -228,7 +228,7 @@
         </template>
         <template slot="bad">
           <p>
-            Mix any color from the palette with a text color from a different part of the palette. 
+            Mix any color from the palette with a text color from a different part of the palette.
           </p>
           <div class="container">
             <div
@@ -317,102 +317,102 @@
       </p>
       <div class="colorSamples">
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-5x"
          style="color: #003A65;"
         />
         COMET
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-5x"
          style="color: #00B6A8;"
         />
         Active State
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-5x"
          style="color: #51A4DB;"
         />
         Logo
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-5x"
          style="color: #333333;"
         />
         Text
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-5x"
          style="color: #FAFBFC;"
         />
         background
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #D9EDF7;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #31708F;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #BCE8F1;"
         />
         Information
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #D9EDF7;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #3C763D;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #D6E9C6;"
         />
         Success
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #FCF8E3;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #8A6D3B;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #FAEBCC;"
         />
         Warning
        </div>
        <div>
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #F2DEDE;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #A94442;"
         />
-        <span 
+        <span
          class="fas fa-circle fa-2x"
          style="color: #EBCCD1;"
         />
         Danger
        </div>
       </div>
-      <good-vs-bad message="Use @secondaryColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.">
+      <good-vs-bad message="Use @primaryColor (#00B6A8) for headings (h1, h2, h3, h4, h5, h6), Labels etc to suggest brand identity/ownership.">
        <template slot="good">
         <div class="container">
          <h1>H1</h1>
@@ -424,7 +424,7 @@
          <h6>H3</h6>
         </div>
         <p>
-         Use @secondaryColor (#003A65) for text links.
+         Use @primaryColor (#003A65) for text links.
         </p>
         <div class="container">
          <div
@@ -435,10 +435,10 @@
          </div>
                 </div>
         <p>
-         Use @secondaryColor (#00B6A8) to suggest highlight and/or suggest active status.
+         Use @primaryColor (#00B6A8) to suggest highlight and/or suggest active status.
         </p>
         <div class="container">
-         <multi-toggle 
+         <multi-toggle
           class="content"
           name="toggleInputField"
           value="ON"
@@ -514,9 +514,9 @@
        </template>
        <template slot="bad">
         <p>
-         Dont use @secondaryColor (#003A65) for text links or highlighting any kind of text.
+         Dont use @primaryColor (#003A65) for text links or highlighting any kind of text.
         </p>
-        <div 
+        <div
          class="container"
          style="background-color: @backgroundColor;"
         >
@@ -535,8 +535,8 @@
       <li>7:1 contrast ratio of needs to be maintained for normal text.</li>
       <li>4.5:1 contrast ratio needs to be maintained for large text.</li>
     </ul>
-      <good-vs-bad 
-        message="Use @secondaryColor (#003A65) as Background for lightly colored (preferably white) text."
+      <good-vs-bad
+        message="Use @primaryColor (#003A65) as Background for lightly colored (preferably white) text."
       >
         <template slot="good">
           <div class="container">
@@ -551,7 +551,7 @@
         </template>
         <template slot="bad">
           <p>
-            Do not use @secondaryColor (#00B6A8) for background color with lightly colored text on top.
+            Do not use @primaryColor (#00B6A8) for background color with lightly colored text on top.
           </p>
           <div class="container">
             <div
@@ -619,13 +619,13 @@
   import vueCard from "@/components/UIComponents/Cards/vueCard"
   import vueImg from "@/components/UIComponents/Image/vueImg"
   import vueClipboard from "@/components/Code/vueClipboard";
-  
+
 
   export default {
     name: "colors",
 
     data () {
-      const d_booleanTrue = true;           
+      const d_booleanTrue = true;
       const colors= this.$store.state.colors
       const communicationOverDecoration = require("@/assets/design/color/6de009ff5c705bb127c26ee805ed9579.png");
       const colorsShouldBeAccessible = require("@/assets/design/color/b9de27c544ab6b6cbaea59f9db8e634e.png");
@@ -633,7 +633,7 @@
       return {
         communicationOverDecoration,
         colorsShouldBeAccessible,
-        colorsShouldFocusAttention, 
+        colorsShouldFocusAttention,
         d_booleanTrue,
         colors
       } //return
@@ -732,7 +732,7 @@
                            &.subSection {
 
                 .section {
-                                   & > #Information, 
+                                   & > #Information,
                   & > #Success,
                   & > #Warning,
                   & > #Danger {
@@ -749,7 +749,7 @@
       }
     }
 
-    
+
 
     .palette {
       width: fit-content;

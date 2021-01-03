@@ -69,9 +69,9 @@ var data= {
                required: "<p>required is a Boolean attribute which, if present, indicates that the user must specify a value for the input before the owning form can be submitted.</p>\
                 <p>When an input has the required attribute, the :required pseudo-class also applies to it. Conversely, inputs without the required attribute (except the elements that don't support it) have the :optional pseudo-class applied</p>",
     requiredText: "Specifies that the input element must be filled out before submitting the form.",
-               inputIcon: '<p>inputIcon accepts a Boolean value.</p>\
+               icon: '<p> accepts a Boolean value.</p>\
                 <p>It specifies thaat the current instance of the textbox within the input tag should be read-only.</p>',
-    inputIconText: "Specifies icon displayed within the input element.",
+    Text: "Specifies icon displayed within the input element.",
                inline: '<p>label and input field inline when set to true else input field goeson next line.</p>',
     inlineText: "Specifies that the label and input tags within the input element appear on the same line or on different lines.",
                alerts: '<p>@alert is a function defined in our vue methods designed to catch any error/warning messages thrown by the component.</p>\

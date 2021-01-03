@@ -61,7 +61,6 @@
 
         render(h) {
             var temp= h(this.type, {props: this.props}, this.$slots.default)
-            // console.log("YYYYYYYYYYYYYYYYYYYYYYYYY", temp)
             return temp;
             // return h(input, {attrs: {type: "text", id: 'id', class:'btn' }})
             // return h('input', {attrs: {props}},[h('p', 'Example Text')]);

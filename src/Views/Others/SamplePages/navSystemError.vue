@@ -3,7 +3,7 @@
     <system-error
       errorCode= '404'
       errorMessage= 'Something unexpected happened.'
-      stackTrace= 
+      stackTrace=
       'stack
       trace
       bla
@@ -18,9 +18,9 @@
       version= 'v1.19.1'
     />
     <vue-modal
-      :text= 'd_text'
-      :tag= 'd_tag'
-      :icon= 'd_icon'
+      text= 'open Modal'
+      tag= 'approveText'
+      icon= 'fas fa-eject'
       :showModal= 'd_showModal'
     >
       <system-error
@@ -33,56 +33,27 @@
         version= 'v1.19.1'
       />
     </vue-modal>
-  </div>  
+  </div>
 </template>
 
 <script>
-  
-  import systemError from '@/components/Alerts/systemError.vue';
 
+  import systemError from '@/components/Alerts/systemError.vue';
   import vueModal from  '@/components/UIComponents/Modal/vueModal.vue';
 
   export default {
     name:'navSystemError',
 
     data () {
-
-      const modalTitle= 'Modal title'
-           const text= 'openModal'
-           const tag= 'approveText'
-           const icon= 'fas fa-eject'
-           const ctx= this.consoleClick
-
-      const showModal= false
-
+      const d_showModal= false
       return {
-               d_modalTitle: d_modalTitle,
-
-        d_text: d_text,
-
-        d_tag: d_tag,
-
-        d_icon: d_icon,
-
-        d_ctx: d_ctx,
-
-        d_showModal: d_showModal,
+        d_showModal
       } //return
     }, //data
 
-    methods: {
-
-      consoleClick: function () {
-        this.d_showModal= false
-        // console.log("ModalClick", this.d_showModal)
-      }, // consoleClick
-
-    }, //methods
-
     components: {
-
       systemError,
-      vueModal,
+      vueModal
     }
   } //default
 </script>
@@ -91,11 +62,11 @@
 
   @import (reference) "../../../Less/customMixins.less";
   @import (reference) "../../../Less/customVariables.less";
-  
+
   .navSystemError {
     display: flex;
     flex-direction: column;
-    
+
   }
 </style>
 

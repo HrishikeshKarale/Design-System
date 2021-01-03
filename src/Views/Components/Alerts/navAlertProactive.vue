@@ -25,7 +25,7 @@
                
                 
                 
-                :d_inputIcon= 'Ed_inputIcon'
+                :d_= 'Ed_'
                 
                 @notify= 'alerts'
                 @value= 'val=> d_emailValue = val'
@@ -45,7 +45,7 @@
                 :required= 'd_booleanTrue'
                
                 
-                :d_inputIcon= 'd_inputIcon'
+                :d_= 'd_'
                 
                 @notify= 'alerts'
                 @value= 'val=> searchDropdownValue = val'
@@ -81,7 +81,7 @@
                 
                 
                 
-                :d_inputIcon= 'DTd_inputIcon'
+                :d_= 'DTd_'
                 @notify= 'alerts'
                 @value= 'val=> d_dateValue = val'
             />
@@ -111,7 +111,7 @@
             const d_info= '' 
             const d_booleanTrue= true
             const d_charLimitReached= d_booleanTrue;
-            const d_inputIcon= 'fas fa-user'
+            const d_= 'fas fa-user'
             const d_attr= null
             const d_emailValue= ''
             const d_searchDropboxValue= ''
@@ -134,9 +134,9 @@
             const DTmin= '2000-12-12'
             const DTmax= '2040-12-12'
             const placeholder= 'Enter text here...'
-            const Ed_inputIcon= 'fas fa-at'
-            const Dd_inputIcon= 'fas fa-user'
-            const DTd_inputIcon= 'fas fa-calendar-alt'
+            const Ed_= 'fas fa-at'
+            const Dd_= 'fas fa-user'
+            const DTd_= 'fas fa-calendar-alt'
             const options= this.$store.state.warehouse
             const size= null
             const inputResponse= {
@@ -204,14 +204,14 @@
                 DTmin,
                 DTmax,
                 placeholder,
-                Ed_inputIcon,
-                DTd_inputIcon,
+                Ed_,
+                DTd_,
                 d_danger,
                 d_attr,
                 d_warning,
                 d_info,
                 d_charLimitReached,
-                d_inputIcon,
+                d_,
                 inputResponse
             } //return
         }, //data

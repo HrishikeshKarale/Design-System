@@ -47,7 +47,7 @@
                                
                                 
                                 
-                                inputIcon= 'fas fa-barcode'
+                                icon= 'fas fa-barcode'
                                 
                                 @notify= 'alerts'
                                 @value= 'val=> d_SKU = val'
@@ -64,7 +64,7 @@
                                    
                                     
                                     
-                                    inputIcon= 'fas fa-hashtag'
+                                    icon= 'fas fa-hashtag'
                                     
                                     @notify= 'alerts'
                                     @value= 'val=> d_numberValue = val'

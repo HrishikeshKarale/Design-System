@@ -11,7 +11,7 @@
                         name= "tableSearchField"
                         placeholder= "Search..."
                         :value= 'd_searchKey'
-                        inputIcon= 'fas fa-search'
+                        icon= 'fas fa-search'
                         @notify= 'alerts'
                         @value= 'val=> d_searchKey = val'
                     />

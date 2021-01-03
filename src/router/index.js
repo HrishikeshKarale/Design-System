@@ -75,7 +75,7 @@ export default new Router({
     history: true,
 
     saveScrollPosition: true,
-    
+
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition
@@ -326,22 +326,22 @@ export default new Router({
                 component: samplePages,
             },
                 {
-                    path: '/others/samplePage/createMove',
+                    path: '/others/samplePages/createMove',
                     name: 'createMove',
                     component: createMove,
                 },
                 {
-                    path: '/others/samplePage/navSystemError',
+                    path: '/others/samplePages/navSystemError',
                     name: 'navSystemError',
                     component: navSystemError
                 },
                 {
-                    path: '/others/samplePage/navReassign',
+                    path: '/others/samplePages/navReassign',
                     name: 'navReassign',
                     component: navReassign
-                },  
+                },
                 {
-                    path: '/others/samplePage/dispatchMonitor',
+                    path: '/others/samplePages/dispatchMonitor',
                     name: 'dispatchMonitor',
                     component: dispatchMonitor
                 },

@@ -92,8 +92,8 @@ export default {
   props: {
     logoLink: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     nav: {
@@ -123,6 +123,14 @@ export default {
     // console.log(this.$router.currentRoute.value.meta.requiresAuth);
   },
 
+  unmounted() {
+    document.removeEventListener("click", this.clickHandler, {
+      capture: false, // top to bottom bubbling/propogation
+      once: false //should work only once
+    });
+    // console.log(this.$router.currentRoute.value.meta.requiresAuth);
+  },
+
   methods: {
     clickHandler: function(event) {
       // console.log("modal", !event.target.closest(".sideNav").length);
@@ -138,8 +146,8 @@ export default {
     }, //login
 
     toggleNavigation: function() {
-      this.$refs["sideNav"].classList.toggle("showNav");
       this.toggle("nav");
+      this.$refs["sideNav"].classList.toggle("showNav");
     } //toggleNavigation
   }
 }; //default
@@ -152,6 +160,7 @@ export default {
 
 @lowOpacity: 0.64;
 @midOpacity: 0.84;
+@selected: @accentColor;
 
 //nav sub text
 .navSubText() {
@@ -205,6 +214,14 @@ header {
           &,
           & > .subNav > li,
           & > .subNav > li > .subNav2 > li {
+            //hover for level 1, 2 and 3
+            &:hover {
+              & > a {
+                & > span {
+                  color: @selected;
+                }
+              }
+            }
             & > a {
               display: flex;
               flex-direction: column;
@@ -254,7 +271,7 @@ header {
                 & > div > h4,
                 & > h4,
                 & > h5  {
-                  color: @secondaryColor;
+                  color: @selected;
                 }
                 & > span {
                   transform: scale(1.6);
@@ -264,7 +281,7 @@ header {
                   & > div > h4,
                   & > h4,
                   & > h5  {
-                    color: @secondaryColor;
+                    color: @selected;
                   }
                   & > span {
                     transform: scale(1.2);
@@ -312,9 +329,11 @@ header {
                     display: flex;
                     flex-direction: column;
                     margin-top: @spaceMd;
+                    color: @accentColor;
                     & > h6 {
+                      color: @navText;
                       align-self: flex-end;
-                      color: @white;
+                      color: @backgroundColor;
                     }
                   }
                 }
@@ -370,7 +389,7 @@ header {
       }
     }
     @media screen {
-      @media (max-width: 1540px) {
+      @media (max-width: @maxWidth) {
         flex-direction: column;
         border-bottom-right-radius: @borderRadiusLg;
         height: auto;

@@ -1,11 +1,11 @@
 // https://serversideup.net/drag-and-drop-file-uploads-with-vuejs-and-axios/
 
 <template>
-  <div 
+  <div
     class= 'fileInput'
     :class= '{inline: inline}'
   >
-    <label 
+    <label
       v-if= 'label'
       :class= '{maskField: mask}'
     >
@@ -17,11 +17,11 @@
       :class= '{
             warningContainer: warning,
             errorContainer: danger,
-            iconPadding: inputIcon,
-            maskField: mask 
+            iconPadding: icon,
+            maskField: mask
           }'
     >
-      <input 
+      <input
         v-if= '!mask'
         type= 'file'
         :name= 'name'
@@ -34,8 +34,8 @@
         @change= 'fileList()'
       />
     </div>
-    <div 
-      class= 'files' 
+    <div
+      class= 'files'
       v-if= 'd_value'
     >
       <div
@@ -49,7 +49,7 @@
         <div>
           <span>{{file.size/100}}kb</span>
           <span>
-            <vue-button 
+            <vue-button
               :type= 'd_type'
               tag= "removeFile"
               :text= "d_text"
@@ -131,7 +131,7 @@ import { alerts } from "@/typeScript/common/alerts";
         default: 'fileUploadInput'
       },
 
-      //users can pass preset values for the input field 
+      //users can pass preset values for the input field
       value: {
         required: false,
         type: String,
@@ -158,6 +158,12 @@ import { alerts } from "@/typeScript/common/alerts";
       alert: {
         required: false,
         type: Object,
+        default: () => {
+          return {
+            error: "",
+            warning
+          }
+        }
       },
 
       //sets the required attribute for the input field
@@ -203,7 +209,7 @@ import { alerts } from "@/typeScript/common/alerts";
 </script>
 
 <style lang= "less" scoped>
-  
+
   @import (reference) "./../../Less/customMixins.less";
 
   .fileInput {

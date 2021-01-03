@@ -1,22 +1,22 @@
 <template> <!--https://jsfiddle.net/xkkbfL3L/9380/-->
-    <div 
+    <div
         class= 'vueTable'
         :class= '{inner: subtableId}'
     >
         <table>
             <thead>
-                <tr 
+                <tr
                     class= 'searchRow'
-                > 
+                >
                     <th>
                         <div>
                             {{title}}<input name= 'table' type= 'hidden' :value= 'metadata.selected' required= '1==1'>
                         </div>
                         <div>
-                                <text-input 
+                                <text-input
                                     name= 'tableSearchField'
                                     placeholder= 'Search...'
-                                    inputIcon= "fas fa-search"
+                                    icon= "fas fa-search"
                                     :value= 'metadata.searchKey'
                                     @notify= 'alerts'
                                     @value= 'val=> metadata.searchKey = val'
@@ -27,9 +27,9 @@
                 <tr>
                     <th>                                                   <div :class= '{showOptions: metadata.selected && metadata.selected.length> 0}'>
                             <div>
-                                <input 
+                                <input
                                     v-if= "!subtableId"
-                                    type= 'checkbox' 
+                                    type= 'checkbox'
                                     id= 'selectAllRows'
                                     @click= 'selectAllFromPage'
                                 >
@@ -40,7 +40,7 @@
                                     {{metadata.selected && metadata.selected.length== tableData.length? ("All "+metadata.selected.length+" Selected"):("Selected: "+metadata.selected.length)}}
                                 </div>
                                 <!-- <div class= 'tableAction'>
-                                    <span 
+                                    <span
                                         class= 'fas fa-ellipsis-h'
                                         @click.stop= 'tableAction= !tableAction'
                                         :class= '{open: tableAction}'
@@ -73,7 +73,7 @@
                                 </div> -->
                                 <div
                                     v-if= '!subtableId'
-                                    @click.stop= 'textSelectAll()' 
+                                    @click.stop= 'textSelectAll()'
                                     class= 'smalltext'
                                 >
                                     <template
@@ -84,7 +84,7 @@
                                 </div>
                                 <div
                                     v-if= '!subtableId'
-                                    @click.stop= 'textSelectNone()' 
+                                    @click.stop= 'textSelectNone()'
                                     class= 'smalltext'
                                 >
                                     <template
@@ -106,19 +106,19 @@
                         :class= '{ active: metadata.sortKey == col }'
                     >
                         {{ col | capitalize }}
-                        <!-- <span 
+                        <!-- <span
                             v-if= 'metadata.sortKey == col'
-                            class= 'fas .fa-stack-1x' 
+                            class= 'fas .fa-stack-1x'
                             :class= 'metadata.sortOrders[col] > 0 ? "fa-sort-up" : "fa-sort-down"'
                         /> -->
-                        <span 
-                            class= "fa-stack" 
+                        <span
+                            class= "fa-stack"
                         >
-                            <i 
+                            <i
                                 class= "fas fa-stack-1x"
                                 :class= 'metadata.sortKey != col? "fa-sort": metadata.sortOrders[col]> 0 ? "fa-sort-up asc": null'
                             />
-                            <i 
+                            <i
                                 v-show= 'metadata.sortKey == col'
                                 class= "fas fa-stack-1x"
                                 :class= 'metadata.sortKey != col? "fa-sort": metadata.sortOrders[col]> 0 ? null:"fa-sort-down dsc"'
@@ -128,7 +128,7 @@
                     <th>
                         Action
                         <div class= 'editColumns'>
-                            <span 
+                            <span
                                 class= 'fas fa-cog'
                                 @click.stop= 'editColumns= !editColumns'
                                 :class= '{open: editColumns}'
@@ -139,12 +139,12 @@
                                 <li>
                                     <label>Display Columns</label>
                                 </li>
-                                <li 
+                                <li
                                     v-for= 'col in d_columns'
                                     :key= 'col'
                                 >
                                     <label>
-                                        <input 
+                                        <input
                                             type= 'checkbox'
                                             :value= 'col'
                                             :checked= 'columns.indexOf(col)!=-1? true: false'
@@ -159,42 +159,42 @@
                 </tr>
             </thead>
             <tbody>
-                <template 
+                <template
                     v-for= '(entry, index) in tableData'
                     :entry= 'entry'
                 >
                     <tr
-                        :key= 'index' 
+                        :key= 'index'
                         :class= '{"selected": metadata.selected && metadata.selected.indexOf(entry[select])!=-1, tableBgStriped: tableBgStriped_Toggle()}'
                         :id= 'entry[select]'
-                        @click.stop= 'SelectRow(entry[select])' 
+                        @click.stop= 'SelectRow(entry[select])'
                     >
                         <td>
-                            <input 
+                            <input
                                 v-if= "!subtableId"
                                 type= 'checkbox'
                                 class= 'selectRow'
                                 :checked= '(metadata.selected && metadata.selected.indexOf(entry[select])!=-1)? true: false'
-                                @click.self= 'toggleCheckbox(entry[select])' 
-                            />                                                             <!-- <vue-button 
+                                @click.self= 'toggleCheckbox(entry[select])'
+                            />                                                             <!-- <vue-button
                                 :type= 'd_type'
                                 tag= "ExpandRow"
                                 :text= "d_text"
                                 :icon= 'entry.showSub? "fas fa-chevron-down":"fas fa-chevron-up"'
                                 :category= 'd_category[9]'
-                               
-                                
+
+
                                 :form= "d_form"
                                 :ctx= 'toggleSubTable.bind(this, entry)'
                             />  -->
                         </td>
-                                           <td 
+                                           <td
                             v-for= '(col, index) in columns'
                             :key= 'index'
                         >
                             {{entry[col]}}
                         </td>
-                        <td> 
+                        <td>
                             <vue-modal
                                 :modalTitle= '"Delete "+ entry[select]'
                                 tag= 'toggleExpandButton'
@@ -205,29 +205,29 @@
                                                               <h3>
                                     Custom body
                                 </h3>
-                                                       </vue-modal>                                                           <vue-button 
+                                                       </vue-modal>                                                           <vue-button
                                 :type= 'd_type'
                                 tag= "ExpandRow"
                                 :icon= 'entry? "fas fa-chevron-left":"fas fa-chevron-up"'
                                 :category= 'd_category[9]'
                                 :ctx= 'toggleSubTable.bind(this, entry)'
-                            /> 
-                            <!-- <span 
+                            />
+                            <!-- <span
                                 :class= 'entry? "fas fa-chevron-right":"fas fa-chevron-down"'
                                 @click.stop= 'toggleSubTable(entry)'
                             /> -->
                         </td>
                     </tr>
-                    <!-- <tr 
+                    <!-- <tr
                         v-if= 'entry.subDetails && entry.showSub'
                         :key= 'index'
                         :id= 'entry[select]+ "expand"'
                     >
-                        <td 
+                        <td
                             class= 'subTable'
                             :colspan= "columns.length+1"
                         >
-                            <vue-table 
+                            <vue-table
                                 :tableData= '(entry.subDetails).tableData'
                                 :columns= '(entry.subDetails).cols'
                                 :metadata= '{}'
@@ -250,7 +250,7 @@
                     :inline= 'd_booleanTrue'
                     @selected= 'setRowElements'
                 /> -->
-                <dropdown-list 
+                <dropdown-list
                     label= 'Show'
                     name= "showRecords"
                     :value= "d_dropdownValue"
@@ -266,38 +266,38 @@
                     Showing {{metadata.start}} - {{metadata.end}} of {{metadata.totalRecords}} Results.
                 </div>
                 <div>
-                    <!-- <span 
+                    <!-- <span
                         class= 'fas fa-chevron-left'
                         @click.stop= 'setPage(metadata.pageNumber-1)'
                         v-show= 'metadata.pageNumber> 1'
                     />                                -->
-                    <vue-button 
+                    <vue-button
                         v-show= 'metadata.pageNumber> 1'
                         :type= 'd_type'
                         tag= "previousPage"
                         icon= 'fas fa-chevron-left'
                         :category= 'd_category[9]'
                         :ctx= 'setPage.bind(this, metadata.pageNumber-1)'
-                    /> 
+                    />
                 </div>
                 <div>
                     Page {{metadata.pageNumber}}
                 </div>
                 <div>
-                    <!-- <span 
+                    <!-- <span
                         class= 'fas fa-chevron-right'
                         @click.stop= 'setPage(metadata.pageNumber+1)'
                         v-show= 'metadata.pageNumber< metadata.pageCount'
                     />                                 -->
-                    <vue-button 
+                    <vue-button
                         v-show= 'metadata.pageNumber< metadata.pageCount'
                         :type= 'd_type'
                         tag= "nextPage"
                         icon= 'fas fa-chevron-right'
                         :category= 'd_category[9]'
                         :ctx= 'setPage.bind(this, metadata.pageNumber+1)'
-                    /> 
-                </div> 
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -468,8 +468,8 @@
             dataTablecolumns: function () {
                 var temp
                 Object.keys(dataObject[0])
-                    .forEach(function eachKey(key) { 
-                        state.columns.push(key); // alerts key 
+                    .forEach(function eachKey(key) {
+                        state.columns.push(key); // alerts key
                         // alert(foo[key]); // alerts value
                     });
             }, //dataTablecolumns
@@ -516,7 +516,7 @@
                 var selected= this.metadata.selected
                 var tr= document.getElementById(id)
                 // console.log(event, id)
-                var checkbox= tr.getElementsByClassName('selectRow')[0]  
+                var checkbox= tr.getElementsByClassName('selectRow')[0]
                                //check if already exists
                 if (!checkbox.checked) {
                         //if not then add
@@ -598,8 +598,8 @@
 
             var tempArray= []
                        Object.keys(this.tableData[0])
-                    .forEach(function eachKey(key) { 
-                        tempArray.push(key); // alerts key 
+                    .forEach(function eachKey(key) {
+                        tempArray.push(key); // alerts key
                         // console.log(key); // alerts value
                     });
             this.d_columns= tempArray
@@ -615,7 +615,7 @@
     @cellWidth: 196px;
     @lastCellWidth: 128px;
     @firstCellWidth: 64px;
-    
+
 
     @backgroundColor: #ccd8e0;
 
@@ -643,7 +643,7 @@
                         &.searchRow {
 
                             & > th {
-                                margin: 8px 16px 0 16px; 
+                                margin: 8px 16px 0 16px;
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: space-between;
@@ -665,7 +665,7 @@
                                                     position: relative;
                                                     left: 0px;
                                                     right: -24px;
-                                                    color: @secondaryColor;
+                                                    color: @primaryColor;
                                                 }
                                             }
                                         }
@@ -680,7 +680,7 @@
                         & > th {
                             padding-left: 16px;
                             text-align: left;
-                            width: @cellWidth;  
+                            width: @cellWidth;
                             color: @textColor;
                             cursor: pointer;
 
@@ -695,7 +695,7 @@
                                     cursor: pointer;
 
                                     &:hover {
-                                        color: @secondaryColor;
+                                        color: @primaryColor;
                                     }
 
                                     & > ul {
@@ -749,7 +749,7 @@
                                     display: flex;
                                     flex-direction: row;
                                     cursor: default;
-                                    border-radius: 0 4px 4px 0; 
+                                    border-radius: 0 4px 4px 0;
 
                                     &.showOptions {
                                         position: absolute;
@@ -788,7 +788,7 @@
 
                                 & > .asc,
                                 & > .dsc {
-                                    color: @secondaryColor;
+                                    color: @primaryColor;
                                 }
                             }
 
@@ -811,7 +811,7 @@
                                         font-size: 10px;
                                         margin-left: 8px;
                                         text-decoration: underline;
-                                        color: @secondaryColor;
+                                        color: @primaryColor;
                                     }
                                 }
 
@@ -867,7 +867,7 @@
 
                     &.selected {
                         background-color: @infoBackground;
-                        font-weight: bold;  
+                        font-weight: bold;
                     }
 
                     & > td {
@@ -888,7 +888,7 @@
                         }
 
                         & > span {
-                            color: @secondaryColor;
+                            color: @primaryColor;
 
                             &.disabled {
                                 .opacity(0.5);
@@ -997,7 +997,7 @@
                 }
 
                 & span {
-                    color: @secondaryColor;
+                    color: @primaryColor;
                     font-size: 20px;
                 }
             }

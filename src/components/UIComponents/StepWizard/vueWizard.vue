@@ -2,9 +2,9 @@
     <div class= 'vueWizard'>
         <div class= 'wizardSteps'>
             <ol class= "step-indicator">
-                <li 
+                <li
                     v-for= "(step, index) in steps"
-                    :key= "index" 
+                    :key= "index"
                     :class=  '{active: (index+1) == d_currentStep, complete: d_currentStep > (index+1) || d_completed}'
                 >
                     <div class= "step">
@@ -32,35 +32,35 @@
                </div>
         <div class= 'wizardButtons'>
             <div v-if= 'd_completed'>
-                <vue-button 
+                <vue-button
                     :type= 'd_type'
                     tag= "ConfirmDetailsButton"
                     :text= "d_textConfirm"
                     :icon= "d_icon"
                     :category= 'd_category[3]'
-                   
-                    
+
+
                     :form= "d_form"
                     :ctx= 'd_ctx'
                 />
             </div>
             <div v-else>
-                <div > 
-                    <vue-button 
+                <div >
+                    <vue-button
                         v-if= 'd_currentStep>1'
                         :type= 'd_type'
                         :text= "steps[d_currentStep-1].title"
                         tag= "Previous"
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-left"
-                       
-                        
+
+
                         :form= "d_form"
                         :ctx= 'consoleClickPrevious'
                     />
                 </div>
-                <div> 
-                    <vue-button 
+                <div>
+                    <vue-button
                         v-if= 'd_currentStep<d_totalSteps'
                         :type= 'd_type'
                         :text= "steps[d_currentStep].title"
@@ -68,25 +68,25 @@
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-right"
                         :disabled= 'validInput'
-                        
+
                         :form= "d_form"
                         :ctx= 'consoleClickNext'
                     />
-                    <vue-button 
+                    <vue-button
                         v-else-if= 'd_currentStep==d_totalSteps'
                         :type= 'd_type'
                         tag= "submitDetailsButton"
                         :text= "d_textSubmit"
                         icon= "fas fa-check"
                         :category= 'd_category[0]'
-                       
-                        
+
+
                         :form= "d_form"
                         :ctx= 'consoleClickSubmit'
                     />
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </template>
 
@@ -97,7 +97,7 @@
 
     export default {
         name: 'vueWizard',
-        
+
         mixins: [ alerts ],
 
         data() {
@@ -162,6 +162,12 @@
             alert: {
                 type: Object,
                 required: true,
+                default: () => {
+                return {
+                    error: "",
+                    warning
+                }
+                }
             }
         }, //props
 

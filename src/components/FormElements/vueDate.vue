@@ -1,9 +1,9 @@
 <template>
-    <div 
+    <div
         class= 'vueDate'
         :class= '{inline: inline}'
     >
-        <label 
+        <label
             v-if= 'label'
             :class= '{maskField: mask}'
         >
@@ -15,13 +15,13 @@
             :class= '{
                         warningContainer: d_warning,
                         errorContainer: d_danger,
-                        iconPadding: inputIcon,
+                        iconPadding: icon,
                         maskField: mask
                     }'
         >
             <span
-                v-if= 'inputIcon'
-                :class= 'inputIcon'
+                v-if= ''
+                :class= ''
             />
             <input
                 v-if= '!mask'
@@ -46,7 +46,7 @@
 
 <script>
 
-    import inputResponse from '@/components/Alerts/inputResponse'; 
+    import inputResponse from '@/components/Alerts/inputResponse';
   import { validator } from "@/typeScript/validator"
     import { alerts } from "@/typeScript/common/alerts";
 
@@ -74,7 +74,7 @@
                 default: 'dateInput'
             },
 
-            //users can pass preset values for the input field 
+            //users can pass preset values for the input field
             value: {
                 required: false,
                 type: [Date, String],
@@ -87,7 +87,7 @@
             },
 
             //if true sets the default date for the field to be current/todays date.
-            //value prop takes presedence over this props 
+            //value prop takes presedence over this props
             //if value is set, setDefault Date status is neglected
             setDefaultDate: {
                 required: false,
@@ -122,6 +122,12 @@
             alert: {
                 required: false,
                 type: Object,
+                default: () => {
+                    return {
+                        error: "",
+                        warning: ""
+                    }
+                }
             },
 
             //sets the required attribute for the input field
@@ -154,7 +160,7 @@
 
             //if a valid fontawesome icon class string is passed, it displays it in the input field
             //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-            inputIcon: {
+            icon: {
                 required: false,
                 type: String,
                 default: null
@@ -307,7 +313,7 @@
         created() {
 
             this.d_needsValidation = false;
-            //store values passed as props into d_value for future manipulation 
+            //store values passed as props into d_value for future manipulation
             //if a value is not passed it checks if a setDefaultDate value flag is checked
             if (this.value) {
                 this.d_value = this.value;
@@ -321,7 +327,7 @@
 </script>
 
 <style lang= "less" scoped>
-    
+
     @import (reference) "./../../Less/customMixins.less";
 
     .vueDate {

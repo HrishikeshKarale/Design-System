@@ -24,7 +24,7 @@ export const toggle = {
   methods: {
     toggle: function(id) {
       const show = this.show;
-      if (!show.indexOf(id!=-1)) {
+      if (show.indexOf(id)==-1) {
         this.show = [...show, id];
       } else {
         //filter returns an array where id is not present
@@ -68,7 +68,7 @@ export const toggle = {
       return "fas fa-question-circle";
     }, //activeTheme
 
-    isOpen: function(id) {
+    isOpen: function (id) {
       return this.show.indexOf(id)!=-1;
     } //isOpen
   },
@@ -77,7 +77,7 @@ export const toggle = {
     if (this.checkCookie("theme")) {
       this.selected = this.getCookie("theme");
     } else {
-      this.selected = this.themes[1].name;
+      this.selected = this.themes[0].name;
       this.setCookie("theme", this.selected, 100);
     }
     document.documentElement.setAttribute("theme", this.selected);

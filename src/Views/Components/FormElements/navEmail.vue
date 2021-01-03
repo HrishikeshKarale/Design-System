@@ -36,7 +36,7 @@
                            
                             
                             
-                            :inputIcon= 'd_inputIcon'
+                            := 'd_'
                             
                             
                             @notify= 'alerts'
@@ -72,7 +72,7 @@
             const maxlength= 50
             const placeholder= 'Enter email here...'
             const d_booleanTrue= true
-            const inputIcon= 'fas fa-at'
+            const icon= 'fas fa-at'
             const readonly= !d_booleanTrue
             const disabled= !d_booleanTrue
             const autofocus= !d_booleanTrue
@@ -90,7 +90,7 @@
                 d_maxlength: d_maxlength,
                 d_placeholder: d_placeholder,
                 d_booleanTrue: d_booleanTrue,
-                d_inputIcon: d_inputIcon,
+                d_: d_,
                 d_alerts: d_alerts,
                 d_email: {
                                        title: 'Email Input Field',
@@ -189,10 +189,10 @@
                             text: this.$store.state.navText.maskText,
                         },
                         {
-                            type: "inputIcon",
-                            value: d_inputIcon,
-                            description: this.$store.state.navText.inputIcon,
-                            text: this.$store.state.navText.inputIconText,
+                            type: "icon",
+                            value: d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.Text,
                         },
                         {
                             type: "alerts",

@@ -107,8 +107,8 @@ export default {
   props: {
     logoLink: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     nav: {
@@ -249,12 +249,12 @@ header {
 
             //styling selected link
             &.router-link-active {
-              color: @secondaryColor;
+              color: @primaryColor;
               &::before {
                 transform: scale(0.8);
               }
               &.router-link-exact-active {
-                color: @secondaryColor;
+                color: @primaryColor;
               }
 
               & > span {
@@ -262,7 +262,7 @@ header {
               }
               & > div {
                 & > h4 {
-                  color: @secondaryColor;
+                  color: @primaryColor;
                   font-weight: bold;
                   & + span {
                     color: @navText;
@@ -277,7 +277,7 @@ header {
               content: "";
               position: absolute;
               width: 100%;
-              background-color: @secondaryColor;
+              background-color: @primaryColor;
               bottom: -8px;
               height: 2px;
               transform: scale(0);
@@ -295,7 +295,7 @@ header {
               }
               & > div {
                 & > h4 {
-                  color: @secondaryColor;
+                  color: @primaryColor;
                   & + span {
                     color: @navText;
                     opacity: 1;
@@ -312,15 +312,15 @@ header {
         margin-left: auto;
         position: relative;
         & > span {
-          color: @secondaryColor;
+          color: @primaryColor;
           padding: @spaceMd;
-          border: 1px solid @secondaryColor;
+          border: 1px solid @primaryColor;
           border-radius: 50%;
           cursor: pointer;
           & + .user {
             display: none;
             position: absolute;
-            border: 1px solid @secondaryColor;
+            border: 1px solid @primaryColor;
             & > img {
               width: 80px;
             }
@@ -332,7 +332,7 @@ header {
         &:hover {
           & > span {
             border-radius: 50% 50% 0 50%;
-            background-color: @secondaryColor;
+            background-color: @primaryColor;
             color: @navBackground;
             .boxShadow(@one, @shadowColor, 1001);
             & + .user {
@@ -352,7 +352,7 @@ header {
       }
     }
     @media screen {
-      @media (max-width: 1540px) {
+      @media (max-width: @maxWidth) {
         flex-direction: column;
         flex-wrap: nowrap;
         padding: @spaceMd @spaceLg;

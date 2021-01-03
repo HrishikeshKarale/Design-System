@@ -159,7 +159,7 @@
 
   &:focus-within,
   &:focus {
-    border-color: @secondaryColor;
+    border-color: @primaryColor;
 
     &>span {
       color: @dangerText ;
@@ -177,7 +177,7 @@
 
   &:focus-within,
   &:focus {
-    border-color: @secondaryColor;
+    border-color: @primaryColor;
 
     &>span {
       color: @warningText;
@@ -248,7 +248,7 @@
           ;
 
           &.fas {
-            color: @secondaryColor;
+            color: @primaryColor;
           }
         }
       }
@@ -286,6 +286,26 @@
     background-color: @navBackground;
     color: @textColor;
 
+    &:first-child {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: @navBackground;
+
+      &>div {
+        flex-grow: 0;
+
+        &.title {
+          color: @textColor;
+          font-weight: bold;
+
+          span.fas {
+            color: @primaryColor;
+            font-size: @fontSizeSm * 2;
+          }
+        }
+      }
+    }
+
     &>.syntaxCode {
       overflow-x: auto;
       overflow-y: hidden;
@@ -298,25 +318,6 @@
       font-size: @fontSize;
     }
 
-    &:first-child {
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      background-color: @black;
-
-      &>div {
-        flex-grow: 0;
-
-        &.title {
-          color: @textColor;
-          font-weight: bold;
-
-          span.fas {
-            color: @secondaryColor;
-            font-size: @fontSizeSm * 2;
-          }
-        }
-      }
-    }
 
     &>div {
       display: flex;
@@ -426,10 +427,10 @@
 
   &:focus-within,
   &:focus {
-    border-color: @secondaryColor;
+    border-color: @primaryColor;
 
     &>span {
-      color: @secondaryColor;
+      color: @primaryColor;
     }
   }
 
@@ -457,7 +458,7 @@
     min-width: 160px;
     max-width: 240px;
     min-height: @spaceLg;
-    border: 1px solid @secondaryColor;
+    border: 1px solid @primaryColor;
     position: relative;
 
     &.inputResponse {
@@ -505,7 +506,7 @@
         top: 50%;
         transform: translate(0, -50%);
         z-index: @bodyZ + 5;
-        color: @secondaryColor;
+        color: @primaryColor;
       }
 
       .condition();
@@ -520,7 +521,7 @@
         top: 50%;
         transform: translate(0, -50%);
         // padding: @spaceMd+@spaceSm 0 @spaceMd+@spaceSm @spaceMd*2;; //12px 0 12px @spaceLg;
-        color: @secondaryColor;
+        color: @primaryColor;
 
         // border-right-width: 0px;
         &+datalist,
@@ -569,7 +570,7 @@
 
       &>div {
         display: flex;
-        border: 1px solid @secondaryColor;
+        border: 1px solid @primaryColor;
         padding: @spaceMd @spaceLg;
         border-radius: @borderRadius;
         margin-top: @spaceSm;
@@ -628,7 +629,7 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: @secondaryColor;
+    background: @primaryColor;
     border-radius: @width;
   }
 }
@@ -691,7 +692,7 @@
           ;
 
           &.fas {
-            color: @secondaryColor;
+            color: @primaryColor;
           }
         }
       }
@@ -707,14 +708,14 @@
     width: fit-content;
     background-color: @backgroundColor;
     border-radius: @borderRadius;
-    border: 1px solid @secondaryColor;
+    border: 1px solid @primaryColor;
 
     &>label {
       padding: @spaceLg;
 
       &.checked {
         border-radius: @borderRadius;
-        background-color: @secondaryColor;
+        background-color: @primaryColor;
         color: @backgroundColor;
         font-weight: bold;
       }

@@ -21,7 +21,7 @@ export default {
 
     alt: {
       required: false,
-      type: [String, null],
+      type: String,
       default: function(value) {
         if (value) {
           return value;

@@ -21,11 +21,12 @@
         </div>
         <div class= 'details'>
             <div>
-                <span @click= "d_hideDetails= !d_hideDetails" :class= '["fas", d_hideDetails? "fa-plus": "fa-minus"]'> {{d_hideDetails? "View": "Hide"}} Details</span>
+                <span @click= "d_hideDetails= !d_hideDetails" :class= '["fas", d_hideDetails? "fa-plus": "fa-minus"]'>  Details</span>
                 <vue-clipboard
-                    :componentCode= 'd_danger'
+                    :copy= 'd_danger'
                     tag= 'StackTrace'
                     text= 'Copy'
+                    category= "text-sm"
                     id= 'stackTrace'
                 />
             </div>
@@ -75,11 +76,11 @@
                 <slot name= 'buttons'/>
             </div>
         </div>
-    </div>  
+    </div>
 </template>
 
 <script>
-    
+
     import vueClipboard from '../../components/Code/vueClipboard.vue';
 
     export default {
@@ -98,7 +99,7 @@
                 stackTrace: "+this.stackTrace+",\n\
             }"
             //object (JSON)
-            const errorObject= {
+            const d_errorObject= {
                 "app": this.app,
                 "version": this.version,
                 "url": this.url,
@@ -170,12 +171,12 @@
     @planet: 30em;
     @size: 2;
     @top: 4em;
- 
+
     @white: #EDEDED;
     @ghostBorder: #BFC0C0;
-    @dark: @secondaryColor;
+    @dark: @primaryColor;
     @light: red;
-    
+
     .systemError {
         display: flex;
         flex-direction: column;

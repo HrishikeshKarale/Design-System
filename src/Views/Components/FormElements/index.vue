@@ -52,7 +52,7 @@
                             </p>
                         </li>
                     </ul>
-                    <section id= "importance">    
+                    <section id= "importance">
                         <h3>Why is this important?</h3>
                         <p>
                             Forms can be visually and cognitively complex and challenging to use. Accessible forms are easier to use for everyone, including people with disabilities.
@@ -68,7 +68,7 @@
                         >
                             <template slot= 'good'>
                                 <fieldset style= 'width: 400px;'>
-                                    <legend style= 'color: #FFFFFF; 
+                                    <legend style= 'color: #FFFFFF;
                                                     background-color: #00B6A8;
                                                     text-align: center;'>
                                         <h2>C O M E T</h2>
@@ -77,7 +77,7 @@
                                                 font-weight: bold;'>
                                         Personal Information
                                     </h4>
-                                    <text-input 
+                                    <text-input
                                         label= "First Name"
                                         name= "usernameTextField"
                                         :value= 'd_textBoxValue'
@@ -87,7 +87,7 @@
                                         @notify= 'alerts'
                                         @value= 'val=> d_textBoxValue = val'
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "Last Name"
                                         name= "passwordTextField"
                                         :value= 'd_textBoxValue'
@@ -97,7 +97,7 @@
                                         @notify= 'alerts'
                                         @value= 'val=> d_textBoxValue = val'
                                     />
-                                    <radio-input 
+                                    <radio-input
                                         label= "Gender"
                                         name= "checkboxField"
                                         :value= "d_radio1"
@@ -115,7 +115,7 @@
                                         min= "2000-12-12"
                                         max= "2040-12-12"
                                         :readonly= 'd_booleanTrue'
-                                        inputIcon= "fas fa-calendar-alt"
+                                        icon= "fas fa-calendar-alt"
                                         @notify= 'alerts'
                                         @value= 'val=> d_dateValue = val'
                                     />
@@ -123,34 +123,34 @@
                                                 font-weight: bold;'>
                                         Contact Information
                                     </h4>
-                                    <email-input 
+                                    <email-input
                                         label= "Email"
                                         name= "passwordTextField"
                                         value= 'SFrye@gmail.com'
                                         placeholder= "Enter text here..."
                                         :readonly= 'd_booleanTrue'
-                                        inputIcon= "fas fa-at"
+                                        icon= "fas fa-at"
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "Phone Number"
                                         name= "passwordTextField"
                                         value= ''
                                         placeholder= "Enter landline number..."
                                         :readonly= 'd_booleanTrue'
-                                        inputIcon= "fas fa-phone"
+                                        icon= "fas fa-phone"
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "Mobile Number"
                                         name= "passwordTextField"
                                         value= '585520727'
                                         placeholder= "Enter your mobile number..."
                                         :readonly= 'd_booleanTrue'
                                         :required= 'd_booleanTrue'
-                                        inputIcon= "fas fa-mobile-alt"
+                                        icon= "fas fa-mobile-alt"
                                         :alertMessage= "d_alertMessage"
                                     />
                                     <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Confirm"
@@ -158,7 +158,7 @@
                                             icon= "fas fa-clipboard-check"
                                             :ctx= 'buttonClick.bind(this)'
                                         />
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Cancel"
@@ -171,7 +171,7 @@
                             <template slot= 'bad'>
                                 <fieldset style= ''>
                                     <h2>C O M E T</h2>
-                                    <text-input 
+                                    <text-input
                                         label= "Please write your first name"
                                         name= "usernameTextField"
                                         value= 'Steven'
@@ -180,7 +180,7 @@
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "My Last name is"
                                         name= "passwordTextField"
                                         value= 'Frye'
@@ -189,7 +189,7 @@
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
-                                    <radio-input 
+                                    <radio-input
                                         label= "I am"
                                         name= "checkboxField"
                                         :value= "d_radioValue"
@@ -212,7 +212,7 @@
                                         @notify= 'alerts'
                                         @value= 'val=> d_dateValue = val'
                                     />
-                                    <email-input 
+                                    <email-input
                                         label= "Email me at"
                                         name= "passwordTextField"
                                         value= 'SFrye@gmail.com'
@@ -220,7 +220,7 @@
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "what is your phone no?"
                                         name= "passwordTextField"
                                         value= ''
@@ -228,7 +228,7 @@
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
-                                    <text-input 
+                                    <text-input
                                         label= "Mobile No "
                                         name= "passwordTextField"
                                         value= '585520727'
@@ -247,7 +247,7 @@
                             Do's vs Dont's
                         </h3>
                         <p>Whether it is a signup flow, a multi-view stepper, or a monotonous data entry interface, forms are one of the most important components of digital product design. This article focuses on the common dos and don’ts of form design. Keep in mind that these are general guideline and there are exceptions to every rule.</p>
-                        <div 
+                        <div
                             id= 'alignTheSection'
                             class= 'subSection'
                         >
@@ -268,7 +268,7 @@
                                         <h3 style= 'color: #003A65;'>
                                             Log In
                                         </h3>
-                                        <text-input 
+                                        <text-input
                                             label= "Username"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -278,7 +278,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <password-input 
+                                        <password-input
                                             label= "Password"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -288,7 +288,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -303,7 +303,7 @@
                                             <h3 style= 'color: #003A65;'>
                                                 Log In
                                             </h3>
-                                            <text-input 
+                                            <text-input
                                                 label= "Username"
                                                 name= "usernameTextField"
                                                 :value= 'd_textBoxValue'
@@ -314,7 +314,7 @@
                                                 @notify= 'alerts'
                                                 @value= 'val=> d_textBoxValue = val'
                                             />
-                                            <password-input 
+                                            <password-input
                                                 label= "Password"
                                                 name= "passwordTextField"
                                                 :value= 'd_textBoxValue'
@@ -325,7 +325,7 @@
                                                 @notify= 'alerts'
                                                 @value= 'val=> d_textBoxValue = val'
                                             />
-                                            <radio-input 
+                                            <radio-input
                                                 label= "Remember Me"
                                                 name= "shipDyaCheckboxField"
                                                 :value= 'd_checkboxValue'
@@ -341,7 +341,7 @@
                                 <template slot= 'bad'>
                                     <fieldset style= ''>
                                         <h2>C O M E T</h2>
-                                        <text-input 
+                                        <text-input
                                             label= "Please write your first name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -352,7 +352,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "My Last name is"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -363,7 +363,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -385,7 +385,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
-                                        <email-input 
+                                        <email-input
                                             label= "Email me at"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -395,7 +395,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "what is your phone no?"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -405,7 +405,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile No "
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -421,7 +421,7 @@
                                 <template slot= 'good'>
                                     <fieldset style= 'width: 400px;'>
                                         <h2>C O M E T</h2>
-                                        <text-input 
+                                        <text-input
                                             label= "Please write your first name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -431,7 +431,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "My Last name is"
                                             name= "passwordTextField"
                                             Value= 'd_textBoxValue'
@@ -441,7 +441,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -461,7 +461,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
-                                        <email-input 
+                                        <email-input
                                             label= "Email me at"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -470,7 +470,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "what is your phone no? "
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -479,7 +479,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile No"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -493,7 +493,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'groupRelatedFields'
                             class= 'subSection'
                         >
@@ -512,7 +512,7 @@
                                 <template slot= 'bad'>
                                     <fieldset style= 'width: 400px;'>
                                         <h2>C O M E T</h2>
-                                        <text-input 
+                                        <text-input
                                             label= "Please write your first name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -522,7 +522,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "My Last name is"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -532,7 +532,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -552,7 +552,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
-                                        <email-input 
+                                        <email-input
                                             label= "Email me at"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -561,7 +561,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "what is your phone no?"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -570,7 +570,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile No"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -588,7 +588,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "Please write your first name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -598,7 +598,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "My Last name is "
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -608,7 +608,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -631,7 +631,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email me at"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -640,7 +640,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "what is your phone no?"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -649,7 +649,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile No"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -663,7 +663,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'writeClearLabels'
                             class= 'subSection'
                         >
@@ -682,7 +682,7 @@
                                         <h4>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "Please write your first name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -692,7 +692,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "My Last name is"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -702,7 +702,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -725,7 +725,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email me at"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -734,7 +734,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "what is your phone no?"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -743,7 +743,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile No"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -763,7 +763,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -773,7 +773,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -783,7 +783,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -806,7 +806,7 @@
                                         <h4 style= 'color: #003a65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -815,7 +815,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -824,7 +824,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -838,7 +838,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'inputFieldFormat'
                             class= 'subSection'
                         >
@@ -862,7 +862,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -872,7 +872,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -882,7 +882,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -905,7 +905,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -914,7 +914,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -923,7 +923,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -943,7 +943,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -953,7 +953,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -963,7 +963,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -980,41 +980,41 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
@@ -1022,7 +1022,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'CTAConversion'
                             class= 'subSection'
                         >
@@ -1046,7 +1046,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -1056,7 +1056,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -1066,7 +1066,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -1083,44 +1083,44 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "OK"
@@ -1128,7 +1128,7 @@
                                                 icon= "fas fa-clipboard-check"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1147,7 +1147,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
@@ -1157,7 +1157,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
@@ -1167,7 +1167,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -1184,53 +1184,53 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "OK"
                                                 category= "standard"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1249,36 +1249,36 @@
                                         <h3 style= 'color: #003A65;'>
                                             C O M E T
                                         </h3>
-                                        <text-input 
+                                        <text-input
                                             label= "Username"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-user"
+                                            icon= "fas fa-user"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <password-input 
+                                        <password-input
                                             label= "Password"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-key"
+                                            icon= "fas fa-key"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
                                             @notify= 'alerts'
                                             @value= 'val=> d_checkboxValue = val'
                                         />
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Log In"
@@ -1286,7 +1286,7 @@
                                             icon= "fas fa-sign-in-alt"
                                             :ctx= 'buttonClick.bind(this)'
                                         />
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
@@ -1300,29 +1300,29 @@
                                         <h3 style= 'color: #003A65;'>
                                             C O M E T
                                         </h3>
-                                        <text-input 
+                                        <text-input
                                             label= "Username"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-user"
+                                            icon= "fas fa-user"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <password-input 
+                                        <password-input
                                             label= "Password"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-key"
+                                            icon= "fas fa-key"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1330,7 +1330,7 @@
                                             @value= 'val=> d_checkboxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Log In"
@@ -1338,7 +1338,7 @@
                                                 icon= "fas fa-unlock-alt"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Forgot Username and/or Password"
@@ -1350,7 +1350,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'tailorYourCTA'
                             class= 'subSection'
                         >
@@ -1371,7 +1371,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -1379,7 +1379,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -1387,7 +1387,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio2"
@@ -1404,40 +1404,40 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
@@ -1445,7 +1445,7 @@
                                                 icon= "fas fa-clipboard-check"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1463,7 +1463,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -1471,7 +1471,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -1479,7 +1479,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio3"
@@ -1496,44 +1496,44 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "OK"
                                                 category= "small"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1552,36 +1552,36 @@
                                         <h3 style= 'color: #003A65;'>
                                             C O M E T
                                         </h3>
-                                        <text-input 
+                                        <text-input
                                             label= "Username"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-user"
+                                            icon= "fas fa-user"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <password-input 
+                                        <password-input
                                             label= "Password"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-key"
+                                            icon= "fas fa-key"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
                                             @notify= 'alerts'
                                             @value= 'val=> d_checkboxValue = val'
                                         />
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Log In"
@@ -1589,7 +1589,7 @@
                                             icon= "fas fa-sign-in-alt"
                                             :ctx= 'buttonClick.bind(this)'
                                         />
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
@@ -1604,29 +1604,29 @@
                                         <h3 style= 'color: #003A65;'>
                                             C O M E T
                                         </h3>
-                                        <text-input 
+                                        <text-input
                                             label= "Username"
                                             name= "usernameTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-user"
+                                            icon= "fas fa-user"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <password-input 
+                                        <password-input
                                             label= "Password"
                                             name= "passwordTextField"
                                             :value= 'd_textBoxValue'
                                             placeholder= "Enter text here..."
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-key"
+                                            icon= "fas fa-key"
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1634,7 +1634,7 @@
                                             @value= 'val=> d_checkboxValue = val'
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Log In"
@@ -1642,7 +1642,7 @@
                                                 icon= "fas fa-unlock-alt"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Reset"
@@ -1651,7 +1651,7 @@
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
                                         </div>
-                                        <vue-button 
+                                        <vue-button
                                             type= "button"
                                             tag= "consoleTextButton"
                                             text= "Forgot Username and/or Password"
@@ -1662,7 +1662,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'validateTheForm'
                             class= 'subSection'
                         >
@@ -1706,7 +1706,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -1714,7 +1714,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -1722,7 +1722,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio4"
@@ -1739,41 +1739,41 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
@@ -1781,7 +1781,7 @@
                                                 icon= "fas fa-clipboard-check"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1796,7 +1796,7 @@
                                         <legend style= 'color: #003A65;'>
                                             <h2>C O M E T</h2>
                                         </legend>
-                                        <vue-alert 
+                                        <vue-alert
                                             type= 'danger'
                                             code: "202.1.23"
                                             alert= 'Error'
@@ -1806,7 +1806,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -1814,7 +1814,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -1822,7 +1822,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio5"
@@ -1839,44 +1839,44 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
                                                 category= "small"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -1888,7 +1888,7 @@
                                 </template>
                             </good-vs-bad>
                         </div>
-                        <div 
+                        <div
                             id= 'useColorsEfficiently'
                             class= 'subSection'
                         >
@@ -1903,8 +1903,8 @@
                             >
                                 <template slot= 'good'>
                                     <fieldset style= 'width: 400px;'>
-                                        <legend style= 'color: #FFFFFF; 
-                                                        background-color: @secondaryColor;
+                                        <legend style= 'color: #FFFFFF;
+                                                        background-color: @primaryColor;
                                                         text-align: center;'>
                                             <h2>C O M E T</h2>
                                         </legend>
@@ -1912,7 +1912,7 @@
                                                     font-weight: bold;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -1920,7 +1920,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -1928,7 +1928,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio6"
@@ -1946,7 +1946,7 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
@@ -1954,34 +1954,34 @@
                                                     font-weight: bold;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
@@ -1989,7 +1989,7 @@
                                                 icon= "fas fa-clipboard-check"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -2007,7 +2007,7 @@
                                         <h4 style= 'color: #003A65;'>
                                             Personal Information
                                         </h4>
-                                        <text-input 
+                                        <text-input
                                             label= "First Name"
                                             name= "usernameTextField"
                                             value= 'Steven'
@@ -2015,7 +2015,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Last Name"
                                             name= "passwordTextField"
                                             value= 'Frye'
@@ -2023,7 +2023,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input 
+                                        <radio-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio7"
@@ -2041,41 +2041,41 @@
                                             min= "2000-12-12"
                                             max= "2040-12-12"
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-calendar-alt"
+                                            icon= "fas fa-calendar-alt"
                                             @notify= 'alerts'
                                             @value= 'val=> d_dateValue = val'
                                         />
                                         <h4 style= 'color: #003A65;'>
                                             Contact Information
                                         </h4>
-                                        <email-input 
+                                        <email-input
                                             label= "Email"
                                             name= "passwordTextField"
                                             value= 'SFrye@gmail.com'
                                             placeholder= "Enter text here..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-at"
+                                            icon= "fas fa-at"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Phone Number"
                                             name= "passwordTextField"
                                             value= ''
                                             placeholder= "Enter landline number..."
                                             :readonly= 'd_booleanTrue'
-                                            inputIcon= "fas fa-phone"
+                                            icon= "fas fa-phone"
                                         />
-                                        <text-input 
+                                        <text-input
                                             label= "Mobile Number"
                                             name= "passwordTextField"
                                             value= '(585) 520-727'
                                             placeholder= "Enter your mobile number..."
                                             :readonly= 'd_booleanTrue'
                                             :required= 'd_booleanTrue'
-                                            inputIcon= "fas fa-mobile-alt"
+                                            icon= "fas fa-mobile-alt"
                                             :alertMessage= "d_alertMessage"
                                         />
                                         <div style= ' display: flex; flex-direction: row-reverse; flex-wrap: wrap;'>
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Confirm"
@@ -2083,7 +2083,7 @@
                                                 icon= "fas fa-clipboard-check"
                                                 :ctx= 'buttonClick.bind(this)'
                                             />
-                                            <vue-button 
+                                            <vue-button
                                                 type= "button"
                                                 tag= "consoleTextButton"
                                                 text= "Cancel"
@@ -2179,7 +2179,7 @@
                 d_textBoxValue,
                 d_booleanTrue,
             } //return
-        }, //data    
+        }, //data
     }
 </script>
 
@@ -2187,7 +2187,7 @@
 
     @import (reference) "../../../Less/customMixins.less";
     @import (reference) "../../../Less/customVariables.less";
-    
+
     .forms {
 
         div {
@@ -2195,7 +2195,7 @@
 
             & > .FormsTitle {
                 margin-bottom: 96px;
-                text-align: center; 
+                text-align: center;
             }
         }
     }

@@ -39,7 +39,7 @@
                             
                             
                             
-                            :inputIcon= 'd_inputIcon'
+                            := 'd_'
                             @notify= 'alerts'
                             @value= 'val=> d_dateValue = val'
                         />
@@ -91,7 +91,7 @@
                             //"^d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$"
 
             const d_booleanTrue= true
-                       const inputIcon= 'fas fa-calendar-alt'
+                       const icon = 'fas fa-calendar-alt'
                        const alerts= this.alerts
 
 
@@ -109,7 +109,7 @@
                 d_max: d_max,
 
                 d_booleanTrue: d_booleanTrue,
-                               d_inputIcon: d_inputIcon,
+                               d_: d_,
                                d_alerts: d_alerts,
 
                 danger: null,
@@ -212,10 +212,10 @@
                             text: this.$store.state.navText.maskText,
                         },
                         {
-                            type: "inputIcon",
-                            value: d_inputIcon,
-                            description: this.$store.state.navText.inputIcon,
-                            text: this.$store.state.navText.inputIconText,
+                            type: "icon",
+                            value: d_icon,
+                            description: this.$store.state.navText.icon,
+                            text: this.$store.state.navText.Text,
                         },
                         {
                             type: "alerts",

@@ -9,11 +9,11 @@
       :class="{
         warningContainer: d_warning,
         errorContainer: d_danger,
-        iconPadding: inputIcon,
+        iconPadding: icon,
         maskField: mask
       }"
     >
-      <span v-if="inputIcon" :class="inputIcon" />
+      <span v-if="" :class="" />
       <input
         v-if="!mask"
         type="email"
@@ -95,22 +95,22 @@ export default {
     //sets heading/Label for the input field
     label: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets name attribute for the input field (required field in case of forms)
     name: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "emailInput"
     },
 
     //users can pass preset values for the input field
     value: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     },
 
     //sets the format/pattern for acceptable values for the input field
@@ -125,7 +125,7 @@ export default {
     //sets the placeholder attribute for the input field
     placeholder: {
       required: false,
-      type: [String, null],
+      type: String,
       default: "abc@yahoo.com"
     },
 
@@ -147,7 +147,12 @@ export default {
     alert: {
       required: false,
       type: [Object, null],
-      default: null
+      default:  () => {
+          return {
+              error: "",
+              warning: ""
+          }
+      }
     },
 
     //sets the required attribute for the input field
@@ -201,10 +206,10 @@ export default {
 
     //if a valid fontawesome icon class string is passed, it displays it in the input field
     //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-    inputIcon: {
+    icon: {
       required: false,
-      type: [String, null],
-      default: null
+      type: String,
+      default: ""
     }
   }, //props
 }; //default
