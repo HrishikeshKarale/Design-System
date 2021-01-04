@@ -49,7 +49,6 @@
                   name= "playpen"
                   :value= 'd_value'
                   :options= 'attribute.value'
-                  :strict= '!d_booleanTrue'
                   @value= "val => (d_value = val)"
                 />
               </template>

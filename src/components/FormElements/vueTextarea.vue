@@ -13,7 +13,7 @@
         maskField: mask
       }"
     >
-      <span v-if="" :class="" />
+      <span v-if="icon" :class="icon" />
       <textarea
         v-if="!mask"
         v-model="d_value"

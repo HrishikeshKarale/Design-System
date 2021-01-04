@@ -72,7 +72,6 @@
         d_maxlength,
         d_minlength,
         d_placeholder,
-        d_booleanTrue,
         d_autofocus,
         d_disabled,
         d_readonly,

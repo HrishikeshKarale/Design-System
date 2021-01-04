@@ -1,19 +1,19 @@
 <template>
     <div class= "navTextarea">
             <div class= 'FormElementsTitle'>
-                <div 
+                <div
                     v-if= 'd_textareaValue'
                     class= 'value'
                 >
                     <label>Value Returned:</label> {{d_textareaValue}}
                 </div>
-                <div 
+                <div
                     v-if= 'danger'
                     class= 'error'
                 >
                     <label>Error Returned:</label> {{danger}}
                 </div>
-                <div 
+                <div
                     v-if= 'warning'
                     class= 'warning'
                 >
@@ -24,7 +24,7 @@
                 <form>                         <component-details
                         :compData= 'd_textarea'
                     >
-                        <vue-textarea 
+                        <vue-textarea
                             :label= "d_label"
                             :name= "d_name"
                             :value= 'd_textareaValue'
@@ -32,7 +32,7 @@
                             :placeholder= "d_placeholder"
                             :maxlength= 'd_maxlength'
                             :required= 'd_booleanTrue'
-                            := 'd_'
+                            :icon= 'd_icon'
                             @notify= 'alerts'
                             @value= 'val=> d_textareaValue = val'
                         />
@@ -45,7 +45,7 @@
     import { alerts } from "@/typeScript/common/alerts";
     import componentDetails from "@/Views/componentDetails";
     import vueTextarea from "@/components/FormElements/vueTextarea";
-    
+
 
     // import { store } from '@/store/store'
 
@@ -110,7 +110,7 @@
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_: d_,
+                d_icon,
 
                 danger: null,
 
@@ -222,6 +222,6 @@
                     ]
                 }, //textarea
             } //return
-        }, //data 
+        }, //data
     } //default
 </script>

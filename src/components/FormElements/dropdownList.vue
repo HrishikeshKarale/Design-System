@@ -13,7 +13,7 @@
         maskField: mask
       }"
     >
-      <span v-if="" :class="" />
+      <span v-if="icon" :class="icon" />
       <select
         v-if="!mask"
         :id="name"
@@ -22,6 +22,7 @@
         :disabled="disabled"
         :required="required"
         :multiple="multiple"
+        :readonly="readonly"
         :size="size"
         @change="validate"
       >
@@ -74,12 +75,12 @@ export default {
     //users can pass preset values for the input field (v-model)
     value: {
       required: false,
-      type: [String, Number, Array, null],
+      type: [String, Number, Array],
       default: function() {
         if (this.multiple) {
           return [];
         }
-        return null;
+        return "";
       }
     },
 
@@ -141,6 +142,13 @@ export default {
       required: false,
       type: Boolean,
       default: true
+    },
+
+    //sets the readonly attribute for the input field
+    readonly: {
+      required: false,
+      type: Boolean,
+      default: false
     },
 
     //checks if label options should appear on the same line or not

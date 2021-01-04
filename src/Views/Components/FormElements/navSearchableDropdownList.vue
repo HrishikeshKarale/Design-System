@@ -1,19 +1,19 @@
 <template>
     <div class= "navSearchableDropdownList">
             <div class= 'FormElementsTitle'>
-                <div 
+                <div
                     v-if= 'd_searchDropboxValue'
                     class= 'value'
                 >
                     <label>Value Returned:</label> {{d_searchDropboxValue}}
                 </div>
-                <div 
+                <div
                     v-if= 'danger'
                     class= 'error'
                 >
                     <label>Error Returned:</label> {{danger}}
                 </div>
-                <div 
+                <div
                     v-if= 'warning'
                     class= 'warning'
                 >
@@ -24,7 +24,7 @@
                 <form>                           <component-details
                         :compData= 'd_searchableDropdownList'
                     >
-                        <searchable-dropdown-list 
+                        <searchable-dropdown-list
                             :label= "d_label"
                             :name= "d_name"
                             :value= 'd_searchDropboxValue'
@@ -33,13 +33,13 @@
                             :placeholder= 'd_placeholder'
                             :strict= 'd_booleanTrue'
                             :maxlength= 'd_maxlength'
-                            
+
                             :required= 'd_booleanTrue'
-                           
-                            
-                            := 'd_'
-                            
-                            
+
+
+                            :icon= 'd_icon'
+
+
                             @notify= 'alerts'
                             @value= 'val=> d_searchDropdownValue = val'
                         />
@@ -53,7 +53,7 @@
 
     import componentDetails from "@/Views/componentDetails";
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-    
+
 
     // import { store } from '@/store/store'
 
@@ -117,7 +117,7 @@
 
                 d_booleanTrue: d_booleanTrue,
 
-                d_: d_,
+                d_icon,
 
                 d_alerts: d_alerts,
 

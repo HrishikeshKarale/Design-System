@@ -13,7 +13,7 @@
         maskField: mask
       }"
     >
-      <span v-if="" :class="" />
+      <span v-if="icon" :class="icon" />
       <input
         v-if="!mask"
         type="email"

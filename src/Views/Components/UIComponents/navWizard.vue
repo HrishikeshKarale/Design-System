@@ -3,14 +3,14 @@
       <component-details
         :compData= 'd_wizard'
       >
-        <vue-wizard 
+        <vue-wizard
           :steps= 'd_steps'
           :alert= "{'error': danger, 'warning': warning}"
         >
           <template slot= '1'>
             <h3>Order Processing Details</h3>
             <div>
-              <text-input 
+              <text-input
                 label= "Customer"
                 name= "customerField"
                 :value= 'd_customerVal'
@@ -18,17 +18,17 @@
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 icon= 'fas fa-user'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_customerVal = val'
               />
             </div>
             <div>
-              <searchable-dropdown-list 
+              <searchable-dropdown-list
                 label= "Cost Center"
                 name= "costCenterField"
                 :value= 'd_costCenterVal'
@@ -37,18 +37,18 @@
                 :placeholder= 'd_placeholder'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                
+
                 :required= 'd_booleanTrue'
-               
-                
+
+
                 icon= 'fas fa-closed-captioning'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_costCentreVal = val'
               />
             </div>
             <div>
-              <text-input 
+              <text-input
                 label= "Order Name"
                 name= "orderNameField"
                 :value= 'd_OrderNameVal'
@@ -56,17 +56,17 @@
                 :placeholder= "d_placeholder"
                 :maxlength= 'd_maxlength'
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 icon= 'fas fa-file-signature'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_OrderNameVal = val'
               />
             </div>
             <div>
-              <text-input 
+              <text-input
                 label= "Recipient"
                 name= "orderNameField"
                 :value= 'd_recipientVal'
@@ -80,7 +80,7 @@
               />
             </div>
             <div>
-              <searchable-dropdown-list 
+              <searchable-dropdown-list
                 label= "Delivery Option"
                 name= "customerField"
                 :value= 'd_deliveryOptionVal'
@@ -89,43 +89,43 @@
                 :placeholder= 'd_placeholder'
                 :strict= 'd_booleanTrue'
                 :maxlength= 'd_maxlength'
-                
+
                 :required= 'd_booleanTrue'
-               
-                
+
+
                 icon= 'fas fa-truck'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_deliveryOptionVal = val'
               />
             </div>
             <div>
-              <radio-input 
+              <radio-input
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
                 :options= null
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 @notify= 'alerts'
                 @value= 'val=> d_shipping = val'
               />
             </div>
             <div>
-              <vue-textarea 
+              <vue-textarea
                 label= "Add a note for Recipient"
                 name= "recipientNoteField"
                 :value= "d_recipientNote"
                 :pattern= 'd_pattern'
                 :placeholder= "d_placeholder"
                 :required= 'd_booleanTrue'
-               
-                
-                
+
+
+
                 icon= 'fas fa-comment'
-                
+
                 @notify= 'alerts'
                 @value= 'val=> d_recipientNote = val'
               />
@@ -138,19 +138,19 @@
           </template>
         </vue-wizard>
       </component-details>
-    
+
   </div>
 </template>
 
 <script>
 
-  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard' 
+  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard'
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import componentDetails from '@/Views/componentDetails'
   import textInput from "@/components/FormElements/textInput";
   import radioInput from "@/components/FormElements/radioInput";
   import vueTextarea from "@/components/FormElements/vueTextarea";
-  
+
 
   // import { store } from '@/store/store'
   import { mapState, mapActions } from 'vuex';
@@ -216,7 +216,7 @@
 
         d_booleanTrue: d_booleanTrue,
 
-        d_: d_,
+        d_icon,
 
         d_alerts: d_alerts,
 

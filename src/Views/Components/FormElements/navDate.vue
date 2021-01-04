@@ -1,19 +1,19 @@
 <template>
     <div class="navDate">
             <div class= 'FormElementsTitle'>
-                <div 
+                <div
                     v-if= 'd_dateValue'
                     class= 'value'
                 >
                     <label>Value Returned:</label> {{d_dateValue}}
                 </div>
-                <div 
+                <div
                     v-if= 'danger'
                     class= 'error'
                 >
                     <label>Error Returned:</label> {{danger}}
                 </div>
-                <div 
+                <div
                     v-if= 'warning'
                     class= 'warning'
                 >
@@ -21,29 +21,29 @@
                 </div>
             </div>
             <div class="FormElementsContent">
-                <form>   
+                <form>
                     <component-details
                         :compData= 'd_date'
                     >
-                        <vue-date 
+                        <vue-date
                             :label= "d_label"
                             :name= "d_name"
                             :value= 'd_dateValue'
-                            
+
                             :min= 'd_min'
                             :max= 'd_max'
                             :pattern= "d_pattern"
                             :required= 'd_booleanTrue'
-                           
-                            
-                            
-                            
-                            
-                            := 'd_'
+
+
+
+
+
+                            :icon= 'd_icon'
                             @notify= 'alerts'
                             @value= 'val=> d_dateValue = val'
                         />
-                    </component-details>  
+                    </component-details>
                 </form>
             </div>
            </div>
@@ -52,7 +52,7 @@
 <script>
     import componentDetails from "@/Views/componentDetails";
     import vueDate from "@/components/FormElements/vueDate";
-    
+
 
     export default {
         name: "navDate",
@@ -109,7 +109,7 @@
                 d_max: d_max,
 
                 d_booleanTrue: d_booleanTrue,
-                               d_: d_,
+                               d_icon,
                                d_alerts: d_alerts,
 
                 danger: null,
