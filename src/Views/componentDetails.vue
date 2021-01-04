@@ -47,7 +47,7 @@
 				<slot/>
 			</div>
 		</section>
-	  <section id= 'Attribute List'>
+	  <section id= 'Attribute List' v-if="compData.attributes">
 		  <header>
 				<h3>
 					Attributes
@@ -83,7 +83,7 @@
 				</table>
 			</div>
 	  </section>
-		<section id = 'Attribute Details'>
+		<section v-if="compData.attributes" id = 'Attribute Details'>
 			<header>
 				<h3>
 					Attributes details
