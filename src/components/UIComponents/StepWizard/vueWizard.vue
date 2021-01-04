@@ -23,7 +23,6 @@
             <div v-show= "d_currentStep == 2 && !d_completed">
                 <slot name= '2'/>
             </div>
-
             <div v-if= "d_completed">
                 <h3>Overview</h3>
                 <slot name= '1'/>
@@ -38,8 +37,6 @@
                     :text= "d_textConfirm"
                     :icon= "d_icon"
                     :category= 'd_category[3]'
-
-
                     :form= "d_form"
                     :ctx= 'd_ctx'
                 />
@@ -53,8 +50,6 @@
                         tag= "Previous"
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-left"
-
-
                         :form= "d_form"
                         :ctx= 'consoleClickPrevious'
                     />
@@ -68,7 +63,6 @@
                         :category= 'd_category[0]'
                         icon= "fas fa-angle-double-right"
                         :disabled= 'validInput'
-
                         :form= "d_form"
                         :ctx= 'consoleClickNext'
                     />
@@ -79,8 +73,6 @@
                         :text= "d_textSubmit"
                         icon= "fas fa-check"
                         :category= 'd_category[0]'
-
-
                         :form= "d_form"
                         :ctx= 'consoleClickSubmit'
                     />
@@ -101,53 +93,29 @@
         mixins: [ alerts ],
 
         data() {
-
-            const type= 'button'
-
-            const tag= 'consoleTextButton'
-
-            const text= 'Click Me'
-
-            const icon= 'fas fa-registered'
-
-            const category= this.$store.state.category
-
+            const d_type= 'button'
+            const d_tag= 'consoleTextButton'
+            const d_text= 'Click Me'
+            const d_icon= 'fas fa-registered'
+            const d_category= this.$store.state.category
             const d_booleanTrue= true
-
-            const form= ''
-
-            const ctx= this.consoleClickConfirm
-
+            const d_form= ''
+            const d_ctx= this.consoleClickConfirm
             return {
-
                 d_type: d_type,
-
                 d_tag: d_tag,
-
                 d_text: d_text,
-
                 d_icon: d_icon,
-
                 d_category: d_category,
-
                 d_booleanTrue: d_booleanTrue,
-
                 d_form: d_form,
-
                 d_ctx: d_ctx,
-
                 d_textSubmit: 'Submit',
-
                 d_textNext: 'Next Page',
-
                 d_textPrevious: 'Previous Page',
-
                 d_textConfirm: 'Confirm',
-
                 d_completed: false,
-
                 d_totalSteps: null,
-
                 d_currentStep: null,
             }
         }, //data
@@ -158,14 +126,13 @@
                 type: Array,
                 required: true,
             },
-
             alert: {
                 type: Object,
                 required: true,
                 default: () => {
                 return {
                     error: "",
-                    warning
+                    warning: ""
                 }
                 }
             }
