@@ -45,7 +45,7 @@
 								/>
               </template>
               <template v-else-if= 'Array.isArray(attributes[index].value)' >
-                <searchable-dropdown-list
+                <dropdown-list
                   name= "playpen"
                   :value= 'd_value'
                   :options= 'attribute.value'
