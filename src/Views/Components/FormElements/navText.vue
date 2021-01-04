@@ -30,11 +30,9 @@
   import componentDetails from "@/Views/componentDetails";
   import textInput from "@/components/FormElements/textInput";
 	import { alerts } from "@/typeScript/common/alerts"
-	// import { store } from '@/store/store'
 
   export default {
 		name: "navText",
-		// store,
 
     mixins: [alerts],
 

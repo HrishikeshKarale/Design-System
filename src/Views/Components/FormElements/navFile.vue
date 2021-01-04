@@ -1,205 +1,171 @@
 <template>
-    <div class= "navFile">
-            <div class= 'FormElementsTitle'>
-                <div 
-                    v-if= 'd_fileUploadValue'
-                    class= 'value'
-                >
-                    <label>Value Returned:</label> {{d_fileUploadValue}}
-                </div>
-                <div 
-                    v-if= 'danger'
-                    class= 'error'
-                >
-                    <label>Error Returned:</label> {{danger}}
-                </div>
-                <div 
-                    v-if= 'warning'
-                    class= 'warning'
-                >
-                    <label>Warning Returned:</label> {{warning}}
-                </div>
-            </div>
-            <div class= "FormElementsContent">
-                <form>    
-                    <component-details
-                        :compData= 'd_file'
-                    >
-                        <file-input 
-                            :label= "d_label"
-                            :name= "d_name"
-                            :value= 'd_fileUploadValue'
-                            :accept= "d_accept"
-                            :multiple= 'd_booleanTrue'
-                            
-                           
-                            
-                            
-                            
-                            @notify= 'alerts'
-                            @value= 'val=> d_fileUploadValue = val'
-                        />
-                    </component-details>
-                </form>
-            </div>
-           </div>
+  <component-details
+    :compData= 'd_file'
+  >
+    <file-input
+      :label= "d_label"
+      :tag= "d_name"
+      :value= 'd_value'
+      :accept= "d_accept"
+      :multiple= 'd_multiple'
+      :alert= 'd_alertObject'
+      :required= 'd_required'
+      :disabled= 'd_disabled'
+      :autocomplete= 'd_autocomplete'
+      :inline= 'd_inline'
+      :readOnly= 'd_readonly'
+      :autofocus= 'd_autofocus'
+      :mask = 'd_mask'
+      :icon= 'd_icon'
+      @notify= 'alerts'
+      @value= 'val=> d_value = val'
+    />
+  </component-details>
 </template>
 
 <script>
-    import componentDetails from "@/Views/componentDetails";
-    import fileInput from "@/components/FormElements/fileInput";
-    
+  import componentDetails from "@/Views/componentDetails";
+  import fileInput from "@/components/FormElements/fileInput";
+	import { alerts } from "@/typeScript/common/alerts"
 
-    export default {
-        name: "navFile",
+  export default {
+    name: "navFile",
 
-        components: {
+    mixins: [alerts],
 
-            componentDetails,
-            fileInput
-        }, //components
+    components: {
+      componentDetails,
+      fileInput
+    }, //components
 
-        methods: {
+    data() {
+      const d_label= "Upload File"
+      const d_name= "fileUploadField"
+      const d_value= ''
+      const d_fileUploadValue= null
+      const d_accept= ".pdf, .doc, .docx"
+      const d_booleanTrue= true
+      const d_multiple= !d_booleanTrue;
+      const d_autofocus= !d_booleanTrue;
+      const d_disabled= !d_booleanTrue;
+      const d_readonly= !d_booleanTrue;
+      const d_required= !d_booleanTrue;
+      const d_autocomplete= !d_booleanTrue;
+      const d_inline= !d_booleanTrue;
+      const d_mask= !d_booleanTrue;
+      const d_icon= 'fas fa-upload';
+      const d_alertObject = {
+        error: "",
+        warning: ""
+      }
+      return {
+        d_label,
+        d_name,
+				d_value,
+				d_multiple,
+        d_accept,
+        d_autofocus,
+        d_disabled,
+        d_readonly,
+        d_required,
+        d_autocomplete,
+        d_inline,
+        d_mask,
+        d_icon,
+        d_alertObject
+      } //return
+		}, //data
 
-            //handels alerts thrown by the component
-            alerts: function (type, message) {
-                if (type== 'error') {
-                    this.d_danger= message;
-                }
-                else {
-                    this.d_warning= message;
-                }
-            }, //alerts
-        }, //methods
-
-        data() {
-
-            const label= "Upload File"
-
-            const name= "fileUploadField"
-
-            const value= ''
-
-            const fileUploadValue= null
-
-            const accept= ".pdf, .doc, .docx"
-
-            const d_booleanTrue= true
-
-            const alerts= this.alerts
-
-            return {
-
-                d_label: d_label,
-
-                d_name: d_name,
-
-                d_value: d_value,
-
-                d_fileUploadValue: d_fileUploadValue,
-
-                d_accept: d_accept,
-
-                d_booleanTrue: d_booleanTrue,
-                               d_alerts: d_alerts,
-
-                danger: null,
-
-                warning: null,
-
-                d_file: {
-
-                    title: 'File Upload',
-
-                    compName: 'file-input',
-
-                    import: 'import fileInput from "@/components/FormElements/fileInput";',
-
-                    description: '<p>The &lt;file-input"&gt; tag defines a file-select field and a "Browse" button for file uploads.</p>\
-                                    <p>To define a file-select field that allows multiple files to be selected, add the "multiple" attribute.</p>',
-
-                    attributes:[
-                        {
-                            type: "label",
-                            value: d_label,
-                            description: this.$store.state.navText.label,
-                            text: this.$store.state.navText.labelText,
-                        },
-                        {
-                            type: "name",
-                            value: d_name,
-                            description: this.$store.state.navText.name,
-                            text: this.$store.state.navText.nameText,
-                        },
-                        {
-                            type: "v-model",
-                            value: 'd_fileUploadValue',
-                            description: this.$store.state.navText.vModel,
-                            text: this.$store.state.navText.vModelText,
-                        },
-                        {
-                            type: "value",
-                            value: d_value,
-                            description: this.$store.state.navText.value,
-                            text: "Specifies the value for the &lt;file-input&gt element.",
-                        },
-                        {
-                            type: "accept",
-                            value: d_accept,
-                            description: this.$store.state.navText.readonly,
-                            text: 'Specifies the type of files the &lt;file-input&gt element will accpt as input'
-                        },
-                        {
-                            type: "multiple",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.multiple,
-                            text: this.$store.state.navText.multipleText,
-                        },
-                        {
-                            type: "required",
-                            value: d_booleanTrue,
-                            description: this.$store.state.navText.required,
-                            text: this.$store.state.navText.requiredText,
-                        },
-                        {
-                            type: "disabled",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.disabled,
-                            text: this.$store.state.navText.disabledText,
-                        },
-                        {
-                            type: "autofocus",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.autofocus,
-                            text: this.$store.state.navText.autofocusText,
-                        },
-                        {
-                            type: "readonly",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.readonly,
-                            text: this.$store.state.navText.readonlyText,
-                        },
-                        {
-                            type: "inline",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.inline,
-                            text: this.$store.state.navText.inlineText,
-                        },
-                        {
-                            type: "mask",
-                            value: !d_booleanTrue,
-                            description: this.$store.state.navText.mask,
-                            text: this.$store.state.navText.maskText,
-                        },
-                        {
-                            type: "alerts",
-                            value: d_alerts,
-                            description: this.$store.state.navText.alerts,
-                            text: this.$store.state.navText.alertsText,
-                        }
-                    ]
-                }, //d_file
-            } //return
-        }, //data
-    } //default
+    computed: {
+      d_file: function() {
+				return {
+					title: 'File Upload',
+					compName: 'file-input',
+					import: 'import fileInput from "@/components/FormElements/fileInput";',
+					description: '<p>The &lt;file-input"&gt; tag defines a file-select field and a "Browse" button for file uploads.\
+					To define a file-select field that allows multiple files to be selected, add the "multiple" attribute.</p>',
+					attributes:[
+						{
+							type: "label",
+							value: this.d_label,
+							description: this.$store.state.navText.label,
+							text: this.$store.state.navText.labelText,
+						},
+						{
+							type: "tag",
+							value: this.d_name,
+							description: this.$store.state.navText.name,
+							text: this.$store.state.navText.nameText,
+						},
+						{
+							type: "value",
+							value: this.d_value,
+							description: this.$store.state.navText.value,
+							text: "Specifies the value for the &lt;file-input&gt element.",
+						},
+						{
+							type: "accept",
+							value: this.d_accept,
+							description: this.$store.state.navText.readonly,
+							text: 'Specifies the type of files the &lt;file-input&gt element will accpt as input'
+						},
+						{
+							type: "multiple",
+							value: this.d_multiple,
+							description: this.$store.state.navText.multiple,
+							text: this.$store.state.navText.multipleText,
+						},
+						{
+							type: "required",
+							value: this.d_required,
+							description: this.$store.state.navText.required,
+							text: this.$store.state.navText.requiredText,
+						},
+						{
+							type: "disabled",
+							value: this.d_disabled,
+							description: this.$store.state.navText.disabled,
+							text: this.$store.state.navText.disabledText,
+						},
+						{
+							type: "autofocus",
+							value: this.d_autofocus,
+							description: this.$store.state.navText.autofocus,
+							text: this.$store.state.navText.autofocusText,
+						},
+						{
+							type: "readonly",
+							value: this.d_readonly,
+							description: this.$store.state.navText.readonly,
+							text: this.$store.state.navText.readonlyText,
+						},
+            {
+              type: "autocomplete",
+              value: this.d_autocomplete,
+              description: this.$store.state.navText.autocomplete,
+              text: this.$store.state.navText.autocompleteText,
+            },
+						{
+							type: "inline",
+							value: this.d_inline,
+							description: this.$store.state.navText.inline,
+							text: this.$store.state.navText.inlineText,
+						},
+						{
+							type: "mask",
+							value: this.d_mask,
+							description: this.$store.state.navText.mask,
+							text: this.$store.state.navText.maskText,
+						},
+						{
+							type: "alerts",
+							value: this.d_alertObject,
+							description: this.$store.state.navText.alerts,
+							text: this.$store.state.navText.alertsText,
+						}
+					]
+				};
+			} //d_file
+		}
+  } //default
 </script>

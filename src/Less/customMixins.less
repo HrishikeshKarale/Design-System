@@ -571,41 +571,40 @@
       flex-direction: column;
       flex-wrap: nowrap;
       color: @textColor;
+      border: none;
 
       &>div {
         display: flex;
-        border: 1px solid @primaryColor;
-        padding: @spaceMd @spaceLg;
+        margin-top: @spaceMd;
+        padding: @spaceLg @spaceMd;
         border-radius: @borderRadius;
-        margin-top: @spaceSm;
-        min-width: 240px;
-        background-color: @white;
-        justify-content: space-between;
+        background-color: @secondaryColor;
+        position: relative;
+        .boxShadow(@one);
 
         &>div {
           display: flex;
           flex-direction: row;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
 
           &>span {
-            display: flex;
-            font-size: @fontSize;
-            font-weight: bold;
-
-            &.fas {
-              padding: @spaceLg auto;
-            }
+            align-self: center;
+            padding: @spaceLg auto;
+            font-size: @fontSizeMd;
+            margin-right: @spaceMd;
           }
 
-          &:last-child {
+          &>.fileSize {
+            position: absolute;
+            right: @spaceMd;
+            bottom: @spaceMd;
+            font-size: @fontSizeSm;
+          }
 
-            &>span {
-              font-size: @fontSize;
-
-              &:last-child {
-                margin: auto @spaceLg auto @spaceLg*2;
-              }
-            }
+          &>.removeFile {
+            position: absolute;
+            right: @spaceMd;
+            top: @spaceMd;
           }
         }
       }

@@ -1,31 +1,25 @@
 // https://serversideup.net/drag-and-drop-file-uploads-with-vuejs-and-axios/
-
 <template>
-  <div
-    class= 'fileInput'
-    :class= '{inline: inline}'
-  >
-    <label
-      v-if= 'label'
-      :class= '{maskField: mask}'
-    >
+  <div :class= '{fileInput: true, inline: inline}' >
+    <label v-if= 'label' :class= '{maskField: mask}' >
       {{label}}
       <abbr v-if= 'required' title= 'Required Field'>*</abbr>
       <span v-else> - Optional field<abbr >*</abbr></span>
     </label>
     <div
       :class= '{
-            warningContainer: alert? alert.warning: false,
-            errorContainer: alert? alert.error: false,
-            iconPadding: icon,
-            maskField: mask
-          }'
+        warningContainer: alert? alert.warning: false,
+        errorContainer: alert? alert.error: false,
+        iconPadding: icon,
+        maskField: mask
+        }'
     >
+      <span v-if= "icon" :class= "icon" />
       <input
         v-if= '!mask'
         type= 'file'
-        :name= 'name'
-        :id= 'name'
+        :name= 'tag'
+        :id= 'tag'
         :multiple= 'multiple'
         :accept= 'accept'
         :autofocus= 'autofocus'
@@ -34,31 +28,21 @@
         @change= 'fileList()'
       />
     </div>
-    <div
-      class= 'files'
-      v-if= 'd_value'
-    >
-      <div
-        v-for= '(file, index) in d_value'
-        :key= 'index'
-      >
+    <div class= 'files' v-if= 'd_value.length > 0' >
+      <div v-for= '(file, index) in d_value' :key= 'index' >
         <div>
           <span class= 'fas fa-file'/>
-          <span>{{file.name}}</span>
+          <h5>{{file.name}}</h5>
         </div>
         <div>
-          <span>{{file.size/100}}kb</span>
-          <span>
-            <vue-button
-              :type= 'd_type'
-              tag= "removeFile"
-              :text= "d_text"
-              icon= "fas fa-times"
-              :category= 'd_category[9]'
-              :form= "d_form"
-              :ctx= 'removeFile.bind(this, index)'
-            />
-          </span>
+          <span class= "fileSize" >{{file.size/100}}kb</span>
+          <vue-button
+            class= "removeFile"
+            tag= "removeFile"
+            icon= "fas fa-times"
+            category= 'icon-sm'
+            :ctx= 'removeFile.bind(this, index)'
+          />
         </div>
       </div>
     </div>
@@ -68,8 +52,7 @@
 <script>
   import vueButton from "@/components/UIComponents/Button"
   import { validator } from "@/typeScript/validator"
-import { alerts } from "@/typeScript/common/alerts";
-
+  import { alerts } from "@/typeScript/common/alerts";
 
   export default {
     name: 'fileInput',
@@ -80,15 +63,22 @@ import { alerts } from "@/typeScript/common/alerts";
       vueButton
     }, //components
 
+    data() {
+      const d_value= [];
+      return {
+        d_value
+      }
+    }, //data
+
     methods: {
       //gets a list of selected files and stores it in d_value variable (data)
       fileList: function () {
         //temp array to store files
         var filelist= [];
         //loads files in temp variable tempFiles
-        var tempid= '#'+this.name
+        var tempid= '#'+this.tag
         var tempFiles= document.querySelector(tempid).files;
-                 //if tempFiles is not empty, load files in filelist array
+            //if tempFiles is not empty, load files in filelist array
         if (tempFiles && tempFiles.length>0) {
           for (var file in tempFiles) {
             //tempFiles is an object and contains key:value pairs other than files and their detais.
@@ -108,7 +98,6 @@ import { alerts } from "@/typeScript/common/alerts";
         var files= this.d_value
 
         for (var file in files) {
-
           if (file== index) {
             var temp= files.splice(index, 1);
           }
@@ -117,15 +106,15 @@ import { alerts } from "@/typeScript/common/alerts";
     }, //methods
 
     props: {
-        //sets heading/Label for the input field
+      //sets heading/Label for the input field
       label: {
         required: false,
         type: String,
-        default: null
+        default: ""
       },
 
       //sets name attribute for the input field (required field in case of forms)
-      name: {
+      tag: {
         required: false,
         type: String,
         default: 'fileUploadInput'
@@ -135,7 +124,7 @@ import { alerts } from "@/typeScript/common/alerts";
       value: {
         required: false,
         type: String,
-        default: null
+        default: ""
       },
 
       //sets the accept attribute for the input field
@@ -143,7 +132,7 @@ import { alerts } from "@/typeScript/common/alerts";
       accept: {
         required: false,
         type: String,
-        default: null
+        default: ""
       },
 
       //sets the multiple attribute for the input field
@@ -161,7 +150,7 @@ import { alerts } from "@/typeScript/common/alerts";
         default: () => {
           return {
             error: "",
-            warning
+            warning: ""
           }
         }
       },
@@ -200,10 +189,18 @@ import { alerts } from "@/typeScript/common/alerts";
         type: Boolean,
         default: false
       },
+
+    //if a valid fontawesome icon class string is passed, it displays it in the input field
+    //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
+    icon: {
+      required: false,
+      type: String,
+      default: ""
+    }
     }, //props
 
     created() {
-        this.d_needsValidation = false;
+      this.d_value = this.value;
     }
   } //default
 </script>
@@ -213,9 +210,9 @@ import { alerts } from "@/typeScript/common/alerts";
   @import (reference) "./../../Less/customMixins.less";
 
   .fileInput {
-    min-width: 160px;
+  min-width: 160px;
 
-    .inputcss();
+  .inputcss();
   }
 </style>
 

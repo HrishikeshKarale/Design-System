@@ -94,6 +94,7 @@
           title: 'Searchable Dropdown Input Field',
           compName: 'searchable-dropdown-list',
           import: 'import searchableDropdownList from "@/components/FormElements/searchableDropdownList"',
+          pattern: new RegExp(this.d_pattern),
 					description: "<p>The &lt;searchable-dropdown-list&gt; element specifies a list of pre-defined options for an &lt;input&gt; element.\
 					The &lt;searchable-dropdown-list&gt; element is used to provide an 'autocomplete' feature on &lt;input&gt; elements. Users will see a drop-down list of pre-defined options as they input data.\
 					It uses the &lt;input&gt; element's list attribute to bind it together with a &lt;datalist&gt; element.\
