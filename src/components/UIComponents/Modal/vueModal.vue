@@ -8,14 +8,14 @@
 			category= 'small'
 			:ctx= 'toggle.bind(this)'
 		/>
-    <transition
-      name= "modal"
-      :showModal= 'd_showModal'
-      v-if= "d_showModal"
-    >
-      <div class= "modal-mask">
-        <div class= "modal-wrapper">
-          <div class= "modal-container">
+  <transition
+    name= "modal"
+    :showModal= 'd_showModal'
+    v-if= "d_showModal"
+  >
+    <div class= "modal-mask">
+    <div class= "modal-wrapper">
+      <div class= "modal-container">
 						<div
 							v-if= 'modalTitle'
 							class= "modal-header"
@@ -35,7 +35,7 @@
 								:tag= "tag"
 								text= "CONFIRM"
 								:icon= 'icon'
-								:category= 'category'
+								:category= 'small'
 								:ctx= 'ctx'
 							/>
 							<vue-button
@@ -46,10 +46,10 @@
 								:ctx= 'toggle.bind(this)'
 							/>
 						</div>
-          </div>
-        </div>
       </div>
-    </transition>
+    </div>
+    </div>
+  </transition>
   </div>
 </template>
 
@@ -59,55 +59,55 @@
   import vueClipboard from '@/components/Code/vueClipboard'
 
   export default {
-    name: 'vueModal',
+  name: 'vueModal',
 
-    data () {
-      const d_showModal= false
-      return {
-        d_showModal: d_showModal
-      } //return
-    }, //data
-         props: {
+  data () {
+    const d_showModal= false
+    return {
+    d_showModal: d_showModal
+    } //return
+  }, //data
+     props: {
 
-      modalTitle: {
-        required: false,
-        type: String,
-      },
+    modalTitle: {
+    required: false,
+    type: String,
+    },
 
-      text: {
-        required: false,
-        type: String,
-        default: null
-      },
+    text: {
+    required: false,
+    type: String,
+    default: null
+    },
 
-      tag: {
-        required: false,
-        type: String,
-        default: null
-      },
+    tag: {
+    required: false,
+    type: String,
+    default: null
+    },
 
-      icon: {
-        required: false,
-        type: String,
-        default: null
-      },
+    icon: {
+    required: false,
+    type: String,
+    default: null
+    },
 
-      showModal: {
-        required: false,
-        type: Boolean,
-        default: false
-      },
+    showModal: {
+    required: false,
+    type: Boolean,
+    default: false
+    },
 
-      ctx: {
-        required: false,
-        type: Function
-      }
-    }, //props
+    ctx: {
+    required: false,
+    type: Function
+    }
+  }, //props
 
-    components: {
+  components: {
 
-      vueButton,
-    }, //components
+    vueButton,
+  }, //components
 
 		mounted() {
 			document.addEventListener("click", this.clickHandler, {
@@ -135,14 +135,14 @@
 				// event.stopPropogation(); //stop event bubbling
 			}, //clickHandler
 
-      toggle: function () {
-        this.d_showModal= !this.d_showModal;
-      }, //toggle
-    }, //methods
+    toggle: function () {
+    this.d_showModal= !this.d_showModal;
+    }, //toggle
+  }, //methods
 
-    created() {
+  created() {
 			this.d_showModal= this.showModal
-    }, //created
+  }, //created
   } //default
 </script>
 
@@ -152,71 +152,71 @@
   @import (reference) '../../../Less/customVariables.less';
 
   .vueModal {
-    display: inline-flex;
+  display: inline-flex;
 
-    .modal-mask {
-      position: fixed;
-      z-index: 9998;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, .5);
-      display: table;
-      transition: opacity .3s ease;
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
 
-      .modal-wrapper {
-        display: table-cell;
-        vertical-align: middle;
+    .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
 
-        .modal-container {
-          min-width: 320px;
-          max-width: 800px;
-          height: fit-content;
-          margin: 0px auto;
-          background-color: @backgroundColor;
-          border-radius: @borderRadius;
-          .boxShadow(0 2px 8px rgba(0, 0, 0, .33));
+    .modal-container {
+      min-width: 320px;
+      max-width: 800px;
+      height: fit-content;
+      margin: 0px auto;
+      background-color: @backgroundColor;
+      border-radius: @borderRadius;
+      .boxShadow(0 2px 8px rgba(0, 0, 0, .33));
 					transition: all .3s ease;
 					position: relative;
 
-          .modal-header {
-            color: @primaryColor;
-            background-color: #D4E0D7;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            padding: @spaceMd @spaceLg;
-            font-size: 32px;
-            height: auto;
-            text-align: left;
-          }
+      .modal-header {
+      color: @primaryColor;
+      background-color: #D4E0D7;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      padding: @spaceMd @spaceLg;
+      font-size: 32px;
+      height: auto;
+      text-align: left;
+      }
 
-          .modal-body {
-            margin: 8px 16px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-          }
+      .modal-body {
+      margin: 8px 16px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      }
 
-          .modal-footer {
-            padding: @spaceMd @spaceLg;
-            display: flex;
-            flex-direction: row-reverse;
-            flex-wrap: nowrap;
+      .modal-footer {
+      padding: @spaceMd @spaceLg;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
 
-            & > button {
-              margin: auto 0 auto 32px;
-              justify-content: space-around;
+      & > button {
+        margin: auto 0 auto 32px;
+        justify-content: space-around;
 						}
 						& > .closeButton {
 							position: absolute;
 							top: 8px;
 							right: 8px;
 						}
-          }
-        }
       }
     }
+    }
+  }
   }
 
   /*
@@ -230,13 +230,13 @@
 
   .modal-enter,
   .modal-leave-active {
-    .opacity(0);
+  .opacity(0);
   }
 
   .modal-enter .modal-container,
   .modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
   }
 
 </style>
