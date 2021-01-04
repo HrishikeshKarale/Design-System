@@ -100,7 +100,7 @@
               />
             </div>
             <div>
-              <radio-input
+              <checkbox-input
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
@@ -148,7 +148,7 @@
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import componentDetails from '@/Views/componentDetails'
   import textInput from "@/components/FormElements/textInput";
-  import radioInput from "@/components/FormElements/radioInput";
+  import checkboxInput from "@/components/FormElements/checkboxInput";
   import vueTextarea from "@/components/FormElements/vueTextarea";
 
 
@@ -300,7 +300,7 @@
       componentDetails,
       searchableDropdownList,
       textInput,
-          radioInput,
+          checkboxInput,
             vueTextarea
         }, //components
     } //default

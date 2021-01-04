@@ -1,6 +1,6 @@
 <template>
     <div class= 'createMove'>
-        <vue-wizard 
+        <vue-wizard
             :steps= 'steps'
             :alert= "{'error': danger, 'warning': warning}"
         >
@@ -9,23 +9,23 @@
                     <div>
                         <div style= 'width: 240px;'>
                             <div>
-                                <text-input 
+                                <text-input
                                     label= "First Name"
                                     name= "First Name"
                                     :value= 'fName'
                                     :required= 'd_booleanTrue'
-                                    
+
                                     @notify= 'alerts'
                                     @value= 'val=> fName = val'
                                 />
                             </div>
                             <div>
-                                <text-input 
+                                <text-input
                                     label= "Last Name"
                                     name= "Last Name"
                                     :value= 'lName'
                                     :required= 'd_booleanTrue'
-                                    
+
                                     @notify= 'alerts'
                                     @value= 'val=> lName = val'
                                 />
@@ -36,8 +36,8 @@
                                     tag= "ApplyFilter"
                                     text= "Filter"
                                     :category= 'category[2]'
-                                   
-                                    
+
+
                                     :form= "form"
                                     :ctx= 'consoleClickApply'
                                 />
@@ -46,7 +46,7 @@
                         <!-- {{tags}} -->
 
                         <div>
-                            <vue-table 
+                            <vue-table
                                 v-if= 'tagsData'
                                 :tableData= 'tagsData'
                                 :columns= 'columns'
@@ -60,7 +60,7 @@
                                 @toggleCloumns= 'toggleCloumns'
                             />
                         </div>
-                    </div>    
+                    </div>
                 </fieldset>
             </template>
 
@@ -68,8 +68,8 @@
                 <h3>Product Details</h3>
                 <div class= 'two'/>
             </template>
-        </vue-wizard> 
-    </div>  
+        </vue-wizard>
+    </div>
 </template>
 
 <script>
@@ -86,7 +86,7 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import dropdownList from "@/components/FormElements/dropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import vueInfo from "@/components/FormElements/vueInfo";
@@ -101,7 +101,7 @@
 
         mapGetters,
 
-        mapState, 
+        mapState,
 
         mapActions,
 
@@ -118,8 +118,8 @@
             dropdownList,
             fileInput,
             multiToggle,
-            radioInput,
-            radioInput,
+            checkboxInput,
+            checkboxInput,
             vueDate,
             vueInfo,
             vueTextarea,
@@ -273,7 +273,7 @@
 
     @import (reference) "../../../Less/customMixins.less";
     @import (reference) "../../../Less/customVariables.less";
-    
+
     .createMove {
 
         fieldset {

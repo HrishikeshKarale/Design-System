@@ -205,7 +205,7 @@
               />
             </div>
             <div>
-              <radio-input
+              <checkbox-input
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
@@ -356,7 +356,7 @@
   import vueWizard from '@/components/UIComponents/StepWizard/vueWizard'
   import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
   import textInput from "@/components/FormElements/textInput";
-  import radioInput from "@/components/FormElements/radioInput";
+  import checkboxInput from "@/components/FormElements/checkboxInput";
   import vueTextarea from "@/components/FormElements/vueTextarea";
   import numberInput from "@/components/FormElements/numberInput";
   import vueInfo from "@/components/FormElements/vueInfo";
@@ -613,11 +613,11 @@
       sideNav,
       vueHeader,
       vueTable,
-      radioInput,
+      checkboxInput,
            vueWizard,
       searchableDropdownList,
       textInput,
-      radioInput,
+      checkboxInput,
       vueTextarea,
       numberInput,
       vueInfo,

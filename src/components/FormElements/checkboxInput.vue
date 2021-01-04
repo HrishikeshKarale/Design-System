@@ -1,6 +1,6 @@
 // https://tympanus.net/Development/AnimatedCheckboxes/
 <template>
-  <div class="radioInput" :class="{ inline: inline }">
+  <div class="checkboxInput" :class="{ inline: inline }">
     <label
       v-if="label || (type == 'checkbox' && !options)"
       :class="{ maskField: mask }"
@@ -77,7 +77,7 @@ import { validator } from "@/typeScript/validator";
 import { alerts } from "@/typeScript/common/alerts";
 
 export default {
-  name: "RadioInput",
+  name: "checkboxInput",
 
   mixins: [validator, alerts], //mixins
 
@@ -110,7 +110,7 @@ export default {
     name: {
       required: false,
       type: String,
-      default: "radioInput"
+      default: "checkboxInput"
     },
 
     //users can pass preset values for the input field
@@ -261,7 +261,7 @@ export default {
 @import (reference) "../../Less/customMixins.less";
 @import (reference) "../../Less/customVariables.less";
 
-.radioInput {
+.checkboxInput {
   .checkboxCss();
 }
 </style>

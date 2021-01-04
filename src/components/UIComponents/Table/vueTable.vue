@@ -241,7 +241,7 @@
         </table>
         <div class= 'paging'>
             <div>
-                <!-- <radio-input
+                <!-- <checkbox-input
                     name= "rowElements"
                     :value= 'showRecords'
                     :options= 'metadata.recordsPerPage'
@@ -310,7 +310,7 @@
     import dropdownList from '@/components/FormElements/dropdownList'
     import textInput from '@/components/FormElements/textInput'
     import vueModal from '@/components/UIComponents/Modal/vueModal'
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
 
     // import { store } from '@/store/store'
     import { mapState, mapActions, mapMutations } from 'vuex';
@@ -379,12 +379,12 @@
         components: {
 
             'card-background': cardBackground,
-            radioInput,
+            checkboxInput,
             vueButton,
             vueModal,
             dropdownList,
             textInput,
-            radioInput
+            checkboxInput
         }, //components
 
         data() {

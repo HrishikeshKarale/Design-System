@@ -97,7 +97,7 @@
                                         @notify= 'alerts'
                                         @value= 'val=> d_textBoxValue = val'
                                     />
-                                    <radio-input
+                                    <checkbox-input
                                         label= "Gender"
                                         name= "checkboxField"
                                         :value= "d_radio1"
@@ -189,7 +189,7 @@
                                         :readonly= 'd_booleanTrue'
                                         :inline= 'd_booleanTrue'
                                     />
-                                    <radio-input
+                                    <checkbox-input
                                         label= "I am"
                                         name= "checkboxField"
                                         :value= "d_radioValue"
@@ -288,7 +288,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -325,7 +325,7 @@
                                                 @notify= 'alerts'
                                                 @value= 'val=> d_textBoxValue = val'
                                             />
-                                            <radio-input
+                                            <checkbox-input
                                                 label= "Remember Me"
                                                 name= "shipDyaCheckboxField"
                                                 :value= 'd_checkboxValue'
@@ -363,7 +363,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -441,7 +441,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -532,7 +532,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -608,7 +608,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -702,7 +702,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "I am"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -783,7 +783,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -882,7 +882,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -963,7 +963,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -1066,7 +1066,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -1167,7 +1167,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radioValue"
@@ -1271,7 +1271,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1322,7 +1322,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1387,7 +1387,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio2"
@@ -1479,7 +1479,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio3"
@@ -1574,7 +1574,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1626,7 +1626,7 @@
                                             @notify= 'alerts'
                                             @value= 'val=> d_textBoxValue = val'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Remember Me"
                                             name= "shipDyaCheckboxField"
                                             :value= 'd_checkboxValue'
@@ -1722,7 +1722,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio4"
@@ -1822,7 +1822,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio5"
@@ -1928,7 +1928,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio6"
@@ -2023,7 +2023,7 @@
                                             :required= 'd_booleanTrue'
                                             :readonly= 'd_booleanTrue'
                                         />
-                                        <radio-input
+                                        <checkbox-input
                                             label= "Gender"
                                             name= "checkboxField"
                                             :value= "d_radio7"
@@ -2112,7 +2112,7 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import dropdownList from "@/components/FormElements/dropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import vueInfo from "@/components/FormElements/vueInfo";
@@ -2135,8 +2135,8 @@
             dropdownList,
             fileInput,
             multiToggle,
-            radioInput,
-            radioInput,
+            checkboxInput,
+            checkboxInput,
             vueDate,
             vueInfo,
             vueTextarea,

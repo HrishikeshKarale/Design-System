@@ -53,7 +53,7 @@
         </div>
         <div>
             <h2>CheckBox Input</h2>
-            <radio-input
+            <checkbox-input
                 :label= "DDlabel"
                 :name= "Cname"
                 :value= 'd_checkboxValue'
@@ -97,7 +97,7 @@
     import { alerts } from "@/typeScript/common/alerts"
     import emailInput from "@/components/FormElements/emailInput";
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueDate from "@/components/FormElements/vueDate";
 
     export default {
@@ -239,7 +239,7 @@
             componentDetails,
                                   emailInput,
             searchableDropdownList,
-            radioInput,
+            checkboxInput,
             vueDate,
         }, //components
     } //default

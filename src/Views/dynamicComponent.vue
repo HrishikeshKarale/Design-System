@@ -11,7 +11,7 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
     import multiToggle from "@/components/FormElements/multiToggle";
     import dropdownList from "@/components/FormElements/dropdownList";
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueDate from "@/components/FormElements/vueDate";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import vueInfo from "@/components/FormElements/vueInfo";
@@ -40,8 +40,8 @@
             dropdownList,
             fileInput,
             multiToggle,
-            radioInput,
-            radioInput,
+            checkboxInput,
+            checkboxInput,
             vueDate,
             vueTextarea,
             vueInfo,

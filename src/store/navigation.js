@@ -12,31 +12,31 @@ var data= [
         icon: "far fa-object-group",
         subNav: [
             {
-                id: 1, 
+                id: 1,
                 name:'Colors',
                 component: 'colors',
                 icon: "fas fa-palette"
             },
             {
-                id: 2, 
+                id: 2,
                 name:'Typography',
                 component: 'typography',
                 icon: "fas fa-font"
             },
             {
-                id: 3, 
+                id: 3,
                 name:'Icons',
                 component: 'icons',
                 icon: "fab fa-fonticons"
             },
             {
-                id: 4, 
+                id: 4,
                 name:'Interaction States',
                 component: 'interactionStates',
                 icon: "fas fa-hand-point-up"
             },
             {
-                id: 5, 
+                id: 5,
                 name:'Spacing',
                 component: 'spacing',
                 icon: "fas fa-expand"
@@ -56,49 +56,49 @@ var data= [
         icon: "fas fa-file-signature",
         subNav: [
             {
-                id: 1, 
+                id: 1,
                 name:'Product Content',
                 component: 'productContent',
                 icon: "fas fa-pen"
             },
             {
-                id: 2, 
+                id: 2,
                 name:'Help Documentation',
                 component: 'helpDocumentation',
                 icon: "fas fa-question-circle"
             },
             {
-                id: 3, 
+                id: 3,
                 name:'Voice And Tone',
                 component: 'voiceAndTone',
                 icon: "fas fa-comment-dots"
             },
             {
-                id: 4, 
+                id: 4,
                 name:'Naming',
                 component: 'naming',
                 icon: "fas fa-file-signature"
             },
             {
-                id: 5, 
+                id: 5,
                 name:'Vocabulary',
                 component: 'vocabulary',
                 icon: "fas fa-book"
             },
             {
-                id: 6, 
+                id: 6,
                 name:'Actionalble Language',
                 component: 'actionableLanguage',
                 icon: "fas fa-language"
             },
             {
-                id: 7, 
+                id: 7,
                 name:'Grammer and Mechanics',
                 component: 'grammerAndMechanics',
                 icon: "fas fa-check-double"
             },
             {
-                id: 8, 
+                id: 8,
                 name:'Alternative Text',
                 component: 'alternativeText',
                 icon: "fas fa-low-vision"
@@ -106,13 +106,13 @@ var data= [
         ]
     },
     {
-        id: 3, 
+        id: 3,
         name: 'Components',
         component: 'components',
         icon: "fab fa-creative-commons-share",
         subNav: [
             {
-                id: 1, 
+                id: 1,
                 name:'Form Elements',
                 component: 'formElements',
                 icon: "fas fa-align-left",
@@ -181,25 +181,16 @@ var data= [
                         id: 11,
                         name: 'Checkbox Input',
                         component: 'navCheckbox',
-                        icon: "fas fa-check-square",
+                        icon: 'fas fa-check'
                     },
                     {
                         id: 12,
-                        name: 'Radiobox Input',
-                        component: 'navRadio',
-                        icon: '<span class= "fa-stack"  style= "font-size: 8px;">\
-                                    <i class= "fas fa-circle fa-stack-2x"></i>\
-                                    <i class= "fas fa-circle fa-stack-1x"></i>\
-                                </span>'
-                    },
-                    {
-                        id: 13,
                         name: 'Date Input',
                         component: 'navDate',
                         icon: "fas fa-calendar-alt",
                     },
                     {
-                        id: 14,
+                        id: 13,
                         name: 'Textarea Input',
                         component: 'navTextarea',
                         icon: "fas fa-text-height",
@@ -207,7 +198,7 @@ var data= [
                 ]
             },
             {
-                id: 2, 
+                id: 2,
                 name:'UI Components',
                 component: 'uiComponents',
                 icon: "fas fa-drafting-compass",
@@ -256,7 +247,7 @@ var data= [
                     }                                           ]
             },
             {
-                id: 4, 
+                id: 4,
                 name:'Grid',
                 component: "grid",
                 icon: "fas fa-th"
@@ -297,7 +288,7 @@ var data= [
                 ]
             },
             {
-                id: 6, 
+                id: 6,
                 name:'Alerts',
                 component: 'navAlert',
                 icon: "fas fa-bell",
@@ -316,16 +307,16 @@ var data= [
                     },
                 ]
             },
-        ]   
+        ]
     },
     {
-        id: 4, 
+        id: 4,
         name: 'Others',
         component: 'others',
         icon: "fas fa-atom",
         subNav: [
             {
-                id: 1, 
+                id: 1,
                 name:'Sample Pages',
                 component: 'samplePages',
                 icon: "fas fa-vial",
@@ -351,7 +342,7 @@ var data= [
                 ]
             },
             {
-                id: 2, 
+                id: 2,
                 name:'Coding Guidlines',
                 component: 'navBestPractices',
                 icon: "fas fa-code",

@@ -1,7 +1,7 @@
 <template>
     <div class= "navForm">
             <component-details :compData= 'd_form' >
-                <vue-form 
+                <vue-form
                     :ctx="d_ctx"
                     :form="d_formName"
                     :alert="alertObject"
@@ -10,7 +10,7 @@
                     @notify="alerts"
                 >
                     <h3>Order Processing Details</h3>
-                    <text-input 
+                    <text-input
                         label= "Customer"
                         tag= "customerField"
                         :value= 'd_customerVal'
@@ -21,7 +21,7 @@
                         @notify= 'alerts'
                         @value= "val => d_customerVal = val"
                     />
-                    <searchable-dropdown-list 
+                    <searchable-dropdown-list
                         label= "Cost Center"
                         tag= "costCenterField"
                         :value= 'd_costCenterVal'
@@ -32,7 +32,7 @@
                         @notify= 'alerts'
                         @value= "val => d_costCenterVal = val"
                     />
-                    <text-input 
+                    <text-input
                         label= "Order Name"
                         tag= "orderNameField"
                         :value= 'd_orderNameVal'
@@ -43,7 +43,7 @@
                         @notify= 'alerts'
                         @value= "val => d_orderNameVal = val"
                     />
-                    <text-input 
+                    <text-input
                         label= "Recipient"
                         tag= "orderNameField"
                         :value= 'd_recipientVal'
@@ -54,7 +54,7 @@
                         @notify= 'alerts'
                         @value= "val => d_recipientVal = val"
                     />
-                    <searchable-dropdown-list 
+                    <searchable-dropdown-list
                         label= "Delivery Option"
                         tag= "customerField"
                         :value= 'd_deliveryOptionVal'
@@ -65,7 +65,7 @@
                         @notify= 'alerts'
                         @value= "val => d_deliveryOptionVal = val"
                     />
-                    <radio-input 
+                    <checkbox-input
                         label= 'I want to specify a date for shipping'
                         tag= "checkboxField"
                         :value= 'd_shipping'
@@ -73,7 +73,7 @@
                         @notify= 'alerts'
                         @value= "val => d_shipping = val"
                     />
-                    <vue-textarea 
+                    <vue-textarea
                         label= "Add a note for Recipient"
                         tag= "recipientNoteField"
                         :value= "d_recipientNote"
@@ -93,15 +93,15 @@
     import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
     import componentDetails from '@/Views/componentDetails'
     import textInput from "@/components/FormElements/textInput";
-    import radioInput from "@/components/FormElements/radioInput";
+    import checkboxInput from "@/components/FormElements/checkboxInput";
     import vueTextarea from "@/components/FormElements/vueTextarea";
     import { alerts } from "@/typeScript/common/alerts";
-    
+
     import { mapState } from 'vuex';
 
     export default {
         name: 'uiComponents',
-        
+
         mixins: [ alerts ],
 
         mapState,
@@ -194,7 +194,7 @@
             componentDetails,
             searchableDropdownList,
             textInput,
-            radioInput,
+            checkboxInput,
             vueTextarea
         } //components
     } //default

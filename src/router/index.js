@@ -34,7 +34,6 @@ import components from '@/Views/Components'
     import formElements from '@/Views/Components/FormElements'
         import navForm from '@/Views/Components/FormElements/navForm.vue'
         import navText from '@/Views/Components/FormElements/navText'
-        import navCheckbox from '@/Views/Components/FormElements/navCheckbox'
         import navDropdownList from '@/Views/Components/FormElements/navDropdownList'
         import navSearchableDropdownList from '@/Views/Components/FormElements/navSearchableDropdownList'
         import navEmail from '@/Views/Components/FormElements/navEmail'
@@ -42,7 +41,7 @@ import components from '@/Views/Components'
         import navToggle from '@/Views/Components/FormElements/navToggle'
         import navNumber from '@/Views/Components/FormElements/navNumber'
         import navPassword from '@/Views/Components/FormElements/navPassword'
-        import navRadio from '@/Views/Components/FormElements/navRadio'
+        import navCheckbox from '@/Views/Components/FormElements/navCheckbox'
         import navDate from '@/Views/Components/FormElements/navDate'
         import navInfo from '@/Views/Components/FormElements/navInfo'
         import navTextarea from '@/Views/Components/FormElements/navTextarea'
@@ -274,11 +273,6 @@ export default new Router({
                     path: '/components/formElements/navCheckbox',
                     name: 'navCheckbox',
                     component: navCheckbox
-                },
-                {
-                    path: '/components/formElements/navRadio',
-                    name: 'navRadio',
-                    component: navRadio
                 },
                 {
                     path: '/components/formElements/navDate',

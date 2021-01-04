@@ -680,24 +680,15 @@
       flex-direction: row;
       flex-wrap: nowrap;
       min-height: @spaceXl;
-      padding-right: @spaceLg;
+      // padding: @spaceMd @spaceLg;
       margin: 0;
       align-items: center;
       cursor: pointer;
 
       >input[type='checkbox'],
       >input[type='radio'] {
-        display: none;
-
-        &+span {
-          margin: 0 @spaceMd;
-          font-size: @fontSizeSm;
-          ;
-
-          &.fas {
-            color: @primaryColor;
-          }
-        }
+        min-height: auto;
+        margin-right: @spaceMd;
       }
 
       &.errorLabel {
@@ -715,9 +706,14 @@
 
     &>label {
       padding: @spaceLg;
+      background-color: @secondaryColor;
+
+      &>input {
+        // display: none;
+      }
 
       &.checked {
-        border-radius: @borderRadius;
+        // border-radius: @borderRadius;
         background-color: @primaryColor;
         color: @backgroundColor;
         font-weight: bold;

@@ -35,7 +35,7 @@
                 />
               </template>
               <template v-else-if= 'typeof attribute.value== "boolean"'>
-								<radio-input
+								<checkbox-input
 									:label= "d_value.toString()"
 									type= "checkbox"
 									tag= "radioBool"
@@ -99,7 +99,7 @@
   import vueButton from "@/components/UIComponents/Button"
   import numberInput from "@/components/FormElements/numberInput";
   import textInput from "@/components/FormElements/textInput";
-  import radioInput from "@/components/FormElements/radioInput";
+  import checkboxInput from "@/components/FormElements/checkboxInput";
   import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -165,7 +165,7 @@
       vueButton,
       numberInput,
 			textInput,
-			radioInput
+			checkboxInput
     }, //components
 
     computed: {
