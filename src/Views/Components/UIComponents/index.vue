@@ -23,7 +23,7 @@
       tag= "consoleTextButton"
       text= "Click Me "
       icon= "fas fa-registered"
-      category= 'category'
+      :category= 'category'
       :ctx= 'd_ctx'
     />
   </div>
@@ -209,7 +209,6 @@
                 label= 'I want to specify a date for shipping'
                 name= "checkboxField"
                 :value= 'd_shipping'
-                :options= null
                 :required= 'd_booleanTrue'
                 @notify= 'alerts'
                 @value= "val=> d_shipping = val"
@@ -260,7 +259,6 @@
                     label= "Quantity"
                     name= "OrderQuantity"
                     :value= 'd_numberValue'
-                    value= ''
                     placeholder= "0"
                     :required= 'd_booleanTrue'
                     icon= 'fas fa-hashtag'
@@ -367,20 +365,14 @@
 
   export default {
     name: 'uiComponents',
-
-        mixins: [ alerts ],
-
-    // store,
-
+    mixins: [ alerts ],
     mapState,
-
     mapActions,
-
-    details () {
+    data() {
       //Button
       const d_category= this.$store.state.category;
       const d_booleanTrue= true
-      const bookmark= d_booleanTrue
+      const d_bookmark= d_booleanTrue
       const d_ctx= this.consoleClick
       //card
       const d_cardDetails= this.$store.state.cardDetails
@@ -410,7 +402,7 @@
       const d_column= ['SKU', 'Quantity', 'Available']
       const d_SKUdetails= {
         'cols': d_column,
-        'details': new Array()
+        'details': []
       }
       const d_warehouse= this.$store.state.warehouse
       const d_recordsPerPage= this.$store.state.metadetails.recordsPerPage
@@ -442,7 +434,7 @@
         info: 900,
         //stepWaizard
         d_SKUdetails,
-        bookmark,
+        d_bookmark,
         d_pattern,
         d_maxlength,
         d_TAmaxlength,
@@ -473,10 +465,9 @@
         d_nav,
         content: false,
       } //return
-    }, //details
+    }, //data
 
     methods: {
-
       ...mapActions(
         [
           'selectRow',
@@ -488,7 +479,6 @@
 
       toggleCloumns: function (newValue) {
         const tempColumns= this.d_columns
-
         if (!tempColumns.indexOf(newValue)!=-1) {
           tempColumns.push(newValue)
           // console.log('added')
@@ -497,14 +487,12 @@
           tempColumns.splice(tempColumns.indexOf(newValue), 1)
           // console.log('deleted')
         }
-
         this.d_columns= tempColumns
       }, //toggleCloumns
 
       updateFilter: function (filter) {
         const index= this.d_filterSelected["type"].indexOf(filter.type)
         // console.log(filter, index, this.d_filterSelected["value"][index]== filter.value)
-
         //type alerady exists
         if (index!= -1) {
           if (this.d_filterSelected["value"][index]== filter.value) {
@@ -519,7 +507,6 @@
           this.d_filterSelected['type'].push(filter.type)
           this.d_filterSelected['value'].push(filter.value)
         }
-
       }, //updateFilter
 
       delCard: function (index) {
@@ -530,7 +517,7 @@
         const quantity= this.d_numberValue
         const sku= this.d_SKU
         const info= this.d_info
-        const details= new Array()
+        const details= []
         // console.log('details: ', sku, quantity, info)
                  if (quantity && sku) {
           // console.log('this', this.d_SKUdetails['details'][0])
