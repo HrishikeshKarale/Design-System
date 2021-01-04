@@ -1,117 +1,98 @@
 <template>
-    <div class= 'navNavigation'>
-            <component-details
-                :compData= 'd_navigation'
-            >
-                <side-nav :logo-link= "d_logoLink" :nav= "d_nav" />
-            </component-details>
-           </div>
+  <component-details
+    :compData= 'd_navigation'
+  >
+    <side-nav :logoLink= "d_logoLink" :nav= "d_navData" />
+  </component-details>
 </template>
 
 <script>
 
-    import sideNav from '@/components/UIComponents/Navigation/sideNav'
-    import componentDetails from '@/Views/componentDetails'
+  import sideNav from '@/components/UIComponents/Navigation/sideNav'
+  import componentDetails from '@/Views/componentDetails'
 
+  import { mapState } from 'vuex';
 
-    import { mapState, mapActions } from 'vuex';
+  export default {
+    name: 'navNavigation',
+    mapState,
 
-    export default {
-        name: 'navNavigation',
-               mapState,
+    data () {
+      const d_logoLink= require('@/assets/logo.svg')
+      const d_title= 'Sample Navigation'
+      const d_navigationTiles= this.$store.state.navigation
+      const d_nav= this.nav
+      return {
+        d_logoLink,
+        d_title,
+        d_navigationTiles,
+        d_nav,
+        d_content: false,
+        d_selected: null
+      } //return
+		}, //data
 
-        data () {
+		computed: {
+      ...mapState(
+        {
+          d_navData: 'navigation',
+				}
+      ),
 
-            const d_logoLink= require('@/assets/logoArtboard 1 copy 4 copy 2.svg')
+			d_navigation: function() {
+				return {
+					title: 'Navigation',
+					compName: 'side-nav',
+					import: 'import vueTable from "@/components/UIComponents/Navigation/sideNav"',
+					description: '<p>The navigation component by default ticks to the extreme left of the page.</p>',
+					attributes: [
+						{
+							type: "nav",
+							value: this.d_navData,
+							description: '<p>The tableDetails attribute provides the table with data pertaining to columns adn records for the particulat &lt;vue-table&gt;.\
+							The tableDetails attribute is an Object and has data and cols as keys to hold records and column names respectively.</p>\
+							<p>This is a required field and cannot be left null/empty.</p>',
+							text: 'Specifies the rows and columns for the table as an object'
+						},
+						{
+							type: "logoLink",
+							value: this.d_logoLink,
+							description: '<p>The title attribute provides the table with a title or name for the particulat &lt;vue-table&gt;.\
+							This title attribute take a string input and displays it in the top-left corner.</p>',
+							text: 'Specifies the title/name for the table.'
+						}
+					] //attributes
+				};
+			} //d_navigation
+		}, //computed
 
-            const title= 'Sample Navigation'
+    methods: {
+      nav: function (id) {
+        this.selected= id
 
-            const navigationTiles= this.$store.state.navigation
+        if (id) {
+          this.content= true
+        }
+        else {
+          this.content= false
+        }
+      }
+		}, //methods
 
-            const nav= this.nav
+		created() {
+			console.log(typeof this.d_logoLink, this.d_logoLink.length, this.d_logoLink);
+		},
 
-            return {
-
-                d_logoLink: d_logoLink,
-
-                d_title: d_title,
-
-                d_navigationTiles: d_navigationTiles,
-
-                d_nav: d_nav,
-
-                content: false,
-
-                selected: null,
-
-                d_navigation: {
-
-                    title: 'Navigation',
-
-                    compName: 'side-nav',
-
-                    import: 'import vueTable from "@/components/UIComponents/Navigation/sideNav"',
-
-                    description: '<p></p>',
-
-                    attributes: [
-                        {
-                            type: "navigationTitles",
-                            value: d_navigationTiles,
-                            description: '<p>The tableDetails attribute provides the table with data pertaining to columns adn records for the particulat &lt;vue-table&gt;.</p>\
-                                            <p>The tableDetails attribute is an Object and has data and cols as keys to hold records and column names respectively.</p>\
-                                            <p>This is a required field and cannot be left null/empty.</p>',
-                            text: 'Specifies the rows and columns for the table as an object'
-                        },
-                        {
-                            type: "logoLink",
-                            value: d_logoLink,
-                            description: '<p>The title attribute provides the table with a title or name for the particulat &lt;vue-table&gt;.</p>\
-                                            <p>This title attribute take a string input and displays it in the top-left corner.</p>',
-                            text: 'Specifies the title/name for the table.'
-                        },
-                        {
-                            type: "title",
-                            value: d_title,
-                            description: '<p>The title attribute provides the table with a title or name for the particulat &lt;vue-table&gt;.</p>\
-                                            <p>This title attribute take a string input and displays it in the top-left corner.</p>',
-                            text: 'Specifies the title/name for the table.'
-                        },
-                        {
-                            type: "@nav",
-                            value: d_nav,
-                            description: '<p>The title attribute provides the table with a title or name for the particulat &lt;vue-table&gt;.</p>\
-                                            <p>This title attribute take a string input and displays it in the top-left corner.</p>',
-                            text: 'Specifies the title/name for the table.'
-                        },
-                    ] //attributes
-                }, //d_navigation
-            } //return
-        }, //NAVIGATION
-
-        methods: {
-            nav: function (id) {
-                this.selected= id
-
-                if (id) {
-                    this.content= true
-                }
-                else {
-                    this.content= false
-                }
-            }
-        }, //methods
-
-        components: {
-                       sideNav,
-            componentDetails,
-                   }, //components
-    } //default
+    components: {
+			sideNav,
+      componentDetails,
+		}, //components
+  } //default
 </script>
 
 <style lang= 'less' scoped>
 
-    .navNavigation {
-        display: flex;
-    }
+  .navNavigation {
+    display: flex;
+  }
 </style>

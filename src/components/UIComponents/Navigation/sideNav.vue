@@ -98,8 +98,7 @@ export default {
 
     nav: {
       required: true,
-      type: Array,
-      default: null
+      type: Array
     }
   },
 

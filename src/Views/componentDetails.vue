@@ -171,6 +171,48 @@
 	  },
 	}, //props
 
+	methods: {
+
+		objectString: function(value) {
+			let tempval = '\t\t{\n'
+			const tempKey = Object.keys(value);
+			for (const key in tempKey) {
+				const val = value[tempKey[key]];
+				if(typeof val === "object") {
+					if(Array.isArray(val)) {
+						return this.arrayString(val);
+					}
+					else {
+						return this.objectString(val);
+					}
+				}
+					tempval += '\t\t\t'+ tempKey[key] +': ' + (val ? val : '""');
+					if (key < tempKey.length-1) {
+						tempval+= ',\n'
+					}
+			}
+			tempval+= '\n\t\t}\n'
+			return tempval;
+		}, //objectString
+
+		arrayString: function(value) {
+			let tempval= '\t[\n';
+		  for (const val in value) {
+				if(typeof value[val] === "object" && Array.isArray(value[val])) {
+					tempval+= '\t"'+value[val]+'"'
+					//formatting arrays to include commas for display
+					if (val < value.length-1) {
+						tempval+= ',\n'
+					}
+				} else {
+					tempval += this.objectString(value[val]);
+				}
+		  }
+		  tempval+= '\n\t]\n'
+			return tempval;
+		}
+	}, //methods
+
 	created() {
 	  // console.log('0')
 
@@ -191,42 +233,22 @@
 		let value= data[attr].value
 		let tempStr= null
 		let defaultTempStr= null
-		// console.log('0-', attr, type, value, d_attr)
+		// console.log('0-', attr, type, value, d_attr)<side-nav
 
 		if (typeof value== 'string') {
-		  // console.log('0-', attr, typeof value)
-		  if (d_attr) {
-			console.log(d_attr);
-			let index= (d_attr.type).indexOf(type)
-;            if (index!= -1){
-			  let tempval= '['
-			  let defaultVal= '['
-			  let val
-			  let D_attrValue= d_attr.value[index]
+			// console.log('0-', attr, typeof value)
+			// const base64RegExp = new RegExp(/^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/)
+			// if(base64RegExp.test(value)) {
+			// 	console.log("base64 Detected");
+			// }
 
-			  for (const val in D_attrValue) {
-
-				if (value==D_attrValue[val]) {
-				  tempval+= '<label>'+D_attrValue[val]+'</label>'
-				  defaultVal+= ''+D_attrValue[val]+''
+			//check if base64 encoded
+			if(value.includes("base64")) {
+				//check if type is image/svg
+				if(value.includes("data:image/svg")) {
+					value = "require('@/path/filename.svg')"
 				}
-				else {
-				  tempval+= D_attrValue[val]
-				  defaultVal+= D_attrValue[val]
-				}
-				if (val < D_attrValue.length-1) {
-				  tempval+= ', '
-				  defaultVal+= ', '
-				} //formatting arrays to include commas for display
-			  }
-			  tempval+= ']'
-			  defaultVal+= ']'
-			  // console.log(tempval, defaultVal)
-			  tempStr= '\t'+type+'= "'+tempval+'"\n';
-			  defaultTempStr= '\t'+type+'= "'+defaultVal+'"\n';
-			  break;
 			}
-		  }
 
 		  tempStr= '\t'+type+'= "'+value+'"\n';
 		  defaultTempStr= '\t'+type+'= "'+value+'"\n';
@@ -235,32 +257,14 @@
 		  tempStr= "\t"+type+"= "+ value + "\n";
 		}
 		else if (Array.isArray(value)) {
-		  // console.log(type, value)
-		  let tempval= '[';
-		  for (const val in value) {
-				tempval+= '"'+value[val]+'"'
-				if (val < value.length-1) {
-					tempval+= ', '
-				} //formatting arrays to include commas for display
-		  }
-		  tempval+= ']'
-
-		  tempStr= '\t'+type+'= '+tempval+'\n';
+		  const tempval = this.arrayString(value);
+			tempStr= '\t'+type+'= '+tempval+'\n';
 		  defaultTempStr= tempStr;
 		}
 		else if (typeof value == "object") {
-			let tempval = '{\n'
-			const tempKey = Object.keys(value);
-			for (const key in tempKey) {
-				const val = value[tempKey[key]];
-				tempval += '\t\t'+ tempKey[key] +': ' + (val ? val : '""');
-				// console.log("object", tempval);
-				if (key < tempKey.length-1) {
-					tempval+= ',\n'
-				}
-			}
-		  tempval+= '\n\t}'
+			const tempval = this.objectString(value);
 		  tempStr= '\t'+type+'= '+tempval+'\n';
+		  defaultTempStr= tempStr;
 		}
 		else if (typeof value== 'boolean' ||
 			typeof value== 'number' ||
