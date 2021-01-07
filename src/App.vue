@@ -36,7 +36,7 @@
 </template>
 
 <script>
-
+  // import { sideNav } from 'component_library_vue2';
   import sideNav from '@/components/UIComponents/Navigation/sideNav'
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
   import sideBySideLayout from '@/components/Layout/sideBySideLayout'

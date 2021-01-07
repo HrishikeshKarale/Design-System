@@ -59,7 +59,6 @@
 </template>
 
 <script>
-  import vueImg from '@/components/UIComponents/Image/vueImg.vue'
   import { cookie } from '@/typeScript/cookie.js'
   import { mapState } from 'vuex';
 
@@ -86,10 +85,6 @@
         }
       )
     }, //computed
-
-    components: {
-           vueImg,
-    }, //components
   }
 </script>
 
