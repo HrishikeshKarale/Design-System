@@ -68,8 +68,8 @@
 
 <script>
 
-    import cardDetails from '@/components/UIComponents/Cards/cardDetails'
-    import cardBackground from'@/components/UIComponents/Cards/cardBackground'
+    import cardDetails from './cardDetails.vue'
+    import cardBackground from'./cardBackground.vue'
 
     export default {
         name: 'vueCard',

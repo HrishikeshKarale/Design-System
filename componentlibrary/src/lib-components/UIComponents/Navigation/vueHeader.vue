@@ -89,9 +89,9 @@
 </template>
 
 <script>
-import { toggle } from "@/typeScript/toggle";
-import { authentication } from "@/typeScript/authentication";
-import vueButton from "@/components/UIComponents/Button";
+import { toggle } from "../../../typeScript/toggle";
+import { authentication } from "../../../typeScript/authentication";
+import vueButton from "../Button/index.vue";
 import vueImg from "../Image/vueImg.vue";
 
 export default {

@@ -27,26 +27,26 @@
                 </div>
                 <div class= 'col2'>
                     <div>
-                        <vue-button 
+                        <vue-button
                             :type= 'd_type'
                             tag= "toggleFilter"
                             icon= 'fas fa-redo-alt'
                             :category= 'd_category[0]'
-                           
-                            
+
+
                             :form= "d_form"
                             :ctx= 'd_ctx'
                         />
                     </div>
                     <div class= 'divide16'/>
                     <div>
-                        <vue-button 
+                        <vue-button
                             :type= 'd_type'
                             tag= "toggleFilter"
                             icon= 'fas fa-plus'
                             :category= 'd_category[0]'
-                           
-                            
+
+
                             :form= "d_form"
                             :ctx= 'd_ctx'
                         />
@@ -54,8 +54,8 @@
                 </div>
             </div>
         </card-background>
-        <div 
-            v-if= 'd_tags' 
+        <div
+            v-if= 'd_tags'
             class= 'divide16'
         />
         <template
@@ -64,7 +64,7 @@
             <card-background
                 :key= 't.index'
             >
-                <div 
+                <div
                     class= 'tag'
                     :id= 't.sku'
                     :key= 't.index'
@@ -77,7 +77,7 @@
                                     name= 'SKUNumber'
                                     required= true
                                     :options= 'options'
-                                    :selected= 't.sku' 
+                                    :selected= 't.sku'
                                     disabled= true
                                 />
                             </div>
@@ -100,35 +100,35 @@
                     <div class= 'divide8' />
                     <div class= 'col2'>
                         <div v-if= 'editable'>
-                            <vue-button 
+                            <vue-button
                                 :type= 'd_type'
                                 tag= "deleteTag"
                                 :text= "d_text"
                                 icon= 'fas fa-times'
                                 :category= 'd_category[0]'
-                               
-                                
+
+
                                 :form= "d_form"
                                 :ctx= 'deleteTag.bind(this, t.sku)'
                             />
                         </div>
                         <div class= 'divide16'/>
                         <div>
-                            <vue-button 
+                            <vue-button
                                 :type= 'd_type'
                                 tag= "toggleFilter"
                                 :text= "d_text"
                                 :icon= 'editId && editId==t.sku? "fas fa-plus":"fas fa-pen-alt"'
                                 :category= 'd_category[0]'
-                               
-                                
+
+
                                 :form= "d_form"
                                 :ctx= 'toggleEdit.bind(this, t.sku)'
                             />
                         </div>
                     </div>
                 </div>
-            </card-background>    
+            </card-background>
             <div
             v-if= 'spaceCounter'
                 :key= 't.index'
@@ -139,11 +139,11 @@
 </template>
 
 <script>
-    import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-    import numberInput from "@/components/FormElements/numberInput";
-    import vueInfo from "@/components/FormElements/vueInfo";
-    import vueButton from "@/components/UIComponents/Button";
-    import cardBackground from '@/components/UIComponents/Cards/cardBackground'
+    import searchableDropdownList from "../../../FormElements/searchableDropdownList.vue";
+    import numberInput from "../../../FormElements/numberInput.vue";
+    import vueInfo from "../../../FormElements/vueInfo.vue";
+    import vueButton from "../../Button/index.vue";
+    import cardBackground from '../cardBackground.vue'
 
     export default {
         name: "productTag",
@@ -202,7 +202,7 @@
 
             editable: {
                 type: Boolean,
-                default: true 
+                default: true
             }
         }, //props
 

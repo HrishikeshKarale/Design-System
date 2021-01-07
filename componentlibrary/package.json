@@ -1,7 +1,7 @@
 {
   "name": "component-library-vue2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Component library created in Vue2.",
 
   "main": "dist/component-library-vue2.ssr.js",
   "browser": "dist/component-library-vue2.esm.js",

@@ -179,9 +179,9 @@
 </template>
 
 <script>
-import inputResponse from "@/components/Alerts/inputResponse.vue";
-import { validator } from "@/typeScript/validator";
-import { alerts } from "@/typeScript/common/alerts";
+import inputResponse from "../Alerts/inputResponse.vue";
+import { validator } from "../../typeScript/validator";
+import { alerts } from "../../typeScript/common/alerts";
 
 export default {
   name: "PasswordInput", //props

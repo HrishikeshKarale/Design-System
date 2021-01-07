@@ -71,10 +71,10 @@
 </template>
 
 <script>
-import inputResponse from "@/components/Alerts/inputResponse";
-import vueButton from "@/components/UIComponents/Button";
-import { validator } from "@/typeScript/validator";
-import { alerts } from "@/typeScript/common/alerts";
+import vueButton from "../UIComponents/Button/index.vue";
+import inputResponse from "../Alerts/inputResponse.vue";
+import { validator } from "../../typeScript/validator";
+import { alerts } from "../../typeScript/common/alerts";
 
 export default {
   name: "checkboxInput",

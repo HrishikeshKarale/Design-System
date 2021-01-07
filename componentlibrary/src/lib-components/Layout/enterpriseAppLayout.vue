@@ -16,22 +16,13 @@
         @afterEnter="afterEnter"
       >
         <div :key="$route.path" class="content">
-          <breadcrums :navigation="navigation"/>
+          <breadcrums :navigation="navigation" />
           <scroll-indicator>
             <router-view :key="$route.path" />
           </scroll-indicator>
-          <aside class="moto">
-            <vue-img :src="logo" alt="Moto" />
-            <q>
-              A little
-              <abbr
-                title="The action of understanding, being aware of, being sensitive to, and vicariously experiencing the feelings, thoughts, and experience of another of either the past or present without having the feelings, thoughts, and experience fully communicated in an objectively explicit manner"
-              >
-                Empathy
-              </abbr>
-              goes a long way
-            </q>
-          </aside>
+          <template v-if="$slots['moto']">
+            <slot name="moto" />
+          </template>
         </div>
       </transition>
     </div>
@@ -42,37 +33,40 @@
 </template>
 
 <script>
-import { nav } from "@/store/navigation"
-import scrollIndicator from "@/components/UIComponents/Navigation/scrollIndicator.vue";
-import breadcrums from "@/components/UIComponents/Navigation/breadcrums";
-import vueImg from "../UIComponents/Image/vueImg.vue";
-// import { authentication } from "@/typeScript/authentication";
-import { cookie } from "@/typeScript/cookie.js";
+import scrollIndicator from "../UIComponents/Navigation/scrollIndicator.vue";
+import breadcrums from "../UIComponents/Navigation/breadcrums.vue";
+// import { authentication } from "./typeScript/authentication";
+import { cookie } from "../../typeScript/cookie";
 
 export default {
   name: "EnterpriseAppLayout",
   components: {
     scrollIndicator,
-    breadcrums,
-    vueImg
+    breadcrums
   },
 
-  mixins: [/*authentication, */cookie],
+  props: {
+    navigation: {
+      type: [Object, Array],
+      required: true,
+      default: null
+    }
+  },
+
+  mixins: [/*authentication, */ cookie],
   data() {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const logo = require("@/assets/logo.svg");
+    const logo = require("../../assets/logo.png");
     const DEFAULT_TRANSITION = "fade";
     const DEFAULT_TRANSITION_MODE = "out-in";
     const transitionEnterActiveClass = "";
     const prevHeight = 0;
-    const navigation = nav;
     return {
       logo,
       transitionName: DEFAULT_TRANSITION,
       transitionMode: DEFAULT_TRANSITION_MODE,
       transitionEnterActiveClass,
-      prevHeight,
-      navigation
+      prevHeight
     };
   }, //mixins
 
@@ -212,34 +206,6 @@ export default {
           margin: 0 auto;
           max-width: 80vw;
           width: 1504px;
-
-          & > .moto {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            padding: @spaceMd @spaceLg;
-            border-radius: @borderRadius 0 0 0;
-            // background-color: @backgroundColor;
-            height: fit-content;
-
-            & > img {
-              height: 48px;
-            }
-
-            & > q {
-              font-size: @fontSizeSm;
-              font-weight: bold;
-              // background-color: @backgroundColor;
-              border-radius: @borderRadius 0 0 0;
-
-              & > abbr {
-                color: @primaryColor;
-                text-decoration: none;
-              }
-            }
-          }
         }
       }
     }
@@ -250,16 +216,6 @@ export default {
         &.body {
           & > div.content {
             min-width: 480px;
-            & > .moto {
-              padding: 0;
-
-              & > img {
-                display: none;
-              }
-              & > q {
-                padding: @spaceSm @spaceMd;
-              }
-            }
           }
         }
       }

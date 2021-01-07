@@ -55,8 +55,8 @@
 
 <script>
 
-  import vueButton from '@/components/UIComponents/Button'
-  import vueClipboard from '@/components/Code/vueClipboard'
+  import vueButton from '../Button/index.vue'
+  import vueClipboard from '../../Code/vueClipboard.vue'
 
   export default {
   name: 'vueModal',

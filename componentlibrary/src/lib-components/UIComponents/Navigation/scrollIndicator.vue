@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import { debounce } from "@/typeScript/debounce";
+import { debounce } from "../../../typeScript/debounce";
 
 export default {
   name: "ScrollIndicator",

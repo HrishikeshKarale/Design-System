@@ -305,28 +305,18 @@
 
 <script>
 
-  import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import vueButton from '@/components/UIComponents/Button'
-  import dropdownList from '@/components/FormElements/dropdownList'
-  import textInput from '@/components/FormElements/textInput'
-  import vueModal from '@/components/UIComponents/Modal/vueModal'
-  import checkboxInput from "@/components/FormElements/checkboxInput";
-	import { alerts } from "@/typeScript/common/alerts"
-
-  // import { store } from '@/store/store'
-  import { mapState, mapActions, mapMutations } from 'vuex';
+  import cardBackground from '../Cards/cardBackground.vue';
+  import vueButton from '../UIComponents/Button/index.vue';
+  import dropdownList from '../../FormElements/dropdownList.vue';
+  import textInput from '../../FormElements/textInput.vue';
+  import vueModal from '../Modal/vueModal.vue';
+  import checkboxInput from "../../FormElements/checkboxInput.vue";
+	import { alerts } from "../../../typeScript/common/alerts";
 
   export default {
-
     name:'vueTable',
 
 		mixins: [ alerts ],
-
-    mapActions,
-
-    mapState,
-
-    mapMutations,
 
     props: {
 

@@ -50,9 +50,9 @@
 </template>
 
 <script>
-  import vueButton from "@/components/UIComponents/Button"
-  import { validator } from "@/typeScript/validator"
-  import { alerts } from "@/typeScript/common/alerts";
+import inputResponse from "../Alerts/inputResponse.vue";
+import { validator } from "../../typeScript/validator";
+import { alerts } from "../../typeScript/common/alerts";
 
   export default {
     name: 'fileInput',

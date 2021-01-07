@@ -8,27 +8,27 @@
 			</div>
 		</div>
 		<div class= 'body'>
-			<div class= "item a">Product(s)</div>
-			<div class= "item b">Order details</div>
-			<div class= "item c">box (shipping)</div>
-			<div class= "item d">wt and dims (shipping)</div>
-			<div class= "item e">Carrier</div>
-			<div class= "item f">cost</div>
-			<div class= "item g">carrier logo</div>
+			<div class= "item a" slot ="a">Product(s)</div>
+			<div class= "item b" slot ="b">Order details</div>
+			<div class= "item c" slot ="c">box (shipping)</div>
+			<div class= "item d" slot ="d">wt and dims (shipping)</div>
+			<div class= "item e" slot ="e">Carrier</div>
+			<div class= "item f" slot ="f">cost</div>
+			<div class= "item g" slot ="g">carrier logo</div>
 		</div>
     </div>
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import vueImg from "../UIComponents/Image/vueImg.vue"
 
     export default {
 		name: 'packStationLayout',
 
 		components: { vueImg },
-		
+
 		data () {
-			const d_packLogo= require('@/assets/SVG/packStationLogo.svg')
+			const d_packLogo= require('../../assets/SVG/packStationLogo.svg')
 			return {
 				d_packLogo,
 			} //return
@@ -67,7 +67,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 			justify-content: space-between;
 			flex-wrap: nowrap;
 			margin: 16px 0;
-			
+
 			& > img {
 				height: 64px;
 				cursor: pointer;
@@ -93,7 +93,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 			/* border: @border; */
 			grid-template-columns: @frA @frE @frGF @frC;
 			grid-template-rows: @frA @frE @frGF @frC;
-			grid-template-areas: 
+			grid-template-areas:
 			/* horizontal */
 			"A B B B"
 			"A E F C"
@@ -106,7 +106,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 				align-items: center;
 				height: 100%;
 				width: 100%;
-				
+
 				color: @grayLighter;
 				font-size: 1.5em;
 				font-weight: 700;

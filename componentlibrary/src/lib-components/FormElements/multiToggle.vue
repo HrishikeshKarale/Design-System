@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { alerts } from "@/typeScript/common/alerts";
-import { validator } from "@/typeScript/validator";
+import { validator } from "../../typeScript/validator";
+import { alerts } from "../../typeScript/common/alerts";
 export default {
   name: "multiToggle",
   mixins: [validator, alerts],

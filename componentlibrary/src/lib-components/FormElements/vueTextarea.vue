@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import inputResponse from "@/components/Alerts/inputResponse.vue";
-import { alerts } from "@/typeScript/common/alerts";
-import { validator } from "@/typeScript/validator";
+import inputResponse from "../Alerts/inputResponse.vue";
+import { alerts } from "../../typeScript/common/alerts";
+import { validator } from "../../typeScript/validator";
 
 export default {
   name: "VueTextarea", //props

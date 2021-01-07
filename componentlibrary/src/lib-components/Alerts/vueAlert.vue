@@ -1,16 +1,16 @@
 <template>
   <div
-    v-if= '!d_close' 
+    v-if= '!d_close'
     class= 'vueAlert'
     :class= 'type'
   >
     <div>
-      <span 
+      <span
         :class= '[type, d_alertIcon]'
       />
       <div :class= 'type'>
         <div class= 'message'>
-          <h5><b>{{type=="danger"? code+" - ":""}} {{message}}</b></h5> 
+          <h5><b>{{type=="danger"? code+" - ":""}} {{message}}</b></h5>
           <p>
             {{description}}
           </p>
@@ -30,12 +30,12 @@
 
 <script>
 
-  import vueButton from '@/components/UIComponents/Button'
+  import vueButton from '../UIComponents/Button/index.vue'
 
   export default {
     name: 'vueAlert',
 
-    data () { 
+    data () {
       const d_alertIcon= ''
       const d_close= false
 
@@ -167,7 +167,7 @@
       h5, span {
         color: @warningText;
       }
-    } 
+    }
     &.success {
       border-color: @successText;
 
@@ -205,7 +205,7 @@
           display: flex;
           flex-direction: row-reverse;
         }
-      }         
+      }
     }
   }
 </style>

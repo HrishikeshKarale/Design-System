@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import vueButton from "@/components/UIComponents/Button";
+import vueButton from "../UIComponents/Button/index.vue";
 
 export default {
   name: "VueClipboard",
