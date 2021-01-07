@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="linear-gradient" x1="150.421" y1="59.222" x2="331.748" y2="-245.361" gradientTransform="matrix(0.952, 0.249, -0.219, 0.96, 21.364, 157.188)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#003a65"/>
+      <stop offset="0.253" stop-color="#582d59"/>
+      <stop offset="0.61" stop-color="#cf1c49"/>
+      <stop offset="0.769" stop-color="#ff1542"/>
+      <stop offset="1" stop-color="#ff1542"/>
+    </linearGradient>
+  </defs>
+  <title>styleguideAsset 2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Comet_Styleguide_using_vue" data-name="Comet Styleguide using vue">
+      <path d="M343.719,344.526,147.533,400,0,263.092,48.8,70.066S70.259,91.244,72.224,93.178L31.787,253.114,154.731,367.2l164.188-45.546Z" style="fill: #42b883"/>
+      <path d="M319.437,321.925,294.1,298.394,161.2,337.268l-20.535-19.032-59.15-54.853-18.882-17.51L96.95,115.6s.053-.2.131-.5L72.351,93.287,29.8,254.824,152.5,369.643Z" style="fill: #35495e"/>
+      <ellipse cx="150" cy="249" rx="65.94" ry="68.07" transform="translate(-129.727 169.917) rotate(-43.149)" style="fill: #003a65"/>
+      <polygon points="307.878 264.588 400 0 131.341 97.855 100.291 202.496 199 296 307.878 264.588" style="fill: url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

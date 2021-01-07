@@ -1,0 +1,755 @@
+// no-compile
+@import (reference) './customVariables.less';
+
+//tooltip
+
+/* Tooltip container */
+.tooltip () {
+  position: relative;
+  display: inline-block;
+  // border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+
+  /* Tooltip text */
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: @white;
+    text-align: center;
+    padding: @spaceSm 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+  }
+
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  &:hover {
+
+    &.tooltiptext {
+      visibility: visible;
+    }
+  }
+}
+
+// User select
+// For selecting text on the page
+
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
+}
+
+.placeholder() {
+  width: fit-content;
+  border-radius: @borderRadius;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderSkeleton;
+  //gray shades
+  background-image: -webkit-gradient(linear, left center, right center, from(@grayLighter), color-stop(.4, @grayLight), color-stop(.7, @grayLight), to(@grayLighter));
+  background-image: -webkit-linear-gradient(left, @grayLighter 0%, @grayLight 40%, @grayLight 70%, @grayLighter 100%);
+  background-size: 800px 104px;
+
+  &,
+  div,
+  * {
+    @value: transparent !important;
+
+    &,
+    &::placeholder {
+      color: @value;
+      border-color: @value;
+      background-color: @value;
+    }
+  }
+
+  @-webkit-keyframes placeholderSkeleton {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  @keyframes placeholderSkeleton {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  @-webkit-keyframes skeletonAnimate {
+    from {
+      background-position: top left;
+    }
+
+    to {
+      background-position: top right;
+    }
+  }
+
+  @keyframes skeletonAnimate {
+    from {
+      background-position: top left;
+    }
+
+    to {
+      background-position: top right;
+    }
+  }
+}
+
+.fa-rotate(@degree) {
+  -ms-transform: rotate(@degree);
+  /* Internet Explorer 9 */
+  -webkit-transform: rotate(@degree);
+  /* Chrome, Safari, Opera */
+  transform: rotate(@degree);
+  /* Standard syntax */
+}
+
+.boxShadow(@val, @color: @shadowColor, @zIndex: inherit) {
+  box-shadow: @base @color, @val @color;
+  -webkit-box-shadow: @base @color, @val @color;
+  -moz-box-shadow: @base @color, @val @color;
+  z-index: @zIndex;
+}
+
+
+// Box sizing
+.boxSizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
+}
+
+.textShadow(@val, @color: @shadowColor, @zIndex: inherit) {
+  text-shadow: @val @color;
+  -webkit-text-shadow: @val @color;
+  -moz-text-shadow: @val @color;
+  z-index: @zIndex;
+
+  .boxShadow(none) !important;
+}
+
+
+//inputFormatting
+
+.checkboxSize {
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    transform: scale(1.5);
+    margin-right: @spaceMd;
+  }
+}
+
+.inputError () {
+  border-color: @dangerText;
+  background-color: @dangerBackground;
+
+  &:focus-within,
+  &:focus {
+    border-color: @primaryColor;
+
+    &>span {
+      color: @dangerText ;
+    }
+  }
+
+  &>span {
+    color: @dangerText  !important;
+  }
+}
+
+.inputWarning () {
+  border-color: @warningText;
+  background-color: @warningBackground;
+
+  &:focus-within,
+  &:focus {
+    border-color: @primaryColor;
+
+    &>span {
+      color: @warningText;
+    }
+  }
+
+  &>span {
+    color: @warningText  !important;
+  }
+}
+
+.inputLabel () {
+  &>label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto 0px;
+    font-weight: 400;
+    width: fit-content;
+    height: @spaceXl;
+    margin-bottom: @spaceSm;
+    color: @textColor;
+
+    &>abbr {
+      padding: @spaceSm;
+      color: @dangerText;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    //for optional text
+    &>span {
+      margin-left: @spaceSm;
+      color: @infoText;
+      font-size: calc(@fontSizeSm - 4px);
+      .opacity(0.64);
+
+      &>abbr {
+        color: inherit;
+      }
+    }
+
+    &>input {
+      .checkboxSize();
+    }
+
+    &>.vueButton {
+      margin-left: auto;
+    }
+
+    &.oneLiner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      min-height: @spaceXl;
+      padding-right: @spaceLg;
+      margin: 0;
+      align-items: center;
+
+      &>input[type='checkbox'],
+      &>input[type='radio'] {
+        display: none;
+
+        &+span {
+          margin: 0 @spaceMd;
+          font-size: @fontSizeSm;
+          ;
+
+          &.fas {
+            color: @primaryColor;
+          }
+        }
+      }
+
+      &.errorLabel {
+        color: @dangerText;
+      }
+    }
+  }
+}
+
+// Opacity
+
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter:~"alpha(opacity=@{opacity-ie})";
+}
+
+.displayCode () {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-self: center;
+  border-radius: @borderRadius;
+  // width: 80%;
+  min-width: 640px;
+  max-width: 100%;
+  color: @textColor;
+
+  &>div {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: @secondaryColor;
+    color: @textColor;
+
+    &:first-child {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: @navBackground;
+
+
+      &.title {
+        color: @backgroundColor;
+        font-weight: bold;
+        align-items: center;
+
+        span.fas {
+          color: @primaryColor;
+          font-size: @fontSizeSm * 2;
+        }
+      }
+    }
+
+    &.syntaxCode {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    &.import {
+      position: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &>div {
+      display: flex;
+      flex-flow: column;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: @spaceMd @spaceLg;
+      font-size: @fontSize;
+
+      &.reactiveComponent {
+        margin: auto;
+      }
+
+      &.interactiveCode {
+
+        &>div {
+          display: flex;
+          flex-direction: row;
+          margin-left: @spaceXl*2;
+          justify-content: space-between;
+
+          &:first-child,
+          &:last-child {
+            margin-left: @spaceLg;
+          }
+
+          &>div {
+            display: flex;
+            margin-top: @spaceMd;
+            font-weight: bold;
+            align-self: center;
+
+            &:last-child {
+              font-weight: normal;
+              margin-left: @spaceSm;
+
+              input {
+                .checkboxSize();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navComponent () {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-width: 480px;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+
+  .formElementsTitle {
+
+    >div {
+
+      &.value {
+        color: @textColor;
+      }
+
+      &.error {
+        color: @dangerText
+      }
+
+      &.warning {
+        color: @warningText;
+      }
+    }
+  }
+}
+
+.condition() {
+  &:focus~.conditions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    height: fit-content;
+    width: fit-content;
+    background-color: @backgroundColor;
+    border-radius: @borderRadius;
+    padding: @spaceMd @spaceLg;
+    z-index: @bodyZ + 10;
+    .boxShadow(@base);
+
+    &>div {
+      display: flex;
+      flex-direction: row;
+      padding: @spaceMd @spaceLg;
+
+      &>span {
+        margin-right: @spaceMd;
+      }
+    }
+  }
+
+  &~.conditions {
+    display: none;
+  }
+}
+
+.inputcss () {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  &:focus-within,
+  &:focus {
+    border-color: @primaryColor;
+
+    &>span {
+      color: @primaryColor;
+    }
+  }
+
+  &.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &>label {
+      margin-right: @spaceLg;
+    }
+
+    &>.inputResponse {
+      margin-left: @spaceLg;
+    }
+  }
+
+  .inputLabel();
+
+  &>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: ~"1px solid darken(@backgroundColor, 10%)";
+    border-radius: @borderRadius;
+    min-width: 160px;
+    max-width: 240px;
+    min-height: @spaceLg;
+    border: 1px solid @primaryColor;
+    position: relative;
+
+    &.inputResponse {
+      width: 100%;
+      border: none;
+    }
+
+    &.warningContainer {
+      .inputWarning();
+    }
+
+    &.errorContainer {
+      .inputError();
+    }
+
+    &>datalist,
+    &>select,
+    &>input,
+    &>textarea {
+      padding: @spaceMd;
+      border-radius: @borderRadius;
+      width: 100%;
+      border: none;
+      position: relative;
+      background-color: @backgroundColor  !important;
+      -webkit-appearance: none;
+      outline: none;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        background-color: none !important;
+        border-color: none !important;
+      }
+
+      option:first {
+        color: ~"darken(@backgroundColor, 25%)"
+      }
+
+      //password peek functionality
+      &+span {
+        position: absolute;
+        cursor: pointer;
+        left: calc(100% + @spaceMd);
+        font-size: @fontSizeMd;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: @bodyZ + 5;
+        color: @accentColor;
+      }
+
+      .condition();
+    }
+
+    &.iconPadding {
+
+      &>span {
+        position: absolute;
+        z-index: @bodyZ + 10;
+        left: @spaceMd;
+        top: 50%;
+        transform: translate(0, -50%);
+        // padding: @spaceMd+@spaceSm 0 @spaceMd+@spaceSm @spaceMd*2;; //12px 0 12px @spaceLg;
+        color: @primaryColor;
+
+        // border-right-width: 0px;
+        &+datalist,
+        &+select,
+        &+input,
+        &+textarea {
+          padding: @spaceMd @spaceLg @spaceMd 2*@spaceLg+@spaceMd ;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          border-left-width: 0px;
+
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus {
+            background-color: none !;
+            border-color: none;
+          }
+
+          // password peak functionality
+          &+span {
+            cursor: pointer;
+            font-size: @fontSizeMd;
+            left: calc(100% + @spaceMd);
+            color: @accentColor;
+          }
+
+          .condition();
+        }
+      }
+    }
+
+    &>input[type='file'] {
+      padding-left: @spaceLg; //18px;
+    }
+
+    &>select {
+
+      &+span {
+        left: 40px;
+      }
+    }
+
+    &.files {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      color: @textColor;
+      border: none;
+
+      &>div {
+        display: flex;
+        margin-top: @spaceMd;
+        padding: @spaceLg @spaceMd;
+        border-radius: @borderRadius;
+        background-color: @secondaryColor;
+        position: relative;
+        .boxShadow(@one);
+
+        &>div {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          &>span {
+            align-self: center;
+            padding: @spaceLg auto;
+            font-size: @fontSizeMd;
+            margin-right: @spaceMd;
+          }
+
+          &>.fileSize {
+            position: absolute;
+            right: @spaceMd;
+            bottom: @spaceMd;
+            font-size: @fontSizeSm;
+          }
+
+          &>.removeFile {
+            position: absolute;
+            right: @spaceMd;
+            top: @spaceMd;
+          }
+        }
+      }
+    }
+  }
+
+  .maskField {
+
+    .placeholder();
+  }
+}
+
+.scroll (@height, @width: @spaceMd) {
+  max-height: @height;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: @width;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: @backgroundColor;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: @primaryColor;
+    border-radius: @width;
+  }
+}
+
+.checkboxCss () {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-width: 200px;
+  height: fit-content;
+
+  &.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .inputLabel();
+
+  &>div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: max-content;
+
+    &.inline {
+      flex-direction: row;
+      margin-left: @spaceLg;
+    }
+
+    &+div {
+      display: flex;
+    }
+
+    &.singleCheckbox {
+      width: fit-content; // 100% !important;
+    }
+
+    &.errorContainer {
+      .inputError();
+    }
+
+    &>label {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      min-height: @spaceXl;
+      // padding: @spaceMd @spaceLg;
+      margin: 0;
+      align-items: center;
+      cursor: pointer;
+
+      >input[type='checkbox'],
+      >input[type='radio'] {
+        min-height: auto;
+        margin-right: @spaceMd;
+      }
+
+      &.errorLabel {
+        color: @dangerText;
+      }
+    }
+  }
+
+  &>.box {
+    margin-left: 8px;
+    width: fit-content;
+    background-color: @backgroundColor;
+    border-radius: @borderRadius;
+    border: 1px solid @primaryColor;
+
+    &>label {
+      padding: @spaceLg;
+      background-color: @secondaryColor;
+
+      &>input {
+        display: none;
+      }
+
+      &.checked {
+        // border-radius: @borderRadius;
+        background-color: @primaryColor;
+        color: @backgroundColor;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.divide4 {
+  margin: @spaceXs  !important;
+  display: inline;
+}
+
+.divide8 {
+  margin: @spaceSm  !important;
+  display: inline;
+}
+
+.divide16 {
+  margin: @spaceMd  !important;
+  display: inline;
+}
+
+.divide32 {
+  margin: @spaceLg  !important;
+  display: inline;
+}
+
+//https://codepen.io/origine/pen/KVzpYm
+
+
+
+// Button sizes
+.buttonSize(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}

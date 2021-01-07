@@ -1,0 +1,137 @@
+// no-compile
+
+//== Colors
+//
+@white: var(--white);
+@black: var(--black);
+@offWhite: var(--offWhite);
+@offBlack: var(--offBlack);
+
+@primaryColor: var(--primaryColor);
+@secondaryColor: var(--secondaryColor);
+@accentColor: var(--accentColor);
+
+@textColor: var(--textColor);
+@backgroundColor: var(--backgroundColor);
+
+@navBackground: var(--navBackground);
+@navText: var(--navText);
+
+@shadowColor: var(--shadowColor);
+
+//success
+@successText: #3c763d;
+@successBackground: #dff0d8;
+@successBorder: #d6e9c6;
+
+//info
+@infoText: #31708f;
+@infoBackground: #d9edf7;
+@infoBorder: #bce8f1;
+
+//warning
+@warningText: #8a6d3b;
+@warningBackground: #fcf8e3;
+@warningBorder: #faebcc;
+
+//danger
+@dangerText: #a94442;
+@dangerBackground: #f2dede;
+@dangerBorder: #ebccd1;
+
+//## Gray and brand colors for use across
+@grayBase: @black;
+@grayDarker: #222;
+@grayDark: #333;
+@gray: #555;
+@grayLight: #777;
+@grayLighter: #eee;
+
+//font
+@fontSizeMd: 16px;
+@fontSize: ceil((@fontSizeMd * 1.25));
+@fontSizeSm: ceil((@fontSizeMd * 0.75));
+@fontSizeH1: floor((@fontSizeMd * 2.6)); // ~36px
+@fontSizeH2: floor((@fontSizeMd * 2.15)); // ~30px
+@fontSizeH3: ceil((@fontSizeMd * 1.7)); // ~24px
+@fontSizeH4: ceil((@fontSizeMd * 1.25)); // ~18px
+@fontSizeH5: @fontSizeMd;
+@fontSizeH6: ceil((@fontSizeMd * 0.85)); // ~12px
+
+@font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+@fontFamily: 'Roboto', sans-serif;
+
+@lineHeightBase: 1.428571429;
+@lineHeight: floor((@fontSize * @lineHeightBase));
+
+//spacing or sizing
+@spaceXs: 2px;
+@spaceSm: 4px;
+@spaceMd: 8px;
+@spaceLg: 16px;
+@spaceXl: 32px;
+
+//height content
+@header: 120px;
+@footer: 80px;
+@body: calc(100vh - @header - @footer);
+
+//border-radius
+@borderRadiusSm: @spaceXs;
+@borderRadius: @spaceSm;
+@borderRadiusLg: @spaceMd;
+//checkbox size
+@checkboxSize: 1.5;
+
+//boxShadows
+//color is added directly to the bosShadow and testShadow functions
+//box-shadow = horizontal - vertical - blur - spread - color
+//opacitycodes: 100% — FF
+// 95% — F2 90% — E6 85% — D9 80% — CC 75% — BF 70% — B3 65% — A6 60% — 99 55% — 8C 50% — 80 45% — 73 40% — 66 35% — 59 30% — 4D 25% — 40 20% — 33 15% — 26 10% — 1A 5% — 0D 0% — 00
+@base: inset 0 0 @spaceSm;
+@one: 0 1px @spaceXs;
+@two: 0 @spaceXs @spaceSm;
+@three: 0 @spaceSm @spaceMd;
+@four: 0 @spaceMd @spaceLg;
+@five: 0 @spaceLg @spaceXl;
+//textShadows (text-shadow: topOffset leftOffset blurRadius color;)
+@baseText: @base;
+@oneText: @one;
+@twoText: @two;
+@threeText: @three;
+@fourText: @four;
+@fiveText: @five;
+
+//transitions
+@transitionDuration: 0.3s;
+@transitionTimingFunction: cubic-bezier(0.55, 0, 0.1, 1);
+@transition: all @transitionDuration @transitionTimingFunction;
+
+
+//z-index
+@bodyZ: 0;
+@headerZ: 200;
+@contentZ: 100;
+@modalZ: 300;
+// @zindex-navbar:    1000;
+// @zindex-dropdown:   1000;
+// @zindex-popover:    1060;
+// @zindex-tooltip:    1070;
+// @zindex-navbar-fixed:   1030;
+// @zindex-modal-background: 1040;
+// @zindex-modal:     1050;
+
+
+//breakpoints
+@maxWidth: 1540px; //1540 //1024px
+
+
+
+
+/*
+  codepen website shadows values were used for material design
+  link: https://codepen.io/sdthornton/pen/wBZdXq
+*/
