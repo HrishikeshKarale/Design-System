@@ -20,8 +20,8 @@
             <template v-if= "navigation.id === 0">
               <vue-img :src="logoLink" alt="Logo" />
               <h3>
-                Design Guide
-                <h6>Hrishikesh Karale</h6>
+                {{ title }}
+                <h6>{{ subTitle}}</h6>
               </h3>
             </template>
             <template v-else>
@@ -91,6 +91,18 @@ export default {
 
   props: {
     logoLink: {
+      required: false,
+      type: String,
+      default: ""
+    },
+
+    title:{
+      required: false,
+      type: String,
+      default: ""
+    },
+
+    subTitle:{
       required: false,
       type: String,
       default: ""

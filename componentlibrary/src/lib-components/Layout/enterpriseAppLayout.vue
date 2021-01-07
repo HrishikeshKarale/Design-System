@@ -56,13 +56,11 @@ export default {
   mixins: [/*authentication, */ cookie],
   data() {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const logo = require("../../assets/logo.png");
     const DEFAULT_TRANSITION = "fade";
     const DEFAULT_TRANSITION_MODE = "out-in";
     const transitionEnterActiveClass = "";
     const prevHeight = 0;
     return {
-      logo,
       transitionName: DEFAULT_TRANSITION,
       transitionMode: DEFAULT_TRANSITION_MODE,
       transitionEnterActiveClass,

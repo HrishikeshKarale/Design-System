@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import vueButton from "../UIComponents/Button/index.vue"
 import inputResponse from "../Alerts/inputResponse.vue";
 import { validator } from "../../typeScript/validator";
 import { alerts } from "../../typeScript/common/alerts";
