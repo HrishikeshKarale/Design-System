@@ -49,10 +49,10 @@
 <script>
 
   import vueCard from '@/components/UIComponents/Cards/vueCard'
-  import vueTable from '@/components/UIComponents/Table/vueTable'
+  import { vueTable } from "vue2-component-library"
   import masterDetail from '@/components/UIComponents/MasterDetail/masterDetail'
   import componentDetails from '@/Views/componentDetails'
-  import textInput from "@/components/FormElements/textInput";
+  import { vueText as textInput  } from "vue2-component-library"
 
   import { mapGetters, mapState } from 'vuex';
 

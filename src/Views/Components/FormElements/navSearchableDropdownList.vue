@@ -30,7 +30,7 @@
 <script>
 
   import componentDetails from "@/Views/componentDetails";
-  import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
+  import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts";
 
   export default {
@@ -93,7 +93,7 @@
 				return {
           title: 'Searchable Dropdown Input Field',
           compName: 'searchable-dropdown-list',
-          import: 'import searchableDropdownList from "@/components/FormElements/searchableDropdownList"',
+          import: 'import { vueSearchableDropdown as searchableDropdownList } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
 					description: "<p>The &lt;searchable-dropdown-list&gt; element specifies a list of pre-defined options for an &lt;input&gt; element.\
 					The &lt;searchable-dropdown-list&gt; element is used to provide an 'autocomplete' feature on &lt;input&gt; elements. Users will see a drop-down list of pre-defined options as they input data.\

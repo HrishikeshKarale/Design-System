@@ -1,4 +1,4 @@
-//https://polaris.shopify.com/content/voice-and-tone#navigation  
+//https://polaris.shopify.com/content/voice-and-tone#navigation
 <template>
     <article id= 'voiceAndTone'>
         <p>
@@ -98,7 +98,7 @@
                                     Security
                                 </h3>
                             </div>
-                            <multi-toggle 
+                            <multi-toggle
                                 class= "securityToggle"
                                 name="toggleInputField"
                                 label="Hide Sensitive Content:"
@@ -124,7 +124,7 @@
                         <p>
                             Add extra text just to fill space.
                         </p>
-                        <text-input 
+                        <text-input
                             class= "noteText"
                             label="Notes"
                             :disabled= "d_booleanTrue"
@@ -231,10 +231,10 @@
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import { vueImg } from "vue2-component-library"
 import goodVsBad from "@/Views/goodVsBad"
-import multiToggle from "@/components/FormElements/multiToggle"
-import textInput from "@/components/FormElements/textInput"
+import { vueToggle as multiToggle } from "vue2-component-library"
+import { vueText as textInput } from "vue2-component-library"
 import cardBackground from "@/components/UIComponents/Cards/cardBackground"
 
     export default {

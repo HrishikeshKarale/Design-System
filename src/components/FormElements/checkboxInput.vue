@@ -71,8 +71,8 @@
 </template>
 
 <script>
-import inputResponse from "@/components/Alerts/inputResponse";
-import vueButton from "@/components/UIComponents/Button";
+import { vueInputResponse as inputResponse } from 'vue2-component-library'
+import { vueButton } from "vue2-component-library"
 import { validator } from "@/typeScript/validator";
 import { alerts } from "@/typeScript/common/alerts";
 

@@ -1,6 +1,6 @@
 <template>
 <div class= 'navReassign'>
-    <vue-wizard 
+    <vue-wizard
       :steps= 'd_steps'
       :alert= "{'error': danger, 'warning': warning}"
     >
@@ -26,7 +26,7 @@
           <template slot= 'detail'>
             <div v-if= 'd_selected'>
               {{d_selected}}
-              <vue-table 
+              <vue-table
                 :tableData= 'data.data'
                 :columns= 'data.cols'
                 :metadata= 'metadata'
@@ -34,7 +34,7 @@
                 low= '1'
               />
             </div>
-            <div 
+            <div
               v-else
               class= 'defaultDetail'
             >
@@ -50,18 +50,18 @@
         <h3>Product Details</h3>
         <div class= 'two'/>
       </template>
-    </vue-wizard> 
-  </div>  
+    </vue-wizard>
+  </div>
 </template>
 
 <script>
 
   import vueCard from '@/components/UIComponents/Cards/vueCard'
-  import vueTable from '@/components/UIComponents/Table/vueTable'
-  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard' 
-  import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
+  import { vueTable } from "vue2-component-library"
+  import { vueWizard } from "vue2-component-library"
+  import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
   import masterDetail from '@/components/UIComponents/MasterDetail/masterDetail'
-  import textInput from "@/components/FormElements/textInput";
+  import { vueText as textInput  } from "vue2-component-library"
 
   // import { store } from '@/store/store'
   import { mapGetters, mapState } from 'vuex';
@@ -73,7 +73,7 @@
 
     mapGetters,
 
-    mapState, 
+    mapState,
 
     data() {
            const steps= [
@@ -160,7 +160,7 @@
       background-color: @infoBackground;
       padding: @spaceLg @spaceXl;
 
-      h1 {    
+      h1 {
         text-align: center;
       }
     }

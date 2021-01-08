@@ -118,22 +118,22 @@
 <script>
   import codeDetails from '@/Views/codeDetails'
   import dynamicComponent from '@/Views/dynamicComponent'
-  import textInput from "@/components/FormElements/textInput";
-  import passwordInput from "@/components/FormElements/passwordInput";
-  import emailInput from "@/components/FormElements/emailInput";
-  import numberInput from "@/components/FormElements/numberInput";
-  import fileInput from "@/components/FormElements/fileInput";
-  import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
-  import multiToggle from "@/components/FormElements/multiToggle";
+  import { vueText as textInput  } from "vue2-component-library"
+  import { vuePassword as passwordInput } from "vue2-component-library"
+  import { vueEmail as emailInput } from "vue2-component-library"
+  import { vueNumber as numberInput } from "vue2-component-library"
+  import { vueFile as fileInput } from "vue2-component-library"
+  import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
+  import { vueToggle as multiToggle } from "vue2-component-library";
   import dropdownList from "@/components/FormElements/dropdownList";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
-  import vueDate from "@/components/FormElements/vueDate";
-  import vueTextarea from "@/components/FormElements/vueTextarea";
-  import vueInfo from "@/components/FormElements/vueInfo";
-  import vueClipboard from "@/components/Code/vueClipboard";
-  import vueModal from "@/components/UIComponents/Modal/vueModal";
-  import vueButton from '@/components/UIComponents/Button'
-  import vueAlert from '@/components/Alerts/vueAlert'
+  import { vueCheckbox  as checkboxInput } from "vue2-component-library"
+  import { vueDate } from "vue2-component-library"
+  import { vueTextarea } from "vue2-component-library"
+  import { vueInfo } from "vue2-component-library"
+  import { vueClipboard } from "vue2-component-library"
+  import { vueModal } from "vue2-component-library";
+  import { vueButton } from "vue2-component-library"
+  import { vueAlert } from "vue2-component-library"
 
   export default {
 	name: "componentDetails",

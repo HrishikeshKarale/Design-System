@@ -46,7 +46,7 @@
 
 <script>
 
-  import inputResponse from '@/components/Alerts/inputResponse';
+  import { vueInputResponse as inputResponse } from 'vue2-component-library'
   import { validator } from "@/typeScript/validator"
   import { alerts } from "@/typeScript/common/alerts";
 

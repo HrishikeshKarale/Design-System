@@ -918,7 +918,7 @@
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import { vueImg } from "vue2-component-library"
 
     export default {
         name: 'navBestPractices',

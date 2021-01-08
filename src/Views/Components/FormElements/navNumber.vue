@@ -28,7 +28,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import numberInput from "@/components/FormElements/numberInput";
+  import { vueNumber as numberInput } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -90,7 +90,7 @@
 				return {
 					title: 'Number Input Field',
           compName: 'number-input',
-          import: 'import numberInput from "@/components/FormElements/numberInput";',
+          import: 'import { vueNumber as numberInput } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: '<p>The &lt;number-input&gt; defines a field for entering a number.\
           Use the following attributes to specify restrictions:\

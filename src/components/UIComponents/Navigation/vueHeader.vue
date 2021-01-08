@@ -91,8 +91,8 @@
 <script>
 import { toggle } from "@/typeScript/toggle";
 import { authentication } from "@/typeScript/authentication";
-import vueButton from "@/components/UIComponents/Button";
-import vueImg from "../Image/vueImg.vue";
+import { vueButton } from "vue2-component-library"
+import { vueImg } from "vue2-component-library"
 
 export default {
   name: "VueHeader",

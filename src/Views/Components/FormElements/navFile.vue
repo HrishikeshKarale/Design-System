@@ -25,7 +25,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import fileInput from "@/components/FormElements/fileInput";
+  import { vueFile as fileInput } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -81,7 +81,7 @@
 				return {
 					title: 'File Upload',
 					compName: 'file-input',
-					import: 'import fileInput from "@/components/FormElements/fileInput";',
+					import: 'import { vueFile as fileInput } from "vue2-component-library"',
 					description: '<p>The &lt;file-input"&gt; tag defines a file-select field and a "Browse" button for file uploads.\
 					To define a file-select field that allows multiple files to be selected, add the "multiple" attribute.</p>',
 					attributes:[

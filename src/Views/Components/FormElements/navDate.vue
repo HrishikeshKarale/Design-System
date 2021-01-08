@@ -26,7 +26,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import vueDate from "@/components/FormElements/vueDate";
+  import { vueDate } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -83,7 +83,7 @@
 				return {
 					title: 'Date Input Field',
           compName: 'vue-date',
-          import: 'import vueDate from "@/components/FormElements/vueDate";',
+          import: 'import { vueDate } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: '<p>The &lt;vue-datet&gt tag defines a date picker.\
 					The resulting value includes the year, month, and day.</p>',

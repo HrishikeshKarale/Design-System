@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import { vueImg } from "vue2-component-library"
 
     export default {
 		name: 'packStationLayout',
 
 		components: { vueImg },
-		
+
 		data () {
 			const d_packLogo= require('@/assets/SVG/packStationLogo.svg')
 			return {
@@ -67,7 +67,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 			justify-content: space-between;
 			flex-wrap: nowrap;
 			margin: 16px 0;
-			
+
 			& > img {
 				height: 64px;
 				cursor: pointer;
@@ -93,7 +93,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 			/* border: @border; */
 			grid-template-columns: @frA @frE @frGF @frC;
 			grid-template-rows: @frA @frE @frGF @frC;
-			grid-template-areas: 
+			grid-template-areas:
 			/* horizontal */
 			"A B B B"
 			"A E F C"
@@ -106,7 +106,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 				align-items: center;
 				height: 100%;
 				width: 100%;
-				
+
 				color: @grayLighter;
 				font-size: 1.5em;
 				font-weight: 700;

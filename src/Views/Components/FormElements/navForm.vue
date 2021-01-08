@@ -89,12 +89,12 @@
 </template>
 
 <script>
-    import vueForm from '@/components/FormElements/vueForm'
-    import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
+    import { vueForm } from "vue2-component-library"
+    import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
     import componentDetails from '@/Views/componentDetails'
-    import textInput from "@/components/FormElements/textInput";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
-    import vueTextarea from "@/components/FormElements/vueTextarea";
+    import { vueText as textInput  } from "vue2-component-library"
+    import { vueCheckbox  as checkboxInput } from "vue2-component-library"
+    import { vueTextarea } from "vue2-component-library"
     import { alerts } from "@/typeScript/common/alerts";
 
     import { mapState } from 'vuex';
@@ -146,7 +146,7 @@
             return {
                 title: 'Vue Form',
                 compName: 'vue-form',
-                import: 'import vueForm from "@/components/FormElements/vueForm"',
+                import: 'import { vueForm } from "vue2-component-library"',
                 description: '<p></p>',
                 attributes: [
                     {

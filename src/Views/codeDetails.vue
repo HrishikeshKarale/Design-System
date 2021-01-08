@@ -94,12 +94,12 @@
 <script>
 
   import dynamicComponent from '@/Views/dynamicComponent'
-  import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
+  import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
   import dropdownList from "@/components/FormElements/dropdownList"
-  import vueButton from "@/components/UIComponents/Button"
-  import numberInput from "@/components/FormElements/numberInput";
-  import textInput from "@/components/FormElements/textInput";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
+  import { vueButton } from "vue2-component-library"
+  import { vueNumber as numberInput } from "vue2-component-library"
+  import { vueText as textInput  } from "vue2-component-library"
+  import { vueCheckbox  as checkboxInput } from "vue2-component-library"
   import { alerts } from "@/typeScript/common/alerts"
 
   export default {

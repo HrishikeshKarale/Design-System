@@ -23,7 +23,7 @@
 <script>
 
   import componentDetails from "@/Views/componentDetails";
-  import multiToggle from "@/components/FormElements/multiToggle";
+  import { vueToggle as multiToggle } from "vue2-component-library";
 
   export default {
 		name: "navToggle",
@@ -65,7 +65,7 @@
 				return {
 					title: 'Multi-Toggle Input Field',
           compName: 'multi-toggle',
-          import: 'import multiToggle from "@/components/FormElements/multiToggle";',
+          import: 'import { vueToggle as multiToggle } from "vue2-component-library";',
           description: '<p>The &lt;multi-toggle&gt; tag specifies an input field where user can toggle between two states.</p>',
           attributes:[
             {

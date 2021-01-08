@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import inputResponse from "@/components/Alerts/inputResponse.vue";
+import { vueInputResponse as inputResponse } from 'vue2-component-library'
 import { alerts } from "@/typeScript/common/alerts";
 import { validator } from "@/typeScript/validator";
 

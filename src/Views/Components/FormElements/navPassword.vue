@@ -27,7 +27,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import passwordInput from "@/components/FormElements/passwordInput";
+  import { vuePassword as passwordInput } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -86,7 +86,7 @@
 				return {
           title: 'Password Input Field',
           compName: 'password-input',
-          import: 'import passwordInput from "@/components/FormElements/passwordInput";',
+          import: 'import { vuePassword as passwordInput } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: '<p>The &lt;password-input&gt; tag defines a password field (characters are masked).\
 					<strong>Note:</strong> Any forms involving sensitive information like passwords should be served over HTTPS.</p>',

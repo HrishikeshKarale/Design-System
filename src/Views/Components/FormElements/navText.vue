@@ -28,7 +28,7 @@
 <script>
 
   import componentDetails from "@/Views/componentDetails";
-  import textInput from "@/components/FormElements/textInput";
+  import { vueText as textInput  } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   export default {
@@ -87,7 +87,7 @@
         return {
           title: 'Text Input Field',
           compName: 'text-input',
-          import: 'import textInput from "@/components/FormElements/textInput";',
+          import: 'import { vueText as textInput  } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: "<p>The &lt;text-input&gt; defines a single-line text field.\
           It used the &lt;input type= 'text'&gt; within &lt;text-input&gt;\

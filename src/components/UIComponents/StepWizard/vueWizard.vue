@@ -84,7 +84,7 @@
 
 <script>
 
-  import vueButton from '@/components/UIComponents/Button'
+  import { vueButton } from "vue2-component-library"
     import { alerts } from "@/typeScript/common/alerts";
 
     export default {

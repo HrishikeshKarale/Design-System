@@ -29,15 +29,7 @@ export default {
         return "An image goes here";
       }
     }
-  },
-
-  data() {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    // const dImageSource = require("../../../assets/SVG/SVG/default.svg");
-    // return {
-    //   dImageSource: dImageSource
-    // }; //return
-  } //props
+  }
 }; //default
 </script>
 

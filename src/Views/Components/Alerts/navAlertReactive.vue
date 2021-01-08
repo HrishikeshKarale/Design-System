@@ -13,8 +13,8 @@
 
 <script>
 
-  import vueAlert from '@/components/Alerts/vueAlert'
-  import vueButton from '@/components/UIComponents/Button'
+  import { vueAlert } from "vue2-component-library"
+  import { vueButton } from "vue2-component-library"
   import componentDetails from '@/Views/componentDetails'
 
 
@@ -44,7 +44,7 @@
 
           title: 'Reactive Alerts',
 
-          import: 'import vueAlert from "@/components/Alerts/vueAlert"',
+          import: 'import { vueAlert } from "vue2-component-library"',
 
           compName: 'vue-alert',
 

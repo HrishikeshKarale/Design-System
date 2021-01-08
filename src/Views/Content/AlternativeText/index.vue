@@ -1,4 +1,4 @@
-        // https://polaris.shopify.com/content/alternative-text#navigation   
+        // https://polaris.shopify.com/content/alternative-text#navigation
 <template>
     <article id= 'alternativeText'>
         <p>
@@ -105,8 +105,8 @@
 </template>
 
 <script>
-    import vueImg from "@/components/UIComponents/Cards/vueCard"
-    import vueClipboard from "@/components/Code/vueClipboard";
+    import { vueImg } from "vue2-component-library"
+    import { vueClipboard } from "vue2-component-library"
 
     export default {
         name: 'alternativeText',

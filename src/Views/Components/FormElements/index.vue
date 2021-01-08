@@ -2102,20 +2102,20 @@
 <script>
 
     import goodVsBad from "@/Views/goodVsBad"
-    import vueButton from "@/components/UIComponents/Button"
-    import vueAlert from "@/components/Alerts/vueAlert"
-    import textInput from "@/components/FormElements/textInput";
-    import passwordInput from "@/components/FormElements/passwordInput";
-    import emailInput from "@/components/FormElements/emailInput";
-    import numberInput from "@/components/FormElements/numberInput";
-    import fileInput from "@/components/FormElements/fileInput";
-    import searchableDropdownList from "@/components/FormElements/searchableDropdownList";
+    import { vueButton } from "vue2-component-library"
+    import { vueAlert } from "vue2-component-library"
+    import { vueText as textInput  } from "vue2-component-library"
+    import { vuePassword as passwordInput } from "vue2-component-library"
+    import { vueEmail as emailInput } from "vue2-component-library"
+    import { vueNumber as numberInput } from "vue2-component-library"
+    import { vueFile as fileInput } from "vue2-component-library"
+    import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
     import dropdownList from "@/components/FormElements/dropdownList";
-    import multiToggle from "@/components/FormElements/multiToggle";
-    import checkboxInput from "@/components/FormElements/checkboxInput";
-    import vueDate from "@/components/FormElements/vueDate";
-    import vueTextarea from "@/components/FormElements/vueTextarea";
-    import vueInfo from "@/components/FormElements/vueInfo";
+    import { vueToggle as multiToggle } from "vue2-component-library";
+    import { vueCheckbox  as checkboxInput } from "vue2-component-library"
+    import { vueDate } from "vue2-component-library"
+    import { vueTextarea } from "vue2-component-library"
+    import { vueInfo } from "vue2-component-library"
     import { alerts } from "@/typeScript/common/alerts"
 
     export default {

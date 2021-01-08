@@ -8,7 +8,7 @@
 
 <script>
 
-  import sideNav from '@/components/UIComponents/Navigation/sideNav'
+  import { vueSideNav as sideNav } from "vue2-component-library"
   import componentDetails from '@/Views/componentDetails'
 
   import { mapState } from 'vuex';
@@ -43,7 +43,7 @@
 				return {
 					title: 'Navigation',
 					compName: 'side-nav',
-					import: 'import vueTable from "@/components/UIComponents/Navigation/sideNav"',
+					import: 'import { vueSideNav as sideNav } from "vue2-component-library"',
 					description: '<p>The navigation component by default ticks to the extreme left of the page.</p>',
 					attributes: [
 						{

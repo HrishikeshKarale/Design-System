@@ -614,11 +614,11 @@
   </article>
 </template>
 <script>
-  import multiToggle from "@/components/FormElements/multiToggle";
+  import { vueToggle as multiToggle } from "vue2-component-library";
   import goodVsBad from "@/Views/goodVsBad"
   import vueCard from "@/components/UIComponents/Cards/vueCard"
-  import vueImg from "@/components/UIComponents/Image/vueImg"
-  import vueClipboard from "@/components/Code/vueClipboard";
+  import { vueImg } from "vue2-component-library"
+  import { vueClipboard } from "vue2-component-library"
 
 
   export default {

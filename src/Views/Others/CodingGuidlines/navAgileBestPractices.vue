@@ -230,7 +230,7 @@
 </template>
 
 <script>vueImg
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import { vueImg } from "vue2-component-library"
     export default {
         name: 'navAgileBestPractices',
 

@@ -6,7 +6,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import vueInfo from "@/components/FormElements/vueInfo";
+  import { vueInfo } from "vue2-component-library"
 
   export default {
     name: "navInfo",
@@ -34,7 +34,7 @@
 				return {
 					title: 'Info Field',
           compName: 'vue-info',
-          import: 'import vueInfo from "@/components/FormElements/vueInfo";',
+          import: 'import { vueInfo } from "vue2-component-library"',
           description: '<p>The &lt;vue-info&gt; tag specifies a non-interactive field where data passed to it are displayed as text</p>',
           attributes:[
             {

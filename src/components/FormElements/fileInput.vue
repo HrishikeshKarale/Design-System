@@ -50,7 +50,7 @@
 </template>
 
 <script>
-  import vueButton from "@/components/UIComponents/Button"
+  import { vueButton } from "vue2-component-library"
   import { validator } from "@/typeScript/validator"
   import { alerts } from "@/typeScript/common/alerts";
 

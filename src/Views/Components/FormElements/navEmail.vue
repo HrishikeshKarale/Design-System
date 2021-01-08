@@ -28,7 +28,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import emailInput from "@/components/FormElements/emailInput";
+  import { vueEmail as emailInput } from "vue2-component-library"
   import { alerts } from "@/typeScript/common/alerts";
 
   export default {
@@ -89,7 +89,7 @@
 					return {
 						title: 'Email Input Field',
           compName: 'email-input',
-          import: 'import emailInput from "@/components/FormElements/emailInput";',
+          import: 'import { vueEmail as emailInput } from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: '<p>The &lt;email-input&gt; tag defines a field for an e-mail address.</p>\
                   <p>The input value is automatically validated to ensure it is a properly formatted e-mail address.</p>\

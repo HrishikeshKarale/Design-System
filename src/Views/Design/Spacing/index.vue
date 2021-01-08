@@ -1,4 +1,4 @@
-<template>    
+<template>
     <article id= 'spacing'>
         <p>
             Consistent spacing creates visual balance that makes the user interface (UI) easier for users to scan. Apply consistent spacing to improve the quality of the UI.
@@ -216,7 +216,7 @@
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+import { vueImg } from "vue2-component-library"
 
     export default {
         name: 'spacing',

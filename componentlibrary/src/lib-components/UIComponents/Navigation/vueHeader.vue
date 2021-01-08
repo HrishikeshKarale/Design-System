@@ -92,7 +92,7 @@
 import { toggle } from "../../../typeScript/toggle";
 import { authentication } from "../../../typeScript/authentication";
 import vueButton from "../Button/index.vue";
-import vueImg from "../Image/vueImg.vue";
+import { vueImg } from "vue2-component-library"
 
 export default {
   name: "VueHeader",

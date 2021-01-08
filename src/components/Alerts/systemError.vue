@@ -81,7 +81,7 @@
 
 <script>
 
-    import vueClipboard from '../../components/Code/vueClipboard.vue';
+    import { vueClipboard } from 'vue2-component-library';
 
     export default {
         name:'systemError',

@@ -25,7 +25,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
+  import { vueCheckbox  as checkboxInput } from "vue2-component-library"
   import { alerts } from "@/typeScript/common/alerts";
 
   export default {
@@ -80,7 +80,7 @@
         return {
           title: 'Checkbox Input Field',
           compName: 'checkbox-input',
-          import: 'import checkboxInput from "@/components/FormElements/checkboxInput";',
+          import: 'import { vueCheckbox  as checkboxInput } from "vue2-component-library"',
           description: '<p>The &lt;checkbox-input&gt; tag defines a checkbox.\
           The checkbox is shown as a square box that is ticked (checked) when activated.\
           Checkboxes are used to let a user select one or more options of a limited number of choices.</p>',

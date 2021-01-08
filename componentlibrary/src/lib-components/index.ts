@@ -11,6 +11,7 @@ export { default as vueToggle } from "./FormElements/multiToggle.vue";
 export { default as vueNumber } from "./FormElements/numberInput.vue";
 export { default as vuePhone } from "./FormElements/phoneInput.vue";
 export { default as vueSearchableDropdown } from "./FormElements/searchableDropdownList.vue";
+export { default as vueDropdown } from "./FormElements/dropdownList.vue";
 export { default as vueDate } from "./FormElements/vueDate.vue";
 export { default as vueForm } from "./FormElements/vueForm.vue";
 export { default as vueInfo } from "./FormElements/vueInfo.vue";

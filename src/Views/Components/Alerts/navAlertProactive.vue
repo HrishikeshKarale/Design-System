@@ -14,7 +14,7 @@
 
 <script>
 
-  import inputResponse from '@/components/Alerts/inputResponse'
+  import { vueInputResponse as inputResponse } from "vue2-component-library"
   import componentDetails from '@/Views/componentDetails'
   import { alerts } from "@/typeScript/common/alerts"
 

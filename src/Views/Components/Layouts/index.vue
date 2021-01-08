@@ -44,7 +44,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:@backgroundColor;stroke-width:4;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Page
                 </div>
@@ -52,7 +52,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:greenyellow;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Header
                 </div>
@@ -60,7 +60,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:lightcoral;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Menu or Navigation
                 </div>
@@ -68,7 +68,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:lightblue;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Content
                 </div>
@@ -76,7 +76,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:yellow;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Master (left side) Content
                 </div>
@@ -84,7 +84,7 @@
                     <svg width= "40" height= "40">
                         <rect width= "40" height= "40" style= "fill:red;stroke:rgb(0,0,0)" />
                         Sorry, your browser does not support inline SVG.
-                        svg description: a Yellow rectangle of 300x300 
+                        svg description: a Yellow rectangle of 300x300
                     </svg>
                     Detail (right side) Content
                 </div>
@@ -98,7 +98,7 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:greenyellow;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Top (slot= 'header')
                         </li>
@@ -106,7 +106,7 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:lightcoral;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             left (slot= 'menu')
                         </li>
@@ -114,7 +114,7 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:lightblue;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Right (slot= 'content')
                         </li>
@@ -140,7 +140,7 @@
                                         background-color: lightblue;'
                             />
                         </template>
-                    </enterprise-app-layout>  
+                    </enterprise-app-layout>
                 </div>
                 <h2 id= 'sidebyside'>Side by side Layout</h2>
                 <p>This Layout defines the basic structure of our vue application and contains 3 slots.</p>
@@ -150,7 +150,7 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:yellow;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Master (slot= 'left')
                         </li>
@@ -158,14 +158,14 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:red;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Detail (slot= 'right')
                         </li>
                     </ul>
                 </p>
-                <div 
-                    style= 'background-color: lightblue; 
+                <div
+                    style= 'background-color: lightblue;
                             height: fit-content;
                             width: fit-content;'
                 >
@@ -192,7 +192,7 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:yellow;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Master (slot= 'left')
                         </li>
@@ -200,14 +200,14 @@
                             <svg width= "20" height= "20">
                                 <rect width= "20" height= "20" style= "fill:red;stroke:rgb(0,0,0)" />
                                 Sorry, your browser does not support inline SVG.
-                                svg description: a Yellow rectangle of 300x300 
+                                svg description: a Yellow rectangle of 300x300
                             </svg>
                             Detail (slot= 'right')
                         </li>
                     </ul>
                 </p>
-                <div 
-                    style= 'background-color: lightblue; 
+                <div
+                    style= 'background-color: lightblue;
                             height: fit-content;
                             width: 800px;'
                 >
@@ -217,7 +217,7 @@
                                 background-color: yellow;'
                             />
                         </template>
-                        <template 
+                        <template
                             slot= 'right'
                         >
                             <div>
@@ -250,15 +250,15 @@
                 </div>
                 <h2 id= 'goldenRatio'>Golden Ratio Layout</h2>
                 <p>This Layout defines the basic structure of our vue application with a golden ratio</p>
-                <div 
-                    style= 'background-color: lightblue; 
+                <div
+                    style= 'background-color: lightblue;
                             height: fit-content;
                             width: fit-content;'
                 >
                     <pack-station-layout/>
                 </div>
                 <h2 id= 'composite'>Composit Layout.</h2>
-                This layout is build using a siide by side Layout as content within a Enterprise App Layout. 
+                This layout is build using a siide by side Layout as content within a Enterprise App Layout.
                 <div class= 'content'>
                     <enterprise-app-layout>
                         <template slot= 'header'>
@@ -296,10 +296,10 @@
                                 </side-by-side-layout>
                             </div>
                         </template>
-                    </enterprise-app-layout>  
+                    </enterprise-app-layout>
                 </div>
                 <h2 id= 'composite1'>Composit Layout where side by side content does not fit in content space</h2>
-                This layout is build using a siide by side Layout as content within a Enterprise App Layout. 
+                This layout is build using a siide by side Layout as content within a Enterprise App Layout.
                 <div class= 'content'>
                     <enterprise-app-layout>
                         <template slot= 'header'>
@@ -340,7 +340,7 @@
                 </div>
 
                 <h2 id= 'composite2'>Cooposite 2</h2>
-                <div 
+                <div
                     class= 'content'
                     style= 'font-size: @fontSizeMd;'
                 >
@@ -359,7 +359,7 @@
                             />
                         </template>
                         <template slot= 'content'>
-                                                       <div 
+                                                       <div
                                 style= ' height: fit-content;
                                         width: fit-content;
                                         background-color: lightblue;'
@@ -389,10 +389,10 @@
 
 <script>
 
-    import sideBySideLayout from '@/components/Layout/sideBySideLayout'
-    import enterpriseAppLayout from '@/components/Layout/enterpriseAppLayout'
+    import { sideBySideLayout } from "vue2-component-library"
+    import { enterpriseAppLayout  } from "vue2-component-library"
     import packStationLayout from '@/components/Layout/packStationLayout'
-    import vueTable from '@/components/UIComponents/Table/vueTable'
+    import { vueTable } from "vue2-component-library"
     // import { store } from '@/store/store'
     import { mapState, mapActions } from 'vuex';
 

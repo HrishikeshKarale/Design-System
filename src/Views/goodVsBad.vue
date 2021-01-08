@@ -41,7 +41,7 @@
 <script>
 
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import vueButton from "@/components/UIComponents/Button"
+  import { vueButton } from "vue2-component-library"
 
   export default {
     name: 'goodVsBad',

@@ -345,19 +345,19 @@
 
 <script>
 
-  import vueFilter from "@/components/UIComponents/Filter/vueFilter"
-  import vueButton from "@/components/UIComponents/Button"
+  import { vueFilter } from "vue2-component-library"
+  import { vueButton } from "vue2-component-library"
   import vueCard from '@/components/UIComponents/Cards/vueCard'
-  import sideNav from '@/components/UIComponents/Navigation/sideNav'
+  import { vueSideNav as sideNav } from "vue2-component-library"
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
-  import vueTable from '@/components/UIComponents/Table/vueTable'
-  import vueWizard from '@/components/UIComponents/StepWizard/vueWizard'
-  import searchableDropdownList from "@/components/FormElements/searchableDropdownList"
-  import textInput from "@/components/FormElements/textInput";
-  import checkboxInput from "@/components/FormElements/checkboxInput";
-  import vueTextarea from "@/components/FormElements/vueTextarea";
-  import numberInput from "@/components/FormElements/numberInput";
-  import vueInfo from "@/components/FormElements/vueInfo";
+  import { vueTable } from "vue2-component-library"
+  import { vueWizard } from "vue2-component-library"
+  import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
+  import { vueText as textInput  } from "vue2-component-library"
+  import { vueCheckbox  as checkboxInput } from "vue2-component-library"
+  import { vueTextarea } from "vue2-component-library"
+  import { vueNumber as numberInput } from "vue2-component-library"
+  import { vueInfo } from "vue2-component-library"
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
   import { alerts } from "@/typeScript/common/alerts";
 

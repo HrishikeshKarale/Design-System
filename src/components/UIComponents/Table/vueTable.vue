@@ -306,11 +306,12 @@
 <script>
 
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import vueButton from '@/components/UIComponents/Button'
+  import { vueButton } from "vue2-component-library"
+  // import { vueDropdown as dropdownList } from "vue2-component-library"
   import dropdownList from '@/components/FormElements/dropdownList'
-  import textInput from '@/components/FormElements/textInput'
-  import vueModal from '@/components/UIComponents/Modal/vueModal'
-  import checkboxInput from "@/components/FormElements/checkboxInput";
+  import { vueText as textInput } from "vue2-component-library"
+  import { vueModal } from "vue2-component-library"
+  import { vueCheckbox  as checkboxInput } from "vue2-component-library"
 	import { alerts } from "@/typeScript/common/alerts"
 
   // import { store } from '@/store/store'

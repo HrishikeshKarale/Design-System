@@ -1,12 +1,12 @@
 <template>
     <div class= 'dispatchMonitor'>
         <h3>
-            <span 
-                v-if= 'selected' 
+            <span
+                v-if= 'selected'
                 style= "font-size: 18px;"
                 @click= 'select(null)'
             >
-                <a>Dispatch</a>    
+                <a>Dispatch</a>
             </span>
             <span v-else>Dispatch</span>
             <template v-if= 'selected'>
@@ -24,7 +24,7 @@
                 <div class= 'cards'>
                     <h5>DISPATCH</h5>
                     <div class= 'lateVsNotLate'>
-                        <div  
+                        <div
                             v-show= '!selected'
                             class= 'notLate'
                         >
@@ -44,13 +44,13 @@
                 low= '2'
                 high= '4'
             >
-                <div 
+                <div
                     class= 'cards'
                     @click= "select('Picking')"
                 >
                     <h5>PICKING</h5>
                     <div class= 'lateVsNotLate'>
-                        <div   
+                        <div
                             v-show= '!selected'
                             class= 'notLate'
                         >
@@ -73,7 +73,7 @@
                 <div class= 'cards'>
                     <h5>PACKING</h5>
                     <div class= 'lateVsNotLate'>
-                        <div   
+                        <div
                             v-show= '!selected'
                             class= 'notLate'
                         >
@@ -97,7 +97,7 @@
                 <div class= 'cards'>
                     <h5>METERING</h5>
                     <div class= 'lateVsNotLate'>
-                        <div   
+                        <div
                             v-show= '!selected'
                             class= 'notLate'
                         >
@@ -121,13 +121,13 @@
                         :low= 'selected? "2": "1"'
                         :high= 'selected? "4": "1"'
                     >
-                        <div 
+                        <div
                             class= 'cards'
                             v-if= 'selected'
                         >
                             <h5>ON HOLD</h5>
                             <div class= 'lateVsNotLate'>
-                                <div   
+                                <div
                                     v-show= '!selected'
                                     class= 'notLate'
                                 >
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                         <div
-                            v-else 
+                            v-else
                             class= 'onHold'
                         >
                             <h5>ON HOLD</h5>
@@ -219,7 +219,7 @@
             </div>
         </div>
                <div class= 'secondLevel' v-if= 'selected'>
-            <master-detail 
+            <master-detail
                 :selected= 'd_selected'
             >
                 <template slot= 'master'>                                      <div
@@ -264,10 +264,10 @@
                 </template>
 
                 <template
-                    v-if= 'd_selected' 
+                    v-if= 'd_selected'
                     slot= 'detail'
                 >
-                    <vue-table 
+                    <vue-table
                         :tableData= 'paginatedData'
                         :columns= 'd_cols'
                         :metadata= 'metadata'
@@ -277,11 +277,11 @@
                 </template>
             </master-detail>
         </div>
-    </div>  
+    </div>
 </template>
 
 <script>
-import vueImg from "@/components/UIComponents/Image/vueImg"
+    import { vueImg } from "vue2-component-library"
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
     import masterDetail from "@/components/UIComponents/MasterDetail/masterDetail"
     import vueCard from "@/components/UIComponents/Cards/vueCard"
@@ -322,7 +322,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 
     @import (reference) "../../../Less/customMixins.less";
     @import (reference) "../../../Less/customVariables.less";
-    
+
     @errorText: #A94442;
     @successText: #3C763D;
     @linkColor: #00B6A8;
@@ -358,11 +358,11 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
 
     //mixin
     .cardTile(@height) {
-        min-height: @height; 
+        min-height: @height;
         min-width: @height * @phi;
         border: hidden 2px solid ~"darken(#fafbfc, 10%)";
         border-radius: @borderRadius;
-        display: flex; 
+        display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         background-color: transparent;
@@ -378,11 +378,11 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
             .sCard();
         }
 
-        > .lateVsNotLate {                 display: flex; 
-            flex-direction: row; 
-            flex-wrap: nowrap; 
-            justify-content: space-around;  
-            flex-grow: 2;        
+        > .lateVsNotLate {                 display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            flex-grow: 2;
             & > div {
                 display: flex;
                 flex-direction: column;
@@ -584,7 +584,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                     max-height: (@cardHeight + 40px);
 
                     img {
-                        max-width: @cardHeight * @phi; 
+                        max-width: @cardHeight * @phi;
                     }
 
                     & > div {
@@ -603,7 +603,7 @@ import vueImg from "@/components/UIComponents/Image/vueImg"
                         max-height: @cardHeight1;
 
                         img {
-                            max-width: @cardHeight1 * @phi; 
+                            max-width: @cardHeight1 * @phi;
                         }
 
                         .cards {

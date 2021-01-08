@@ -59,9 +59,9 @@
             </div>
         </div>
         <div>
-            <div 
+            <div
                 v-for= "type in ['danger', 'warning', 'info', 'success']"
-                :key= 'type'    
+                :key= 'type'
             >
                 <vue-alert
                     code= '5.1.104'
@@ -73,9 +73,9 @@
             </div>
         </div>
         <div>
-            <div 
+            <div
                 v-for= "type in ['danger', 'warning', 'info', 'success']"
-                :key= 'type'    
+                :key= 'type'
             >
                 <vue-alert
                     code= '5.1.104'
@@ -86,9 +86,9 @@
             </div>
         </div>
         <div>
-            <div 
+            <div
                 v-for= "type in ['danger', 'warning', 'info', 'success']"
-                :key= 'type'    
+                :key= 'type'
             >
                 <vue-alert
                     code= '5.1.104'
@@ -104,8 +104,8 @@
 
 <script>
 
-    import vueAlert from '@/components/Alerts/vueAlert'
-    import vueButton from '@/components/UIComponents/Button'
+    import { vueAlert } from "vue2-component-library"
+    import { vueButton } from "vue2-component-library"
     import componentDetails from '@/Views/componentDetails'
 
     export default {
