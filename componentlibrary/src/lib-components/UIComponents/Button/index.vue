@@ -34,7 +34,7 @@ export default {
       type: String,
       default: "button",
       validator: function(value) {
-        return ["button", "submit", "reset", null].indexOf(value) !== -1;
+        return ["button", "submit", "reset"].indexOf(value) !== -1;
       }
     },
 
@@ -174,7 +174,7 @@ export default {
         }
         return false;
       },
-      type: [Function, null],
+      type: Function,
       default: function() {
         alert(
           "button undefined: Please send a function to execute when the button is clicked"

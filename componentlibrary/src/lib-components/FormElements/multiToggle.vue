@@ -52,7 +52,7 @@ export default {
   //users can pass preset values for multitoggle
   value: {
     required: false,
-    type: [Boolean, String, null],
+    type: [Boolean, String],
     default: false
   },
 

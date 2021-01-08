@@ -93,7 +93,7 @@ export default {
       required: false,
       type: String,
       validator: function(value) {
-        return ["checkbox", "radio", null].indexOf(value) !== -1;
+        return ["checkbox", "radio"].indexOf(value) !== -1;
       },
       default: "checkbox"
     },
@@ -116,7 +116,7 @@ export default {
     //users can pass preset values for the input field
     value: {
       required: true,
-      type: [Boolean, Array, String, Number, null],
+      type: [Boolean, Array, String, Number],
       // type: function() {
       //   if (!this.options) {
       //     return [Boolean, null];

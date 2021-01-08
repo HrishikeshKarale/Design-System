@@ -85,7 +85,7 @@ export default {
     // phone number with extension
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       // eslint-disable-next-line vue/require-valid-default-prop
       default: () => /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
     },

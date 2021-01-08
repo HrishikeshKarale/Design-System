@@ -349,7 +349,7 @@
   import vueButton from "vue2-component-library"
   import vueCard from '@/components/UIComponents/Cards/vueCard'
   import { vueSideNav as sideNav } from "vue2-component-library"
-  import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
+  import vueHeader from "vue2-component-library"
   import vueTable from "vue2-component-library"
   import vueWizard from "vue2-component-library"
   import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"

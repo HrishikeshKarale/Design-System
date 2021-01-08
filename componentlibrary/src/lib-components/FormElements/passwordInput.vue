@@ -217,7 +217,7 @@ export default {
     //sets the format/pattern for acceptable values for the input field
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       default: () => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})/
     },
 

@@ -447,7 +447,7 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
   },
   //computed
   methods: {
-    //use by form elements sent via slot 
+    //use by form elements sent via slot
     alerts: function alerts(type, message) {
       // console.log(message);
       if (type == "warning") {
@@ -680,7 +680,7 @@ var script$2 = {
     //sets the format/pattern for acceptable values for the input field
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       default: function _default() {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})/;
       }
@@ -1035,7 +1035,7 @@ var script$3 = {
 
         return false;
       },
-      type: [Function, null],
+      type: Function,
       default: function _default() {
         alert("button undefined: Please send a function to execute when the button is clicked");
       }
@@ -1115,7 +1115,7 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
       required: false,
       type: String,
       validator: function validator(value) {
-        return ["checkbox", "radio", null].indexOf(value) !== -1;
+        return ["checkbox", "radio"].indexOf(value) !== -1;
       },
       default: "checkbox"
     },
@@ -1135,7 +1135,7 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
     //users can pass preset values for the input field
     value: {
       required: true,
-      type: [Boolean, Array, String, Number, null],
+      type: [Boolean, Array, String, Number],
       // type: function() {
       //   if (!this.options) {
       //     return [Boolean, null];
@@ -1377,7 +1377,7 @@ var script$5 = {
     ///^[^\s@]+@[^\s@]+\.[^\s@]+$/
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       default: function _default() {
         return /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$/;
       }
@@ -1743,7 +1743,7 @@ var script$7 = {
     //users can pass preset values for multitoggle
     value: {
       required: false,
-      type: [Boolean, String, null],
+      type: [Boolean, String],
       default: false
     },
     //toggles label for multitoggle
@@ -2199,7 +2199,7 @@ var script$9 = {
     // phone number with extension
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       // eslint-disable-next-line vue/require-valid-default-prop
       default: function _default() {
         return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/;
@@ -2430,7 +2430,7 @@ var script$a = {
     //sets the format/pattern for acceptable values for the input field
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       default: /([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*/
     },
     //sets the placeholder attribute for the input field
@@ -3470,7 +3470,7 @@ var script$f = {
     //sets the format/pattern for acceptable values for the input field
     pattern: {
       required: false,
-      type: [RegExp, String, null],
+      type: [RegExp, String],
       default: null
     },
     //sets the placeholder attribute for the input field
