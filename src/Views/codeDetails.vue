@@ -95,8 +95,8 @@
 
   import dynamicComponent from '@/Views/dynamicComponent'
   import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
-  import dropdownList from "@/components/FormElements/dropdownList"
-  import { vueButton } from "vue2-component-library"
+  import { vueDropdown as dropdownList } from "vue2-component-library"
+  import vueButton from "vue2-component-library"
   import { vueNumber as numberInput } from "vue2-component-library"
   import { vueText as textInput  } from "vue2-component-library"
   import { vueCheckbox  as checkboxInput } from "vue2-component-library"

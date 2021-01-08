@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import { vueModal } from "vue2-component-library";
+  import vueModal from "vue2-component-library";
   import componentDetails from '@/Views/componentDetails';
 
   export default {
@@ -47,7 +47,7 @@
 			d_modal: function() {
 				return {
           title: 'Modal',
-          import: 'import { vueModal } from "vue2-component-library";',
+          import: 'import vueModal from "vue2-component-library";',
           compName: 'vue-modal',
           description: '<p>The Modal plugin is a dialog box/popup window that is displayed on top of the current page</p>',
           attributes: [

@@ -20,7 +20,7 @@
 
 <script>
 
-  import { vueTable } from "vue2-component-library"
+  import vueTable from "vue2-component-library"
 	import componentDetails from '@/Views/componentDetails'
 
   import { mapState, mapActions } from 'vuex';
@@ -74,7 +74,7 @@
 				return {
 					title: 'Table',
 					compName: 'vue-table',
-					import: 'import { vueTable } from "vue2-component-library"',
+					import: 'import vueTable from "vue2-component-library"',
 					description: '<p></p>',
 					attributes: [
 						{

@@ -76,8 +76,8 @@
 <script>
 import { toggle } from "../../../typeScript/toggle";
 import { authentication } from "../../../typeScript/authentication";
-import vueButton from "../Button/index.vue";
-import { vueImg } from "vue2-component-library"
+import vueButton from "vue2-component-library";
+import vueImg from "../Image/vueImg.vue"
 
 export default {
   name: "sideNav",

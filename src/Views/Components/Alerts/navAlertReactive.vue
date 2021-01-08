@@ -14,7 +14,7 @@
 <script>
 
   import { vueAlert } from "vue2-component-library"
-  import { vueButton } from "vue2-component-library"
+  import vueButton from "vue2-component-library"
   import componentDetails from '@/Views/componentDetails'
 
 

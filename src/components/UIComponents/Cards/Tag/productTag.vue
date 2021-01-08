@@ -141,8 +141,8 @@
 <script>
     import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
     import { vueNumber as numberInput } from "vue2-component-library"
-    import { vueInfo } from "vue2-component-library"
-    import { vueButton } from "vue2-component-library"
+    import vueInfo from "vue2-component-library"
+    import vueButton from "vue2-component-library"
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
 
     export default {

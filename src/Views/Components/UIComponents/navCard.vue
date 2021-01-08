@@ -114,10 +114,10 @@
   import componentDetails from "@/Views/componentDetails";
   import vueCard from '@/components/UIComponents/Cards/vueCard';
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
-  import { vueButton } from "vue2-component-library"
+  import vueButton from "vue2-component-library"
   import { vueText as textInput  } from "vue2-component-library"
   import { vueNumber as numberInput } from "vue2-component-library"
-  import { vueInfo } from "vue2-component-library"
+  import vueInfo from "vue2-component-library"
   import { alerts } from "@/typeScript/common/alerts";
 
   export default {

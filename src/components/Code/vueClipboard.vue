@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import { vueButton } from "vue2-component-library"
+import vueButton from "vue2-component-library"
 
 export default {
   name: "VueClipboard",

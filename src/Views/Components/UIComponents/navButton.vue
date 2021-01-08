@@ -18,7 +18,7 @@
 
 <script>
   import componentDetails from '@/Views/componentDetails'
-  import { vueButton } from "vue2-component-library"
+  import vueButton from "vue2-component-library"
 
   export default {
 		name: 'navButton',
@@ -57,7 +57,7 @@
 					return {
           title: 'vueButton',
           compName: 'vue-button',
-          import: 'import { vueButton } from "vue2-component-library"',
+          import: 'import vueButton from "vue2-component-library"',
           description: '<p>The &lt;text-input&gt; tag specifies an input field where user can enter tect data.</p>\
                 <p>&lt;text-input&gt; elements are used within a &lt;form&gt; element to declare input controls that allow users to input data.</p>\
                 <p>An &lt;text-input&gt; tag can vary in many ways, depending on the type attribute. The attributes for the text-input tag can be seen in the sample code.',

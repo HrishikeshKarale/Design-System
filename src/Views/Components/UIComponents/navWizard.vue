@@ -116,12 +116,12 @@
 
 <script>
 
-  import { vueWizard } from "vue2-component-library"
+  import vueWizard from "vue2-component-library"
   import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
   import componentDetails from '@/Views/componentDetails'
   import { vueText as textInput  } from "vue2-component-library"
   import { vueCheckbox  as checkboxInput } from "vue2-component-library"
-  import { vueTextarea } from "vue2-component-library"
+  import vueTextarea from "vue2-component-library"
 
   import { mapState, mapActions } from 'vuex';
 
@@ -186,7 +186,7 @@
           return {
           title: 'Step Wizard',
           compName: 'vue-wizard',
-          import: 'import { vueWizard } from "vue2-component-library"',
+          import: 'import vueWizard from "vue2-component-library"',
           description: '<p></p>',
           attributes: [
             {

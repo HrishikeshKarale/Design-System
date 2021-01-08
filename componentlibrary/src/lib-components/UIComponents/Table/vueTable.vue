@@ -307,7 +307,7 @@
 
   import cardBackground from '../Cards/cardBackground.vue';
   import vueButton from '../UIComponents/Button/index.vue';
-  import dropdownList from '../../FormElements/dropdownList.vue';
+  import { vueDropdown as dropdownList } from "vue2-component-library"
   import textInput from '../../FormElements/textInput.vue';
   import vueModal from '../Modal/vueModal.vue';
   import checkboxInput from "../../FormElements/checkboxInput.vue";

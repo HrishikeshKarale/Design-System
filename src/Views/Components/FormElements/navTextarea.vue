@@ -27,7 +27,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import { vueTextarea } from "vue2-component-library"
+  import vueTextarea from "vue2-component-library"
   import { alerts } from "@/typeScript/common/alerts";
 
 	export default {
@@ -85,7 +85,7 @@
         return {
           title: 'Textarea Input Field',
           compName: 'vue-textarea',
-          import: 'import { vueTextarea } from "vue2-component-library"',
+          import: 'import vueTextarea from "vue2-component-library"',
           pattern: new RegExp(this.d_pattern),
           description: '<p>The &lt;vue-textarea&gt; tag defines a multi-line text input control.</p>\
 					A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier).\

@@ -74,21 +74,21 @@
 
 <script>
 
-    import { vueButton } from "vue2-component-library"
-    import { vueWizard } from "vue2-component-library"
-    import { vueTable } from "vue2-component-library"
+    import vueButton from "vue2-component-library"
+    import vueWizard from "vue2-component-library"
+    import vueTable from "vue2-component-library"
     import { vueText as textInput  } from "vue2-component-library"
     import { vuePassword as passwordInput } from "vue2-component-library"
     import { vueEmail as emailInput } from "vue2-component-library"
     import { vueNumber as numberInput } from "vue2-component-library"
     import { vueFile as fileInput } from "vue2-component-library"
     import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
-    import dropdownList from "@/components/FormElements/dropdownList";
+    import { vueDropdown as dropdownList } from "vue2-component-library";
     import { vueToggle as multiToggle } from "vue2-component-library";
     import { vueCheckbox  as checkboxInput } from "vue2-component-library"
-    import { vueDate } from "vue2-component-library"
-    import { vueTextarea } from "vue2-component-library"
-    import { vueInfo } from "vue2-component-library"
+    import vueDate from "vue2-component-library"
+    import vueTextarea from "vue2-component-library"
+    import vueInfo from "vue2-component-library"
 
     // import { store } from '@/store/store'
     import { mapGetters, mapState, mapActions } from 'vuex';

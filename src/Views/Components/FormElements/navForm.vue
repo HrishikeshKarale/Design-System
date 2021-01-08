@@ -94,7 +94,7 @@
     import componentDetails from '@/Views/componentDetails'
     import { vueText as textInput  } from "vue2-component-library"
     import { vueCheckbox  as checkboxInput } from "vue2-component-library"
-    import { vueTextarea } from "vue2-component-library"
+    import vueTextarea from "vue2-component-library"
     import { alerts } from "@/typeScript/common/alerts";
 
     import { mapState } from 'vuex';

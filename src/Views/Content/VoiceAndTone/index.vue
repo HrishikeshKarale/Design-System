@@ -231,7 +231,7 @@
 </template>
 
 <script>
-import { vueImg } from "vue2-component-library"
+import vueImg from "vue2-component-library"
 import goodVsBad from "@/Views/goodVsBad"
 import { vueToggle as multiToggle } from "vue2-component-library"
 import { vueText as textInput } from "vue2-component-library"

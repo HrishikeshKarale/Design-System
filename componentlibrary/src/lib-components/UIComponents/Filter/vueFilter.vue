@@ -63,8 +63,8 @@
 
 <script>
 
-  import vueButton from "../Button/index.vue"
-  import dropdownList from "../../FormElements/dropdownList.vue"
+  import vueButton from "vue2-component-library"
+  import { vueDropdown as dropdownList } from "vue2-component-library"
 
   export default {
     name: 'vueFilter',

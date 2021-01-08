@@ -281,7 +281,7 @@
 </template>
 
 <script>
-    import { vueImg } from "vue2-component-library"
+    import vueImg from "vue2-component-library"
     import cardBackground from '@/components/UIComponents/Cards/cardBackground'
     import masterDetail from "@/components/UIComponents/MasterDetail/masterDetail"
     import vueCard from "@/components/UIComponents/Cards/vueCard"

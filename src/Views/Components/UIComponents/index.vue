@@ -345,19 +345,19 @@
 
 <script>
 
-  import { vueFilter } from "vue2-component-library"
-  import { vueButton } from "vue2-component-library"
+  import vueFilter from "vue2-component-library"
+  import vueButton from "vue2-component-library"
   import vueCard from '@/components/UIComponents/Cards/vueCard'
   import { vueSideNav as sideNav } from "vue2-component-library"
   import vueHeader from '@/components/UIComponents/Navigation/vueHeader'
-  import { vueTable } from "vue2-component-library"
-  import { vueWizard } from "vue2-component-library"
+  import vueTable from "vue2-component-library"
+  import vueWizard from "vue2-component-library"
   import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
   import { vueText as textInput  } from "vue2-component-library"
   import { vueCheckbox  as checkboxInput } from "vue2-component-library"
-  import { vueTextarea } from "vue2-component-library"
+  import vueTextarea from "vue2-component-library"
   import { vueNumber as numberInput } from "vue2-component-library"
-  import { vueInfo } from "vue2-component-library"
+  import vueInfo from "vue2-component-library"
   import cardBackground from '@/components/UIComponents/Cards/cardBackground'
   import { alerts } from "@/typeScript/common/alerts";
 

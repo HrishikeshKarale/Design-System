@@ -2102,7 +2102,7 @@
 <script>
 
     import goodVsBad from "@/Views/goodVsBad"
-    import { vueButton } from "vue2-component-library"
+    import vueButton from "vue2-component-library"
     import { vueAlert } from "vue2-component-library"
     import { vueText as textInput  } from "vue2-component-library"
     import { vuePassword as passwordInput } from "vue2-component-library"
@@ -2110,12 +2110,12 @@
     import { vueNumber as numberInput } from "vue2-component-library"
     import { vueFile as fileInput } from "vue2-component-library"
     import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
-    import dropdownList from "@/components/FormElements/dropdownList";
+    import { vueDropdown as dropdownList } from "vue2-component-library";
     import { vueToggle as multiToggle } from "vue2-component-library";
     import { vueCheckbox  as checkboxInput } from "vue2-component-library"
-    import { vueDate } from "vue2-component-library"
-    import { vueTextarea } from "vue2-component-library"
-    import { vueInfo } from "vue2-component-library"
+    import vueDate from "vue2-component-library"
+    import vueTextarea from "vue2-component-library"
+    import vueInfo from "vue2-component-library"
     import { alerts } from "@/typeScript/common/alerts"
 
     export default {

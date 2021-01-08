@@ -389,10 +389,10 @@
 
 <script>
 
-    import { sideBySideLayout } from "vue2-component-library"
-    import { enterpriseAppLayout  } from "vue2-component-library"
+    import sideBySideLayout from "vue2-component-library"
+    import enterpriseAppLayout  from "vue2-component-library"
     import packStationLayout from '@/components/Layout/packStationLayout'
-    import { vueTable } from "vue2-component-library"
+    import vueTable from "vue2-component-library"
     // import { store } from '@/store/store'
     import { mapState, mapActions } from 'vuex';
 

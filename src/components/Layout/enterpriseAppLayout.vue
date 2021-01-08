@@ -45,7 +45,7 @@
 import { nav } from "@/store/navigation"
 import { vueScrollIndicator as scrollIndicator} from "vue2-component-library"
 import { vueBreadcrum as breadcrums } from "vue2-component-library"
-import { vueImg } from "vue2-component-library"
+import vueImg from "vue2-component-library"
 // import { authentication } from "@/typeScript/authentication";
 import { cookie } from "@/typeScript/cookie.js";
 

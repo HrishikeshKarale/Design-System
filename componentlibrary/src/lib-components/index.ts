@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-export { default as ComponentLibraryVue2Sample } from './component-library-vue2-sample.vue';
+// export { default as ComponentLibraryVue2Sample } from './component-library-vue2-sample.vue';
 
 //formInputs
 export { default as vueText } from "./FormElements/textInput.vue";

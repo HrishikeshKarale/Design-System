@@ -39,7 +39,7 @@
 <script>
 
   import { vuePageNotFound as systemError } from "vue2-component-library";
-  import { vueModal } from "vue2-component-library";
+  import vueModal from "vue2-component-library";
 
   export default {
     name:'navSystemError',

@@ -26,7 +26,7 @@
 
 <script>
   import componentDetails from "@/Views/componentDetails";
-  import dropdownList from "@/components/FormElements/dropdownList";
+  import { vueDropdown as dropdownList } from "vue2-component-library";
 	import { alerts } from "@/typeScript/common/alerts";
 
 
@@ -85,7 +85,7 @@
 				return {
           title: 'Dropdown Input Field',
           compName: 'dropdown-list',
-          import: 'import dropdownList from "@/components/FormElements/dropdownList"',
+          import: 'import { vueDropdown as dropdownList } from "vue2-component-library"',
 					description: "<p>The &lt;dropdown-list&gt; element is used to create a drop-down list.\
           The &lt;option&gt;</a> tags inside the &lt;select&gt; element define the available options in the list.</p>",
           attributes:[

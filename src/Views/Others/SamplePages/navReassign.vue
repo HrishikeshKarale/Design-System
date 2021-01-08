@@ -57,8 +57,8 @@
 <script>
 
   import vueCard from '@/components/UIComponents/Cards/vueCard'
-  import { vueTable } from "vue2-component-library"
-  import { vueWizard } from "vue2-component-library"
+  import vueTable from "vue2-component-library"
+  import vueWizard from "vue2-component-library"
   import { vueSearchableDropdown as searchableDropdownList  } from "vue2-component-library"
   import masterDetail from '@/components/UIComponents/MasterDetail/masterDetail'
   import { vueText as textInput  } from "vue2-component-library"
