@@ -18,8 +18,9 @@
         v-if="!mask"
         type="email"
         v-model="d_value"
-        :name="name"
+        :name="tag"
         :placeholder="placeholder"
+        :minlength="minlength"
         :maxlength="maxlength"
         :pattern="pattern"
         :multiple="multiple"
@@ -100,7 +101,7 @@ export default {
     },
 
     //sets name attribute for the input field (required field in case of forms)
-    name: {
+    tag: {
       required: false,
       type: String,
       default: "emailInput"
@@ -131,6 +132,13 @@ export default {
 
     //sets the maxlength attribute for the input field
     maxlength: {
+      required: false,
+      type: Number,
+      default: 50
+    },
+
+    //sets the maxlength attribute for the input field
+    minlength: {
       required: false,
       type: Number,
       default: 50

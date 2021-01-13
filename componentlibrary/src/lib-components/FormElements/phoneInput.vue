@@ -19,7 +19,7 @@
         v-if="!mask"
         v-model="d_value"
         type="text"
-        :name="name"
+        :name="tag"
         :placeholder="placeholder"
         :maxlength="maxlength"
         :minlength="minlength"
@@ -66,7 +66,7 @@ export default {
     },
 
     //sets name attribute for the input field (required field in case of forms)
-    name: {
+    tag: {
       required: false,
       type: String,
       default: "phoneInput"
@@ -87,7 +87,7 @@ export default {
       required: false,
       type: [RegExp, String],
       // eslint-disable-next-line vue/require-valid-default-prop
-      default: () => /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
+      default: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})?[-. ]?([0-9]{4})$/
     },
 
     //sets the placeholder attribute for the input field

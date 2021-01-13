@@ -46,7 +46,6 @@
     }, //data
 
     components: {
-
       vueButton
     }, //components
 

@@ -70,7 +70,7 @@ if (!argv.format || argv.format === 'es') {
     ...baseConfig,
     external,
     output: {
-      file: 'dist/component-library-vue2.esm.js',
+      file: 'dist/vue2-component-library.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -104,7 +104,7 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/component-library-vue2.ssr.js',
+      file: 'dist/vue2-component-library.ssr.js',
       format: 'cjs',
       name: 'ComponentLibraryVue2',
       exports: 'named',
@@ -133,7 +133,7 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/component-library-vue2.min.js',
+      file: 'dist/vue2-component-library.min.js',
       format: 'iife',
       name: 'ComponentLibraryVue2',
       exports: 'named',

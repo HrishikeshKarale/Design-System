@@ -1,68 +1,52 @@
 <template>
-  <div class= 'inputResponse'>
-    <div
-      class= 'errorMessage'
-      v-if= 'error'
+  <div class="inputResponse">
+    <span v-if="error" class="errorMessage fas fa-exclamation-circle">
+      <b>{{ error }}</b>
+    </span>
+    <span
+      v-else-if="warning"
+      class="warningMessage fas fa-exclamation-triangle"
     >
-      <span class= 'fas fa-exclamation-circle'/>
-      <b>{{error}}</b>
-    </div>
-    <div
-      class= 'warningMessage'
-      v-else-if= 'warning'
-    >
-      <span class= 'fas fa-exclamation-triangle'/>
-      <b>{{warning}}</b>
-    </div>
-    <div
-      class= 'infoMessage'
-      v-else-if= 'info'
-    >
-      <span class= 'fas fa-info-circle'/>
-      <b>{{info}}</b>
-    </div>
-    <div
-      class= 'infoMessage'
-      v-else-if= 'charLimitReached'
-    >
-      <span class= 'fas fa-info-circle'/>
-      Character limit of {{maxlength}} reached
-    </div>
+      <b>{{ warning }}</b>
+    </span>
+    <span v-else-if="info" class="infoMessage fas fa-info-circle">
+      <b>{{ info }}</b>
+    </span>
+    <span v-else-if="success" class="successMessage fas fa-check-circle">
+      <b>{{ success }}</b>
+    </span>
   </div>
 </template>
 
 <script>
-
   export default {
     name: 'inputResponse',
 
     props: {
-
       error: {
+        required: false,
         type: String,
-        default: null
+        default: ""
       },
 
       warning: {
+        required: false,
         type: String,
-        default: null
+        default: ""
       },
 
       info: {
+        required: false,
         type: String,
-        default: null
+        default: ""
       },
 
-      charLimitReached: {
-        type: Boolean,
-        default: false
-      },
-
-      maxlength: {
-        type: Number,
-        default: null
-      },
-    }, //props
+      success: {
+        required: false,
+        type: String,
+        default: ""
+      }
+    } //props
   } //default
 </script>
 

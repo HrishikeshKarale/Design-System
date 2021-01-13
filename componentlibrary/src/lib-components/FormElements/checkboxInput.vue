@@ -10,7 +10,7 @@
         v-if="type == 'checkbox' && !options && !mask"
         ref="singleCheckbox"
         type="checkbox"
-        :name="name"
+        :name="tag"
         :checked="value"
         :disabled="disabled"
         :autofocus="autofocus"
@@ -19,7 +19,7 @@
       {{ label }}
       <abbr v-if="required" title="Required Field">*</abbr>
       <span v-else> - Optional field<abbr>*</abbr></span>
-      <input :name="name" type="hidden" :value="value" :required="required" />
+      <input :name="tag" type="hidden" :value="value" :required="required" />
       <vue-button
         v-if="options && typeof value!= 'boolean'? value: false"
         id="clearSelection"
@@ -107,7 +107,7 @@ export default {
     },
 
     //sets the name attribute for the input field (required field in case of forms)
-    name: {
+    tag: {
       required: false,
       type: String,
       default: "checkboxInput"
@@ -134,7 +134,7 @@ export default {
           return [];
         } else {
           //type == radio
-          return null;
+          return "";
         }
       }
     },
@@ -200,10 +200,6 @@ export default {
       default: false
     }
   }, //props
-
-  created() {
-    this.d_needsValidation= false;
-  }, //created
 
   methods: {
 

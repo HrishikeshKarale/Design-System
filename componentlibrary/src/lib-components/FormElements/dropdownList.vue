@@ -66,7 +66,7 @@ export default {
     },
 
     //sets name attribute for the input field (required field in case of forms)
-    name: {
+    tag: {
       required: false,
       type: String,
       default: "dropdownInput"
@@ -94,7 +94,7 @@ export default {
     size: {
       required: false,
       type: Number,
-      default: null
+      default: 5
     },
 
     //sets the multiple attribute for the input field to accept multiple values

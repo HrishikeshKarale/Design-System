@@ -52,7 +52,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="component-library-vue2-sample">
+  <div class="vue2-component-library-sample">
     <p>The counter was {{ changedBy }} to <b>{{ counter }}</b>.</p>
     <button @click="increment">
       Click +1
@@ -73,7 +73,7 @@ export default Vue.extend({
 </template>
 
 <style scoped>
-  .component-library-vue2-sample {
+  .vue2-component-library-sample {
     display: block;
     width: 400px;
     margin: 25px auto;
@@ -82,7 +82,7 @@ export default Vue.extend({
     text-align: center;
     padding: 25px;
   }
-  .component-library-vue2-sample p {
+  .vue2-component-library-sample p {
     margin: 0 0 1em;
   }
 </style>

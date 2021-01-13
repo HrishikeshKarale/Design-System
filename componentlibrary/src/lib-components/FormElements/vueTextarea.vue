@@ -17,7 +17,7 @@
     <textarea
     v-if="!mask"
     v-model="d_value"
-    :name="name"
+    :name="tag"
     :placeholder="placeholder"
     :maxlength="maxlength"
     :pattern="pattern"

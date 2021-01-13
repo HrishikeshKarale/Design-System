@@ -1,6 +1,5 @@
-//https://markus.oberlehner.net/blog/replicating-the-twitter-tweet-box-with-vue/
 <template>
-  <div class="passwordInput">
+  <div class="vueInput">
     <div :class="{ inline: inline }">
       <label v-if="label" :class="{ maskField: mask }">
         {{ label }}
@@ -9,8 +8,8 @@
       </label>
       <div
         :class="{
-          warningContainer: alert? alert.warning: false,
-          errorContainer: alert? alert.error: false,
+          warningContainer: alert ? alert.warning : false,
+          errorContainer: alert ? alert.error : false,
           iconPadding: icon,
           maskField: mask
         }"
@@ -18,11 +17,10 @@
         <span v-if="icon" :class="icon" />
         <input
           v-if="!mask"
-          v-model="d_value"
+          v-model="dValue"
           :type="dType"
-          :name="tag"
+          :name="name"
           :placeholder="placeholder"
-          :minlength="minlength"
           :maxlength="maxlength"
           :pattern="pattern"
           :autofocus="autofocus"
@@ -30,17 +28,24 @@
           :readonly="readonly"
           :required="required"
           :autocomplete="autocomplete"
+          v-on:keyup[0]="validate"
+          v-on:keyup[1]="validate"
           @input="validate"
+          @blur="followsPattern"
         />
         <span
+          v-if="type === 'passowrd'"
           :class="['fas', dType != 'text' ? 'fa-eye' : 'fa-eye-slash']"
           @click="peek(1)"
         />
-        <div v-if="d_value" class="conditions">
+        <div v-if="$slots['isValid'] && dValue" class="conditions">
+          <slot name="isValid" />
+        </div>
+        <!-- <div v-if="dValue" class="conditions">
           <div>
             <span
               :class="
-                d_value.match(/(?=.*[A-Z])(?=.*[0-9])/g)
+                dValue.match(/(?=.*[A-Z])(?=.*[0-9])/g)
                   ? 'fas fa-check'
                   : 'fas fa-times'
               "
@@ -49,20 +54,14 @@
           </div>
           <div>
             <span
-              :class="
-                d_value.match(/\S{1,}/g)
-                  ? 'fas fa-check'
-                  : 'fas fa-times'
-              "
+              :class="dValue.match(/\S{1,}/g) ? 'fas fa-check' : 'fas fa-times'"
             />
             No Spaces
           </div>
           <div>
             <span
               :class="
-                d_value.match(/(?=.*[A-Z])/g)
-                  ? 'fas fa-check'
-                  : 'fas fa-times'
+                dValue.match(/(?=.*[A-Z])/g) ? 'fas fa-check' : 'fas fa-times'
               "
             />
             Capital Letter
@@ -70,43 +69,37 @@
           <div>
             <span
               :class="
-                d_value.match(/(?=.*[a-z])/g)
-                  ? 'fas fa-check'
-                  : 'fas fa-times'
+                dValue.match(/(?=.*[a-z])/g) ? 'fas fa-check' : 'fas fa-times'
               "
             />
             Snall letters
           </div>
           <div>
             <span
-              :class="
-                d_value.length > 7 ? 'fas fa-check' : 'fas fa-times'
-              "
+              :class="dValue.length > 7 ? 'fas fa-check' : 'fas fa-times'"
             />
             More than 8 characters
           </div>
           <div>
             <span
               :class="
-                d_value.match(/(?=.*[!@#\\$%\\^&\\*])/g)
+                dValue.match(/(?=.*[!@#\\$%\\^&\\*])/g)
                   ? 'fas fa-check'
                   : 'fas fa-times'
               "
             />
             Special character
           </div>
-        </div>
+        </div> -->
       </div>
       <input-response
-        :warning="alert? alert.warning: false"
-        :error="alert? alert.error: false"
-        :char-limit-reached="
-          d_value ? maxlength - d_value.length < 0 : false
-        "
-        :maxlength="maxlength"
+        :warning="alert ? alert.warning : false"
+        :error="alert ? alert.error : ''"
+        :info="alert ? alert.info : dValue ? maxlength - dValue.length < 0 : ''"
+        :success="alert ? alert.success : ''"
       />
     </div>
-    <div v-if="match" :class="{ inline: inline }">
+    <div v-if="valueMatch && type === 'passowrd'" :class="{ inline: inline }">
       <label v-if="label" :class="{ maskField: mask }">
         Confirm {{ label }}
         <abbr v-if="required" title="Required Field">*</abbr>
@@ -114,15 +107,15 @@
       </label>
       <div
         :class="{
-          warningContainer: d_value
-            ? dPasswordMatch
-              ? d_value === dPasswordMatch
+          warningContainer: dValue
+            ? valueMatch
+              ? dValue === valueMatch
                 ? null
                 : 'Passwords does not match'
               : null
             : null,
-          errorContainer: d_value
-            ? dPasswordMatch
+          errorContainer: dValue
+            ? valueMatch
               ? null
               : 'Required Field'
             : null,
@@ -133,48 +126,53 @@
         <span v-if="icon" :class="icon" />
         <input
           v-if="!mask"
-          v-model="dPasswordMatch"
+          v-model="valueMatch"
           :type="dTypeMatch"
-          :name="tag + 'Match'"
+          :name="name + 'Match'"
           :placeholder="placeholder"
-          :minlength="minlength"
           :maxlength="maxlength"
           :autofocus="autofocus"
           :disabled="disabled"
           :readonly="readonly"
           :autocomplete="autocomplete"
+          v-on:keyup[0]="validate"
+          v-on:keyup[1]="validate"
           @input="validate"
         />
         <span
+          v-if="type === 'password'"
           :class="['fas', dTypeMatch != 'text' ? 'fa-eye' : 'fa-eye-slash']"
           @click="peek(0)"
         />
-        <div v-if="d_value" class="conditions">
+        <div v-if="$slots['isValidMatch'] && dValue" class="conditions">
+          <slot name="isValidMatch" />
+        </div>
+        <!-- <div v-if="dValue" class="conditions">
           <div>
             <span
               :class="
-                d_value && d_value === dPasswordMatch
+                dValue && dValue === valueMatch
                   ? 'fas fa-check'
                   : 'fas fa-times'
               "
             />
             {{ label }} Match
           </div>
-        </div>
+        </div> -->
       </div>
       <input-response
         :warning="
-          d_value
-            ? dPasswordMatch
-              ? d_value === dPasswordMatch
+          dValue
+            ? valueMatch
+              ? dValue === valueMatch
                 ? null
                 : 'Passwords does not match'
               : null
             : null
         "
-        :error="
-          d_value ? (dPasswordMatch ? null : 'Required Field') : null
-        "
+        :error="dValue ? (valueMatch ? null : 'Required Field') : null"
+        :info="alert ? alert.info : dValue ? maxlength - dValue.length < 0 : ''"
+        :success="alert ? alert.success : dValue && dValue === valueMatch"
       />
     </div>
   </div>
@@ -186,7 +184,7 @@ import { validator } from "../../typeScript/validator";
 import { alerts } from "../../typeScript/common/alerts";
 
 export default {
-  name: "PasswordInput", //props
+  name: "EmailInput",
 
   components: {
     inputResponse
@@ -202,11 +200,40 @@ export default {
       default: ""
     },
 
+    //sets type for the input field
+    type: {
+      required: true,
+      type: String,
+      default: "text",
+      validator: function(value) {
+        return (
+          [
+            "text",
+            "password",
+            "email",
+            "number",
+            "month",
+            "image",
+            "range",
+            "week",
+            "url",
+            "tel",
+            "time",
+            "search",
+            "datetime-local",
+            "file",
+            "hidden"
+          ].indexOf(value) !== -1
+        );
+      }
+    },
+    },
+
     //sets name attribute for the input field (required field in case of forms)
     tag: {
       required: false,
       type: String,
-      default: "passwordInput"
+      default: "emailInput"
     },
 
     //users can pass preset values for the input field
@@ -217,24 +244,19 @@ export default {
     },
 
     //sets the format/pattern for acceptable values for the input field
+    //[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$
+    ///^[^\s@]+@[^\s@]+\.[^\s@]+$/
     pattern: {
       required: false,
       type: [RegExp, String],
-      default: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})/
+      default: () => /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}$/
     },
 
     //sets the placeholder attribute for the input field
     placeholder: {
       required: false,
       type: String,
-      default: "Enter passsword here..."
-    },
-
-    //sets the minlength attribute for the input field
-    minlength: {
-      required: false,
-      type: Number,
-      default: 0
+      default: "abc@yahoo.com"
     },
 
     //sets the maxlength attribute for the input field
@@ -242,6 +264,20 @@ export default {
       required: false,
       type: Number,
       default: 50
+    },
+
+    //sets the maxlength attribute for the input field
+    minlength: {
+      required: false,
+      type: Number,
+      default: 50
+    },
+
+    //sets the multiple attribute for the input field
+    multiple: {
+      required: false,
+      type: Boolean,
+      default: false
     },
 
     //sets the manual alerts
@@ -291,21 +327,6 @@ export default {
       default: false
     },
 
-    //if a valid fontawesome icon class string is passed, it displays it in the input field
-    //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
-    icon: {
-      required: false,
-      type: String,
-      default: ""
-    },
-
-    //if true, the component generates a confirmation password box in order to check the password matches the original box password
-    match: {
-      required: false,
-      type: Boolean,
-      default: false
-    },
-
     //checks if label options should appear on the same line or not
     inline: {
       required: false,
@@ -318,50 +339,23 @@ export default {
       required: false,
       type: Boolean,
       default: false
+    },
+
+    //if a valid fontawesome icon class string is passed, it displays it in the input field
+    //a valid fontawesome icons class string is a string which starts with fas/far/fab/fa
+    icon: {
+      required: false,
+      type: String,
+      default: ""
     }
   }, //props
-
-  data() {
-    //stores textbox password values to match with d_value
-    const dPasswordMatch = "";
-    //type defaulted to password.
-    const dType = "password";
-    //type defaulted to password.
-    const dTypeMatch = "password";
-    return {
-      dPasswordMatch,
-      dType,
-      dTypeMatch
-    }; //return
-  }, //components
-
-  methods: {
-    //peek into thepassword value
-    peek: function(val) {
-      if (val === 0) {
-        if (this.dTypeMatch === "password") {
-          this.dTypeMatch = "text";
-        } else {
-          this.dTypeMatch = "password";
-        }
-      } else if (val === 1) {
-        if (this.dType === "password") {
-          this.dType = "text";
-        } else {
-          this.dType = "password";
-        }
-      }
-    } //peek
-  } //methods
 }; //default
 </script>
 
 <style lang="less" scoped>
 @import (reference) "../../Less/customMixins.less";
-.passwordInput {
+.emailInput {
   min-width: 160px;
-  & > div {
-    .inputcss();
-  }
+  .inputcss();
 }
 </style>
